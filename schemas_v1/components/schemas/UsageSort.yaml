@@ -1,0 +1,13 @@
+default: start_date
+description: The field to sort by.
+enum:
+  - computed_on
+  - size
+  - start_date
+  - end_date
+type: string
+x-enum-varnames:
+  - COMPUTED_ON
+  - SIZE
+  - START_DATE
+  - END_DATE

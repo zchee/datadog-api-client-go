@@ -1,0 +1,10 @@
+description: Relative timeframe.
+example:
+  live_span: 1h
+nullable: true
+properties:
+  live_span:
+    $ref: ./WidgetLiveSpan.yaml
+required:
+  - live_span
+type: object

@@ -1,0 +1,55 @@
+description: >-
+  The Log Stream displays a log flow matching the defined query. Only available
+  on FREE layout dashboards.
+properties:
+  columns:
+    description: Which columns to display on the widget.
+    items:
+      description: Column name.
+      type: string
+    type: array
+  indexes:
+    description: >-
+      An array of index names to query in the stream. Use [] to query all
+      indexes at once.
+    example:
+      - days-3
+      - days-7
+    items:
+      description: >-
+        One of the log indexes set up for your organization. [Multiple
+        Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes)
+      type: string
+    type: array
+  logset:
+    deprecated: true
+    description: ID of the log set to use.
+    type: string
+  message_display:
+    $ref: ./WidgetMessageDisplay.yaml
+  query:
+    description: Query to filter the log stream with.
+    type: string
+  show_date_column:
+    description: Whether to show the date column or not
+    type: boolean
+  show_message_column:
+    description: Whether to show the message column or not
+    type: boolean
+  sort:
+    $ref: ./WidgetFieldSort.yaml
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./LogStreamWidgetDefinitionType.yaml
+required:
+  - type
+type: object

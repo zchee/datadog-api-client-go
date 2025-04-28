@@ -1,0 +1,12 @@
+description: An assertion for the `validatesJSONSchema` operator.
+properties:
+  operator:
+    $ref: ./SyntheticsAssertionJSONSchemaOperator.yaml
+  target:
+    $ref: ./SyntheticsAssertionJSONSchemaTargetTarget.yaml
+  type:
+    $ref: ./SyntheticsAssertionType.yaml
+required:
+  - type
+  - operator
+type: object

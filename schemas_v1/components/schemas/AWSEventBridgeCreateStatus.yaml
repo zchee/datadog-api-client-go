@@ -1,0 +1,7 @@
+description: The event source status "created".
+enum:
+  - created
+example: created
+type: string
+x-enum-varnames:
+  - CREATED

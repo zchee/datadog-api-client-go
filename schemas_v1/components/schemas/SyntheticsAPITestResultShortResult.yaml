@@ -1,0 +1,8 @@
+description: Result of the last API test run.
+properties:
+  passed:
+    description: Describes if the test run has passed or failed.
+    type: boolean
+  timings:
+    $ref: ./SyntheticsTiming.yaml
+type: object

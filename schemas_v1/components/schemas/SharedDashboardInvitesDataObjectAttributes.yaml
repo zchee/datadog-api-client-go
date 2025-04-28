@@ -1,0 +1,44 @@
+description: Attributes of the shared dashboard invitation
+example:
+  created_at: '2020-12-07T20:16:27.846985+00:00'
+  email: test@datadoghq.com
+  has_session: false
+  invitation_expiry: '2020-12-07T21:16:27.840542+00:00'
+  session_expiry: null
+  share_token: XXXXXX-123456abcedfg7890hijklmnopqrstuv
+properties:
+  created_at:
+    description: When the invitation was sent.
+    format: date-time
+    readOnly: true
+    type: string
+  email:
+    description: >-
+      An email address that an invitation has been (or if used in invitation
+      request, will be) sent to.
+    nullable: false
+    type: string
+  has_session:
+    description: >-
+      Indicates whether an active session exists for the invitation (produced
+      when a user clicks the link in the email).
+    readOnly: true
+    type: boolean
+  invitation_expiry:
+    description: When the invitation expires.
+    format: date-time
+    readOnly: true
+    type: string
+  session_expiry:
+    description: >-
+      When the invited user's session expires. null if the invitation has no
+      associated session.
+    format: date-time
+    nullable: true
+    readOnly: true
+    type: string
+  share_token:
+    description: The unique token of the shared dashboard that was (or is to be) shared.
+    readOnly: true
+    type: string
+type: object

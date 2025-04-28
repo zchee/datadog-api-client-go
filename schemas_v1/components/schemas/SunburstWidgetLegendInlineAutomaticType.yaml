@@ -1,0 +1,9 @@
+description: Whether to show the legend inline or let it be automatically generated.
+enum:
+  - inline
+  - automatic
+example: automatic
+type: string
+x-enum-varnames:
+  - INLINE
+  - AUTOMATIC

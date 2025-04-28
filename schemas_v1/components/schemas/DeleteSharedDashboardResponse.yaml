@@ -1,0 +1,6 @@
+description: Response containing token of deleted shared dashboard.
+properties:
+  deleted_public_dashboard_token:
+    description: Token associated with the shared dashboard that was revoked.
+    type: string
+type: object

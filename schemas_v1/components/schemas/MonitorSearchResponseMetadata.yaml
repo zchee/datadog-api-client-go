@@ -1,0 +1,23 @@
+description: Metadata about the response.
+properties:
+  page:
+    description: The page to start paginating from.
+    format: int64
+    readOnly: true
+    type: integer
+  page_count:
+    description: The number of pages.
+    format: int64
+    readOnly: true
+    type: integer
+  per_page:
+    description: The number of monitors to return per page.
+    format: int64
+    readOnly: true
+    type: integer
+  total_count:
+    description: The total number of monitors.
+    format: int64
+    readOnly: true
+    type: integer
+type: object

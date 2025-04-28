@@ -1,0 +1,8 @@
+default: distribution
+description: The type of the distribution point.
+enum:
+  - distribution
+example: distribution
+type: string
+x-enum-varnames:
+  - DISTRIBUTION

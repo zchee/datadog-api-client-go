@@ -1,0 +1,8 @@
+description: A single user locator object.
+properties:
+  type:
+    $ref: ./SyntheticsMobileStepParamsElementUserLocatorValuesItemsType.yaml
+  value:
+    description: Value of a user locator.
+    type: string
+type: object

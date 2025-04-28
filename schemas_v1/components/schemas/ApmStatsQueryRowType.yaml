@@ -1,0 +1,11 @@
+description: The level of detail for the request.
+enum:
+  - service
+  - resource
+  - span
+example: service
+type: string
+x-enum-varnames:
+  - SERVICE
+  - RESOURCE
+  - SPAN

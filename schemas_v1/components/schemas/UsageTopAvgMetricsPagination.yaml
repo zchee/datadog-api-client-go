@@ -1,0 +1,18 @@
+description: The metadata for the current pagination.
+properties:
+  limit:
+    description: Maximum amount of records to be returned.
+    format: int64
+    type: integer
+  next_record_id:
+    description: >-
+      The cursor to get the next results (if any). To make the next request, use
+      the same parameters and add `next_record_id`.
+    nullable: true
+    type: string
+  total_number_of_records:
+    description: Total number of records.
+    format: int64
+    nullable: true
+    type: integer
+type: object

@@ -1,0 +1,30 @@
+description: Response with properties for each aggregated usage type.
+properties:
+  account_billable_usage:
+    description: The total account usage.
+    format: int64
+    type: integer
+  elapsed_usage_hours:
+    description: Elapsed usage hours for some billable product.
+    format: int64
+    type: integer
+  first_billable_usage_hour:
+    description: The first billable hour for the org.
+    format: date-time
+    type: string
+  last_billable_usage_hour:
+    description: The last billable hour for the org.
+    format: date-time
+    type: string
+  org_billable_usage:
+    description: The number of units used within the billable timeframe.
+    format: int64
+    type: integer
+  percentage_in_account:
+    description: The percentage of account usage the org represents.
+    format: double
+    type: number
+  usage_unit:
+    description: Units pertaining to the usage.
+    type: string
+type: object

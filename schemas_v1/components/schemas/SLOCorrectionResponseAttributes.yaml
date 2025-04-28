@@ -1,0 +1,56 @@
+description: The attribute object associated with the SLO correction.
+properties:
+  category:
+    $ref: ./SLOCorrectionCategory.yaml
+  created_at:
+    description: The epoch timestamp of when the correction was created at.
+    format: int64
+    nullable: true
+    type: integer
+  creator:
+    $ref: ./Creator.yaml
+  description:
+    description: Description of the correction being made.
+    type: string
+  duration:
+    description: >-
+      Length of time (in seconds) for a specified `rrule` recurring SLO
+      correction.
+    example: 3600
+    format: int64
+    nullable: true
+    type: integer
+  end:
+    description: Ending time of the correction in epoch seconds.
+    format: int64
+    nullable: true
+    type: integer
+  modified_at:
+    description: The epoch timestamp of when the correction was modified at.
+    format: int64
+    nullable: true
+    type: integer
+  modifier:
+    $ref: ./SLOCorrectionResponseAttributesModifier.yaml
+  rrule:
+    description: >-
+      The recurrence rules as defined in the iCalendar RFC 5545. The supported
+      rules for SLO corrections
+
+      are `FREQ`, `INTERVAL`, `COUNT`, `UNTIL` and `BYDAY`.
+    example: FREQ=DAILY;INTERVAL=10;COUNT=5
+    nullable: true
+    type: string
+  slo_id:
+    description: ID of the SLO that this correction applies to.
+    type: string
+  start:
+    description: Starting time of the correction in epoch seconds.
+    format: int64
+    type: integer
+  timezone:
+    description: >-
+      The timezone to display in the UI for the correction times (defaults to
+      "UTC").
+    type: string
+type: object

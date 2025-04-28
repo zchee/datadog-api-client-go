@@ -1,0 +1,5 @@
+description: Object to start or pause an existing Synthetic test.
+properties:
+  new_status:
+    $ref: ./SyntheticsTestPauseStatus.yaml
+type: object

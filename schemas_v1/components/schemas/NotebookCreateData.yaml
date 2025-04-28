@@ -1,0 +1,10 @@
+description: The data for a notebook create request.
+properties:
+  attributes:
+    $ref: ./NotebookCreateDataAttributes.yaml
+  type:
+    $ref: ./NotebookResourceType.yaml
+required:
+  - type
+  - attributes
+type: object

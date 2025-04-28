@@ -1,0 +1,7 @@
+description: CI/CD options for a Synthetic test.
+properties:
+  executionRule:
+    $ref: ./SyntheticsTestExecutionRule.yaml
+required:
+  - executionRule
+type: object

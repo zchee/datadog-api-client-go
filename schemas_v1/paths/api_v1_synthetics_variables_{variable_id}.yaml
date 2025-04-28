@@ -1,0 +1,135 @@
+delete:
+  description: Delete a Synthetic global variable.
+  operationId: DeleteGlobalVariable
+  parameters:
+    - description: The ID of the global variable.
+      in: path
+      name: variable_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: JSON format is wrong
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - synthetics_global_variable_write
+  summary: Delete a global variable
+  tags:
+    - Synthetics
+  x-permission:
+    operator: OR
+    permissions:
+      - synthetics_global_variable_write
+get:
+  description: Get the detailed configuration of a global variable.
+  operationId: GetGlobalVariable
+  parameters:
+    - description: The ID of the global variable.
+      in: path
+      name: variable_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SyntheticsGlobalVariable.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - synthetics_global_variable_read
+  summary: Get a global variable
+  tags:
+    - Synthetics
+put:
+  description: Edit a Synthetic global variable.
+  operationId: EditGlobalVariable
+  parameters:
+    - description: The ID of the global variable.
+      in: path
+      name: variable_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SyntheticsGlobalVariableRequest.yaml
+    description: Details of the global variable to update.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SyntheticsGlobalVariable.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Invalid request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - synthetics_global_variable_write
+  summary: Edit a global variable
+  tags:
+    - Synthetics
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - synthetics_global_variable_write

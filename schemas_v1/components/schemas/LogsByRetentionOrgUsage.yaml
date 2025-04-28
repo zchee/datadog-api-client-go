@@ -1,0 +1,8 @@
+description: Indexed logs usage by retention for a single organization.
+properties:
+  usage:
+    description: Indexed logs usage for each active retention for the organization.
+    items:
+      $ref: ./LogsRetentionSumUsage.yaml
+    type: array
+type: object

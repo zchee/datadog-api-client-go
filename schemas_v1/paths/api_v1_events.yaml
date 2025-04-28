@@ -1,0 +1,163 @@
+get:
+  description: >-
+    The event stream can be queried and filtered by time, priority, sources and
+    tags.
+
+
+    **Notes**:
+
+    - If the event you’re querying contains markdown formatting of any kind,
+
+    you may see characters such as `%`,`\`,`n` in your output.
+
+
+    - This endpoint returns a maximum of `1000` most recent results. To return
+    additional results,
+
+    identify the last timestamp of the last result and set that as the `end`
+    query time to
+
+    paginate the results. You can also use the page parameter to specify which
+    set of `1000` results to return.
+  operationId: ListEvents
+  parameters:
+    - description: POSIX timestamp.
+      in: query
+      name: start
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: POSIX timestamp.
+      in: query
+      name: end
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: Priority of your events, either `low` or `normal`.
+      in: query
+      name: priority
+      required: false
+      schema:
+        $ref: ../components/schemas/EventPriority.yaml
+    - description: A comma separated string of sources.
+      in: query
+      name: sources
+      schema:
+        type: string
+    - description: >-
+        A comma separated list indicating what tags, if any, should be used to
+        filter the list of events.
+      example: host:host0
+      in: query
+      name: tags
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Set unaggregated to `true` to return all events within the specified
+        [`start`,`end`] timeframe.
+
+        Otherwise if an event is aggregated to a parent event with a timestamp
+        outside of the timeframe,
+
+        it won't be available in the output. Aggregated events with
+        `is_aggregate=true` in the response will still be returned unless
+        exclude_aggregate is set to `true.`
+      in: query
+      name: unaggregated
+      required: false
+      schema:
+        type: boolean
+    - description: >-
+        Set `exclude_aggregate` to `true` to only return unaggregated events
+        where `is_aggregate=false` in the response. If the `exclude_aggregate`
+        parameter is set to `true`,
+
+        then the unaggregated parameter is ignored and will be `true` by
+        default.
+      in: query
+      name: exclude_aggregate
+      required: false
+      schema:
+        type: boolean
+    - description: >-
+        By default 1000 results are returned per request. Set page to the number
+        of the page to return with `0` being the first page. The page parameter
+        can only be used
+
+        when either unaggregated or exclude_aggregate is set to `true.`
+      in: query
+      name: page
+      required: false
+      schema:
+        format: int32
+        maximum: 2147483647
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EventListResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - events_read
+  summary: Get a list of events
+  tags:
+    - Events
+  x-permission:
+    operator: OR
+    permissions:
+      - events_read
+post:
+  description: |-
+    This endpoint allows you to post events to the stream.
+    Tag them, set priority and event aggregate them with other events.
+  operationId: CreateEvent
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/EventCreateRequest.yaml
+    description: Event request object
+    required: true
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EventCreateResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+  summary: Post an event
+  tags:
+    - Events
+  x-codegen-request-body-name: body

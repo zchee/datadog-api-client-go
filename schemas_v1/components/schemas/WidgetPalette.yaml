@@ -1,0 +1,43 @@
+description: Color palette to apply.
+enum:
+  - blue
+  - custom_bg
+  - custom_image
+  - custom_text
+  - gray_on_white
+  - grey
+  - green
+  - orange
+  - red
+  - red_on_white
+  - white_on_gray
+  - white_on_green
+  - green_on_white
+  - white_on_red
+  - white_on_yellow
+  - yellow_on_white
+  - black_on_light_yellow
+  - black_on_light_green
+  - black_on_light_red
+example: blue
+type: string
+x-enum-varnames:
+  - BLUE
+  - CUSTOM_BACKGROUND
+  - CUSTOM_IMAGE
+  - CUSTOM_TEXT
+  - GRAY_ON_WHITE
+  - GREY
+  - GREEN
+  - ORANGE
+  - RED
+  - RED_ON_WHITE
+  - WHITE_ON_GRAY
+  - WHITE_ON_GREEN
+  - GREEN_ON_WHITE
+  - WHITE_ON_RED
+  - WHITE_ON_YELLOW
+  - YELLOW_ON_WHITE
+  - BLACK_ON_LIGHT_YELLOW
+  - BLACK_ON_LIGHT_GREEN
+  - BLACK_ON_LIGHT_RED

@@ -1,0 +1,7 @@
+description: Type of the assertion.
+enum:
+  - bodyHash
+example: bodyHash
+type: string
+x-enum-varnames:
+  - BODY_HASH

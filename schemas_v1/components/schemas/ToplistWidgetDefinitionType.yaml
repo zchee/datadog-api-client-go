@@ -1,0 +1,8 @@
+default: toplist
+description: Type of the top list widget.
+enum:
+  - toplist
+example: toplist
+type: string
+x-enum-varnames:
+  - TOPLIST

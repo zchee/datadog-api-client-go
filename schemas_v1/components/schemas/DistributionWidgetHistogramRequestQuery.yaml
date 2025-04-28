@@ -1,0 +1,9 @@
+description: Query definition for Distribution Widget Histogram Request
+example:
+  data_source: metrics
+  name: query1
+  query: histogram:trace.Load{*}
+oneOf:
+  - $ref: ./FormulaAndFunctionMetricQueryDefinition.yaml
+  - $ref: ./FormulaAndFunctionEventQueryDefinition.yaml
+  - $ref: ./FormulaAndFunctionApmResourceStatsQueryDefinition.yaml

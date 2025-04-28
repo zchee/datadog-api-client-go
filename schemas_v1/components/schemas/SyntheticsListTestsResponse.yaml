@@ -1,0 +1,8 @@
+description: Object containing an array of Synthetic tests configuration.
+properties:
+  tests:
+    description: Array of Synthetic tests configuration.
+    items:
+      $ref: ./SyntheticsTestDetails.yaml
+    type: array
+type: object

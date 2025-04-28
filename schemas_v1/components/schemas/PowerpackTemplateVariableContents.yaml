@@ -1,0 +1,26 @@
+description: Powerpack template variable contents.
+properties:
+  name:
+    description: The name of the variable.
+    example: host1
+    type: string
+  prefix:
+    description: The tag prefix associated with the variable.
+    type: string
+  values:
+    description: >-
+      One or many template variable values within the saved view, which will be
+      unioned together using `OR` if more than one is specified.
+    example:
+      - my-host
+      - host1
+      - host2
+    items:
+      description: One or more possible values of the template variable.
+      minLength: 1
+      type: string
+    type: array
+required:
+  - name
+  - values
+type: object

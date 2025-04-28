@@ -1,0 +1,24 @@
+description: >-
+  ID of the device the Synthetics monitor is running on. Same as
+  `SyntheticsDeviceID`.
+enum:
+  - laptop_large
+  - tablet
+  - mobile_small
+  - chrome.laptop_large
+  - chrome.tablet
+  - chrome.mobile_small
+  - firefox.laptop_large
+  - firefox.tablet
+  - firefox.mobile_small
+type: string
+x-enum-varnames:
+  - LAPTOP_LARGE
+  - TABLET
+  - MOBILE_SMALL
+  - CHROME_LAPTOP_LARGE
+  - CHROME_TABLET
+  - CHROME_MOBILE_SMALL
+  - FIREFOX_LAPTOP_LARGE
+  - FIREFOX_TABLET
+  - FIREFOX_MOBILE_SMALL

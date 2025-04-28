@@ -1,0 +1,8 @@
+default: event_timeline
+description: Type of the event timeline widget.
+enum:
+  - event_timeline
+example: event_timeline
+type: string
+x-enum-varnames:
+  - EVENT_TIMELINE

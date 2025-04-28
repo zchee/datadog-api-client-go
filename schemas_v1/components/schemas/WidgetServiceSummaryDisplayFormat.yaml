@@ -1,0 +1,10 @@
+description: Number of columns to display.
+enum:
+  - one_column
+  - two_column
+  - three_column
+type: string
+x-enum-varnames:
+  - ONE_COLUMN
+  - TWO_COLUMN
+  - THREE_COLUMN

@@ -1,0 +1,7 @@
+description: Object containing the total count of invitations across all pages
+properties:
+  total_count:
+    description: The total number of invitations on this shared board, across all pages.
+    format: int64
+    type: integer
+type: object

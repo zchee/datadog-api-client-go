@@ -1,0 +1,16 @@
+additionalProperties:
+  description: An array of all SLO timeframes.
+  items:
+    $ref: ./SLOTimeframe.yaml
+  type: array
+description: |-
+  A map of service level objective object IDs to arrays of timeframes,
+  which indicate the thresholds to delete for each ID.
+example:
+  id1:
+    - 7d
+    - 30d
+  id2:
+    - 7d
+    - 30d
+type: object

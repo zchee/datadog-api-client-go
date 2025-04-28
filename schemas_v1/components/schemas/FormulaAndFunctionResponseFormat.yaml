@@ -1,0 +1,13 @@
+description: >-
+  Timeseries, scalar, or event list response. Event list response formats are
+  supported by Geomap widgets.
+enum:
+  - timeseries
+  - scalar
+  - event_list
+example: timeseries
+type: string
+x-enum-varnames:
+  - TIMESERIES
+  - SCALAR
+  - EVENT_LIST

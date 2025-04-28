@@ -1,0 +1,30 @@
+description: Updated distribution widget.
+properties:
+  apm_query:
+    $ref: ./LogQueryDefinition.yaml
+  apm_stats_query:
+    $ref: ./ApmStatsQueryDefinition.yaml
+  event_query:
+    $ref: ./LogQueryDefinition.yaml
+  log_query:
+    $ref: ./LogQueryDefinition.yaml
+  network_query:
+    $ref: ./LogQueryDefinition.yaml
+  process_query:
+    $ref: ./ProcessQueryDefinition.yaml
+  profile_metrics_query:
+    $ref: ./LogQueryDefinition.yaml
+  q:
+    description: Widget query.
+    type: string
+  query:
+    $ref: ./DistributionWidgetHistogramRequestQuery.yaml
+  request_type:
+    $ref: ./DistributionWidgetHistogramRequestType.yaml
+  rum_query:
+    $ref: ./LogQueryDefinition.yaml
+  security_query:
+    $ref: ./LogQueryDefinition.yaml
+  style:
+    $ref: ./WidgetStyle.yaml
+type: object

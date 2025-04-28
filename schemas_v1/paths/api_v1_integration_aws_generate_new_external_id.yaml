@@ -1,0 +1,47 @@
+put:
+  description: >-
+    Generate a new AWS external ID for a given AWS account ID and role name
+    pair.
+  operationId: CreateNewAWSExternalID
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AWSAccount.yaml
+    description: >-
+      Your Datadog role delegation name.
+
+      For more information about your AWS account Role name,
+
+      see the [Datadog AWS integration configuration
+      info](https://docs.datadoghq.com/integrations/amazon_web_services/#setup).
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AWSAccountCreateResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Generate a new external ID
+  tags:
+    - AWS Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_edit

@@ -1,0 +1,9 @@
+description: The IdP response object.
+properties:
+  message:
+    description: Identity provider response.
+    example: IdP metadata successfully uploaded for example org
+    type: string
+required:
+  - message
+type: object

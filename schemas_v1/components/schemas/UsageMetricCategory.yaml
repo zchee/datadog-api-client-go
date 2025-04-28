@@ -1,0 +1,8 @@
+description: Contains the metric category.
+enum:
+  - standard
+  - custom
+type: string
+x-enum-varnames:
+  - STANDARD
+  - CUSTOM

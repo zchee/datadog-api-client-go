@@ -1,0 +1,13 @@
+description: >-
+  The list of current AWS services for which Datadog offers automatic log
+  collection.
+properties:
+  id:
+    description: Key value in returned object.
+    example: s3
+    type: string
+  label:
+    description: Name of service available for configuration with Datadog logs.
+    example: S3 Access Logs
+    type: string
+type: object

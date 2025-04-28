@@ -1,0 +1,15 @@
+description: Agent install method.
+properties:
+  installer_version:
+    description: The installer version.
+    example: install_script-1.7.1
+    type: string
+  tool:
+    description: Tool used to install the agent.
+    example: install_script
+    type: string
+  tool_version:
+    description: The tool version.
+    example: install_script
+    type: string
+type: object

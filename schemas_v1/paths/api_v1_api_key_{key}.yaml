@@ -1,0 +1,133 @@
+delete:
+  description: Delete a given API key.
+  operationId: DeleteAPIKey
+  parameters:
+    - description: The specific API key you are working with.
+      in: path
+      name: key
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ApiKeyResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete an API key
+  tags:
+    - Key Management
+  x-permission:
+    operator: OR
+    permissions:
+      - api_keys_delete
+get:
+  description: Get a given API key.
+  operationId: GetAPIKey
+  parameters:
+    - description: The specific API key you are working with.
+      in: path
+      name: key
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ApiKeyResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get API key
+  tags:
+    - Key Management
+  x-permission:
+    operator: OR
+    permissions:
+      - api_keys_read
+put:
+  description: Edit an API key name.
+  operationId: UpdateAPIKey
+  parameters:
+    - description: The specific API key you are working with.
+      in: path
+      name: key
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ApiKey.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ApiKeyResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Edit an API key
+  tags:
+    - Key Management
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - api_keys_write

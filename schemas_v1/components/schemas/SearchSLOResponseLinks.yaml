@@ -1,0 +1,20 @@
+description: Pagination links.
+properties:
+  first:
+    description: Link to last page.
+    type: string
+  last:
+    description: Link to first page.
+    nullable: true
+    type: string
+  next:
+    description: Link to the next page.
+    type: string
+  prev:
+    description: Link to previous page.
+    nullable: true
+    type: string
+  self:
+    description: Link to current page.
+    type: string
+type: object

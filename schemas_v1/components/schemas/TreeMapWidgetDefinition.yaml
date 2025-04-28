@@ -1,0 +1,39 @@
+description: >-
+  The treemap visualization enables you to display hierarchical and nested data.
+  It is well suited for queries that describe part-whole relationships, such as
+  resource usage by availability zone, data center, or team.
+properties:
+  color_by:
+    $ref: ./TreeMapColorBy.yaml
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  group_by:
+    $ref: ./TreeMapGroupBy.yaml
+  requests:
+    description: List of treemap widget requests.
+    example:
+      - aggregator: sum
+        data_source: metrics
+        name: query1
+        query: sum:system.mem.total{*} by {service}
+    items:
+      $ref: ./TreeMapWidgetRequest.yaml
+    maxItems: 1
+    minItems: 1
+    type: array
+  size_by:
+    $ref: ./TreeMapSizeBy.yaml
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of your widget.
+    type: string
+  type:
+    $ref: ./TreeMapWidgetDefinitionType.yaml
+required:
+  - type
+  - requests
+type: object

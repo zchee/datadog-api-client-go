@@ -1,0 +1,19 @@
+description: A created EventBridge source.
+properties:
+  event_source_name:
+    description: The event source name.
+    example: app-alerts-zyxw3210
+    type: string
+  has_bus:
+    description: True if the event bus was created in addition to the source.
+    example: true
+    type: boolean
+  region:
+    description: >-
+      The event source's [AWS
+      region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints).
+    example: us-east-1
+    type: string
+  status:
+    $ref: ./AWSEventBridgeCreateStatus.yaml
+type: object

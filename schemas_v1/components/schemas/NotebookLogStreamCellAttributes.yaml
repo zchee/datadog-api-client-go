@@ -1,0 +1,11 @@
+description: The attributes of a notebook `log_stream` cell.
+properties:
+  definition:
+    $ref: ./LogStreamWidgetDefinition.yaml
+  graph_size:
+    $ref: ./NotebookGraphSize.yaml
+  time:
+    $ref: ./NotebookCellTime.yaml
+required:
+  - definition
+type: object

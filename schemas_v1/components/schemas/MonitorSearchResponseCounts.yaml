@@ -1,0 +1,12 @@
+description: The counts of monitors per different criteria.
+properties:
+  muted:
+    $ref: ./MonitorSearchCount.yaml
+  status:
+    $ref: ./MonitorSearchCount.yaml
+  tag:
+    $ref: ./MonitorSearchCount.yaml
+  type:
+    $ref: ./MonitorSearchCount.yaml
+readOnly: true
+type: object

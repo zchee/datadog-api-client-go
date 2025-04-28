@@ -1,0 +1,6 @@
+description: List of principals for a mobile test binding.
+items:
+  description: A principal for a mobile test binding.
+  maxLength: 1500
+  type: string
+type: array

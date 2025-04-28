@@ -1,0 +1,31 @@
+description: Configuration object for a Synthetic browser test.
+properties:
+  assertions:
+    default: []
+    description: Array of assertions used for the test.
+    example: []
+    items:
+      $ref: ./SyntheticsAssertion.yaml
+    type: array
+  configVariables:
+    description: Array of variables used for the test.
+    items:
+      $ref: ./SyntheticsConfigVariable.yaml
+    type: array
+  request:
+    $ref: ./SyntheticsTestRequest.yaml
+  setCookie:
+    description: >-
+      Cookies to be used for the request, using the
+      [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie)
+      syntax.
+    type: string
+  variables:
+    description: Array of variables used for the test steps.
+    items:
+      $ref: ./SyntheticsBrowserVariable.yaml
+    type: array
+required:
+  - request
+  - assertions
+type: object

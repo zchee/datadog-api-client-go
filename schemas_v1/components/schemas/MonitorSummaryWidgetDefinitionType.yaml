@@ -1,0 +1,8 @@
+default: manage_status
+description: Type of the monitor summary widget.
+enum:
+  - manage_status
+example: manage_status
+type: string
+x-enum-varnames:
+  - MANAGE_STATUS

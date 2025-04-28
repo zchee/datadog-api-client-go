@@ -1,0 +1,34 @@
+description: >-
+  The table visualization is available on timeboards and screenboards. It
+  displays columns of metrics grouped by tag key.
+properties:
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  has_search_bar:
+    $ref: ./TableWidgetHasSearchBar.yaml
+  requests:
+    description: Widget definition.
+    example:
+      - q/apm_query/log_query: <METRIC_1>{<SCOPE_1>}
+    items:
+      $ref: ./TableWidgetRequest.yaml
+    type: array
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of your widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./TableWidgetDefinitionType.yaml
+required:
+  - type
+  - requests
+type: object

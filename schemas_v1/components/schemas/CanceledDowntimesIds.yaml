@@ -1,0 +1,13 @@
+description: Object containing array of IDs of canceled downtimes.
+properties:
+  cancelled_ids:
+    description: ID of downtimes that were canceled.
+    example:
+      - 123456789
+      - 123456790
+    items:
+      description: Integer representation of one downtime ID.
+      format: int64
+      type: integer
+    type: array
+type: object

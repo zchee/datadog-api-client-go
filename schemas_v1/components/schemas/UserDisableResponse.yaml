@@ -1,0 +1,6 @@
+description: Array of user disabled for a given organization.
+properties:
+  message:
+    description: Information pertaining to a user disabled for a given organization.
+    type: string
+type: object

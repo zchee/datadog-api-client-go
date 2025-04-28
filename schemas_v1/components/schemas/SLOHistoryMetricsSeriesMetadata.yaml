@@ -1,0 +1,41 @@
+description: Query metadata.
+example: {}
+properties:
+  aggr:
+    description: Query aggregator function.
+    type: string
+  expression:
+    description: Query expression.
+    type: string
+  metric:
+    description: Query metric used.
+    type: string
+  query_index:
+    description: Query index from original combined query.
+    format: int64
+    type: integer
+  scope:
+    description: Query scope.
+    type: string
+  unit:
+    description: >-
+      An array of metric units that contains up to two unit objects.
+
+      For example, bytes represents one unit object and bytes per second
+      represents two unit objects.
+
+      If a metric query only has one unit object, the second array element is
+      null.
+    example:
+      - family: bytes
+        id: 2
+        name: byte
+        plural: bytes
+        scale_factor: 1
+        short_name: B
+      - null
+    items:
+      $ref: ./SLOHistoryMetricsSeriesMetadataUnit.yaml
+    nullable: true
+    type: array
+type: object

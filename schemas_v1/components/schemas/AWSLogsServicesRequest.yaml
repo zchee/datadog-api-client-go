@@ -1,0 +1,28 @@
+description: >-
+  A list of current AWS services for which Datadog offers automatic log
+  collection.
+properties:
+  account_id:
+    description: Your AWS Account ID without dashes.
+    example: '1234567'
+    type: string
+  services:
+    description: >-
+      Array of services IDs set to enable automatic log collection. Discover the
+      list of available services with the get list of AWS log ready services API
+      endpoint.
+    example:
+      - s3
+      - elb
+      - elbv2
+      - cloudfront
+      - redshift
+      - lambda
+    items:
+      description: Description of services.
+      type: string
+    type: array
+required:
+  - account_id
+  - services
+type: object

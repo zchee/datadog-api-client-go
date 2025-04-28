@@ -1,0 +1,14 @@
+description: Object describing the creator of the shared element.
+properties:
+  email:
+    description: Email of the creator.
+    type: string
+  handle:
+    description: Handle of the creator.
+    type: string
+  name:
+    description: Name of the creator.
+    nullable: true
+    type: string
+readOnly: true
+type: object

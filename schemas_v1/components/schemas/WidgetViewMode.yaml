@@ -1,0 +1,10 @@
+description: Define how you want the SLO to be displayed.
+enum:
+  - overall
+  - component
+  - both
+type: string
+x-enum-varnames:
+  - OVERALL
+  - COMPONENT
+  - BOTH

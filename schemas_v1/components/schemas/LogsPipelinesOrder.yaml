@@ -1,0 +1,19 @@
+description: Object containing the ordered list of pipeline IDs.
+properties:
+  pipeline_ids:
+    description: >-
+      Ordered Array of `<PIPELINE_ID>` strings, the order of pipeline IDs in the
+      array
+
+      define the overall Pipelines order for Datadog.
+    example:
+      - tags
+      - org_ids
+      - products
+    items:
+      description: A given pipeline ID.
+      type: string
+    type: array
+required:
+  - pipeline_ids
+type: object

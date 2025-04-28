@@ -1,0 +1,57 @@
+description: An array of service level objective objects.
+properties:
+  from_ts:
+    description: The `from` timestamp in epoch seconds.
+    example: 1615323990
+    format: int64
+    type: integer
+  group_by:
+    description: >-
+      For `metric` based SLOs where the query includes a group-by clause, this
+      represents the list of grouping parameters.
+
+
+      This is not included in responses for `monitor` based SLOs.
+    items:
+      description: A grouping parameter.
+      type: string
+    type: array
+  groups:
+    description: |-
+      For grouped SLOs, this represents SLI data for specific groups.
+
+      This is not included in the responses for `metric` based SLOs.
+    items:
+      $ref: ./SLOHistoryMonitor.yaml
+    type: array
+  monitors:
+    description: |-
+      For multi-monitor SLOs, this represents SLI data for specific monitors.
+
+      This is not included in the responses for `metric` based SLOs.
+    items:
+      $ref: ./SLOHistoryMonitor.yaml
+    type: array
+  overall:
+    $ref: ./SLOHistorySLIData.yaml
+  series:
+    $ref: ./SLOHistoryMetrics.yaml
+  thresholds:
+    additionalProperties:
+      $ref: ./SLOThreshold.yaml
+    description: mapping of string timeframe to the SLO threshold.
+    example:
+      my_service:
+        target: 95
+        timeframe: 7d
+    type: object
+  to_ts:
+    description: The `to` timestamp in epoch seconds.
+    example: 1615928790
+    format: int64
+    type: integer
+  type:
+    $ref: ./SLOType.yaml
+  type_id:
+    $ref: ./SLOTypeNumeric.yaml
+type: object

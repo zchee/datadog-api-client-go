@@ -1,0 +1,8 @@
+default: reports
+description: The type of reports.
+enum:
+  - reports
+example: reports
+type: string
+x-enum-varnames:
+  - REPORTS

@@ -1,0 +1,17 @@
+description: Column properties.
+properties:
+  alias:
+    description: A user-assigned alias for the column.
+    example: Requests
+    type: string
+  cell_display_mode:
+    $ref: ./TableWidgetCellDisplayMode.yaml
+  name:
+    description: Column name.
+    example: Reqs
+    type: string
+  order:
+    $ref: ./WidgetSort.yaml
+required:
+  - name
+type: object

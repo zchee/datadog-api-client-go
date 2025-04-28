@@ -1,0 +1,8 @@
+description: Object describing the synthetics tests to trigger.
+properties:
+  tests:
+    description: List of Synthetic tests with overrides.
+    items:
+      $ref: ./SyntheticsCITest.yaml
+    type: array
+type: object

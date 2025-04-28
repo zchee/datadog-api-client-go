@@ -1,0 +1,19 @@
+description: An application key with its associated metadata.
+properties:
+  hash:
+    description: Hash of an application key.
+    example: 1234512345123459cda4eb9ced49a3d84fd0138c
+    maxLength: 40
+    minLength: 40
+    readOnly: true
+    type: string
+  name:
+    description: Name of an application key.
+    example: example user
+    type: string
+  owner:
+    description: Owner of an application key.
+    example: example.com
+    readOnly: true
+    type: string
+type: object

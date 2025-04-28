@@ -1,0 +1,22 @@
+description: >-
+  Exclusion filter is defined by a query, a sampling rule, and a active/inactive
+  toggle.
+properties:
+  query:
+    description: >-
+      Default query is `*`, meaning all logs flowing in the index would be
+      excluded.
+
+      Scope down exclusion filter to only a subset of logs with a log query.
+    example: '*'
+    type: string
+  sample_rate:
+    description: |-
+      Sample rate to apply to logs going through this exclusion filter,
+      a value of 1.0 excludes all logs matching the query.
+    example: 1
+    format: double
+    type: number
+required:
+  - sample_rate
+type: object

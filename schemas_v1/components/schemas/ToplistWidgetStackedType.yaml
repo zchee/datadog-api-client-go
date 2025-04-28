@@ -1,0 +1,8 @@
+default: stacked
+description: Top list widget stacked display type.
+enum:
+  - stacked
+example: stacked
+type: string
+x-enum-varnames:
+  - STACKED

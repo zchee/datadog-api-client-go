@@ -1,0 +1,72 @@
+description: The attributes of a notebook.
+properties:
+  author:
+    $ref: ./NotebookAuthor.yaml
+  cells:
+    description: List of cells to display in the notebook.
+    example:
+      - attributes:
+          definition:
+            text: |-
+              ## Some test markdown
+
+              ```js
+              var x, y;
+              x = 5;
+              y = 6;
+              ```
+            type: markdown
+        id: bzbycoya
+        type: notebook_cells
+      - attributes:
+          definition:
+            requests:
+              - display_type: line
+                q: avg:system.load.1{*}
+                style:
+                  line_type: solid
+                  line_width: normal
+                  palette: dog_classic
+            show_legend: true
+            type: timeseries
+            yaxis:
+              scale: linear
+          graph_size: m
+          split_by:
+            keys: []
+            tags: []
+          time: null
+        id: 9k6bc6xc
+        type: notebook_cells
+    items:
+      $ref: ./NotebookCellResponse.yaml
+    type: array
+  created:
+    description: UTC time stamp for when the notebook was created.
+    example: '2021-02-24T23:14:15.173964+00:00'
+    format: date-time
+    readOnly: true
+    type: string
+  metadata:
+    $ref: ./NotebookMetadata.yaml
+  modified:
+    description: UTC time stamp for when the notebook was last modified.
+    example: '2021-02-24T23:15:23.274966+00:00'
+    format: date-time
+    readOnly: true
+    type: string
+  name:
+    description: The name of the notebook.
+    example: Example Notebook
+    maxLength: 80
+    minLength: 0
+    type: string
+  status:
+    $ref: ./NotebookStatus.yaml
+  time:
+    $ref: ./NotebookGlobalTime.yaml
+required:
+  - cells
+  - time
+  - name
+type: object

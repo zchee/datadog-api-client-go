@@ -1,0 +1,4 @@
+description: Port to use when performing the test.
+oneOf:
+  - $ref: ./SyntheticsTestRequestNumericalPort.yaml
+  - $ref: ./SyntheticsTestRequestVariablePort.yaml

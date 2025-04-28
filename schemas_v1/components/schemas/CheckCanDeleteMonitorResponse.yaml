@@ -1,0 +1,17 @@
+description: Response of monitor IDs that can or can't be safely deleted.
+properties:
+  data:
+    $ref: ./CheckCanDeleteMonitorResponseData.yaml
+  errors:
+    additionalProperties:
+      description: Strings denoting where a monitor is used.
+      items:
+        description: Asset where a monitor is used.
+        type: string
+      type: array
+    description: A mapping of Monitor ID to strings denoting where it's used.
+    nullable: true
+    type: object
+required:
+  - data
+type: object

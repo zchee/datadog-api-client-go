@@ -1,0 +1,15 @@
+description: A service level objective ID and attributes.
+properties:
+  attributes:
+    $ref: ./SearchServiceLevelObjectiveAttributes.yaml
+  id:
+    description: |-
+      A unique identifier for the service level objective object.
+
+      Always included in service level objective responses.
+    readOnly: true
+    type: string
+  type:
+    description: The type of the object, must be `slo`.
+    type: string
+type: object

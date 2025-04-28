@@ -1,0 +1,172 @@
+delete:
+  description: Delete a given Datadog-Azure integration from your Datadog account.
+  operationId: DeleteAzureIntegration
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AzureAccount.yaml
+    description: Delete a given Datadog-Azure integration request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example: {}
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete an Azure integration
+  tags:
+    - Azure Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - azure_configurations_manage
+get:
+  description: List all Datadog-Azure integrations configured in your Datadog account.
+  operationId: ListAzureIntegration
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AzureAccountListResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List all Azure integrations
+  tags:
+    - Azure Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - azure_configuration_read
+post:
+  description: >-
+    Create a Datadog-Azure integration.
+
+
+    Using the `POST` method updates your integration configuration by adding
+    your new
+
+    configuration to the existing one in your Datadog organization.
+
+
+    Using the `PUT` method updates your integration configuration by replacing
+    your
+
+    current configuration with the new one sent to your Datadog organization.
+  operationId: CreateAzureIntegration
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AzureAccount.yaml
+    description: Create a Datadog-Azure integration for your Datadog account request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example: {}
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create an Azure integration
+  tags:
+    - Azure Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - azure_configurations_manage
+put:
+  description: >-
+    Update a Datadog-Azure integration. Requires an existing `tenant_name` and
+    `client_id`.
+
+    Any other fields supplied will overwrite existing values. To overwrite
+    `tenant_name` or `client_id`,
+
+    use `new_tenant_name` and `new_client_id`. To leave a field unchanged, do
+    not supply that field in the payload.
+  operationId: UpdateAzureIntegration
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AzureAccount.yaml
+    description: Update a Datadog-Azure integration request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example: {}
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update an Azure integration
+  tags:
+    - Azure Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - azure_configuration_edit

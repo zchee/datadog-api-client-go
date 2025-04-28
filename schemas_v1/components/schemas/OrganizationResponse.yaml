@@ -1,0 +1,5 @@
+description: Response with an organization.
+properties:
+  org:
+    $ref: ./Organization.yaml
+type: object

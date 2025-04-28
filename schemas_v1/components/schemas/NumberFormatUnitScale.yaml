@@ -1,0 +1,10 @@
+description: The definition of `NumberFormatUnitScale` object.
+nullable: true
+properties:
+  type:
+    $ref: ./NumberFormatUnitScaleType.yaml
+  unit_name:
+    description: The name of the unit.
+    example: bytes
+    type: string
+type: object

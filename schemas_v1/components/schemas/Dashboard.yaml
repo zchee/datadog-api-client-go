@@ -1,0 +1,115 @@
+description: >-
+  A dashboard is Datadog’s tool for visually tracking, analyzing, and displaying
+
+  key performance metrics, which enable you to monitor the health of your
+  infrastructure.
+properties:
+  author_handle:
+    description: Identifier of the dashboard author.
+    example: test@datadoghq.com
+    readOnly: true
+    type: string
+  author_name:
+    description: Name of the dashboard author.
+    example: John Doe
+    nullable: true
+    readOnly: true
+    type: string
+  created_at:
+    description: Creation date of the dashboard.
+    format: date-time
+    readOnly: true
+    type: string
+  description:
+    description: Description of the dashboard.
+    nullable: true
+    type: string
+  id:
+    description: ID of the dashboard.
+    example: 123-abc-456
+    readOnly: true
+    type: string
+  is_read_only:
+    default: false
+    deprecated: true
+    description: >-
+      Whether this dashboard is read-only. If True, only the author and admins
+      can make changes to it.
+
+
+      This property is deprecated; please use the [Restriction Policies
+      API](https://docs.datadoghq.com/api/latest/restriction-policies/) instead
+      to manage write authorization for individual dashboards.
+    example: false
+    type: boolean
+  layout_type:
+    $ref: ./DashboardLayoutType.yaml
+  modified_at:
+    description: Modification date of the dashboard.
+    format: date-time
+    readOnly: true
+    type: string
+  notify_list:
+    description: >-
+      List of handles of users to notify when changes are made to this
+      dashboard.
+    items:
+      description: User handles.
+      type: string
+    nullable: true
+    type: array
+  reflow_type:
+    $ref: ./DashboardReflowType.yaml
+  restricted_roles:
+    description: >-
+      A list of role identifiers. Only the author and users associated with at
+      least one of these roles can edit this dashboard.
+    items:
+      description: A role UUID.
+      type: string
+    type: array
+  tags:
+    description: List of team names representing ownership of a dashboard.
+    items:
+      description: The name of a Datadog team of the form `team:<name>`
+      type: string
+    maxItems: 5
+    nullable: true
+    type: array
+  template_variable_presets:
+    description: Array of template variables saved views.
+    items:
+      $ref: ./DashboardTemplateVariablePreset.yaml
+    nullable: true
+    type: array
+  template_variables:
+    description: List of template variables for this dashboard.
+    items:
+      $ref: ./DashboardTemplateVariable.yaml
+    nullable: true
+    type: array
+  title:
+    description: Title of the dashboard.
+    example: ''
+    type: string
+  url:
+    description: The URL of the dashboard.
+    example: /dashboard/123-abc-456/example-dashboard-title
+    readOnly: true
+    type: string
+  widgets:
+    description: List of widgets to display on the dashboard.
+    example:
+      - definition:
+          requests:
+            fill:
+              q: avg:system.cpu.user{*}
+          type: hostmap
+    items:
+      $ref: ./Widget.yaml
+    type: array
+required:
+  - title
+  - layout_type
+  - widgets
+type: object

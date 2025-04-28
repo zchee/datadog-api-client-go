@@ -1,0 +1,16 @@
+description: >-
+  Invitations data and metadata that exists for a shared dashboard returned by
+  the API.
+example:
+  data:
+    - attributes:
+        email: test@datadoghq.com
+      type: public_dashboard_invitation
+properties:
+  data:
+    $ref: ./SharedDashboardInvitesData.yaml
+  meta:
+    $ref: ./SharedDashboardInvitesMeta.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,38 @@
+description: An updated geomap widget.
+properties:
+  columns:
+    description: Widget columns.
+    example:
+      - field: timestamp
+        width: auto
+      - field: content
+        width: full
+    items:
+      $ref: ./ListStreamColumn.yaml
+    type: array
+  formulas:
+    description: List of formulas that operate on queries.
+    items:
+      $ref: ./WidgetFormula.yaml
+    type: array
+  log_query:
+    $ref: ./LogQueryDefinition.yaml
+  q:
+    description: The widget metrics query.
+    type: string
+  queries:
+    description: List of queries that can be returned directly or used in formulas.
+    items:
+      $ref: ./FormulaAndFunctionQueryDefinition.yaml
+    type: array
+  query:
+    $ref: ./ListStreamQuery.yaml
+  response_format:
+    $ref: ./FormulaAndFunctionResponseFormat.yaml
+  rum_query:
+    $ref: ./LogQueryDefinition.yaml
+  security_query:
+    $ref: ./LogQueryDefinition.yaml
+  sort:
+    $ref: ./WidgetSortBy.yaml
+type: object

@@ -1,0 +1,10 @@
+description: Facet
+properties:
+  count:
+    description: Count
+    format: int64
+    type: integer
+  name:
+    description: Facet
+    type: string
+type: object

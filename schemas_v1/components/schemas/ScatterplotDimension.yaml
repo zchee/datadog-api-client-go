@@ -1,0 +1,13 @@
+description: Dimension of the Scatterplot.
+enum:
+  - x
+  - 'y'
+  - radius
+  - color
+example: radius
+type: string
+x-enum-varnames:
+  - X
+  - 'Y'
+  - RADIUS
+  - COLOR

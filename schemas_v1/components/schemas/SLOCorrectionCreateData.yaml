@@ -1,0 +1,9 @@
+description: The data object associated with the SLO correction to be created.
+properties:
+  attributes:
+    $ref: ./SLOCorrectionCreateRequestAttributes.yaml
+  type:
+    $ref: ./SLOCorrectionType.yaml
+required:
+  - type
+type: object

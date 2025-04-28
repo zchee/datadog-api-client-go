@@ -1,0 +1,8 @@
+description: Host usage response.
+properties:
+  usage:
+    description: An array of objects related to host usage.
+    items:
+      $ref: ./UsageHostHour.yaml
+    type: array
+type: object

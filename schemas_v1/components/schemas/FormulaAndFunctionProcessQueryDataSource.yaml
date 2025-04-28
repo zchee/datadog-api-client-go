@@ -1,0 +1,9 @@
+description: Data sources that rely on the process backend.
+enum:
+  - process
+  - container
+example: process
+type: string
+x-enum-varnames:
+  - PROCESS
+  - CONTAINER

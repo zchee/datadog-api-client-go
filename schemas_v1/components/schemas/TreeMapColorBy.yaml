@@ -1,0 +1,9 @@
+default: user
+deprecated: true
+description: (deprecated) The attribute formerly used to determine color in the widget.
+enum:
+  - user
+example: user
+type: string
+x-enum-varnames:
+  - USER

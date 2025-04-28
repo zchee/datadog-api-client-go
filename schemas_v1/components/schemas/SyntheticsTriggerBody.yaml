@@ -1,0 +1,10 @@
+description: Object describing the Synthetic tests to trigger.
+properties:
+  tests:
+    description: List of Synthetic tests.
+    items:
+      $ref: ./SyntheticsTriggerTest.yaml
+    type: array
+required:
+  - tests
+type: object

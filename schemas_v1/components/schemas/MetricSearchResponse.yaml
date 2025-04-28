@@ -1,0 +1,5 @@
+description: Object containing the list of metrics matching the search query.
+properties:
+  results:
+    $ref: ./MetricSearchResponseResults.yaml
+type: object

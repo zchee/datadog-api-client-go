@@ -1,0 +1,22 @@
+description: Object representing a graph snapshot.
+properties:
+  graph_def:
+    description: >-
+      A JSON document defining the graph. `graph_def` can be used instead of
+      `metric_query`.
+
+      The JSON document uses the [grammar defined
+      here](https://docs.datadoghq.com/graphing/graphing_json/#grammar)
+
+      and should be formatted to a single line then URL encoded.
+    type: string
+  metric_query:
+    description: The metric query. One of `metric_query` or `graph_def` is required.
+    type: string
+  snapshot_url:
+    description: >-
+      URL of your [graph
+      snapshot](https://docs.datadoghq.com/metrics/explorer/#snapshot).
+    example: https://app.datadoghq.com/s/f12345678/aaa-bbb-ccc
+    type: string
+type: object

@@ -1,0 +1,22 @@
+description: Error response object for a browser test.
+properties:
+  description:
+    description: Description of the error.
+    example: Example error message
+    type: string
+  name:
+    description: Name of the error.
+    example: Failed test
+    type: string
+  status:
+    description: Status Code of the error.
+    example: 500
+    format: int64
+    type: integer
+  type:
+    $ref: ./SyntheticsBrowserErrorType.yaml
+required:
+  - description
+  - name
+  - type
+type: object

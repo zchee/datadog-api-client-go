@@ -1,0 +1,9 @@
+description: The subtype of the Synthetic multi-step API test step.
+enum:
+  - http
+  - grpc
+example: http
+type: string
+x-enum-varnames:
+  - HTTP
+  - GRPC

@@ -1,0 +1,14 @@
+description: Error returned by the Logs API
+properties:
+  code:
+    description: Code identifying the error
+    type: string
+  details:
+    description: Additional error details
+    items:
+      $ref: ./LogsAPIError.yaml
+    type: array
+  message:
+    description: Error message
+    type: string
+type: object

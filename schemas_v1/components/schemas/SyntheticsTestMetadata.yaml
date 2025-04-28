@@ -1,0 +1,5 @@
+additionalProperties:
+  description: A single metadatum.
+  type: string
+description: Metadata to include when performing the gRPC test.
+type: object

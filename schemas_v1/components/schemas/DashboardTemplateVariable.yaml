@@ -1,0 +1,48 @@
+description: Template variable.
+properties:
+  available_values:
+    description: The list of values that the template variable drop-down is limited to.
+    example:
+      - my-host
+      - host1
+      - host2
+    items:
+      description: Template variable value.
+      type: string
+    nullable: true
+    type: array
+  default:
+    deprecated: true
+    description: >-
+      (deprecated) The default value for the template variable on dashboard
+      load. Cannot be used in conjunction with `defaults`.
+    example: my-host
+    nullable: true
+    type: string
+  defaults:
+    description: >-
+      One or many default values for template variables on load. If more than
+      one default is specified, they will be unioned together with `OR`. Cannot
+      be used in conjunction with `default`.
+    example:
+      - my-host-1
+      - my-host-2
+    items:
+      description: One of many default values for the template variable on dashboard load.
+      minLength: 1
+      type: string
+    type: array
+  name:
+    description: The name of the variable.
+    example: host1
+    type: string
+  prefix:
+    description: >-
+      The tag prefix associated with the variable. Only tags with this prefix
+      appear in the variable drop-down.
+    example: host
+    nullable: true
+    type: string
+required:
+  - name
+type: object

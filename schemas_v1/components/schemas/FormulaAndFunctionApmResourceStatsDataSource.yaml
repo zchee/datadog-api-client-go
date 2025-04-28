@@ -1,0 +1,7 @@
+description: Data source for APM resource stats queries.
+enum:
+  - apm_resource_stats
+example: apm_resource_stats
+type: string
+x-enum-varnames:
+  - APM_RESOURCE_STATS

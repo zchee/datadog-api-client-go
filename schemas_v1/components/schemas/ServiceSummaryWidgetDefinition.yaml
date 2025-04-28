@@ -1,0 +1,56 @@
+description: >-
+  The service summary displays the graphs of a chosen service in your
+  screenboard. Only available on FREE layout dashboards.
+properties:
+  display_format:
+    $ref: ./WidgetServiceSummaryDisplayFormat.yaml
+  env:
+    description: APM environment.
+    example: ''
+    type: string
+  service:
+    description: APM service.
+    example: ''
+    type: string
+  show_breakdown:
+    description: Whether to show the latency breakdown or not.
+    type: boolean
+  show_distribution:
+    description: Whether to show the latency distribution or not.
+    type: boolean
+  show_errors:
+    description: Whether to show the error metrics or not.
+    type: boolean
+  show_hits:
+    description: Whether to show the hits metrics or not.
+    type: boolean
+  show_latency:
+    description: Whether to show the latency metrics or not.
+    type: boolean
+  show_resource_list:
+    description: Whether to show the resource list or not.
+    type: boolean
+  size_format:
+    $ref: ./WidgetSizeFormat.yaml
+  span_name:
+    description: APM span name.
+    example: ''
+    type: string
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./ServiceSummaryWidgetDefinitionType.yaml
+required:
+  - type
+  - env
+  - service
+  - span_name
+type: object

@@ -1,0 +1,104 @@
+get:
+  description: >-
+    Take graph snapshots.
+
+    **Note**: When a snapshot is created, there is some delay before it is
+    available.
+  operationId: GetGraphSnapshot
+  parameters:
+    - description: The metric query.
+      in: query
+      name: metric_query
+      schema:
+        type: string
+      x-docs-curl-required: true
+    - description: The POSIX timestamp of the start of the query in seconds.
+      in: query
+      name: start
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: The POSIX timestamp of the end of the query in seconds.
+      in: query
+      name: end
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: A query that adds event bands to the graph.
+      in: query
+      name: event_query
+      required: false
+      schema:
+        type: string
+    - description: >-
+        A JSON document defining the graph. `graph_def` can be used instead of
+        `metric_query`.
+
+        The JSON document uses the [grammar defined
+        here](https://docs.datadoghq.com/graphing/graphing_json/#grammar)
+
+        and should be formatted to a single line then URL encoded.
+      in: query
+      name: graph_def
+      required: false
+      schema:
+        type: string
+    - description: >-
+        A title for the graph. If no title is specified, the graph does not have
+        a title.
+      in: query
+      name: title
+      required: false
+      schema:
+        type: string
+    - description: >-
+        The height of the graph. If no height is specified, the graph's original
+        height is used.
+      in: query
+      name: height
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: >-
+        The width of the graph. If no width is specified, the graph's original
+        width is used.
+      in: query
+      name: width
+      required: false
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GraphSnapshot.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Take graph snapshots
+  tags:
+    - Snapshots
+  x-permission:
+    operator: OPEN
+    permissions: []

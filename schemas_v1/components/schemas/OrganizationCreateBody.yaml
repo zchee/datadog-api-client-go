@@ -1,0 +1,14 @@
+description: Object describing an organization to create.
+properties:
+  billing:
+    $ref: ./OrganizationBilling.yaml
+  name:
+    description: The name of the new child-organization, limited to 32 characters.
+    example: New child org
+    maxLength: 32
+    type: string
+  subscription:
+    $ref: ./OrganizationSubscription.yaml
+required:
+  - name
+type: object

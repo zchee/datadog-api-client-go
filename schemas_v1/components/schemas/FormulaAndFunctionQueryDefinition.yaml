@@ -1,0 +1,9 @@
+description: A formula and function query.
+oneOf:
+  - $ref: ./FormulaAndFunctionMetricQueryDefinition.yaml
+  - $ref: ./FormulaAndFunctionEventQueryDefinition.yaml
+  - $ref: ./FormulaAndFunctionProcessQueryDefinition.yaml
+  - $ref: ./FormulaAndFunctionApmDependencyStatsQueryDefinition.yaml
+  - $ref: ./FormulaAndFunctionApmResourceStatsQueryDefinition.yaml
+  - $ref: ./FormulaAndFunctionSLOQueryDefinition.yaml
+  - $ref: ./FormulaAndFunctionCloudCostQueryDefinition.yaml

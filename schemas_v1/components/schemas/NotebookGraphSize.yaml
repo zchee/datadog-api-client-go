@@ -1,0 +1,15 @@
+description: The size of the graph.
+enum:
+  - xs
+  - s
+  - m
+  - l
+  - xl
+example: m
+type: string
+x-enum-varnames:
+  - EXTRA_SMALL
+  - SMALL
+  - MEDIUM
+  - LARGE
+  - EXTRA_LARGE

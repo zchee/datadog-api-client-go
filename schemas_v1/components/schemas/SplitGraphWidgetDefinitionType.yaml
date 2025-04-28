@@ -1,0 +1,8 @@
+default: split_group
+description: Type of the split graph widget
+enum:
+  - split_group
+example: split_group
+type: string
+x-enum-varnames:
+  - SPLIT_GROUP

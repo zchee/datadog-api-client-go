@@ -1,0 +1,6 @@
+description: Status of downgrade
+properties:
+  message:
+    description: Information pertaining to the downgraded child organization.
+    type: string
+type: object

@@ -1,0 +1,19 @@
+description: Object describing the error.
+properties:
+  id:
+    description: |-
+      The ID of the service level objective object associated with
+      this error.
+    example: ''
+    type: string
+  message:
+    description: The error message.
+    example: ''
+    type: string
+  timeframe:
+    $ref: ./SLOErrorTimeframe.yaml
+required:
+  - id
+  - timeframe
+  - message
+type: object

@@ -1,0 +1,7 @@
+description: Number format options for the widget.
+properties:
+  unit:
+    $ref: ./NumberFormatUnit.yaml
+  unit_scale:
+    $ref: ./NumberFormatUnitScale.yaml
+type: object

@@ -1,0 +1,9 @@
+deprecated: true
+description: A JSON array of billing type.
+example:
+  type: parent_billing
+properties:
+  type:
+    description: The type of billing. Only `parent_billing` is supported.
+    type: string
+type: object

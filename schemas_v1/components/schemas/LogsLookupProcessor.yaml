@@ -1,0 +1,61 @@
+description: >-
+  Use the Lookup Processor to define a mapping between a log attribute
+
+  and a human readable value saved in the processors mapping table.
+
+  For example, you can use the Lookup Processor to map an internal service ID
+
+  into a human readable service name. Alternatively, you could also use it to
+  check
+
+  if the MAC address that just attempted to connect to the production
+
+  environment belongs to your list of stolen machines.
+properties:
+  default_lookup:
+    description: >-
+      Value to set the target attribute if the source value is not found in the
+      list.
+    type: string
+  is_enabled:
+    default: false
+    description: Whether or not the processor is enabled.
+    type: boolean
+  lookup_table:
+    description: >-
+      Mapping table of values for the source attribute and their associated
+      target attribute values,
+
+      formatted as `["source_key1,target_value1", "source_key2,target_value2"]`
+    example:
+      - source_key1,target_value1
+      - source_key2,target_value2
+    items:
+      description: >-
+        Mapping between a source and a value, it should follow the format
+        `"<SOURCE>,<VALUE>"`.
+      type: string
+    type: array
+  name:
+    description: Name of the processor.
+    type: string
+  source:
+    description: Source attribute used to perform the lookup.
+    example: service_id
+    type: string
+  target:
+    description: >-
+      Name of the attribute that contains the corresponding value in the mapping
+      list
+
+      or the `default_lookup` if not found in the mapping list.
+    example: service
+    type: string
+  type:
+    $ref: ./LogsLookupProcessorType.yaml
+required:
+  - source
+  - target
+  - lookup_table
+  - type
+type: object

@@ -1,0 +1,4 @@
+description: Notebook global timeframe.
+oneOf:
+  - $ref: ./NotebookRelativeTime.yaml
+  - $ref: ./NotebookAbsoluteTime.yaml

@@ -1,0 +1,13 @@
+description: |-
+  The interval used when querying data, which defines the size of a time slice.
+  Two values are allowed: 60 (1 minute) and 300 (5 minutes).
+  If not provided, the value defaults to 300 (5 minutes).
+enum:
+  - 60
+  - 300
+example: 300
+format: int32
+type: integer
+x-enum-varnames:
+  - ONE_MINUTE
+  - FIVE_MINUTES

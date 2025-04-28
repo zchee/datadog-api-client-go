@@ -1,0 +1,57 @@
+description: Object containing the uptime information.
+properties:
+  errors:
+    description: >-
+      An array of error objects returned while querying the history data for the
+      service level objective.
+    items:
+      $ref: ./SLOHistoryResponseErrorWithType.yaml
+    nullable: true
+    type: array
+  group:
+    description: The location name
+    example: name
+    type: string
+  history:
+    description: >-
+      The state transition history for the monitor, represented as an array of
+
+      pairs. Each pair is an array where the first element is the transition
+      timestamp
+
+      in Unix epoch format (integer) and the second element is the state
+      (integer).
+
+      For the state, an integer value of `0` indicates uptime, `1` indicates
+      downtime,
+
+      and `2` indicates no data.
+    example:
+      - - 1579212382
+        - 0
+    items:
+      description: An array of transitions
+      example:
+        - 1579212382
+        - 0
+      items:
+        description: A timeseries data point which is a tuple of (timestamp, value).
+        format: double
+        type: number
+      maxItems: 2
+      minItems: 2
+      type: array
+    type: array
+  span_precision:
+    description: >-
+      The number of decimal places to which the SLI value is accurate for the
+      given from-to timestamps.
+    example: 2
+    format: double
+    type: number
+  uptime:
+    description: The overall uptime.
+    example: 99.99
+    format: double
+    type: number
+type: object

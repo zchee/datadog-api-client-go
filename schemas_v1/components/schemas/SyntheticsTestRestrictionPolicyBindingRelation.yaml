@@ -1,0 +1,8 @@
+description: The type of relation for the binding.
+enum:
+  - editor
+  - viewer
+type: string
+x-enum-varnames:
+  - EDITOR
+  - VIEWER

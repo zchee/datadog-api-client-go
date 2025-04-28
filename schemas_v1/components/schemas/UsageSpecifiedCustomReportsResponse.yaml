@@ -1,0 +1,7 @@
+description: Returns available specified custom reports.
+properties:
+  data:
+    $ref: ./UsageSpecifiedCustomReportsData.yaml
+  meta:
+    $ref: ./UsageSpecifiedCustomReportsMeta.yaml
+type: object

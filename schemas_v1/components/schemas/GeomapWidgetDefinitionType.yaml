@@ -1,0 +1,8 @@
+default: geomap
+description: Type of the geomap widget.
+enum:
+  - geomap
+example: geomap
+type: string
+x-enum-varnames:
+  - GEOMAP

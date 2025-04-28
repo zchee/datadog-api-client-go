@@ -1,0 +1,4 @@
+description: Array of all log pipeline objects configured for the organization.
+items:
+  $ref: ./LogsPipeline.yaml
+type: array

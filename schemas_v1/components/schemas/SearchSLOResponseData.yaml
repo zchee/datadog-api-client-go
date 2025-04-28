@@ -1,0 +1,9 @@
+description: Data from search SLO response.
+properties:
+  attributes:
+    $ref: ./SearchSLOResponseDataAttributes.yaml
+  type:
+    description: Type of service level objective result.
+    example: ''
+    type: string
+type: object

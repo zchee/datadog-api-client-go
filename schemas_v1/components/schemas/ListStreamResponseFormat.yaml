@@ -1,0 +1,7 @@
+description: Widget response format.
+enum:
+  - event_list
+example: event_list
+type: string
+x-enum-varnames:
+  - EVENT_LIST

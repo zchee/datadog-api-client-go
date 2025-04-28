@@ -1,0 +1,12 @@
+description: |-
+  Object containing a deleted Synthetic test ID with the associated
+  deletion timestamp.
+properties:
+  deleted_at:
+    description: Deletion timestamp of the Synthetic test ID.
+    format: date-time
+    type: string
+  public_id:
+    description: The Synthetic test ID deleted.
+    type: string
+type: object

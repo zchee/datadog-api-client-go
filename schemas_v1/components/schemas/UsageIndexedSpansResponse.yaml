@@ -1,0 +1,8 @@
+description: A response containing indexed spans usage.
+properties:
+  usage:
+    description: Array with the number of hourly traces indexed for a given organization.
+    items:
+      $ref: ./UsageIndexedSpansHour.yaml
+    type: array
+type: object

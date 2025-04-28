@@ -1,0 +1,7 @@
+description: The subtype of the Synthetic multi-step API wait step.
+enum:
+  - wait
+example: wait
+type: string
+x-enum-varnames:
+  - WAIT

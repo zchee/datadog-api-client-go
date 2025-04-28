@@ -1,0 +1,8 @@
+description: List of definitions.
+example: {}
+properties:
+  fill:
+    $ref: ./HostMapRequest.yaml
+  size:
+    $ref: ./HostMapRequest.yaml
+type: object

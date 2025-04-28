@@ -1,0 +1,37 @@
+description: A formula and functions metrics query.
+example:
+  additional_query_filters: '*'
+  data_source: slo
+  group_mode: overall
+  measure: good_events
+  name: my_slo
+  slo_id: '12345678910'
+  slo_query_type: metric
+properties:
+  additional_query_filters:
+    description: Additional filters applied to the SLO query.
+    example: host:host_a,env:prod
+    type: string
+  cross_org_uuids:
+    $ref: ./CrossOrgUuids.yaml
+  data_source:
+    $ref: ./FormulaAndFunctionSLODataSource.yaml
+  group_mode:
+    $ref: ./FormulaAndFunctionSLOGroupMode.yaml
+  measure:
+    $ref: ./FormulaAndFunctionSLOMeasure.yaml
+  name:
+    description: Name of the query for use in formulas.
+    example: my_slo
+    type: string
+  slo_id:
+    description: ID of an SLO to query measures.
+    example: '12345678910'
+    type: string
+  slo_query_type:
+    $ref: ./FormulaAndFunctionSLOQueryType.yaml
+required:
+  - data_source
+  - slo_id
+  - measure
+type: object

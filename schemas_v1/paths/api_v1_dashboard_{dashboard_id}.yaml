@@ -1,0 +1,143 @@
+delete:
+  description: Delete a dashboard using the specified ID.
+  operationId: DeleteDashboard
+  parameters:
+    - description: The ID of the dashboard.
+      in: path
+      name: dashboard_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DashboardDeleteResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Dashboards Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_write
+  summary: Delete a dashboard
+  tags:
+    - Dashboards
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_write
+get:
+  description: Get a dashboard using the specified ID.
+  operationId: GetDashboard
+  parameters:
+    - description: The ID of the dashboard.
+      in: path
+      name: dashboard_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Dashboard.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_read
+  summary: Get a dashboard
+  tags:
+    - Dashboards
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_read
+put:
+  description: Update a dashboard using the specified ID.
+  operationId: UpdateDashboard
+  parameters:
+    - description: The ID of the dashboard.
+      in: path
+      name: dashboard_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Dashboard.yaml
+    description: Update Dashboard request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Dashboard.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_write
+  summary: Update a dashboard
+  tags:
+    - Dashboards
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_write

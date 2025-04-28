@@ -1,0 +1,55 @@
+description: APM resource stats query using formulas and functions.
+properties:
+  cross_org_uuids:
+    $ref: ./CrossOrgUuids.yaml
+  data_source:
+    $ref: ./FormulaAndFunctionApmResourceStatsDataSource.yaml
+  env:
+    description: APM environment.
+    example: staging
+    type: string
+  group_by:
+    description: Array of fields to group results by.
+    items:
+      description: Field to group results by.
+      example: resource_name
+      type: string
+    type: array
+  name:
+    description: Name of this query to use in formulas.
+    example: query_errors
+    type: string
+  operation_name:
+    description: Name of operation on service.
+    example: cassandra.query
+    type: string
+  primary_tag_name:
+    description: >-
+      Name of the second primary tag used within APM. Required when
+      `primary_tag_value` is specified. See
+      https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
+    example: datacenter
+    type: string
+  primary_tag_value:
+    description: >-
+      Value of the second primary tag by which to filter APM data.
+      `primary_tag_name` must also be specified.
+    example: us-east-az
+    type: string
+  resource_name:
+    description: APM resource name.
+    example: Admin::ProductsController#create
+    type: string
+  service:
+    description: APM service name.
+    example: web-store
+    type: string
+  stat:
+    $ref: ./FormulaAndFunctionApmResourceStatName.yaml
+required:
+  - data_source
+  - env
+  - name
+  - service
+  - stat
+type: object

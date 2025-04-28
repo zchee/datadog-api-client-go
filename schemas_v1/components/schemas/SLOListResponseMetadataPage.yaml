@@ -1,0 +1,16 @@
+description: The object containing information about the pages of the list of SLOs.
+properties:
+  total_count:
+    description: >-
+      The total number of resources that could be retrieved ignoring the
+      parameters and filters in the request.
+    format: int64
+    type: integer
+  total_filtered_count:
+    description: >-
+      The total number of resources that match the parameters and filters in the
+      request. This attribute can be used by a client to determine the total
+      number of pages.
+    format: int64
+    type: integer
+type: object

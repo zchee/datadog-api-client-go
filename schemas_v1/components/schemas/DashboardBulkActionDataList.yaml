@@ -1,0 +1,7 @@
+description: List of dashboard bulk action request data objects.
+example:
+  - id: 123-abc-456
+    type: dashboard
+items:
+  $ref: ./DashboardBulkActionData.yaml
+type: array

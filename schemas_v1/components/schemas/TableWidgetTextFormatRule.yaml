@@ -1,0 +1,30 @@
+description: Text format rules.
+example:
+  match:
+    type: is
+    value: apple
+  replace:
+    type: all
+    with: vegetable
+properties:
+  custom_bg_color:
+    description: >-
+      Hex representation of the custom background color. Used with custom
+      background palette option.
+    example: '#632ca6'
+    type: string
+  custom_fg_color:
+    description: >-
+      Hex representation of the custom text color. Used with custom text palette
+      option.
+    example: '#632ca6'
+    type: string
+  match:
+    $ref: ./TableWidgetTextFormatMatch.yaml
+  palette:
+    $ref: ./TableWidgetTextFormatPalette.yaml
+  replace:
+    $ref: ./TableWidgetTextFormatReplace.yaml
+required:
+  - match
+type: object

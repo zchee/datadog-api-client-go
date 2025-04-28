@@ -1,0 +1,26 @@
+description: Custom variable for Webhook integration.
+properties:
+  is_secret:
+    description: >-
+      Make custom variable is secret or not.
+
+      If the custom variable is secret, the value is not returned in the
+      response payload.
+    example: true
+    type: boolean
+  name:
+    description: >-
+      The name of the variable. It corresponds with `<CUSTOM_VARIABLE_NAME>`. It
+      must only contains upper-case characters, integers or underscores.
+    example: CUSTOM_VARIABLE_NAME
+    type: string
+  value:
+    description: >-
+      Value of the custom variable. It won't be returned if the variable is
+      secret.
+    example: CUSTOM_VARIABLE_VALUE
+    type: string
+required:
+  - name
+  - is_secret
+type: object

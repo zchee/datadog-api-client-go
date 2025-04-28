@@ -1,0 +1,8 @@
+default: dashboard
+description: Dashboard resource type.
+enum:
+  - dashboard
+example: dashboard
+type: string
+x-enum-varnames:
+  - DASHBOARD

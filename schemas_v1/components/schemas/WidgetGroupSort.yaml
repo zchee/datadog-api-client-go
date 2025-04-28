@@ -1,0 +1,15 @@
+description: The group to sort the widget by.
+properties:
+  name:
+    description: The name of the group.
+    example: group_name
+    type: string
+  order:
+    $ref: ./WidgetSort.yaml
+  type:
+    $ref: ./GroupType.yaml
+required:
+  - type
+  - name
+  - order
+type: object

@@ -1,0 +1,8 @@
+description: Object containing an array of Synthetic global variables.
+properties:
+  variables:
+    description: Array of Synthetic global variables.
+    items:
+      $ref: ./SyntheticsGlobalVariable.yaml
+    type: array
+type: object

@@ -1,0 +1,7 @@
+description: Client certificate to use when performing the test request.
+properties:
+  cert:
+    $ref: ./SyntheticsTestRequestCertificateItem.yaml
+  key:
+    $ref: ./SyntheticsTestRequestCertificateItem.yaml
+type: object

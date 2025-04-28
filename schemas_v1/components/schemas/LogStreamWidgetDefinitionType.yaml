@@ -1,0 +1,8 @@
+default: log_stream
+description: Type of the log stream widget.
+enum:
+  - log_stream
+example: log_stream
+type: string
+x-enum-varnames:
+  - LOG_STREAM

@@ -1,0 +1,8 @@
+default: powerpack
+description: Type of the powerpack widget.
+enum:
+  - powerpack
+example: powerpack
+type: string
+x-enum-varnames:
+  - POWERPACK

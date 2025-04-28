@@ -1,0 +1,9 @@
+default: json
+description: Encoding type. Can be given either `json` or `form`.
+enum:
+  - json
+  - form
+type: string
+x-enum-varnames:
+  - JSON
+  - FORM

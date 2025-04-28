@@ -1,0 +1,11 @@
+description: Wrapper object with the list of monitor IDs.
+example: {}
+properties:
+  ok:
+    description: An array of Monitor IDs that can be safely deleted.
+    items:
+      description: ID of a monitor that can be safely deleted.
+      format: int64
+      type: integer
+    type: array
+type: object

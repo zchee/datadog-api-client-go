@@ -1,0 +1,11 @@
+description: Name of the query for use in formulas.
+enum:
+  - metric
+  - monitor
+  - time_slice
+example: metric
+type: string
+x-enum-varnames:
+  - METRIC
+  - MONITOR
+  - TIME_SLICE

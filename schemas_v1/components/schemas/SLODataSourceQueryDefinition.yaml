@@ -1,0 +1,7 @@
+description: A formula and function query.
+example:
+  data_source: metrics
+  name: query1
+  query: sum:trace.servlet.request.hits{*} by {env}.as_count()
+oneOf:
+  - $ref: ./FormulaAndFunctionMetricQueryDefinition.yaml

@@ -1,0 +1,37 @@
+description: >-
+  The scatter plot visualization allows you to graph a chosen scope over two
+  different metrics with their respective aggregation.
+properties:
+  color_by_groups:
+    description: List of groups used for colors.
+    items:
+      description: Group name.
+      type: string
+    type: array
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  requests:
+    $ref: ./ScatterPlotWidgetDefinitionRequests.yaml
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of your widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./ScatterPlotWidgetDefinitionType.yaml
+  xaxis:
+    $ref: ./WidgetAxis.yaml
+  yaxis:
+    $ref: ./WidgetAxis.yaml
+required:
+  - type
+  - requests
+type: object

@@ -1,0 +1,7 @@
+description: Request that will return nodes and edges to be used by topology map.
+properties:
+  query:
+    $ref: ./TopologyQuery.yaml
+  request_type:
+    $ref: ./TopologyRequestType.yaml
+type: object

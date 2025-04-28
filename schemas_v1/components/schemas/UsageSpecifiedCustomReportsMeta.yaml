@@ -1,0 +1,5 @@
+description: The object containing document metadata.
+properties:
+  page:
+    $ref: ./UsageSpecifiedCustomReportsPage.yaml
+type: object

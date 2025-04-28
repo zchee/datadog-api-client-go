@@ -1,0 +1,24 @@
+description: Information about the element used for a step.
+properties:
+  context:
+    description: Context of the element.
+    type: string
+  contextType:
+    $ref: ./SyntheticsMobileStepParamsElementContextType.yaml
+  elementDescription:
+    description: Description of the element.
+    type: string
+  multiLocator:
+    description: Multi-locator to find the element.
+    type: object
+  relativePosition:
+    $ref: ./SyntheticsMobileStepParamsElementRelativePosition.yaml
+  textContent:
+    description: Text content of the element.
+    type: string
+  userLocator:
+    $ref: ./SyntheticsMobileStepParamsElementUserLocator.yaml
+  viewName:
+    description: Name of the view of the element.
+    type: string
+type: object

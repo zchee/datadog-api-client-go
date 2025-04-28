@@ -1,0 +1,11 @@
+description: Widget column width.
+enum:
+  - auto
+  - compact
+  - full
+example: compact
+type: string
+x-enum-varnames:
+  - AUTO
+  - COMPACT
+  - FULL

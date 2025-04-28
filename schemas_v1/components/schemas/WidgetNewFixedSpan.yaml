@@ -1,0 +1,21 @@
+description: Used for fixed span times, such as 'March 1 to March 7'.
+properties:
+  from:
+    description: Start time in seconds since epoch.
+    example: 1712080128
+    format: int64
+    minimum: 0
+    type: integer
+  to:
+    description: End time in seconds since epoch.
+    example: 1712083128
+    format: int64
+    minimum: 0
+    type: integer
+  type:
+    $ref: ./WidgetNewFixedSpanType.yaml
+required:
+  - type
+  - from
+  - to
+type: object

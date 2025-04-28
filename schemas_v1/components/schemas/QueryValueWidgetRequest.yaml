@@ -1,0 +1,43 @@
+description: Updated query value widget.
+properties:
+  aggregator:
+    $ref: ./WidgetAggregator.yaml
+  apm_query:
+    $ref: ./LogQueryDefinition.yaml
+  audit_query:
+    $ref: ./LogQueryDefinition.yaml
+  conditional_formats:
+    description: List of conditional formats.
+    items:
+      $ref: ./WidgetConditionalFormat.yaml
+    type: array
+  event_query:
+    $ref: ./LogQueryDefinition.yaml
+  formulas:
+    description: List of formulas that operate on queries.
+    items:
+      $ref: ./WidgetFormula.yaml
+    type: array
+  log_query:
+    $ref: ./LogQueryDefinition.yaml
+  network_query:
+    $ref: ./LogQueryDefinition.yaml
+  process_query:
+    $ref: ./ProcessQueryDefinition.yaml
+  profile_metrics_query:
+    $ref: ./LogQueryDefinition.yaml
+  q:
+    description: TODO.
+    type: string
+  queries:
+    description: List of queries that can be returned directly or used in formulas.
+    items:
+      $ref: ./FormulaAndFunctionQueryDefinition.yaml
+    type: array
+  response_format:
+    $ref: ./FormulaAndFunctionResponseFormat.yaml
+  rum_query:
+    $ref: ./LogQueryDefinition.yaml
+  security_query:
+    $ref: ./LogQueryDefinition.yaml
+type: object

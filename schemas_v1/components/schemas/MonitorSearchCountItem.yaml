@@ -1,0 +1,11 @@
+description: A facet item.
+properties:
+  count:
+    description: The number of found monitors with the listed value.
+    format: int64
+    readOnly: true
+    type: integer
+  name:
+    description: The facet value.
+    readOnly: true
+type: object

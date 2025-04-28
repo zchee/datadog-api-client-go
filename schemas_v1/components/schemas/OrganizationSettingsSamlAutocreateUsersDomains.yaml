@@ -1,0 +1,18 @@
+description: >-
+  Has two properties, `enabled` (boolean) and `domains`, which is a list of
+  domains without the @ symbol.
+properties:
+  domains:
+    description: List of domains where the SAML automated user creation is enabled.
+    items:
+      description: Domain to automate user creation from.
+      example: example.com
+      type: string
+    type: array
+  enabled:
+    description: >-
+      Whether or not the automated user creation based on SAML domain is
+      enabled.
+    example: false
+    type: boolean
+type: object

@@ -1,0 +1,10 @@
+description: An API key with its associated metadata.
+example:
+  api_key:
+    created_by: test_user
+    key: 1234512345123456abcabc912349abcd
+    name: app_key
+properties:
+  api_key:
+    $ref: ./ApiKey.yaml
+type: object

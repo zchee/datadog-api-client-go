@@ -1,0 +1,38 @@
+description: The steps used in a Synthetic mobile test.
+properties:
+  allowFailure:
+    description: A boolean set to allow this step to fail.
+    type: boolean
+  hasNewStepElement:
+    description: A boolean set to determine if the step has a new step element.
+    type: boolean
+  isCritical:
+    description: >-
+      A boolean to use in addition to `allowFailure` to determine if the test
+      should be marked as failed when the step fails.
+    type: boolean
+  name:
+    description: The name of the step.
+    example: ''
+    maxLength: 1500
+    type: string
+  noScreenshot:
+    description: A boolean set to not take a screenshot for the step.
+    type: boolean
+  params:
+    $ref: ./SyntheticsMobileStepParams.yaml
+  publicId:
+    description: The public ID of the step.
+    example: pub-lic-id0
+    type: string
+  timeout:
+    description: The time before declaring a step failed.
+    format: int64
+    type: integer
+  type:
+    $ref: ./SyntheticsMobileStepType.yaml
+required:
+  - name
+  - params
+  - type
+type: object

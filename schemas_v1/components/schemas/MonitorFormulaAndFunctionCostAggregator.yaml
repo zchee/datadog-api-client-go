@@ -1,0 +1,23 @@
+description: Aggregation methods for metric queries.
+enum:
+  - avg
+  - sum
+  - max
+  - min
+  - last
+  - area
+  - l2norm
+  - percentile
+  - stddev
+example: avg
+type: string
+x-enum-varnames:
+  - AVG
+  - SUM
+  - MAX
+  - MIN
+  - LAST
+  - AREA
+  - L2NORM
+  - PERCENTILE
+  - STDDEV

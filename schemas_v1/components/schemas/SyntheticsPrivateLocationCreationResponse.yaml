@@ -1,0 +1,14 @@
+description: >-
+  Object that contains the new private location, the public key for result
+  encryption, and the configuration skeleton.
+properties:
+  config:
+    description: >-
+      Configuration skeleton for the private location. See installation
+      instructions of the private location on how to use this configuration.
+    type: object
+  private_location:
+    $ref: ./SyntheticsPrivateLocation.yaml
+  result_encryption:
+    $ref: ./SyntheticsPrivateLocationCreationResponseResultEncryption.yaml
+type: object

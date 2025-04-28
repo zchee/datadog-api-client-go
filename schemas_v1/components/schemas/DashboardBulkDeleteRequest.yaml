@@ -1,0 +1,11 @@
+description: Dashboard bulk delete request body.
+example:
+  data:
+    - id: 123-abc-456
+      type: dashboard
+properties:
+  data:
+    $ref: ./DashboardBulkActionDataList.yaml
+required:
+  - data
+type: object

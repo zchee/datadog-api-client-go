@@ -1,0 +1,42 @@
+description: >
+  The list stream visualization displays a table of recent events in your
+  application that
+
+  match a search criteria using user-defined columns.
+properties:
+  legend_size:
+    $ref: ./WidgetLegendSize.yaml
+  requests:
+    description: Request payload used to query items.
+    example:
+      - columns:
+          - field: timestamp
+            width: auto
+        query:
+          data_source: apm_issue_stream
+          query_string: '@data_source:APM'
+        response_format: event_list
+    items:
+      $ref: ./ListStreamWidgetRequest.yaml
+    maxItems: 1
+    minItems: 1
+    type: array
+  show_legend:
+    description: Whether or not to display the legend on this widget.
+    type: boolean
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./ListStreamWidgetDefinitionType.yaml
+required:
+  - type
+  - requests
+type: object

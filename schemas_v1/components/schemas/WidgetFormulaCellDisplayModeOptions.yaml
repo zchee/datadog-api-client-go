@@ -1,0 +1,9 @@
+description: >-
+  Cell display mode options for the widget formula. (only if `cell_display_mode`
+  is set to `trend`).
+properties:
+  trend_type:
+    $ref: ./WidgetFormulaCellDisplayModeOptionsTrendType.yaml
+  y_scale:
+    $ref: ./WidgetFormulaCellDisplayModeOptionsYScale.yaml
+type: object

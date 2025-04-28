@@ -1,0 +1,19 @@
+description: Mobile application for mobile synthetics test.
+properties:
+  applicationId:
+    description: Application ID of the mobile application.
+    example: 00000000-0000-0000-0000-aaaaaaaaaaaa
+    maxLength: 1500
+    type: string
+  referenceId:
+    description: Reference ID of the mobile application.
+    example: 00000000-0000-0000-0000-aaaaaaaaaaab
+    maxLength: 1500
+    type: string
+  referenceType:
+    $ref: ./SyntheticsMobileTestsMobileApplicationReferenceType.yaml
+required:
+  - applicationId
+  - referenceId
+  - referenceType
+type: object

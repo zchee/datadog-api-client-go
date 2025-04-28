@@ -1,0 +1,8 @@
+description: Type of the context that the element is in.
+enum:
+  - native
+  - web
+type: string
+x-enum-varnames:
+  - NATIVE
+  - WEB

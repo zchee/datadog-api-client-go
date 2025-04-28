@@ -1,0 +1,11 @@
+description: Array of strings.
+example:
+  - ntp
+  - ntp
+  - ntp:d884b5186b651429
+  - OK
+  - ''
+  - ''
+items:
+  description: Agent check running on the host.
+type: array

@@ -1,0 +1,9 @@
+description: A notification end type.
+enum:
+  - canceled
+  - expired
+example: expired
+type: string
+x-enum-varnames:
+  - CANCELED
+  - EXPIRED

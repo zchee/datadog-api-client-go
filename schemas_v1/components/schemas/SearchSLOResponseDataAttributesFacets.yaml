@@ -1,0 +1,43 @@
+description: Facets
+properties:
+  all_tags:
+    description: All tags associated with an SLO.
+    items:
+      $ref: ./SearchSLOResponseDataAttributesFacetsObjectString.yaml
+    type: array
+  creator_name:
+    description: Creator of an SLO.
+    items:
+      $ref: ./SearchSLOResponseDataAttributesFacetsObjectString.yaml
+    type: array
+  env_tags:
+    description: Tags with the `env` tag key.
+    items:
+      $ref: ./SearchSLOResponseDataAttributesFacetsObjectString.yaml
+    type: array
+  service_tags:
+    description: Tags with the `service` tag key.
+    items:
+      $ref: ./SearchSLOResponseDataAttributesFacetsObjectString.yaml
+    type: array
+  slo_type:
+    description: Type of SLO.
+    items:
+      $ref: ./SearchSLOResponseDataAttributesFacetsObjectInt.yaml
+    type: array
+  target:
+    description: SLO Target
+    items:
+      $ref: ./SearchSLOResponseDataAttributesFacetsObjectInt.yaml
+    type: array
+  team_tags:
+    description: Tags with the `team` tag key.
+    items:
+      $ref: ./SearchSLOResponseDataAttributesFacetsObjectString.yaml
+    type: array
+  timeframe:
+    description: Timeframes of SLOs.
+    items:
+      $ref: ./SearchSLOResponseDataAttributesFacetsObjectString.yaml
+    type: array
+type: object

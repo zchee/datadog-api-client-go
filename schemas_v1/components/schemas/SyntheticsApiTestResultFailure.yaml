@@ -1,0 +1,9 @@
+description: The API test failure details.
+properties:
+  code:
+    $ref: ./SyntheticsApiTestFailureCode.yaml
+  message:
+    description: The API test error message.
+    example: Error during DNS resolution (ENOTFOUND).
+    type: string
+type: object

@@ -1,0 +1,37 @@
+description: >-
+  This widget displays a map of a service to all of the services that call it,
+  and all of the services that it calls.
+properties:
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  filters:
+    description: Your environment and primary tag (or * if enabled for your account).
+    example:
+      - '*'
+    items:
+      description: Filter name.
+      type: string
+    minItems: 1
+    type: array
+  service:
+    description: The ID of the service you want to map.
+    example: ''
+    type: string
+  title:
+    description: The title of your widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./ServiceMapWidgetDefinitionType.yaml
+required:
+  - type
+  - filters
+  - service
+type: object

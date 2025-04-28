@@ -1,0 +1,63 @@
+description: Hour usage for logs.
+properties:
+  billable_ingested_bytes:
+    description: Contains the number of billable log bytes ingested.
+    format: int64
+    nullable: true
+    type: integer
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  indexed_events_count:
+    description: Contains the number of log events indexed.
+    format: int64
+    nullable: true
+    type: integer
+  ingested_events_bytes:
+    description: Contains the number of log bytes ingested.
+    format: int64
+    nullable: true
+    type: integer
+  logs_forwarding_events_bytes:
+    description: >-
+      Contains the number of logs forwarded bytes (data available as of April
+      1st 2023)
+    format: int64
+    nullable: true
+    type: integer
+  logs_live_indexed_count:
+    description: >-
+      Contains the number of live log events indexed (data available as of
+      December 1, 2020).
+    format: int64
+    nullable: true
+    type: integer
+  logs_live_ingested_bytes:
+    description: >-
+      Contains the number of live log bytes ingested (data available as of
+      December 1, 2020).
+    format: int64
+    nullable: true
+    type: integer
+  logs_rehydrated_indexed_count:
+    description: >-
+      Contains the number of rehydrated log events indexed (data available as of
+      December 1, 2020).
+    format: int64
+    nullable: true
+    type: integer
+  logs_rehydrated_ingested_bytes:
+    description: >-
+      Contains the number of rehydrated log bytes ingested (data available as of
+      December 1, 2020).
+    format: int64
+    nullable: true
+    type: integer
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

@@ -1,0 +1,13 @@
+description: The objects used to set an AWS tag filter.
+properties:
+  account_id:
+    description: Your AWS Account ID without dashes.
+    example: '123456789012'
+    type: string
+  namespace:
+    $ref: ./AWSNamespace.yaml
+  tag_filter_str:
+    description: The tag filter string.
+    example: prod*
+    type: string
+type: object

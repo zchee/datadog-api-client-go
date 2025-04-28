@@ -1,0 +1,11 @@
+description: |-
+  Synthetic location that can be used when creating or editing a
+  test.
+properties:
+  id:
+    description: Unique identifier of the location.
+    type: string
+  name:
+    description: Name of the location.
+    type: string
+type: object

@@ -1,0 +1,36 @@
+description: >-
+  Configuration options for the evaluation window. If `hour_starts` is set, no
+  other fields may be set. Otherwise, `day_starts` and `month_starts` must be
+  set together.
+properties:
+  day_starts:
+    description: >-
+      The time of the day at which a one day cumulative evaluation window
+      starts.
+    example: '04:00'
+    type: string
+  hour_starts:
+    description: >-
+      The minute of the hour at which a one hour cumulative evaluation window
+      starts.
+    example: 0
+    format: int32
+    maximum: 59
+    minimum: 0
+    type: integer
+  month_starts:
+    description: >-
+      The day of the month at which a one month cumulative evaluation window
+      starts.
+    example: 1
+    format: int32
+    maximum: 1
+    minimum: 1
+    type: integer
+  timezone:
+    description: >-
+      The timezone of the time of the day of the cumulative evaluation window
+      start.
+    example: Europe/Paris
+    type: string
+type: object

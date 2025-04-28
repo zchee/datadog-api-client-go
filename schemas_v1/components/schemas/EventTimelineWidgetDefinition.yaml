@@ -1,0 +1,27 @@
+description: >-
+  The event timeline is a widget version of the timeline that appears at the top
+  of the Event Stream view. Only available on FREE layout dashboards.
+properties:
+  query:
+    description: Query to filter the event timeline with.
+    example: ''
+    type: string
+  tags_execution:
+    description: The execution method for multi-value filters. Can be either and or or.
+    type: string
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./EventTimelineWidgetDefinitionType.yaml
+required:
+  - type
+  - query
+type: object

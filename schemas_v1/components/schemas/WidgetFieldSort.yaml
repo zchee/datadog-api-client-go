@@ -1,0 +1,12 @@
+description: Which column and order to sort by
+properties:
+  column:
+    description: Facet path for the column
+    example: ''
+    type: string
+  order:
+    $ref: ./WidgetSort.yaml
+required:
+  - column
+  - order
+type: object

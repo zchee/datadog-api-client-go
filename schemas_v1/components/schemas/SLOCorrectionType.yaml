@@ -1,0 +1,8 @@
+default: correction
+description: SLO correction resource type.
+enum:
+  - correction
+example: correction
+type: string
+x-enum-varnames:
+  - CORRECTION

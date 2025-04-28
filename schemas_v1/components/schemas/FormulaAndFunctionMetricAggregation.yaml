@@ -1,0 +1,21 @@
+description: The aggregation methods available for metrics queries.
+enum:
+  - avg
+  - min
+  - max
+  - sum
+  - last
+  - area
+  - l2norm
+  - percentile
+example: avg
+type: string
+x-enum-varnames:
+  - AVG
+  - MIN
+  - MAX
+  - SUM
+  - LAST
+  - AREA
+  - L2NORM
+  - PERCENTILE

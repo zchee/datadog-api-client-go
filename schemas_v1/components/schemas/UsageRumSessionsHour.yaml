@@ -1,0 +1,52 @@
+description: Number of RUM sessions recorded for each hour for a given organization.
+properties:
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+  replay_session_count:
+    description: >-
+      Contains the number of RUM Session Replay counts (data available beginning
+      November 1, 2021).
+    format: int64
+    type: integer
+  session_count:
+    description: Contains the number of browser RUM lite Sessions.
+    format: int64
+    nullable: true
+    type: integer
+  session_count_android:
+    description: >-
+      Contains the number of mobile RUM sessions on Android (data available
+      beginning December 1, 2020).
+    format: int64
+    nullable: true
+    type: integer
+  session_count_flutter:
+    description: >-
+      Contains the number of mobile RUM sessions on Flutter (data available
+      beginning March 1, 2023).
+    format: int64
+    nullable: true
+    type: integer
+  session_count_ios:
+    description: >-
+      Contains the number of mobile RUM sessions on iOS (data available
+      beginning December 1, 2020).
+    format: int64
+    nullable: true
+    type: integer
+  session_count_reactnative:
+    description: >-
+      Contains the number of mobile RUM sessions on React Native (data available
+      beginning May 1, 2022).
+    format: int64
+    nullable: true
+    type: integer
+type: object

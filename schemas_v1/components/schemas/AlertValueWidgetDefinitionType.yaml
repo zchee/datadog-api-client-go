@@ -1,0 +1,8 @@
+default: alert_value
+description: Type of the alert value widget.
+enum:
+  - alert_value
+example: alert_value
+type: string
+x-enum-varnames:
+  - ALERT_VALUE

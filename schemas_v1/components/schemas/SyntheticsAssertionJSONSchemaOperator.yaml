@@ -1,0 +1,7 @@
+description: Assertion operator to apply.
+enum:
+  - validatesJSONSchema
+example: validatesJSONSchema
+type: string
+x-enum-varnames:
+  - VALIDATES_JSON_SCHEMA

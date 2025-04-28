@@ -1,0 +1,9 @@
+description: Git information.
+properties:
+  branch:
+    description: Branch name.
+    type: string
+  commitSha:
+    description: The commit SHA.
+    type: string
+type: object

@@ -1,0 +1,27 @@
+description: |-
+  Number of Lambda functions and sum of the invocations of all Lambda functions
+  for each hour for a given organization.
+properties:
+  func_count:
+    description: >-
+      Contains the number of different functions for each region and AWS
+      account.
+    format: int64
+    nullable: true
+    type: integer
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  invocations_sum:
+    description: Contains the sum of invocations of all functions.
+    format: int64
+    nullable: true
+    type: integer
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

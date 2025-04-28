@@ -1,0 +1,8 @@
+default: list_stream
+description: Type of the list stream widget.
+enum:
+  - list_stream
+example: list_stream
+type: string
+x-enum-varnames:
+  - LIST_STREAM

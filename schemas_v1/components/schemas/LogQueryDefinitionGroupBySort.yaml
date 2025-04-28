@@ -1,0 +1,16 @@
+description: Define a sorting method.
+properties:
+  aggregation:
+    description: The aggregation method.
+    example: avg
+    type: string
+  facet:
+    description: Facet name.
+    example: '@string_query.interval'
+    type: string
+  order:
+    $ref: ./WidgetSort.yaml
+required:
+  - aggregation
+  - order
+type: object

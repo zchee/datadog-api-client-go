@@ -1,0 +1,8 @@
+description: Array of Datadog users for a given organization.
+properties:
+  users:
+    description: Array of users.
+    items:
+      $ref: ./User.yaml
+    type: array
+type: object

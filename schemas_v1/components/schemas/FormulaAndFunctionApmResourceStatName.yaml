@@ -1,0 +1,27 @@
+description: APM resource stat name.
+enum:
+  - errors
+  - error_rate
+  - hits
+  - latency_avg
+  - latency_distribution
+  - latency_max
+  - latency_p50
+  - latency_p75
+  - latency_p90
+  - latency_p95
+  - latency_p99
+example: hits
+type: string
+x-enum-varnames:
+  - ERRORS
+  - ERROR_RATE
+  - HITS
+  - LATENCY_AVG
+  - LATENCY_DISTRIBUTION
+  - LATENCY_MAX
+  - LATENCY_P50
+  - LATENCY_P75
+  - LATENCY_P90
+  - LATENCY_P95
+  - LATENCY_P99

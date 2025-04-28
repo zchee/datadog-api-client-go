@@ -1,0 +1,11 @@
+description: An object describing the EventBridge configuration for multiple accounts.
+properties:
+  accounts:
+    description: List of accounts with their event sources.
+    items:
+      $ref: ./AWSEventBridgeAccountConfiguration.yaml
+    type: array
+  isInstalled:
+    description: True if the EventBridge sub-integration is enabled for your organization.
+    type: boolean
+type: object

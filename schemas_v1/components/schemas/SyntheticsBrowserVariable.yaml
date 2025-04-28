@@ -1,0 +1,30 @@
+description: >-
+  Object defining a variable that can be used in your browser test.
+
+  See the [Recording Steps
+  documentation](https://docs.datadoghq.com/synthetics/browser_tests/actions/?tab=testanelementontheactivepage#variables).
+properties:
+  example:
+    description: Example for the variable.
+    type: string
+  id:
+    description: ID for the variable. Global variables require an ID.
+    type: string
+  name:
+    description: Name of the variable.
+    example: VARIABLE_NAME
+    type: string
+  pattern:
+    description: Pattern of the variable.
+    type: string
+  secure:
+    description: >-
+      Determines whether or not the browser test variable is obfuscated. Can
+      only be used with browser variables of type `text`.
+    type: boolean
+  type:
+    $ref: ./SyntheticsBrowserVariableType.yaml
+required:
+  - type
+  - name
+type: object

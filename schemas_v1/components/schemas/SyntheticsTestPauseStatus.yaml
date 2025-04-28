@@ -1,0 +1,11 @@
+description: |-
+  Define whether you want to start (`live`) or pause (`paused`) a
+  Synthetic test.
+enum:
+  - live
+  - paused
+example: live
+type: string
+x-enum-varnames:
+  - LIVE
+  - PAUSED

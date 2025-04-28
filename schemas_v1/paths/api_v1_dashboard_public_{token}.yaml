@@ -1,0 +1,163 @@
+delete:
+  description: >-
+    Revoke the public URL for a dashboard (rendering it private) associated with
+    the specified token.
+  operationId: DeletePublicDashboard
+  parameters:
+    - description: The token of the shared dashboard.
+      in: path
+      name: token
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DeleteSharedDashboardResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Shared Dashboard Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_public_share
+  summary: Revoke a shared dashboard URL
+  tags:
+    - Dashboards
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_public_share
+get:
+  description: >-
+    Fetch an existing shared dashboard's sharing metadata associated with the
+    specified token.
+  operationId: GetPublicDashboard
+  parameters:
+    - description: The token of the shared dashboard. Generated when a dashboard is shared.
+      in: path
+      name: token
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SharedDashboard.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Shared Dashboard Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_read
+  summary: Get a shared dashboard
+  tags:
+    - Dashboards
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_read
+put:
+  description: Update a shared dashboard associated with the specified token.
+  operationId: UpdatePublicDashboard
+  parameters:
+    - description: The token of the shared dashboard.
+      in: path
+      name: token
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        examples:
+          json-request-body:
+            value:
+              global_time:
+                live_span: 1h
+              selectable_template_vars:
+                - default_value: '*'
+                  name: exampleVar
+                  prefix: test
+                  visible_tags:
+                    - selectableValue1
+                    - selectableValue2
+              share_list:
+                - test@datadoghq.com
+                - test2@datadoghq.com
+              share_type: invite
+        schema:
+          $ref: ../components/schemas/SharedDashboardUpdateRequest.yaml
+    description: Update Dashboard request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SharedDashboard.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_public_share
+  summary: Update a shared dashboard
+  tags:
+    - Dashboards
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_public_share

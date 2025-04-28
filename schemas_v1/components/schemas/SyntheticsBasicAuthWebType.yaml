@@ -1,0 +1,8 @@
+default: web
+description: The type of basic authentication to use when performing the test.
+enum:
+  - web
+example: web
+type: string
+x-enum-varnames:
+  - WEB

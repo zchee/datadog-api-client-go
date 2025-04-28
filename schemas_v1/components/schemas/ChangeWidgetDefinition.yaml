@@ -1,0 +1,38 @@
+description: The Change graph shows you the change in a value over the time period chosen.
+properties:
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  requests:
+    description: >-
+      Array of one request object to display in the widget.
+
+
+      See the dedicated [Request JSON schema
+      documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)
+       to learn how to build the `REQUEST_SCHEMA`.
+    example:
+      - q: <METRIC_1>{<SCOPE_1>}
+    items:
+      $ref: ./ChangeWidgetRequest.yaml
+    maxItems: 1
+    minItems: 1
+    type: array
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./ChangeWidgetDefinitionType.yaml
+required:
+  - type
+  - requests
+type: object

@@ -1,0 +1,11 @@
+description: List of facets and aggregations which to compute.
+properties:
+  aggregation:
+    $ref: ./ListStreamComputeAggregation.yaml
+  facet:
+    description: Facet name.
+    example: resource_name
+    type: string
+required:
+  - aggregation
+type: object

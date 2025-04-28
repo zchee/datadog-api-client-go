@@ -1,0 +1,18 @@
+description: An updated treemap widget.
+properties:
+  formulas:
+    description: List of formulas that operate on queries.
+    items:
+      $ref: ./WidgetFormula.yaml
+    type: array
+  q:
+    description: The widget metrics query.
+    type: string
+  queries:
+    description: List of queries that can be returned directly or used in formulas.
+    items:
+      $ref: ./FormulaAndFunctionQueryDefinition.yaml
+    type: array
+  response_format:
+    $ref: ./FormulaAndFunctionResponseFormat.yaml
+type: object

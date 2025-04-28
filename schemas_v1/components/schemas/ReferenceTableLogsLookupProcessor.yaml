@@ -1,0 +1,47 @@
+description: >-
+  **Note**: Reference Tables are in public beta.
+
+  Use the Lookup Processor to define a mapping between a log attribute
+
+  and a human readable value saved in a Reference Table.
+
+  For example, you can use the Lookup Processor to map an internal service ID
+
+  into a human readable service name. Alternatively, you could also use it to
+  check
+
+  if the MAC address that just attempted to connect to the production
+
+  environment belongs to your list of stolen machines.
+properties:
+  is_enabled:
+    default: false
+    description: Whether or not the processor is enabled.
+    type: boolean
+  lookup_enrichment_table:
+    description: >-
+      Name of the Reference Table for the source attribute and their associated
+      target attribute values.
+    example: service_id_to_service_name_table
+    type: string
+  name:
+    description: Name of the processor.
+    type: string
+  source:
+    description: Source attribute used to perform the lookup.
+    example: service_id
+    type: string
+  target:
+    description: >-
+      Name of the attribute that contains the corresponding value in the mapping
+      list.
+    example: service
+    type: string
+  type:
+    $ref: ./LogsLookupProcessorType.yaml
+required:
+  - source
+  - target
+  - lookup_enrichment_table
+  - type
+type: object

@@ -1,0 +1,39 @@
+description: Widget sorting methods.
+enum:
+  - name
+  - group
+  - status
+  - tags
+  - triggered
+  - group,asc
+  - group,desc
+  - name,asc
+  - name,desc
+  - status,asc
+  - status,desc
+  - tags,asc
+  - tags,desc
+  - triggered,asc
+  - triggered,desc
+  - priority,asc
+  - priority,desc
+example: name,asc
+type: string
+x-enum-varnames:
+  - NAME
+  - GROUP
+  - STATUS
+  - TAGS
+  - TRIGGERED
+  - GROUP_ASCENDING
+  - GROUP_DESCENDING
+  - NAME_ASCENDING
+  - NAME_DESCENDING
+  - STATUS_ASCENDING
+  - STATUS_DESCENDING
+  - TAGS_ASCENDING
+  - TAGS_DESCENDING
+  - TRIGGERED_ASCENDING
+  - TRIGGERED_DESCENDING
+  - PRIORITY_ASCENDING
+  - PRIORITY_DESCENDING

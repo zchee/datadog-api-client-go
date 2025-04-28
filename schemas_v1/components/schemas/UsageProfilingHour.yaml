@@ -1,0 +1,30 @@
+description: The number of profiled hosts for each hour for a given organization.
+properties:
+  aas_count:
+    description: >-
+      Contains the total number of profiled Azure app services reporting during
+      a given hour.
+    format: int64
+    nullable: true
+    type: integer
+  avg_container_agent_count:
+    description: Get average number of container agents for that hour.
+    format: int64
+    nullable: true
+    type: integer
+  host_count:
+    description: Contains the total number of profiled hosts reporting during a given hour.
+    format: int64
+    nullable: true
+    type: integer
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

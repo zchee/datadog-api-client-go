@@ -1,0 +1,10 @@
+description: Type of the Synthetic test, either `api` or `browser`.
+enum:
+  - api
+  - browser
+  - mobile
+type: string
+x-enum-varnames:
+  - API
+  - BROWSER
+  - MOBILE

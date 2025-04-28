@@ -1,0 +1,6 @@
+description: Response from the delete dashboard call.
+properties:
+  deleted_dashboard_id:
+    description: ID of the deleted dashboard.
+    type: string
+type: object

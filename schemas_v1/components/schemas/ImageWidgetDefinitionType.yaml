@@ -1,0 +1,8 @@
+default: image
+description: Type of the image widget.
+enum:
+  - image
+example: image
+type: string
+x-enum-varnames:
+  - IMAGE

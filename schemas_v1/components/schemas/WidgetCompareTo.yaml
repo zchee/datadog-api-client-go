@@ -1,0 +1,12 @@
+description: Timeframe used for the change comparison.
+enum:
+  - hour_before
+  - day_before
+  - week_before
+  - month_before
+type: string
+x-enum-varnames:
+  - HOUR_BEFORE
+  - DAY_BEFORE
+  - WEEK_BEFORE
+  - MONTH_BEFORE

@@ -1,0 +1,43 @@
+description: Type of the assertion.
+enum:
+  - body
+  - header
+  - statusCode
+  - certificate
+  - responseTime
+  - property
+  - recordEvery
+  - recordSome
+  - tlsVersion
+  - minTlsVersion
+  - latency
+  - packetLossPercentage
+  - packetsReceived
+  - networkHop
+  - receivedMessage
+  - grpcHealthcheckStatus
+  - grpcMetadata
+  - grpcProto
+  - connection
+example: statusCode
+type: string
+x-enum-varnames:
+  - BODY
+  - HEADER
+  - STATUS_CODE
+  - CERTIFICATE
+  - RESPONSE_TIME
+  - PROPERTY
+  - RECORD_EVERY
+  - RECORD_SOME
+  - TLS_VERSION
+  - MIN_TLS_VERSION
+  - LATENCY
+  - PACKET_LOSS_PERCENTAGE
+  - PACKETS_RECEIVED
+  - NETWORK_HOP
+  - RECEIVED_MESSAGE
+  - GRPC_HEALTHCHECK_STATUS
+  - GRPC_METADATA
+  - GRPC_PROTO
+  - CONNECTION

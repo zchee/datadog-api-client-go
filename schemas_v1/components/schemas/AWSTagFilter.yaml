@@ -1,0 +1,9 @@
+description: A tag filter.
+properties:
+  namespace:
+    $ref: ./AWSNamespace.yaml
+  tag_filter_str:
+    description: The tag filter string.
+    example: prod*
+    type: string
+type: object

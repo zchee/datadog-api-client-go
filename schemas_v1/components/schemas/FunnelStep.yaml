@@ -1,0 +1,14 @@
+description: The funnel step.
+properties:
+  facet:
+    description: The facet of the step.
+    example: '@view.name'
+    type: string
+  value:
+    description: The value of the step.
+    example: /apm/home
+    type: string
+required:
+  - facet
+  - value
+type: object

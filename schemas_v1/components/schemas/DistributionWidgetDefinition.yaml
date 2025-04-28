@@ -1,0 +1,61 @@
+description: >-
+  The Distribution visualization is another way of showing metrics
+
+  aggregated across one or several tags, such as hosts.
+
+  Unlike the heat map, a distribution graph’s x-axis is quantity rather than
+  time.
+properties:
+  custom_links:
+    description: A list of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  legend_size:
+    deprecated: true
+    description: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
+    type: string
+  markers:
+    description: List of markers.
+    items:
+      $ref: ./WidgetMarker.yaml
+    type: array
+  requests:
+    description: >-
+      Array of one request object to display in the widget.
+
+
+      See the dedicated [Request JSON schema
+      documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)
+       to learn how to build the `REQUEST_SCHEMA`.
+    example:
+      - q: host:X tags:Y
+    items:
+      $ref: ./DistributionWidgetRequest.yaml
+    maxItems: 1
+    minItems: 1
+    type: array
+  show_legend:
+    deprecated: true
+    description: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
+    type: boolean
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./DistributionWidgetDefinitionType.yaml
+  xaxis:
+    $ref: ./DistributionWidgetXAxis.yaml
+  yaxis:
+    $ref: ./DistributionWidgetYAxis.yaml
+required:
+  - type
+  - requests
+type: object

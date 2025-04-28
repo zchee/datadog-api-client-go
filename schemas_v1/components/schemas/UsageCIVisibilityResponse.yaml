@@ -1,0 +1,8 @@
+description: CI visibility usage response
+properties:
+  usage:
+    description: Response containing CI visibility usage.
+    items:
+      $ref: ./UsageCIVisibilityHour.yaml
+    type: array
+type: object

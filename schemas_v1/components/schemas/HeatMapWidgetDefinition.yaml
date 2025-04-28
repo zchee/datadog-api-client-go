@@ -1,0 +1,46 @@
+description: >-
+  The heat map visualization shows metrics aggregated across many tags, such as
+  hosts. The more hosts that have a particular value, the darker that square is.
+properties:
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  events:
+    description: List of widget events.
+    items:
+      $ref: ./WidgetEvent.yaml
+    type: array
+  legend_size:
+    $ref: ./WidgetLegendSize.yaml
+  requests:
+    description: List of widget types.
+    example:
+      - q: jvm.heap.memory
+    items:
+      $ref: ./HeatMapWidgetRequest.yaml
+    maxItems: 1
+    minItems: 1
+    type: array
+  show_legend:
+    description: Whether or not to display the legend on this widget.
+    type: boolean
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./HeatMapWidgetDefinitionType.yaml
+  yaxis:
+    $ref: ./WidgetAxis.yaml
+required:
+  - type
+  - requests
+type: object

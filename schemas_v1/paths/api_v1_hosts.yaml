@@ -1,0 +1,101 @@
+get:
+  description: |-
+    This endpoint allows searching for hosts by name, alias, or tag.
+    Hosts live within the past 3 hours are included by default.
+    Retention is 7 days.
+    Results are paginated with a max of 1000 results at a time.
+  operationId: ListHosts
+  parameters:
+    - description: String to filter search results.
+      in: query
+      name: filter
+      required: false
+      schema:
+        type: string
+    - description: Sort hosts by this field.
+      in: query
+      name: sort_field
+      required: false
+      schema:
+        type: string
+    - description: Direction of sort. Options include `asc` and `desc`.
+      in: query
+      name: sort_dir
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Specify the starting point for the host search results. For example, if
+        you set `count` to 100 and the first 100 results have already been
+        returned, you can set `start` to `101` to get the next 100 results.
+      in: query
+      name: start
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: Number of hosts to return. Max 1000.
+      in: query
+      name: count
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: >-
+        Number of seconds since UNIX epoch from which you want to search your
+        hosts.
+      in: query
+      name: from
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: >-
+        Include information on the muted status of hosts and when the mute
+        expires.
+      in: query
+      name: include_muted_hosts_data
+      required: false
+      schema:
+        type: boolean
+    - description: >-
+        Include additional metadata about the hosts (agent_version, machine,
+        platform, processor, etc.).
+      in: query
+      name: include_hosts_metadata
+      required: false
+      schema:
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HostListResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Invalid Parameter Error
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - hosts_read
+  summary: Get all hosts for your organization
+  tags:
+    - Hosts
+  x-permission:
+    operator: OR
+    permissions:
+      - hosts_read

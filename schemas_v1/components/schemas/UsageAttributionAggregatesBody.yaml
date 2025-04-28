@@ -1,0 +1,15 @@
+description: The object containing the aggregates.
+properties:
+  agg_type:
+    description: The aggregate type.
+    example: sum
+    type: string
+  field:
+    description: The field.
+    example: custom_timeseries_usage
+    type: string
+  value:
+    description: The value for a given field.
+    format: double
+    type: number
+type: object

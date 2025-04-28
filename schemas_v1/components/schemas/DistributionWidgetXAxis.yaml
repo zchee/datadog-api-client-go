@@ -1,0 +1,22 @@
+description: X Axis controls for the distribution widget.
+properties:
+  include_zero:
+    description: True includes zero.
+    type: boolean
+  max:
+    default: auto
+    description: >-
+      Specifies maximum value to show on the x-axis. It takes a number,
+      percentile (p90 === 90th percentile), or auto for default behavior.
+    type: string
+  min:
+    default: auto
+    description: >-
+      Specifies minimum value to show on the x-axis. It takes a number,
+      percentile (p90 === 90th percentile), or auto for default behavior.
+    type: string
+  scale:
+    default: linear
+    description: Specifies the scale type. Possible values are `linear`.
+    type: string
+type: object

@@ -1,0 +1,8 @@
+default: sunburst
+description: Type of the Sunburst widget.
+enum:
+  - sunburst
+example: sunburst
+type: string
+x-enum-varnames:
+  - SUNBURST

@@ -1,0 +1,11 @@
+description: An EventBridge source.
+properties:
+  name:
+    description: The event source name.
+    type: string
+  region:
+    description: >-
+      The event source's [AWS
+      region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints).
+    type: string
+type: object

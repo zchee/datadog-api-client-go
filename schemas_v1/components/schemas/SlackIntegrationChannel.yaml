@@ -1,0 +1,9 @@
+description: The Slack channel configuration.
+properties:
+  display:
+    $ref: ./SlackIntegrationChannelDisplay.yaml
+  name:
+    description: Your channel name.
+    example: '#general'
+    type: string
+type: object

@@ -1,0 +1,9 @@
+description: Widget sorting methods.
+enum:
+  - asc
+  - desc
+example: desc
+type: string
+x-enum-varnames:
+  - ASCENDING
+  - DESCENDING

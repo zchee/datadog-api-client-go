@@ -1,0 +1,21 @@
+description: Dashboard global time live_span selection
+enum:
+  - 15m
+  - 1h
+  - 4h
+  - 1d
+  - 2d
+  - 1w
+  - 1mo
+  - 3mo
+example: 1h
+type: string
+x-enum-varnames:
+  - PAST_FIFTEEN_MINUTES
+  - PAST_ONE_HOUR
+  - PAST_FOUR_HOURS
+  - PAST_ONE_DAY
+  - PAST_TWO_DAYS
+  - PAST_ONE_WEEK
+  - PAST_ONE_MONTH
+  - PAST_THREE_MONTHS

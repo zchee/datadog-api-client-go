@@ -1,0 +1,10 @@
+description: >-
+  Response containing the number of active NPM hosts for each hour for a given
+  organization.
+properties:
+  usage:
+    description: Get hourly usage for NPM hosts.
+    items:
+      $ref: ./UsageNetworkHostsHour.yaml
+    type: array
+type: object

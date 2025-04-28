@@ -1,0 +1,43 @@
+description: Object describing the SSL certificate used for a Synthetic test.
+properties:
+  cipher:
+    description: Cipher used for the connection.
+    type: string
+  exponent:
+    description: Exponent associated to the certificate.
+    format: double
+    type: number
+  extKeyUsage:
+    description: Array of extensions and details used for the certificate.
+    items:
+      description: An extension or detail used for the certificate.
+      type: string
+    type: array
+  fingerprint:
+    description: MD5 digest of the DER-encoded Certificate information.
+    type: string
+  fingerprint256:
+    description: SHA-1 digest of the DER-encoded Certificate information.
+    type: string
+  issuer:
+    $ref: ./SyntheticsSSLCertificateIssuer.yaml
+  modulus:
+    description: Modulus associated to the SSL certificate private key.
+    type: string
+  protocol:
+    description: TLS protocol used for the test.
+    type: string
+  serialNumber:
+    description: Serial Number assigned by Symantec to the SSL certificate.
+    type: string
+  subject:
+    $ref: ./SyntheticsSSLCertificateSubject.yaml
+  validFrom:
+    description: Date from which the SSL certificate is valid.
+    format: date-time
+    type: string
+  validTo:
+    description: Date until which the SSL certificate is valid.
+    format: date-time
+    type: string
+type: object

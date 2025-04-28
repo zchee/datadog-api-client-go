@@ -1,0 +1,14 @@
+description: An assertion which targets body hash.
+properties:
+  operator:
+    $ref: ./SyntheticsAssertionBodyHashOperator.yaml
+  target:
+    description: Value used by the operator.
+    example: 123456
+  type:
+    $ref: ./SyntheticsAssertionBodyHashType.yaml
+required:
+  - type
+  - operator
+  - target
+type: object

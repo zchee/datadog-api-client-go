@@ -1,0 +1,12 @@
+description: Options for sorting group by results.
+properties:
+  aggregation:
+    $ref: ./MonitorFormulaAndFunctionEventAggregation.yaml
+  metric:
+    description: Metric used for sorting group by results.
+    type: string
+  order:
+    $ref: ./QuerySortOrder.yaml
+required:
+  - aggregation
+type: object

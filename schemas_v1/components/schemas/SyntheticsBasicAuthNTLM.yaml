@@ -1,0 +1,23 @@
+description: Object to handle `NTLM` authentication when performing the test.
+properties:
+  domain:
+    description: Domain for the authentication to use when performing the test.
+    example: DOMAINNAME
+    type: string
+  password:
+    description: Password for the authentication to use when performing the test.
+    example: examplepassword
+    type: string
+  type:
+    $ref: ./SyntheticsBasicAuthNTLMType.yaml
+  username:
+    description: Username for the authentication to use when performing the test.
+    example: joedoe
+    type: string
+  workstation:
+    description: Workstation for the authentication to use when performing the test.
+    example: ''
+    type: string
+required:
+  - type
+type: object

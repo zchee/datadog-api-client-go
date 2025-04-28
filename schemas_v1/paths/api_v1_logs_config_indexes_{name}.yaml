@@ -1,0 +1,134 @@
+delete:
+  description: >-
+    Delete an existing index from your organization. Index deletions are
+    permanent and cannot be reverted.
+
+    You cannot recreate an index with the same name as deleted ones.
+  operationId: DeleteLogsIndex
+  parameters:
+    - description: Name of the log index.
+      in: path
+      name: name
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsAPIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete an index
+  tags:
+    - Logs Indexes
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_modify_indexes
+get:
+  description: >-
+    Get one log index from your organization. This endpoint takes no JSON
+    arguments.
+  operationId: GetLogsIndex
+  parameters:
+    - description: Name of the log index.
+      in: path
+      name: name
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsIndex.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsAPIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get an index
+  tags:
+    - Logs Indexes
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_read_config
+put:
+  description: >-
+    Update an index as identified by its name.
+
+    Returns the Index object passed in the request body when the request is
+    successful.
+
+
+    Using the `PUT` method updates your index’s configuration by **replacing**
+
+    your current configuration with the new one sent to your Datadog
+    organization.
+  operationId: UpdateLogsIndex
+  parameters:
+    - description: Name of the log index.
+      in: path
+      name: name
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/LogsIndexUpdateRequest.yaml
+    description: Object containing the new `LogsIndexUpdateRequest`.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsIndex.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsAPIErrorResponse.yaml
+      description: Invalid Parameter Error
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsAPIErrorResponse.yaml
+      description: Too Many Requests
+  summary: Update an index
+  tags:
+    - Logs Indexes
+  x-codegen-request-body-name: body

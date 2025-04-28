@@ -1,0 +1,8 @@
+default: url-parser
+description: Type of logs URL parser.
+enum:
+  - url-parser
+example: url-parser
+type: string
+x-enum-varnames:
+  - URL_PARSER

@@ -1,0 +1,35 @@
+description: The usage for one set of tags for one hour.
+properties:
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  org_name:
+    description: The name of the organization.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+  region:
+    description: The region of the Datadog instance that the organization belongs to.
+    type: string
+  tag_config_source:
+    description: >-
+      The source of the usage attribution tag configuration and the selected
+      tags in the format of `<source_org_name>:::<selected tag 1>///<selected
+      tag 2>///<selected tag 3>`.
+    type: string
+  tags:
+    $ref: ./UsageAttributionTagNames.yaml
+  total_usage_sum:
+    description: Total product usage for the given tags within the hour.
+    format: double
+    type: number
+  updated_at:
+    description: >-
+      Shows the most recent hour in the current month for all organizations
+      where usages are calculated.
+    type: string
+  usage_type:
+    $ref: ./HourlyUsageAttributionUsageType.yaml
+type: object

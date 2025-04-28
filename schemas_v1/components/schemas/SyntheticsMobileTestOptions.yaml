@@ -1,0 +1,78 @@
+description: Object describing the extra options for a Synthetic test.
+properties:
+  allowApplicationCrash:
+    description: A boolean to set if an application crash would mark the test as failed.
+    type: boolean
+  bindings:
+    description: Array of bindings used for the mobile test.
+    items:
+      $ref: ./SyntheticsTestRestrictionPolicyBinding.yaml
+    type: array
+  ci:
+    $ref: ./SyntheticsTestCiOptions.yaml
+  defaultStepTimeout:
+    description: The default timeout for steps in the test (in seconds).
+    format: int32
+    maximum: 300
+    minimum: 1
+    type: integer
+  device_ids:
+    description: For mobile test, array with the different device IDs used to run the test.
+    example:
+      - synthetics:mobile:device:apple_ipad_10th_gen_2022_ios_16
+    items:
+      $ref: ./SyntheticsDeviceID.yaml
+    type: array
+  disableAutoAcceptAlert:
+    description: A boolean to disable auto accepting alerts.
+    type: boolean
+  min_failure_duration:
+    description: Minimum amount of time in failure required to trigger an alert.
+    format: int64
+    maximum: 7200
+    minimum: 0
+    type: integer
+  mobileApplication:
+    $ref: ./SyntheticsMobileTestsMobileApplication.yaml
+  monitor_name:
+    description: >-
+      The monitor name is used for the alert title as well as for all monitor
+      dashboard widgets and SLOs.
+    type: string
+  monitor_options:
+    $ref: ./SyntheticsTestOptionsMonitorOptions.yaml
+  monitor_priority:
+    description: Integer from 1 (high) to 5 (low) indicating alert severity.
+    format: int32
+    maximum: 5
+    minimum: 1
+    type: integer
+  noScreenshot:
+    description: A boolean set to not take a screenshot for the step.
+    type: boolean
+  restricted_roles:
+    $ref: ./SyntheticsRestrictedRoles.yaml
+  retry:
+    $ref: ./SyntheticsTestOptionsRetry.yaml
+  scheduling:
+    $ref: ./SyntheticsTestOptionsScheduling.yaml
+  tick_every:
+    description: The frequency at which to run the Synthetic test (in seconds).
+    example: 300
+    format: int64
+    maximum: 604800
+    minimum: 300
+    type: integer
+  verbosity:
+    description: >-
+      The level of verbosity for the mobile test. This field can not be set by a
+      user.
+    format: int32
+    maximum: 5
+    minimum: 0
+    type: integer
+required:
+  - device_ids
+  - tick_every
+  - mobileApplication
+type: object

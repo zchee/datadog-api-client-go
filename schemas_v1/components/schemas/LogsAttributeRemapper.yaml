@@ -1,0 +1,57 @@
+description: >-
+  The remapper processor remaps any source attribute(s) or tag to another target
+  attribute or tag.
+
+  Constraints on the tag/attribute name are explained in the [Tag Best Practice
+  documentation](https://docs.datadoghq.com/logs/guide/log-parsing-best-practice).
+
+  Some additional constraints are applied as `:` or `,` are not allowed in the
+  target tag/attribute name.
+properties:
+  is_enabled:
+    default: false
+    description: Whether or not the processor is enabled.
+    type: boolean
+  name:
+    description: Name of the processor.
+    type: string
+  override_on_conflict:
+    default: false
+    description: Override or not the target element if already set,
+    type: boolean
+  preserve_source:
+    default: false
+    description: Remove or preserve the remapped source element.
+    type: boolean
+  source_type:
+    default: attribute
+    description: Defines if the sources are from log `attribute` or `tag`.
+    type: string
+  sources:
+    description: Array of source attributes.
+    example:
+      - web
+      - gateway
+    items:
+      description: Attribute used as a source to remap its value to the target attribute.
+      type: string
+    type: array
+  target:
+    description: Final attribute or tag name to remap the sources to.
+    example: operation_id
+    type: string
+  target_format:
+    $ref: ./TargetFormatType.yaml
+  target_type:
+    default: attribute
+    description: >-
+      Defines if the final attribute or tag name is from log `attribute` or
+      `tag`.
+    type: string
+  type:
+    $ref: ./LogsAttributeRemapperType.yaml
+required:
+  - sources
+  - target
+  - type
+type: object

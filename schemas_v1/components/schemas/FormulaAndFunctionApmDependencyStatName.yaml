@@ -1,0 +1,19 @@
+description: APM statistic.
+enum:
+  - avg_duration
+  - avg_root_duration
+  - avg_spans_per_trace
+  - error_rate
+  - pct_exec_time
+  - pct_of_traces
+  - total_traces_count
+example: avg_duration
+type: string
+x-enum-varnames:
+  - AVG_DURATION
+  - AVG_ROOT_DURATION
+  - AVG_SPANS_PER_TRACE
+  - ERROR_RATE
+  - PCT_EXEC_TIME
+  - PCT_OF_TRACES
+  - TOTAL_TRACES_COUNT

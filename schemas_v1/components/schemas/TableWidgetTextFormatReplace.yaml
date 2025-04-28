@@ -1,0 +1,7 @@
+description: Replace rule for the table widget text format.
+example:
+  type: all
+  with: vegetable
+oneOf:
+  - $ref: ./TableWidgetTextFormatReplaceAll.yaml
+  - $ref: ./TableWidgetTextFormatReplaceSubstring.yaml

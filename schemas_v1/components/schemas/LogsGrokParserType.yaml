@@ -1,0 +1,8 @@
+default: grok-parser
+description: Type of logs grok parser.
+enum:
+  - grok-parser
+example: grok-parser
+type: string
+x-enum-varnames:
+  - GROK_PARSER

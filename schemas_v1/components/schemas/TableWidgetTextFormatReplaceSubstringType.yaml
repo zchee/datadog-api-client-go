@@ -1,0 +1,7 @@
+description: Table widget text format replace sub-string type.
+enum:
+  - substring
+example: substring
+type: string
+x-enum-varnames:
+  - SUBSTRING

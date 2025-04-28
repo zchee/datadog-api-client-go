@@ -1,0 +1,12 @@
+description: Define an expression alias.
+properties:
+  alias_name:
+    description: Expression alias.
+    type: string
+  expression:
+    description: Expression name.
+    example: ''
+    type: string
+required:
+  - expression
+type: object

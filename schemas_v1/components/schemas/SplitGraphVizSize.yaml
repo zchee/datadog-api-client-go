@@ -1,0 +1,13 @@
+description: Size of the individual graphs in the split.
+enum:
+  - xs
+  - sm
+  - md
+  - lg
+example: sm
+type: string
+x-enum-varnames:
+  - XS
+  - SM
+  - MD
+  - LG

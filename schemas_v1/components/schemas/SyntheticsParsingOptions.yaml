@@ -1,0 +1,20 @@
+description: Parsing options for variables to extract.
+example: {}
+properties:
+  field:
+    description: >-
+      When type is `http_header` or `grpc_metadata`, name of the header or
+      metadatum to extract.
+    example: content-type
+    type: string
+  name:
+    description: Name of the variable to extract.
+    type: string
+  parser:
+    $ref: ./SyntheticsVariableParser.yaml
+  secure:
+    description: Determines whether or not the extracted value will be obfuscated.
+    type: boolean
+  type:
+    $ref: ./SyntheticsLocalVariableParsingOptionsType.yaml
+type: object

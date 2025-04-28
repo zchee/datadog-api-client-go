@@ -1,0 +1,11 @@
+description: Top list widget stacked legend behavior.
+enum:
+  - automatic
+  - inline
+  - none
+example: automatic
+type: string
+x-enum-varnames:
+  - AUTOMATIC
+  - INLINE
+  - NONE

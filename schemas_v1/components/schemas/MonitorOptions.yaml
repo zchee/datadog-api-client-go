@@ -1,0 +1,258 @@
+description: List of options associated with your monitor.
+properties:
+  aggregation:
+    $ref: ./MonitorOptionsAggregation.yaml
+  device_ids:
+    deprecated: true
+    description: IDs of the device the Synthetics monitor is running on.
+    items:
+      $ref: ./MonitorDeviceID.yaml
+    readOnly: true
+    type: array
+  enable_logs_sample:
+    description: Whether or not to send a log sample when the log monitor triggers.
+    type: boolean
+  enable_samples:
+    description: >-
+      Whether or not to send a list of samples when the monitor triggers. This
+      is only used by CI Test and Pipeline monitors.
+    type: boolean
+  escalation_message:
+    description: >-
+      We recommend using the
+      [is_renotify](https://docs.datadoghq.com/monitors/notify/?tab=is_alert#renotify),
+
+      block in the original message instead.
+
+      A message to include with a re-notification. Supports the `@username`
+      notification we allow elsewhere.
+
+      Not applicable if `renotify_interval` is `None`.
+    type: string
+  evaluation_delay:
+    description: >-
+      Time (in seconds) to delay evaluation, as a non-negative integer. For
+      example, if the value is set to `300` (5min),
+
+      the timeframe is set to `last_5m` and the time is 7:00, the monitor
+      evaluates data from 6:50 to 6:55.
+
+      This is useful for AWS CloudWatch and other backfilled metrics to ensure
+      the monitor always has data during evaluation.
+    format: int64
+    nullable: true
+    type: integer
+  group_retention_duration:
+    description: >-
+      The time span after which groups with missing data are dropped from the
+      monitor state.
+
+      The minimum value is one hour, and the maximum value is 72 hours.
+
+      Example values are: "60m", "1h", and "2d".
+
+      This option is only available for APM Trace Analytics, Audit Trail, CI,
+      Error Tracking, Event, Logs, and RUM monitors.
+    type: string
+  groupby_simple_monitor:
+    deprecated: true
+    description: >-
+      Whether the log alert monitor triggers a single alert or multiple alerts
+      when any group breaches a threshold. Use `notify_by` instead.
+    type: boolean
+  include_tags:
+    default: true
+    description: >-
+      A Boolean indicating whether notifications from this monitor automatically
+      inserts its triggering tags into the title.
+
+
+      **Examples**
+
+      - If `True`, `[Triggered on {host:h1}] Monitor Title`
+
+      - If `False`, `[Triggered] Monitor Title`
+    type: boolean
+  locked:
+    deprecated: true
+    description: >-
+      Whether or not the monitor is locked (only editable by creator and
+      admins). Use `restricted_roles` instead.
+    type: boolean
+  min_failure_duration:
+    default: 0
+    description: >-
+      How long the test should be in failure before alerting (integer, number of
+      seconds, max 7200).
+    format: int64
+    maximum: 7200
+    minimum: 0
+    nullable: true
+    type: integer
+  min_location_failed:
+    default: 1
+    description: >-
+      The minimum number of locations in failure at the same time during
+
+      at least one moment in the `min_failure_duration` period
+      (`min_location_failed` and `min_failure_duration`
+
+      are part of the advanced alerting rules - integer, >= 1).
+    format: int64
+    nullable: true
+    type: integer
+  new_group_delay:
+    description: >-
+      Time (in seconds) to skip evaluations for new groups.
+
+
+      For example, this option can be used to skip evaluations for new hosts
+      while they initialize.
+
+
+      Must be a non negative integer.
+    format: int64
+    nullable: true
+    type: integer
+  new_host_delay:
+    default: 300
+    deprecated: true
+    description: |-
+      Time (in seconds) to allow a host to boot and applications
+      to fully start before starting the evaluation of monitor results.
+      Should be a non negative integer.
+
+      Use new_group_delay instead.
+    format: int64
+    nullable: true
+    type: integer
+  no_data_timeframe:
+    description: >-
+      The number of minutes before a monitor notifies after data stops
+      reporting.
+
+      Datadog recommends at least 2x the monitor timeframe for query alerts or 2
+      minutes for service checks.
+
+      If omitted, 2x the evaluation timeframe is used for query alerts, and 24
+      hours is used for service checks.
+    format: int64
+    nullable: true
+    type: integer
+  notification_preset_name:
+    $ref: ./MonitorOptionsNotificationPresets.yaml
+  notify_audit:
+    default: false
+    description: >-
+      A Boolean indicating whether tagged users is notified on changes to this
+      monitor.
+    type: boolean
+  notify_by:
+    description: >-
+      Controls what granularity a monitor alerts on. Only available for monitors
+      with groupings.
+
+      For instance, a monitor grouped by `cluster`, `namespace`, and `pod` can
+      be configured to only notify on each
+
+      new `cluster` violating the alert conditions by setting `notify_by` to
+      `["cluster"]`. Tags mentioned
+
+      in `notify_by` must be a subset of the grouping tags in the query.
+
+      For example, a query grouped by `cluster` and `namespace` cannot notify on
+      `region`.
+
+      Setting `notify_by` to `[*]` configures the monitor to notify as a
+      simple-alert.
+    items:
+      description: A grouping tag.
+      type: string
+    type: array
+  notify_no_data:
+    description: >-
+      A Boolean indicating whether this monitor notifies when data stops
+      reporting. Defaults to `false`.
+    type: boolean
+  on_missing_data:
+    $ref: ./OnMissingDataOption.yaml
+  renotify_interval:
+    default: null
+    description: >-
+      The number of minutes after the last notification before a monitor
+      re-notifies on the current status.
+
+      It only re-notifies if it’s not resolved.
+    format: int64
+    nullable: true
+    type: integer
+  renotify_occurrences:
+    description: >-
+      The number of times re-notification messages should be sent on the current
+      status at the provided re-notification interval.
+    format: int64
+    nullable: true
+    type: integer
+  renotify_statuses:
+    description: >-
+      The types of monitor statuses for which re-notification messages are sent.
+
+      Default: **null** if `renotify_interval` is **null**.
+
+      If `renotify_interval` is set, defaults to renotify on `Alert` and `No
+      Data`.
+    items:
+      $ref: ./MonitorRenotifyStatusType.yaml
+    nullable: true
+    type: array
+  require_full_window:
+    description: >-
+      A Boolean indicating whether this monitor needs a full window of data
+      before it’s evaluated.
+
+      We highly recommend you set this to `false` for sparse metrics,
+
+      otherwise some evaluations are skipped. Default is false. This setting
+      only applies to
+
+      metric monitors.
+    type: boolean
+  scheduling_options:
+    $ref: ./MonitorOptionsSchedulingOptions.yaml
+  silenced:
+    additionalProperties:
+      description: UTC epoch timestamp in seconds when the downtime for the group expires.
+      format: int64
+      nullable: true
+      type: integer
+    deprecated: true
+    description: >-
+      Information about the downtime applied to the monitor. Only shows v1
+      downtimes.
+    type: object
+  synthetics_check_id:
+    deprecated: true
+    description: ID of the corresponding Synthetic check.
+    nullable: true
+    type: string
+  threshold_windows:
+    $ref: ./MonitorThresholdWindowOptions.yaml
+  thresholds:
+    $ref: ./MonitorThresholds.yaml
+  timeout_h:
+    default: null
+    description: >-
+      The number of hours of the monitor not reporting data before it
+      automatically resolves from a triggered state. The minimum allowed value
+      is 0 hours. The maximum allowed value is 24 hours.
+    format: int64
+    nullable: true
+    type: integer
+  variables:
+    description: >-
+      List of requests that can be used in the monitor query. **This feature is
+      currently in beta.**
+    items:
+      $ref: ./MonitorFormulaAndFunctionQueryDefinition.yaml
+    type: array
+type: object

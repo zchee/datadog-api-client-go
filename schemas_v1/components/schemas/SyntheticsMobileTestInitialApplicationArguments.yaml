@@ -1,0 +1,5 @@
+additionalProperties:
+  description: A single application argument.
+  type: string
+description: Initial application arguments for a mobile test.
+type: object

@@ -1,0 +1,15 @@
+description: Match All definition.
+example:
+  type: all
+  with: vegetable
+properties:
+  type:
+    $ref: ./TableWidgetTextFormatReplaceAllType.yaml
+  with:
+    description: Replace All type.
+    example: all
+    type: string
+required:
+  - type
+  - with
+type: object

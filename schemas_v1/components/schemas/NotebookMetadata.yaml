@@ -1,0 +1,17 @@
+description: Metadata associated with the notebook.
+properties:
+  is_template:
+    default: false
+    description: Whether or not the notebook is a template.
+    example: false
+    type: boolean
+  take_snapshots:
+    default: false
+    description: >-
+      Whether or not the notebook takes snapshot image backups of the notebook's
+      fixed-time graphs.
+    example: false
+    type: boolean
+  type:
+    $ref: ./NotebookMetadataType.yaml
+type: object

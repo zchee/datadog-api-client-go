@@ -1,0 +1,45 @@
+get:
+  description: Get information about Datadog IP ranges.
+  operationId: GetIPRanges
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IPRanges'
+      description: OK
+    '429':
+      $ref: '#/components/responses/TooManyRequestsResponse'
+  security: []
+  servers:
+    - url: https://{subdomain}.{site}
+      variables:
+        site:
+          default: datadoghq.com
+          description: The regional site for Datadog customers.
+          enum:
+            - datadoghq.com
+            - us3.datadoghq.com
+            - us5.datadoghq.com
+            - ap1.datadoghq.com
+            - datadoghq.eu
+            - ddog-gov.com
+        subdomain:
+          default: ip-ranges
+          description: The subdomain where the API is deployed.
+    - url: '{protocol}://{name}'
+      variables:
+        name:
+          default: ip-ranges.datadoghq.com
+          description: Full site DNS name.
+        protocol:
+          default: https
+          description: The protocol for accessing the API.
+    - url: https://{subdomain}.datadoghq.com
+      variables:
+        subdomain:
+          default: ip-ranges
+          description: The subdomain where the API is deployed.
+  summary: List IP Ranges
+  tags:
+    - IP Ranges

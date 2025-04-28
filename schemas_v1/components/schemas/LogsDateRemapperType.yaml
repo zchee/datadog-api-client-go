@@ -1,0 +1,8 @@
+default: date-remapper
+description: Type of logs date remapper.
+enum:
+  - date-remapper
+example: date-remapper
+type: string
+x-enum-varnames:
+  - DATE_REMAPPER

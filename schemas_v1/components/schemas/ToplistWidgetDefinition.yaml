@@ -1,0 +1,35 @@
+description: >-
+  The top list visualization enables you to display a list of Tag value like
+  hostname or service with the most or least of any metric value, such as
+  highest consumers of CPU, hosts with the least disk space, etc.
+properties:
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  requests:
+    description: List of top list widget requests.
+    example:
+      - q: system.load.1
+    items:
+      $ref: ./ToplistWidgetRequest.yaml
+    type: array
+  style:
+    $ref: ./ToplistWidgetStyle.yaml
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of your widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./ToplistWidgetDefinitionType.yaml
+required:
+  - type
+  - requests
+type: object

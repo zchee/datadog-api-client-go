@@ -1,0 +1,6 @@
+description: Updated signal data following a successfully performed update.
+properties:
+  status:
+    description: Status of the response.
+    type: string
+type: object

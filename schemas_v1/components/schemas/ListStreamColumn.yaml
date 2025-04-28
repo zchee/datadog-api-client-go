@@ -1,0 +1,15 @@
+description: Widget column.
+example:
+  field: timestamp
+  width: auto
+properties:
+  field:
+    description: Widget column field.
+    example: content
+    type: string
+  width:
+    $ref: ./ListStreamColumnWidth.yaml
+required:
+  - width
+  - field
+type: object

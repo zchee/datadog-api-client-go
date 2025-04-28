@@ -1,0 +1,7 @@
+description: Configuration of table-based legend.
+properties:
+  type:
+    $ref: ./SunburstWidgetLegendTableType.yaml
+required:
+  - type
+type: object

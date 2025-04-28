@@ -1,0 +1,12 @@
+description: A single [JSON Patch](https://jsonpatch.com) operation to perform on the test
+properties:
+  op:
+    $ref: ./SyntheticsPatchTestOperationName.yaml
+  path:
+    description: The path to the value to modify
+    example: /name
+    type: string
+  value:
+    description: A value to use in a [JSON Patch](https://jsonpatch.com) operation
+    example: New Test Name
+type: object

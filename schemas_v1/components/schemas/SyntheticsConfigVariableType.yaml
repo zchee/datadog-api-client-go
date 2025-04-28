@@ -1,0 +1,11 @@
+description: Type of the configuration variable.
+enum:
+  - global
+  - text
+  - email
+example: text
+type: string
+x-enum-varnames:
+  - GLOBAL
+  - TEXT
+  - EMAIL

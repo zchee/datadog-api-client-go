@@ -1,0 +1,12 @@
+description: A JavaScript assertion.
+properties:
+  code:
+    description: The JavaScript code that performs the assertions.
+    example: dd.expect(dd.response.statusCode).to.equal(200);
+    type: string
+  type:
+    $ref: ./SyntheticsAssertionJavascriptType.yaml
+required:
+  - type
+  - code
+type: object

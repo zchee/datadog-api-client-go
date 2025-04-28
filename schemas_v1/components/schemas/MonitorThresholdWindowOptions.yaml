@@ -1,0 +1,13 @@
+description: Alerting time window options.
+properties:
+  recovery_window:
+    description: >-
+      Describes how long an anomalous metric must be normal before the alert
+      recovers.
+    nullable: true
+    type: string
+  trigger_window:
+    description: Describes how long a metric must be anomalous before an alert triggers.
+    nullable: true
+    type: string
+type: object

@@ -1,0 +1,8 @@
+description: Top list widget scaling definition.
+enum:
+  - absolute
+  - relative
+type: string
+x-enum-varnames:
+  - ABSOLUTE
+  - RELATIVE

@@ -1,0 +1,4 @@
+description: >-
+  String Port number to use when performing the test. Supports templated
+  variables.
+type: string

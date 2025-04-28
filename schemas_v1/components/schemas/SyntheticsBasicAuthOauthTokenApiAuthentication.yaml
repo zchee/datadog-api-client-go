@@ -1,0 +1,9 @@
+description: Type of token to use when performing the authentication.
+enum:
+  - header
+  - body
+example: header
+type: string
+x-enum-varnames:
+  - HEADER
+  - BODY

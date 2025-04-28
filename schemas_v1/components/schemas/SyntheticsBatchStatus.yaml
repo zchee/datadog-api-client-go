@@ -1,0 +1,10 @@
+description: Determines whether the batch has passed, failed, or is in progress.
+enum:
+  - passed
+  - skipped
+  - failed
+type: string
+x-enum-varnames:
+  - PASSED
+  - SKIPPED
+  - FAILED

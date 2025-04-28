@@ -1,0 +1,140 @@
+delete:
+  description: Deletes the endpoint with the name `<CUSTOM_VARIABLE_NAME>`.
+  operationId: DeleteWebhooksIntegrationCustomVariable
+  parameters:
+    - description: The name of the custom variable.
+      in: path
+      name: custom_variable_name
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a custom variable
+  tags:
+    - Webhooks Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations
+get:
+  description: >-
+    Shows the content of the custom variable with the name
+    `<CUSTOM_VARIABLE_NAME>`.
+
+
+    If the custom variable is secret, the value does not return in the
+
+    response payload.
+  operationId: GetWebhooksIntegrationCustomVariable
+  parameters:
+    - description: The name of the custom variable.
+      in: path
+      name: custom_variable_name
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/WebhooksIntegrationCustomVariableResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a custom variable
+  tags:
+    - Webhooks Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+put:
+  description: Updates the endpoint with the name `<CUSTOM_VARIABLE_NAME>`.
+  operationId: UpdateWebhooksIntegrationCustomVariable
+  parameters:
+    - description: The name of the custom variable.
+      in: path
+      name: custom_variable_name
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/WebhooksIntegrationCustomVariableUpdateRequest.yaml
+    description: Update an existing custom variable request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/WebhooksIntegrationCustomVariableResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a custom variable
+  tags:
+    - Webhooks Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

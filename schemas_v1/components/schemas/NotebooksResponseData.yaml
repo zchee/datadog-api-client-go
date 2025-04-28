@@ -1,0 +1,17 @@
+description: The data for a notebook in get all response.
+properties:
+  attributes:
+    $ref: ./NotebooksResponseDataAttributes.yaml
+  id:
+    description: Unique notebook ID, assigned when you create the notebook.
+    example: 123456
+    format: int64
+    readOnly: true
+    type: integer
+  type:
+    $ref: ./NotebookResourceType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

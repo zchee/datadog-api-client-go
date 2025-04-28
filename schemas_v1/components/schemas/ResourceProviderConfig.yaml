@@ -1,0 +1,13 @@
+description: >-
+  Configuration settings applied to resources from the specified Azure resource
+  provider.
+properties:
+  metrics_enabled:
+    description: Collect metrics for resources from this provider.
+    example: true
+    type: boolean
+  namespace:
+    description: The provider namespace to apply this configuration to.
+    example: Microsoft.Compute
+    type: string
+type: object

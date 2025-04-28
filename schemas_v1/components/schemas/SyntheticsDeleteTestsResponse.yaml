@@ -1,0 +1,10 @@
+description: Response object for deleting Synthetic tests.
+properties:
+  deleted_tests:
+    description: |-
+      Array of objects containing a deleted Synthetic test ID with
+      the associated deletion timestamp.
+    items:
+      $ref: ./SyntheticsDeletedTest.yaml
+    type: array
+type: object

@@ -1,0 +1,7 @@
+description: Deleted dashboard details.
+properties:
+  deleted_dashboard_list_id:
+    description: ID of the deleted dashboard list.
+    format: int64
+    type: integer
+type: object

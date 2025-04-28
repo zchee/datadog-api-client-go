@@ -1,0 +1,7 @@
+description: Data source for metrics queries.
+enum:
+  - metrics
+example: metrics
+type: string
+x-enum-varnames:
+  - METRICS

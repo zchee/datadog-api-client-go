@@ -1,0 +1,235 @@
+delete:
+  description: >-
+    Delete dashboards using the specified IDs. If there are any failures, no
+    dashboards will be deleted (partial success is not allowed).
+  operationId: DeleteDashboards
+  requestBody:
+    content:
+      application/json:
+        examples:
+          json-request-body:
+            value:
+              data:
+                - id: 123-abc-456
+                  type: dashboard
+                - id: 789-def-101
+                  type: dashboard
+        schema:
+          $ref: ../components/schemas/DashboardBulkDeleteRequest.yaml
+    description: Delete dashboards request body.
+    required: true
+  responses:
+    '204':
+      description: No Content
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Dashboards Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_write
+  summary: Delete dashboards
+  tags:
+    - Dashboards
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_write
+get:
+  description: |-
+    Get all dashboards.
+
+    **Note**: This query will only return custom created or cloned dashboards.
+    This query will not return preset dashboards.
+  operationId: ListDashboards
+  parameters:
+    - description: |-
+        When `true`, this query only returns shared custom created
+        or cloned dashboards.
+      in: query
+      name: filter[shared]
+      required: false
+      schema:
+        type: boolean
+    - description: >-
+        When `true`, this query returns only deleted custom-created
+
+        or cloned dashboards. This parameter is incompatible with
+        `filter[shared]`.
+      in: query
+      name: filter[deleted]
+      required: false
+      schema:
+        type: boolean
+    - description: The maximum number of dashboards returned in the list.
+      in: query
+      name: count
+      required: false
+      schema:
+        default: 100
+        format: int64
+        type: integer
+    - description: The specific offset to use as the beginning of the returned response.
+      in: query
+      name: start
+      required: false
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DashboardSummary.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_read
+  summary: Get all dashboards
+  tags:
+    - Dashboards
+  x-pagination:
+    limitParam: count
+    pageOffsetParam: start
+    resultsPath: dashboards
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_read
+patch:
+  description: >-
+    Restore dashboards using the specified IDs. If there are any failures, no
+    dashboards will be restored (partial success is not allowed).
+  operationId: RestoreDashboards
+  requestBody:
+    content:
+      application/json:
+        examples:
+          json-request-body:
+            value:
+              data:
+                - id: 123-abc-456
+                  type: dashboard
+                - id: 789-def-101
+                  type: dashboard
+        schema:
+          $ref: ../components/schemas/DashboardRestoreRequest.yaml
+    description: Restore dashboards request body.
+    required: true
+  responses:
+    '204':
+      description: No Content
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Dashboards Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_write
+  summary: Restore deleted dashboards
+  tags:
+    - Dashboards
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_write
+post:
+  description: >-
+    Create a dashboard using the specified options. When defining queries in
+    your widgets, take note of which queries should have the `as_count()` or
+    `as_rate()` modifiers appended.
+
+    Refer to the following
+    [documentation](https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers)
+    for more information on these modifiers.
+  operationId: CreateDashboard
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Dashboard.yaml
+    description: Create a dashboard request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Dashboard.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_write
+  summary: Create a new dashboard
+  tags:
+    - Dashboards
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_write

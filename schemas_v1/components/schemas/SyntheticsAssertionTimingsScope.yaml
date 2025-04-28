@@ -1,0 +1,8 @@
+description: Timings scope for response time assertions.
+enum:
+  - all
+  - withoutDNS
+type: string
+x-enum-varnames:
+  - ALL
+  - WITHOUT_DNS

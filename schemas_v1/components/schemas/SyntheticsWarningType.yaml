@@ -1,0 +1,7 @@
+description: User locator used.
+enum:
+  - user_locator
+example: user_locator
+type: string
+x-enum-varnames:
+  - USER_LOCATOR

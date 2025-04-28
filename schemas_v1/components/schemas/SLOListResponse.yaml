@@ -1,0 +1,20 @@
+description: A response with one or more service level objective.
+properties:
+  data:
+    description: An array of service level objective objects.
+    items:
+      $ref: ./ServiceLevelObjective.yaml
+    type: array
+  errors:
+    description: >-
+      An array of error messages. Each endpoint documents how/whether this field
+      is
+
+      used.
+    items:
+      description: The error message.
+      type: string
+    type: array
+  metadata:
+    $ref: ./SLOListResponseMetadata.yaml
+type: object

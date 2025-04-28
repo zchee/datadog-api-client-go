@@ -1,0 +1,19 @@
+description: A list of configured Slack channels.
+example:
+  - display:
+      message: true
+      mute_buttons: true
+      notified: true
+      snapshot: true
+      tags: true
+    name: '#channel_name_main_account'
+  - display:
+      message: true
+      mute_buttons: true
+      notified: true
+      snapshot: false
+      tags: true
+    name: '#channel_name_doghouse'
+items:
+  $ref: ./SlackIntegrationChannel.yaml
+type: array

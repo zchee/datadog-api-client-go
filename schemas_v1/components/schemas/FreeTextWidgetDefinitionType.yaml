@@ -1,0 +1,8 @@
+default: free_text
+description: Type of the free text widget.
+enum:
+  - free_text
+example: free_text
+type: string
+x-enum-varnames:
+  - FREE_TEXT

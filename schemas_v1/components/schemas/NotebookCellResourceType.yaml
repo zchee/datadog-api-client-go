@@ -1,0 +1,8 @@
+default: notebook_cells
+description: Type of the Notebook Cell resource.
+enum:
+  - notebook_cells
+example: notebook_cells
+type: string
+x-enum-varnames:
+  - NOTEBOOK_CELLS

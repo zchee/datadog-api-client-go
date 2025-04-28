@@ -1,0 +1,14 @@
+description: Type of a user locator.
+enum:
+  - accessibility-id
+  - id
+  - ios-predicate-string
+  - ios-class-chain
+  - xpath
+type: string
+x-enum-varnames:
+  - ACCESSIBILITY_ID
+  - ID
+  - IOS_PREDICATE_STRING
+  - IOS_CLASS_CHAIN
+  - XPATH

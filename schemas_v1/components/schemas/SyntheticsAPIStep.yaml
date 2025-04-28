@@ -1,0 +1,4 @@
+description: The steps used in a Synthetic multi-step API test.
+oneOf:
+  - $ref: ./SyntheticsAPITestStep.yaml
+  - $ref: ./SyntheticsAPIWaitStep.yaml

@@ -1,0 +1,16 @@
+description: The distribution points payload.
+properties:
+  series:
+    description: A list of distribution points series to submit to Datadog.
+    example:
+      - metric: system.load.1
+        points:
+          - - 1475317847
+            - - 1
+              - 2
+    items:
+      $ref: ./DistributionPointsSeries.yaml
+    type: array
+required:
+  - series
+type: object

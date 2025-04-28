@@ -1,0 +1,43 @@
+get:
+  description: Return a mapping of tags to hosts for your whole infrastructure.
+  operationId: ListHostTags
+  parameters:
+    - description: >-
+        When specified, filters host list to those tags with the specified
+        source.
+      in: query
+      name: source
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TagToHosts.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Get Tags
+  tags:
+    - Tags
+  x-permission:
+    operator: OPEN
+    permissions: []

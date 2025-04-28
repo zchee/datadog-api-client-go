@@ -1,0 +1,7 @@
+description: The description of a notebook update request.
+properties:
+  data:
+    $ref: ./NotebookUpdateData.yaml
+required:
+  - data
+type: object

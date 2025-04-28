@@ -1,0 +1,15 @@
+description: The metrics' payload.
+properties:
+  series:
+    description: A list of timeseries to submit to Datadog.
+    example:
+      - metric: system.load.1
+        points:
+          - - 1475317847
+            - 0.7
+    items:
+      $ref: ./Series.yaml
+    type: array
+required:
+  - series
+type: object

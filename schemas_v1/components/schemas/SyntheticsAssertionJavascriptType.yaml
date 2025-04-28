@@ -1,0 +1,7 @@
+description: Type of the assertion.
+enum:
+  - javascript
+example: javascript
+type: string
+x-enum-varnames:
+  - JAVASCRIPT

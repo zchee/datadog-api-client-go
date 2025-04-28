@@ -1,0 +1,13 @@
+description: Modifier of the object.
+nullable: true
+properties:
+  email:
+    description: Email of the Modifier.
+    type: string
+  handle:
+    description: Handle of the Modifier.
+    type: string
+  name:
+    description: Name of the Modifier.
+    type: string
+type: object

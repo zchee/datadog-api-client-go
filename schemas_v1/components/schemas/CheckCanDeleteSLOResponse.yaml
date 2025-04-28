@@ -1,0 +1,11 @@
+description: A service level objective response containing the requested object.
+properties:
+  data:
+    $ref: ./CheckCanDeleteSLOResponseData.yaml
+  errors:
+    additionalProperties:
+      description: Description of the service level objective reference.
+      type: string
+    description: A mapping of SLO id to it's current usages.
+    type: object
+type: object

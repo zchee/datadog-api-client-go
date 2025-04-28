@@ -1,0 +1,11 @@
+description: Description of errors.
+properties:
+  code:
+    description: Code properties
+    example: no_such_config
+    type: string
+  message:
+    description: Message content.
+    example: AWS account 12345 has no Lambda config to update
+    type: string
+type: object

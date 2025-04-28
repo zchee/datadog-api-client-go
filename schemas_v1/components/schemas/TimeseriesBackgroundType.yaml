@@ -1,0 +1,10 @@
+default: area
+description: Timeseries is made using an area or bars.
+enum:
+  - bars
+  - area
+example: bars
+type: string
+x-enum-varnames:
+  - BARS
+  - AREA

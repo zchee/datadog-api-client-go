@@ -1,0 +1,6 @@
+description: Your Slack account name.
+in: path
+name: account_name
+required: true
+schema:
+  type: string

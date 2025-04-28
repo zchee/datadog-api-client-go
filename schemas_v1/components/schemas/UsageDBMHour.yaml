@@ -1,0 +1,27 @@
+description: Database Monitoring usage for a given organization for a given hour.
+properties:
+  dbm_host_count:
+    description: >-
+      The total number of Database Monitoring host hours from the start of the
+      given hour’s month until the given hour.
+    format: int64
+    nullable: true
+    type: integer
+  dbm_queries_count:
+    description: >-
+      The total number of normalized Database Monitoring queries from the start
+      of the given hour’s month until the given hour.
+    format: int64
+    nullable: true
+    type: integer
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

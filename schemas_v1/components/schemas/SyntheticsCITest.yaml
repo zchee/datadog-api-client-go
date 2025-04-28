@@ -1,0 +1,56 @@
+description: Configuration for Continuous Testing.
+properties:
+  allowInsecureCertificates:
+    description: Disable certificate checks in API tests.
+    type: boolean
+  basicAuth:
+    $ref: ./SyntheticsBasicAuth.yaml
+  body:
+    description: Body to include in the test.
+    type: string
+  bodyType:
+    description: Type of the data sent in a Synthetic API test.
+    type: string
+  cookies:
+    description: Cookies for the request.
+    type: string
+  deviceIds:
+    description: >-
+      For browser test, array with the different device IDs used to run the
+      test.
+    items:
+      $ref: ./SyntheticsDeviceID.yaml
+    type: array
+  followRedirects:
+    description: For API HTTP test, whether or not the test should follow redirects.
+    type: boolean
+  headers:
+    $ref: ./SyntheticsTestHeaders.yaml
+  locations:
+    description: Array of locations used to run the test.
+    example:
+      - aws:eu-west-3
+    items:
+      description: A location from which the test was run.
+      type: string
+    type: array
+  metadata:
+    $ref: ./SyntheticsCIBatchMetadata.yaml
+  public_id:
+    description: The public ID of the Synthetic test to trigger.
+    example: aaa-aaa-aaa
+    type: string
+  retry:
+    $ref: ./SyntheticsTestOptionsRetry.yaml
+  startUrl:
+    description: Starting URL for the browser test.
+    type: string
+  variables:
+    additionalProperties:
+      description: A single variable.
+      type: string
+    description: Variables to replace in the test.
+    type: object
+required:
+  - public_id
+type: object

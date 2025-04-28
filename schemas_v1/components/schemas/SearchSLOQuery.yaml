@@ -1,0 +1,33 @@
+description: >-
+  A metric-based SLO. **Required if type is `metric`**. Note that Datadog only
+  allows the sum by aggregator
+
+  to be used because this will sum up all request counts instead of averaging
+  them, or taking the max or
+
+  min of all of those requests.
+nullable: true
+properties:
+  denominator:
+    description: A Datadog metric query for total (valid) events.
+    example: sum:my.custom.metric{*}.as_count()
+    type: string
+  metrics:
+    description: >-
+      Metric names used in the query's numerator and denominator.
+
+      This field will return null and will be implemented in the next version of
+      this endpoint.
+    example:
+      - my.custom.metric
+      - my.other.custom.metric
+    items:
+      description: Metric name.
+      type: string
+    nullable: true
+    type: array
+  numerator:
+    description: A Datadog metric query for good events.
+    example: sum:my.custom.metric{type:good}.as_count()
+    type: string
+type: object

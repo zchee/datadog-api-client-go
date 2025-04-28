@@ -1,0 +1,10 @@
+description: The viewing preferences for a shared dashboard.
+properties:
+  high_density:
+    description: >-
+      Whether the widgets on the shared dashboard should be displayed with high
+      density.
+    type: boolean
+  theme:
+    $ref: ./ViewingPreferencesTheme.yaml
+type: object

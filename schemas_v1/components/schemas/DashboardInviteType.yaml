@@ -1,0 +1,7 @@
+description: Type for shared dashboard invitation request body.
+enum:
+  - public_dashboard_invitation
+example: public_dashboard_invitation
+type: string
+x-enum-varnames:
+  - PUBLIC_DASHBOARD_INVITATION

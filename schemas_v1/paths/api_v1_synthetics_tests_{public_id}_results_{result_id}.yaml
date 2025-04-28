@@ -1,0 +1,51 @@
+get:
+  description: Get a specific full result from a given Synthetic API test.
+  operationId: GetAPITestResult
+  parameters:
+    - description: The public ID of the API test to which the target result belongs.
+      in: path
+      name: public_id
+      required: true
+      schema:
+        type: string
+    - description: The ID of the result to get.
+      in: path
+      name: result_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SyntheticsAPITestResultFull.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: |-
+        - Synthetic Monitoring is not activated for the user
+        - Test or result is not owned by the user
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - synthetics_read
+  summary: Get an API test result
+  tags:
+    - Synthetics
+  x-permission:
+    operator: OR
+    permissions:
+      - synthetics_read

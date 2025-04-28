@@ -1,0 +1,9 @@
+description: Error type returned by a browser test.
+enum:
+  - network
+  - js
+example: network
+type: string
+x-enum-varnames:
+  - NETWORK
+  - JS

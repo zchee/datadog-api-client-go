@@ -1,0 +1,22 @@
+description: Object describing a timeframe.
+properties:
+  day:
+    description: Number representing the day of the week.
+    example: 1
+    format: int32
+    maximum: 7
+    minimum: 1
+    type: integer
+  from:
+    description: The hour of the day on which scheduling starts.
+    example: '07:00'
+    type: string
+  to:
+    description: The hour of the day on which scheduling ends.
+    example: '16:00'
+    type: string
+required:
+  - day
+  - from
+  - to
+type: object

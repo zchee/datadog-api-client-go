@@ -1,0 +1,8 @@
+description: Represent validation endpoint responses.
+properties:
+  valid:
+    description: Return `true` if the authentication response is valid.
+    example: true
+    readOnly: true
+    type: boolean
+type: object

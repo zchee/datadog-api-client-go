@@ -1,0 +1,23 @@
+description: The process query to use in the widget.
+properties:
+  filter_by:
+    description: List of processes.
+    items:
+      description: Process name.
+      type: string
+    type: array
+  limit:
+    description: Max number of items in the filter list.
+    format: int64
+    minimum: 0
+    type: integer
+  metric:
+    description: Your chosen metric.
+    example: system.load.1
+    type: string
+  search_by:
+    description: Your chosen search term.
+    type: string
+required:
+  - metric
+type: object

@@ -1,0 +1,9 @@
+description: The query being made on the logs.
+properties:
+  query:
+    description: Search value to apply.
+    example: ''
+    type: string
+required:
+  - query
+type: object

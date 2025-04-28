@@ -1,0 +1,8 @@
+default: markdown
+description: Type of the markdown cell.
+enum:
+  - markdown
+example: markdown
+type: string
+x-enum-varnames:
+  - MARKDOWN

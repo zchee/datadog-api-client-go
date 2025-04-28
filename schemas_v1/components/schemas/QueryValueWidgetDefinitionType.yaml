@@ -1,0 +1,8 @@
+default: query_value
+description: Type of the query value widget.
+enum:
+  - query_value
+example: query_value
+type: string
+x-enum-varnames:
+  - QUERY_VALUE

@@ -1,0 +1,14 @@
+description: Attributes describing the change of state for a given state.
+properties:
+  archiveComment:
+    description: Optional comment to explain why a signal is being archived.
+    type: string
+  archiveReason:
+    $ref: ./SignalArchiveReason.yaml
+  state:
+    $ref: ./SignalTriageState.yaml
+  version:
+    $ref: ./Version.yaml
+required:
+  - state
+type: object

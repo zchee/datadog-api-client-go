@@ -1,0 +1,9 @@
+description: Public key for the result encryption.
+properties:
+  id:
+    description: Fingerprint for the encryption key.
+    type: string
+  key:
+    description: Public key for result encryption.
+    type: string
+type: object

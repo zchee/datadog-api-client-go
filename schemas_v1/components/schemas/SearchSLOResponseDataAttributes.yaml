@@ -1,0 +1,10 @@
+description: Attributes
+properties:
+  facets:
+    $ref: ./SearchSLOResponseDataAttributesFacets.yaml
+  slos:
+    description: SLOs
+    items:
+      $ref: ./SearchServiceLevelObjective.yaml
+    type: array
+type: object

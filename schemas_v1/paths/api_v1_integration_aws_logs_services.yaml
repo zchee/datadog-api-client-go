@@ -1,0 +1,84 @@
+get:
+  description: >-
+    Get the list of current AWS services that Datadog offers automatic log
+    collection. Use returned service IDs with the services parameter for the
+    Enable an AWS service log collection API endpoint.
+  operationId: ListAWSLogsServices
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example:
+              - id: s3
+                label: S3 Access Logs
+              - id: elb
+                label: Classic ELB Access Logs
+              - id: elbv2
+                label: Application ELB Access Logs
+              - id: cloudfront
+                label: CloudFront Access Logs
+              - id: redshift
+                label: Redshift Logs
+              - id: lambda
+                label: Lambda Cloudwatch Logs
+            items:
+              $ref: ../components/schemas/AWSLogsListServicesResponse.yaml
+            type: array
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get list of AWS log ready services
+  tags:
+    - AWS Logs Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_read
+post:
+  description: >-
+    Enable automatic log collection for a list of services. This should be run
+    after running `CreateAWSLambdaARN` to save the configuration.
+  operationId: EnableAWSLogServices
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AWSLogsServicesRequest.yaml
+    description: Enable AWS Log Services request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Enable an AWS Logs integration
+  tags:
+    - AWS Logs Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_edit

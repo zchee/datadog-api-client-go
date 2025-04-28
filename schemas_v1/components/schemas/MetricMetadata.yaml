@@ -1,0 +1,29 @@
+description: Object with all metric related metadata.
+properties:
+  description:
+    description: Metric description.
+    type: string
+  integration:
+    description: Name of the integration that sent the metric if applicable.
+    readOnly: true
+    type: string
+  per_unit:
+    description: Per unit of the metric such as `second` in `bytes per second`.
+    example: second
+    type: string
+  short_name:
+    description: A more human-readable and abbreviated version of the metric name.
+    type: string
+  statsd_interval:
+    description: StatsD flush interval of the metric in seconds if applicable.
+    format: int64
+    type: integer
+  type:
+    description: Metric type such as `gauge` or `rate`.
+    example: count
+    type: string
+  unit:
+    description: Primary unit of the metric such as `byte` or `operation`.
+    example: byte
+    type: string
+type: object

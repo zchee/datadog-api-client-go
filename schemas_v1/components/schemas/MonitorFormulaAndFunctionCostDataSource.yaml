@@ -1,0 +1,11 @@
+description: Data source for cost queries.
+enum:
+  - metrics
+  - cloud_cost
+  - datadog_usage
+example: cloud_cost
+type: string
+x-enum-varnames:
+  - METRICS
+  - CLOUD_COST
+  - DATADOG_USAGE

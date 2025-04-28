@@ -1,0 +1,24 @@
+description: Object containing timeframes and timezone used for advanced scheduling.
+properties:
+  timeframes:
+    description: >-
+      Array containing objects describing the scheduling pattern to apply to
+      each day.
+    example:
+      - day: 1
+        from: '07:00'
+        to: '16:00'
+      - day: 3
+        from: '07:00'
+        to: '16:00'
+    items:
+      $ref: ./SyntheticsTestOptionsSchedulingTimeframe.yaml
+    type: array
+  timezone:
+    description: Timezone in which the timeframe is based.
+    example: America/New_York
+    type: string
+required:
+  - timeframes
+  - timezone
+type: object

@@ -1,0 +1,8 @@
+description: Response containing hourly usage of timeseries.
+properties:
+  usage:
+    description: An array of objects regarding hourly usage of timeseries.
+    items:
+      $ref: ./UsageTimeseriesHour.yaml
+    type: array
+type: object

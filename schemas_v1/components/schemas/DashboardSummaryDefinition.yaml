@@ -1,0 +1,40 @@
+description: Dashboard definition.
+properties:
+  author_handle:
+    description: Identifier of the dashboard author.
+    type: string
+  created_at:
+    description: Creation date of the dashboard.
+    format: date-time
+    type: string
+  description:
+    description: Description of the dashboard.
+    nullable: true
+    type: string
+  id:
+    description: Dashboard identifier.
+    type: string
+  is_read_only:
+    deprecated: true
+    description: >-
+      Whether this dashboard is read-only. If True, only the author and admins
+      can make changes to it.
+
+
+      This property is deprecated; please use the [Restriction Policies
+      API](https://docs.datadoghq.com/api/latest/restriction-policies/) instead
+      to manage write authorization for individual dashboards.
+    type: boolean
+  layout_type:
+    $ref: ./DashboardLayoutType.yaml
+  modified_at:
+    description: Modification date of the dashboard.
+    format: date-time
+    type: string
+  title:
+    description: Title of the dashboard.
+    type: string
+  url:
+    description: URL of the dashboard.
+    type: string
+type: object

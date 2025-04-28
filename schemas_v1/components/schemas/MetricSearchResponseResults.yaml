@@ -1,0 +1,9 @@
+description: Search result.
+properties:
+  metrics:
+    description: List of metrics that match the search query.
+    items:
+      description: Metric name.
+      type: string
+    type: array
+type: object

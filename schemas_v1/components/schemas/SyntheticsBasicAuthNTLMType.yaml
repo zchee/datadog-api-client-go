@@ -1,0 +1,8 @@
+default: ntlm
+description: The type of authentication to use when performing the test.
+enum:
+  - ntlm
+example: ntlm
+type: string
+x-enum-varnames:
+  - NTLM

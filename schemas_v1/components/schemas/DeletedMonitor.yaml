@@ -1,0 +1,9 @@
+description: Response from the delete monitor call.
+properties:
+  deleted_monitor_id:
+    description: ID of the deleted monitor.
+    example: 666486743
+    format: int64
+    type: integer
+readOnly: true
+type: object

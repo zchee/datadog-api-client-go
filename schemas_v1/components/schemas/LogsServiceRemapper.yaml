@@ -1,0 +1,32 @@
+description: >-
+  Use this processor if you want to assign one or more attributes as the
+  official service.
+
+
+  **Note:** If multiple service remapper processors can be applied to a given
+  log,
+
+  only the first one (according to the pipeline order) is taken into account.
+properties:
+  is_enabled:
+    default: false
+    description: Whether or not the processor is enabled.
+    type: boolean
+  name:
+    description: Name of the processor.
+    type: string
+  sources:
+    description: Array of source attributes.
+    example:
+      - web
+      - gateway
+    items:
+      description: Attribute used as a source to define the log associated service.
+      type: string
+    type: array
+  type:
+    $ref: ./LogsServiceRemapperType.yaml
+required:
+  - sources
+  - type
+type: object

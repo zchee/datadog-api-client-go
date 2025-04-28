@@ -1,0 +1,10 @@
+description: HTTP version to use for a Synthetic test.
+enum:
+  - http1
+  - http2
+  - any
+type: string
+x-enum-varnames:
+  - HTTP1
+  - HTTP2
+  - ANY

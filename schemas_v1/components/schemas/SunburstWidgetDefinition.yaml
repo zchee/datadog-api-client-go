@@ -1,0 +1,38 @@
+description: >-
+  Sunbursts are spot on to highlight how groups contribute to the total of a
+  query.
+properties:
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  hide_total:
+    description: Show the total value in this widget.
+    type: boolean
+  legend:
+    $ref: ./SunburstWidgetLegend.yaml
+  requests:
+    description: List of sunburst widget requests.
+    example:
+      - q/apm_query/log_query: <METRIC_1>{<SCOPE_1>}
+    items:
+      $ref: ./SunburstWidgetRequest.yaml
+    minItems: 1
+    type: array
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of your widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./SunburstWidgetDefinitionType.yaml
+required:
+  - type
+  - requests
+type: object

@@ -1,0 +1,13 @@
+description: State of the SLO.
+enum:
+  - breached
+  - warning
+  - ok
+  - no_data
+example: ok
+type: string
+x-enum-varnames:
+  - BREACHED
+  - WARNING
+  - OK
+  - NO_DATA

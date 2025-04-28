@@ -1,0 +1,29 @@
+description: |-
+  A representation of `metric` based SLO timeseries for the provided queries.
+  This is the same response type from `batch_query` endpoint.
+properties:
+  count:
+    description: Count of submitted metrics.
+    example: 0
+    format: int64
+    type: integer
+  metadata:
+    $ref: ./SLOHistoryMetricsSeriesMetadata.yaml
+  sum:
+    description: Total sum of the query.
+    example: 0
+    format: double
+    type: number
+  values:
+    description: The query values for each metric.
+    example: []
+    items:
+      description: A metric name and its value.
+      format: double
+      type: number
+    type: array
+required:
+  - count
+  - sum
+  - values
+type: object

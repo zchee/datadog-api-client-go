@@ -1,0 +1,13 @@
+description: Canonical unit.
+properties:
+  per_unit_name:
+    description: The name of the unit per item.
+    example: bytes
+    type: string
+  type:
+    $ref: ./NumberFormatUnitScaleType.yaml
+  unit_name:
+    description: The name of the unit.
+    example: bytes
+    type: string
+type: object

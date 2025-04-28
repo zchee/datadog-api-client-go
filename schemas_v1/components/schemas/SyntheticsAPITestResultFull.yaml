@@ -1,0 +1,23 @@
+description: Object returned describing a API test result.
+properties:
+  check:
+    $ref: ./SyntheticsAPITestResultFullCheck.yaml
+  check_time:
+    description: When the API test was conducted.
+    format: double
+    type: number
+  check_version:
+    description: Version of the API test used.
+    format: int64
+    type: integer
+  probe_dc:
+    description: Locations for which to query the API test results.
+    type: string
+  result:
+    $ref: ./SyntheticsAPITestResultData.yaml
+  result_id:
+    description: ID of the API test result.
+    type: string
+  status:
+    $ref: ./SyntheticsTestMonitorStatus.yaml
+type: object

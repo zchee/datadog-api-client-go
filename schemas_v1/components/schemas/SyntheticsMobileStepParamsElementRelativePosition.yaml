@@ -1,0 +1,11 @@
+description: Position of the action relative to the element.
+properties:
+  x:
+    description: The `relativePosition` on the `x` axis for the element.
+    format: double
+    type: number
+  'y':
+    description: The `relativePosition` on the `y` axis for the element.
+    format: double
+    type: number
+type: object

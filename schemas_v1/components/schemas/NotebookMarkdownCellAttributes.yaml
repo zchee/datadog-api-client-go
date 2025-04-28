@@ -1,0 +1,7 @@
+description: The attributes of a notebook `markdown` cell.
+properties:
+  definition:
+    $ref: ./NotebookMarkdownCellDefinition.yaml
+required:
+  - definition
+type: object

@@ -1,0 +1,8 @@
+default: attribute-remapper
+description: Type of logs attribute remapper.
+enum:
+  - attribute-remapper
+example: attribute-remapper
+type: string
+x-enum-varnames:
+  - ATTRIBUTE_REMAPPER

@@ -1,0 +1,27 @@
+description: Object defining a variable that can be used in your test configuration.
+properties:
+  example:
+    description: Example for the variable.
+    type: string
+  id:
+    description: ID of the variable for global variables.
+    type: string
+  name:
+    description: Name of the variable.
+    example: VARIABLE_NAME
+    type: string
+  pattern:
+    description: Pattern of the variable.
+    type: string
+  secure:
+    description: >-
+      Whether the value of this variable will be obfuscated in test results.
+      Only for config variables of type `text`.
+    example: false
+    type: boolean
+  type:
+    $ref: ./SyntheticsConfigVariableType.yaml
+required:
+  - type
+  - name
+type: object

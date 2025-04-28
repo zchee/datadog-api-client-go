@@ -1,0 +1,130 @@
+delete:
+  description: Deletes the endpoint with the name `<WEBHOOK NAME>`.
+  operationId: DeleteWebhooksIntegration
+  parameters:
+    - description: The name of the webhook.
+      in: path
+      name: webhook_name
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a webhook
+  tags:
+    - Webhooks Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations
+get:
+  description: Gets the content of the webhook with the name `<WEBHOOK_NAME>`.
+  operationId: GetWebhooksIntegration
+  parameters:
+    - description: The name of the webhook.
+      in: path
+      name: webhook_name
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WebhooksIntegration.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a webhook integration
+  tags:
+    - Webhooks Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+put:
+  description: Updates the endpoint with the name `<WEBHOOK_NAME>`.
+  operationId: UpdateWebhooksIntegration
+  parameters:
+    - description: The name of the webhook.
+      in: path
+      name: webhook_name
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/WebhooksIntegrationUpdateRequest.yaml
+    description: Update an existing Datadog-Webhooks integration.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WebhooksIntegration.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a webhook
+  tags:
+    - Webhooks Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

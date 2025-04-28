@@ -1,0 +1,15 @@
+description: Match rule for the table widget text format.
+example:
+  type: is
+  value: fruit
+properties:
+  type:
+    $ref: ./TableWidgetTextFormatMatchType.yaml
+  value:
+    description: Table Widget Match String.
+    example: Match Value
+    type: string
+required:
+  - type
+  - value
+type: object

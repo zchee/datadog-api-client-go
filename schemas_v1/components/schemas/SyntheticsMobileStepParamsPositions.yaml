@@ -1,0 +1,4 @@
+description: List of positions for the `flick` step type. The maximum is 10 flicks per step
+items:
+  $ref: ./SyntheticsMobileStepParamsPositionsItems.yaml
+type: array

@@ -1,0 +1,15 @@
+description: Scatterplot request containing formulas and functions.
+properties:
+  formulas:
+    description: List of Scatterplot formulas that operate on queries.
+    items:
+      $ref: ./ScatterplotWidgetFormula.yaml
+    type: array
+  queries:
+    description: List of queries that can be returned directly or used in formulas.
+    items:
+      $ref: ./FormulaAndFunctionQueryDefinition.yaml
+    type: array
+  response_format:
+    $ref: ./FormulaAndFunctionResponseFormat.yaml
+type: object

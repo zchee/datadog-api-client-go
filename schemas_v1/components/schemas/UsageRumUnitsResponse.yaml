@@ -1,0 +1,10 @@
+description: >-
+  Response containing the number of RUM Units for each hour for a given
+  organization.
+properties:
+  usage:
+    description: Get hourly usage for RUM Units.
+    items:
+      $ref: ./UsageRumUnitsHour.yaml
+    type: array
+type: object

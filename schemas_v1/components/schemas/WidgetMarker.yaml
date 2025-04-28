@@ -1,0 +1,27 @@
+description: Markers allow you to add visual conditional formatting for your graphs.
+properties:
+  display_type:
+    description: >
+      Combination of:
+        - A severity error, warning, ok, or info
+        - A line type: dashed, solid, or bold
+      In this case of a Distribution widget, this can be set to be
+      `x_axis_percentile`.
+    example: error dashed
+    type: string
+  label:
+    description: Label to display over the marker.
+    example: Error threshold
+    type: string
+  time:
+    description: Timestamp for the widget.
+    type: string
+  value:
+    description: >-
+      Value to apply. Can be a single value y = 15 or a range of values 0 < y <
+      10.
+    example: y = 15
+    type: string
+required:
+  - value
+type: object

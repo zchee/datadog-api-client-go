@@ -1,0 +1,9 @@
+deprecated: true
+description: Subscription definition.
+example:
+  type: pro
+properties:
+  type:
+    description: The subscription type. Types available are `trial`, `free`, and `pro`.
+    type: string
+type: object

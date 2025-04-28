@@ -1,0 +1,89 @@
+get:
+  description: Search and filter your monitor groups details.
+  operationId: SearchMonitorGroups
+  parameters:
+    - description: >-
+        After entering a search query on the [Triggered Monitors page][1], use
+        the query parameter value in the
+
+        URL of the page as a value for this parameter. For more information, see
+        the [Manage Monitors documentation][2].
+
+
+        The query can contain any number of space-separated monitor attributes,
+        for instance: `query="type:metric group_status:alert"`.
+
+
+        [1]: https://app.datadoghq.com/monitors/triggered
+
+        [2]: /monitors/manage/#triggered-monitors
+      in: query
+      name: query
+      required: false
+      schema:
+        type: string
+    - description: Page to start paginating from.
+      in: query
+      name: page
+      required: false
+      schema:
+        default: 0
+        format: int64
+        type: integer
+    - description: Number of monitors to return per page.
+      in: query
+      name: per_page
+      required: false
+      schema:
+        default: 30
+        format: int64
+        type: integer
+    - description: >-
+        String for sort order, composed of field and sort order separate by a
+        comma, for example `name,asc`. Supported sort directions: `asc`, `desc`.
+        Supported fields:
+
+
+        * `name`
+
+        * `status`
+
+        * `tags`
+      in: query
+      name: sort
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MonitorGroupSearchResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - monitors_read
+  summary: Monitors group search
+  tags:
+    - Monitors
+  x-permission:
+    operator: OR
+    permissions:
+      - monitors_read

@@ -1,0 +1,13 @@
+description: Dashboard bulk action request data.
+example:
+  id: 123-abc-456
+  type: dashboard
+properties:
+  id:
+    $ref: ./DashboardID.yaml
+  type:
+    $ref: ./DashboardResourceType.yaml
+required:
+  - type
+  - id
+type: object

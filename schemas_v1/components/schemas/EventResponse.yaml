@@ -1,0 +1,8 @@
+description: Object containing an event response.
+properties:
+  event:
+    $ref: ./Event.yaml
+  status:
+    description: A status.
+    type: string
+type: object

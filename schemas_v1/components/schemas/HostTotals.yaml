@@ -1,0 +1,11 @@
+description: Total number of host currently monitored by Datadog.
+properties:
+  total_active:
+    description: Total number of active host (UP and ???) reporting to Datadog.
+    format: int64
+    type: integer
+  total_up:
+    description: Number of host that are UP and reporting to Datadog.
+    format: int64
+    type: integer
+type: object

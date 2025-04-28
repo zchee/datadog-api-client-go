@@ -1,0 +1,54 @@
+post:
+  description: |-
+    Submit a list of Service Checks.
+
+    **Notes**:
+    - A valid API key is required.
+    - Service checks can be submitted up to 10 minutes in the past.
+  operationId: SubmitServiceCheck
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ServiceChecks.yaml
+    description: Service Check request body.
+    required: true
+  responses:
+    '202':
+      content:
+        text/json:
+          schema:
+            $ref: ../components/schemas/IntakePayloadAccepted.yaml
+      description: Payload accepted
+    '400':
+      content:
+        text/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        text/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '408':
+      content:
+        text/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Request timeout
+    '413':
+      content:
+        text/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Payload too large
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+  summary: Submit a Service Check
+  tags:
+    - Service Checks
+  x-codegen-request-body-name: body

@@ -1,0 +1,10 @@
+description: Updated funnel widget.
+properties:
+  query:
+    $ref: ./FunnelQuery.yaml
+  request_type:
+    $ref: ./FunnelRequestType.yaml
+required:
+  - query
+  - request_type
+type: object

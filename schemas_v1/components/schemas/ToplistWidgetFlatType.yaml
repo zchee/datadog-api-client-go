@@ -1,0 +1,8 @@
+default: flat
+description: Top list widget flat display type.
+enum:
+  - flat
+example: flat
+type: string
+x-enum-varnames:
+  - FLAT

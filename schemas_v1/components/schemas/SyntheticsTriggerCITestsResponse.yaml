@@ -1,0 +1,23 @@
+description: Object containing information about the tests triggered.
+properties:
+  batch_id:
+    description: The public ID of the batch triggered.
+    nullable: true
+    type: string
+  locations:
+    description: List of Synthetic locations.
+    items:
+      $ref: ./SyntheticsTriggerCITestLocation.yaml
+    type: array
+  results:
+    description: Information about the tests runs.
+    items:
+      $ref: ./SyntheticsTriggerCITestRunResult.yaml
+    type: array
+  triggered_check_ids:
+    description: The public IDs of the Synthetic test triggered.
+    items:
+      description: The public ID of the Synthetic test.
+      type: string
+    type: array
+type: object

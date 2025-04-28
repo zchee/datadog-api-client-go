@@ -1,0 +1,8 @@
+default: geo-ip-parser
+description: Type of GeoIP parser.
+enum:
+  - geo-ip-parser
+example: geo-ip-parser
+type: string
+x-enum-varnames:
+  - GEO_IP_PARSER

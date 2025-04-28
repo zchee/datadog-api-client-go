@@ -1,0 +1,15 @@
+description: An assertion for the `validatesXPath` operator.
+properties:
+  operator:
+    $ref: ./SyntheticsAssertionXPathOperator.yaml
+  property:
+    description: The associated assertion property.
+    type: string
+  target:
+    $ref: ./SyntheticsAssertionXPathTargetTarget.yaml
+  type:
+    $ref: ./SyntheticsAssertionType.yaml
+required:
+  - type
+  - operator
+type: object

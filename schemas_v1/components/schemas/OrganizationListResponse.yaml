@@ -1,0 +1,8 @@
+description: Response with the list of organizations.
+properties:
+  orgs:
+    description: Array of organization objects.
+    items:
+      $ref: ./Organization.yaml
+    type: array
+type: object

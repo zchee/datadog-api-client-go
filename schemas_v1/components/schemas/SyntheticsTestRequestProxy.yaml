@@ -1,0 +1,11 @@
+description: The proxy to perform the test.
+properties:
+  headers:
+    $ref: ./SyntheticsTestHeaders.yaml
+  url:
+    description: URL of the proxy to perform the test.
+    example: https://example.com
+    type: string
+required:
+  - url
+type: object

@@ -1,0 +1,13 @@
+description: The comparator used to compare the SLI value to the threshold.
+enum:
+  - '>'
+  - '>='
+  - <
+  - <=
+example: '>'
+type: string
+x-enum-varnames:
+  - GREATER
+  - GREATER_EQUAL
+  - LESS
+  - LESS_EQUAL

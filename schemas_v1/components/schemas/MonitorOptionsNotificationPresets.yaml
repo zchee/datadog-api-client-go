@@ -1,0 +1,13 @@
+default: show_all
+description: Toggles the display of additional content sent in the monitor notification.
+enum:
+  - show_all
+  - hide_query
+  - hide_handles
+  - hide_all
+type: string
+x-enum-varnames:
+  - SHOW_ALL
+  - HIDE_QUERY
+  - HIDE_HANDLES
+  - HIDE_ALL

@@ -1,0 +1,48 @@
+description: Updated change widget.
+properties:
+  apm_query:
+    $ref: ./LogQueryDefinition.yaml
+  change_type:
+    $ref: ./WidgetChangeType.yaml
+  compare_to:
+    $ref: ./WidgetCompareTo.yaml
+  event_query:
+    $ref: ./LogQueryDefinition.yaml
+  formulas:
+    description: List of formulas that operate on queries.
+    items:
+      $ref: ./WidgetFormula.yaml
+    type: array
+  increase_good:
+    description: Whether to show increase as good.
+    type: boolean
+  log_query:
+    $ref: ./LogQueryDefinition.yaml
+  network_query:
+    $ref: ./LogQueryDefinition.yaml
+  order_by:
+    $ref: ./WidgetOrderBy.yaml
+  order_dir:
+    $ref: ./WidgetSort.yaml
+  process_query:
+    $ref: ./ProcessQueryDefinition.yaml
+  profile_metrics_query:
+    $ref: ./LogQueryDefinition.yaml
+  q:
+    description: Query definition.
+    type: string
+  queries:
+    description: List of queries that can be returned directly or used in formulas.
+    items:
+      $ref: ./FormulaAndFunctionQueryDefinition.yaml
+    type: array
+  response_format:
+    $ref: ./FormulaAndFunctionResponseFormat.yaml
+  rum_query:
+    $ref: ./LogQueryDefinition.yaml
+  security_query:
+    $ref: ./LogQueryDefinition.yaml
+  show_present:
+    description: Whether to show the present value.
+    type: boolean
+type: object

@@ -1,0 +1,11 @@
+description: Template variables saved views.
+properties:
+  name:
+    description: The name of the variable.
+    type: string
+  template_variables:
+    description: List of variables.
+    items:
+      $ref: ./DashboardTemplateVariablePresetValue.yaml
+    type: array
+type: object

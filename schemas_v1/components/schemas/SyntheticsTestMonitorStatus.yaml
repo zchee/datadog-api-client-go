@@ -1,0 +1,15 @@
+description: |-
+  The status of your Synthetic monitor.
+  * `O` for not triggered
+  * `1` for triggered
+  * `2` for no data
+enum:
+  - 0
+  - 1
+  - 2
+format: int64
+type: integer
+x-enum-varnames:
+  - UNTRIGGERED
+  - TRIGGERED
+  - NO_DATA

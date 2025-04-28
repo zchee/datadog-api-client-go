@@ -1,0 +1,112 @@
+delete:
+  description: Permanently delete the specified SLO correction object.
+  operationId: DeleteSLOCorrection
+  parameters:
+    - description: The ID of the SLO correction object.
+      in: path
+      name: slo_correction_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete an SLO correction
+  tags:
+    - Service Level Objective Corrections
+get:
+  description: Get an SLO correction.
+  operationId: GetSLOCorrection
+  parameters:
+    - description: The ID of the SLO correction object.
+      in: path
+      name: slo_correction_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SLOCorrectionResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get an SLO correction for an SLO
+  tags:
+    - Service Level Objective Corrections
+patch:
+  description: Update the specified SLO correction object.
+  operationId: UpdateSLOCorrection
+  parameters:
+    - description: The ID of the SLO correction object.
+      in: path
+      name: slo_correction_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SLOCorrectionUpdateRequest.yaml
+    description: The edited SLO correction object.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SLOCorrectionResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update an SLO correction
+  tags:
+    - Service Level Objective Corrections
+  x-codegen-request-body-name: body

@@ -1,0 +1,12 @@
+description: Wrapper object that contains the details of a batch.
+properties:
+  metadata:
+    $ref: ./SyntheticsCIBatchMetadata.yaml
+  results:
+    description: List of results for the batch.
+    items:
+      $ref: ./SyntheticsBatchResult.yaml
+    type: array
+  status:
+    $ref: ./SyntheticsBatchStatus.yaml
+type: object

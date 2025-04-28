@@ -1,0 +1,8 @@
+default: api
+description: Type of the Synthetic test, `api`.
+enum:
+  - api
+example: api
+type: string
+x-enum-varnames:
+  - API

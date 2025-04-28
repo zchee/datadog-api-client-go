@@ -1,0 +1,8 @@
+description: Which type of node to use in the map.
+enum:
+  - host
+  - container
+type: string
+x-enum-varnames:
+  - HOST
+  - CONTAINER

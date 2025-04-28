@@ -1,0 +1,10 @@
+description: Which summary type should be used.
+enum:
+  - monitors
+  - groups
+  - combined
+type: string
+x-enum-varnames:
+  - MONITORS
+  - GROUPS
+  - COMBINED

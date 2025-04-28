@@ -1,0 +1,24 @@
+description: Datadog API key.
+properties:
+  created:
+    description: Date of creation of the API key.
+    example: '2019-08-02 15:31:07'
+    readOnly: true
+    type: string
+  created_by:
+    description: Datadog user handle that created the API key.
+    example: john@example.com
+    readOnly: true
+    type: string
+  key:
+    description: API key.
+    example: 1234512345123456abcabc912349abcd
+    maxLength: 32
+    minLength: 32
+    readOnly: true
+    type: string
+  name:
+    description: Name of your API key.
+    example: example user
+    type: string
+type: object

@@ -1,0 +1,49 @@
+description: Object containing details about your Synthetic test.
+properties:
+  config:
+    $ref: ./SyntheticsTestConfig.yaml
+  creator:
+    $ref: ./Creator.yaml
+  locations:
+    description: Array of locations used to run the test.
+    example:
+      - aws:eu-west-3
+    items:
+      description: A location from which the test was run.
+      type: string
+    type: array
+  message:
+    description: Notification message associated with the test.
+    type: string
+  monitor_id:
+    description: The associated monitor ID.
+    format: int64
+    readOnly: true
+    type: integer
+  name:
+    description: Name of the test.
+    type: string
+  options:
+    $ref: ./SyntheticsTestOptions.yaml
+  public_id:
+    description: The test public ID.
+    readOnly: true
+    type: string
+  status:
+    $ref: ./SyntheticsTestPauseStatus.yaml
+  steps:
+    description: For browser test, the steps of the test.
+    items:
+      $ref: ./SyntheticsStep.yaml
+    type: array
+  subtype:
+    $ref: ./SyntheticsTestDetailsSubType.yaml
+  tags:
+    description: Array of tags attached to the test.
+    items:
+      description: A tag attached to the test.
+      type: string
+    type: array
+  type:
+    $ref: ./SyntheticsTestDetailsType.yaml
+type: object

@@ -1,0 +1,19 @@
+get:
+  description: Get the default locations settings.
+  operationId: GetSyntheticsDefaultLocations
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SyntheticsDefaultLocations.yaml
+      description: OK
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the default locations
+  tags:
+    - Synthetics
+  x-permission:
+    operator: OR
+    permissions:
+      - synthetics_default_settings_read

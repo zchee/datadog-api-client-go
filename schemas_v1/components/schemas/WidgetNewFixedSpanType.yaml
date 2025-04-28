@@ -1,0 +1,7 @@
+description: Type "fixed" denotes a fixed span.
+enum:
+  - fixed
+example: fixed
+type: string
+x-enum-varnames:
+  - FIXED

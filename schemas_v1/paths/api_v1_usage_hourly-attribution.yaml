@@ -1,0 +1,114 @@
+get:
+  description: >-
+    Get hourly usage attribution. Multi-region data is available starting March
+    1, 2023.
+
+
+    This API endpoint is paginated. To make sure you receive all records, check
+    if the value of `next_record_id` is
+
+    set in the response. If it is, make another request and pass
+    `next_record_id` as a parameter.
+
+    Pseudo code example:
+
+
+    ```
+
+    response := GetHourlyUsageAttribution(start_month)
+
+    cursor := response.metadata.pagination.next_record_id
+
+    WHILE cursor != null BEGIN
+      sleep(5 seconds)  # Avoid running into rate limit
+      response := GetHourlyUsageAttribution(start_month, next_record_id=cursor)
+      cursor := response.metadata.pagination.next_record_id
+    END
+
+    ```
+  operationId: GetHourlyUsageAttribution
+  parameters:
+    - description: >-
+        Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for
+        usage beginning at this hour.
+      in: query
+      name: start_hr
+      required: true
+      schema:
+        format: date-time
+        type: string
+    - description: >-
+        Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for
+        usage ending
+
+        **before** this hour.
+      in: query
+      name: end_hr
+      required: false
+      schema:
+        format: date-time
+        type: string
+    - description: Usage type to retrieve.
+      in: query
+      name: usage_type
+      required: true
+      schema:
+        $ref: ../components/schemas/HourlyUsageAttributionUsageType.yaml
+    - description: >-
+        List following results with a next_record_id provided in the previous
+        query.
+      in: query
+      name: next_record_id
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Comma separated list of tags used to group usage. If no value is
+        provided the usage will not be broken down by tags.
+
+
+        To see which tags are available, look for the value of
+        `tag_config_source` in the API response.
+      in: query
+      name: tag_breakdown_keys
+      required: false
+      schema:
+        type: string
+    - description: Include child org usage in the response. Defaults to `true`.
+      in: query
+      name: include_descendants
+      required: false
+      schema:
+        default: true
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/HourlyUsageAttributionResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden - User is not authorized
+    '429':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Too many requests
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - usage_read
+  summary: Get hourly usage attribution
+  tags:
+    - Usage Metering
+  x-permission:
+    operator: OR
+    permissions:
+      - usage_read

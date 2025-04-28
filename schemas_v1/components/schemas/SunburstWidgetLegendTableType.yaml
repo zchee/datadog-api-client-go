@@ -1,0 +1,9 @@
+description: Whether or not to show a table legend.
+enum:
+  - table
+  - none
+example: table
+type: string
+x-enum-varnames:
+  - TABLE
+  - NONE

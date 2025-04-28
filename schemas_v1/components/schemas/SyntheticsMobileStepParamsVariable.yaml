@@ -1,0 +1,14 @@
+description: Variable object for `extractVariable` step type.
+properties:
+  example:
+    description: An example for the variable.
+    example: ''
+    type: string
+  name:
+    description: The variable name.
+    example: VAR_NAME
+    type: string
+required:
+  - name
+  - example
+type: object

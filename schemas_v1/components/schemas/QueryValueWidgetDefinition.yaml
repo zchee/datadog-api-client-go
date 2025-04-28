@@ -1,0 +1,46 @@
+description: Query values display the current value of a given metric, APM, or log query.
+properties:
+  autoscale:
+    description: Whether to use auto-scaling or not.
+    type: boolean
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  custom_unit:
+    description: Display a unit of your choice on the widget.
+    type: string
+  precision:
+    description: Number of decimals to show. If not defined, the widget uses the raw value.
+    format: int64
+    type: integer
+  requests:
+    description: Widget definition.
+    example:
+      - q/apm_query/log_query: <METRIC_1>{<SCOPE_1>}
+    items:
+      $ref: ./QueryValueWidgetRequest.yaml
+    maxItems: 1
+    minItems: 1
+    type: array
+  text_align:
+    $ref: ./WidgetTextAlign.yaml
+  time:
+    $ref: ./WidgetTime.yaml
+  timeseries_background:
+    $ref: ./TimeseriesBackground.yaml
+  title:
+    description: Title of your widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./QueryValueWidgetDefinitionType.yaml
+required:
+  - type
+  - requests
+type: object

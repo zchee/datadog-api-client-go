@@ -1,0 +1,28 @@
+description: Object describing a file to be used as part of the request in the test.
+properties:
+  bucketKey:
+    description: Bucket key of the file.
+    type: string
+  content:
+    description: Content of the file.
+    maxLength: 3145728
+    type: string
+  name:
+    description: Name of the file.
+    maxLength: 1500
+    type: string
+  originalFileName:
+    description: Original name of the file.
+    maxLength: 1500
+    type: string
+  size:
+    description: Size of the file.
+    format: int64
+    maximum: 3145728
+    minimum: 1
+    type: integer
+  type:
+    description: Type of the file.
+    maxLength: 1500
+    type: string
+type: object

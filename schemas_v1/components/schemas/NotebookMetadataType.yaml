@@ -1,0 +1,16 @@
+description: Metadata type of the notebook.
+enum:
+  - postmortem
+  - runbook
+  - investigation
+  - documentation
+  - report
+example: investigation
+nullable: true
+type: string
+x-enum-varnames:
+  - POSTMORTEM
+  - RUNBOOK
+  - INVESTIGATION
+  - DOCUMENTATION
+  - REPORT

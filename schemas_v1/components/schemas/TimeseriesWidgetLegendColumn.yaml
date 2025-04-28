@@ -1,0 +1,14 @@
+description: Legend column.
+enum:
+  - value
+  - avg
+  - sum
+  - min
+  - max
+type: string
+x-enum-varnames:
+  - VALUE
+  - AVG
+  - SUM
+  - MIN
+  - MAX

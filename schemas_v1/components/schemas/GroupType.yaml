@@ -1,0 +1,7 @@
+description: Set the sort type to group.
+enum:
+  - group
+example: group
+type: string
+x-enum-varnames:
+  - GROUP

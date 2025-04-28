@@ -1,0 +1,14 @@
+description: An object describing the error with error type and error message.
+properties:
+  error_message:
+    description: A message with more details about the error.
+    example: ''
+    type: string
+  error_type:
+    description: Type of the error.
+    example: ''
+    type: string
+required:
+  - error_type
+  - error_message
+type: object

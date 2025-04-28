@@ -1,0 +1,8 @@
+default: query_table
+description: Type of the table widget.
+enum:
+  - query_table
+example: query_table
+type: string
+x-enum-varnames:
+  - QUERY_TABLE

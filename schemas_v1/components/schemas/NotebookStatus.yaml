@@ -1,0 +1,8 @@
+default: published
+description: Publication status of the notebook. For now, always "published".
+enum:
+  - published
+example: published
+type: string
+x-enum-varnames:
+  - PUBLISHED

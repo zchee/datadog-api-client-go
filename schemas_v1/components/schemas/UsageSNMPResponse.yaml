@@ -1,0 +1,10 @@
+description: >-
+  Response containing the number of SNMP devices for each hour for a given
+  organization.
+properties:
+  usage:
+    description: Get hourly usage for SNMP devices.
+    items:
+      $ref: ./UsageSNMPHour.yaml
+    type: array
+type: object

@@ -1,0 +1,18 @@
+description: Set of rules for the grok parser.
+properties:
+  match_rules:
+    description: List of match rules for the grok parser, separated by a new line.
+    example: |
+      rule_name_1 foo
+      rule_name_2 bar
+    type: string
+  support_rules:
+    default: ''
+    description: List of support rules for the grok parser, separated by a new line.
+    example: |
+      rule_name_1 foo
+      rule_name_2 bar
+    type: string
+required:
+  - match_rules
+type: object

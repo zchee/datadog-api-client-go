@@ -1,0 +1,18 @@
+description: >-
+  A numeric representation of the type of the service level objective (`0` for
+
+  monitor, `1` for metric). Always included in service level objective
+  responses.
+
+  Ignored in create/update requests.
+enum:
+  - 0
+  - 1
+  - 2
+example: 0
+format: int32
+type: integer
+x-enum-varnames:
+  - MONITOR
+  - METRIC
+  - TIME_SLICE

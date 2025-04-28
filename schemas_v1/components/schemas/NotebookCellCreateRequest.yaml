@@ -1,0 +1,11 @@
+additionalProperties: false
+description: The description of a notebook cell create request.
+properties:
+  attributes:
+    $ref: ./NotebookCellCreateRequestAttributes.yaml
+  type:
+    $ref: ./NotebookCellResourceType.yaml
+required:
+  - attributes
+  - type
+type: object

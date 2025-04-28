@@ -1,0 +1,21 @@
+description: Object with the result of the last browser test run.
+properties:
+  device:
+    $ref: ./SyntheticsDevice.yaml
+  duration:
+    description: Length in milliseconds of the browser test run.
+    format: double
+    type: number
+  errorCount:
+    description: Amount of errors collected for a single browser test run.
+    format: int64
+    type: integer
+  stepCountCompleted:
+    description: Amount of browser test steps completed before failing.
+    format: int64
+    type: integer
+  stepCountTotal:
+    description: Total amount of browser test steps.
+    format: int64
+    type: integer
+type: object

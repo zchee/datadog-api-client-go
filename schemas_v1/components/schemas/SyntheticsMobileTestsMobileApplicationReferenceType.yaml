@@ -1,0 +1,9 @@
+description: Reference type for the mobile application for a mobile synthetics test.
+enum:
+  - latest
+  - version
+example: latest
+type: string
+x-enum-varnames:
+  - LATEST
+  - VERSION

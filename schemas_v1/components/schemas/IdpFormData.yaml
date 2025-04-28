@@ -1,0 +1,10 @@
+description: Object describing the IdP configuration.
+properties:
+  idp_file:
+    description: The path to the XML metadata file you wish to upload.
+    example: ''
+    format: binary
+    type: string
+required:
+  - idp_file
+type: object

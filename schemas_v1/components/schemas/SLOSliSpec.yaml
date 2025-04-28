@@ -1,0 +1,3 @@
+description: A generic SLI specification. This is currently used for time-slice SLOs only.
+oneOf:
+  - $ref: ./SLOTimeSliceSpec.yaml

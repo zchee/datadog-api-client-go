@@ -1,0 +1,21 @@
+description: |-
+  Object containing the options for a Synthetic test as a monitor
+  (for example, renotification).
+properties:
+  escalation_message:
+    description: Message to include in the escalation notification.
+    type: string
+  notification_preset_name:
+    $ref: ./SyntheticsTestOptionsMonitorOptionsNotificationPresetName.yaml
+  renotify_interval:
+    description: |-
+      Time interval before renotifying if the test is still failing
+      (in minutes).
+    format: int64
+    minimum: 0
+    type: integer
+  renotify_occurrences:
+    description: The number of times to renotify if the test is still failing.
+    format: int64
+    type: integer
+type: object

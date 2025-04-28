@@ -1,0 +1,14 @@
+description: Aggregator used for the request.
+enum:
+  - avg
+  - last
+  - max
+  - min
+  - sum
+type: string
+x-enum-varnames:
+  - AVERAGE
+  - LAST
+  - MAXIMUM
+  - MINIMUM
+  - SUM

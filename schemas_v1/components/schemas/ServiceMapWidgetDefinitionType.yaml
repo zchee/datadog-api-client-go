@@ -1,0 +1,8 @@
+default: servicemap
+description: Type of the service map widget.
+enum:
+  - servicemap
+example: servicemap
+type: string
+x-enum-varnames:
+  - SERVICEMAP

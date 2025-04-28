@@ -1,0 +1,42 @@
+description: >-
+  Check status shows the current status or number of results for any check
+  performed.
+properties:
+  check:
+    description: Name of the check to use in the widget.
+    example: ''
+    type: string
+  group:
+    description: Group reporting a single check.
+    type: string
+  group_by:
+    description: List of tag prefixes to group by in the case of a cluster check.
+    items:
+      description: Tag prefix.
+      type: string
+    type: array
+  grouping:
+    $ref: ./WidgetGrouping.yaml
+  tags:
+    description: List of tags used to filter the groups reporting a cluster check.
+    items:
+      description: Tag name.
+      type: string
+    type: array
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./CheckStatusWidgetDefinitionType.yaml
+required:
+  - type
+  - check
+  - grouping
+type: object

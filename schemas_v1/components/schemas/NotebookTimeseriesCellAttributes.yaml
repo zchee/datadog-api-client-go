@@ -1,0 +1,13 @@
+description: The attributes of a notebook `timeseries` cell.
+properties:
+  definition:
+    $ref: ./TimeseriesWidgetDefinition.yaml
+  graph_size:
+    $ref: ./NotebookGraphSize.yaml
+  split_by:
+    $ref: ./NotebookSplitBy.yaml
+  time:
+    $ref: ./NotebookCellTime.yaml
+required:
+  - definition
+type: object

@@ -1,0 +1,9 @@
+description: The type of gRPC call to perform.
+enum:
+  - healthcheck
+  - unary
+example: unary
+type: string
+x-enum-varnames:
+  - HEALTHCHECK
+  - UNARY

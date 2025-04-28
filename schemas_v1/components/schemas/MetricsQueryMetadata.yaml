@@ -1,0 +1,87 @@
+description: Object containing all metric names returned and their associated metadata.
+properties:
+  aggr:
+    description: Aggregation type.
+    example: avg
+    nullable: true
+    readOnly: true
+    type: string
+  display_name:
+    description: Display name of the metric.
+    example: system.cpu.idle
+    readOnly: true
+    type: string
+  end:
+    description: End of the time window, milliseconds since Unix epoch.
+    format: int64
+    readOnly: true
+    type: integer
+  expression:
+    description: Metric expression.
+    example: system.cpu.idle{host:foo,env:test}
+    readOnly: true
+    type: string
+  interval:
+    description: Number of milliseconds between data samples.
+    format: int64
+    readOnly: true
+    type: integer
+  length:
+    description: Number of data samples.
+    format: int64
+    readOnly: true
+    type: integer
+  metric:
+    description: Metric name.
+    example: system.cpu.idle
+    readOnly: true
+    type: string
+  pointlist:
+    description: List of points of the timeseries in milliseconds.
+    example:
+      - - 1681683300000
+        - 77.62145685254418
+    items:
+      $ref: ./Point.yaml
+    readOnly: true
+    type: array
+  query_index:
+    description: The index of the series' query within the request.
+    format: int64
+    readOnly: true
+    type: integer
+  scope:
+    description: Metric scope, comma separated list of tags.
+    example: host:foo,env:test
+    readOnly: true
+    type: string
+  start:
+    description: Start of the time window, milliseconds since Unix epoch.
+    format: int64
+    readOnly: true
+    type: integer
+  tag_set:
+    description: Unique tags identifying this series.
+    items:
+      description: Unique tags identifying this series.
+      type: string
+    readOnly: true
+    type: array
+  unit:
+    description: >-
+      Detailed information about the metric unit.
+
+      The first element describes the "primary unit" (for example, `bytes` in
+      `bytes per second`).
+
+      The second element describes the "per unit" (for example, `second` in
+      `bytes per second`).
+
+      If the second element is not present, the API returns null.
+    items:
+      $ref: ./MetricsQueryUnit.yaml
+    maxItems: 2
+    minItems: 2
+    readOnly: true
+    type: array
+type: object

@@ -1,0 +1,24 @@
+description: The log query.
+properties:
+  compute:
+    $ref: ./LogsQueryCompute.yaml
+  group_by:
+    description: List of tag prefixes to group by in the case of a cluster check.
+    items:
+      $ref: ./LogQueryDefinitionGroupBy.yaml
+    type: array
+  index:
+    description: >-
+      A coma separated-list of index names. Use "*" query all indexes at once.
+      [Multiple
+      Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes)
+    example: days-3,days-7
+    type: string
+  multi_compute:
+    description: This field is mutually exclusive with `compute`.
+    items:
+      $ref: ./LogsQueryCompute.yaml
+    type: array
+  search:
+    $ref: ./LogQueryDefinitionSearch.yaml
+type: object

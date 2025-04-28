@@ -1,0 +1,20 @@
+description: The split graph list contains a graph for each value of the split dimension.
+minLength: 1
+properties:
+  tag_key:
+    description: The tag key.
+    example: demo
+    minLength: 1
+    type: string
+  tag_values:
+    description: The tag values.
+    example:
+      - env
+    items:
+      minLength: 1
+      type: string
+    type: array
+required:
+  - tag_key
+  - tag_values
+type: object

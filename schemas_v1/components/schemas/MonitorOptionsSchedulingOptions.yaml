@@ -1,0 +1,7 @@
+description: Configuration options for scheduling.
+properties:
+  custom_schedule:
+    $ref: ./MonitorOptionsCustomSchedule.yaml
+  evaluation_window:
+    $ref: ./MonitorOptionsSchedulingOptionsEvaluationWindow.yaml
+type: object

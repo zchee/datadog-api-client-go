@@ -1,0 +1,7 @@
+description: Filter for logs.
+properties:
+  query:
+    description: The filter query.
+    example: source:python
+    type: string
+type: object

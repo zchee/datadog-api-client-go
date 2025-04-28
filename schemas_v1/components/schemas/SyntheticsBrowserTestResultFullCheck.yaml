@@ -1,0 +1,7 @@
+description: Object describing the browser test configuration.
+properties:
+  config:
+    $ref: ./SyntheticsTestConfig.yaml
+required:
+  - config
+type: object

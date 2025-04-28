@@ -1,0 +1,16 @@
+description: >-
+  The status of a service check. Set to `0` for OK, `1` for warning, `2` for
+  critical, and `3` for unknown.
+enum:
+  - 0
+  - 1
+  - 2
+  - 3
+example: 0
+format: int32
+type: integer
+x-enum-varnames:
+  - OK
+  - WARNING
+  - CRITICAL
+  - UNKNOWN

@@ -1,0 +1,16 @@
+description: Compute options.
+properties:
+  aggregation:
+    $ref: ./FormulaAndFunctionEventAggregation.yaml
+  interval:
+    description: A time interval in milliseconds.
+    example: 60000
+    format: int64
+    type: integer
+  metric:
+    description: Measurable attribute to compute.
+    example: '@duration'
+    type: string
+required:
+  - aggregation
+type: object

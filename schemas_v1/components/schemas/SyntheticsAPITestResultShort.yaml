@@ -1,0 +1,17 @@
+description: Object with the results of a single Synthetic API test.
+properties:
+  check_time:
+    description: Last time the API test was performed.
+    format: double
+    type: number
+  probe_dc:
+    description: Location from which the API test was performed.
+    type: string
+  result:
+    $ref: ./SyntheticsAPITestResultShortResult.yaml
+  result_id:
+    description: ID of the API test result.
+    type: string
+  status:
+    $ref: ./SyntheticsTestMonitorStatus.yaml
+type: object

@@ -1,0 +1,29 @@
+description: >-
+  A list of all Datadog-AWS logs integrations available in your Datadog
+  organization.
+properties:
+  account_id:
+    description: Your AWS Account ID without dashes.
+    example: '1234567'
+    type: string
+  lambdas:
+    description: List of ARNs configured in your Datadog account.
+    example:
+      - arn: arn:aws:lambda:us-east-1:1234567:function:LogsCollectionAPITest
+    items:
+      $ref: ./AWSLogsLambda.yaml
+    type: array
+  services:
+    description: Array of services IDs.
+    example:
+      - s3
+      - elb
+      - elbv2
+      - cloudfront
+      - redshift
+      - lambda
+    items:
+      description: Description of the services.
+      type: string
+    type: array
+type: object

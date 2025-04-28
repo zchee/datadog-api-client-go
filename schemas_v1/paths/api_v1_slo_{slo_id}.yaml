@@ -1,0 +1,168 @@
+delete:
+  description: |-
+    Permanently delete the specified service level objective object.
+
+    If an SLO is used in a dashboard, the `DELETE /v1/slo/` endpoint returns
+    a 409 conflict error because the SLO is referenced in a dashboard.
+  operationId: DeleteSLO
+  parameters:
+    - description: The ID of the service level objective.
+      in: path
+      name: slo_id
+      required: true
+      schema:
+        type: string
+    - description: >-
+        Delete the monitor even if it's referenced by other resources (for
+        example SLO, composite monitor).
+      in: query
+      name: force
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SLODeleteResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '409':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SLODeleteResponse.yaml
+      description: Conflict
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - slos_write
+  summary: Delete an SLO
+  tags:
+    - Service Level Objectives
+  x-permission:
+    operator: OR
+    permissions:
+      - slos_write
+get:
+  description: Get a service level objective object.
+  operationId: GetSLO
+  parameters:
+    - description: The ID of the service level objective object.
+      in: path
+      name: slo_id
+      required: true
+      schema:
+        type: string
+    - description: Get the IDs of SLO monitors that reference this SLO.
+      example: true
+      in: query
+      name: with_configured_alert_ids
+      required: false
+      schema:
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SLOResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - slos_read
+  summary: Get an SLO's details
+  tags:
+    - Service Level Objectives
+  x-permission:
+    operator: OR
+    permissions:
+      - slos_read
+put:
+  description: Update the specified service level objective object.
+  operationId: UpdateSLO
+  parameters:
+    - description: The ID of the service level objective object.
+      in: path
+      name: slo_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ServiceLevelObjective.yaml
+    description: The edited service level objective request object.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SLOListResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - slos_write
+  summary: Update an SLO
+  tags:
+    - Service Level Objectives
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - slos_write

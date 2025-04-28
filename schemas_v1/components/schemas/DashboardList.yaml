@@ -1,0 +1,40 @@
+description: Your Datadog Dashboards.
+properties:
+  author:
+    $ref: ./Creator.yaml
+  created:
+    description: Date of creation of the dashboard list.
+    format: date-time
+    readOnly: true
+    type: string
+  dashboard_count:
+    description: The number of dashboards in the list.
+    format: int64
+    readOnly: true
+    type: integer
+  id:
+    description: The ID of the dashboard list.
+    format: int64
+    readOnly: true
+    type: integer
+  is_favorite:
+    description: Whether or not the list is in the favorites.
+    readOnly: true
+    type: boolean
+  modified:
+    description: Date of last edition of the dashboard list.
+    format: date-time
+    readOnly: true
+    type: string
+  name:
+    description: The name of the dashboard list.
+    example: My Dashboard
+    type: string
+  type:
+    description: The type of dashboard list.
+    example: manual_dashboard_list
+    readOnly: true
+    type: string
+required:
+  - name
+type: object

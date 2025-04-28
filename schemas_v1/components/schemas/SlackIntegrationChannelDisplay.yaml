@@ -1,0 +1,23 @@
+description: Configuration options for what is shown in an alert event message.
+properties:
+  message:
+    default: true
+    description: Show the main body of the alert event.
+    type: boolean
+  mute_buttons:
+    default: false
+    description: Show interactive buttons to mute the alerting monitor.
+    type: boolean
+  notified:
+    default: true
+    description: Show the list of @-handles in the alert event.
+    type: boolean
+  snapshot:
+    default: true
+    description: Show the alert event's snapshot image.
+    type: boolean
+  tags:
+    default: true
+    description: Show the scopes on which the monitor alerted.
+    type: boolean
+type: object

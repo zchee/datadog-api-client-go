@@ -1,0 +1,8 @@
+description: Composed target for `validatesJSONSchema` operator.
+properties:
+  jsonSchema:
+    description: The JSON Schema to assert.
+    type: string
+  metaSchema:
+    $ref: ./SyntheticsAssertionJSONSchemaMetaSchema.yaml
+type: object

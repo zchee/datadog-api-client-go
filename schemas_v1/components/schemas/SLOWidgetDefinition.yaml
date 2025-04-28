@@ -1,0 +1,42 @@
+description: >-
+  Use the SLO and uptime widget to track your SLOs (Service Level Objectives)
+  and uptime on screenboards and timeboards.
+properties:
+  additional_query_filters:
+    description: Additional filters applied to the SLO query.
+    type: string
+  global_time_target:
+    description: Defined global time target.
+    type: string
+  show_error_budget:
+    description: Defined error budget.
+    type: boolean
+  slo_id:
+    description: ID of the SLO displayed.
+    type: string
+  time_windows:
+    description: Times being monitored.
+    items:
+      $ref: ./WidgetTimeWindows.yaml
+    type: array
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./SLOWidgetDefinitionType.yaml
+  view_mode:
+    $ref: ./WidgetViewMode.yaml
+  view_type:
+    default: detail
+    description: Type of view displayed by the widget.
+    example: detail
+    type: string
+required:
+  - type
+  - view_type
+type: object

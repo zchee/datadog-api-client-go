@@ -1,0 +1,6 @@
+description: Description of the CI provider.
+properties:
+  name:
+    description: Name of the CI provider.
+    type: string
+type: object

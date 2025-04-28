@@ -1,0 +1,9 @@
+description: Layout type of the dashboard.
+enum:
+  - ordered
+  - free
+example: ordered
+type: string
+x-enum-varnames:
+  - ORDERED
+  - FREE

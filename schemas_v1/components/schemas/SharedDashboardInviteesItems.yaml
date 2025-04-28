@@ -1,0 +1,19 @@
+description: The allowlisted invitees for an INVITE-only shared dashboard.
+properties:
+  access_expiration:
+    description: Time of the invitee expiration. Null means the invite will not expire.
+    format: date-time
+    nullable: true
+    type: string
+  created_at:
+    description: Time that the invitee was created.
+    format: date-time
+    readOnly: true
+    type: string
+  email:
+    description: Email of the invitee.
+    example: test@datadoghq.com
+    type: string
+required:
+  - email
+type: object

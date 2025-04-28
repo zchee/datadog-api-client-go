@@ -1,0 +1,37 @@
+description: A JSON array of settings.
+properties:
+  private_widget_share:
+    description: >-
+      Whether or not the organization users can share widgets outside of
+      Datadog.
+    example: false
+    type: boolean
+  saml:
+    $ref: ./OrganizationSettingsSaml.yaml
+  saml_autocreate_access_role:
+    $ref: ./AccessRole.yaml
+  saml_autocreate_users_domains:
+    $ref: ./OrganizationSettingsSamlAutocreateUsersDomains.yaml
+  saml_can_be_enabled:
+    description: Whether or not SAML can be enabled for this organization.
+    example: false
+    type: boolean
+  saml_idp_endpoint:
+    description: Identity provider endpoint for SAML authentication.
+    example: https://my.saml.endpoint
+    type: string
+  saml_idp_initiated_login:
+    $ref: ./OrganizationSettingsSamlIdpInitiatedLogin.yaml
+  saml_idp_metadata_uploaded:
+    description: >-
+      Whether or not a SAML identity provider metadata file was provided to the
+      Datadog organization.
+    example: false
+    type: boolean
+  saml_login_url:
+    description: URL for SAML logging.
+    example: https://my.saml.login.url
+    type: string
+  saml_strict_mode:
+    $ref: ./OrganizationSettingsSamlStrictMode.yaml
+type: object

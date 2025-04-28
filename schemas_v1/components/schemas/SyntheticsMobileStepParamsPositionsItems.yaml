@@ -1,0 +1,11 @@
+description: A description of a single position for a `flick` step type.
+properties:
+  x:
+    description: The `x` position for the flick.
+    format: double
+    type: number
+  'y':
+    description: The `y` position for the flick.
+    format: double
+    type: number
+type: object

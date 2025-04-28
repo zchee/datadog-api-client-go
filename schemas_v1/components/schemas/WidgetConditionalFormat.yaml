@@ -1,0 +1,38 @@
+description: Define a conditional format for the widget.
+properties:
+  comparator:
+    $ref: ./WidgetComparator.yaml
+  custom_bg_color:
+    description: >-
+      Color palette to apply to the background, same values available as
+      palette.
+    type: string
+  custom_fg_color:
+    description: >-
+      Color palette to apply to the foreground, same values available as
+      palette.
+    type: string
+  hide_value:
+    description: True hides values.
+    type: boolean
+  image_url:
+    description: Displays an image as the background.
+    type: string
+  metric:
+    description: Metric from the request to correlate this conditional format with.
+    type: string
+  palette:
+    $ref: ./WidgetPalette.yaml
+  timeframe:
+    description: Defines the displayed timeframe.
+    type: string
+  value:
+    description: Value for the comparator.
+    example: 0
+    format: double
+    type: number
+required:
+  - comparator
+  - value
+  - palette
+type: object

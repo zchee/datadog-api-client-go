@@ -1,0 +1,120 @@
+delete:
+  description: Delete a single service object in the Datadog-PagerDuty integration.
+  operationId: DeletePagerDutyIntegrationService
+  parameters:
+    - description: The service name
+      in: path
+      name: service_name
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: No Content
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a single service object
+  tags:
+    - PagerDuty Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations
+get:
+  description: Get service name in the Datadog-PagerDuty integration.
+  operationId: GetPagerDutyIntegrationService
+  parameters:
+    - description: The service name.
+      in: path
+      name: service_name
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PagerDutyServiceName.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a single service object
+  tags:
+    - PagerDuty Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+put:
+  description: Update a single service object in the Datadog-PagerDuty integration.
+  operationId: UpdatePagerDutyIntegrationService
+  parameters:
+    - description: The service name
+      in: path
+      name: service_name
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/PagerDutyServiceKey.yaml
+    description: Update an existing service object request body.
+    required: true
+  responses:
+    '200':
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a single service object
+  tags:
+    - PagerDuty Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

@@ -1,0 +1,36 @@
+description: >-
+  The notes and links widget is similar to free text widget, but allows for more
+  formatting options.
+properties:
+  background_color:
+    description: Background color of the note.
+    type: string
+  content:
+    description: Content of the note.
+    example: ''
+    type: string
+  font_size:
+    description: Size of the text.
+    type: string
+  has_padding:
+    default: true
+    description: Whether to add padding or not.
+    type: boolean
+  show_tick:
+    description: Whether to show a tick or not.
+    type: boolean
+  text_align:
+    $ref: ./WidgetTextAlign.yaml
+  tick_edge:
+    $ref: ./WidgetTickEdge.yaml
+  tick_pos:
+    description: Where to position the tick on an edge.
+    type: string
+  type:
+    $ref: ./NoteWidgetDefinitionType.yaml
+  vertical_align:
+    $ref: ./WidgetVerticalAlign.yaml
+required:
+  - type
+  - content
+type: object

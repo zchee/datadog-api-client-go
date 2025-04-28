@@ -1,0 +1,12 @@
+description: The direction of the scroll for a `scrollToElement` step type.
+enum:
+  - up
+  - down
+  - left
+  - right
+type: string
+x-enum-varnames:
+  - UP
+  - DOWN
+  - LEFT
+  - RIGHT

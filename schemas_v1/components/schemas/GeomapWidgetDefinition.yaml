@@ -1,0 +1,48 @@
+description: This visualization displays a series of values by country on a world map.
+properties:
+  custom_links:
+    description: A list of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  requests:
+    description: >-
+      Array of one request object to display in the widget. The request must
+      contain a `group-by` tag whose value is a country ISO code.
+
+
+      See the [Request JSON schema
+      documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)
+
+      for information about building the `REQUEST_SCHEMA`.
+    example:
+      - rum_query:
+          search:
+            query: <METRIC_1>{<SCOPE_1>}
+    items:
+      $ref: ./GeomapWidgetRequest.yaml
+    maxItems: 1
+    minItems: 1
+    type: array
+  style:
+    $ref: ./GeomapWidgetDefinitionStyle.yaml
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: The title of your widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: The size of the title.
+    type: string
+  type:
+    $ref: ./GeomapWidgetDefinitionType.yaml
+  view:
+    $ref: ./GeomapWidgetDefinitionView.yaml
+required:
+  - type
+  - requests
+  - style
+  - view
+type: object

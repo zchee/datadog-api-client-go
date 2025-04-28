@@ -1,0 +1,10 @@
+description: Layout of the legend.
+enum:
+  - auto
+  - horizontal
+  - vertical
+type: string
+x-enum-varnames:
+  - AUTO
+  - HORIZONTAL
+  - VERTICAL

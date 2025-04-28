@@ -1,0 +1,10 @@
+description: Response containing available custom reports.
+properties:
+  data:
+    description: An array of available custom reports.
+    items:
+      $ref: ./UsageCustomReportsData.yaml
+    type: array
+  meta:
+    $ref: ./UsageCustomReportsMeta.yaml
+type: object

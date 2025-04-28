@@ -1,0 +1,8 @@
+default: funnel
+description: Type of funnel widget.
+enum:
+  - funnel
+example: funnel
+type: string
+x-enum-varnames:
+  - FUNNEL

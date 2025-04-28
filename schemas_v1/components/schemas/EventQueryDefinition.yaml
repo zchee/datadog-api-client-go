@@ -1,0 +1,14 @@
+description: The event query.
+properties:
+  search:
+    description: The query being made on the event.
+    example: ''
+    type: string
+  tags_execution:
+    description: The execution method for multi-value filters. Can be either and or or.
+    example: ''
+    type: string
+required:
+  - search
+  - tags_execution
+type: object

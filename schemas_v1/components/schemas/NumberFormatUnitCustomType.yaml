@@ -1,0 +1,6 @@
+description: The type of custom unit.
+enum:
+  - custom_unit_label
+type: string
+x-enum-varnames:
+  - CUSTOM_UNIT_LABEL

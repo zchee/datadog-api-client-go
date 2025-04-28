@@ -1,0 +1,63 @@
+post:
+  description: >-
+    The distribution points end-point allows you to post distribution data that
+    can be graphed on Datadog’s dashboards.
+  operationId: SubmitDistributionPoints
+  parameters:
+    - description: HTTP header used to compress the media-type.
+      in: header
+      name: Content-Encoding
+      required: false
+      schema:
+        $ref: ../components/schemas/DistributionPointsContentEncoding.yaml
+  requestBody:
+    content:
+      text/json:
+        examples:
+          dynamic-points:
+            description: Post time-series data that can be graphed on Datadog’s dashboards.
+            summary: Dynamic Points
+            x-variables:
+              NOW: $(date +%s)
+        schema:
+          $ref: ../components/schemas/DistributionPointsPayload.yaml
+    required: true
+  responses:
+    '202':
+      content:
+        text/json:
+          schema:
+            $ref: ../components/schemas/IntakePayloadAccepted.yaml
+      description: Payload accepted
+    '400':
+      content:
+        text/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        text/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '408':
+      content:
+        text/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Request timeout
+    '413':
+      content:
+        text/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Payload too large
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+  summary: Submit distribution points
+  tags:
+    - Metrics
+  x-codegen-request-body-name: body

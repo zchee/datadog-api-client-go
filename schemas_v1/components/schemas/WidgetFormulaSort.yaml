@@ -1,0 +1,17 @@
+description: The formula to sort the widget by.
+properties:
+  index:
+    description: The index of the formula to sort by.
+    example: 0
+    format: int64
+    minimum: 0
+    type: integer
+  order:
+    $ref: ./WidgetSort.yaml
+  type:
+    $ref: ./FormulaType.yaml
+required:
+  - type
+  - index
+  - order
+type: object

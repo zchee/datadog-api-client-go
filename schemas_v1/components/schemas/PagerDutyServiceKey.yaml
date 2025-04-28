@@ -1,0 +1,9 @@
+description: PagerDuty service object key.
+properties:
+  service_key:
+    description: Your service key in PagerDuty.
+    example: ''
+    type: string
+required:
+  - service_key
+type: object

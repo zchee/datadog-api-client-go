@@ -1,0 +1,17 @@
+description: Used for arbitrary live span times, such as 17 minutes or 6 hours.
+properties:
+  type:
+    $ref: ./WidgetNewLiveSpanType.yaml
+  unit:
+    $ref: ./WidgetLiveSpanUnit.yaml
+  value:
+    description: Value of the time span.
+    example: 4
+    format: int64
+    minimum: 1
+    type: integer
+required:
+  - type
+  - value
+  - unit
+type: object

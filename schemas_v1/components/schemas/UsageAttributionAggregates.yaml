@@ -1,0 +1,4 @@
+description: An array of available aggregates.
+items:
+  $ref: ./UsageAttributionAggregatesBody.yaml
+type: array

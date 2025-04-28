@@ -1,0 +1,181 @@
+description: Response with aggregated usage types.
+properties:
+  apm_fargate_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  apm_fargate_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  apm_host_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  apm_host_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  apm_profiler_host_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  apm_profiler_host_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  apm_trace_search_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  application_security_fargate_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  application_security_host_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  application_security_host_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  ci_pipeline_indexed_spans_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  ci_pipeline_maximum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  ci_pipeline_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  ci_test_indexed_spans_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  ci_testing_maximum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  ci_testing_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  cloud_cost_management_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  cloud_cost_management_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  cspm_container_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  cspm_host_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  cspm_host_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  custom_event_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  cws_container_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  cws_host_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  cws_host_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  dbm_host_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  dbm_host_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  dbm_normalized_queries_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  dbm_normalized_queries_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  fargate_container_apm_and_profiler_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  fargate_container_apm_and_profiler_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  fargate_container_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  fargate_container_profiler_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  fargate_container_profiler_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  fargate_container_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  incident_management_maximum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  incident_management_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  infra_and_apm_host_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  infra_and_apm_host_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  infra_container_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  infra_host_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  infra_host_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  ingested_spans_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  ingested_timeseries_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  ingested_timeseries_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  iot_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  iot_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  lambda_function_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  lambda_function_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_forwarding_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_15day_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_180day_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_1day_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_30day_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_360day_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_3day_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_45day_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_60day_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_7day_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_90day_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_custom_retention_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_indexed_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  logs_ingested_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  network_device_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  network_device_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  npm_flow_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  npm_host_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  npm_host_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  observability_pipeline_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  online_archive_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  prof_container_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  prof_host_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  prof_host_top99p:
+    $ref: ./UsageBillableSummaryBody.yaml
+  rum_lite_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  rum_replay_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  rum_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  rum_units_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  sensitive_data_scanner_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  serverless_apm_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  serverless_infra_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  serverless_infra_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  serverless_invocation_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  siem_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  standard_timeseries_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  synthetics_api_tests_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  synthetics_app_testing_maximum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  synthetics_browser_checks_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+  timeseries_average:
+    $ref: ./UsageBillableSummaryBody.yaml
+  timeseries_sum:
+    $ref: ./UsageBillableSummaryBody.yaml
+type: object

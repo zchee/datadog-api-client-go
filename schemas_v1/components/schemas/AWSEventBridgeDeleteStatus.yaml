@@ -1,0 +1,7 @@
+description: The event source status "empty".
+enum:
+  - empty
+example: empty
+type: string
+x-enum-varnames:
+  - EMPTY

@@ -1,0 +1,11 @@
+description: Test configuration for Synthetics
+properties:
+  metadata:
+    $ref: ./SyntheticsCIBatchMetadata.yaml
+  public_id:
+    description: The public ID of the Synthetic test to trigger.
+    example: aaa-aaa-aaa
+    type: string
+required:
+  - public_id
+type: object

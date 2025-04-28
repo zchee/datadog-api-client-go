@@ -1,0 +1,25 @@
+description: Object containing IDs of Synthetic tests and a timeframe.
+properties:
+  from_ts:
+    description: Timestamp in seconds (Unix epoch) for the start of uptime.
+    example: 0
+    format: int64
+    type: integer
+  public_ids:
+    description: An array of Synthetic test IDs you want uptimes for.
+    example: []
+    items:
+      description: A Synthetic test ID.
+      example: abc-def-123
+      type: string
+    type: array
+  to_ts:
+    description: Timestamp in seconds (Unix epoch) for the end of uptime.
+    example: 0
+    format: int64
+    type: integer
+required:
+  - from_ts
+  - to_ts
+  - public_ids
+type: object

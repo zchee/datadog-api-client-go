@@ -1,0 +1,8 @@
+description: Time-ascending `asc` or time-descending `desc` results.
+enum:
+  - asc
+  - desc
+type: string
+x-enum-varnames:
+  - TIME_ASCENDING
+  - TIME_DESCENDING

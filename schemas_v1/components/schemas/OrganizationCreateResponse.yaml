@@ -1,0 +1,11 @@
+description: Response object for an organization creation.
+properties:
+  api_key:
+    $ref: ./ApiKey.yaml
+  application_key:
+    $ref: ./ApplicationKey.yaml
+  org:
+    $ref: ./Organization.yaml
+  user:
+    $ref: ./User.yaml
+type: object

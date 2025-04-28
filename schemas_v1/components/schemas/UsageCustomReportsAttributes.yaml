@@ -1,0 +1,23 @@
+description: The response containing attributes for custom reports.
+properties:
+  computed_on:
+    description: The date the specified custom report was computed.
+    type: string
+  end_date:
+    description: The ending date of custom report.
+    type: string
+  size:
+    description: size
+    format: int64
+    type: integer
+  start_date:
+    description: The starting date of custom report.
+    type: string
+  tags:
+    description: A list of tags to apply to custom reports.
+    items:
+      description: A given tag in a list.
+      example: env
+      type: string
+    type: array
+type: object

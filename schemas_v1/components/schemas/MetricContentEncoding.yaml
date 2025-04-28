@@ -1,0 +1,10 @@
+default: deflate
+description: HTTP header used to compress the media-type.
+enum:
+  - deflate
+  - gzip
+example: deflate
+type: string
+x-enum-varnames:
+  - DEFLATE
+  - GZIP

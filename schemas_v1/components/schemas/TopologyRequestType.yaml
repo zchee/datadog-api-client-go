@@ -1,0 +1,6 @@
+description: Widget request type.
+enum:
+  - topology
+type: string
+x-enum-varnames:
+  - TOPOLOGY

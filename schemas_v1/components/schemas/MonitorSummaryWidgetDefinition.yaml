@@ -1,0 +1,53 @@
+description: >-
+  The monitor summary widget displays a summary view of all your Datadog
+  monitors, or a subset based on a query. Only available on FREE layout
+  dashboards.
+properties:
+  color_preference:
+    $ref: ./WidgetColorPreference.yaml
+  count:
+    deprecated: true
+    description: The number of monitors to display.
+    format: int64
+    type: integer
+  display_format:
+    $ref: ./WidgetMonitorSummaryDisplayFormat.yaml
+  hide_zero_counts:
+    description: Whether to show counts of 0 or not.
+    type: boolean
+  query:
+    description: Query to filter the monitors with.
+    example: ''
+    type: string
+  show_last_triggered:
+    description: >-
+      Whether to show the time that has elapsed since the monitor/group
+      triggered.
+    type: boolean
+  show_priority:
+    default: false
+    description: Whether to show the priorities column.
+    type: boolean
+  sort:
+    $ref: ./WidgetMonitorSummarySort.yaml
+  start:
+    deprecated: true
+    description: The start of the list. Typically 0.
+    format: int64
+    type: integer
+  summary_type:
+    $ref: ./WidgetSummaryType.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./MonitorSummaryWidgetDefinitionType.yaml
+required:
+  - type
+  - query
+type: object

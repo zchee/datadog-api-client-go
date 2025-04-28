@@ -1,0 +1,10 @@
+description: The data for a notebook update request.
+properties:
+  attributes:
+    $ref: ./NotebookUpdateDataAttributes.yaml
+  type:
+    $ref: ./NotebookResourceType.yaml
+required:
+  - type
+  - attributes
+type: object

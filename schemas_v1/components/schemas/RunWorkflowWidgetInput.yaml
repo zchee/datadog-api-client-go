@@ -1,0 +1,14 @@
+description: Object to map a dashboard template variable to a workflow input.
+properties:
+  name:
+    description: Name of the workflow input.
+    example: Environment
+    type: string
+  value:
+    description: Dashboard template variable. Can be suffixed with '.value' or '.key'.
+    example: $env.value
+    type: string
+required:
+  - name
+  - value
+type: object

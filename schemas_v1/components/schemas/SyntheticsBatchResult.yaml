@@ -1,0 +1,31 @@
+description: Object with the results of a Synthetic batch.
+properties:
+  device:
+    $ref: ./SyntheticsDeviceID.yaml
+  duration:
+    description: Total duration in millisecond of the test.
+    format: double
+    type: number
+  execution_rule:
+    $ref: ./SyntheticsTestExecutionRule.yaml
+  location:
+    description: Name of the location.
+    type: string
+  result_id:
+    description: The ID of the result to get.
+    type: string
+  retries:
+    description: Number of times this result has been retried.
+    format: double
+    type: number
+  status:
+    $ref: ./SyntheticsBatchStatus.yaml
+  test_name:
+    description: Name of the test.
+    type: string
+  test_public_id:
+    description: The public ID of the Synthetic test.
+    type: string
+  test_type:
+    $ref: ./SyntheticsTestDetailsType.yaml
+type: object

@@ -1,0 +1,8 @@
+default: run_workflow
+description: Type of the run workflow widget.
+enum:
+  - run_workflow
+example: run_workflow
+type: string
+x-enum-varnames:
+  - RUN_WORKFLOW

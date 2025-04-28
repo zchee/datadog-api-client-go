@@ -1,0 +1,7 @@
+description: Layout type of the group.
+enum:
+  - ordered
+example: ordered
+type: string
+x-enum-varnames:
+  - ORDERED

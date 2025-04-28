@@ -1,0 +1,16 @@
+description: Aggregator used for the request.
+enum:
+  - avg
+  - last
+  - max
+  - min
+  - sum
+  - percentile
+type: string
+x-enum-varnames:
+  - AVERAGE
+  - LAST
+  - MAXIMUM
+  - MINIMUM
+  - SUM
+  - PERCENTILE

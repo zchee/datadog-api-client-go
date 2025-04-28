@@ -1,0 +1,25 @@
+description: An object used to create an EventBridge source.
+properties:
+  account_id:
+    description: Your AWS Account ID without dashes.
+    example: '123456789012'
+    type: string
+  create_event_bus:
+    description: |-
+      True if Datadog should create the event bus in addition to the event
+      source. Requires the `events:CreateEventBus` permission.
+    example: true
+    type: boolean
+  event_generator_name:
+    description: |-
+      The given part of the event source name, which is then combined with an
+      assigned suffix to form the full name.
+    example: app-alerts
+    type: string
+  region:
+    description: >-
+      The event source's [AWS
+      region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints).
+    example: us-east-1
+    type: string
+type: object

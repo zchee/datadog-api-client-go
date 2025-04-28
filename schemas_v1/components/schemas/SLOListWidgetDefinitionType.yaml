@@ -1,0 +1,8 @@
+default: slo_list
+description: Type of the SLO List widget.
+enum:
+  - slo_list
+example: slo_list
+type: string
+x-enum-varnames:
+  - SLO_LIST

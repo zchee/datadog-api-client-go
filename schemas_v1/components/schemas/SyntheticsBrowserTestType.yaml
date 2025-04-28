@@ -1,0 +1,8 @@
+default: browser
+description: Type of the Synthetic test, `browser`.
+enum:
+  - browser
+example: browser
+type: string
+x-enum-varnames:
+  - BROWSER

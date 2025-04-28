@@ -1,0 +1,15 @@
+description: The creator of the SLO
+nullable: true
+properties:
+  email:
+    description: Email of the creator.
+    type: string
+  id:
+    description: User ID of the creator.
+    format: int64
+    type: integer
+  name:
+    description: Name of the creator.
+    nullable: true
+    type: string
+type: object

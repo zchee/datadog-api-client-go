@@ -1,0 +1,9 @@
+description: The type of the associated private dashboard.
+enum:
+  - custom_timeboard
+  - custom_screenboard
+example: custom_timeboard
+type: string
+x-enum-varnames:
+  - CUSTOM_TIMEBOARD
+  - CUSTOM_SCREENBOARD

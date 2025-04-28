@@ -1,0 +1,46 @@
+description: |-
+  Pipelines and processors operate on incoming logs,
+  parsing and transforming them into structured attributes for easier querying.
+
+  **Note**: These endpoints are only available for admin users.
+  Make sure to use an application key created by an admin.
+properties:
+  description:
+    description: A description of the pipeline.
+    type: string
+  filter:
+    $ref: ./LogsFilter.yaml
+  id:
+    description: ID of the pipeline.
+    readOnly: true
+    type: string
+  is_enabled:
+    description: Whether or not the pipeline is enabled.
+    type: boolean
+  is_read_only:
+    description: Whether or not the pipeline can be edited.
+    readOnly: true
+    type: boolean
+  name:
+    description: Name of the pipeline.
+    example: ''
+    type: string
+  processors:
+    description: Ordered list of processors in this pipeline.
+    items:
+      $ref: ./LogsProcessor.yaml
+    type: array
+  tags:
+    description: A list of tags associated with the pipeline.
+    items:
+      description: A single tag using the format `key:value`.
+      type: string
+    type: array
+  type:
+    description: Type of pipeline.
+    example: pipeline
+    readOnly: true
+    type: string
+required:
+  - name
+type: object

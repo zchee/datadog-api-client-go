@@ -1,0 +1,14 @@
+description: Widget definition.
+example:
+  x:
+    q: system.cpu.user
+  'y':
+    q: system.mem.used
+properties:
+  table:
+    $ref: ./ScatterplotTableRequest.yaml
+  x:
+    $ref: ./ScatterPlotRequest.yaml
+  'y':
+    $ref: ./ScatterPlotRequest.yaml
+type: object

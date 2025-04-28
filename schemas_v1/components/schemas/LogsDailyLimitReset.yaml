@@ -1,0 +1,15 @@
+description: Object containing options to override the default daily limit reset time.
+properties:
+  reset_time:
+    description: >-
+      String in `HH:00` format representing the time of day the daily limit
+      should be reset. The hours must be between 00 and 23 (inclusive).
+    example: '14:00'
+    type: string
+  reset_utc_offset:
+    description: >-
+      String in `(-|+)HH:00` format representing the UTC offset to apply to the
+      given reset time. The hours must be between -12 and +14 (inclusive).
+    example: '+02:00'
+    type: string
+type: object

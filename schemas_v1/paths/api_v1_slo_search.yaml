@@ -1,0 +1,70 @@
+get:
+  description: Get a list of service level objective objects for your organization.
+  operationId: SearchSLO
+  parameters:
+    - description: |-
+        The query string to filter results based on SLO names.
+        Some examples of queries include `service:<service-name>`
+        and `<slo-name>`.
+      in: query
+      name: query
+      required: false
+      schema:
+        type: string
+    - description: The number of files to return in the response `[default=10]`.
+      in: query
+      name: page[size]
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: >-
+        The identifier of the first page to return. This parameter is used for
+        the pagination feature `[default=0]`.
+      in: query
+      name: page[number]
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: >-
+        Whether or not to return facet information in the response
+        `[default=false]`.
+      in: query
+      name: include_facets
+      required: false
+      schema:
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SearchSLOResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - slos_read
+  summary: Search for SLOs
+  tags:
+    - Service Level Objectives
+  x-permission:
+    operator: OR
+    permissions:
+      - slos_read

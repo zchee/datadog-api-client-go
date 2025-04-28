@@ -1,0 +1,8 @@
+default: arithmetic-processor
+description: Type of logs arithmetic processor.
+enum:
+  - arithmetic-processor
+example: arithmetic-processor
+type: string
+x-enum-varnames:
+  - ARITHMETIC_PROCESSOR

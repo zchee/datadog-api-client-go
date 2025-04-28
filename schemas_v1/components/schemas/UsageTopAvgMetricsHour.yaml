@@ -1,0 +1,16 @@
+description: Number of hourly recorded custom metrics for a given organization.
+properties:
+  avg_metric_hour:
+    description: Average number of timeseries per hour in which the metric occurs.
+    format: int64
+    type: integer
+  max_metric_hour:
+    description: Maximum number of timeseries per hour in which the metric occurs.
+    format: int64
+    type: integer
+  metric_category:
+    $ref: ./UsageMetricCategory.yaml
+  metric_name:
+    description: Contains the custom metric name.
+    type: string
+type: object

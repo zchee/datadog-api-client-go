@@ -1,0 +1,19 @@
+description: Definition of a logs processor.
+oneOf:
+  - $ref: ./LogsGrokParser.yaml
+  - $ref: ./LogsDateRemapper.yaml
+  - $ref: ./LogsStatusRemapper.yaml
+  - $ref: ./LogsServiceRemapper.yaml
+  - $ref: ./LogsMessageRemapper.yaml
+  - $ref: ./LogsAttributeRemapper.yaml
+  - $ref: ./LogsURLParser.yaml
+  - $ref: ./LogsUserAgentParser.yaml
+  - $ref: ./LogsCategoryProcessor.yaml
+  - $ref: ./LogsArithmeticProcessor.yaml
+  - $ref: ./LogsStringBuilderProcessor.yaml
+  - $ref: ./LogsPipelineProcessor.yaml
+  - $ref: ./LogsGeoIPParser.yaml
+  - $ref: ./LogsLookupProcessor.yaml
+  - $ref: ./ReferenceTableLogsLookupProcessor.yaml
+  - $ref: ./LogsTraceRemapper.yaml
+  - $ref: ./LogsSpanRemapper.yaml

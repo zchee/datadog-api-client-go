@@ -1,0 +1,8 @@
+description: An array of tag filter rules by `namespace` and tag filter string.
+properties:
+  filters:
+    description: An array of tag filters.
+    items:
+      $ref: ./AWSTagFilter.yaml
+    type: array
+type: object

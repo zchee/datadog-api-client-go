@@ -1,0 +1,37 @@
+description: >-
+  The GeoIP parser takes an IP address attribute and extracts if available
+
+  the Continent, Country, Subdivision, and City information in the target
+  attribute path.
+properties:
+  is_enabled:
+    default: false
+    description: Whether or not the processor is enabled.
+    type: boolean
+  name:
+    description: Name of the processor.
+    type: string
+  sources:
+    default:
+      - network.client.ip
+    description: Array of source attributes.
+    example:
+      - network.client.ip
+    items:
+      description: Attribute to geo-localize the IP from.
+      type: string
+    type: array
+  target:
+    default: network.client.geoip
+    description: >-
+      Name of the parent attribute that contains all the extracted details from
+      the `sources`.
+    example: network.client.geoip
+    type: string
+  type:
+    $ref: ./LogsGeoIPParserType.yaml
+required:
+  - sources
+  - target
+  - type
+type: object

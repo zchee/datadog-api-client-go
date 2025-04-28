@@ -1,0 +1,10 @@
+description: Response containing the number of Fargate tasks run and hourly usage.
+properties:
+  usage:
+    description: >-
+      Array with the number of hourly Fargate tasks recorded for a given
+      organization.
+    items:
+      $ref: ./UsageFargateHour.yaml
+    type: array
+type: object

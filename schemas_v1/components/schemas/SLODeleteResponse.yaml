@@ -1,0 +1,17 @@
+description: A response list of all service level objective deleted.
+properties:
+  data:
+    description: An array containing the ID of the deleted service level objective object.
+    items:
+      description: ID of a deleted SLO.
+      type: string
+    type: array
+  errors:
+    additionalProperties:
+      description: Error preventing the SLO deletion.
+      type: string
+    description: >-
+      An dictionary containing the ID of the SLO as key and a deletion error as
+      value.
+    type: object
+type: object

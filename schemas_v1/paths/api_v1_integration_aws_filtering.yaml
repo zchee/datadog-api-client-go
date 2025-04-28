@@ -1,0 +1,125 @@
+delete:
+  description: Delete a tag filtering entry.
+  operationId: DeleteAWSTagFilter
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AWSTagFilterDeleteRequest.yaml
+    description: >-
+      Delete a tag filtering entry for a given AWS account and `dd-aws`
+      namespace.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example: {}
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a tag filtering entry
+  tags:
+    - AWS Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_edit
+get:
+  description: Get all AWS tag filters.
+  operationId: ListAWSTagFilters
+  parameters:
+    - description: Only return AWS filters that matches this `account_id`.
+      in: query
+      name: account_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AWSTagFilterListResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all AWS tag filters
+  tags:
+    - AWS Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_read
+post:
+  description: Set an AWS tag filter.
+  operationId: CreateAWSTagFilter
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AWSTagFilterCreateRequest.yaml
+    description: >-
+      Set an AWS tag filter using an `aws_account_identifier`, `namespace`, and
+      filtering string.
+
+      Namespace options are `application_elb`, `elb`, `lambda`, `network_elb`,
+      `rds`, `sqs`, and `custom`.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example: {}
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Set an AWS tag filter
+  tags:
+    - AWS Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_edit

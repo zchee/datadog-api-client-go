@@ -1,0 +1,8 @@
+description: The JSON Schema meta-schema version used in the assertion.
+enum:
+  - draft-07
+  - draft-06
+type: string
+x-enum-varnames:
+  - DRAFT_07
+  - DRAFT_06

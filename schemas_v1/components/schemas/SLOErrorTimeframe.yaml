@@ -1,0 +1,15 @@
+description: |-
+  The timeframe of the threshold associated with this error
+  or "all" if all thresholds are affected.
+enum:
+  - 7d
+  - 30d
+  - 90d
+  - all
+example: 30d
+type: string
+x-enum-varnames:
+  - SEVEN_DAYS
+  - THIRTY_DAYS
+  - NINETY_DAYS
+  - ALL

@@ -1,0 +1,19 @@
+description: An assertion which uses a simple target.
+properties:
+  operator:
+    $ref: ./SyntheticsAssertionOperator.yaml
+  property:
+    description: The associated assertion property.
+    type: string
+  target:
+    description: Value used by the operator.
+    example: 123456
+  timingsScope:
+    $ref: ./SyntheticsAssertionTimingsScope.yaml
+  type:
+    $ref: ./SyntheticsAssertionType.yaml
+required:
+  - type
+  - operator
+  - target
+type: object

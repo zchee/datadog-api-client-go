@@ -1,0 +1,7 @@
+description: Set the sort type to formula.
+enum:
+  - formula
+example: formula
+type: string
+x-enum-varnames:
+  - FORMULA

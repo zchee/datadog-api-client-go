@@ -1,0 +1,19 @@
+description: The different states your monitor can be in.
+enum:
+  - Alert
+  - Ignored
+  - No Data
+  - OK
+  - Skipped
+  - Unknown
+  - Warn
+readOnly: true
+type: string
+x-enum-varnames:
+  - ALERT
+  - IGNORED
+  - NO_DATA
+  - OK
+  - SKIPPED
+  - UNKNOWN
+  - WARN

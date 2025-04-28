@@ -1,0 +1,13 @@
+description: Type of parser for a Synthetic global variable from a synthetics test.
+enum:
+  - raw
+  - json_path
+  - regex
+  - x_path
+example: raw
+type: string
+x-enum-varnames:
+  - RAW
+  - JSON_PATH
+  - REGEX
+  - X_PATH

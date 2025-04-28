@@ -1,0 +1,10 @@
+description: Vertical alignment.
+enum:
+  - center
+  - top
+  - bottom
+type: string
+x-enum-varnames:
+  - CENTER
+  - TOP
+  - BOTTOM

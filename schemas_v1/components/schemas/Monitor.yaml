@@ -1,0 +1,84 @@
+description: Object describing a monitor.
+properties:
+  created:
+    description: Timestamp of the monitor creation.
+    format: date-time
+    readOnly: true
+    type: string
+  creator:
+    $ref: ./Creator.yaml
+  deleted:
+    description: Whether or not the monitor is deleted. (Always `null`)
+    format: date-time
+    nullable: true
+    readOnly: true
+    type: string
+  id:
+    description: ID of this monitor.
+    format: int64
+    readOnly: true
+    type: integer
+  matching_downtimes:
+    description: A list of active v1 downtimes that match this monitor.
+    items:
+      $ref: ./MatchingDowntime.yaml
+    type: array
+  message:
+    description: A message to include with notifications for this monitor.
+    type: string
+  modified:
+    description: Last timestamp when the monitor was edited.
+    format: date-time
+    readOnly: true
+    type: string
+  multi:
+    description: Whether or not the monitor is broken down on different groups.
+    readOnly: true
+    type: boolean
+  name:
+    description: The monitor name.
+    example: My monitor
+    type: string
+  options:
+    $ref: ./MonitorOptions.yaml
+  overall_state:
+    $ref: ./MonitorOverallStates.yaml
+  priority:
+    description: Integer from 1 (high) to 5 (low) indicating alert severity.
+    format: int64
+    nullable: true
+    type: integer
+  query:
+    description: The monitor query.
+    example: avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100
+    type: string
+  restricted_roles:
+    description: >-
+      A list of unique role identifiers to define which roles are allowed to
+      edit the monitor. The unique identifiers for all roles can be pulled from
+      the [Roles API](https://docs.datadoghq.com/api/latest/roles/#list-roles)
+      and are located in the `data.id` field. Editing a monitor includes any
+      updates to the monitor configuration, monitor deletion, and muting of the
+      monitor for any amount of time. You can use the [Restriction Policies
+      API](https://docs.datadoghq.com/api/latest/restriction-policies/) to
+      manage write authorization for individual monitors by teams and users, in
+      addition to roles.
+    items:
+      description: A role UUID.
+      type: string
+    nullable: true
+    type: array
+  state:
+    $ref: ./MonitorState.yaml
+  tags:
+    description: Tags associated to your monitor.
+    items:
+      description: A Datadog tag.
+      type: string
+    type: array
+  type:
+    $ref: ./MonitorType.yaml
+required:
+  - type
+  - query
+type: object

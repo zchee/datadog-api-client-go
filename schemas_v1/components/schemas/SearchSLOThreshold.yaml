@@ -1,0 +1,44 @@
+description: SLO thresholds (target and optionally warning) for a single time window.
+properties:
+  target:
+    description: |-
+      The target value for the service level indicator within the corresponding
+      timeframe.
+    example: 99.9
+    format: double
+    type: number
+  target_display:
+    description: >-
+      A string representation of the target that indicates its precision.
+
+      It uses trailing zeros to show significant decimal places (for example
+      `98.00`).
+
+
+      Always included in service level objective responses. Ignored in
+
+      create/update requests.
+    example: '99.9'
+    type: string
+  timeframe:
+    $ref: ./SearchSLOTimeframe.yaml
+  warning:
+    description: The warning value for the service level objective.
+    example: 90
+    format: double
+    nullable: true
+    type: number
+  warning_display:
+    description: |-
+      A string representation of the warning target (see the description of
+      the `target_display` field for details).
+
+      Included in service level objective responses if a warning target exists.
+      Ignored in create/update requests.
+    example: '90.0'
+    nullable: true
+    type: string
+required:
+  - timeframe
+  - target
+type: object

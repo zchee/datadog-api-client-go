@@ -1,0 +1,15 @@
+description: Information about a single test run.
+properties:
+  device:
+    $ref: ./SyntheticsDeviceID.yaml
+  location:
+    description: The location ID of the test run.
+    format: int64
+    type: integer
+  public_id:
+    description: The public ID of the Synthetic test.
+    type: string
+  result_id:
+    description: ID of the result.
+    type: string
+type: object

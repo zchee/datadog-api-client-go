@@ -1,0 +1,17 @@
+description: An object used to delete an EventBridge source.
+properties:
+  account_id:
+    description: Your AWS Account ID without dashes.
+    example: '123456789012'
+    type: string
+  event_generator_name:
+    description: The event source name.
+    example: app-alerts-zyxw3210
+    type: string
+  region:
+    description: >-
+      The event source's [AWS
+      region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints).
+    example: us-east-1
+    type: string
+type: object

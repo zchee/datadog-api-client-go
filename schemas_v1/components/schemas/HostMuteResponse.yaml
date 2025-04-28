@@ -1,0 +1,20 @@
+description: Response with the list of muted host for your organization.
+properties:
+  action:
+    description: Action applied to the hosts.
+    example: Muted
+    type: string
+  end:
+    description: POSIX timestamp in seconds when the host is unmuted.
+    example: 1579098130
+    format: int64
+    type: integer
+  hostname:
+    description: The host name.
+    example: test.host
+    type: string
+  message:
+    description: Message associated with the mute.
+    example: Muting this host for a test!
+    type: string
+type: object

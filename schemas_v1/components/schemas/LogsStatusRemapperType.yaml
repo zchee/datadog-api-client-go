@@ -1,0 +1,8 @@
+default: status-remapper
+description: Type of logs status remapper.
+enum:
+  - status-remapper
+example: status-remapper
+type: string
+x-enum-varnames:
+  - STATUS_REMAPPER

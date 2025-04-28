@@ -1,0 +1,27 @@
+description: Formula to be used in a widget query.
+properties:
+  alias:
+    description: Expression alias.
+    type: string
+  cell_display_mode:
+    $ref: ./TableWidgetCellDisplayMode.yaml
+  cell_display_mode_options:
+    $ref: ./WidgetFormulaCellDisplayModeOptions.yaml
+  conditional_formats:
+    description: List of conditional formats.
+    items:
+      $ref: ./WidgetConditionalFormat.yaml
+    type: array
+  formula:
+    description: String expression built from queries, formulas, and functions.
+    example: func(a) + b
+    type: string
+  limit:
+    $ref: ./WidgetFormulaLimit.yaml
+  number_format:
+    $ref: ./WidgetNumberFormat.yaml
+  style:
+    $ref: ./WidgetFormulaStyle.yaml
+required:
+  - formula
+type: object

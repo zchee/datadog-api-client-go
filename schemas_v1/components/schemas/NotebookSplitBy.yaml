@@ -1,0 +1,29 @@
+description: >-
+  Object describing how to split the graph to display multiple visualizations
+  per request.
+example:
+  keys: []
+  tags: []
+properties:
+  keys:
+    description: Keys to split on.
+    example:
+      - environment
+    items:
+      description: A key to split on.
+      example: environment
+      type: string
+    type: array
+  tags:
+    description: Tags to split on.
+    example:
+      - environment:staging
+    items:
+      description: A tag to split on.
+      example: environment:staging
+      type: string
+    type: array
+required:
+  - keys
+  - tags
+type: object

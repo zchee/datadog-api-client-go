@@ -1,0 +1,10 @@
+description: Response containing the hourly usage attribution by tag(s).
+properties:
+  metadata:
+    $ref: ./HourlyUsageAttributionMetadata.yaml
+  usage:
+    description: Get the hourly usage attribution by tag(s).
+    items:
+      $ref: ./HourlyUsageAttributionBody.yaml
+    type: array
+type: object

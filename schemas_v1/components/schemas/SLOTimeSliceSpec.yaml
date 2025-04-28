@@ -1,0 +1,22 @@
+additionalProperties: false
+description: A time-slice SLI specification.
+example:
+  time_slice:
+    comparator: <
+    query:
+      formulas:
+        - formula: query2/query1
+      queries:
+        - data_source: metrics
+          name: query1
+          query: sum:trace.servlet.request.hits{*} by {env}.as_count()
+        - data_source: metrics
+          name: query1
+          query: sum:trace.servlet.request.errors{*} by {env}.as_count()
+    threshold: 5
+properties:
+  time_slice:
+    $ref: ./SLOTimeSliceCondition.yaml
+required:
+  - time_slice
+type: object

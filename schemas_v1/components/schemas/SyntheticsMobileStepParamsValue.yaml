@@ -1,0 +1,4 @@
+description: Values used in the step for in multiple step types.
+oneOf:
+  - $ref: ./SyntheticsMobileStepParamsValueString.yaml
+  - $ref: ./SyntheticsMobileStepParamsValueNumber.yaml

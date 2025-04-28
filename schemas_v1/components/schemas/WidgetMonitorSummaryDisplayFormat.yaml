@@ -1,0 +1,10 @@
+description: What to display on the widget.
+enum:
+  - counts
+  - countsAndList
+  - list
+type: string
+x-enum-varnames:
+  - COUNTS
+  - COUNTS_AND_LIST
+  - LIST

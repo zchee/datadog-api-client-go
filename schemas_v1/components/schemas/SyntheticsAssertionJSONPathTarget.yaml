@@ -1,0 +1,15 @@
+description: An assertion for the `validatesJSONPath` operator.
+properties:
+  operator:
+    $ref: ./SyntheticsAssertionJSONPathOperator.yaml
+  property:
+    description: The associated assertion property.
+    type: string
+  target:
+    $ref: ./SyntheticsAssertionJSONPathTargetTarget.yaml
+  type:
+    $ref: ./SyntheticsAssertionType.yaml
+required:
+  - type
+  - operator
+type: object

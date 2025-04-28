@@ -1,0 +1,14 @@
+description: The property by which the graph splits
+example:
+  one_graph_per: service
+properties:
+  one_graph_per:
+    description: >-
+      The system interprets this attribute differently depending on the data
+      source of the query being split. For metrics, it's a tag. For the events
+      platform, it's an attribute or tag.
+    example: service
+    type: string
+required:
+  - one_graph_per
+type: object

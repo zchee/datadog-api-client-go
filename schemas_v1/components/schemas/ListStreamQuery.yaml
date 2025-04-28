@@ -1,0 +1,50 @@
+description: Updated list stream widget.
+properties:
+  clustering_pattern_field_path:
+    description: >-
+      Specifies the field for logs pattern clustering. Usable only with
+      logs_pattern_stream.
+    example: message
+    type: string
+  compute:
+    description: >-
+      Compute configuration for the List Stream Widget. Compute can be used only
+      with the logs_transaction_stream (from 1 to 5 items) list stream source.
+    items:
+      $ref: ./ListStreamComputeItems.yaml
+    maxItems: 5
+    minItems: 1
+    type: array
+  data_source:
+    $ref: ./ListStreamSource.yaml
+  event_size:
+    $ref: ./WidgetEventSize.yaml
+  group_by:
+    description: >-
+      Group by configuration for the List Stream Widget. Group by can be used
+      only with logs_pattern_stream (up to 4 items) or logs_transaction_stream
+      (one group by item is required) list stream source.
+    items:
+      $ref: ./ListStreamGroupByItems.yaml
+    maxItems: 4
+    type: array
+  indexes:
+    description: List of indexes.
+    items:
+      description: Index.
+      type: string
+    type: array
+  query_string:
+    description: Widget query.
+    example: '@service:app'
+    type: string
+  sort:
+    $ref: ./WidgetFieldSort.yaml
+  storage:
+    description: Option for storage location. Feature in Private Beta.
+    example: indexes
+    type: string
+required:
+  - query_string
+  - data_source
+type: object

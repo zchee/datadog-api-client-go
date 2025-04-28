@@ -1,0 +1,29 @@
+description: >-
+  This widget displays a topology of nodes and edges for different data sources.
+  It replaces the service map widget.
+properties:
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  requests:
+    description: One or more Topology requests.
+    items:
+      $ref: ./TopologyRequest.yaml
+    minItems: 1
+    type: array
+  title:
+    description: Title of your widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./TopologyMapWidgetDefinitionType.yaml
+required:
+  - type
+  - requests
+type: object

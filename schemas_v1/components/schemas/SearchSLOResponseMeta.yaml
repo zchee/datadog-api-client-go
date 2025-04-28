@@ -1,0 +1,5 @@
+description: Searches metadata returned by the API.
+properties:
+  pagination:
+    $ref: ./SearchSLOResponseMetaPage.yaml
+type: object

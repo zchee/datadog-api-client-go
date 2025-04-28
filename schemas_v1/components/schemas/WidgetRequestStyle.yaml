@@ -1,0 +1,10 @@
+description: Define request widget style.
+properties:
+  line_type:
+    $ref: ./WidgetLineType.yaml
+  line_width:
+    $ref: ./WidgetLineWidth.yaml
+  palette:
+    description: Color palette to apply to the widget.
+    type: string
+type: object

@@ -1,0 +1,8 @@
+default: note
+description: Type of the note widget.
+enum:
+  - note
+example: note
+type: string
+x-enum-varnames:
+  - NOTE

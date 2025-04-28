@@ -1,0 +1,12 @@
+description: Object containing logs usage data broken down by retention period.
+properties:
+  orgs:
+    $ref: ./LogsByRetentionOrgs.yaml
+  usage:
+    description: Aggregated index logs usage for each retention period with usage.
+    items:
+      $ref: ./LogsRetentionAggSumUsage.yaml
+    type: array
+  usage_by_month:
+    $ref: ./LogsByRetentionMonthlyUsage.yaml
+type: object

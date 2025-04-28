@@ -1,0 +1,8 @@
+description: Dashboard summary response.
+properties:
+  dashboards:
+    description: List of dashboard definitions.
+    items:
+      $ref: ./DashboardSummaryDefinition.yaml
+    type: array
+type: object

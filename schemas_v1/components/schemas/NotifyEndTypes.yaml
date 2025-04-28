@@ -1,0 +1,19 @@
+default:
+  - expired
+description: >-
+  If set, notifies if a monitor is in an alert-worthy state (`ALERT`, `WARNING`,
+  or `NO DATA`)
+
+  when this downtime expires or is canceled. Applied to monitors that change
+  states during
+
+  the downtime (such as from `OK` to `ALERT`, `WARNING`, or `NO DATA`), and to
+  monitors that
+
+  already have an alert-worthy state when downtime begins.
+example:
+  - canceled
+  - expired
+items:
+  $ref: ./NotifyEndType.yaml
+type: array

@@ -1,0 +1,10 @@
+description: The response object of a list of SLO corrections.
+properties:
+  attributes:
+    $ref: ./SLOCorrectionResponseAttributes.yaml
+  id:
+    description: The ID of the SLO correction.
+    type: string
+  type:
+    $ref: ./SLOCorrectionType.yaml
+type: object

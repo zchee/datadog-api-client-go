@@ -1,0 +1,6 @@
+description: Widget style definition.
+properties:
+  palette:
+    description: Color palette to apply to the widget.
+    type: string
+type: object

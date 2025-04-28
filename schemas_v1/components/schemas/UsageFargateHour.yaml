@@ -1,0 +1,35 @@
+description: Number of Fargate tasks run and hourly usage.
+properties:
+  apm_fargate_count:
+    description: The high-water mark of APM ECS Fargate tasks during the given hour.
+    format: int64
+    nullable: true
+    type: integer
+  appsec_fargate_count:
+    description: >-
+      The Application Security Monitoring ECS Fargate tasks during the given
+      hour.
+    format: int64
+    nullable: true
+    type: integer
+  avg_profiled_fargate_tasks:
+    description: The average profiled task count for Fargate Profiling.
+    format: int64
+    nullable: true
+    type: integer
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+  tasks_count:
+    description: The number of Fargate tasks run.
+    format: int64
+    nullable: true
+    type: integer
+type: object

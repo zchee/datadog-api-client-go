@@ -1,0 +1,41 @@
+description: >-
+  Object to send with the request to retrieve a list of logs from your
+  Organization.
+properties:
+  index:
+    description: >-
+      The log index on which the request is performed. For multi-index
+      organizations,
+
+      the default is all live indexes. Historical indexes of rehydrated logs
+      must be specified.
+    example: retention-3,retention-15
+    type: string
+  limit:
+    description: Number of logs return in the response.
+    format: int32
+    maximum: 1000
+    type: integer
+  query:
+    description: The search query - following the log search syntax.
+    example: service:web* AND @http.status_code:[200 TO 299]
+    type: string
+  sort:
+    $ref: ./LogsSort.yaml
+  startAt:
+    description: >-
+      Hash identifier of the first log to return in the list, available in a log
+      `id` attribute.
+
+      This parameter is used for the pagination feature.
+
+
+      **Note**: This parameter is ignored if the corresponding log
+
+      is out of the scope of the specified time window.
+    type: string
+  time:
+    $ref: ./LogsListRequestTime.yaml
+required:
+  - time
+type: object

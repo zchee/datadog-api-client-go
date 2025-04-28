@@ -1,0 +1,18 @@
+description: The number of analyzed logs for each hour for a given organization.
+properties:
+  analyzed_logs:
+    description: Contains the number of analyzed logs.
+    format: int64
+    nullable: true
+    type: integer
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

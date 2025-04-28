@@ -1,0 +1,55 @@
+description: Object containing details about a Synthetic API test.
+properties:
+  config:
+    $ref: ./SyntheticsAPITestConfig.yaml
+  locations:
+    description: Array of locations used to run the test.
+    example:
+      - aws:eu-west-3
+    items:
+      description: A location from which the test was run.
+      type: string
+    type: array
+  message:
+    description: Notification message associated with the test.
+    example: Notification message
+    type: string
+  monitor_id:
+    description: The associated monitor ID.
+    example: 12345678
+    format: int64
+    readOnly: true
+    type: integer
+  name:
+    description: Name of the test.
+    example: Example test name
+    type: string
+  options:
+    $ref: ./SyntheticsTestOptions.yaml
+  public_id:
+    description: The public ID for the test.
+    example: 123-abc-456
+    readOnly: true
+    type: string
+  status:
+    $ref: ./SyntheticsTestPauseStatus.yaml
+  subtype:
+    $ref: ./SyntheticsTestDetailsSubType.yaml
+  tags:
+    description: Array of tags attached to the test.
+    example:
+      - env:production
+    items:
+      description: A tag attached to the test.
+      type: string
+    type: array
+  type:
+    $ref: ./SyntheticsAPITestType.yaml
+required:
+  - name
+  - config
+  - locations
+  - options
+  - type
+  - message
+type: object

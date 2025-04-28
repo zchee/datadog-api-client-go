@@ -1,0 +1,9 @@
+description: Top list widget stacked display options.
+properties:
+  legend:
+    $ref: ./ToplistWidgetLegend.yaml
+  type:
+    $ref: ./ToplistWidgetStackedType.yaml
+required:
+  - type
+type: object

@@ -1,0 +1,27 @@
+description: The response containing attributes for specified custom reports.
+properties:
+  computed_on:
+    description: The date the specified custom report was computed.
+    type: string
+  end_date:
+    description: The ending date of specified custom report.
+    type: string
+  location:
+    description: A downloadable file for the specified custom reporting file.
+    example: https://an-s3-or-gs-bucket.s3.amazonaws.com
+    type: string
+  size:
+    description: size
+    format: int64
+    type: integer
+  start_date:
+    description: The starting date of specified custom report.
+    type: string
+  tags:
+    description: A list of tags to apply to specified custom reports.
+    items:
+      description: A given tag in a list.
+      example: env
+      type: string
+    type: array
+type: object

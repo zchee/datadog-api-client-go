@@ -1,0 +1,12 @@
+description: Object listing all metric names stored by Datadog since a given time.
+properties:
+  from:
+    description: Time when the metrics were active, seconds since the Unix epoch.
+    type: string
+  metrics:
+    description: List of metric names.
+    items:
+      description: A metric name.
+      type: string
+    type: array
+type: object

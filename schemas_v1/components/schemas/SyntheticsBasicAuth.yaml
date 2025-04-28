@@ -1,0 +1,8 @@
+description: Object to handle basic authentication when performing the test.
+oneOf:
+  - $ref: ./SyntheticsBasicAuthWeb.yaml
+  - $ref: ./SyntheticsBasicAuthSigv4.yaml
+  - $ref: ./SyntheticsBasicAuthNTLM.yaml
+  - $ref: ./SyntheticsBasicAuthDigest.yaml
+  - $ref: ./SyntheticsBasicAuthOauthClient.yaml
+  - $ref: ./SyntheticsBasicAuthOauthROP.yaml

@@ -1,0 +1,8 @@
+default: group
+description: Type of the group widget.
+enum:
+  - group
+example: group
+type: string
+x-enum-varnames:
+  - GROUP

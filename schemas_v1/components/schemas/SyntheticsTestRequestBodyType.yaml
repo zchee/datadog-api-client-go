@@ -1,0 +1,21 @@
+description: Type of the request body.
+enum:
+  - text/plain
+  - application/json
+  - text/xml
+  - text/html
+  - application/x-www-form-urlencoded
+  - graphql
+  - application/octet-stream
+  - multipart/form-data
+example: text/plain
+type: string
+x-enum-varnames:
+  - TEXT_PLAIN
+  - APPLICATION_JSON
+  - TEXT_XML
+  - TEXT_HTML
+  - APPLICATION_X_WWW_FORM_URLENCODED
+  - GRAPHQL
+  - APPLICATION_OCTET_STREAM
+  - MULTIPART_FORM_DATA

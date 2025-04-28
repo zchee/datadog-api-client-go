@@ -1,0 +1,14 @@
+description: Represents the index exclusion filter object from configuration API.
+properties:
+  filter:
+    $ref: ./LogsExclusionFilter.yaml
+  is_enabled:
+    description: Whether or not the exclusion filter is active.
+    type: boolean
+  name:
+    description: Name of the index exclusion filter.
+    example: payment
+    type: string
+required:
+  - name
+type: object

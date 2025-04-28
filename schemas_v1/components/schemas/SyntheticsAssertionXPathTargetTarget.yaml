@@ -1,0 +1,11 @@
+description: Composed target for `validatesXPath` operator.
+properties:
+  operator:
+    description: The specific operator to use on the path.
+    type: string
+  targetValue:
+    description: The path target value to compare to.
+  xPath:
+    description: The X path to assert.
+    type: string
+type: object

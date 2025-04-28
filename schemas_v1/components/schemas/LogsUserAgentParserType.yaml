@@ -1,0 +1,8 @@
+default: user-agent-parser
+description: Type of logs User-Agent parser.
+enum:
+  - user-agent-parser
+example: user-agent-parser
+type: string
+x-enum-varnames:
+  - USER_AGENT_PARSER

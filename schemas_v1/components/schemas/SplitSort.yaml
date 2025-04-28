@@ -1,0 +1,9 @@
+description: Controls the order in which graphs appear in the split.
+properties:
+  compute:
+    $ref: ./SplitConfigSortCompute.yaml
+  order:
+    $ref: ./WidgetSort.yaml
+required:
+  - order
+type: object

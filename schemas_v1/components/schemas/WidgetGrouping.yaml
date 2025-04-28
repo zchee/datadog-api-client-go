@@ -1,0 +1,9 @@
+description: The kind of grouping to use.
+enum:
+  - check
+  - cluster
+example: check
+type: string
+x-enum-varnames:
+  - CHECK
+  - CLUSTER

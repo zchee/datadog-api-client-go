@@ -1,0 +1,8 @@
+default: mobile
+description: Type of the Synthetic test, `mobile`.
+enum:
+  - mobile
+example: mobile
+type: string
+x-enum-varnames:
+  - MOBILE

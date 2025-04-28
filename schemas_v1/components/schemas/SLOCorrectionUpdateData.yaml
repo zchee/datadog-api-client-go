@@ -1,0 +1,7 @@
+description: The data object associated with the SLO correction to be updated.
+properties:
+  attributes:
+    $ref: ./SLOCorrectionUpdateRequestAttributes.yaml
+  type:
+    $ref: ./SLOCorrectionType.yaml
+type: object

@@ -1,0 +1,22 @@
+description: The EventBridge configuration for one AWS account.
+properties:
+  accountId:
+    description: Your AWS Account ID without dashes.
+    example: '123456789012'
+    type: string
+  eventHubs:
+    description: Array of AWS event sources associated with this account.
+    items:
+      $ref: ./AWSEventBridgeSource.yaml
+    type: array
+  tags:
+    description: |-
+      Array of tags (in the form `key:value`) which are added to all hosts
+      and metrics reporting through the main AWS integration.
+    example:
+      - $KEY:$VALUE
+    items:
+      description: The list of the host_tags.
+      type: string
+    type: array
+type: object

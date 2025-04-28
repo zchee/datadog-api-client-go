@@ -1,0 +1,109 @@
+description: >-
+  An object that holds an SLI value and its associated data. It can represent an
+  SLO's overall SLI value.
+
+  This can also represent the SLI value for a specific monitor in multi-monitor
+  SLOs, or a group in grouped SLOs.
+properties:
+  error_budget_remaining:
+    $ref: ./SLOErrorBudgetRemainingData.yaml
+  errors:
+    description: >-
+      An array of error objects returned while querying the history data for the
+      service level objective.
+    items:
+      $ref: ./SLOHistoryResponseErrorWithType.yaml
+    type: array
+  group:
+    description: For groups in a grouped SLO, this is the group name.
+    example: name
+    type: string
+  history:
+    description: >-
+      The state transition history for the monitor. It is represented as
+
+      an array of pairs. Each pair is an array containing the timestamp of the
+      transition
+
+      as an integer in Unix epoch format in the first element, and the state as
+      an integer in the
+
+      second element. An integer value of `0` for state means uptime, `1` means
+      downtime, and `2` means no data.
+
+      Periods of no data are counted either as uptime or downtime depending on
+      monitor settings.
+
+      See [SLO
+      documentation](https://docs.datadoghq.com/service_management/service_level_objectives/monitor/#missing-data)
+
+      for detailed information.
+    example:
+      - - 1579212382
+        - 0
+    items:
+      description: Represents an array timeseries data.
+      example:
+        - 1579212382
+        - 0
+      items:
+        description: A timeseries data point which is a tuple of (timestamp, value).
+        format: double
+        type: number
+      maxItems: 2
+      minItems: 2
+      type: array
+    type: array
+  monitor_modified:
+    description: >-
+      For `monitor` based SLOs, this is the last modified timestamp in epoch
+      seconds of the monitor.
+    example: 1615867200
+    format: int64
+    type: integer
+  monitor_type:
+    description: For `monitor` based SLOs, this describes the type of monitor.
+    example: string
+    type: string
+  name:
+    description: >-
+      For groups in a grouped SLO, this is the group name. For monitors in a
+      multi-monitor SLO, this is the monitor name.
+    example: string
+    type: string
+  precision:
+    deprecated: true
+    description: >-
+      The amount of decimal places the SLI value is accurate to for the given
+      from `&&` to timestamp. Use `span_precision` instead.
+    example: 2
+    format: double
+    type: number
+  preview:
+    description: >-
+      For `monitor` based SLOs, when `true` this indicates that a replay is in
+      progress to give an accurate uptime
+
+      calculation.
+    example: true
+    type: boolean
+  sli_value:
+    description: The current SLI value of the SLO over the history window.
+    example: 99.99
+    format: double
+    nullable: true
+    type: number
+  span_precision:
+    description: >-
+      The amount of decimal places the SLI value is accurate to for the given
+      from `&&` to timestamp.
+    example: 2
+    format: double
+    type: number
+  uptime:
+    deprecated: true
+    description: Use `sli_value` instead.
+    example: 99.99
+    format: double
+    type: number
+type: object

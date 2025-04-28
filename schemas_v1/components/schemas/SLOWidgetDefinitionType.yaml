@@ -1,0 +1,8 @@
+default: slo
+description: Type of the SLO widget.
+enum:
+  - slo
+example: slo
+type: string
+x-enum-varnames:
+  - SLO

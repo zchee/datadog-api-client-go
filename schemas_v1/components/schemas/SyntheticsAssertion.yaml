@@ -1,0 +1,10 @@
+description: |-
+  Object describing the assertions type, their associated operator,
+  which property they apply, and upon which target.
+oneOf:
+  - $ref: ./SyntheticsAssertionTarget.yaml
+  - $ref: ./SyntheticsAssertionBodyHashTarget.yaml
+  - $ref: ./SyntheticsAssertionJSONPathTarget.yaml
+  - $ref: ./SyntheticsAssertionJSONSchemaTarget.yaml
+  - $ref: ./SyntheticsAssertionXPathTarget.yaml
+  - $ref: ./SyntheticsAssertionJavascript.yaml

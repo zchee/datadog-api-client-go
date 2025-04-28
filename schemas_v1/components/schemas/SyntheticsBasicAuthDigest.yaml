@@ -1,0 +1,17 @@
+description: Object to handle digest authentication when performing the test.
+properties:
+  password:
+    description: Password to use for the digest authentication.
+    example: PaSSw0RD!
+    type: string
+  type:
+    $ref: ./SyntheticsBasicAuthDigestType.yaml
+  username:
+    description: Username to use for the digest authentication.
+    example: my_username
+    type: string
+required:
+  - password
+  - username
+  - type
+type: object

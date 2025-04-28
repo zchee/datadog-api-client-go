@@ -1,0 +1,20 @@
+description: Ingested spans usage for a given organization for a given hour.
+properties:
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  ingested_events_bytes:
+    description: >-
+      Contains the total number of bytes ingested for APM spans during a given
+      hour.
+    format: int64
+    nullable: true
+    type: integer
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

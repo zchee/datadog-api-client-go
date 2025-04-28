@@ -1,0 +1,9 @@
+description: Set a timeseries on the widget background.
+properties:
+  type:
+    $ref: ./TimeseriesBackgroundType.yaml
+  yaxis:
+    $ref: ./WidgetAxis.yaml
+required:
+  - type
+type: object

@@ -1,0 +1,10 @@
+description: Width of line displayed.
+enum:
+  - normal
+  - thick
+  - thin
+type: string
+x-enum-varnames:
+  - NORMAL
+  - THICK
+  - THIN

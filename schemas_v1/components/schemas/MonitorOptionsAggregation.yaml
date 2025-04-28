@@ -1,0 +1,16 @@
+description: Type of aggregation performed in the monitor query.
+properties:
+  group_by:
+    description: Group to break down the monitor on.
+    example: host
+    type: string
+  metric:
+    description: Metric name used in the monitor.
+    example: metrics.name
+    type: string
+  type:
+    description: Metric type used in the monitor.
+    example: count
+    type: string
+readOnly: true
+type: object

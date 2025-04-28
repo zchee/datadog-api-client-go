@@ -1,0 +1,20 @@
+description: Combination of settings to mute a host.
+properties:
+  end:
+    description: >-
+      POSIX timestamp in seconds when the host is unmuted. If omitted, the host
+      remains muted until explicitly unmuted.
+    example: 1579098130
+    format: int64
+    type: integer
+  message:
+    description: Message to associate with the muting of this host.
+    example: Muting this host for a test!
+    type: string
+  override:
+    description: >-
+      If true and the host is already muted, replaces existing host mute
+      settings.
+    example: false
+    type: boolean
+type: object

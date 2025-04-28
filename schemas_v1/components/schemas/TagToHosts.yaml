@@ -1,0 +1,15 @@
+description: >-
+  In this object, the key is the tag, the value is a list of host names that are
+  reporting that tag.
+properties:
+  tags:
+    additionalProperties:
+      description: A list of additional properties for tags.
+      items:
+        description: A given tag in a list.
+        example: test.metric.host
+        type: string
+      type: array
+    description: A list of tags to apply to the host.
+    type: object
+type: object

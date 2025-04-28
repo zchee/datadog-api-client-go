@@ -1,0 +1,8 @@
+default: event_stream
+description: Type of the event stream widget.
+enum:
+  - event_stream
+example: event_stream
+type: string
+x-enum-varnames:
+  - EVENT_STREAM

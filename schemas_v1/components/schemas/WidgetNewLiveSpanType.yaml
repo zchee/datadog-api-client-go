@@ -1,0 +1,7 @@
+description: Type "live" denotes a live span in the new format.
+enum:
+  - live
+example: live
+type: string
+x-enum-varnames:
+  - LIVE

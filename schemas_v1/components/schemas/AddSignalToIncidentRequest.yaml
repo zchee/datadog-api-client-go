@@ -1,0 +1,15 @@
+description: Attributes describing which incident to add the signal to.
+properties:
+  add_to_signal_timeline:
+    description: Whether to post the signal on the incident timeline.
+    type: boolean
+  incident_id:
+    description: Public ID attribute of the incident to which the signal will be added.
+    example: 2066
+    format: int64
+    type: integer
+  version:
+    $ref: ./Version.yaml
+required:
+  - incident_id
+type: object

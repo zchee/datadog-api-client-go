@@ -1,0 +1,8 @@
+default: hostmap
+description: Type of the host map widget.
+enum:
+  - hostmap
+example: hostmap
+type: string
+x-enum-varnames:
+  - HOSTMAP

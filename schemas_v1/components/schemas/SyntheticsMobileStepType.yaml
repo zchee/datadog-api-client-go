@@ -1,0 +1,39 @@
+description: Step type used in your mobile Synthetic test.
+enum:
+  - assertElementContent
+  - assertScreenContains
+  - assertScreenLacks
+  - doubleTap
+  - extractVariable
+  - flick
+  - openDeeplink
+  - playSubTest
+  - pressBack
+  - restartApplication
+  - rotate
+  - scroll
+  - scrollToElement
+  - tap
+  - toggleWiFi
+  - typeText
+  - wait
+example: assertElementContent
+type: string
+x-enum-varnames:
+  - ASSERTELEMENTCONTENT
+  - ASSERTSCREENCONTAINS
+  - ASSERTSCREENLACKS
+  - DOUBLETAP
+  - EXTRACTVARIABLE
+  - FLICK
+  - OPENDEEPLINK
+  - PLAYSUBTEST
+  - PRESSBACK
+  - RESTARTAPPLICATION
+  - ROTATE
+  - SCROLL
+  - SCROLLTOELEMENT
+  - TAP
+  - TOGGLEWIFI
+  - TYPETEXT
+  - WAIT

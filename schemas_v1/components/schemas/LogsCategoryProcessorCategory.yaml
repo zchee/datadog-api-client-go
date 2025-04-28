@@ -1,0 +1,8 @@
+description: Object describing the logs filter.
+properties:
+  filter:
+    $ref: ./LogsFilter.yaml
+  name:
+    description: Value to assign to the target attribute.
+    type: string
+type: object

@@ -1,0 +1,13 @@
+description: Error budget remaining for an SLO.
+nullable: true
+properties:
+  unit:
+    description: Error budget remaining unit.
+    example: requests
+    type: string
+  value:
+    description: Error budget remaining value.
+    example: 60
+    format: double
+    type: number
+type: object

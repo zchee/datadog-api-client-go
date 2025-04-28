@@ -1,0 +1,36 @@
+description: The queries and formula used to calculate the SLI value.
+example:
+  formulas:
+    - formula: query2/query1
+  queries:
+    - data_source: metrics
+      name: query1
+      query: sum:trace.servlet.request.hits{*} by {env}.as_count()
+    - data_source: metrics
+      name: query1
+      query: sum:trace.servlet.request.errors{*} by {env}.as_count()
+properties:
+  formulas:
+    description: >-
+      A list that contains exactly one formula, as only a single formula may be
+      used in a time-slice SLO.
+    example:
+      - formula: query1 - default_zero(query2)
+    items:
+      $ref: ./SLOFormula.yaml
+    maxItems: 1
+    minItems: 1
+    type: array
+  queries:
+    description: A list of queries that are used to calculate the SLI value.
+    example:
+      - data_source: metrics
+        name: query1
+        query: sum:trace.servlet.request.hits{*} by {env}.as_count()
+    items:
+      $ref: ./SLODataSourceQueryDefinition.yaml
+    type: array
+required:
+  - formulas
+  - queries
+type: object

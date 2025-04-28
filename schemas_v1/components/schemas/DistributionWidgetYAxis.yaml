@@ -1,0 +1,25 @@
+description: Y Axis controls for the distribution widget.
+properties:
+  include_zero:
+    description: True includes zero.
+    type: boolean
+  label:
+    description: The label of the axis to display on the graph.
+    type: string
+  max:
+    default: auto
+    description: >-
+      Specifies the maximum value to show on the y-axis. It takes a number, or
+      auto for default behavior.
+    type: string
+  min:
+    default: auto
+    description: >-
+      Specifies minimum value to show on the y-axis. It takes a number, or auto
+      for default behavior.
+    type: string
+  scale:
+    default: linear
+    description: Specifies the scale type. Possible values are `linear` or `log`.
+    type: string
+type: object

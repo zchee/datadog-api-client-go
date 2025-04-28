@@ -1,0 +1,12 @@
+description: Define how you want to align the text on the widget.
+enum:
+  - bottom
+  - left
+  - right
+  - top
+type: string
+x-enum-varnames:
+  - BOTTOM
+  - LEFT
+  - RIGHT
+  - TOP

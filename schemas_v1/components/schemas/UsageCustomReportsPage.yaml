@@ -1,0 +1,7 @@
+description: The object containing page total count.
+properties:
+  total_count:
+    description: Total page count.
+    format: int64
+    type: integer
+type: object

@@ -1,0 +1,10 @@
+description: A list of  SLO correction objects.
+properties:
+  data:
+    description: The list of SLO corrections objects.
+    items:
+      $ref: ./SLOCorrection.yaml
+    type: array
+  meta:
+    $ref: ./ResponseMetaAttributes.yaml
+type: object

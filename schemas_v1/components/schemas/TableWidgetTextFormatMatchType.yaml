@@ -1,0 +1,17 @@
+description: Match or compare option.
+enum:
+  - is
+  - is_not
+  - contains
+  - does_not_contain
+  - starts_with
+  - ends_with
+example: is
+type: string
+x-enum-varnames:
+  - IS
+  - IS_NOT
+  - CONTAINS
+  - DOES_NOT_CONTAIN
+  - STARTS_WITH
+  - ENDS_WITH

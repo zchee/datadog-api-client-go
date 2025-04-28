@@ -1,0 +1,14 @@
+description: Core Web Vitals attached to a browser test step.
+properties:
+  cls:
+    description: Cumulative Layout Shift.
+    format: double
+    type: number
+  lcp:
+    description: Largest Contentful Paint in milliseconds.
+    format: double
+    type: number
+  url:
+    description: URL attached to the metrics.
+    type: string
+type: object

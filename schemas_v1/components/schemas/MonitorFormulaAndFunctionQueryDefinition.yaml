@@ -1,0 +1,4 @@
+description: A formula and function query.
+oneOf:
+  - $ref: ./MonitorFormulaAndFunctionEventQueryDefinition.yaml
+  - $ref: ./MonitorFormulaAndFunctionCostQueryDefinition.yaml

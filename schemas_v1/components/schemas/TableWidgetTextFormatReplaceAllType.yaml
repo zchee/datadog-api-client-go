@@ -1,0 +1,7 @@
+description: Table widget text format replace all type.
+enum:
+  - all
+example: all
+type: string
+x-enum-varnames:
+  - ALL

@@ -1,0 +1,10 @@
+description: How to align the text on the widget.
+enum:
+  - center
+  - left
+  - right
+type: string
+x-enum-varnames:
+  - CENTER
+  - LEFT
+  - RIGHT

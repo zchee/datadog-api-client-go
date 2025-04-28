@@ -1,0 +1,25 @@
+description: Axis controls for the widget.
+properties:
+  include_zero:
+    description: Set to `true` to include zero.
+    type: boolean
+  label:
+    description: >-
+      The label of the axis to display on the graph. Only usable on Scatterplot
+      Widgets.
+    type: string
+  max:
+    default: auto
+    description: Specifies maximum numeric value to show on the axis. Defaults to `auto`.
+    type: string
+  min:
+    default: auto
+    description: Specifies minimum numeric value to show on the axis. Defaults to `auto`.
+    type: string
+  scale:
+    default: linear
+    description: >-
+      Specifies the scale type. Possible values are `linear`, `log`, `sqrt`, and
+      `pow##` (for example `pow2` or `pow0.5`).
+    type: string
+type: object

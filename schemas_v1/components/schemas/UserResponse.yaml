@@ -1,0 +1,5 @@
+description: A Datadog User.
+properties:
+  user:
+    $ref: ./User.yaml
+type: object

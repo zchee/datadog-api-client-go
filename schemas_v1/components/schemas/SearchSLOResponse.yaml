@@ -1,0 +1,9 @@
+description: A search SLO response containing results from the search query.
+properties:
+  data:
+    $ref: ./SearchSLOResponseData.yaml
+  links:
+    $ref: ./SearchSLOResponseLinks.yaml
+  meta:
+    $ref: ./SearchSLOResponseMeta.yaml
+type: object

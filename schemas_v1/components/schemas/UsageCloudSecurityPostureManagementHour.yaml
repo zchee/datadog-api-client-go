@@ -1,0 +1,56 @@
+description: Cloud Security Management Pro usage for a given organization for a given hour.
+properties:
+  aas_host_count:
+    description: >-
+      The number of Cloud Security Management Pro Azure app services hosts
+      during a given hour.
+    format: double
+    nullable: true
+    type: number
+  aws_host_count:
+    description: The number of Cloud Security Management Pro AWS hosts during a given hour.
+    format: double
+    nullable: true
+    type: number
+  azure_host_count:
+    description: >-
+      The number of Cloud Security Management Pro Azure hosts during a given
+      hour.
+    format: double
+    nullable: true
+    type: number
+  compliance_host_count:
+    description: The number of Cloud Security Management Pro hosts during a given hour.
+    format: double
+    nullable: true
+    type: number
+  container_count:
+    description: >-
+      The total number of Cloud Security Management Pro containers during a
+      given hour.
+    format: double
+    nullable: true
+    type: number
+  gcp_host_count:
+    description: The number of Cloud Security Management Pro GCP hosts during a given hour.
+    format: double
+    nullable: true
+    type: number
+  host_count:
+    description: >-
+      The total number of Cloud Security Management Pro hosts during a given
+      hour.
+    format: double
+    nullable: true
+    type: number
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

@@ -1,0 +1,48 @@
+description: Updated timeseries widget.
+properties:
+  apm_query:
+    $ref: ./LogQueryDefinition.yaml
+  audit_query:
+    $ref: ./LogQueryDefinition.yaml
+  display_type:
+    $ref: ./WidgetDisplayType.yaml
+  event_query:
+    $ref: ./LogQueryDefinition.yaml
+  formulas:
+    description: List of formulas that operate on queries.
+    items:
+      $ref: ./WidgetFormula.yaml
+    type: array
+  log_query:
+    $ref: ./LogQueryDefinition.yaml
+  metadata:
+    description: Used to define expression aliases.
+    items:
+      $ref: ./TimeseriesWidgetExpressionAlias.yaml
+    type: array
+  network_query:
+    $ref: ./LogQueryDefinition.yaml
+  on_right_yaxis:
+    description: Whether or not to display a second y-axis on the right.
+    type: boolean
+  process_query:
+    $ref: ./ProcessQueryDefinition.yaml
+  profile_metrics_query:
+    $ref: ./LogQueryDefinition.yaml
+  q:
+    description: Widget query.
+    type: string
+  queries:
+    description: List of queries that can be returned directly or used in formulas.
+    items:
+      $ref: ./FormulaAndFunctionQueryDefinition.yaml
+    type: array
+  response_format:
+    $ref: ./FormulaAndFunctionResponseFormat.yaml
+  rum_query:
+    $ref: ./LogQueryDefinition.yaml
+  security_query:
+    $ref: ./LogQueryDefinition.yaml
+  style:
+    $ref: ./WidgetRequestStyle.yaml
+type: object

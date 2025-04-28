@@ -1,0 +1,15 @@
+description: The style to apply to the widget.
+properties:
+  fill_max:
+    description: Max value to use to color the map.
+    type: string
+  fill_min:
+    description: Min value to use to color the map.
+    type: string
+  palette:
+    description: Color palette to apply to the widget.
+    type: string
+  palette_flip:
+    description: Whether to flip the palette tones.
+    type: boolean
+type: object

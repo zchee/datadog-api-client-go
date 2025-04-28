@@ -1,0 +1,4 @@
+description: The service checks.
+items:
+  $ref: ./ServiceCheck.yaml
+type: array

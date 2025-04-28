@@ -1,0 +1,8 @@
+default: digest
+description: The type of basic authentication to use when performing the test.
+enum:
+  - digest
+example: digest
+type: string
+x-enum-varnames:
+  - DIGEST

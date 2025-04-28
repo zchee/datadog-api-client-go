@@ -1,0 +1,32 @@
+description: Object containing information about the private location to create.
+properties:
+  description:
+    description: Description of the private location.
+    example: Description of private location
+    type: string
+  id:
+    description: Unique identifier of the private location.
+    readOnly: true
+    type: string
+  metadata:
+    $ref: ./SyntheticsPrivateLocationMetadata.yaml
+  name:
+    description: Name of the private location.
+    example: New private location
+    type: string
+  secrets:
+    $ref: ./SyntheticsPrivateLocationSecrets.yaml
+  tags:
+    description: Array of tags attached to the private location.
+    example:
+      - team:front
+    items:
+      description: A tag attached to the private location.
+      example: team:front
+      type: string
+    type: array
+required:
+  - name
+  - description
+  - tags
+type: object

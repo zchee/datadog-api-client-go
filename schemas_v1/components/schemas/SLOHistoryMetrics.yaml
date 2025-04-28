@@ -1,0 +1,50 @@
+description: |-
+  A `metric` based SLO history response.
+
+  This is not included in responses for `monitor` based SLOs.
+properties:
+  denominator:
+    $ref: ./SLOHistoryMetricsSeries.yaml
+  interval:
+    description: >-
+      The aggregated query interval for the series data. It's implicit based on
+      the query time window.
+    example: 0
+    format: int64
+    type: integer
+  message:
+    description: Optional message if there are specific query issues/warnings.
+    example: ''
+    type: string
+  numerator:
+    $ref: ./SLOHistoryMetricsSeries.yaml
+  query:
+    description: The combined numerator and denominator query CSV.
+    example: ''
+    type: string
+  res_type:
+    description: The series result type. This mimics `batch_query` response type.
+    example: ''
+    type: string
+  resp_version:
+    description: The series response version type. This mimics `batch_query` response type.
+    example: 0
+    format: int64
+    type: integer
+  times:
+    description: An array of query timestamps in EPOCH milliseconds.
+    example: []
+    items:
+      description: A timestamp in EPOCH milliseconds.
+      format: double
+      type: number
+    type: array
+required:
+  - res_type
+  - interval
+  - resp_version
+  - query
+  - times
+  - numerator
+  - denominator
+type: object

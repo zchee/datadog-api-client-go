@@ -1,0 +1,14 @@
+description: User who shared the dashboard.
+properties:
+  handle:
+    description: Identifier of the user who shared the dashboard.
+    example: test@datadoghq.com
+    readOnly: true
+    type: string
+  name:
+    description: Name of the user who shared the dashboard.
+    nullable: true
+    readOnly: true
+    type: string
+readOnly: true
+type: object

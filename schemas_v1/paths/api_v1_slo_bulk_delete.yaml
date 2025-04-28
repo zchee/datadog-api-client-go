@@ -1,0 +1,53 @@
+post:
+  description: >-
+    Delete (or partially delete) multiple service level objective objects.
+
+
+    This endpoint facilitates deletion of one or more thresholds for one or more
+
+    service level objective objects. If all thresholds are deleted, the service
+    level
+
+    objective object is deleted as well.
+  operationId: DeleteSLOTimeframeInBulk
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SLOBulkDelete.yaml
+    description: Delete multiple service level objective objects request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SLOBulkDeleteResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - slos_write
+  summary: Bulk Delete SLO Timeframes
+  tags:
+    - Service Level Objectives
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - slos_write

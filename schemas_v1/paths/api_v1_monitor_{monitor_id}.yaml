@@ -1,0 +1,198 @@
+delete:
+  description: Delete the specified monitor
+  operationId: DeleteMonitor
+  parameters:
+    - description: The ID of the monitor.
+      in: path
+      name: monitor_id
+      required: true
+      schema:
+        example: 666486743
+        format: int64
+        type: integer
+    - description: >-
+        Delete the monitor even if it's referenced by other resources (for
+        example SLO, composite monitor).
+      in: query
+      name: force
+      required: false
+      schema:
+        example: 'false'
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DeletedMonitor.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '401':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item not found error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - monitors_write
+  summary: Delete a monitor
+  tags:
+    - Monitors
+  x-permission:
+    operator: OR
+    permissions:
+      - monitors_write
+get:
+  description: Get details about the specified monitor from your organization.
+  operationId: GetMonitor
+  parameters:
+    - description: The ID of the monitor
+      in: path
+      name: monitor_id
+      required: true
+      schema:
+        example: 666486743
+        format: int64
+        type: integer
+    - description: >-
+        When specified, shows additional information about the group states.
+        Choose one or more from `all`, `alert`, `warn`, and `no data`.
+      in: query
+      name: group_states
+      required: false
+      schema:
+        type: string
+    - description: >-
+        If this argument is set to true, then the returned data includes all
+        current active downtimes for the monitor.
+      in: query
+      name: with_downtimes
+      required: false
+      schema:
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Monitor.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Monitor Not Found error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - monitors_read
+  summary: Get a monitor's details
+  tags:
+    - Monitors
+  x-permission:
+    operator: OR
+    permissions:
+      - monitors_read
+put:
+  description: Edit the specified monitor.
+  operationId: UpdateMonitor
+  parameters:
+    - description: The ID of the monitor.
+      in: path
+      name: monitor_id
+      required: true
+      schema:
+        example: 666486743
+        format: int64
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/MonitorUpdateRequest.yaml
+    description: Edit a monitor request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Monitor.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '401':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Monitor Not Found error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - monitors_write
+  summary: Edit a monitor
+  tags:
+    - Monitors
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - monitors_write

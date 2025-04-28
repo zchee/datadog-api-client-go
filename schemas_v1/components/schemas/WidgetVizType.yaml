@@ -1,0 +1,9 @@
+description: Whether to display the Alert Graph as a timeseries or a top list.
+enum:
+  - timeseries
+  - toplist
+example: timeseries
+type: string
+x-enum-varnames:
+  - TIMESERIES
+  - TOPLIST

@@ -1,0 +1,15 @@
+description: Property of the Synthetic Test Response to extract into a local variable.
+enum:
+  - grpc_message
+  - grpc_metadata
+  - http_body
+  - http_header
+  - http_status_code
+example: http_body
+type: string
+x-enum-varnames:
+  - GRPC_MESSAGE
+  - GRPC_METADATA
+  - HTTP_BODY
+  - HTTP_HEADER
+  - HTTP_STATUS_CODE

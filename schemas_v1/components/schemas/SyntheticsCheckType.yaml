@@ -1,0 +1,32 @@
+description: Type of assertion to apply in an API test.
+enum:
+  - equals
+  - notEquals
+  - contains
+  - notContains
+  - startsWith
+  - notStartsWith
+  - greater
+  - lower
+  - greaterEquals
+  - lowerEquals
+  - matchRegex
+  - between
+  - isEmpty
+  - notIsEmpty
+type: string
+x-enum-varnames:
+  - EQUALS
+  - NOT_EQUALS
+  - CONTAINS
+  - NOT_CONTAINS
+  - STARTS_WITH
+  - NOT_STARTS_WITH
+  - GREATER
+  - LOWER
+  - GREATER_EQUALS
+  - LOWER_EQUALS
+  - MATCH_REGEX
+  - BETWEEN
+  - IS_EMPTY
+  - NOT_IS_EMPTY

@@ -1,0 +1,20 @@
+description: Incident management usage for a given organization for a given hour.
+properties:
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  monthly_active_users:
+    description: >-
+      Contains the total number monthly active users from the start of the given
+      hour's month until the given hour.
+    format: int64
+    nullable: true
+    type: integer
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

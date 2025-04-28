@@ -1,0 +1,17 @@
+description: Object containing the uptime for a Synthetic test ID.
+properties:
+  from_ts:
+    description: Timestamp in seconds for the start of uptime.
+    format: int64
+    type: integer
+  overall:
+    $ref: ./SyntheticsUptime.yaml
+  public_id:
+    description: A Synthetic test ID.
+    example: abc-def-123
+    type: string
+  to_ts:
+    description: Timestamp in seconds for the end of uptime.
+    format: int64
+    type: integer
+type: object

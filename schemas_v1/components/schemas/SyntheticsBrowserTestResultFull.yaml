@@ -1,0 +1,23 @@
+description: Object returned describing a browser test result.
+properties:
+  check:
+    $ref: ./SyntheticsBrowserTestResultFullCheck.yaml
+  check_time:
+    description: When the browser test was conducted.
+    format: double
+    type: number
+  check_version:
+    description: Version of the browser test used.
+    format: int64
+    type: integer
+  probe_dc:
+    description: Location from which the browser test was performed.
+    type: string
+  result:
+    $ref: ./SyntheticsBrowserTestResultData.yaml
+  result_id:
+    description: ID of the browser test result.
+    type: string
+  status:
+    $ref: ./SyntheticsTestMonitorStatus.yaml
+type: object

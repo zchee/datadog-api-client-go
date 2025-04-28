@@ -1,0 +1,8 @@
+default: timeseries
+description: Type of the timeseries widget.
+enum:
+  - timeseries
+example: timeseries
+type: string
+x-enum-varnames:
+  - TIMESERIES

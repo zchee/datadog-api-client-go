@@ -1,0 +1,15 @@
+description: >-
+  Reflow type for a **new dashboard layout** dashboard. Set this only when
+  layout type is 'ordered'.
+
+  If set to 'fixed', the dashboard expects all widgets to have a layout, and if
+  it's set to 'auto',
+
+  widgets should not have layouts.
+enum:
+  - auto
+  - fixed
+type: string
+x-enum-varnames:
+  - AUTO
+  - FIXED

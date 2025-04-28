@@ -1,0 +1,10 @@
+description: Type of lines displayed.
+enum:
+  - dashed
+  - dotted
+  - solid
+type: string
+x-enum-varnames:
+  - DASHED
+  - DOTTED
+  - SOLID

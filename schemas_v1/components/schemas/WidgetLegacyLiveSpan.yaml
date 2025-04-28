@@ -1,0 +1,6 @@
+additionalProperties: false
+description: Wrapper for live span
+properties:
+  live_span:
+    $ref: ./WidgetLiveSpan.yaml
+type: object

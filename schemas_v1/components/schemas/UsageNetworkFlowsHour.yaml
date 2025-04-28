@@ -1,0 +1,18 @@
+description: Number of netflow events indexed for each hour for a given organization.
+properties:
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  indexed_events_count:
+    description: Contains the number of netflow events indexed.
+    format: int64
+    nullable: true
+    type: integer
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

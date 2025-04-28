@@ -1,0 +1,11 @@
+description: >-
+  Active means the dashboard is publicly available. Paused means the dashboard
+  is not publicly available.
+enum:
+  - active
+  - paused
+example: active
+type: string
+x-enum-varnames:
+  - ACTIVE
+  - PAUSED

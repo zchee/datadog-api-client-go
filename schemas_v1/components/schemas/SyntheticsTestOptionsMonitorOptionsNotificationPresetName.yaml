@@ -1,0 +1,12 @@
+description: The name of the preset for the notification for the monitor.
+enum:
+  - show_all
+  - hide_all
+  - hide_query
+  - hide_handles
+type: string
+x-enum-varnames:
+  - SHOW_ALL
+  - HIDE_ALL
+  - HIDE_QUERY
+  - HIDE_HANDLES

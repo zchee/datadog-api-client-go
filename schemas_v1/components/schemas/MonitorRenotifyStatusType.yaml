@@ -1,0 +1,10 @@
+description: The different statuses for which renotification is supported.
+enum:
+  - alert
+  - warn
+  - no data
+type: string
+x-enum-varnames:
+  - ALERT
+  - WARN
+  - NO_DATA

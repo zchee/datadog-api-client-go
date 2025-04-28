@@ -1,0 +1,11 @@
+description: A formula that specifies how to combine the results of multiple queries.
+example:
+  formula: query1 - default_zero(query2)
+properties:
+  formula:
+    description: The formula string, which is an expression involving named queries.
+    example: query1 - default_zero(query2)
+    type: string
+required:
+  - formula
+type: object

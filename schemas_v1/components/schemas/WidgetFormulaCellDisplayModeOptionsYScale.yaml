@@ -1,0 +1,9 @@
+description: Y scale for the cell display mode options.
+enum:
+  - shared
+  - independent
+example: shared
+type: string
+x-enum-varnames:
+  - SHARED
+  - INDEPENDENT

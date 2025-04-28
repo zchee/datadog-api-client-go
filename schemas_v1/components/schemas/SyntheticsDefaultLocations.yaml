@@ -1,0 +1,7 @@
+description: List of Synthetics default locations settings.
+example:
+  - aws:eu-west-3
+items:
+  description: Name of the location.
+  type: string
+type: array

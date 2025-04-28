@@ -1,0 +1,85 @@
+description: Holds search results.
+properties:
+  classification:
+    description: Classification of the monitor.
+    readOnly: true
+    type: string
+  creator:
+    $ref: ./Creator.yaml
+  id:
+    description: ID of the monitor.
+    format: int64
+    readOnly: true
+    type: integer
+  last_triggered_ts:
+    description: Latest timestamp the monitor triggered.
+    format: int64
+    nullable: true
+    readOnly: true
+    type: integer
+  metrics:
+    description: Metrics used by the monitor.
+    items:
+      description: A metric used by the monitor.
+      readOnly: true
+      type: string
+    readOnly: true
+    type: array
+  name:
+    description: The monitor name.
+    readOnly: true
+    type: string
+  notifications:
+    description: The notification triggered by the monitor.
+    items:
+      $ref: ./MonitorSearchResultNotification.yaml
+    readOnly: true
+    type: array
+  org_id:
+    description: The ID of the organization.
+    format: int64
+    readOnly: true
+    type: integer
+  quality_issues:
+    description: Quality issues detected with the monitor.
+    items:
+      description: A quality issue detected with the monitor.
+      readOnly: true
+      type: string
+    readOnly: true
+    type: array
+  query:
+    description: The monitor query.
+    example: avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100
+    type: string
+  scopes:
+    description: >-
+      The scope(s) to which the downtime applies, for example `host:app2`.
+
+      Provide multiple scopes as a comma-separated list, for example
+      `env:dev,env:prod`.
+
+      The resulting downtime applies to sources that matches ALL provided scopes
+
+      (that is `env:dev AND env:prod`), NOT any of them.
+    example:
+      - host:app2
+      - env:dev,env:prod
+    items:
+      description: Scope value(s).
+      readOnly: true
+      type: string
+    type: array
+  status:
+    $ref: ./MonitorOverallStates.yaml
+  tags:
+    description: Tags associated with the monitor.
+    items:
+      description: A tag associated with the monitor.
+      readOnly: true
+      type: string
+    readOnly: true
+    type: array
+  type:
+    $ref: ./MonitorType.yaml
+type: object

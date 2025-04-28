@@ -1,0 +1,36 @@
+description: |-
+  Update request of a Webhooks integration object.
+
+  *All properties are optional.*
+properties:
+  custom_headers:
+    description: |-
+      If `null`, uses no header.
+      If given a JSON payload, these will be headers attached to your webhook.
+    type: string
+  encode_as:
+    $ref: ./WebhooksIntegrationEncoding.yaml
+  name:
+    description: |-
+      The name of the webhook. It corresponds with `<WEBHOOK_NAME>`.
+      Learn more on how to use it in
+      [monitor notifications](https://docs.datadoghq.com/monitors/notify).
+    example: WEBHOOK_NAME
+    type: string
+  payload:
+    description: >-
+      If `null`, uses the default payload.
+
+      If given a JSON payload, the webhook returns the payload
+
+      specified by the given payload.
+
+      [Webhooks variable
+      usage](https://docs.datadoghq.com/integrations/webhooks/#usage).
+    nullable: true
+    type: string
+  url:
+    description: URL of the webhook.
+    example: https://example.com/webhook
+    type: string
+type: object

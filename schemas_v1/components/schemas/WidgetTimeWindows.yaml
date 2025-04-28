@@ -1,0 +1,20 @@
+description: Define a time window.
+enum:
+  - 7d
+  - 30d
+  - 90d
+  - week_to_date
+  - previous_week
+  - month_to_date
+  - previous_month
+  - global_time
+type: string
+x-enum-varnames:
+  - SEVEN_DAYS
+  - THIRTY_DAYS
+  - NINETY_DAYS
+  - WEEK_TO_DATE
+  - PREVIOUS_WEEK
+  - MONTH_TO_DATE
+  - PREVIOUS_MONTH
+  - GLOBAL_TIME

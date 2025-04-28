@@ -1,0 +1,37 @@
+description: Configuration object for a Synthetic API test.
+example:
+  assertions:
+    - operator: lessThan
+      target: 1000
+      type: responseTime
+  request:
+    method: GET
+    url: https://example.com
+properties:
+  assertions:
+    default: []
+    description: Array of assertions used for the test. Required for single API tests.
+    example:
+      - operator: lessThan
+        target: 1000
+        type: responseTime
+    items:
+      $ref: ./SyntheticsAssertion.yaml
+    type: array
+  configVariables:
+    description: Array of variables used for the test.
+    items:
+      $ref: ./SyntheticsConfigVariable.yaml
+    type: array
+  request:
+    $ref: ./SyntheticsTestRequest.yaml
+  steps:
+    description: When the test subtype is `multi`, the steps of the test.
+    items:
+      $ref: ./SyntheticsAPIStep.yaml
+    type: array
+  variablesFromScript:
+    description: Variables defined from JavaScript code.
+    example: dd.variable.set("FOO", "foo")
+    type: string
+type: object

@@ -1,0 +1,21 @@
+description: >-
+  Query to service-based topology data sources like the service map or data
+  streams.
+properties:
+  data_source:
+    $ref: ./TopologyQueryDataSource.yaml
+  filters:
+    description: Your environment and primary tag (or * if enabled for your account).
+    example:
+      - env:prod
+      - az:us-east
+    items:
+      description: Environment or primary tag, generally in a key:value format
+      type: string
+    minItems: 1
+    type: array
+  service:
+    description: Name of the service
+    example: myService
+    type: string
+type: object

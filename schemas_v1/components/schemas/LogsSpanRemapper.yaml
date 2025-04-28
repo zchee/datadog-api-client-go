@@ -1,0 +1,28 @@
+description: |-
+  There are two ways to define correlation between application spans and logs:
+
+    1. Follow the documentation on [how to inject a span ID in the application logs](https://docs.datadoghq.com/tracing/connect_logs_and_traces).
+    Log integrations automatically handle all remaining setup steps by default.
+
+    2. Use the span remapper processor to define a log attribute as its associated span ID.
+properties:
+  is_enabled:
+    default: false
+    description: Whether or not the processor is enabled.
+    type: boolean
+  name:
+    description: Name of the processor.
+    type: string
+  sources:
+    default:
+      - dd.span_id
+    description: Array of source attributes.
+    items:
+      description: Attribute to extract the span ID from.
+      type: string
+    type: array
+  type:
+    $ref: ./LogsSpanRemapperType.yaml
+required:
+  - type
+type: object

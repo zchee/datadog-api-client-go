@@ -1,0 +1,37 @@
+description: >
+  The funnel visualization displays a funnel of user sessions that maps a
+  sequence of view navigation and user interaction in your application.
+properties:
+  requests:
+    description: Request payload used to query items.
+    example:
+      - query:
+          data_source: rum
+          query_string: '@browser.name:Chrome'
+          steps:
+            - facet: '@view.name'
+              value: /logs
+            - facet: '@view.name'
+              value: /apm/home
+        request_type: funnel
+    items:
+      $ref: ./FunnelWidgetRequest.yaml
+    maxItems: 1
+    minItems: 1
+    type: array
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: The title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: The size of the title.
+    type: string
+  type:
+    $ref: ./FunnelWidgetDefinitionType.yaml
+required:
+  - type
+  - requests
+type: object

@@ -1,0 +1,10 @@
+description: >-
+  Response containing the Database Monitoring usage for each hour for a given
+  organization.
+properties:
+  usage:
+    description: Get hourly usage for Database Monitoring
+    items:
+      $ref: ./UsageDBMHour.yaml
+    type: array
+type: object

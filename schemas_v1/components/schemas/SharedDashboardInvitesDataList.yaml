@@ -1,0 +1,10 @@
+description: >-
+  A list of objects containing the information for an invitation(s) to a shared
+  dashboard.
+example:
+  - attributes:
+      email: test@datadoghq.com
+    type: public_dashboard_invitation
+items:
+  $ref: ./SharedDashboardInvitesDataObject.yaml
+type: array

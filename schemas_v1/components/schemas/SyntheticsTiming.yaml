@@ -1,0 +1,44 @@
+description: >-
+  Object containing all metrics and their values collected for a Synthetic API
+  test.
+
+  See the [Synthetic Monitoring Metrics
+  documentation](https://docs.datadoghq.com/synthetics/metrics/).
+properties:
+  dns:
+    description: The duration in millisecond of the DNS lookup.
+    format: double
+    type: number
+  download:
+    description: The time in millisecond to download the response.
+    format: double
+    type: number
+  firstByte:
+    description: The time in millisecond to first byte.
+    format: double
+    type: number
+  handshake:
+    description: The duration in millisecond of the TLS handshake.
+    format: double
+    type: number
+  redirect:
+    description: The time in millisecond spent during redirections.
+    format: double
+    type: number
+  ssl:
+    description: The duration in millisecond of the TLS handshake.
+    format: double
+    type: number
+  tcp:
+    description: Time in millisecond to establish the TCP connection.
+    format: double
+    type: number
+  total:
+    description: The overall time in millisecond the request took to be processed.
+    format: double
+    type: number
+  wait:
+    description: Time spent in millisecond waiting for a response.
+    format: double
+    type: number
+type: object

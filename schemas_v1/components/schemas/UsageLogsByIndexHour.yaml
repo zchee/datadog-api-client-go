@@ -1,0 +1,27 @@
+description: Number of indexed logs for each hour and index for a given organization.
+properties:
+  event_count:
+    description: The total number of indexed logs for the queried hour.
+    format: int64
+    type: integer
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  index_id:
+    description: The index ID for this usage.
+    type: string
+  index_name:
+    description: The user specified name for this index ID.
+    type: string
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+  retention:
+    description: The retention period (in days) for this index ID.
+    format: int64
+    type: integer
+type: object

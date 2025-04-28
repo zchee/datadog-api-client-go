@@ -1,0 +1,59 @@
+description: >-
+  The timeseries visualization allows you to display the evolution of one or
+  more metrics, log events, or Indexed Spans over time.
+properties:
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  events:
+    description: List of widget events.
+    items:
+      $ref: ./WidgetEvent.yaml
+    type: array
+  legend_columns:
+    description: Columns displayed in the legend.
+    items:
+      $ref: ./TimeseriesWidgetLegendColumn.yaml
+    type: array
+  legend_layout:
+    $ref: ./TimeseriesWidgetLegendLayout.yaml
+  legend_size:
+    $ref: ./WidgetLegendSize.yaml
+  markers:
+    description: List of markers.
+    items:
+      $ref: ./WidgetMarker.yaml
+    type: array
+  requests:
+    description: List of timeseries widget requests.
+    example:
+      - q/apm_query/log_query: <METRIC_1>{<SCOPE_1>}
+    items:
+      $ref: ./TimeseriesWidgetRequest.yaml
+    minItems: 1
+    type: array
+  right_yaxis:
+    $ref: ./WidgetAxis.yaml
+  show_legend:
+    description: (screenboard only) Show the legend for this widget.
+    type: boolean
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of your widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./TimeseriesWidgetDefinitionType.yaml
+  yaxis:
+    $ref: ./WidgetAxis.yaml
+required:
+  - type
+  - requests
+type: object

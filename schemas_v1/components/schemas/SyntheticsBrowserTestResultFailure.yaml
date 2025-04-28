@@ -1,0 +1,9 @@
+description: The browser test failure details.
+properties:
+  code:
+    $ref: ./SyntheticsBrowserTestFailureCode.yaml
+  message:
+    description: The browser test error message.
+    example: Error during DNS resolution (ENOTFOUND).
+    type: string
+type: object

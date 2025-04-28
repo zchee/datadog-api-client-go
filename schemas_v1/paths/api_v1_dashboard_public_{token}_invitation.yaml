@@ -1,0 +1,182 @@
+delete:
+  description: >-
+    Revoke previously sent invitation emails and active sessions used to access
+    a given shared dashboard for specific email addresses.
+  operationId: DeletePublicDashboardInvitation
+  parameters:
+    - description: The token of the shared dashboard.
+      in: path
+      name: token
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        examples:
+          json-request-body:
+            value:
+              data:
+                attributes:
+                  email: test@datadoghq.com
+                type: public_dashboard_invitation
+        schema:
+          $ref: ../components/schemas/SharedDashboardInvites.yaml
+    description: Shared Dashboard Invitation deletion request body.
+    required: true
+  responses:
+    '204':
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_public_share
+  summary: Revoke shared dashboard invitations
+  tags:
+    - Dashboards
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_public_share
+get:
+  description: >-
+    Describe the invitations that exist for the given shared dashboard
+    (paginated).
+  operationId: GetPublicDashboardInvitations
+  parameters:
+    - description: Token of the shared dashboard for which to fetch invitations.
+      in: path
+      name: token
+      required: true
+      schema:
+        type: string
+    - description: The number of records to return in a single request.
+      in: query
+      name: page_size
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: The page to access (base 0).
+      in: query
+      name: page_number
+      required: false
+      schema:
+        format: int64
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SharedDashboardInvites.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_public_share
+  summary: Get all invitations for a shared dashboard
+  tags:
+    - Dashboards
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_public_share
+post:
+  description: >-
+    Send emails to specified email addresses containing links to access a given
+    authenticated shared dashboard. Email addresses must already belong to the
+    authenticated shared dashboard's share_list.
+  operationId: SendPublicDashboardInvitation
+  parameters:
+    - description: The token of the shared dashboard.
+      in: path
+      name: token
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        examples:
+          json-request-body:
+            value:
+              data:
+                - attributes:
+                    email: test@datadoghq.com
+                  type: public_dashboard_invitation
+        schema:
+          $ref: ../components/schemas/SharedDashboardInvites.yaml
+    description: Shared Dashboard Invitation request body.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SharedDashboardInvites.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_public_share
+  summary: Send shared dashboard invitation email
+  tags:
+    - Dashboards
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_public_share

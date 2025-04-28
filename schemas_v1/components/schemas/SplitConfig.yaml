@@ -1,0 +1,31 @@
+description: Encapsulates all user choices about how to split a graph.
+properties:
+  limit:
+    description: Maximum number of graphs to display in the widget.
+    example: 24
+    format: int64
+    maximum: 500
+    minimum: 1
+    type: integer
+  sort:
+    $ref: ./SplitSort.yaml
+  split_dimensions:
+    description: The dimension(s) on which to split the graph
+    example:
+      - one_graph_per: service
+    items:
+      $ref: ./SplitDimension.yaml
+    maxItems: 1
+    minItems: 1
+    type: array
+  static_splits:
+    description: Manual selection of tags making split graph widget static
+    items:
+      $ref: ./SplitVectorEntry.yaml
+    maxItems: 500
+    type: array
+required:
+  - split_dimensions
+  - limit
+  - sort
+type: object

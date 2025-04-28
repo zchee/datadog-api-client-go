@@ -1,0 +1,8 @@
+description: Online Archive usage response.
+properties:
+  usage:
+    description: Response containing Online Archive usage.
+    items:
+      $ref: ./UsageOnlineArchiveHour.yaml
+    type: array
+type: object

@@ -1,0 +1,11 @@
+description: User locator to find the element.
+properties:
+  failTestOnCannotLocate:
+    description: Whether if the test should fail if the element cannot be found.
+    type: boolean
+  values:
+    description: Values of the user locator.
+    items:
+      $ref: ./SyntheticsMobileStepParamsElementUserLocatorValuesItems.yaml
+    type: array
+type: object

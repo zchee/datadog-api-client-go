@@ -1,0 +1,4 @@
+description: Top list widget display options.
+oneOf:
+  - $ref: ./ToplistWidgetStacked.yaml
+  - $ref: ./ToplistWidgetFlat.yaml

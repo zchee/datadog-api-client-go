@@ -1,0 +1,211 @@
+get:
+  description: >-
+    Get all notebooks. This can also be used to search for notebooks with a
+    particular `query` in the notebook
+
+    `name` or author `handle`.
+  operationId: ListNotebooks
+  parameters:
+    - description: Return notebooks created by the given `author_handle`.
+      in: query
+      name: author_handle
+      required: false
+      schema:
+        example: test@datadoghq.com
+        type: string
+      style: form
+    - description: Return notebooks not created by the given `author_handle`.
+      in: query
+      name: exclude_author_handle
+      required: false
+      schema:
+        example: test@datadoghq.com
+        type: string
+      style: form
+    - description: The index of the first notebook you want returned.
+      in: query
+      name: start
+      required: false
+      schema:
+        example: 0
+        format: int64
+        type: integer
+      style: form
+    - description: The number of notebooks to be returned.
+      in: query
+      name: count
+      required: false
+      schema:
+        default: 100
+        example: 5
+        format: int64
+        type: integer
+      style: form
+    - description: Sort by field `modified`, `name`, or `created`.
+      in: query
+      name: sort_field
+      required: false
+      schema:
+        default: modified
+        example: modified
+        type: string
+      style: form
+    - description: Sort by direction `asc` or `desc`.
+      in: query
+      name: sort_dir
+      required: false
+      schema:
+        default: desc
+        example: desc
+        type: string
+      style: form
+    - description: >-
+        Return only notebooks with `query` string in notebook name or author
+        handle.
+      in: query
+      name: query
+      required: false
+      schema:
+        example: postmortem
+        type: string
+      style: form
+    - description: >-
+        Value of `false` excludes the `cells` and global `time` for each
+        notebook.
+      in: query
+      name: include_cells
+      required: false
+      schema:
+        default: true
+        example: false
+        type: boolean
+      style: form
+    - description: >-
+        True value returns only template notebooks. Default is false (returns
+        only non-template notebooks).
+      in: query
+      name: is_template
+      required: false
+      schema:
+        default: false
+        example: false
+        type: boolean
+      style: form
+    - description: >-
+        If type is provided, returns only notebooks with that metadata type.
+        Default does not have type filtering.
+      in: query
+      name: type
+      required: false
+      schema:
+        example: investigation
+        type: string
+      style: form
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/NotebooksResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all notebooks
+  tags:
+    - Notebooks
+  x-pagination:
+    limitParam: count
+    pageOffsetParam: start
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - notebooks_read
+post:
+  description: Create a notebook using the specified options.
+  operationId: CreateNotebook
+  requestBody:
+    content:
+      application/json:
+        examples:
+          json-request-body:
+            value:
+              data:
+                attributes:
+                  cells:
+                    - attributes:
+                        definition:
+                          text: |-
+                            ## Some test markdown
+
+                            With some example content.
+                          type: markdown
+                      type: notebook_cells
+                    - attributes:
+                        definition:
+                          requests:
+                            - display_type: line
+                              q: avg:system.load.1{*}
+                              style:
+                                line_type: solid
+                                line_width: normal
+                                palette: dog_classic
+                          show_legend: true
+                          type: timeseries
+                          yaxis:
+                            scale: linear
+                        graph_size: m
+                        split_by:
+                          keys: []
+                          tags: []
+                        time: null
+                      type: notebook_cells
+                  name: Example Notebook
+                  time:
+                    live_span: 1h
+                type: notebooks
+        schema:
+          $ref: ../components/schemas/NotebookCreateRequest.yaml
+    description: The JSON description of the notebook you want to create.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/NotebookResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a notebook
+  tags:
+    - Notebooks
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - notebooks_write

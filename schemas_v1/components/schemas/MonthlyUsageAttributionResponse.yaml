@@ -1,0 +1,10 @@
+description: Response containing the monthly Usage Summary by tag(s).
+properties:
+  metadata:
+    $ref: ./MonthlyUsageAttributionMetadata.yaml
+  usage:
+    description: Get usage summary by tag(s).
+    items:
+      $ref: ./MonthlyUsageAttributionBody.yaml
+    type: array
+type: object

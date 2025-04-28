@@ -1,0 +1,42 @@
+post:
+  description: >-
+    Update the defined list of host filters for a given Datadog-Azure
+    integration.
+  operationId: UpdateAzureHostFilters
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AzureAccount.yaml
+    description: Update a Datadog-Azure integration's host filters request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example: {}
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update Azure integration host filters
+  tags:
+    - Azure Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - azure_configuration_edit

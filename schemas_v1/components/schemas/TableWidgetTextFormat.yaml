@@ -1,0 +1,16 @@
+description: Text format rules for a tag-based column within a table widget.
+example:
+  - match:
+      type: is
+      value: fruit
+    replace:
+      type: all
+      with: vegetable
+  - match:
+      type: is
+      value: cake
+    palette: white_on_green
+items:
+  $ref: ./TableWidgetTextFormatRule.yaml
+minItems: 1
+type: array

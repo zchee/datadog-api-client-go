@@ -1,0 +1,49 @@
+description: The Test step used in a Synthetic multi-step API test.
+properties:
+  allowFailure:
+    description: Determines whether or not to continue with test if this step fails.
+    type: boolean
+  assertions:
+    default: []
+    description: Array of assertions used for the test.
+    example:
+      - operator: lessThan
+        target: 1000
+        type: responseTime
+    items:
+      $ref: ./SyntheticsAssertion.yaml
+    type: array
+  exitIfSucceed:
+    description: Determines whether or not to exit the test if the step succeeds.
+    type: boolean
+  extractedValues:
+    description: Array of values to parse and save as variables from the response.
+    items:
+      $ref: ./SyntheticsParsingOptions.yaml
+    type: array
+  extractedValuesFromScript:
+    description: Generate variables using JavaScript.
+    type: string
+  isCritical:
+    description: >-
+      Determines whether or not to consider the entire test as failed if this
+      step fails.
+
+      Can be used only if `allowFailure` is `true`.
+    type: boolean
+  name:
+    description: The name of the step.
+    example: Example step name
+    type: string
+  request:
+    $ref: ./SyntheticsTestRequest.yaml
+  retry:
+    $ref: ./SyntheticsTestOptionsRetry.yaml
+  subtype:
+    $ref: ./SyntheticsAPITestStepSubtype.yaml
+required:
+  - assertions
+  - request
+  - name
+  - subtype
+type: object

@@ -1,0 +1,66 @@
+get:
+  deprecated: true
+  description: >-
+    Get daily custom reports.
+
+    **Note:** This endpoint will be fully deprecated on December 1, 2022.
+
+    Refer to [Migrating from v1 to v2 of the Usage Attribution
+    API](https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/)
+    for the associated migration guide.
+  operationId: GetDailyCustomReports
+  parameters:
+    - description: The number of files to return in the response. `[default=60]`.
+      in: query
+      name: page[size]
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: >-
+        The identifier of the first page to return. This parameter is used for
+        the pagination feature `[default=0]`.
+      in: query
+      name: page[number]
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: 'The direction to sort by: `[desc, asc]`.'
+      in: query
+      name: sort_dir
+      required: false
+      schema:
+        $ref: ../components/schemas/UsageSortDirection.yaml
+    - description: 'The field to sort by: `[computed_on, size, start_date, end_date]`.'
+      in: query
+      name: sort
+      required: false
+      schema:
+        $ref: ../components/schemas/UsageSort.yaml
+  responses:
+    '200':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/UsageCustomReportsResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden - User is not authorized
+    '429':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Too many requests
+  summary: Get the list of available daily custom reports
+  tags:
+    - Usage Metering
+  x-permission:
+    operator: OR
+    permissions:
+      - usage_read

@@ -1,0 +1,8 @@
+default: lookup-processor
+description: Type of logs lookup processor.
+enum:
+  - lookup-processor
+example: lookup-processor
+type: string
+x-enum-varnames:
+  - LOOKUP_PROCESSOR

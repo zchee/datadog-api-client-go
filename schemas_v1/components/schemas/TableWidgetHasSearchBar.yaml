@@ -1,0 +1,11 @@
+description: Controls the display of the search bar.
+enum:
+  - always
+  - never
+  - auto
+example: auto
+type: string
+x-enum-varnames:
+  - ALWAYS
+  - NEVER
+  - AUTO

@@ -1,0 +1,39 @@
+description: Process query using formulas and functions.
+properties:
+  aggregator:
+    $ref: ./FormulaAndFunctionMetricAggregation.yaml
+  cross_org_uuids:
+    $ref: ./CrossOrgUuids.yaml
+  data_source:
+    $ref: ./FormulaAndFunctionProcessQueryDataSource.yaml
+  is_normalized_cpu:
+    description: Whether to normalize the CPU percentages.
+    type: boolean
+  limit:
+    description: Number of hits to return.
+    format: int64
+    type: integer
+  metric:
+    description: Process metric name.
+    example: avg:system.cpu.user{*}
+    type: string
+  name:
+    description: Name of query for use in formulas.
+    example: query_errors
+    type: string
+  sort:
+    $ref: ./QuerySortOrder.yaml
+  tag_filters:
+    description: An array of tags to filter by.
+    items:
+      description: One of the tags to filter by.
+      type: string
+    type: array
+  text_filter:
+    description: Text to use as filter.
+    type: string
+required:
+  - data_source
+  - metric
+  - name
+type: object

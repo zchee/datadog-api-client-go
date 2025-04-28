@@ -1,0 +1,8 @@
+default: message-remapper
+description: Type of logs message remapper.
+enum:
+  - message-remapper
+example: message-remapper
+type: string
+x-enum-varnames:
+  - MESSAGE_REMAPPER

@@ -1,0 +1,101 @@
+get:
+  description: >-
+    Get a specific SLO’s history, regardless of its SLO type.
+
+
+    The detailed history data is structured according to the source data type.
+
+    For example, metric data is included for event SLOs that use
+
+    the metric source, and monitor SLO types include the monitor transition
+    history.
+
+
+    **Note:** There are different response formats for event based and time
+    based SLOs.
+
+    Examples of both are shown.
+  operationId: GetSLOHistory
+  parameters:
+    - description: The ID of the service level objective object.
+      in: path
+      name: slo_id
+      required: true
+      schema:
+        type: string
+    - description: The `from` timestamp for the query window in epoch seconds.
+      in: query
+      name: from_ts
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: The `to` timestamp for the query window in epoch seconds.
+      in: query
+      name: to_ts
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: >-
+        The SLO target. If `target` is passed in, the response will include the
+        remaining error budget and a timeframe value of `custom`.
+      in: query
+      name: target
+      schema:
+        exclusiveMaximum: true
+        exclusiveMinimum: true
+        format: double
+        maximum: 100
+        minimum: 0
+        type: number
+    - description: >-
+        Defaults to `true`. If any SLO corrections are applied and this
+        parameter is set to `false`,
+
+        then the corrections will not be applied and the SLI values will not be
+        affected.
+      in: query
+      name: apply_correction
+      required: false
+      schema:
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SLOHistoryResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - slos_read
+  summary: Get an SLO's history
+  tags:
+    - Service Level Objectives
+  x-permission:
+    operator: OR
+    permissions:
+      - slos_read

@@ -1,0 +1,8 @@
+default: oauth-rop
+description: The type of basic authentication to use when performing the test.
+enum:
+  - oauth-rop
+example: oauth-rop
+type: string
+x-enum-varnames:
+  - OAUTH_ROP

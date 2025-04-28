@@ -1,0 +1,13 @@
+description: Type of browser test variable.
+enum:
+  - element
+  - email
+  - global
+  - text
+example: text
+type: string
+x-enum-varnames:
+  - ELEMENT
+  - EMAIL
+  - GLOBAL
+  - TEXT

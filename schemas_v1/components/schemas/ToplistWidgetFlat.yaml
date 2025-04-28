@@ -1,0 +1,7 @@
+description: Top list widget flat display.
+properties:
+  type:
+    $ref: ./ToplistWidgetFlatType.yaml
+required:
+  - type
+type: object

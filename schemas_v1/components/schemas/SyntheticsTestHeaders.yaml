@@ -1,0 +1,5 @@
+additionalProperties:
+  description: A single Header.
+  type: string
+description: Headers to include when performing the test.
+type: object

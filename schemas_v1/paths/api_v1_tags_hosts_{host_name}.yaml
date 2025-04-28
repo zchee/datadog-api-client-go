@@ -1,0 +1,199 @@
+delete:
+  description: |-
+    This endpoint allows you to remove all user-assigned tags
+    for a single host.
+  operationId: DeleteHostTags
+  parameters:
+    - description: >-
+        This endpoint allows you to remove all user-assigned tags for a single
+        host.
+      in: path
+      name: host_name
+      required: true
+      schema:
+        type: string
+    - description: >-
+        The source of the tags (for example chef, puppet).
+
+        [Complete list of source attribute
+        values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+      in: query
+      name: source
+      required: false
+      schema:
+        type: string
+  responses:
+    '204':
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Remove host tags
+  tags:
+    - Tags
+get:
+  description: Return the list of tags that apply to a given host.
+  operationId: GetHostTags
+  parameters:
+    - description: >-
+        When specified, filters list of tags to those tags with the specified
+        source.
+      in: path
+      name: host_name
+      required: true
+      schema:
+        type: string
+    - description: Source to filter.
+      in: query
+      name: source
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HostTags.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get host tags
+  tags:
+    - Tags
+post:
+  description: |-
+    This endpoint allows you to add new tags to a host,
+    optionally specifying where these tags come from.
+  operationId: CreateHostTags
+  parameters:
+    - description: >-
+        This endpoint allows you to add new tags to a host, optionally
+        specifying where the tags came from.
+      in: path
+      name: host_name
+      required: true
+      schema:
+        type: string
+    - description: >-
+        The source of the tags.
+
+        [Complete list of source attribute
+        values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+      example: chef
+      in: query
+      name: source
+      required: false
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/HostTags.yaml
+    description: Update host tags request body.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HostTags.yaml
+      description: Created
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Add tags to a host
+  tags:
+    - Tags
+  x-codegen-request-body-name: body
+put:
+  description: |-
+    This endpoint allows you to update/replace all tags in
+    an integration source with those supplied in the request.
+  operationId: UpdateHostTags
+  parameters:
+    - description: >-
+        This endpoint allows you to update/replace all in an integration source
+        with those supplied in the request.
+      in: path
+      name: host_name
+      required: true
+      schema:
+        type: string
+    - description: >-
+        The source of the tags (for example chef, puppet).
+
+        [Complete list of source attribute
+        values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value)
+      in: query
+      name: source
+      required: false
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/HostTags.yaml
+    description: Add tags to host
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HostTags.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update host tags
+  tags:
+    - Tags
+  x-codegen-request-body-name: body

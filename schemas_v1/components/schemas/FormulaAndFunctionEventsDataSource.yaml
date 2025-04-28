@@ -1,0 +1,27 @@
+description: Data source for event platform-based queries.
+enum:
+  - logs
+  - spans
+  - network
+  - rum
+  - security_signals
+  - profiles
+  - audit
+  - events
+  - ci_tests
+  - ci_pipelines
+  - incident_analytics
+example: logs
+type: string
+x-enum-varnames:
+  - LOGS
+  - SPANS
+  - NETWORK
+  - RUM
+  - SECURITY_SIGNALS
+  - PROFILES
+  - AUDIT
+  - EVENTS
+  - CI_TESTS
+  - CI_PIPELINES
+  - INCIDENT_ANALYTICS

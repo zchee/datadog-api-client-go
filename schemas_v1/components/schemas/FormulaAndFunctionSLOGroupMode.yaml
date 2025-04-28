@@ -1,0 +1,9 @@
+description: Group mode to query measures.
+enum:
+  - overall
+  - components
+example: overall
+type: string
+x-enum-varnames:
+  - OVERALL
+  - COMPONENTS

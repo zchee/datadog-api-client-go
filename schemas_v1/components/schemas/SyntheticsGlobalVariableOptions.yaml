@@ -1,0 +1,5 @@
+description: Options for the Global Variable for MFA.
+properties:
+  totp_parameters:
+    $ref: ./SyntheticsGlobalVariableTOTPParameters.yaml
+type: object

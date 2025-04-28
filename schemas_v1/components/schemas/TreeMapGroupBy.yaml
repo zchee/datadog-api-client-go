@@ -1,0 +1,12 @@
+deprecated: true
+description: (deprecated) The attribute formerly used to group elements in the widget.
+enum:
+  - user
+  - family
+  - process
+example: user
+type: string
+x-enum-varnames:
+  - USER
+  - FAMILY
+  - PROCESS

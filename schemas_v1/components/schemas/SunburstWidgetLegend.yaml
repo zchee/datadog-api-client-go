@@ -1,0 +1,4 @@
+description: Configuration of the legend.
+oneOf:
+  - $ref: ./SunburstWidgetLegendTable.yaml
+  - $ref: ./SunburstWidgetLegendInlineAutomatic.yaml

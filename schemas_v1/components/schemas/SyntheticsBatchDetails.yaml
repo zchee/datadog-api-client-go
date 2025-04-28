@@ -1,0 +1,5 @@
+description: Details about a batch response.
+properties:
+  data:
+    $ref: ./SyntheticsBatchDetailsData.yaml
+type: object

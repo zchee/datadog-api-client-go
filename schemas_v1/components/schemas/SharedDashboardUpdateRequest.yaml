@@ -1,0 +1,79 @@
+description: Update a shared dashboard's settings.
+example:
+  global_time:
+    live_span: 1h
+  share_list:
+    - test@datadoghq.com
+    - test2@datadoghq.com
+  share_type: invite
+properties:
+  embeddable_domains:
+    description: The `SharedDashboard` `embeddable_domains`.
+    example:
+      - https://domain.atlassian.net/
+      - http://myserver.com/
+    items:
+      description: The allowlisted referrers for an EMBED shared dashboard.
+      type: string
+    type: array
+  expiration:
+    description: The time when an OPEN shared dashboard becomes publicly unavailable.
+    format: date-time
+    nullable: true
+    type: string
+  global_time:
+    $ref: ./SharedDashboardUpdateRequestGlobalTime.yaml
+  global_time_selectable_enabled:
+    description: >-
+      Whether to allow viewers to select a different global time setting for the
+      shared dashboard.
+    nullable: true
+    type: boolean
+  invitees:
+    description: The `SharedDashboard` `invitees`.
+    example:
+      - access_expiration: '2030-01-01T12:00:00.00Z'
+        email: test@datadoghq.com
+      - access_expiration: null
+        email: test2@datadoghq.com
+    items:
+      $ref: ./SharedDashboardInviteesItems.yaml
+    type: array
+  selectable_template_vars:
+    description: >-
+      List of objects representing template variables on the shared dashboard
+      which can have selectable values.
+    example:
+      - default_value: '*'
+        name: exampleVar
+        prefix: test
+        visible_tags:
+          - selectableValue1
+          - selectableValue2
+    items:
+      $ref: ./SelectableTemplateVariableItems.yaml
+    nullable: true
+    type: array
+  share_list:
+    deprecated: true
+    description: List of email addresses that can be given access to the shared dashboard.
+    example:
+      - test@datadoghq.com
+      - test2@email.com
+    items:
+      description: >-
+        Email address that can receive an invitation to access the shared
+        dashboard.
+      type: string
+    nullable: true
+    type: array
+  share_type:
+    $ref: ./DashboardShareType.yaml
+  status:
+    $ref: ./SharedDashboardStatus.yaml
+  title:
+    description: Title of the shared dashboard.
+    type: string
+  viewing_preferences:
+    $ref: ./ViewingPreferences.yaml
+type: object

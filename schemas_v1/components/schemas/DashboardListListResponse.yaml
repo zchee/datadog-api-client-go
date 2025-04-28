@@ -1,0 +1,8 @@
+description: Information on your dashboard lists.
+properties:
+  dashboard_lists:
+    description: List of all your dashboard lists.
+    items:
+      $ref: ./DashboardList.yaml
+    type: array
+type: object

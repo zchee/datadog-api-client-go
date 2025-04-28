@@ -1,0 +1,7 @@
+description: Objects describing the binding used for a mobile test.
+properties:
+  principals:
+    $ref: ./SyntheticsTestRestrictionPolicyBindingPrincipals.yaml
+  relation:
+    $ref: ./SyntheticsTestRestrictionPolicyBindingRelation.yaml
+type: object

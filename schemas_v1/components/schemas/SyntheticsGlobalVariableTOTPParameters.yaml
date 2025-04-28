@@ -1,0 +1,17 @@
+description: Parameters for the TOTP/MFA variable
+properties:
+  digits:
+    description: Number of digits for the OTP code.
+    example: 6
+    format: int32
+    maximum: 10
+    minimum: 4
+    type: integer
+  refresh_interval:
+    description: Interval for which to refresh the token (in seconds).
+    example: 30
+    format: int32
+    maximum: 999
+    minimum: 0
+    type: integer
+type: object

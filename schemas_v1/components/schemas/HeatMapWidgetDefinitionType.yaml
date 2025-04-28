@@ -1,0 +1,8 @@
+default: heatmap
+description: Type of the heat map widget.
+enum:
+  - heatmap
+example: heatmap
+type: string
+x-enum-varnames:
+  - HEATMAP

@@ -1,0 +1,8 @@
+description: Name of the data source
+enum:
+  - data_streams
+  - service_map
+type: string
+x-enum-varnames:
+  - DATA_STREAMS
+  - SERVICE_MAP

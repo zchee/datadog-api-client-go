@@ -1,0 +1,5 @@
+description: Object containing metadata about the private location.
+properties:
+  restricted_roles:
+    $ref: ./SyntheticsRestrictedRoles.yaml
+type: object

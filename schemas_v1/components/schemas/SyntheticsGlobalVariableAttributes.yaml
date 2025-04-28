@@ -1,0 +1,5 @@
+description: Attributes of the global variable.
+properties:
+  restricted_roles:
+    $ref: ./SyntheticsRestrictedRoles.yaml
+type: object

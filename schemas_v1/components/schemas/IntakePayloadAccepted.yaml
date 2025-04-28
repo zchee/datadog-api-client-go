@@ -1,0 +1,7 @@
+description: The payload accepted for intake.
+properties:
+  status:
+    description: The status of the intake payload.
+    example: ok
+    type: string
+type: object

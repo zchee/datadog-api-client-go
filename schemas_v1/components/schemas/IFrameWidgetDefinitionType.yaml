@@ -1,0 +1,8 @@
+default: iframe
+description: Type of the iframe widget.
+enum:
+  - iframe
+example: iframe
+type: string
+x-enum-varnames:
+  - IFRAME

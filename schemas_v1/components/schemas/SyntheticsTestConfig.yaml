@@ -1,0 +1,22 @@
+description: Configuration object for a Synthetic test.
+properties:
+  assertions:
+    default: []
+    description: Array of assertions used for the test. Required for single API tests.
+    example: []
+    items:
+      $ref: ./SyntheticsAssertion.yaml
+    type: array
+  configVariables:
+    description: Array of variables used for the test.
+    items:
+      $ref: ./SyntheticsConfigVariable.yaml
+    type: array
+  request:
+    $ref: ./SyntheticsTestRequest.yaml
+  variables:
+    description: Browser tests only - array of variables used for the test steps.
+    items:
+      $ref: ./SyntheticsBrowserVariable.yaml
+    type: array
+type: object

@@ -1,0 +1,20 @@
+description: The namespace associated with the tag filter entry.
+enum:
+  - elb
+  - application_elb
+  - sqs
+  - rds
+  - custom
+  - network_elb
+  - lambda
+  - step_functions
+type: string
+x-enum-varnames:
+  - ELB
+  - APPLICATION_ELB
+  - SQS
+  - RDS
+  - CUSTOM
+  - NETWORK_ELB
+  - LAMBDA
+  - STEP_FUNCTIONS

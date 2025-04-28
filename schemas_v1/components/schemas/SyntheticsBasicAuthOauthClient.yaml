@@ -1,0 +1,37 @@
+description: Object to handle `oauth client` authentication when performing the test.
+properties:
+  accessTokenUrl:
+    description: Access token URL to use when performing the authentication.
+    example: https://example.com
+    type: string
+  audience:
+    description: Audience to use when performing the authentication.
+    example: audience
+    type: string
+  clientId:
+    description: Client ID to use when performing the authentication.
+    example: oauth-username
+    type: string
+  clientSecret:
+    description: Client secret to use when performing the authentication.
+    example: oauth-password
+    type: string
+  resource:
+    description: Resource to use when performing the authentication.
+    example: resource
+    type: string
+  scope:
+    description: Scope to use when performing the authentication.
+    example: scope
+    type: string
+  tokenApiAuthentication:
+    $ref: ./SyntheticsBasicAuthOauthTokenApiAuthentication.yaml
+  type:
+    $ref: ./SyntheticsBasicAuthOauthClientType.yaml
+required:
+  - accessTokenUrl
+  - tokenApiAuthentication
+  - clientId
+  - clientSecret
+  - type
+type: object

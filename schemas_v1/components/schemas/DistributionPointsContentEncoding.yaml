@@ -1,0 +1,6 @@
+description: HTTP header used to compress the media-type.
+enum:
+  - deflate
+type: string
+x-enum-varnames:
+  - DEFLATE

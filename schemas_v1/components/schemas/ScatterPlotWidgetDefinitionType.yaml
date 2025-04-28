@@ -1,0 +1,8 @@
+default: scatterplot
+description: Type of the scatter plot widget.
+enum:
+  - scatterplot
+example: scatterplot
+type: string
+x-enum-varnames:
+  - SCATTERPLOT

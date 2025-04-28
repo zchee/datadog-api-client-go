@@ -1,0 +1,8 @@
+default: change
+description: Type of the change widget.
+enum:
+  - change
+example: change
+type: string
+x-enum-varnames:
+  - CHANGE

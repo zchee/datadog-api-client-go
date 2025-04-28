@@ -1,0 +1,40 @@
+description: >-
+  This processor extracts query parameters and other important parameters from a
+  URL.
+properties:
+  is_enabled:
+    default: false
+    description: Whether or not the processor is enabled.
+    type: boolean
+  name:
+    description: Name of the processor.
+    type: string
+  normalize_ending_slashes:
+    default: false
+    description: Normalize the ending slashes or not.
+    nullable: true
+    type: boolean
+  sources:
+    default:
+      - http.url
+    description: Array of source attributes.
+    example:
+      - http.url
+    items:
+      description: Attribute to extract the URL from.
+      type: string
+    type: array
+  target:
+    default: http.url_details
+    description: >-
+      Name of the parent attribute that contains all the extracted details from
+      the `sources`.
+    example: http.url_details
+    type: string
+  type:
+    $ref: ./LogsURLParserType.yaml
+required:
+  - sources
+  - target
+  - type
+type: object

@@ -1,0 +1,66 @@
+description: Updated table widget.
+properties:
+  aggregator:
+    $ref: ./WidgetAggregator.yaml
+  alias:
+    description: The column name (defaults to the metric name).
+    type: string
+  apm_query:
+    $ref: ./LogQueryDefinition.yaml
+  apm_stats_query:
+    $ref: ./ApmStatsQueryDefinition.yaml
+  cell_display_mode:
+    description: A list of display modes for each table cell.
+    items:
+      $ref: ./TableWidgetCellDisplayMode.yaml
+    type: array
+  conditional_formats:
+    description: List of conditional formats.
+    items:
+      $ref: ./WidgetConditionalFormat.yaml
+    type: array
+  event_query:
+    $ref: ./LogQueryDefinition.yaml
+  formulas:
+    description: List of formulas that operate on queries.
+    items:
+      $ref: ./WidgetFormula.yaml
+    type: array
+  limit:
+    description: >-
+      For metric queries, the number of lines to show in the table. Only one
+      request should have this property.
+    format: int64
+    type: integer
+  log_query:
+    $ref: ./LogQueryDefinition.yaml
+  network_query:
+    $ref: ./LogQueryDefinition.yaml
+  order:
+    $ref: ./WidgetSort.yaml
+  process_query:
+    $ref: ./ProcessQueryDefinition.yaml
+  profile_metrics_query:
+    $ref: ./LogQueryDefinition.yaml
+  q:
+    description: Query definition.
+    type: string
+  queries:
+    description: List of queries that can be returned directly or used in formulas.
+    items:
+      $ref: ./FormulaAndFunctionQueryDefinition.yaml
+    type: array
+  response_format:
+    $ref: ./FormulaAndFunctionResponseFormat.yaml
+  rum_query:
+    $ref: ./LogQueryDefinition.yaml
+  security_query:
+    $ref: ./LogQueryDefinition.yaml
+  sort:
+    $ref: ./WidgetSortBy.yaml
+  text_formats:
+    description: List of text formats for columns produced by tags.
+    items:
+      $ref: ./TableWidgetTextFormat.yaml
+    type: array
+type: object

@@ -1,0 +1,12 @@
+description: Object with the latest Synthetic API test run.
+properties:
+  last_timestamp_fetched:
+    description: Timestamp of the latest API test run.
+    format: int64
+    type: integer
+  results:
+    description: Result of the latest API test run.
+    items:
+      $ref: ./SyntheticsAPITestResultShort.yaml
+    type: array
+type: object

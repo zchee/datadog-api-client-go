@@ -1,0 +1,21 @@
+description: Updated list stream widget.
+properties:
+  columns:
+    description: Widget columns.
+    example:
+      - field: timestamp
+        width: auto
+      - field: content
+        width: full
+    items:
+      $ref: ./ListStreamColumn.yaml
+    type: array
+  query:
+    $ref: ./ListStreamQuery.yaml
+  response_format:
+    $ref: ./ListStreamResponseFormat.yaml
+required:
+  - columns
+  - query
+  - response_format
+type: object

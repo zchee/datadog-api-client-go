@@ -1,0 +1,12 @@
+description: Object collecting warnings for a given step.
+properties:
+  message:
+    description: Message for the warning.
+    example: ''
+    type: string
+  type:
+    $ref: ./SyntheticsWarningType.yaml
+required:
+  - message
+  - type
+type: object

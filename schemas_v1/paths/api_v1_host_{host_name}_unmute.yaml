@@ -1,0 +1,35 @@
+post:
+  description: Unmutes a host. This endpoint takes no JSON arguments.
+  operationId: UnmuteHost
+  parameters:
+    - description: Name of the host to unmute.
+      in: path
+      name: host_name
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HostMuteResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Invalid Parameter Error
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Unmute a host
+  tags:
+    - Hosts
+  x-codegen-request-body-name: body

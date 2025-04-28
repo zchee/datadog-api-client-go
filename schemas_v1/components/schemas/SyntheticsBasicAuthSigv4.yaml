@@ -1,0 +1,33 @@
+description: Object to handle `SIGV4` authentication when performing the test.
+properties:
+  accessKey:
+    description: Access key for the `SIGV4` authentication.
+    example: AKIAIOSFODNN7EXAMPLE
+    type: string
+  region:
+    description: Region for the `SIGV4` authentication.
+    example: us-east-1
+    type: string
+  secretKey:
+    description: Secret key for the `SIGV4` authentication.
+    example: wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY
+    type: string
+  serviceName:
+    description: Service name for the `SIGV4` authentication.
+    example: execute-api
+    type: string
+  sessionToken:
+    description: Session token for the `SIGV4` authentication.
+    example: |
+      AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE1OPTgk5TthT+FvwqnKwRcOIfrRh3c/L
+      To6UDdyJwOOvEVPvLXCrrrUtdnniCEXAMPLE/IvU1dYUg2RVAJBanLiHb4IgRmpRV3z
+      rkuWJOgQs8IZZaIv2BXIa2R4OlgkBN9bkUDNCJiBeb/AXlzBBko7b15fjrBs2+cTQtp
+      Z3CYWFXG8C5zqx37wnOE49mRl/+OtkIKGO7fAE
+    type: string
+  type:
+    $ref: ./SyntheticsBasicAuthSigv4Type.yaml
+required:
+  - accessKey
+  - secretKey
+  - type
+type: object

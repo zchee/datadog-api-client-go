@@ -1,0 +1,12 @@
+description: What to order by.
+enum:
+  - change
+  - name
+  - present
+  - past
+type: string
+x-enum-varnames:
+  - CHANGE
+  - NAME
+  - PRESENT
+  - PAST

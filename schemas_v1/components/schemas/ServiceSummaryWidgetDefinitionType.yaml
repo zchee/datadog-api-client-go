@@ -1,0 +1,8 @@
+default: trace_service
+description: Type of the service summary widget.
+enum:
+  - trace_service
+example: trace_service
+type: string
+x-enum-varnames:
+  - TRACE_SERVICE

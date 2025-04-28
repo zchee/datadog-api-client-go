@@ -1,0 +1,8 @@
+description: Object with all Index configurations for a given organization.
+properties:
+  indexes:
+    description: Array of Log index configurations.
+    items:
+      $ref: ./LogsIndex.yaml
+    type: array
+type: object

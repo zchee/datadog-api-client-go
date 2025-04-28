@@ -1,0 +1,9 @@
+description: The widget displays one graph for each entry in this parameter.
+example:
+  - tag_key: demo
+    tag_values:
+      - env
+items:
+  $ref: ./SplitVectorEntryItem.yaml
+minItems: 1
+type: array

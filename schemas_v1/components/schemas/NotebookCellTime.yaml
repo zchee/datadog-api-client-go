@@ -1,0 +1,8 @@
+description: >-
+  Timeframe for the notebook cell. When 'null', the notebook global time is
+  used.
+nullable: true
+oneOf:
+  - $ref: ./NotebookRelativeTime.yaml
+  - $ref: ./NotebookAbsoluteTime.yaml
+type: object

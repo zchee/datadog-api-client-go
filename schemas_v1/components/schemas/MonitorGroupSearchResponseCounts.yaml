@@ -1,0 +1,8 @@
+description: The counts of monitor groups per different criteria.
+properties:
+  status:
+    $ref: ./MonitorSearchCount.yaml
+  type:
+    $ref: ./MonitorSearchCount.yaml
+readOnly: true
+type: object

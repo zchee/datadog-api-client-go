@@ -1,0 +1,6 @@
+description: Description of the CI pipeline.
+properties:
+  url:
+    description: URL of the pipeline.
+    type: string
+type: object

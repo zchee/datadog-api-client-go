@@ -1,0 +1,44 @@
+description: The parameters of a mobile step.
+properties:
+  check:
+    $ref: ./SyntheticsCheckType.yaml
+  delay:
+    description: Number of milliseconds to wait between inputs in a `typeText` step type.
+    format: int64
+    maximum: 5000
+    minimum: 0
+    type: integer
+  direction:
+    $ref: ./SyntheticsMobileStepParamsDirection.yaml
+  element:
+    $ref: ./SyntheticsMobileStepParamsElement.yaml
+  enabled:
+    description: Boolean to change the state of the wifi for a `toggleWiFi` step type.
+    type: boolean
+  maxScrolls:
+    description: Maximum number of scrolls to do for a `scrollToElement` step type.
+    format: int64
+    type: integer
+  positions:
+    $ref: ./SyntheticsMobileStepParamsPositions.yaml
+  subtestPublicId:
+    description: Public ID of the test to be played as part of a `playSubTest` step type.
+    type: string
+  value:
+    $ref: ./SyntheticsMobileStepParamsValue.yaml
+  variable:
+    $ref: ./SyntheticsMobileStepParamsVariable.yaml
+  withEnter:
+    description: >-
+      Boolean to indicate if `Enter` should be pressed at the end of the
+      `typeText` step type.
+    type: boolean
+  x:
+    description: Amount to scroll by on the `x` axis for a `scroll` step type.
+    format: double
+    type: number
+  'y':
+    description: Amount to scroll by on the `y` axis for a `scroll` step type.
+    format: double
+    type: number
+type: object

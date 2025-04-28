@@ -1,0 +1,19 @@
+description: A formula and functions cost query.
+properties:
+  aggregator:
+    $ref: ./MonitorFormulaAndFunctionCostAggregator.yaml
+  data_source:
+    $ref: ./MonitorFormulaAndFunctionCostDataSource.yaml
+  name:
+    description: Name of the query for use in formulas.
+    example: query1
+    type: string
+  query:
+    description: The monitor query.
+    example: sum:all.cost{*}.rollup(sum, 86400)
+    type: string
+required:
+  - name
+  - data_source
+  - query
+type: object

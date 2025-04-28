@@ -1,0 +1,10 @@
+description: Synthetic location.
+properties:
+  id:
+    description: Unique identifier of the location.
+    format: int64
+    type: integer
+  name:
+    description: Name of the location.
+    type: string
+type: object

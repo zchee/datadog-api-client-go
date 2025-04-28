@@ -1,0 +1,26 @@
+description: >-
+  Number of RUM Units used for each hour for a given organization (data
+  available as of November 1, 2021).
+properties:
+  browser_rum_units:
+    description: The number of browser RUM units.
+    format: int64
+    nullable: true
+    type: integer
+  mobile_rum_units:
+    description: The number of mobile RUM units.
+    format: int64
+    nullable: true
+    type: integer
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+  rum_units:
+    description: Total RUM units across mobile and browser RUM.
+    format: int64
+    nullable: true
+    type: integer
+type: object

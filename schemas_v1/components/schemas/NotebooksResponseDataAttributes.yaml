@@ -1,0 +1,36 @@
+description: The attributes of a notebook in get all response.
+properties:
+  author:
+    $ref: ./NotebookAuthor.yaml
+  cells:
+    description: List of cells to display in the notebook.
+    items:
+      $ref: ./NotebookCellResponse.yaml
+    type: array
+  created:
+    description: UTC time stamp for when the notebook was created.
+    example: '2021-02-24T23:14:15.173964+00:00'
+    format: date-time
+    readOnly: true
+    type: string
+  metadata:
+    $ref: ./NotebookMetadata.yaml
+  modified:
+    description: UTC time stamp for when the notebook was last modified.
+    example: '2021-02-24T23:15:23.274966+00:00'
+    format: date-time
+    readOnly: true
+    type: string
+  name:
+    description: The name of the notebook.
+    example: Example Notebook
+    maxLength: 80
+    minLength: 0
+    type: string
+  status:
+    $ref: ./NotebookStatus.yaml
+  time:
+    $ref: ./NotebookGlobalTime.yaml
+required:
+  - name
+type: object

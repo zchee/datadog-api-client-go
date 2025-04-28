@@ -1,0 +1,8 @@
+default: rum
+description: Source from which to query items to display in the funnel.
+enum:
+  - rum
+example: rum
+type: string
+x-enum-varnames:
+  - RUM

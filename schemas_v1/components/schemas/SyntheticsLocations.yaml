@@ -1,0 +1,8 @@
+description: List of Synthetic locations.
+properties:
+  locations:
+    description: List of Synthetic locations.
+    items:
+      $ref: ./SyntheticsLocation.yaml
+    type: array
+type: object

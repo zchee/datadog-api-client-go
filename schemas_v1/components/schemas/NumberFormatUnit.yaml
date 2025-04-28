@@ -1,0 +1,4 @@
+description: Number format unit.
+oneOf:
+  - $ref: ./NumberFormatUnitCanonical.yaml
+  - $ref: ./NumberFormatUnitCustom.yaml

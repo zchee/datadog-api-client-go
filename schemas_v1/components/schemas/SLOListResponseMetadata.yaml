@@ -1,0 +1,5 @@
+description: The metadata object containing additional information about the list of SLOs.
+properties:
+  page:
+    $ref: ./SLOListResponseMetadataPage.yaml
+type: object

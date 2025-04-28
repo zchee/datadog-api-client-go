@@ -1,0 +1,125 @@
+delete:
+  description: >-
+    Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN
+    associated with a given AWS account.
+  operationId: DeleteAWSLambdaARN
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AWSAccountAndLambdaRequest.yaml
+    description: Delete AWS Lambda ARN request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete an AWS Logs integration
+  tags:
+    - AWS Logs Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_edit
+get:
+  description: List all Datadog-AWS Logs integrations configured in your Datadog account.
+  operationId: ListAWSLogsIntegrations
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example:
+              - account_id: '123456789101'
+                lambdas: []
+                services:
+                  - s3
+                  - elb
+                  - elbv2
+                  - cloudfront
+                  - redshift
+                  - lambda
+            items:
+              $ref: ../components/schemas/AWSLogsListResponse.yaml
+            type: array
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List all AWS Logs integrations
+  tags:
+    - AWS Logs Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_read
+post:
+  description: >-
+    Attach the Lambda ARN of the Lambda created for the Datadog-AWS log
+    collection to your AWS account ID to enable log collection.
+  operationId: CreateAWSLambdaARN
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AWSAccountAndLambdaRequest.yaml
+    description: AWS Log Lambda Async request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Add AWS Log Lambda ARN
+  tags:
+    - AWS Logs Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_edit

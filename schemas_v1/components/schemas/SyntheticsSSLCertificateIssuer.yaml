@@ -1,0 +1,21 @@
+description: Object describing the issuer of a SSL certificate.
+properties:
+  C:
+    description: Country Name that issued the certificate.
+    type: string
+  CN:
+    description: Common Name that issued certificate.
+    type: string
+  L:
+    description: Locality that issued the certificate.
+    type: string
+  O:
+    description: Organization that issued the certificate.
+    type: string
+  OU:
+    description: Organizational Unit that issued the certificate.
+    type: string
+  ST:
+    description: State Or Province Name that issued the certificate.
+    type: string
+type: object

@@ -1,0 +1,8 @@
+default: span-id-remapper
+description: Type of logs span remapper.
+enum:
+  - span-id-remapper
+example: span-id-remapper
+type: string
+x-enum-varnames:
+  - SPAN_ID_REMAPPER

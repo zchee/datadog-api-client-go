@@ -1,0 +1,20 @@
+description: An array of service level objective objects.
+properties:
+  deleted:
+    description: |-
+      An array of service level objective object IDs that indicates
+      which objects that were completely deleted.
+    items:
+      description: A deleted SLO ID.
+      type: string
+    type: array
+  updated:
+    description: |-
+      An array of service level objective object IDs that indicates
+      which objects that were modified (objects for which at least one
+      threshold was deleted, but that were not completely deleted).
+    items:
+      description: An updated SLO ID.
+      type: string
+    type: array
+type: object

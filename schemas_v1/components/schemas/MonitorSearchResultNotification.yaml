@@ -1,0 +1,12 @@
+description: A notification triggered by the monitor.
+properties:
+  handle:
+    description: The email address that received the notification.
+    readOnly: true
+    type: string
+  name:
+    description: The username receiving the notification
+    readOnly: true
+    type: string
+readOnly: true
+type: object

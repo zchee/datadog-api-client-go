@@ -1,0 +1,18 @@
+description: Updated funnel widget.
+properties:
+  data_source:
+    $ref: ./FunnelSource.yaml
+  query_string:
+    description: The widget query.
+    example: '@browser.name:Chrome'
+    type: string
+  steps:
+    description: List of funnel steps.
+    items:
+      $ref: ./FunnelStep.yaml
+    type: array
+required:
+  - query_string
+  - data_source
+  - steps
+type: object

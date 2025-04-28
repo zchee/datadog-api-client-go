@@ -1,0 +1,8 @@
+description: Response with monthly summary of data billed by Datadog.
+properties:
+  usage:
+    description: An array of objects regarding usage of billable summary.
+    items:
+      $ref: ./UsageBillableSummaryHour.yaml
+    type: array
+type: object

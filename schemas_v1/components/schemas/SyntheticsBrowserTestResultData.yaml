@@ -1,0 +1,44 @@
+description: Object containing results for your Synthetic browser test.
+properties:
+  browserType:
+    description: Type of browser device used for the browser test.
+    type: string
+  browserVersion:
+    description: Browser version used for the browser test.
+    type: string
+  device:
+    $ref: ./SyntheticsDevice.yaml
+  duration:
+    description: Global duration in second of the browser test.
+    format: double
+    type: number
+  error:
+    description: Error returned for the browser test.
+    type: string
+  failure:
+    $ref: ./SyntheticsBrowserTestResultFailure.yaml
+  passed:
+    description: Whether or not the browser test was conducted.
+    type: boolean
+  receivedEmailCount:
+    description: The amount of email received during the browser test.
+    format: int64
+    type: integer
+  startUrl:
+    description: Starting URL for the browser test.
+    type: string
+  stepDetails:
+    description: Array containing the different browser test steps.
+    items:
+      $ref: ./SyntheticsStepDetail.yaml
+    type: array
+  thumbnailsBucketKey:
+    description: Whether or not a thumbnail is associated with the browser test.
+    type: boolean
+  timeToInteractive:
+    description: |-
+      Time in second to wait before the browser test starts after
+      reaching the start URL.
+    format: double
+    type: number
+type: object

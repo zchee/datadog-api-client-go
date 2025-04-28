@@ -1,0 +1,7 @@
+description: Data source for SLO measures queries.
+enum:
+  - slo
+example: slo
+type: string
+x-enum-varnames:
+  - SLO

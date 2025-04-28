@@ -1,0 +1,27 @@
+description: >-
+  Alert graphs are timeseries graphs showing the current status of any monitor
+  defined on your system.
+properties:
+  alert_id:
+    description: ID of the alert to use in the widget.
+    example: ''
+    type: string
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: The title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./AlertGraphWidgetDefinitionType.yaml
+  viz_type:
+    $ref: ./WidgetVizType.yaml
+required:
+  - type
+  - alert_id
+  - viz_type
+type: object

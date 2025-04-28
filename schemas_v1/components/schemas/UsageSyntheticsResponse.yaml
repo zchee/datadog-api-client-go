@@ -1,0 +1,12 @@
+description: >-
+  Response containing the number of Synthetics API tests run for each hour for a
+  given organization.
+properties:
+  usage:
+    description: >-
+      Array with the number of hourly Synthetics test run for a given
+      organization.
+    items:
+      $ref: ./UsageSyntheticsHour.yaml
+    type: array
+type: object

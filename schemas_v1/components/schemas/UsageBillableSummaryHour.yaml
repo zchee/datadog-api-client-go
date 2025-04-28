@@ -1,0 +1,39 @@
+description: Response with monthly summary of data billed by Datadog.
+properties:
+  account_name:
+    description: The account name.
+    type: string
+  account_public_id:
+    description: The account public ID.
+    type: string
+  billing_plan:
+    description: The billing plan.
+    type: string
+  end_date:
+    description: Shows the last date of usage.
+    format: date-time
+    type: string
+  num_orgs:
+    description: The number of organizations.
+    format: int64
+    type: integer
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+  ratio_in_month:
+    description: Shows usage aggregation for a billing period.
+    format: double
+    type: number
+  region:
+    description: The region of the organization.
+    type: string
+  start_date:
+    description: Shows the first date of usage.
+    format: date-time
+    type: string
+  usage:
+    $ref: ./UsageBillableSummaryKeys.yaml
+type: object

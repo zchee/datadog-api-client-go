@@ -1,0 +1,8 @@
+description: List of enabled AWS accounts.
+properties:
+  accounts:
+    description: List of enabled AWS accounts.
+    items:
+      $ref: ./AWSAccount.yaml
+    type: array
+type: object

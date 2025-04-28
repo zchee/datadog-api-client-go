@@ -1,0 +1,9 @@
+description: An array of service level objective objects.
+properties:
+  ok:
+    description: An array of SLO IDs that can be safely deleted.
+    items:
+      description: An SLO ID.
+      type: string
+    type: array
+type: object

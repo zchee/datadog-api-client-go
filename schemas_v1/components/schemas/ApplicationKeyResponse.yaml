@@ -1,0 +1,10 @@
+description: An application key response.
+example:
+  application_key:
+    hash: 1234512345123459cda4eb9ced49a3d84fd0138c
+    name: app_key
+    owner: test_user
+properties:
+  application_key:
+    $ref: ./ApplicationKey.yaml
+type: object

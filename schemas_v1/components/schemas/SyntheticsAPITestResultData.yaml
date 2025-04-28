@@ -1,0 +1,33 @@
+description: Object containing results for your Synthetic API test.
+properties:
+  cert:
+    $ref: ./SyntheticsSSLCertificate.yaml
+  eventType:
+    $ref: ./SyntheticsTestProcessStatus.yaml
+  failure:
+    $ref: ./SyntheticsApiTestResultFailure.yaml
+  httpStatusCode:
+    description: The API test HTTP status code.
+    format: int64
+    type: integer
+  requestHeaders:
+    additionalProperties:
+      description: Requested request header.
+      type: object
+    description: Request header object used for the API test.
+    type: object
+  responseBody:
+    description: Response body returned for the API test.
+    type: string
+  responseHeaders:
+    additionalProperties:
+      description: Returned request header.
+    description: Response headers returned for the API test.
+    type: object
+  responseSize:
+    description: Global size in byte of the API test response.
+    format: int64
+    type: integer
+  timings:
+    $ref: ./SyntheticsTiming.yaml
+type: object

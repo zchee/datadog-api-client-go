@@ -1,0 +1,33 @@
+description: Create, edit, and manage organizations.
+properties:
+  billing:
+    $ref: ./OrganizationBilling.yaml
+  created:
+    description: Date of the organization creation.
+    example: '2019-09-26T17:28:28Z'
+    readOnly: true
+    type: string
+  description:
+    description: Description of the organization.
+    example: some description
+    type: string
+  name:
+    description: The name of the child organization, limited to 32 characters.
+    example: New child org
+    maxLength: 32
+    type: string
+  public_id:
+    description: The `public_id` of the organization you are operating within.
+    example: abcdef12345
+    type: string
+  settings:
+    $ref: ./OrganizationSettings.yaml
+  subscription:
+    $ref: ./OrganizationSubscription.yaml
+  trial:
+    description: >-
+      Only available for MSP customers. Allows child organizations to be created
+      on a trial plan.
+    example: false
+    type: boolean
+type: object

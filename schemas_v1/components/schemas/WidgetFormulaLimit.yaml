@@ -1,0 +1,9 @@
+description: Options for limiting results returned.
+properties:
+  count:
+    description: Number of results to return.
+    format: int64
+    type: integer
+  order:
+    $ref: ./QuerySortOrder.yaml
+type: object

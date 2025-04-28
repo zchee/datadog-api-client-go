@@ -1,0 +1,52 @@
+post:
+  description: Create a Synthetic browser test.
+  operationId: CreateSyntheticsBrowserTest
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SyntheticsBrowserTest.yaml
+    description: Details of the test to create.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SyntheticsBrowserTest.yaml
+      description: OK - Returns the created test details.
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: |-
+        - JSON format is wrong
+        - Creation failed
+    '402':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Test quota is reached
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - synthetics_write
+  summary: Create a browser test
+  tags:
+    - Synthetics
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - synthetics_write

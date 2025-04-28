@@ -1,0 +1,6 @@
+description: Description of the Lambdas.
+properties:
+  arn:
+    description: Available ARN IDs.
+    type: string
+type: object

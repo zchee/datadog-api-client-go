@@ -1,0 +1,10 @@
+description: Size of the widget.
+enum:
+  - small
+  - medium
+  - large
+type: string
+x-enum-varnames:
+  - SMALL
+  - MEDIUM
+  - LARGE

@@ -1,0 +1,31 @@
+description: Create, edit, and disable users.
+properties:
+  access_role:
+    $ref: ./AccessRole.yaml
+  disabled:
+    description: The new disabled status of the user.
+    example: false
+    type: boolean
+  email:
+    description: The new email of the user.
+    example: test@datadoghq.com
+    type: string
+  handle:
+    description: The user handle, must be a valid email.
+    example: test@datadoghq.com
+    type: string
+  icon:
+    description: Gravatar icon associated to the user.
+    example: /path/to/matching/gravatar/icon
+    readOnly: true
+    type: string
+  name:
+    description: The name of the user.
+    example: test user
+    type: string
+  verified:
+    description: Whether or not the user logged in Datadog at least once.
+    example: true
+    readOnly: true
+    type: boolean
+type: object

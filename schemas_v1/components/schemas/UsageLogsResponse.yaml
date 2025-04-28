@@ -1,0 +1,8 @@
+description: Response containing the number of logs for each hour.
+properties:
+  usage:
+    description: An array of objects regarding hourly usage of logs.
+    items:
+      $ref: ./UsageLogsHour.yaml
+    type: array
+type: object

@@ -1,0 +1,7 @@
+description: Data source for APM dependency stats queries.
+enum:
+  - apm_dependency_stats
+example: apm_dependency_stats
+type: string
+x-enum-varnames:
+  - APM_DEPENDENCY_STATS

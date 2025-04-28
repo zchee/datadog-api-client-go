@@ -1,0 +1,10 @@
+description: Amount of log lines to display
+enum:
+  - inline
+  - expanded-md
+  - expanded-lg
+type: string
+x-enum-varnames:
+  - INLINE
+  - EXPANDED_MEDIUM
+  - EXPANDED_LARGE

@@ -1,0 +1,11 @@
+description: Trend type for the cell display mode options.
+enum:
+  - area
+  - line
+  - bars
+example: area
+type: string
+x-enum-varnames:
+  - AREA
+  - LINE
+  - BARS

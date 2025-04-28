@@ -1,0 +1,34 @@
+description: An object containing service check and status.
+properties:
+  check:
+    description: The check.
+    example: app.ok
+    type: string
+  host_name:
+    description: The host name correlated with the check.
+    example: app.host1
+    type: string
+  message:
+    description: Message containing check status.
+    example: app is running
+    type: string
+  status:
+    $ref: ./ServiceCheckStatus.yaml
+  tags:
+    description: Tags related to a check.
+    example:
+      - environment:test
+    items:
+      description: Items related to a check.
+      type: string
+    type: array
+  timestamp:
+    description: Time of check.
+    format: int64
+    type: integer
+required:
+  - check
+  - status
+  - tags
+  - host_name
+type: object

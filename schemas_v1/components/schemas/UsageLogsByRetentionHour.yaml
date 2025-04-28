@@ -1,0 +1,30 @@
+description: >-
+  The number of indexed logs for each hour for a given organization broken down
+  by retention period.
+properties:
+  indexed_events_count:
+    description: Total logs indexed with this retention period during a given hour.
+    format: int64
+    nullable: true
+    type: integer
+  live_indexed_events_count:
+    description: Live logs indexed with this retention period during a given hour.
+    format: int64
+    nullable: true
+    type: integer
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+  rehydrated_indexed_events_count:
+    description: Rehydrated logs indexed with this retention period during a given hour.
+    format: int64
+    nullable: true
+    type: integer
+  retention:
+    description: The retention period in days or "custom" for all custom retention usage.
+    nullable: true
+    type: string
+type: object

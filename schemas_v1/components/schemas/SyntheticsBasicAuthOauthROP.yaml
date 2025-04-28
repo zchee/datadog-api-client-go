@@ -1,0 +1,45 @@
+description: Object to handle `oauth rop` authentication when performing the test.
+properties:
+  accessTokenUrl:
+    description: Access token URL to use when performing the authentication.
+    example: https://example.com
+    type: string
+  audience:
+    description: Audience to use when performing the authentication.
+    example: audience
+    type: string
+  clientId:
+    description: Client ID to use when performing the authentication.
+    example: client-id
+    type: string
+  clientSecret:
+    description: Client secret to use when performing the authentication.
+    example: client-secret
+    type: string
+  password:
+    description: Password to use when performing the authentication.
+    example: password
+    type: string
+  resource:
+    description: Resource to use when performing the authentication.
+    example: resource
+    type: string
+  scope:
+    description: Scope to use when performing the authentication.
+    example: scope
+    type: string
+  tokenApiAuthentication:
+    $ref: ./SyntheticsBasicAuthOauthTokenApiAuthentication.yaml
+  type:
+    $ref: ./SyntheticsBasicAuthOauthROPType.yaml
+  username:
+    description: Username to use when performing the authentication.
+    example: username
+    type: string
+required:
+  - accessTokenUrl
+  - password
+  - tokenApiAuthentication
+  - username
+  - type
+type: object

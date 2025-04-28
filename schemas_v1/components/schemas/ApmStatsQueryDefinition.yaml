@@ -1,0 +1,36 @@
+description: The APM stats query for table and distributions widgets.
+properties:
+  columns:
+    description: Column properties used by the front end for display.
+    items:
+      $ref: ./ApmStatsQueryColumnType.yaml
+    type: array
+  env:
+    description: Environment name.
+    example: prod
+    type: string
+  name:
+    description: Operation name associated with service.
+    example: rack.request
+    type: string
+  primary_tag:
+    description: The organization's host group name and value.
+    example: datacenter:*
+    type: string
+  resource:
+    description: Resource name.
+    example: CartsController
+    type: string
+  row_type:
+    $ref: ./ApmStatsQueryRowType.yaml
+  service:
+    description: Service name.
+    example: web-store
+    type: string
+required:
+  - service
+  - env
+  - name
+  - primary_tag
+  - row_type
+type: object

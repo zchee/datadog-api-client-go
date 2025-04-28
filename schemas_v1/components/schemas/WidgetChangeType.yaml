@@ -1,0 +1,8 @@
+description: Show the absolute or the relative change.
+enum:
+  - absolute
+  - relative
+type: string
+x-enum-varnames:
+  - ABSOLUTE
+  - RELATIVE

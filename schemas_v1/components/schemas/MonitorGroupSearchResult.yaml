@@ -1,0 +1,37 @@
+description: A single monitor group search result.
+properties:
+  group:
+    description: The name of the group.
+    readOnly: true
+    type: string
+  group_tags:
+    description: The list of tags of the monitor group.
+    items:
+      description: One monitor group tag.
+      readOnly: true
+      type: string
+    readOnly: true
+    type: array
+  last_nodata_ts:
+    description: Latest timestamp the monitor group was in NO_DATA state.
+    format: int64
+    readOnly: true
+    type: integer
+  last_triggered_ts:
+    description: Latest timestamp the monitor group triggered.
+    format: int64
+    nullable: true
+    readOnly: true
+    type: integer
+  monitor_id:
+    description: The ID of the monitor.
+    format: int64
+    readOnly: true
+    type: integer
+  monitor_name:
+    description: The name of the monitor.
+    readOnly: true
+    type: string
+  status:
+    $ref: ./MonitorOverallStates.yaml
+type: object

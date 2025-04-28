@@ -1,0 +1,34 @@
+description: Pagination metadata returned by the API.
+properties:
+  first_number:
+    description: The first number.
+    format: int64
+    type: integer
+  last_number:
+    description: The last number.
+    format: int64
+    type: integer
+  next_number:
+    description: The next number.
+    format: int64
+    type: integer
+  number:
+    description: The page number.
+    format: int64
+    type: integer
+  prev_number:
+    description: The previous page number.
+    format: int64
+    type: integer
+  size:
+    description: The size of the response.
+    format: int64
+    type: integer
+  total:
+    description: The total number of SLOs in the response.
+    format: int64
+    type: integer
+  type:
+    description: Type of pagination.
+    type: string
+type: object

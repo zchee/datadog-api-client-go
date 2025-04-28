@@ -1,0 +1,13 @@
+description: The controls for sorting the widget.
+properties:
+  count:
+    description: The number of items to limit the widget to.
+    format: int64
+    minimum: 0
+    type: integer
+  order_by:
+    description: The array of items to sort the widget by in order.
+    items:
+      $ref: ./WidgetSortOrderBy.yaml
+    type: array
+type: object

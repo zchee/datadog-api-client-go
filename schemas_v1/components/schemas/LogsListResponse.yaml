@@ -1,0 +1,17 @@
+description: Response object with all logs matching the request and pagination information.
+properties:
+  logs:
+    description: Array of logs matching the request and the `nextLogId` if sent.
+    items:
+      $ref: ./Log.yaml
+    type: array
+  nextLogId:
+    description: |-
+      Hash identifier of the next log to return in the list.
+      This parameter is used for the pagination feature.
+    nullable: true
+    type: string
+  status:
+    description: Status of the response.
+    type: string
+type: object

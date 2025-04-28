@@ -1,0 +1,10 @@
+description: Updated SLO List widget.
+properties:
+  query:
+    $ref: ./SLOListWidgetQuery.yaml
+  request_type:
+    $ref: ./SLOListWidgetRequestType.yaml
+required:
+  - query
+  - request_type
+type: object

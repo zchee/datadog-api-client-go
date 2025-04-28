@@ -1,0 +1,10 @@
+description: Horizontal alignment.
+enum:
+  - center
+  - left
+  - right
+type: string
+x-enum-varnames:
+  - CENTER
+  - LEFT
+  - RIGHT

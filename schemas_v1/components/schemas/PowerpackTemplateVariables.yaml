@@ -1,0 +1,15 @@
+description: Powerpack template variables.
+properties:
+  controlled_by_powerpack:
+    description: Template variables controlled at the powerpack level.
+    items:
+      $ref: ./PowerpackTemplateVariableContents.yaml
+    type: array
+  controlled_externally:
+    description: >-
+      Template variables controlled by the external resource, such as the
+      dashboard this powerpack is on.
+    items:
+      $ref: ./PowerpackTemplateVariableContents.yaml
+    type: array
+type: object

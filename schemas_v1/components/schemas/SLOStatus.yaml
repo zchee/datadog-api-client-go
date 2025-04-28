@@ -1,0 +1,38 @@
+description: Status of the SLO's primary timeframe.
+properties:
+  calculation_error:
+    description: Error message if SLO status or error budget could not be calculated.
+    nullable: true
+    type: string
+  error_budget_remaining:
+    description: Remaining error budget of the SLO in percentage.
+    example: 100
+    format: double
+    nullable: true
+    type: number
+  indexed_at:
+    description: |-
+      timestamp (UNIX time in seconds) of when the SLO status and error budget
+      were calculated.
+    example: 1662496260
+    format: int64
+    type: integer
+  raw_error_budget_remaining:
+    $ref: ./SLORawErrorBudgetRemaining.yaml
+  sli:
+    description: >-
+      The current service level indicator (SLI) of the SLO, also known as
+      'status'. This is a percentage value from 0-100 (inclusive).
+    example: 100
+    format: double
+    nullable: true
+    type: number
+  span_precision:
+    description: The number of decimal places the SLI value is accurate to.
+    example: 2
+    format: int64
+    nullable: true
+    type: integer
+  state:
+    $ref: ./SLOState.yaml
+type: object

@@ -1,0 +1,13 @@
+description: A service level objective history response.
+properties:
+  data:
+    $ref: ./SLOHistoryResponseData.yaml
+  errors:
+    description: >-
+      A list of errors while querying the history data for the service level
+      objective.
+    items:
+      $ref: ./SLOHistoryResponseError.yaml
+    nullable: true
+    type: array
+type: object

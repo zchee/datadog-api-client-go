@@ -1,0 +1,25 @@
+description: |-
+  The subtype of the Synthetic API test, `http`, `ssl`, `tcp`,
+  `dns`, `icmp`, `udp`, `websocket`, `grpc` or `multi`.
+enum:
+  - http
+  - ssl
+  - tcp
+  - dns
+  - multi
+  - icmp
+  - udp
+  - websocket
+  - grpc
+example: http
+type: string
+x-enum-varnames:
+  - HTTP
+  - SSL
+  - TCP
+  - DNS
+  - MULTI
+  - ICMP
+  - UDP
+  - WEBSOCKET
+  - GRPC

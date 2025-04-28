@@ -1,0 +1,7 @@
+description: The type of unit scale.
+enum:
+  - canonical_unit
+example: canonical_unit
+type: string
+x-enum-varnames:
+  - CANONICAL_UNIT

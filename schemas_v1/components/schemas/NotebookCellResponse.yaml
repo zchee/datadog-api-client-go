@@ -1,0 +1,15 @@
+description: The description of a notebook cell response.
+properties:
+  attributes:
+    $ref: ./NotebookCellResponseAttributes.yaml
+  id:
+    description: Notebook cell ID.
+    example: abcd1234
+    type: string
+  type:
+    $ref: ./NotebookCellResourceType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

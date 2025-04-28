@@ -1,0 +1,12 @@
+description: Type of display to use for the request.
+enum:
+  - area
+  - bars
+  - line
+  - overlay
+type: string
+x-enum-varnames:
+  - AREA
+  - BARS
+  - LINE
+  - OVERLAY

@@ -1,0 +1,7 @@
+description: Metadata for the Synthetic tests run.
+properties:
+  ci:
+    $ref: ./SyntheticsCIBatchMetadataCI.yaml
+  git:
+    $ref: ./SyntheticsCIBatchMetadataGit.yaml
+type: object

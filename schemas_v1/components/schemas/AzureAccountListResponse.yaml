@@ -1,0 +1,4 @@
+description: Accounts configured for your organization.
+items:
+  $ref: ./AzureAccount.yaml
+type: array

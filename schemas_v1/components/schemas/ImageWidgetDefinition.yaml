@@ -1,0 +1,36 @@
+description: >-
+  The image widget allows you to embed an image on your dashboard. An image can
+  be a PNG, JPG, or animated GIF. Only available on FREE layout dashboards.
+properties:
+  has_background:
+    default: true
+    description: Whether to display a background or not.
+    example: true
+    type: boolean
+  has_border:
+    default: true
+    description: Whether to display a border or not.
+    example: true
+    type: boolean
+  horizontal_align:
+    $ref: ./WidgetHorizontalAlign.yaml
+  margin:
+    $ref: ./WidgetMargin.yaml
+  sizing:
+    $ref: ./WidgetImageSizing.yaml
+  type:
+    $ref: ./ImageWidgetDefinitionType.yaml
+  url:
+    description: URL of the image.
+    example: https://example.com/image.png
+    type: string
+  url_dark_theme:
+    description: URL of the image in dark mode.
+    example: https://example.com/image-dark-mode.png
+    type: string
+  vertical_align:
+    $ref: ./WidgetVerticalAlign.yaml
+required:
+  - type
+  - url
+type: object

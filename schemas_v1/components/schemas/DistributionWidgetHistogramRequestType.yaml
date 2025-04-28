@@ -1,0 +1,7 @@
+description: Request type for the histogram request.
+enum:
+  - histogram
+example: histogram
+type: string
+x-enum-varnames:
+  - HISTOGRAM

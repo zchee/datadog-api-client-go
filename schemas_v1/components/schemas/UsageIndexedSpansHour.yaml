@@ -1,0 +1,18 @@
+description: The hours of indexed spans usage.
+properties:
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  indexed_events_count:
+    description: Contains the number of spans indexed.
+    format: int64
+    nullable: true
+    type: integer
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

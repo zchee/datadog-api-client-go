@@ -1,0 +1,56 @@
+description: A formula and functions APM dependency stats query.
+properties:
+  cross_org_uuids:
+    $ref: ./CrossOrgUuids.yaml
+  data_source:
+    $ref: ./FormulaAndFunctionApmDependencyStatsDataSource.yaml
+  env:
+    description: APM environment.
+    example: staging
+    type: string
+  is_upstream:
+    description: >-
+      Determines whether stats for upstream or downstream dependencies should be
+      queried.
+    example: false
+    type: boolean
+  name:
+    description: Name of query to use in formulas.
+    example: query_errors
+    type: string
+  operation_name:
+    description: Name of operation on service.
+    example: cassandra.query
+    type: string
+  primary_tag_name:
+    description: >-
+      The name of the second primary tag used within APM; required when
+      `primary_tag_value` is specified. See
+      https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog.
+    example: datacenter
+    type: string
+  primary_tag_value:
+    description: >-
+      Filter APM data by the second primary tag. `primary_tag_name` must also be
+      specified.
+    example: staging
+    type: string
+  resource_name:
+    description: APM resource.
+    example: DELETE FROM foo WHERE baz = ?
+    type: string
+  service:
+    description: APM service.
+    example: cassandra
+    type: string
+  stat:
+    $ref: ./FormulaAndFunctionApmDependencyStatName.yaml
+required:
+  - data_source
+  - env
+  - stat
+  - operation_name
+  - resource_name
+  - service
+  - name
+type: object

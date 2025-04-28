@@ -1,0 +1,8 @@
+default: trace-id-remapper
+description: Type of logs trace remapper.
+enum:
+  - trace-id-remapper
+example: trace-id-remapper
+type: string
+x-enum-varnames:
+  - TRACE_ID_REMAPPER

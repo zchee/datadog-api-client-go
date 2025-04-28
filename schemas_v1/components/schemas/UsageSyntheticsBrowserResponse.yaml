@@ -1,0 +1,10 @@
+description: >-
+  Response containing the number of Synthetics Browser tests run for each hour
+  for a given organization.
+properties:
+  usage:
+    description: Get hourly usage for Synthetics Browser tests.
+    items:
+      $ref: ./UsageSyntheticsBrowserHour.yaml
+    type: array
+type: object

@@ -1,0 +1,10 @@
+description: >-
+  The response containing the Cloud Security Management Pro usage for each hour
+  for a given organization.
+properties:
+  usage:
+    description: Get hourly usage for Cloud Security Management Pro.
+    items:
+      $ref: ./UsageCloudSecurityPostureManagementHour.yaml
+    type: array
+type: object

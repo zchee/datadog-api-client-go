@@ -1,0 +1,5 @@
+description: The response object of an SLO correction.
+properties:
+  data:
+    $ref: ./SLOCorrection.yaml
+type: object

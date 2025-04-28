@@ -1,0 +1,5 @@
+description: Object containing the live span selection for the dashboard.
+properties:
+  live_span:
+    $ref: ./DashboardGlobalTimeLiveSpan.yaml
+type: object

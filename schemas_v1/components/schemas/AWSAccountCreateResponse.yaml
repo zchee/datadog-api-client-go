@@ -1,0 +1,6 @@
+description: The Response returned by the AWS Create Account call.
+properties:
+  external_id:
+    description: AWS external_id.
+    type: string
+type: object

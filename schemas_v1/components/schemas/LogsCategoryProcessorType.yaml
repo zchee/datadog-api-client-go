@@ -1,0 +1,8 @@
+default: category-processor
+description: Type of logs category processor.
+enum:
+  - category-processor
+example: category-processor
+type: string
+x-enum-varnames:
+  - CATEGORY_PROCESSOR

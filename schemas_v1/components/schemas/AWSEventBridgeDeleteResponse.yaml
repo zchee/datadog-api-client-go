@@ -1,0 +1,5 @@
+description: An indicator of the successful deletion of an EventBridge source.
+properties:
+  status:
+    $ref: ./AWSEventBridgeDeleteStatus.yaml
+type: object

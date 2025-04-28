@@ -1,0 +1,10 @@
+description: Notebooks get all response.
+properties:
+  data:
+    description: List of notebook definitions.
+    items:
+      $ref: ./NotebooksResponseData.yaml
+    type: array
+  meta:
+    $ref: ./NotebooksResponseMeta.yaml
+type: object

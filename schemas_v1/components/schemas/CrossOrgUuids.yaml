@@ -1,0 +1,11 @@
+description: >-
+  The source organization UUID for cross organization queries. Feature in
+  Private Beta.
+example:
+  - 6434abde-xxxx-yyyy-zzzz-da7ad0900001
+items:
+  description: The source organization UUID.
+  example: 6434abde-xxxx-yyyy-zzzz-da7ad0900001
+  type: string
+maxItems: 1
+type: array

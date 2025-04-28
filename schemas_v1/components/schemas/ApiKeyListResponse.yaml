@@ -1,0 +1,13 @@
+description: List of API and application keys available for a given organization.
+example:
+  api_keys:
+    - created_by: test_user
+      key: 1234512345123456abcabc912349abcd
+      name: app_key
+properties:
+  api_keys:
+    description: Array of API keys.
+    items:
+      $ref: ./ApiKey.yaml
+    type: array
+type: object

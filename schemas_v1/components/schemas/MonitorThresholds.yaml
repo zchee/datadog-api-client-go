@@ -1,0 +1,32 @@
+description: List of the different monitor threshold available.
+properties:
+  critical:
+    description: The monitor `CRITICAL` threshold.
+    format: double
+    type: number
+  critical_recovery:
+    description: The monitor `CRITICAL` recovery threshold.
+    format: double
+    nullable: true
+    type: number
+  ok:
+    description: The monitor `OK` threshold.
+    format: double
+    nullable: true
+    type: number
+  unknown:
+    description: The monitor UNKNOWN threshold.
+    format: double
+    nullable: true
+    type: number
+  warning:
+    description: The monitor `WARNING` threshold.
+    format: double
+    nullable: true
+    type: number
+  warning_recovery:
+    description: The monitor `WARNING` recovery threshold.
+    format: double
+    nullable: true
+    type: number
+type: object

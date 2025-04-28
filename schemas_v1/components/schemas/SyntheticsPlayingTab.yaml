@@ -1,0 +1,15 @@
+description: Navigate between different tabs for your browser test.
+enum:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 3
+format: int64
+type: integer
+x-enum-varnames:
+  - MAIN_TAB
+  - NEW_TAB
+  - TAB_1
+  - TAB_2
+  - TAB_3

@@ -1,0 +1,10 @@
+description: Response containing date and type for specified custom reports.
+properties:
+  attributes:
+    $ref: ./UsageSpecifiedCustomReportsAttributes.yaml
+  id:
+    description: The date for specified custom reports.
+    type: string
+  type:
+    $ref: ./UsageReportsType.yaml
+type: object

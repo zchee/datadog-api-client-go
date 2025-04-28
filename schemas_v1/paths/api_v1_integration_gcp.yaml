@@ -1,0 +1,171 @@
+delete:
+  deprecated: true
+  description: >-
+    This endpoint is deprecated – use the V2 endpoints instead. Delete a given
+    Datadog-GCP integration.
+  operationId: DeleteGCPIntegration
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/GCPAccount.yaml
+    description: Delete a given Datadog-GCP integration.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example: {}
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a GCP integration
+  tags:
+    - GCP Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - gcp_configurations_manage
+get:
+  deprecated: true
+  description: >-
+    This endpoint is deprecated – use the V2 endpoints instead. List all
+    Datadog-GCP integrations configured in your Datadog account.
+  operationId: ListGCPIntegration
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GCPAccountListResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List all GCP integrations
+  tags:
+    - GCP Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - gcp_configuration_read
+post:
+  deprecated: true
+  description: >-
+    This endpoint is deprecated – use the V2 endpoints instead. Create a
+    Datadog-GCP integration.
+  operationId: CreateGCPIntegration
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/GCPAccount.yaml
+    description: Create a Datadog-GCP integration.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example: {}
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a GCP integration
+  tags:
+    - GCP Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - gcp_configurations_manage
+put:
+  deprecated: true
+  description: >-
+    This endpoint is deprecated – use the V2 endpoints instead. Update a
+    Datadog-GCP integrations host_filters and/or auto-mute.
+
+    Requires a `project_id` and `client_email`, however these fields cannot be
+    updated.
+
+    If you need to update these fields, delete and use the create (`POST`)
+    endpoint.
+
+    The unspecified fields will keep their original values.
+  operationId: UpdateGCPIntegration
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/GCPAccount.yaml
+    description: Update a Datadog-GCP integration.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            example: {}
+            type: object
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a GCP integration
+  tags:
+    - GCP Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - gcp_configuration_edit

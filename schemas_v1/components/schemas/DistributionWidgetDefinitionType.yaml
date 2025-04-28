@@ -1,0 +1,8 @@
+default: distribution
+description: Type of the distribution widget.
+enum:
+  - distribution
+example: distribution
+type: string
+x-enum-varnames:
+  - DISTRIBUTION

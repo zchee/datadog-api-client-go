@@ -1,0 +1,75 @@
+description: Object representing a host.
+properties:
+  aliases:
+    description: Host aliases collected by Datadog.
+    items:
+      description: A host alias.
+      example: mycoolhost-1
+      type: string
+    type: array
+  apps:
+    description: The Datadog integrations reporting metrics for the host.
+    items:
+      description: Name of an app.
+      example: agent
+      type: string
+    type: array
+  aws_name:
+    description: AWS name of your host.
+    example: mycoolhost-1
+    type: string
+  host_name:
+    description: The host name.
+    example: i-deadbeef
+    type: string
+  id:
+    description: The host ID.
+    example: 123456
+    format: int64
+    type: integer
+  is_muted:
+    description: If a host is muted or unmuted.
+    example: false
+    type: boolean
+  last_reported_time:
+    description: Last time the host reported a metric data point.
+    example: 1565000000
+    format: int64
+    type: integer
+  meta:
+    $ref: ./HostMeta.yaml
+  metrics:
+    $ref: ./HostMetrics.yaml
+  mute_timeout:
+    description: Timeout of the mute applied to your host.
+    format: int64
+    nullable: true
+    type: integer
+  name:
+    description: The host name.
+    example: i-hostname
+    type: string
+  sources:
+    description: Source or cloud provider associated with your host.
+    items:
+      description: A source or cloud provider name.
+      example: aws
+      type: string
+    type: array
+  tags_by_source:
+    additionalProperties:
+      description: Array of tags for a single source.
+      items:
+        description: A tag.
+        example: test.example.com.host
+        type: string
+      type: array
+    description: List of tags for each source (AWS, Datadog Agent, Chef..).
+    type: object
+  up:
+    description: >-
+      Displays UP when the expected metrics are received and displays `???` if
+      no metrics are received.
+    example: true
+    type: boolean
+type: object

@@ -1,0 +1,10 @@
+description: Style customization for a top list widget.
+properties:
+  display:
+    $ref: ./ToplistWidgetDisplay.yaml
+  palette:
+    description: Color palette to apply to the widget.
+    type: string
+  scaling:
+    $ref: ./ToplistWidgetScaling.yaml
+type: object

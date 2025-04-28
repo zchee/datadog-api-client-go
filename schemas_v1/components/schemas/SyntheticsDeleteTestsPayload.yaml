@@ -1,0 +1,19 @@
+description: |-
+  A JSON list of the ID or IDs of the Synthetic tests that you want
+  to delete.
+properties:
+  force_delete_dependencies:
+    description: |-
+      Delete the Synthetic test even if it's referenced by other resources
+      (for example, SLOs and composite monitors).
+    example: false
+    type: boolean
+  public_ids:
+    description: An array of Synthetic test IDs you want to delete.
+    example: []
+    items:
+      description: A Synthetic test ID to delete.
+      example: abc-def-123
+      type: string
+    type: array
+type: object

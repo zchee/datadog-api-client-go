@@ -1,0 +1,32 @@
+description: Run workflow is widget that allows you to run a workflow from a dashboard.
+properties:
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  inputs:
+    description: Array of workflow inputs to map to dashboard template variables.
+    items:
+      $ref: ./RunWorkflowWidgetInput.yaml
+    type: array
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of your widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./RunWorkflowWidgetDefinitionType.yaml
+  workflow_id:
+    description: Workflow id.
+    example: <workflow_id>
+    type: string
+required:
+  - type
+  - workflow_id
+type: object

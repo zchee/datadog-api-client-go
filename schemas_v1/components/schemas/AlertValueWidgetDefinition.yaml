@@ -1,0 +1,31 @@
+description: >-
+  Alert values are query values showing the current value of the metric in any
+  monitor defined on your system.
+properties:
+  alert_id:
+    description: ID of the alert to use in the widget.
+    example: ''
+    type: string
+  precision:
+    description: Number of decimal to show. If not defined, will use the raw value.
+    format: int64
+    type: integer
+  text_align:
+    $ref: ./WidgetTextAlign.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of value in the widget.
+    type: string
+  type:
+    $ref: ./AlertValueWidgetDefinitionType.yaml
+  unit:
+    description: Unit to display with the value.
+    type: string
+required:
+  - type
+  - alert_id
+type: object

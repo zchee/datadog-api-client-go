@@ -1,0 +1,23 @@
+description: >-
+  Free text is a widget that allows you to add headings to your screenboard.
+  Commonly used to state the overall purpose of the dashboard. Only available on
+  FREE layout dashboards.
+properties:
+  color:
+    description: Color of the text.
+    type: string
+  font_size:
+    description: Size of the text.
+    type: string
+  text:
+    description: Text to display.
+    example: ''
+    type: string
+  text_align:
+    $ref: ./WidgetTextAlign.yaml
+  type:
+    $ref: ./FreeTextWidgetDefinitionType.yaml
+required:
+  - type
+  - text
+type: object

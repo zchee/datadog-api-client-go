@@ -1,0 +1,57 @@
+get:
+  description: Query timeseries points.
+  operationId: QueryMetrics
+  parameters:
+    - description: Start of the queried time period, seconds since the Unix epoch.
+      in: query
+      name: from
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: End of the queried time period, seconds since the Unix epoch.
+      in: query
+      name: to
+      required: true
+      schema:
+        format: int64
+        type: integer
+    - description: Query string.
+      in: query
+      name: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MetricsQueryResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - timeseries_query
+  summary: Query timeseries points
+  tags:
+    - Metrics
+  x-permission:
+    operator: OR
+    permissions:
+      - timeseries_query

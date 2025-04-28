@@ -1,0 +1,10 @@
+description: >-
+  Response containing the number of netflow events indexed for each hour for a
+  given organization.
+properties:
+  usage:
+    description: Get hourly usage for Network Flows.
+    items:
+      $ref: ./UsageNetworkFlowsHour.yaml
+    type: array
+type: object

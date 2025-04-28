@@ -1,0 +1,43 @@
+description: Overall status of the SLO by timeframes.
+properties:
+  error:
+    description: Error message if SLO status or error budget could not be calculated.
+    nullable: true
+    type: string
+  error_budget_remaining:
+    description: Remaining error budget of the SLO in percentage.
+    example: 100
+    format: double
+    nullable: true
+    type: number
+  indexed_at:
+    description: |-
+      timestamp (UNIX time in seconds) of when the SLO status and error budget
+      were calculated.
+    example: 1662496260
+    format: int64
+    type: integer
+  raw_error_budget_remaining:
+    $ref: ./SLORawErrorBudgetRemaining.yaml
+  span_precision:
+    description: The amount of decimal places the SLI value is accurate to.
+    example: 2
+    format: int64
+    nullable: true
+    type: integer
+  state:
+    $ref: ./SLOState.yaml
+  status:
+    description: The status of the SLO.
+    example: 100
+    format: double
+    nullable: true
+    type: number
+  target:
+    description: The target of the SLO.
+    example: 99
+    format: double
+    type: number
+  timeframe:
+    $ref: ./SLOTimeframe.yaml
+type: object

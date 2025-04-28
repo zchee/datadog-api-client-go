@@ -1,0 +1,124 @@
+delete:
+  description: Remove a channel from your Datadog-Slack integration.
+  operationId: RemoveSlackIntegrationChannel
+  parameters:
+    - $ref: ../components/parameters/SlackAccountNamePathParameter.yaml
+    - $ref: ../components/parameters/SlackChannelNamePathParameter.yaml
+  responses:
+    '204':
+      description: The channel was removed successfully.
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Remove a Slack integration channel
+  tags:
+    - Slack Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations
+get:
+  description: Get a channel configured for your Datadog-Slack integration.
+  operationId: GetSlackIntegrationChannel
+  parameters:
+    - $ref: ../components/parameters/SlackAccountNamePathParameter.yaml
+    - $ref: ../components/parameters/SlackChannelNamePathParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SlackIntegrationChannel.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a Slack integration channel
+  tags:
+    - Slack Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+patch:
+  description: Update a channel used in your Datadog-Slack integration.
+  operationId: UpdateSlackIntegrationChannel
+  parameters:
+    - $ref: ../components/parameters/SlackAccountNamePathParameter.yaml
+    - $ref: ../components/parameters/SlackChannelNamePathParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SlackIntegrationChannel.yaml
+    description: Payload describing fields and values to be updated.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SlackIntegrationChannel.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Item Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a Slack integration channel
+  tags:
+    - Slack Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

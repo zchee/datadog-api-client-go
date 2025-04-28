@@ -1,0 +1,5 @@
+description: Time setting for the widget.
+oneOf:
+  - $ref: ./WidgetLegacyLiveSpan.yaml
+  - $ref: ./WidgetNewLiveSpan.yaml
+  - $ref: ./WidgetNewFixedSpan.yaml

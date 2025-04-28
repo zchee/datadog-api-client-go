@@ -1,0 +1,12 @@
+description: >-
+  The theme of the shared dashboard view. "system" follows your system's default
+  viewing theme.
+enum:
+  - system
+  - light
+  - dark
+type: string
+x-enum-varnames:
+  - SYSTEM
+  - LIGHT
+  - DARK

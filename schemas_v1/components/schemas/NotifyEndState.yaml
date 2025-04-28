@@ -1,0 +1,11 @@
+description: A notification end state.
+enum:
+  - alert
+  - no data
+  - warn
+example: alert
+type: string
+x-enum-varnames:
+  - ALERT
+  - NO_DATA
+  - WARN

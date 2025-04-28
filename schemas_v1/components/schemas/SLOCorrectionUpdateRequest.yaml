@@ -1,0 +1,5 @@
+description: An object that defines a correction to be applied to an SLO.
+properties:
+  data:
+    $ref: ./SLOCorrectionUpdateData.yaml
+type: object

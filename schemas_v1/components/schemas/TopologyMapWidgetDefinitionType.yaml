@@ -1,0 +1,8 @@
+default: topology_map
+description: Type of the topology map widget.
+enum:
+  - topology_map
+example: topology_map
+type: string
+x-enum-varnames:
+  - TOPOLOGY_MAP

@@ -1,0 +1,11 @@
+description: The view of the world that the map should render.
+example:
+  focus: WORLD
+properties:
+  focus:
+    description: The 2-letter ISO code of a country to focus the map on. Or `WORLD`.
+    example: WORLD
+    type: string
+required:
+  - focus
+type: object

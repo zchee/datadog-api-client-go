@@ -1,0 +1,66 @@
+get:
+  description: |-
+    Get all pipelines from your organization.
+    This endpoint takes no JSON arguments.
+  operationId: ListLogsPipelines
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsPipelineList.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all pipelines
+  tags:
+    - Logs Pipelines
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_read_config
+post:
+  description: Create a pipeline in your organization.
+  operationId: CreateLogsPipeline
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/LogsPipeline.yaml
+    description: Definition of the new pipeline.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsPipeline.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a pipeline
+  tags:
+    - Logs Pipelines
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_write_pipelines

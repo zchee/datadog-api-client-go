@@ -1,0 +1,17 @@
+description: Unit of the time span.
+enum:
+  - minute
+  - hour
+  - day
+  - week
+  - month
+  - year
+example: minute
+type: string
+x-enum-varnames:
+  - MINUTE
+  - HOUR
+  - DAY
+  - WEEK
+  - MONTH
+  - YEAR

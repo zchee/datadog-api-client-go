@@ -1,0 +1,7 @@
+description: Widget request type.
+enum:
+  - funnel
+example: funnel
+type: string
+x-enum-varnames:
+  - FUNNEL

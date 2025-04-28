@@ -1,0 +1,18 @@
+description: Number of Synthetics Browser tests run for each hour for a given organization.
+properties:
+  browser_check_calls_count:
+    description: Contains the number of Synthetics Browser tests run.
+    format: int64
+    nullable: true
+    type: integer
+  hour:
+    description: The hour for the usage.
+    format: date-time
+    type: string
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+type: object

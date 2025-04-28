@@ -1,0 +1,26 @@
+description: >
+  The split graph widget allows you to create repeating units of a graph - one
+  for each value in a group (for example: one per service)
+properties:
+  has_uniform_y_axes:
+    description: Normalize y axes across graphs
+    type: boolean
+  size:
+    $ref: ./SplitGraphVizSize.yaml
+  source_widget_definition:
+    $ref: ./SplitGraphSourceWidgetDefinition.yaml
+  split_config:
+    $ref: ./SplitConfig.yaml
+  time:
+    $ref: ./WidgetTime.yaml
+  title:
+    description: Title of your widget.
+    type: string
+  type:
+    $ref: ./SplitGraphWidgetDefinitionType.yaml
+required:
+  - size
+  - type
+  - source_widget_definition
+  - split_config
+type: object

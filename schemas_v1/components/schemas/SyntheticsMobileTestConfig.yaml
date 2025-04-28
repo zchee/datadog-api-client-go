@@ -1,0 +1,10 @@
+description: Configuration object for a Synthetic mobile test.
+properties:
+  initialApplicationArguments:
+    $ref: ./SyntheticsMobileTestInitialApplicationArguments.yaml
+  variables:
+    description: Array of variables used for the test steps.
+    items:
+      $ref: ./SyntheticsConfigVariable.yaml
+    type: array
+type: object

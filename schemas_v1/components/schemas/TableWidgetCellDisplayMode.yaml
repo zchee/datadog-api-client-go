@@ -1,0 +1,11 @@
+description: Define a display mode for the table cell.
+enum:
+  - number
+  - bar
+  - trend
+example: number
+type: string
+x-enum-varnames:
+  - NUMBER
+  - BAR
+  - TREND

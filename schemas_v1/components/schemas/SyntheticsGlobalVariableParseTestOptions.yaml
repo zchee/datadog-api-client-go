@@ -1,0 +1,23 @@
+description: >-
+  Parser options to use for retrieving a Synthetic global variable from a
+  Synthetic test. Used in conjunction with `parse_test_public_id`.
+properties:
+  field:
+    description: >-
+      When type is `http_header`, name of the header to use to extract the
+      value.
+    example: content-type
+    type: string
+  localVariableName:
+    description: >-
+      When type is `local_variable`, name of the local variable to use to
+      extract the value.
+    example: LOCAL_VARIABLE
+    type: string
+  parser:
+    $ref: ./SyntheticsVariableParser.yaml
+  type:
+    $ref: ./SyntheticsGlobalVariableParseTestOptionsType.yaml
+required:
+  - type
+type: object

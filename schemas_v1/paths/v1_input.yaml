@@ -1,0 +1,170 @@
+post:
+  deprecated: true
+  description: >-
+    Send your logs to your Datadog platform over HTTP. Limits per HTTP request
+    are:
+
+
+    - Maximum content size per payload (uncompressed): 5MB
+
+    - Maximum size for a single log: 1MB
+
+    - Maximum array size if sending multiple logs in an array: 1000 entries
+
+
+    Any log exceeding 1MB is accepted and truncated by Datadog:
+
+    - For a single log request, the API truncates the log at 1MB and returns a
+    2xx.
+
+    - For a multi-logs request, the API processes all logs, truncates only logs
+    larger than 1MB, and returns a 2xx.
+
+
+    Datadog recommends sending your logs compressed.
+
+    Add the `Content-Encoding: gzip` header to the request when sending
+    compressed logs.
+
+
+    The status codes answered by the HTTP API are:
+
+    - 200: OK
+
+    - 400: Bad request (likely an issue in the payload formatting)
+
+    - 403: Permission issue (likely using an invalid API Key)
+
+    - 413: Payload too large (batch is above 5MB uncompressed)
+
+    - 5xx: Internal error, request should be retried after some time
+  operationId: SubmitLog
+  parameters:
+    - description: HTTP header used to compress the media-type.
+      in: header
+      name: Content-Encoding
+      required: false
+      schema:
+        $ref: ../components/schemas/ContentEncoding.yaml
+    - description: >-
+        Log tags can be passed as query parameters with `text/plain` content
+        type.
+      example: env:prod,user:my-user
+      in: query
+      name: ddtags
+      required: false
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        examples:
+          multi-json-messages:
+            description: Pass multiple log objects at once.
+            summary: Multi JSON Messages
+            value:
+              - message: hello
+              - message: world
+        schema:
+          $ref: ../components/schemas/HTTPLog.yaml
+      application/json;simple:
+        examples:
+          simple-json-message:
+            description: >-
+              Log attributes can be passed as `key:value` pairs in valid JSON
+              messages.
+            summary: Simple JSON Message
+            value:
+              ddsource: agent
+              ddtags: env:prod,user:joe.doe
+              hostname: fa1e1e739d95
+              message: hello world
+        schema:
+          $ref: ../components/schemas/HTTPLogItem.yaml
+      application/logplex-1:
+        examples:
+          multi-raw-message:
+            description: Submit log messages.
+            summary: Multi Logplex Messages
+            value: |-
+              hello
+              world
+          simple-logplex-message:
+            description: Submit log string.
+            summary: Simple Logplex Message
+            value: hello world
+        schema:
+          type: string
+      text/plain:
+        examples:
+          multi-raw-message:
+            description: Submit log string.
+            summary: Multi Raw Messages
+            value: |
+              hello
+              world
+          simple-raw-message:
+            description: >-
+              Submit log string. Log attributes can be passed as query
+              parameters in the URL. This enables the addition of tags or the
+              source by using the `ddtags` and `ddsource` parameters:
+              `?host=my-hostname&service=my-service&ddsource=my-source&ddtags=env:prod,user:my-user`.
+            summary: Simple Raw Message
+            value: hello world
+        schema:
+          type: string
+    description: Log to send (JSON format).
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+      description: Response from server (always 200 empty JSON).
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPLogError.yaml
+      description: unexpected error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+  servers:
+    - url: https://{subdomain}.{site}
+      variables:
+        site:
+          default: datadoghq.com
+          description: The regional site for Datadog customers.
+          enum:
+            - datadoghq.com
+            - us3.datadoghq.com
+            - us5.datadoghq.com
+            - ap1.datadoghq.com
+            - datadoghq.eu
+            - ddog-gov.com
+        subdomain:
+          default: http-intake.logs
+          description: The subdomain where the API is deployed.
+    - url: '{protocol}://{name}'
+      variables:
+        name:
+          default: http-intake.logs.datadoghq.com
+          description: Full site DNS name.
+        protocol:
+          default: https
+          description: The protocol for accessing the API.
+    - url: https://{subdomain}.{site}
+      variables:
+        site:
+          default: datadoghq.com
+          description: Any Datadog deployment.
+        subdomain:
+          default: http-intake.logs
+          description: The subdomain where the API is deployed.
+  summary: Send logs
+  tags:
+    - Logs
+  x-codegen-request-body-name: body

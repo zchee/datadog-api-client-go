@@ -1,0 +1,16 @@
+description: Defined items in the group.
+properties:
+  facet:
+    description: Facet name.
+    example: resource_name
+    type: string
+  limit:
+    description: Maximum number of items in the group.
+    example: 50
+    format: int64
+    type: integer
+  sort:
+    $ref: ./LogQueryDefinitionGroupBySort.yaml
+required:
+  - facet
+type: object

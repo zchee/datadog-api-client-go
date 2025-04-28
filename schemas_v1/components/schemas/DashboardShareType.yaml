@@ -1,0 +1,13 @@
+description: >-
+  Type of sharing access (either open to anyone who has the public URL or
+  invite-only).
+enum:
+  - open
+  - invite
+  - embed
+nullable: true
+type: string
+x-enum-varnames:
+  - OPEN
+  - INVITE
+  - EMBED

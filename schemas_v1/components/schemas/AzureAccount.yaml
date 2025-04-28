@@ -1,0 +1,98 @@
+description: Datadog-Azure integrations configured for your organization.
+properties:
+  app_service_plan_filters:
+    description: >-
+      Limit the Azure app service plans that are pulled into Datadog using tags.
+
+      Only app service plans that match one of the defined tags are imported
+      into Datadog.
+    example: key:value,filter:example
+    type: string
+  automute:
+    description: Silence monitors for expected Azure VM shutdowns.
+    example: true
+    type: boolean
+  client_id:
+    description: Your Azure web application ID.
+    example: testc7f6-1234-5678-9101-3fcbf464test
+    type: string
+  client_secret:
+    description: Your Azure web application secret key.
+    example: TestingRh2nx664kUy5dIApvM54T4AtO
+    type: string
+  container_app_filters:
+    description: >-
+      Limit the Azure container apps that are pulled into Datadog using tags.
+
+      Only container apps that match one of the defined tags are imported into
+      Datadog.
+    example: key:value,filter:example
+    type: string
+  cspm_enabled:
+    description: >-
+      When enabled, Datadog’s Cloud Security Management product scans resource
+      configurations monitored by this app registration.
+
+      Note: This requires resource_collection_enabled to be set to true.
+    example: true
+    type: boolean
+  custom_metrics_enabled:
+    description: Enable custom metrics for your organization.
+    example: true
+    type: boolean
+  errors:
+    description: Errors in your configuration.
+    example:
+      - '*'
+    items:
+      description: List of errors.
+      readOnly: true
+      type: string
+    type: array
+  host_filters:
+    description: |-
+      Limit the Azure instances that are pulled into Datadog by using tags.
+      Only hosts that match one of the defined tags are imported into Datadog.
+    example: key:value,filter:example
+    type: string
+  metrics_enabled:
+    description: Enable Azure metrics for your organization.
+    example: true
+    type: boolean
+  metrics_enabled_default:
+    description: >-
+      Enable Azure metrics for your organization for resource providers where no
+      resource provider config is specified.
+    example: true
+    type: boolean
+  new_client_id:
+    description: Your New Azure web application ID.
+    example: new1c7f6-1234-5678-9101-3fcbf464test
+    type: string
+  new_tenant_name:
+    description: Your New Azure Active Directory ID.
+    example: new1c44-1234-5678-9101-cc00736ftest
+    type: string
+  resource_collection_enabled:
+    description: >-
+      When enabled, Datadog collects metadata and configuration info from cloud
+      resources (compute instances, databases, load balancers, etc.) monitored
+      by this app registration.
+    example: true
+    type: boolean
+  resource_provider_configs:
+    description: >-
+      Configuration settings applied to resources from the specified Azure
+      resource providers.
+    items:
+      $ref: ./ResourceProviderConfig.yaml
+    type: array
+  tenant_name:
+    description: Your Azure Active Directory ID.
+    example: testc44-1234-5678-9101-cc00736ftest
+    type: string
+  usage_metrics_enabled:
+    description: Enable azure.usage metrics for your organization.
+    example: true
+    type: boolean
+type: object

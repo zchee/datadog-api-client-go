@@ -1,0 +1,6 @@
+description: Distribution point data.
+items:
+  description: List of distribution point data.
+  format: double
+  type: number
+type: array

@@ -1,0 +1,34 @@
+description: IP ranges.
+properties:
+  agents:
+    $ref: ./IPPrefixesAgents.yaml
+  api:
+    $ref: ./IPPrefixesAPI.yaml
+  apm:
+    $ref: ./IPPrefixesAPM.yaml
+  global:
+    $ref: ./IPPrefixesGlobal.yaml
+  logs:
+    $ref: ./IPPrefixesLogs.yaml
+  modified:
+    description: Date when last updated, in the form `YYYY-MM-DD-hh-mm-ss`.
+    example: 2019-10-31-20-00-00
+    type: string
+  orchestrator:
+    $ref: ./IPPrefixesOrchestrator.yaml
+  process:
+    $ref: ./IPPrefixesProcess.yaml
+  remote-configuration:
+    $ref: ./IPPrefixesRemoteConfiguration.yaml
+  synthetics:
+    $ref: ./IPPrefixesSynthetics.yaml
+  synthetics-private-locations:
+    $ref: ./IPPrefixesSyntheticsPrivateLocations.yaml
+  version:
+    description: Version of the IP list.
+    example: 11
+    format: int64
+    type: integer
+  webhooks:
+    $ref: ./IPPrefixesWebhooks.yaml
+type: object

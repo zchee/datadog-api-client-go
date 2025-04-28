@@ -1,0 +1,13 @@
+description: Configuration of inline or automatic legends.
+properties:
+  hide_percent:
+    description: Whether to hide the percentages of the groups.
+    type: boolean
+  hide_value:
+    description: Whether to hide the values of the groups.
+    type: boolean
+  type:
+    $ref: ./SunburstWidgetLegendInlineAutomaticType.yaml
+required:
+  - type
+type: object

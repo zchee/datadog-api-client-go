@@ -1,0 +1,14 @@
+description: >-
+  The iframe widget allows you to embed a portion of any other web page on your
+  dashboard. Only available on FREE layout dashboards.
+properties:
+  type:
+    $ref: ./IFrameWidgetDefinitionType.yaml
+  url:
+    description: URL of the iframe.
+    example: ''
+    type: string
+required:
+  - type
+  - url
+type: object

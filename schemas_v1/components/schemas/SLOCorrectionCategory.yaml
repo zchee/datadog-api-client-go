@@ -1,0 +1,13 @@
+description: Category the SLO correction belongs to.
+enum:
+  - Scheduled Maintenance
+  - Outside Business Hours
+  - Deployment
+  - Other
+example: Scheduled Maintenance
+type: string
+x-enum-varnames:
+  - SCHEDULED_MAINTENANCE
+  - OUTSIDE_BUSINESS_HOURS
+  - DEPLOYMENT
+  - OTHER

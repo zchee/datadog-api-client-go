@@ -1,0 +1,8 @@
+default: treemap
+description: Type of the treemap widget.
+enum:
+  - treemap
+example: treemap
+type: string
+x-enum-varnames:
+  - TREEMAP

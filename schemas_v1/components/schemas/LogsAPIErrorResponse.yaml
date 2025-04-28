@@ -1,0 +1,5 @@
+description: Response returned by the Logs API when errors occur.
+properties:
+  error:
+    $ref: ./LogsAPIError.yaml
+type: object

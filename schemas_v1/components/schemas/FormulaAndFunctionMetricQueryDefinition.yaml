@@ -1,0 +1,25 @@
+description: A formula and functions metrics query.
+example:
+  data_source: metrics
+  name: my_query
+  query: avg:system.cpu.user{*}
+properties:
+  aggregator:
+    $ref: ./FormulaAndFunctionMetricAggregation.yaml
+  cross_org_uuids:
+    $ref: ./CrossOrgUuids.yaml
+  data_source:
+    $ref: ./FormulaAndFunctionMetricDataSource.yaml
+  name:
+    description: Name of the query for use in formulas.
+    example: my_query
+    type: string
+  query:
+    description: Metrics query definition.
+    example: avg:system.cpu.user{*}
+    type: string
+required:
+  - data_source
+  - query
+  - name
+type: object

@@ -1,0 +1,12 @@
+description: >-
+  Response containing the number of hourly recorded custom metrics for a given
+  organization.
+properties:
+  metadata:
+    $ref: ./UsageTopAvgMetricsMetadata.yaml
+  usage:
+    description: Number of hourly recorded custom metrics for a given organization.
+    items:
+      $ref: ./UsageTopAvgMetricsHour.yaml
+    type: array
+type: object

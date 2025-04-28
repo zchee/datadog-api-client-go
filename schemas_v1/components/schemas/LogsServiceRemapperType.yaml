@@ -1,0 +1,8 @@
+default: service-remapper
+description: Type of logs service remapper.
+enum:
+  - service-remapper
+example: service-remapper
+type: string
+x-enum-varnames:
+  - SERVICE_REMAPPER

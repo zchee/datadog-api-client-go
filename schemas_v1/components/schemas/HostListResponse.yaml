@@ -1,0 +1,18 @@
+description: Response with Host information from Datadog.
+properties:
+  host_list:
+    description: Array of hosts.
+    items:
+      $ref: ./Host.yaml
+    type: array
+  total_matching:
+    description: Number of host matching the query.
+    example: 1
+    format: int64
+    type: integer
+  total_returned:
+    description: Number of host returned.
+    example: 1
+    format: int64
+    type: integer
+type: object

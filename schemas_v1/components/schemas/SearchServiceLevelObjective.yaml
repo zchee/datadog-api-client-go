@@ -1,0 +1,5 @@
+description: A service level objective data container.
+properties:
+  data:
+    $ref: ./SearchServiceLevelObjectiveData.yaml
+type: object

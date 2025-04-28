@@ -1,0 +1,35 @@
+description: Aggregation value.
+enum:
+  - count
+  - cardinality
+  - median
+  - pc75
+  - pc90
+  - pc95
+  - pc98
+  - pc99
+  - sum
+  - min
+  - max
+  - avg
+  - earliest
+  - latest
+  - most_frequent
+example: count
+type: string
+x-enum-varnames:
+  - COUNT
+  - CARDINALITY
+  - MEDIAN
+  - PC75
+  - PC90
+  - PC95
+  - PC98
+  - PC99
+  - SUM
+  - MIN
+  - MAX
+  - AVG
+  - EARLIEST
+  - LATEST
+  - MOST_FREQUENT

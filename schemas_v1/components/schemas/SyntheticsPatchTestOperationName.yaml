@@ -1,0 +1,17 @@
+description: The operation to perform
+enum:
+  - add
+  - remove
+  - replace
+  - move
+  - copy
+  - test
+example: replace
+type: string
+x-enum-varnames:
+  - ADD
+  - REMOVE
+  - REPLACE
+  - MOVE
+  - COPY
+  - TEST

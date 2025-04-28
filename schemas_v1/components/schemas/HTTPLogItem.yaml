@@ -1,0 +1,51 @@
+additionalProperties:
+  description: Additional log attributes.
+  type: string
+description: Logs that are sent over HTTP.
+properties:
+  ddsource:
+    description: >-
+      The integration name associated with your log: the technology from which
+      the log originated.
+
+      When it matches an integration name, Datadog automatically installs the
+      corresponding parsers and facets.
+
+      See [reserved
+      attributes](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes).
+    example: nginx
+    type: string
+  ddtags:
+    description: Tags associated with your logs.
+    example: env:staging,version:5.1
+    type: string
+  hostname:
+    description: The name of the originating host of the log.
+    example: i-012345678
+    type: string
+  message:
+    description: >-
+      The message [reserved
+      attribute](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes)
+
+      of your log. By default, Datadog ingests the value of the message
+      attribute as the body of the log entry.
+
+      That value is then highlighted and displayed in the Logstream, where it is
+      indexed for full text search.
+    example: 2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World
+    type: string
+  service:
+    description: >-
+      The name of the application or service generating the log events.
+
+      It is used to switch from Logs to APM, so make sure you define the same
+      value when you use both products.
+
+      See [reserved
+      attributes](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes).
+    example: payment
+    type: string
+required:
+  - message
+type: object

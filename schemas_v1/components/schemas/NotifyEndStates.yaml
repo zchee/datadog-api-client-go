@@ -1,0 +1,12 @@
+default:
+  - alert
+  - no data
+  - warn
+description: States for which `notify_end_types` sends out notifications for.
+example:
+  - alert
+  - no data
+  - warn
+items:
+  $ref: ./NotifyEndState.yaml
+type: array

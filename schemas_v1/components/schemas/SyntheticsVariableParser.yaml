@@ -1,0 +1,13 @@
+description: Details of the parser to use for the global variable.
+example:
+  type: regex
+  value: .*
+properties:
+  type:
+    $ref: ./SyntheticsGlobalVariableParserType.yaml
+  value:
+    description: Regex or JSON path used for the parser. Not used with type `raw`.
+    type: string
+required:
+  - type
+type: object

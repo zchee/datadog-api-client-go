@@ -1,0 +1,17 @@
+description: Object with the results of a single Synthetic browser test.
+properties:
+  check_time:
+    description: Last time the browser test was performed.
+    format: double
+    type: number
+  probe_dc:
+    description: Location from which the Browser test was performed.
+    type: string
+  result:
+    $ref: ./SyntheticsBrowserTestResultShortResult.yaml
+  result_id:
+    description: ID of the browser test result.
+    type: string
+  status:
+    $ref: ./SyntheticsTestMonitorStatus.yaml
+type: object

@@ -1,0 +1,8 @@
+default: alert_graph
+description: Type of the alert graph widget.
+enum:
+  - alert_graph
+example: alert_graph
+type: string
+x-enum-varnames:
+  - ALERT_GRAPH

@@ -1,0 +1,25 @@
+description: A formula and functions Cloud Cost query.
+example:
+  data_source: cloud_cost
+  name: query1
+  query: sum:aws.cost.amortized{*}
+properties:
+  aggregator:
+    $ref: ./WidgetAggregator.yaml
+  cross_org_uuids:
+    $ref: ./CrossOrgUuids.yaml
+  data_source:
+    $ref: ./FormulaAndFunctionCloudCostDataSource.yaml
+  name:
+    description: Name of the query for use in formulas.
+    example: my_query
+    type: string
+  query:
+    description: Query for Cloud Cost data.
+    example: ''
+    type: string
+required:
+  - data_source
+  - query
+  - name
+type: object

@@ -1,0 +1,11 @@
+description: Execution rule for a Synthetic test.
+enum:
+  - blocking
+  - non_blocking
+  - skipped
+example: blocking
+type: string
+x-enum-varnames:
+  - BLOCKING
+  - NON_BLOCKING
+  - SKIPPED

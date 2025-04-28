@@ -1,0 +1,50 @@
+description: >-
+  The host map widget graphs any metric across your hosts using the same
+  visualization available from the main Host Map page.
+properties:
+  custom_links:
+    description: List of custom links.
+    items:
+      $ref: ./WidgetCustomLink.yaml
+    type: array
+  group:
+    description: List of tag prefixes to group by.
+    items:
+      description: Tag prefixes.
+      type: string
+    type: array
+  no_group_hosts:
+    description: Whether to show the hosts that don’t fit in a group.
+    type: boolean
+  no_metric_hosts:
+    description: Whether to show the hosts with no metrics.
+    type: boolean
+  node_type:
+    $ref: ./WidgetNodeType.yaml
+  notes:
+    description: Notes on the title.
+    type: string
+  requests:
+    $ref: ./HostMapWidgetDefinitionRequests.yaml
+  scope:
+    description: List of tags used to filter the map.
+    items:
+      description: Tags.
+      type: string
+    type: array
+  style:
+    $ref: ./HostMapWidgetDefinitionStyle.yaml
+  title:
+    description: Title of the widget.
+    type: string
+  title_align:
+    $ref: ./WidgetTextAlign.yaml
+  title_size:
+    description: Size of the title.
+    type: string
+  type:
+    $ref: ./HostMapWidgetDefinitionType.yaml
+required:
+  - type
+  - requests
+type: object

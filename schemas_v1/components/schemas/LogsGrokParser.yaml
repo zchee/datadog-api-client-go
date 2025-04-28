@@ -1,0 +1,37 @@
+description: >-
+  Create custom grok rules to parse the full message or [a specific attribute of
+  your raw
+  event](https://docs.datadoghq.com/logs/log_configuration/parsing/#advanced-settings).
+
+  For more information, see the [parsing
+  section](https://docs.datadoghq.com/logs/log_configuration/parsing).
+properties:
+  grok:
+    $ref: ./LogsGrokParserRules.yaml
+  is_enabled:
+    default: false
+    description: Whether or not the processor is enabled.
+    type: boolean
+  name:
+    description: Name of the processor.
+    type: string
+  samples:
+    description: List of sample logs to test this grok parser.
+    items:
+      description: A log sample that is used to test the grok parser.
+      maxLength: 5000
+      type: string
+    maxItems: 5
+    type: array
+  source:
+    default: message
+    description: Name of the log attribute to parse.
+    example: message
+    type: string
+  type:
+    $ref: ./LogsGrokParserType.yaml
+required:
+  - source
+  - grok
+  - type
+type: object

@@ -1,0 +1,8 @@
+default: string-builder-processor
+description: Type of logs string builder processor.
+enum:
+  - string-builder-processor
+example: string-builder-processor
+type: string
+x-enum-varnames:
+  - STRING_BUILDER_PROCESSOR

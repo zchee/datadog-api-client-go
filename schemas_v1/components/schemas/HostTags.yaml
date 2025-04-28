@@ -1,0 +1,14 @@
+description: Set of tags to associate with your host.
+properties:
+  host:
+    description: Your host name.
+    example: test.host
+    type: string
+  tags:
+    description: A list of tags to apply to the host.
+    items:
+      description: A given tag in a list.
+      example: environment:production
+      type: string
+    type: array
+type: object

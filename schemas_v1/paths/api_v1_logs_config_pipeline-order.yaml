@@ -1,0 +1,83 @@
+get:
+  description: |-
+    Get the current order of your pipelines.
+    This endpoint takes no JSON arguments.
+  operationId: GetLogsPipelineOrder
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsPipelinesOrder.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get pipeline order
+  tags:
+    - Logs Pipelines
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_read_config
+put:
+  description: >-
+    Update the order of your pipelines. Since logs are processed sequentially,
+    reordering a pipeline may change
+
+    the structure and content of the data processed by other pipelines and their
+    processors.
+
+
+    **Note**: Using the `PUT` method updates your pipeline order by replacing
+    your current order
+
+    with the new one sent to your Datadog organization.
+  operationId: UpdateLogsPipelineOrder
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/LogsPipelinesOrder.yaml
+    description: Object containing the new ordered list of pipeline IDs.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsPipelinesOrder.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsAPIErrorResponse.yaml
+      description: Unprocessable Entity
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update pipeline order
+  tags:
+    - Logs Pipelines
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_write_pipelines

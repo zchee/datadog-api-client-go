@@ -1,0 +1,21 @@
+description: Match Sub-string definition.
+example:
+  substring: fruit
+  type: substring
+  with: vegetable
+properties:
+  substring:
+    description: Text that will be replaced.
+    example: string to replace
+    type: string
+  type:
+    $ref: ./TableWidgetTextFormatReplaceSubstringType.yaml
+  with:
+    description: Text that will replace original sub-string.
+    example: replacement
+    type: string
+required:
+  - type
+  - with
+  - substring
+type: object

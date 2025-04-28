@@ -1,0 +1,11 @@
+description: The original widget we are splitting on.
+oneOf:
+  - $ref: ./ChangeWidgetDefinition.yaml
+  - $ref: ./GeomapWidgetDefinition.yaml
+  - $ref: ./QueryValueWidgetDefinition.yaml
+  - $ref: ./ScatterPlotWidgetDefinition.yaml
+  - $ref: ./SunburstWidgetDefinition.yaml
+  - $ref: ./TableWidgetDefinition.yaml
+  - $ref: ./TimeseriesWidgetDefinition.yaml
+  - $ref: ./ToplistWidgetDefinition.yaml
+  - $ref: ./TreeMapWidgetDefinition.yaml

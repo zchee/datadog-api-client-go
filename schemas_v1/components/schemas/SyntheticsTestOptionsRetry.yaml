@@ -1,0 +1,15 @@
+description: Object describing the retry strategy to apply to a Synthetic test.
+properties:
+  count:
+    description: |-
+      Number of times a test needs to be retried before marking a
+      location as failed. Defaults to 0.
+    format: int64
+    type: integer
+  interval:
+    description: |-
+      Time interval between retries (in milliseconds). Defaults to
+      300ms.
+    format: double
+    type: number
+type: object

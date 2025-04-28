@@ -1,0 +1,11 @@
+description: The SLO time window options.
+enum:
+  - 7d
+  - 30d
+  - 90d
+example: 30d
+type: string
+x-enum-varnames:
+  - SEVEN_DAYS
+  - THIRTY_DAYS
+  - NINETY_DAYS

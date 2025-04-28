@@ -1,0 +1,70 @@
+description: Object describing a step for a Synthetic test.
+properties:
+  allowFailure:
+    description: Whether or not the step was allowed to fail.
+    type: boolean
+  browserErrors:
+    description: Array of errors collected for a browser test.
+    items:
+      $ref: ./SyntheticsBrowserError.yaml
+    type: array
+  checkType:
+    $ref: ./SyntheticsCheckType.yaml
+  description:
+    description: Description of the test.
+    type: string
+  duration:
+    description: Total duration in millisecond of the test.
+    format: double
+    type: number
+  error:
+    description: Error returned by the test.
+    type: string
+  failure:
+    $ref: ./SyntheticsBrowserTestResultFailure.yaml
+  playingTab:
+    $ref: ./SyntheticsPlayingTab.yaml
+  screenshotBucketKey:
+    description: Whether or not screenshots where collected by the test.
+    type: boolean
+  skipped:
+    description: Whether or not to skip this step.
+    type: boolean
+  snapshotBucketKey:
+    description: Whether or not snapshots where collected by the test.
+    type: boolean
+  stepId:
+    description: The step ID.
+    format: int64
+    type: integer
+  subTestStepDetails:
+    description: >-
+      If this step includes a sub-test.
+
+      [Subtests
+      documentation](https://docs.datadoghq.com/synthetics/browser_tests/advanced_options/#subtests).
+    items:
+      $ref: ./SyntheticsStepDetail.yaml
+    type: array
+  timeToInteractive:
+    description: Time before starting the step.
+    format: double
+    type: number
+  type:
+    $ref: ./SyntheticsStepType.yaml
+  url:
+    description: URL to perform the step against.
+    type: string
+  value:
+    description: Value for the step.
+  vitalsMetrics:
+    description: Array of Core Web Vitals metrics for the step.
+    items:
+      $ref: ./SyntheticsCoreWebVitals.yaml
+    type: array
+  warnings:
+    description: Warning collected that didn't failed the step.
+    items:
+      $ref: ./SyntheticsStepDetailWarning.yaml
+    type: array
+type: object

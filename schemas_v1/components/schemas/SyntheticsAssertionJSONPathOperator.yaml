@@ -1,0 +1,7 @@
+description: Assertion operator to apply.
+enum:
+  - validatesJSONPath
+example: validatesJSONPath
+type: string
+x-enum-varnames:
+  - VALIDATES_JSON_PATH

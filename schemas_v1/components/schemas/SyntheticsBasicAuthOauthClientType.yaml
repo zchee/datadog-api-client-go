@@ -1,0 +1,8 @@
+default: oauth-client
+description: The type of basic authentication to use when performing the test.
+enum:
+  - oauth-client
+example: oauth-client
+type: string
+x-enum-varnames:
+  - OAUTH_CLIENT

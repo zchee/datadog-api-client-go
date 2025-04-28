@@ -1,0 +1,43 @@
+description: A formula and functions events query.
+properties:
+  compute:
+    $ref: ./FormulaAndFunctionEventQueryDefinitionCompute.yaml
+  cross_org_uuids:
+    $ref: ./CrossOrgUuids.yaml
+  data_source:
+    $ref: ./FormulaAndFunctionEventsDataSource.yaml
+  group_by:
+    description: Group by options.
+    items:
+      $ref: ./FormulaAndFunctionEventQueryGroupBy.yaml
+    type: array
+  indexes:
+    description: >-
+      An array of index names to query in the stream. Omit or use `[]` to query
+      all indexes at once.
+    example:
+      - days-3
+      - days-7
+    items:
+      description: >-
+        A log index set up for your organization. For additional indexes, see
+        the [multiple
+        indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes)
+        documentation.
+      type: string
+    type: array
+  name:
+    description: Name of the query for use in formulas.
+    example: query_errors
+    type: string
+  search:
+    $ref: ./FormulaAndFunctionEventQueryDefinitionSearch.yaml
+  storage:
+    description: Option for storage location. Feature in Private Beta.
+    example: indexes
+    type: string
+required:
+  - data_source
+  - compute
+  - name
+type: object

@@ -1,0 +1,18 @@
+description: Define computation for a log query.
+properties:
+  aggregation:
+    description: The aggregation method.
+    example: avg
+    type: string
+  facet:
+    description: Facet name.
+    example: '@duration'
+    type: string
+  interval:
+    description: Define a time interval in seconds.
+    example: 5000
+    format: int64
+    type: integer
+required:
+  - aggregation
+type: object

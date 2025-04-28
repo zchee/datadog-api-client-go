@@ -1,0 +1,9 @@
+description: Search options.
+properties:
+  query:
+    description: Events search string.
+    example: service:query
+    type: string
+required:
+  - query
+type: object

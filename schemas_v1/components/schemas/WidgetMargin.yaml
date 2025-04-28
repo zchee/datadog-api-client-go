@@ -1,0 +1,16 @@
+description: |-
+  Size of the margins around the image.
+  **Note**: `small` and `large` values are deprecated.
+enum:
+  - sm
+  - md
+  - lg
+  - small
+  - large
+type: string
+x-enum-varnames:
+  - SM
+  - MD
+  - LG
+  - SMALL
+  - LARGE

@@ -1,0 +1,43 @@
+get:
+  description: Search for metrics from the last 24 hours in Datadog.
+  operationId: ListMetrics
+  parameters:
+    - description: >-
+        Query string to search metrics upon. Can optionally be prefixed with
+        `metrics:`.
+      in: query
+      name: q
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MetricSearchResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Search metrics
+  tags:
+    - Metrics
+  x-permission:
+    operator: OPEN
+    permissions: []

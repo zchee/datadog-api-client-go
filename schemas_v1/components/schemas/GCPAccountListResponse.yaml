@@ -1,0 +1,4 @@
+description: Array of GCP account responses.
+items:
+  $ref: ./GCPAccount.yaml
+type: array

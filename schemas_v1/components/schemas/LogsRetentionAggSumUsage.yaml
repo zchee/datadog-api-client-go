@@ -1,0 +1,20 @@
+description: >-
+  Object containing indexed logs usage aggregated across organizations and
+  months for a retention period.
+properties:
+  logs_indexed_logs_usage_agg_sum:
+    description: Total indexed logs for this retention period.
+    format: int64
+    type: integer
+  logs_live_indexed_logs_usage_agg_sum:
+    description: Live indexed logs for this retention period.
+    format: int64
+    type: integer
+  logs_rehydrated_indexed_logs_usage_agg_sum:
+    description: Rehydrated indexed logs for this retention period.
+    format: int64
+    type: integer
+  retention:
+    description: The retention period in days or "custom" for all custom retention periods.
+    type: string
+type: object

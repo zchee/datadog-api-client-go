@@ -1,0 +1,8 @@
+default: sigv4
+description: The type of authentication to use when performing the test.
+enum:
+  - sigv4
+example: sigv4
+type: string
+x-enum-varnames:
+  - SIGV4
