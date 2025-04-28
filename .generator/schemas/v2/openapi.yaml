@@ -57236,7 +57236,7 @@ paths:
               dynamic-points:
                 description: "Post time-series data that can be graphed on Datadog\u2019s
                   dashboards."
-                externalValue: examples/metrics/dynamic-points.json.sh
+                # externalValue: examples/metrics/dynamic-points.json.sh
                 summary: Dynamic Points
                 x-variables:
                   NOW: $(date +%s)
