@@ -1,0 +1,5 @@
+description: Payload for creating an event.
+properties:
+  data:
+    $ref: ./EventCreateRequest.yaml
+type: object

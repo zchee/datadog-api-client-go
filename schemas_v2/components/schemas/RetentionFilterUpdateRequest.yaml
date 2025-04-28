@@ -1,0 +1,7 @@
+description: The body of the retention filter to be updated.
+properties:
+  data:
+    $ref: ./RetentionFilterUpdateData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,4 @@
+description: Details of the top level pipeline, build, or workflow of your CI.
+oneOf:
+  - $ref: ./CIAppPipelineEventFinishedPipeline.yaml
+  - $ref: ./CIAppPipelineEventInProgressPipeline.yaml

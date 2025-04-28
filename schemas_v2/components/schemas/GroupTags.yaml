@@ -1,0 +1,6 @@
+description: List of tags that apply to a single response value.
+items:
+  description: A single tag that applies to a single response value.
+  example: env:production
+  type: string
+type: array

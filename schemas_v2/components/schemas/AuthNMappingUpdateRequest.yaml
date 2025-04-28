@@ -1,0 +1,7 @@
+description: Request to update an AuthN Mapping.
+properties:
+  data:
+    $ref: ./AuthNMappingUpdateData.yaml
+required:
+  - data
+type: object

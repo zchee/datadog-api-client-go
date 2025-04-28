@@ -1,0 +1,11 @@
+description: The new triage state of the signal.
+enum:
+  - open
+  - archived
+  - under_review
+example: open
+type: string
+x-enum-varnames:
+  - OPEN
+  - ARCHIVED
+  - UNDER_REVIEW

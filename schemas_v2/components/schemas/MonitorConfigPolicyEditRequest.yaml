@@ -1,0 +1,7 @@
+description: Request for editing a monitor configuration policy.
+properties:
+  data:
+    $ref: ./MonitorConfigPolicyEditData.yaml
+required:
+  - data
+type: object

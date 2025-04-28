@@ -1,0 +1,21 @@
+description: The definition of `InputSchemaParametersType` object.
+enum:
+  - STRING
+  - NUMBER
+  - BOOLEAN
+  - OBJECT
+  - ARRAY_STRING
+  - ARRAY_NUMBER
+  - ARRAY_BOOLEAN
+  - ARRAY_OBJECT
+example: STRING
+type: string
+x-enum-varnames:
+  - STRING
+  - NUMBER
+  - BOOLEAN
+  - OBJECT
+  - ARRAY_STRING
+  - ARRAY_NUMBER
+  - ARRAY_BOOLEAN
+  - ARRAY_OBJECT

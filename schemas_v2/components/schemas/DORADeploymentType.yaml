@@ -1,0 +1,8 @@
+default: dora_deployment
+description: JSON:API type for DORA deployment events.
+enum:
+  - dora_deployment
+example: dora_deployment
+type: string
+x-enum-varnames:
+  - DORA_DEPLOYMENT

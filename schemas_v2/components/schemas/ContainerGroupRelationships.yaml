@@ -1,0 +1,5 @@
+description: Relationships to containers inside a container group.
+properties:
+  containers:
+    $ref: ./ContainerGroupRelationshipsLink.yaml
+type: object

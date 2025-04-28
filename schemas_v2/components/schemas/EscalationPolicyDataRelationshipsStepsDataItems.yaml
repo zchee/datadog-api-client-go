@@ -1,0 +1,14 @@
+description: >-
+  Defines a relationship to a single step within an escalation policy. Contains
+  the step's `id` and `type`.
+properties:
+  id:
+    description: Specifies the unique identifier for the step resource.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+  type:
+    $ref: ./EscalationPolicyDataRelationshipsStepsDataItemsType.yaml
+required:
+  - type
+  - id
+type: object

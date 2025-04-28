@@ -1,0 +1,4 @@
+description: The list of facets on which to split results.
+items:
+  $ref: ./EventsGroupBy.yaml
+type: array

@@ -1,0 +1,13 @@
+additionalProperties:
+  type: string
+description: Target multiple WAF rules based on their tags.
+properties:
+  category:
+    description: The category of the targeted WAF rules.
+    example: attack_attempt
+    type: string
+  type:
+    description: The type of the targeted WAF rules.
+    example: lfi
+    type: string
+type: object

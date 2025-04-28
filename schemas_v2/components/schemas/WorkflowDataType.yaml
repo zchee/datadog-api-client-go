@@ -1,0 +1,7 @@
+description: The definition of `WorkflowDataType` object.
+enum:
+  - workflows
+example: workflows
+type: string
+x-enum-varnames:
+  - WORKFLOWS

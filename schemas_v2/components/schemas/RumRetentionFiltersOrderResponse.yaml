@@ -1,0 +1,8 @@
+description: The list of RUM retention filter IDs along with type.
+properties:
+  data:
+    description: A list of RUM retention filter IDs along with type.
+    items:
+      $ref: ./RumRetentionFiltersOrderData.yaml
+    type: array
+type: object

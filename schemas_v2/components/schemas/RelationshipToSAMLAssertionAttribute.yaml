@@ -1,0 +1,7 @@
+description: AuthN Mapping relationship to SAML Assertion Attribute.
+properties:
+  data:
+    $ref: ./RelationshipToSAMLAssertionAttributeData.yaml
+required:
+  - data
+type: object

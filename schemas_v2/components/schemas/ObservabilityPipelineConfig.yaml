@@ -1,0 +1,38 @@
+description: >-
+  Specifies the pipeline's configuration, including its sources, processors, and
+  destinations.
+properties:
+  destinations:
+    description: A list of destination components where processed logs are sent.
+    example:
+      - id: datadog-logs-destination
+        inputs:
+          - filter-processor
+        type: datadog_logs
+    items:
+      $ref: ./ObservabilityPipelineConfigDestinationItem.yaml
+    type: array
+  processors:
+    description: A list of processors that transform or enrich log data.
+    example:
+      - id: filter-processor
+        include: service:my-service
+        inputs:
+          - datadog-agent-source
+        type: filter
+    items:
+      $ref: ./ObservabilityPipelineConfigProcessorItem.yaml
+    type: array
+  sources:
+    description: A list of configured data sources for the pipeline.
+    example:
+      - id: datadog-agent-source
+        type: datadog_agent
+    items:
+      $ref: ./ObservabilityPipelineConfigSourceItem.yaml
+    type: array
+required:
+  - sources
+  - processors
+  - destinations
+type: object

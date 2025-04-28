@@ -1,0 +1,10 @@
+description: A rule version with a list of updates.
+properties:
+  changes:
+    description: A list of changes.
+    items:
+      $ref: ./RuleVersionUpdate.yaml
+    type: array
+  rule:
+    $ref: ./SecurityMonitoringRuleResponse.yaml
+type: object

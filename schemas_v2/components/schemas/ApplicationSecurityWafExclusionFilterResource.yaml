@@ -1,0 +1,9 @@
+description: A JSON:API resource for an WAF exclusion filter.
+properties:
+  attributes:
+    $ref: ./ApplicationSecurityWafExclusionFilterAttributes.yaml
+  id:
+    $ref: ./ApplicationSecurityWafExclusionFilterID.yaml
+  type:
+    $ref: ./ApplicationSecurityWafExclusionFilterType.yaml
+type: object

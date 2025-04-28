@@ -1,0 +1,25 @@
+get:
+  description: >-
+    The download endpoint generates a CSM Threats policy file from your
+    currently active
+
+    CSM Threats rules, and downloads them as a `.policy` file. This file can
+    then be deployed to
+
+    your Agents to update the policy running in your environment.
+  operationId: DownloadCSMThreatsPolicy
+  responses:
+    '200':
+      content:
+        application/zip:
+          schema:
+            format: binary
+            type: string
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the latest CSM Threats policy
+  tags:
+    - CSM Threats

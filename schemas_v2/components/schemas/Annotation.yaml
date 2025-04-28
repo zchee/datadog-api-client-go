@@ -1,0 +1,17 @@
+description: >-
+  A list of annotations used in the workflow. These are like sticky notes for
+  your workflow!
+properties:
+  display:
+    $ref: ./AnnotationDisplay.yaml
+  id:
+    description: The `Annotation` `id`.
+    example: ''
+    type: string
+  markdownTextAnnotation:
+    $ref: ./AnnotationMarkdownTextAnnotation.yaml
+required:
+  - id
+  - display
+  - markdownTextAnnotation
+type: object

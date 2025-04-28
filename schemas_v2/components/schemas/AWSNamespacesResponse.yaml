@@ -1,0 +1,7 @@
+description: AWS Namespaces response body.
+properties:
+  data:
+    $ref: ./AWSNamespacesResponseData.yaml
+required:
+  - data
+type: object

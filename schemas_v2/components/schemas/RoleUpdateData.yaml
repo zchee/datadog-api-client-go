@@ -1,0 +1,17 @@
+description: Data related to the update of a role.
+properties:
+  attributes:
+    $ref: ./RoleUpdateAttributes.yaml
+  id:
+    description: The unique identifier of the role.
+    example: 00000000-0000-1111-0000-000000000000
+    type: string
+  relationships:
+    $ref: ./RoleRelationships.yaml
+  type:
+    $ref: ./RolesType.yaml
+required:
+  - attributes
+  - type
+  - id
+type: object

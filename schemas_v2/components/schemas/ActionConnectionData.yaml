@@ -1,0 +1,14 @@
+description: Data related to the connection.
+properties:
+  attributes:
+    $ref: ./ActionConnectionAttributes.yaml
+  id:
+    description: The connection identifier
+    readOnly: true
+    type: string
+  type:
+    $ref: ./ActionConnectionDataType.yaml
+required:
+  - type
+  - attributes
+type: object

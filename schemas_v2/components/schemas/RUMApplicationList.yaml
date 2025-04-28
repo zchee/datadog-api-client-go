@@ -1,0 +1,14 @@
+description: RUM application list.
+properties:
+  attributes:
+    $ref: ./RUMApplicationListAttributes.yaml
+  id:
+    description: RUM application ID.
+    example: abcd1234-0000-0000-abcd-1234abcd5678
+    type: string
+  type:
+    $ref: ./RUMApplicationListType.yaml
+required:
+  - attributes
+  - type
+type: object

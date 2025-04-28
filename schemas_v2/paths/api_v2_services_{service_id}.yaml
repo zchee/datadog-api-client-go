@@ -1,0 +1,120 @@
+delete:
+  deprecated: true
+  description: Deletes an existing incident service.
+  operationId: DeleteIncidentService
+  parameters:
+    - $ref: ../components/parameters/IncidentServiceIDPathParameter.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_settings_write
+  summary: Delete an existing incident service
+  tags:
+    - Incident Services
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_settings_write
+  x-unstable: '**Note**: This endpoint is deprecated.'
+get:
+  deprecated: true
+  description: >-
+    Get details of an incident service. If the `include[users]` query parameter
+    is provided,
+
+    the included attribute will contain the users related to these incident
+    services.
+  operationId: GetIncidentService
+  parameters:
+    - $ref: ../components/parameters/IncidentServiceIDPathParameter.yaml
+    - $ref: ../components/parameters/IncidentServiceIncludeQueryParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentServiceResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_read
+  summary: Get details of an incident service
+  tags:
+    - Incident Services
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_read
+  x-unstable: '**Note**: This endpoint is deprecated.'
+patch:
+  deprecated: true
+  description: >-
+    Updates an existing incident service. Only provide the attributes which
+    should be updated as this request is a partial update.
+  operationId: UpdateIncidentService
+  parameters:
+    - $ref: ../components/parameters/IncidentServiceIDPathParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/IncidentServiceUpdateRequest.yaml
+    description: Incident Service Payload.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentServiceResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_settings_write
+  summary: Update an existing incident service
+  tags:
+    - Incident Services
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_settings_write
+  x-unstable: '**Note**: This endpoint is deprecated.'

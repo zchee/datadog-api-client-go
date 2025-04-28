@@ -1,0 +1,8 @@
+default: finding
+description: The JSON:API type for findings.
+enum:
+  - finding
+example: finding
+type: string
+x-enum-varnames:
+  - FINDING

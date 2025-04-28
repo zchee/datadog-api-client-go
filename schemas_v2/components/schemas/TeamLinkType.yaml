@@ -1,0 +1,8 @@
+default: team_links
+description: Team link type
+enum:
+  - team_links
+example: team_links
+type: string
+x-enum-varnames:
+  - TEAM_LINKS

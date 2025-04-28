@@ -1,0 +1,7 @@
+description: The object containing the query content.
+properties:
+  attributes:
+    $ref: ./SpansListRequestAttributes.yaml
+  type:
+    $ref: ./SpansListRequestType.yaml
+type: object

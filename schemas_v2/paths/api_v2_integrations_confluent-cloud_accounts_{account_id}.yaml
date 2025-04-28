@@ -1,0 +1,85 @@
+delete:
+  description: Delete a Confluent account with the provided account ID.
+  operationId: DeleteConfluentAccount
+  parameters:
+    - $ref: ../components/parameters/ConfluentAccountID.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete Confluent account
+  tags:
+    - Confluent Cloud
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations
+get:
+  description: Get the Confluent account with the provided account ID.
+  operationId: GetConfluentAccount
+  parameters:
+    - $ref: ../components/parameters/ConfluentAccountID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ConfluentAccountResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get Confluent account
+  tags:
+    - Confluent Cloud
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+patch:
+  description: Update the Confluent account with the provided account ID.
+  operationId: UpdateConfluentAccount
+  parameters:
+    - $ref: ../components/parameters/ConfluentAccountID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ConfluentAccountUpdateRequest.yaml
+    description: Confluent payload
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ConfluentAccountResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update Confluent account
+  tags:
+    - Confluent Cloud
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

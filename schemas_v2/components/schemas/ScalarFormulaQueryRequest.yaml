@@ -1,0 +1,7 @@
+description: A wrapper request around one scalar query to be executed.
+properties:
+  data:
+    $ref: ./ScalarFormulaRequest.yaml
+required:
+  - data
+type: object

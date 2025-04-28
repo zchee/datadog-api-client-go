@@ -1,0 +1,15 @@
+description: Object to update a user.
+properties:
+  attributes:
+    $ref: ./UserUpdateAttributes.yaml
+  id:
+    description: ID of the user.
+    example: 00000000-0000-feed-0000-000000000000
+    type: string
+  type:
+    $ref: ./UsersType.yaml
+required:
+  - attributes
+  - type
+  - id
+type: object

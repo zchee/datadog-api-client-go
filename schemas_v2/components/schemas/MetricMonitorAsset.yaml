@@ -1,0 +1,12 @@
+description: A monitor object with title.
+properties:
+  attributes:
+    $ref: ./MetricAssetAttributes.yaml
+  id:
+    $ref: ./MetricMonitorID.yaml
+  type:
+    $ref: ./MetricMonitorType.yaml
+required:
+  - id
+  - type
+type: object

@@ -1,0 +1,13 @@
+description: A change in a rule version.
+properties:
+  change:
+    description: The new value of the field.
+    example: cloud_provider:aws
+    type: string
+  field:
+    description: The field that was changed.
+    example: Tags
+    type: string
+  type:
+    $ref: ./RuleVersionUpdateType.yaml
+type: object

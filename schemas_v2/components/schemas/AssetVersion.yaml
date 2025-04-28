@@ -1,0 +1,11 @@
+description: Asset version.
+properties:
+  first:
+    description: Asset first version.
+    example: _latest
+    type: string
+  last:
+    description: Asset last version.
+    example: _latest
+    type: string
+type: object

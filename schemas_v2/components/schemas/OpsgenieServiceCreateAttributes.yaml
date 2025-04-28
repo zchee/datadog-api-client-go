@@ -1,0 +1,22 @@
+description: The Opsgenie service attributes for a create request.
+properties:
+  custom_url:
+    description: The custom URL for a custom region.
+    example: https://example.com
+    type: string
+  name:
+    description: The name for the Opsgenie service.
+    example: fake-opsgenie-service-name
+    maxLength: 100
+    type: string
+  opsgenie_api_key:
+    description: The Opsgenie API key for your Opsgenie service.
+    example: 00000000-0000-0000-0000-000000000000
+    type: string
+  region:
+    $ref: ./OpsgenieServiceRegionType.yaml
+required:
+  - name
+  - opsgenie_api_key
+  - region
+type: object

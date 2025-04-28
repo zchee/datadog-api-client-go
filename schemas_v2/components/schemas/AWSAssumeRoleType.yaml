@@ -1,0 +1,7 @@
+description: The definition of `AWSAssumeRoleType` object.
+enum:
+  - AWSAssumeRole
+example: AWSAssumeRole
+type: string
+x-enum-varnames:
+  - AWSASSUMEROLE

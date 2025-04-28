@@ -1,0 +1,8 @@
+additionalProperties: {}
+description: Page information for the list instances response.
+properties:
+  totalCount:
+    description: The total count of items.
+    format: int64
+    type: integer
+type: object

@@ -1,0 +1,7 @@
+description: Relationship between membership and a user
+properties:
+  team:
+    $ref: ./RelationshipToUserTeamTeam.yaml
+  user:
+    $ref: ./RelationshipToUserTeamUser.yaml
+type: object

@@ -1,0 +1,14 @@
+description: Role object returned by the API.
+properties:
+  attributes:
+    $ref: ./RoleCreateAttributes.yaml
+  id:
+    description: The unique identifier of the role.
+    type: string
+  relationships:
+    $ref: ./RoleResponseRelationships.yaml
+  type:
+    $ref: ./RolesType.yaml
+required:
+  - type
+type: object

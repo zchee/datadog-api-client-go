@@ -1,0 +1,6 @@
+description: Your tenant id.
+in: query
+name: tenant_id
+required: false
+schema:
+  type: string

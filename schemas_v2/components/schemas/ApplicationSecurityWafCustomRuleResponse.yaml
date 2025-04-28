@@ -1,0 +1,5 @@
+description: Response object that includes a single WAF custom rule.
+properties:
+  data:
+    $ref: ./ApplicationSecurityWafCustomRuleData.yaml
+type: object

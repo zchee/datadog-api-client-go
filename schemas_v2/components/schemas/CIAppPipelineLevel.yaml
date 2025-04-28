@@ -1,0 +1,15 @@
+description: Pipeline execution level.
+enum:
+  - pipeline
+  - stage
+  - job
+  - step
+  - custom
+example: pipeline
+type: string
+x-enum-varnames:
+  - PIPELINE
+  - STAGE
+  - JOB
+  - STEP
+  - CUSTOM

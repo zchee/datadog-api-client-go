@@ -1,0 +1,13 @@
+description: >-
+  Specifies the type of escalation target (example `users`, `schedules`, or
+  `teams`).
+enum:
+  - users
+  - schedules
+  - teams
+example: users
+type: string
+x-enum-varnames:
+  - USERS
+  - SCHEDULES
+  - TEAMS

@@ -1,0 +1,8 @@
+description: Relationship to roles.
+properties:
+  data:
+    description: An array containing type and the unique identifier of a role.
+    items:
+      $ref: ./RelationshipToRoleData.yaml
+    type: array
+type: object

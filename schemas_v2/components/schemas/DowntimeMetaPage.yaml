@@ -1,0 +1,7 @@
+description: Object containing the total filtered count.
+properties:
+  total_filtered_count:
+    description: Total count of elements matched by the filter.
+    format: int64
+    type: integer
+type: object

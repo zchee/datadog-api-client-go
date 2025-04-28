@@ -1,0 +1,23 @@
+description: The AWS Account Integration Config to be updated.
+properties:
+  account_tags:
+    $ref: ./AWSAccountTags.yaml
+  auth_config:
+    $ref: ./AWSAuthConfig.yaml
+  aws_account_id:
+    $ref: ./AWSAccountID.yaml
+  aws_partition:
+    $ref: ./AWSAccountPartition.yaml
+  aws_regions:
+    $ref: ./AWSRegions.yaml
+  logs_config:
+    $ref: ./AWSLogsConfig.yaml
+  metrics_config:
+    $ref: ./AWSMetricsConfig.yaml
+  resources_config:
+    $ref: ./AWSResourcesConfig.yaml
+  traces_config:
+    $ref: ./AWSTracesConfig.yaml
+required:
+  - aws_account_id
+type: object

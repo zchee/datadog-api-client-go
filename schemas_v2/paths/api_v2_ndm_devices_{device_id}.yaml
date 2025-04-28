@@ -1,0 +1,27 @@
+get:
+  description: Get the device details.
+  operationId: GetDevice
+  parameters:
+    - description: The id of the device to fetch.
+      example: example:1.2.3.4
+      in: path
+      name: device_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetDeviceResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the device details
+  tags:
+    - Network Device Monitoring

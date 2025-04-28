@@ -1,0 +1,7 @@
+description: Request for creating a monitor configuration policy.
+properties:
+  data:
+    $ref: ./MonitorConfigPolicyCreateData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,13 @@
+description: Response with an incident team payload.
+properties:
+  data:
+    $ref: ./IncidentTeamResponseData.yaml
+  included:
+    description: Included objects from relationships.
+    items:
+      $ref: ./IncidentTeamIncludedItems.yaml
+    readOnly: true
+    type: array
+required:
+  - data
+type: object

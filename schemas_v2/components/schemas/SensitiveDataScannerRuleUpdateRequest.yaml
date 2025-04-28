@@ -1,0 +1,10 @@
+description: Update rule request.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerRuleUpdate.yaml
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+required:
+  - data
+  - meta
+type: object

@@ -1,0 +1,5 @@
+description: >-
+  The query is composed of one or several key:value pairs, which can be used to
+  filter security issues on tags and attributes.
+example: (source:production_service OR env:prod)
+type: string

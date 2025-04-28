@@ -1,0 +1,18 @@
+description: An endpoint's keys mapped to the billing_dimension.
+properties:
+  id:
+    description: The URL for the endpoint.
+    example: api/v1/usage/billable-summary
+    type: string
+  keys:
+    description: The billing dimension.
+    example:
+      - apm_host_top99p
+      - apm_host_sum
+    items:
+      example: apm_host_top99p
+      type: string
+    type: array
+  status:
+    $ref: ./BillingDimensionsMappingBodyItemAttributesEndpointsItemsStatus.yaml
+type: object

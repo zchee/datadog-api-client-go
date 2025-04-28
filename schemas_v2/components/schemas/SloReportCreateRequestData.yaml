@@ -1,0 +1,7 @@
+description: The data portion of the SLO report request.
+properties:
+  attributes:
+    $ref: ./SloReportCreateRequestAttributes.yaml
+required:
+  - attributes
+type: object

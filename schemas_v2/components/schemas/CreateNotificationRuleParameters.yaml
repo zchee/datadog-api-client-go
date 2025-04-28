@@ -1,0 +1,5 @@
+description: Body of the notification rule create request.
+properties:
+  data:
+    $ref: ./CreateNotificationRuleParametersData.yaml
+type: object

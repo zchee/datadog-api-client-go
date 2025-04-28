@@ -1,0 +1,10 @@
+description: AuthN Mapping response from the API.
+properties:
+  data:
+    $ref: ./AuthNMapping.yaml
+  included:
+    description: Included data in the AuthN Mapping response.
+    items:
+      $ref: ./AuthNMappingIncluded.yaml
+    type: array
+type: object

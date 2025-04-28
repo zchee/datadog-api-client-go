@@ -1,0 +1,12 @@
+additionalProperties: {}
+description: Options for the rule action
+properties:
+  duration:
+    description: Duration of the action in seconds. 0 indicates no expiration.
+    example: 0
+    format: int64
+    minimum: 0
+    type: integer
+  userBehaviorName:
+    $ref: ./SecurityMonitoringRuleCaseActionOptionsUserBehaviorName.yaml
+type: object

@@ -1,0 +1,22 @@
+description: A column containing the numerical results for a formula or query.
+properties:
+  meta:
+    $ref: ./ScalarMeta.yaml
+  name:
+    description: The name referencing the formula or query for this column.
+    example: a
+    type: string
+  type:
+    $ref: ./ScalarColumnTypeNumber.yaml
+  values:
+    description: The array of numerical values for one formula or query.
+    example:
+      - 0.5
+    items:
+      description: An individual value for a given column and group-by.
+      example: 0.5
+      format: double
+      nullable: true
+      type: number
+    type: array
+type: object

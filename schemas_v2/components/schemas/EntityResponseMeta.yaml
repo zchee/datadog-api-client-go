@@ -1,0 +1,11 @@
+description: Entity metadata.
+properties:
+  count:
+    description: Total entities count.
+    format: int64
+    type: integer
+  includeCount:
+    description: Total included data count.
+    format: int64
+    type: integer
+type: object

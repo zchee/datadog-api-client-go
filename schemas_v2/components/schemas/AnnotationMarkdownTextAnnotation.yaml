@@ -1,0 +1,6 @@
+description: The definition of `AnnotationMarkdownTextAnnotation` object.
+properties:
+  text:
+    description: The `markdownTextAnnotation` `text`.
+    type: string
+type: object

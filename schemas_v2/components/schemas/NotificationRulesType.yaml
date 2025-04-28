@@ -1,0 +1,7 @@
+description: The rule type associated to notification rules.
+enum:
+  - notification_rules
+example: notification_rules
+type: string
+x-enum-varnames:
+  - NOTIFICATION_RULES

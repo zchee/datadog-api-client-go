@@ -1,0 +1,5 @@
+description: The incident attachment's relationships.
+properties:
+  last_modified_by_user:
+    $ref: ./RelationshipToUser.yaml
+type: object

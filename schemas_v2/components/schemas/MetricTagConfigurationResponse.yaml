@@ -1,0 +1,6 @@
+description: Response object which includes a single metric's tag configuration.
+properties:
+  data:
+    $ref: ./MetricTagConfiguration.yaml
+readOnly: true
+type: object

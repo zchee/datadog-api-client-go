@@ -1,0 +1,5 @@
+description: The definition of `AnnotationDisplay` object.
+properties:
+  bounds:
+    $ref: ./AnnotationDisplayBounds.yaml
+type: object

@@ -1,0 +1,8 @@
+default: signal
+description: The type of event.
+enum:
+  - signal
+example: signal
+type: string
+x-enum-varnames:
+  - SIGNAL

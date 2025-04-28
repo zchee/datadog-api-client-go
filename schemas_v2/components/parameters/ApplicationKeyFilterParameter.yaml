@@ -1,0 +1,6 @@
+description: Filter application keys by the specified string.
+in: query
+name: filter
+required: false
+schema:
+  type: string

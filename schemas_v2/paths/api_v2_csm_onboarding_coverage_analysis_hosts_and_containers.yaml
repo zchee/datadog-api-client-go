@@ -1,0 +1,21 @@
+get:
+  description: |-
+    Get the CSM Coverage Analysis of your Hosts and Containers.
+    This is calculated based on the number of agents running on your Hosts
+    and Containers with CSM feature(s) enabled.
+  operationId: GetCSMHostsAndContainersCoverageAnalysis
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/CsmHostsAndContainersCoverageAnalysisResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the CSM Hosts and Containers Coverage Analysis
+  tags:
+    - CSM Coverage Analysis

@@ -1,0 +1,15 @@
+description: Payload to test a rule query with the expected result.
+properties:
+  expectedResult:
+    description: Expected result of the test.
+    example: true
+    type: boolean
+  index:
+    description: Index of the query under test.
+    example: 0
+    format: int64
+    minimum: 0
+    type: integer
+  payload:
+    $ref: ./SecurityMonitoringRuleQueryPayloadData.yaml
+type: object

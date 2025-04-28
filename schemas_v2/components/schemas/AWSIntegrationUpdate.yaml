@@ -1,0 +1,9 @@
+description: The definition of `AWSIntegrationUpdate` object.
+properties:
+  credentials:
+    $ref: ./AWSCredentialsUpdate.yaml
+  type:
+    $ref: ./AWSIntegrationType.yaml
+required:
+  - type
+type: object

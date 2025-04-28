@@ -1,0 +1,9 @@
+description: The security filter's properties.
+properties:
+  attributes:
+    $ref: ./SecurityFilterAttributes.yaml
+  id:
+    $ref: ./SecurityFilterID.yaml
+  type:
+    $ref: ./SecurityFilterType.yaml
+type: object

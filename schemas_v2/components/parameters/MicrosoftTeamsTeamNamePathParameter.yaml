@@ -1,0 +1,6 @@
+description: Your team name.
+in: path
+name: team_name
+required: true
+schema:
+  type: string

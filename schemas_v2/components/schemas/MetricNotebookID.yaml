@@ -1,0 +1,3 @@
+description: The related notebook's ID.
+example: '12345'
+type: string

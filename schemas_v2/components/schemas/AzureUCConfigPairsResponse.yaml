@@ -1,0 +1,5 @@
+description: Response of Azure config pair.
+properties:
+  data:
+    $ref: ./AzureUCConfigPair.yaml
+type: object

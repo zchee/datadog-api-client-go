@@ -1,0 +1,8 @@
+description: Response object containing the available suppression rules.
+properties:
+  data:
+    description: A list of suppressions objects.
+    items:
+      $ref: ./SecurityMonitoringSuppression.yaml
+    type: array
+type: object

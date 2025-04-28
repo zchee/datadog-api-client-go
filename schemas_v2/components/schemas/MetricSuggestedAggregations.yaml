@@ -1,0 +1,9 @@
+description: List of aggregation combinations that have been actively queried.
+example:
+  - space: sum
+    time: sum
+  - space: sum
+    time: count
+items:
+  $ref: ./MetricCustomAggregation.yaml
+type: array

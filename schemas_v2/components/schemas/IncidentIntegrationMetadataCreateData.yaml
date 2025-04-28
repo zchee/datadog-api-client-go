@@ -1,0 +1,10 @@
+description: Incident integration metadata data for a create request.
+properties:
+  attributes:
+    $ref: ./IncidentIntegrationMetadataAttributes.yaml
+  type:
+    $ref: ./IncidentIntegrationMetadataType.yaml
+required:
+  - type
+  - attributes
+type: object

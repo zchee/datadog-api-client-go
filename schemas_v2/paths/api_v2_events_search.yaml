@@ -1,0 +1,42 @@
+post:
+  description: >-
+    List endpoint returns events that match an events search query.
+
+    [Results are paginated similarly to
+    logs](https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination).
+
+
+    Use this endpoint to build complex events filtering and search.
+  operationId: SearchEvents
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/EventsListRequest.yaml
+    required: false
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EventsListResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Search events
+  tags:
+    - Events
+  x-codegen-request-body-name: body
+  x-pagination:
+    cursorParam: body.page.cursor
+    cursorPath: meta.page.after
+    limitParam: body.page.limit
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - events_read

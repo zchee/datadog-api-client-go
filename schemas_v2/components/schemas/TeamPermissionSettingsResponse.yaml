@@ -1,0 +1,8 @@
+description: Team permission settings response
+properties:
+  data:
+    description: Team permission settings response data
+    items:
+      $ref: ./TeamPermissionSetting.yaml
+    type: array
+type: object

@@ -1,0 +1,14 @@
+description: The definition of `Connection` object.
+properties:
+  connectionId:
+    description: The `Connection` `connectionId`.
+    example: ''
+    type: string
+  label:
+    description: The `Connection` `label`.
+    example: ''
+    type: string
+required:
+  - connectionId
+  - label
+type: object

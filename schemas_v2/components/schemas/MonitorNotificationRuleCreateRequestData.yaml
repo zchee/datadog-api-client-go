@@ -1,0 +1,9 @@
+description: Object to create a monitor notification rule.
+properties:
+  attributes:
+    $ref: ./MonitorNotificationRuleAttributes.yaml
+  type:
+    $ref: ./MonitorNotificationRuleResourceType.yaml
+required:
+  - attributes
+type: object

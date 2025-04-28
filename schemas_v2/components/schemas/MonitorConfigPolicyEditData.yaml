@@ -1,0 +1,15 @@
+description: A monitor configuration policy data.
+properties:
+  attributes:
+    $ref: ./MonitorConfigPolicyAttributeEditRequest.yaml
+  id:
+    description: ID of this monitor configuration policy.
+    example: 00000000-0000-1234-0000-000000000000
+    type: string
+  type:
+    $ref: ./MonitorConfigPolicyResourceType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

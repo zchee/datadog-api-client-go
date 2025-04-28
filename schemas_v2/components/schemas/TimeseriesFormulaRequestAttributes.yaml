@@ -1,0 +1,33 @@
+description: The object describing a timeseries formula request.
+properties:
+  formulas:
+    description: List of formulas to be calculated and returned as responses.
+    items:
+      $ref: ./QueryFormula.yaml
+    type: array
+  from:
+    description: Start date (inclusive) of the query in milliseconds since the Unix epoch.
+    example: 1568899800000
+    format: int64
+    type: integer
+  interval:
+    description: |-
+      A time interval in milliseconds.
+      May be overridden by a larger interval if the query would result in
+      too many points for the specified timeframe.
+      Defaults to a reasonable interval for the given timeframe.
+    example: 5000
+    format: int64
+    type: integer
+  queries:
+    $ref: ./TimeseriesFormulaRequestQueries.yaml
+  to:
+    description: End date (exclusive) of the query in milliseconds since the Unix epoch.
+    example: 1568923200000
+    format: int64
+    type: integer
+required:
+  - to
+  - from
+  - queries
+type: object

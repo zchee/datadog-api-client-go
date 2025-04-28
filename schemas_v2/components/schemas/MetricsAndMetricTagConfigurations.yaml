@@ -1,0 +1,4 @@
+description: Object for a metrics and metric tag configurations.
+oneOf:
+  - $ref: ./Metric.yaml
+  - $ref: ./MetricTagConfiguration.yaml

@@ -1,0 +1,9 @@
+description: Relationships formed with the case on creation
+properties:
+  assignee:
+    $ref: ./NullableUserRelationship.yaml
+  project:
+    $ref: ./ProjectRelationship.yaml
+required:
+  - project
+type: object

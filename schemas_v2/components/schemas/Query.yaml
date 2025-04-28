@@ -1,0 +1,7 @@
+description: >-
+  A data query used by an app. This can take the form of an external action, a
+  data transformation, or a state variable.
+oneOf:
+  - $ref: ./ActionQuery.yaml
+  - $ref: ./DataTransform.yaml
+  - $ref: ./StateVariable.yaml

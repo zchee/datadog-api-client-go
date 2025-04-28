@@ -1,0 +1,8 @@
+default: application_keys
+description: Application Keys resource type.
+enum:
+  - application_keys
+example: application_keys
+type: string
+x-enum-varnames:
+  - APPLICATION_KEYS

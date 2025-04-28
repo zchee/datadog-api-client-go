@@ -1,0 +1,12 @@
+default: 0
+description: >-
+  A number of occurrences after which signals will be generated for values that
+  weren't learned.
+enum:
+  - 0
+  - 1
+format: int32
+type: integer
+x-enum-varnames:
+  - ZERO_OCCURRENCES
+  - ONE_OCCURRENCE

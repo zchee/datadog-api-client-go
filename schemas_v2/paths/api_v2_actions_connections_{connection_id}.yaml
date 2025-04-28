@@ -1,0 +1,118 @@
+delete:
+  description: Delete an existing Action Connection
+  operationId: DeleteActionConnection
+  parameters:
+    - $ref: ../components/parameters/ConnectionId.yaml
+  responses:
+    '204':
+      description: The resource was deleted successfully.
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not Found
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Too Many Request
+  summary: Delete an existing Action Connection
+  tags:
+    - Action Connection
+  x-permission:
+    operator: OR
+    permissions:
+      - connection_write
+get:
+  description: Get an existing Action Connection
+  operationId: GetActionConnection
+  parameters:
+    - $ref: ../components/parameters/ConnectionId.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetActionConnectionResponse.yaml
+      description: Successfully get Action Connection
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not Found
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Too Many Request
+  summary: Get an existing Action Connection
+  tags:
+    - Action Connection
+patch:
+  description: Update an existing Action Connection
+  operationId: UpdateActionConnection
+  parameters:
+    - $ref: ../components/parameters/ConnectionId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/UpdateActionConnectionRequest.yaml
+    description: Update an existing Action Connection request body
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UpdateActionConnectionResponse.yaml
+      description: Successfully updated Action Connection
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not Found
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Too Many Request
+  summary: Update an existing Action Connection
+  tags:
+    - Action Connection

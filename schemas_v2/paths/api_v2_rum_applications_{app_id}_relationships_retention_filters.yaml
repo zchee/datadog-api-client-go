@@ -1,0 +1,33 @@
+patch:
+  description: >-
+    Order RUM retention filters for a RUM application.
+
+    Returns RUM retention filter objects without attributes from the request
+    body when the request is successful.
+  operationId: OrderRetentionFilters
+  parameters:
+    - $ref: ../components/parameters/RumApplicationIDParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RumRetentionFiltersOrderRequest.yaml
+    description: New definition of the RUM retention filter.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RumRetentionFiltersOrderResponse.yaml
+      description: Ordered
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Order RUM retention filters
+  tags:
+    - Rum Retention Filters
+  x-codegen-request-body-name: body

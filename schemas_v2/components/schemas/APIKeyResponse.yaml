@@ -1,0 +1,10 @@
+description: Response for retrieving an API key.
+properties:
+  data:
+    $ref: ./FullAPIKey.yaml
+  included:
+    description: Array of objects related to the API key.
+    items:
+      $ref: ./APIKeyResponseIncludedItem.yaml
+    type: array
+type: object

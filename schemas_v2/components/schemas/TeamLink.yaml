@@ -1,0 +1,15 @@
+description: Team link
+properties:
+  attributes:
+    $ref: ./TeamLinkAttributes.yaml
+  id:
+    description: The team link's identifier
+    example: b8626d7e-cedd-11eb-abf5-da7ad0900001
+    type: string
+  type:
+    $ref: ./TeamLinkType.yaml
+required:
+  - attributes
+  - id
+  - type
+type: object

@@ -1,0 +1,59 @@
+description: Attributes for An AWS CUR config.
+properties:
+  account_filters:
+    $ref: ./AccountFilteringConfig.yaml
+  account_id:
+    description: The AWS account ID.
+    example: '123456789123'
+    type: string
+  bucket_name:
+    description: The AWS bucket name used to store the Cost and Usage Report.
+    example: dd-cost-bucket
+    type: string
+  bucket_region:
+    description: The region the bucket is located in.
+    example: us-east-1
+    type: string
+  created_at:
+    description: The timestamp when the AWS CUR config was created.
+    pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{6}$
+    type: string
+  error_messages:
+    description: The error messages for the AWS CUR config.
+    items:
+      type: string
+    type: array
+  months:
+    deprecated: true
+    description: The number of months the report has been backfilled.
+    format: int32
+    maximum: 36
+    type: integer
+  report_name:
+    description: The name of the Cost and Usage Report.
+    example: dd-report-name
+    type: string
+  report_prefix:
+    description: The report prefix used for the Cost and Usage Report.
+    example: dd-report-prefix
+    type: string
+  status:
+    description: The status of the AWS CUR.
+    example: active
+    type: string
+  status_updated_at:
+    description: The timestamp when the AWS CUR config status was updated.
+    pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{6}$
+    type: string
+  updated_at:
+    description: The timestamp when the AWS CUR config status was updated.
+    pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{6}$
+    type: string
+required:
+  - account_id
+  - bucket_name
+  - bucket_region
+  - report_name
+  - report_prefix
+  - status
+type: object

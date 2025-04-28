@@ -1,0 +1,35 @@
+get:
+  description: Get a rule's version history.
+  operationId: GetRuleVersionHistory
+  parameters:
+    - $ref: ../components/parameters/SecurityMonitoringRuleID.yaml
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageNumber.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetRuleVersionHistoryResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_rules_read
+  summary: Get a rule's version history
+  tags:
+    - Security Monitoring
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_rules_read
+  x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.'

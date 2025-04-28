@@ -1,0 +1,18 @@
+description: Metadata related to the paginated response.
+properties:
+  page_index:
+    description: The index of the current page in the paginated results.
+    example: 0
+    format: int64
+    type: integer
+  page_size:
+    description: The number of items per page in the paginated results.
+    example: 10
+    format: int64
+    type: integer
+  total_filtered:
+    description: Total number of items that match the filter criteria.
+    example: 128697
+    format: int64
+    type: integer
+type: object

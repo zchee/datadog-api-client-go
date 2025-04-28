@@ -1,0 +1,5 @@
+description: A bucket value, can be either a timeseries or a single value.
+oneOf:
+  - $ref: ./SpansAggregateBucketValueSingleString.yaml
+  - $ref: ./SpansAggregateBucketValueSingleNumber.yaml
+  - $ref: ./SpansAggregateBucketValueTimeseries.yaml

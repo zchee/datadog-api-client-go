@@ -1,0 +1,54 @@
+post:
+  deprecated: true
+  description: >
+    Create a new API from the
+    [OpenAPI](https://spec.openapis.org/oas/latest.html) specification given.
+
+    See the [API Catalog
+    documentation](https://docs.datadoghq.com/api_catalog/add_metadata/) for
+    additional
+
+    information about the possible metadata.
+
+    It returns the created API ID.
+  operationId: CreateOpenAPI
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          $ref: ../components/schemas/OpenAPIFile.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreateOpenAPIResponse.yaml
+      description: API created successfully
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_api_catalog_write
+  summary: Create a new API
+  tags:
+    - API Management
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_api_catalog_write
+  x-unstable: '**Note**: This endpoint is deprecated.'

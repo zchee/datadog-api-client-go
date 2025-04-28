@@ -1,0 +1,7 @@
+description: Groups the relationships for a schedule object, referencing layers and teams.
+properties:
+  layers:
+    $ref: ./ScheduleDataRelationshipsLayers.yaml
+  teams:
+    $ref: ./ScheduleDataRelationshipsTeams.yaml
+type: object

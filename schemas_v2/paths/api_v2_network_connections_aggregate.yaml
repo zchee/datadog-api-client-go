@@ -1,0 +1,60 @@
+get:
+  description: Get all aggregated connections.
+  operationId: GetAggregatedConnections
+  parameters:
+    - description: >-
+        Unix timestamp (number of seconds since epoch) of the start of the query
+        window. If not provided, the start of the query window is 15 minutes
+        before the `to` timestamp. If neither `from` nor `to` are provided, the
+        query window is `[now - 15m, now]`.
+      in: query
+      name: from
+      schema:
+        format: int64
+        type: integer
+    - description: >-
+        Unix timestamp (number of seconds since epoch) of the end of the query
+        window. If not provided, the end of the query window is the current
+        time. If neither `from` nor `to` are provided, the query window is `[now
+        - 15m, now]`.
+      in: query
+      name: to
+      schema:
+        format: int64
+        type: integer
+    - description: Comma-separated list of fields to group connections by.
+      in: query
+      name: group_by
+      schema:
+        type: string
+    - description: Comma-separated list of tags to filter connections by.
+      in: query
+      name: tags
+      schema:
+        type: string
+    - description: The number of connections to be returned. The maximum value is 5000.
+      in: query
+      name: limit
+      schema:
+        default: 100
+        format: int32
+        maximum: 5000
+        minimum: 1
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SingleAggregatedConnectionResponseArray.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all aggregated connections
+  tags:
+    - Cloud Network Monitoring
+  x-unstable: |-
+    **Note**: This endpoint is in Preview. If you have any feedback,
+    contact [Datadog support](https://docs.datadoghq.com/help/).

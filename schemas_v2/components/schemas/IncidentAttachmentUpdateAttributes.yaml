@@ -1,0 +1,4 @@
+description: Incident attachment attributes.
+oneOf:
+  - $ref: ./IncidentAttachmentPostmortemAttributes.yaml
+  - $ref: ./IncidentAttachmentLinkAttributes.yaml

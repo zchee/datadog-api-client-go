@@ -1,0 +1,23 @@
+description: Link type.
+enum:
+  - doc
+  - wiki
+  - runbook
+  - url
+  - repo
+  - dashboard
+  - oncall
+  - code
+  - link
+example: runbook
+type: string
+x-enum-varnames:
+  - DOC
+  - WIKI
+  - RUNBOOK
+  - URL
+  - REPO
+  - DASHBOARD
+  - ONCALL
+  - CODE
+  - LINK

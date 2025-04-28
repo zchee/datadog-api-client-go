@@ -1,0 +1,10 @@
+description: Hourly usage response.
+properties:
+  data:
+    description: Response containing hourly usage.
+    items:
+      $ref: ./HourlyUsage.yaml
+    type: array
+  meta:
+    $ref: ./HourlyUsageMetadata.yaml
+type: object

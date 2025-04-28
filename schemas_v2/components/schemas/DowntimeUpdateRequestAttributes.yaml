@@ -1,0 +1,19 @@
+description: Attributes of the downtime to update.
+properties:
+  display_timezone:
+    $ref: ./DowntimeDisplayTimezone.yaml
+  message:
+    $ref: ./DowntimeMessage.yaml
+  monitor_identifier:
+    $ref: ./DowntimeMonitorIdentifier.yaml
+  mute_first_recovery_notification:
+    $ref: ./DowntimeMuteFirstRecoveryNotification.yaml
+  notify_end_states:
+    $ref: ./DowntimeNotifyEndStates.yaml
+  notify_end_types:
+    $ref: ./DowntimeNotifyEndTypes.yaml
+  schedule:
+    $ref: ./DowntimeScheduleUpdateRequest.yaml
+  scope:
+    $ref: ./DowntimeScope.yaml
+type: object

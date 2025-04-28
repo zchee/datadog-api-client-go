@@ -1,0 +1,8 @@
+default: aws_scan_options
+description: The type of the resource. The value should always be `aws_scan_options`.
+enum:
+  - aws_scan_options
+example: aws_scan_options
+type: string
+x-enum-varnames:
+  - AWS_SCAN_OPTIONS

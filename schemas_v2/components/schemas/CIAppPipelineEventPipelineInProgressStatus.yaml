@@ -1,0 +1,7 @@
+description: The in progress status of the pipeline.
+enum:
+  - running
+example: running
+type: string
+x-enum-varnames:
+  - RUNNING

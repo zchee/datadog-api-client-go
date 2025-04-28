@@ -1,0 +1,23 @@
+description: A variable, which can be set and read by other components in the app.
+properties:
+  id:
+    description: The ID of the state variable.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+  name:
+    description: >-
+      A unique identifier for this state variable. This name is also used to
+      access the variable's value throughout the app.
+    example: ordersToSubmit
+    type: string
+  properties:
+    $ref: ./StateVariableProperties.yaml
+  type:
+    $ref: ./StateVariableType.yaml
+required:
+  - id
+  - name
+  - type
+  - properties
+type: object

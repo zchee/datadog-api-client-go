@@ -1,0 +1,8 @@
+description: The action the rule can perform if triggered.
+properties:
+  filter:
+    description: SECL expression used to target the container to apply the action on
+    type: string
+  kill:
+    $ref: ./CloudWorkloadSecurityAgentRuleKill.yaml
+type: object

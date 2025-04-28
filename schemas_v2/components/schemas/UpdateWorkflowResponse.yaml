@@ -1,0 +1,5 @@
+description: The response object after updating a workflow.
+properties:
+  data:
+    $ref: ./WorkflowDataUpdate.yaml
+type: object

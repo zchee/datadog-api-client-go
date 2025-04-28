@@ -1,0 +1,5 @@
+additionalProperties: false
+description: Schema for mapping source code locations to an entity.
+items:
+  $ref: ./EntityV3DatadogCodeLocationItem.yaml
+type: array

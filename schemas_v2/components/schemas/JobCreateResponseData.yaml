@@ -1,0 +1,8 @@
+description: The definition of `JobCreateResponseData` object.
+properties:
+  id:
+    description: ID of the created job.
+    type: string
+  type:
+    $ref: ./HistoricalJobDataType.yaml
+type: object

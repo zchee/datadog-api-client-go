@@ -1,0 +1,12 @@
+description: Included related entity.
+properties:
+  attributes:
+    $ref: ./EntityResponseIncludedRelatedEntityAttributes.yaml
+  id:
+    description: Entity UUID.
+    type: string
+  meta:
+    $ref: ./EntityResponseIncludedRelatedEntityMeta.yaml
+  type:
+    $ref: ./EntityResponseIncludedRelatedEntityType.yaml
+type: object

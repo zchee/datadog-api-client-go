@@ -1,0 +1,6 @@
+description: >-
+  Array of response series. The index here corresponds to the index in the
+  `formulas` or `queries` array from the request.
+items:
+  $ref: ./TimeseriesResponseSeries.yaml
+type: array

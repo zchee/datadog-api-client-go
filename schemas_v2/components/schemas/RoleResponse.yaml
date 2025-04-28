@@ -1,0 +1,5 @@
+description: Response containing information about a single role.
+properties:
+  data:
+    $ref: ./Role.yaml
+type: object

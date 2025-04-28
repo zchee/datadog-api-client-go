@@ -1,0 +1,5 @@
+description: Pagination metadata.
+properties:
+  page:
+    $ref: ./ListAppsResponseMetaPage.yaml
+type: object

@@ -1,0 +1,35 @@
+get:
+  description: >-
+    Get a specific execution of a given workflow. This API requires an
+    application key scoped with the workflows_read permission.
+  operationId: GetWorkflowInstance
+  parameters:
+    - $ref: ../components/parameters/WorkflowId.yaml
+    - $ref: ../components/parameters/InstanceId.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WorklflowGetInstanceResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - workflows_read
+  summary: Get a workflow instance
+  tags:
+    - Workflow Automation
+  x-permission:
+    operator: OR
+    permissions:
+      - workflows_read

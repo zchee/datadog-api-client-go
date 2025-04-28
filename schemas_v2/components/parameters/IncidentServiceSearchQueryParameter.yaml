@@ -1,0 +1,7 @@
+description: A search query that filters services by name.
+in: query
+name: filter
+required: false
+schema:
+  example: ExampleServiceName
+  type: string

@@ -1,0 +1,6 @@
+description: >-
+  The mocked outputs of the action query. This is useful for testing the app
+  without actually running the action.
+oneOf:
+  - type: string
+  - $ref: ./ActionQueryMockedOutputsObject.yaml

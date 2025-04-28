@@ -1,0 +1,71 @@
+description: >-
+  The Quota Processor measures logging traffic for logs that match a specified
+  filter. When the configured daily quota is met, the processor can drop or
+  alert.
+properties:
+  drop_events:
+    description: >-
+      If set to `true`, logs that matched the quota filter and sent after the
+      quota has been met are dropped; only logs that did not match the filter
+      query continue through the pipeline.
+    example: false
+    type: boolean
+  id:
+    description: >-
+      The unique identifier for this component. Used to reference this component
+      in other parts of the pipeline (for example, as the `input` to downstream
+      components).
+    example: quota-processor
+    type: string
+  ignore_when_missing_partitions:
+    description: >-
+      If `true`, the processor skips quota checks when partition fields are
+      missing from the logs.
+    type: boolean
+  include:
+    description: >-
+      A Datadog search query used to determine which logs this processor
+      targets.
+    example: service:my-service
+    type: string
+  inputs:
+    description: >-
+      A list of component IDs whose output is used as the `input` for this
+      component.
+    example:
+      - datadog-agent-source
+    items:
+      type: string
+    type: array
+  limit:
+    $ref: ./ObservabilityPipelineQuotaProcessorLimit.yaml
+  name:
+    description: Name for identifying the processor.
+    example: MyPipelineQuotaProcessor
+    type: string
+  overrides:
+    description: >-
+      A list of alternate quota rules that apply to specific sets of events,
+      identified by matching field values. Each override can define a custom
+      limit.
+    items:
+      $ref: ./ObservabilityPipelineQuotaProcessorOverride.yaml
+    type: array
+  partition_fields:
+    description: >-
+      A list of fields used to segment log traffic for quota enforcement. Quotas
+      are tracked independently by unique combinations of these field values.
+    items:
+      type: string
+    type: array
+  type:
+    $ref: ./ObservabilityPipelineQuotaProcessorType.yaml
+required:
+  - id
+  - type
+  - include
+  - name
+  - drop_events
+  - limit
+  - inputs
+type: object

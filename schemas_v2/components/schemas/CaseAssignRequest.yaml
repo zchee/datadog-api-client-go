@@ -1,0 +1,7 @@
+description: Case assign request
+properties:
+  data:
+    $ref: ./CaseAssign.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,8 @@
+description: Defines the teams that this schedule update is associated with.
+properties:
+  data:
+    description: An array of team references.
+    items:
+      $ref: ./ScheduleUpdateRequestDataRelationshipsTeamsDataItems.yaml
+    type: array
+type: object

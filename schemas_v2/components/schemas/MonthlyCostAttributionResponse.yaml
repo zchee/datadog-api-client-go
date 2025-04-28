@@ -1,0 +1,10 @@
+description: Response containing the monthly cost attribution by tag(s).
+properties:
+  data:
+    description: Response containing cost attribution.
+    items:
+      $ref: ./MonthlyCostAttributionBody.yaml
+    type: array
+  meta:
+    $ref: ./MonthlyCostAttributionMeta.yaml
+type: object

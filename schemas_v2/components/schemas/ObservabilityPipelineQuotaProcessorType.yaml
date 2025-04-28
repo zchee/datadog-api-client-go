@@ -1,0 +1,8 @@
+default: quota
+description: The processor type. The value should always be `quota`.
+enum:
+  - quota
+example: quota
+type: string
+x-enum-varnames:
+  - QUOTA

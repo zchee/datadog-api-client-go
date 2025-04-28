@@ -1,0 +1,28 @@
+description: Attributes for Azure config Post Request.
+properties:
+  account_id:
+    description: The tenant ID of the azure account.
+    example: 1234abcd-1234-abcd-1234-1234abcd1234
+    type: string
+  actual_bill_config:
+    $ref: ./BillConfig.yaml
+  amortized_bill_config:
+    $ref: ./BillConfig.yaml
+  client_id:
+    description: The client ID of the azure account.
+    example: 1234abcd-1234-abcd-1234-1234abcd1234
+    type: string
+  is_enabled:
+    description: Whether or not the Cloud Cost Management account is enabled.
+    type: boolean
+  scope:
+    description: The scope of your observed subscription.
+    example: /subscriptions/1234abcd-1234-abcd-1234-1234abcd1234
+    type: string
+required:
+  - account_id
+  - actual_bill_config
+  - amortized_bill_config
+  - client_id
+  - scope
+type: object

@@ -1,0 +1,10 @@
+description: List of rules.
+properties:
+  data:
+    description: Array containing the list of rules.
+    items:
+      $ref: ./SecurityMonitoringRuleResponse.yaml
+    type: array
+  meta:
+    $ref: ./ResponseMetaAttributes.yaml
+type: object

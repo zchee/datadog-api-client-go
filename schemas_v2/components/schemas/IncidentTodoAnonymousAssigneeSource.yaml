@@ -1,0 +1,10 @@
+default: slack
+description: The source of the anonymous assignee.
+enum:
+  - slack
+  - microsoft_teams
+example: slack
+type: string
+x-enum-varnames:
+  - SLACK
+  - MICROSOFT_TEAMS

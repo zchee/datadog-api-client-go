@@ -1,0 +1,12 @@
+description: Restriction policy attributes.
+example:
+  bindings: []
+properties:
+  bindings:
+    description: An array of bindings.
+    items:
+      $ref: ./RestrictionPolicyBinding.yaml
+    type: array
+required:
+  - bindings
+type: object

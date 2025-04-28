@@ -1,0 +1,6 @@
+description: The ID of the workflow instance.
+in: path
+name: instance_id
+required: true
+schema:
+  type: string

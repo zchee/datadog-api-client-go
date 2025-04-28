@@ -1,0 +1,13 @@
+description: Response with an incident integration metadata.
+properties:
+  data:
+    $ref: ./IncidentIntegrationMetadataResponseData.yaml
+  included:
+    description: Included related resources that the user requested.
+    items:
+      $ref: ./IncidentIntegrationMetadataResponseIncludedItem.yaml
+    readOnly: true
+    type: array
+required:
+  - data
+type: object

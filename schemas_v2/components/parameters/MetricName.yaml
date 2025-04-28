@@ -1,0 +1,7 @@
+description: The name of the metric.
+example: dist.http.endpoint.request
+in: path
+name: metric_name
+required: true
+schema:
+  type: string

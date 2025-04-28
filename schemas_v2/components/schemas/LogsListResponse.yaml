@@ -1,0 +1,12 @@
+description: Response object with all logs matching the request and pagination information.
+properties:
+  data:
+    description: Array of logs matching the request.
+    items:
+      $ref: ./Log.yaml
+    type: array
+  links:
+    $ref: ./LogsListResponseLinks.yaml
+  meta:
+    $ref: ./LogsResponseMetadata.yaml
+type: object

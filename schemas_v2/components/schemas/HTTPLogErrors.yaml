@@ -1,0 +1,8 @@
+description: Invalid query performed.
+properties:
+  errors:
+    description: Structured errors.
+    items:
+      $ref: ./HTTPLogError.yaml
+    type: array
+type: object

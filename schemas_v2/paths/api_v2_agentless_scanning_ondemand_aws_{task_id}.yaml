@@ -1,0 +1,27 @@
+get:
+  description: Fetch the data of a specific on demand task.
+  operationId: GetAwsOnDemandTask
+  parameters:
+    - $ref: ../components/parameters/OnDemandTaskId.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AwsOnDemandResponse.yaml
+      description: OK.
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get AWS On Demand task by id
+  tags:
+    - Agentless Scanning
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_findings_read

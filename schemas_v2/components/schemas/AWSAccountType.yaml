@@ -1,0 +1,8 @@
+default: account
+description: AWS Account resource type.
+enum:
+  - account
+example: account
+type: string
+x-enum-varnames:
+  - ACCOUNT

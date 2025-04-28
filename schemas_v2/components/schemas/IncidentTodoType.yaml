@@ -1,0 +1,8 @@
+default: incident_todos
+description: Todo resource type.
+enum:
+  - incident_todos
+example: incident_todos
+type: string
+x-enum-varnames:
+  - INCIDENT_TODOS

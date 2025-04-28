@@ -1,0 +1,69 @@
+description: A Cloud Workload Security Agent rule returned by the API.
+properties:
+  actions:
+    $ref: ./CloudWorkloadSecurityAgentRuleActions.yaml
+  agentConstraint:
+    description: The version of the agent.
+    type: string
+  category:
+    description: The category of the Agent rule.
+    example: Process Activity
+    type: string
+  creationAuthorUuId:
+    description: The ID of the user who created the rule.
+    example: e51c9744-d158-11ec-ad23-da7ad0900002
+    type: string
+  creationDate:
+    description: When the Agent rule was created, timestamp in milliseconds.
+    example: 1624366480320
+    format: int64
+    type: integer
+  creator:
+    $ref: ./CloudWorkloadSecurityAgentRuleCreatorAttributes.yaml
+  defaultRule:
+    description: Whether the rule is included by default.
+    example: false
+    type: boolean
+  description:
+    description: The description of the Agent rule.
+    example: My Agent rule
+    type: string
+  enabled:
+    description: Whether the Agent rule is enabled.
+    example: true
+    type: boolean
+  expression:
+    description: The SECL expression of the Agent rule.
+    example: exec.file.name == \"sh\"
+    type: string
+  filters:
+    description: The platforms the Agent rule is supported on.
+    items:
+      type: string
+    type: array
+  name:
+    description: The name of the Agent rule.
+    example: my_agent_rule
+    type: string
+  updateAuthorUuId:
+    description: The ID of the user who updated the rule.
+    example: e51c9744-d158-11ec-ad23-da7ad0900002
+    type: string
+  updateDate:
+    description: Timestamp in milliseconds when the Agent rule was last updated.
+    example: 1624366480320
+    format: int64
+    type: integer
+  updatedAt:
+    description: When the Agent rule was last updated, timestamp in milliseconds.
+    example: 1624366480320
+    format: int64
+    type: integer
+  updater:
+    $ref: ./CloudWorkloadSecurityAgentRuleUpdaterAttributes.yaml
+  version:
+    description: The version of the Agent rule.
+    example: 23
+    format: int64
+    type: integer
+type: object

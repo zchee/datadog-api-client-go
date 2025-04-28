@@ -1,0 +1,9 @@
+description: Facet value and number of occurrences for a property field of an incident.
+properties:
+  count:
+    $ref: ./IncidentSearchResponseFacetCount.yaml
+  name:
+    description: The facet value appearing in search results.
+    example: SEV-2
+    type: string
+type: object

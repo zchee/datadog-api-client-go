@@ -1,0 +1,7 @@
+description: Case empty request
+properties:
+  data:
+    $ref: ./CaseEmpty.yaml
+required:
+  - data
+type: object

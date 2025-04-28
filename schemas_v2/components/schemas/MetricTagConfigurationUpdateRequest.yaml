@@ -1,0 +1,9 @@
+description: >-
+  Request object that includes the metric that you would like to edit the tag
+  configuration on.
+properties:
+  data:
+    $ref: ./MetricTagConfigurationUpdateData.yaml
+required:
+  - data
+type: object

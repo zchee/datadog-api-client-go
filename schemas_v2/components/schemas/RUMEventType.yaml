@@ -1,0 +1,8 @@
+default: rum
+description: Type of the event.
+enum:
+  - rum
+example: rum
+type: string
+x-enum-varnames:
+  - RUM

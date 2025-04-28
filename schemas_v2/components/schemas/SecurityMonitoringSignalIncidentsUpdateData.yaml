@@ -1,0 +1,7 @@
+description: Data containing the patch for changing the related incidents of a signal.
+properties:
+  attributes:
+    $ref: ./SecurityMonitoringSignalIncidentsUpdateAttributes.yaml
+required:
+  - attributes
+type: object

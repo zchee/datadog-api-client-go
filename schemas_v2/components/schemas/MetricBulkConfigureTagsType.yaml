@@ -1,0 +1,8 @@
+default: metric_bulk_configure_tags
+description: The metric bulk configure tags resource.
+enum:
+  - metric_bulk_configure_tags
+example: metric_bulk_configure_tags
+type: string
+x-enum-varnames:
+  - BULK_MANAGE_TAGS

@@ -1,0 +1,12 @@
+description: Datadog principal service account info.
+properties:
+  attributes:
+    $ref: ./GCPSTSDelegateAccountAttributes.yaml
+  id:
+    description: The ID of the delegate service account.
+    example: >-
+      ddgci-1a19n28hb1a812221893@datadog-gci-sts-us5-prod.iam.gserviceaccount.com
+    type: string
+  type:
+    $ref: ./GCPSTSDelegateAccountType.yaml
+type: object

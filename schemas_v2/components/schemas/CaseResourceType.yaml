@@ -1,0 +1,8 @@
+default: case
+description: Case resource type
+enum:
+  - case
+example: case
+type: string
+x-enum-varnames:
+  - CASE

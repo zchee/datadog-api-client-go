@@ -1,0 +1,7 @@
+description: A request wrapper around a single timeseries query to be executed.
+properties:
+  data:
+    $ref: ./TimeseriesFormulaRequest.yaml
+required:
+  - data
+type: object

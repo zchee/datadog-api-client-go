@@ -1,0 +1,18 @@
+description: Channel attributes.
+properties:
+  is_primary:
+    description: Indicates if this is the primary channel.
+    example: true
+    maxLength: 255
+    type: boolean
+  team_id:
+    description: Team id.
+    example: 00000000-0000-0000-0000-000000000000
+    maxLength: 255
+    type: string
+  tenant_id:
+    description: Tenant id.
+    example: 00000000-0000-0000-0000-000000000001
+    maxLength: 255
+    type: string
+type: object

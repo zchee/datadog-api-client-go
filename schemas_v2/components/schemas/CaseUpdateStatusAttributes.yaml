@@ -1,0 +1,7 @@
+description: Case update status attributes
+properties:
+  status:
+    $ref: ./CaseStatus.yaml
+required:
+  - status
+type: object

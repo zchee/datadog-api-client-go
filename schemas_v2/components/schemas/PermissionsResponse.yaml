@@ -1,0 +1,8 @@
+description: Payload with API-returned permissions.
+properties:
+  data:
+    description: Array of permissions.
+    items:
+      $ref: ./Permission.yaml
+    type: array
+type: object

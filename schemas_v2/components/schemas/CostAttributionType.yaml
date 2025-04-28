@@ -1,0 +1,8 @@
+default: cost_by_tag
+description: Type of cost attribution data.
+enum:
+  - cost_by_tag
+example: cost_by_tag
+type: string
+x-enum-varnames:
+  - COST_BY_TAG

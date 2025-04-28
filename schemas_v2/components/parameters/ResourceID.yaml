@@ -1,0 +1,11 @@
+description: >-
+  Identifier, formatted as `type:id`. Supported types: `connection`,
+  `dashboard`, `integration-account`, `integration-service`,
+  `integration-webhook`, `notebook`, `reference-table`, `security-rule`, `slo`,
+  `workflow`, `app-builder-app`, `connection`, `connection-group`.
+example: dashboard:abc-def-ghi
+in: path
+name: resource_id
+required: true
+schema:
+  type: string

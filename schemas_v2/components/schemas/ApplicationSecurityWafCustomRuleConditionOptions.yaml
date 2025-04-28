@@ -1,0 +1,14 @@
+description: Options for the operator of this condition.
+properties:
+  case_sensitive:
+    default: false
+    description: Evaluate the value as case sensitive.
+    type: boolean
+  min_length:
+    default: 0
+    description: >-
+      Only evaluate this condition if the value has a minimum amount of
+      characters.
+    format: int64
+    type: integer
+type: object

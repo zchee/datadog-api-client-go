@@ -1,0 +1,11 @@
+description: The request for a logs list.
+properties:
+  filter:
+    $ref: ./LogsQueryFilter.yaml
+  options:
+    $ref: ./LogsQueryOptions.yaml
+  page:
+    $ref: ./LogsListRequestPage.yaml
+  sort:
+    $ref: ./LogsSort.yaml
+type: object

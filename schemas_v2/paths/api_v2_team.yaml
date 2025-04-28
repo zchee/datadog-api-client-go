@@ -1,0 +1,119 @@
+get:
+  description: >-
+    Get all teams.
+
+    Can be used to search for teams using the `filter[keyword]` and `filter[me]`
+    query parameters.
+  operationId: ListTeams
+  parameters:
+    - $ref: ../components/parameters/PageNumber.yaml
+    - $ref: ../components/parameters/PageSize.yaml
+    - description: Specifies the order of the returned teams
+      in: query
+      name: sort
+      required: false
+      schema:
+        $ref: ../components/schemas/ListTeamsSort.yaml
+    - description: >-
+        Included related resources optionally requested. Allowed enum values:
+        `team_links, user_team_permissions`
+      in: query
+      name: include
+      required: false
+      schema:
+        items:
+          $ref: ../components/schemas/ListTeamsInclude.yaml
+        type: array
+    - description: Search query. Can be team name, team handle, or email of team member
+      in: query
+      name: filter[keyword]
+      required: false
+      schema:
+        type: string
+    - description: When true, only returns teams the current user belongs to
+      in: query
+      name: filter[me]
+      required: false
+      schema:
+        type: boolean
+    - description: List of fields that need to be fetched.
+      explode: false
+      in: query
+      name: fields[team]
+      required: false
+      schema:
+        items:
+          $ref: ../components/schemas/TeamsField.yaml
+        type: array
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TeamsResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - teams_read
+  summary: Get all teams
+  tags:
+    - Teams
+  x-pagination:
+    limitParam: page[size]
+    pageParam: page[number]
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - teams_read
+post:
+  description: >-
+    Create a new team.
+
+    User IDs passed through the `users` relationship field are added to the
+    team.
+  operationId: CreateTeam
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/TeamCreateRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TeamResponse.yaml
+      description: CREATED
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '409':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - teams_read
+        - teams_manage
+  summary: Create a team
+  tags:
+    - Teams
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: AND
+    permissions:
+      - teams_read
+      - teams_manage

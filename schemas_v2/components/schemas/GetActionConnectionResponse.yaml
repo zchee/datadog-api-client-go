@@ -1,0 +1,5 @@
+description: The response for found connection
+properties:
+  data:
+    $ref: ./ActionConnectionData.yaml
+type: object

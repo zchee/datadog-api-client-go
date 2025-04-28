@@ -1,0 +1,5 @@
+description: |-
+  Toggle to include or exclude percentile aggregations for distribution metrics.
+  Only present when the `aggregation_type` is `distribution`.
+example: false
+type: boolean

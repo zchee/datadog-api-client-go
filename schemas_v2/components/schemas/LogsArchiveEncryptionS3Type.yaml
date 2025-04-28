@@ -1,0 +1,11 @@
+description: Type of S3 encryption for a destination.
+enum:
+  - NO_OVERRIDE
+  - SSE_S3
+  - SSE_KMS
+example: SSE_S3
+type: string
+x-enum-varnames:
+  - NO_OVERRIDE
+  - SSE_S3
+  - SSE_KMS

@@ -1,0 +1,5 @@
+description: Pagination metadata returned by the API.
+properties:
+  page:
+    $ref: ./DowntimeMetaPage.yaml
+type: object

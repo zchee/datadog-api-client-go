@@ -1,0 +1,138 @@
+delete:
+  description: Delete a monitor configuration policy.
+  operationId: DeleteMonitorConfigPolicy
+  parameters:
+    - description: ID of the monitor configuration policy.
+      in: path
+      name: policy_id
+      required: true
+      schema:
+        example: 00000000-0000-1234-0000-000000000000
+        type: string
+  responses:
+    '204':
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a monitor configuration policy
+  tags:
+    - Monitors
+  x-permission:
+    operator: OR
+    permissions:
+      - monitor_config_policy_write
+get:
+  description: Get a monitor configuration policy by `policy_id`.
+  operationId: GetMonitorConfigPolicy
+  parameters:
+    - description: ID of the monitor configuration policy.
+      in: path
+      name: policy_id
+      required: true
+      schema:
+        example: 00000000-0000-1234-0000-000000000000
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MonitorConfigPolicyResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - monitors_read
+  summary: Get a monitor configuration policy
+  tags:
+    - Monitors
+  x-permission:
+    operator: OR
+    permissions:
+      - monitors_read
+patch:
+  description: Edit a monitor configuration policy.
+  operationId: UpdateMonitorConfigPolicy
+  parameters:
+    - description: ID of the monitor configuration policy.
+      in: path
+      name: policy_id
+      required: true
+      schema:
+        example: 00000000-0000-1234-0000-000000000000
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/MonitorConfigPolicyEditRequest.yaml
+    description: Description of the update.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MonitorConfigPolicyResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Unprocessable Entity
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Edit a monitor configuration policy
+  tags:
+    - Monitors
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - monitor_config_policy_write

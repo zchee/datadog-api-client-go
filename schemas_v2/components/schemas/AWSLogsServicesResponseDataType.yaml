@@ -1,0 +1,8 @@
+default: logs_services
+description: The `AWSLogsServicesResponseData` `type`.
+enum:
+  - logs_services
+example: logs_services
+type: string
+x-enum-varnames:
+  - LOGS_SERVICES

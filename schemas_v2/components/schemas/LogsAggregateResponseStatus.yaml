@@ -1,0 +1,9 @@
+description: The status of the response
+enum:
+  - done
+  - timeout
+example: done
+type: string
+x-enum-varnames:
+  - DONE
+  - TIMEOUT

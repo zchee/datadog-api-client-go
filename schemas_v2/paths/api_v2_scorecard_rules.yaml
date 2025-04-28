@@ -1,0 +1,131 @@
+get:
+  description: Fetch all rules.
+  operationId: ListScorecardRules
+  parameters:
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageOffset.yaml
+    - description: Include related scorecard details in the response.
+      in: query
+      name: include
+      required: false
+      schema:
+        example: scorecard
+        type: string
+    - description: Filter the rules on a rule ID.
+      in: query
+      name: filter[rule][id]
+      required: false
+      schema:
+        example: 37d2f990-c885-4972-949b-8b798213a166
+        type: string
+    - description: Filter for enabled rules only.
+      in: query
+      name: filter[rule][enabled]
+      required: false
+      schema:
+        example: true
+        type: boolean
+    - description: Filter for custom rules only.
+      in: query
+      name: filter[rule][custom]
+      required: false
+      schema:
+        example: true
+        type: boolean
+    - description: Filter rules on the rule name.
+      in: query
+      name: filter[rule][name]
+      required: false
+      schema:
+        example: Code Repos Defined
+        type: string
+    - description: Filter rules on the rule description.
+      in: query
+      name: filter[rule][description]
+      required: false
+      schema:
+        example: Identifying
+        type: string
+    - description: Return only specific fields in the response for rule attributes.
+      in: query
+      name: fields[rule]
+      required: false
+      schema:
+        example: name, description
+        type: string
+    - description: >-
+        Return only specific fields in the included response for scorecard
+        attributes.
+      in: query
+      name: fields[scorecard]
+      required: false
+      schema:
+        example: name
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListRulesResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_read
+  summary: List all rules
+  tags:
+    - Service Scorecards
+  x-pagination:
+    limitParam: page[size]
+    pageOffsetParam: page[offset]
+    resultsPath: data
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).
+post:
+  description: Creates a new rule.
+  operationId: CreateScorecardRule
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CreateRuleRequest.yaml
+    description: Rule attributes.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreateRuleResponse.yaml
+      description: Created
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_write
+  summary: Create a new rule
+  tags:
+    - Service Scorecards
+  x-codegen-request-body-name: body
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

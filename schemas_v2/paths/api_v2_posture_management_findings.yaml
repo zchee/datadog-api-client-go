@@ -1,0 +1,262 @@
+get:
+  description: >
+    Get a list of findings. These include both misconfigurations and identity
+    risks.
+
+
+    **Note**: To filter and return only identity risks, add the following query
+    parameter: `?filter[tags]=dd_rule_type:ciem`
+
+
+    ### Filtering
+
+
+    Filters can be applied by appending query parameters to the URL.
+
+      - Using a single filter: `?filter[attribute_key]=attribute_value`
+      - Chaining filters: `?filter[attribute_key]=attribute_value&filter[attribute_key]=attribute_value...`
+      - Filtering on tags: `?filter[tags]=tag_key:tag_value&filter[tags]=tag_key_2:tag_value_2`
+
+    Here, `attribute_key` can be any of the filter keys described further below.
+
+
+    Query parameters of type `integer` support comparison operators (`>`, `>=`,
+    `<`, `<=`). This is particularly useful when filtering by
+    `evaluation_changed_at` or `resource_discovery_timestamp`. For example:
+    `?filter[evaluation_changed_at]=>20123123121`.
+
+
+    You can also use the negation operator on strings. For example, use
+    `filter[resource_type]=-aws*` to filter for any non-AWS resources.
+
+
+    The operator must come after the equal sign. For example, to filter with the
+    `>=` operator, add the operator after the equal sign:
+    `filter[evaluation_changed_at]=>=1678809373257`.
+
+
+    Query parameters must be only among the documented ones and with values of
+    correct types. Duplicated query parameters (e.g.
+    `filter[status]=low&filter[status]=info`) are not allowed.
+
+
+    ### Response
+
+
+    The response includes an array of finding objects, pagination metadata, and
+    a count of items that match the query.
+
+
+    Each finding object contains the following:
+
+
+    - The finding ID that can be used in a `GetFinding` request to retrieve the
+    full finding details.
+
+    - Core attributes, including status, evaluation, high-level resource
+    details, muted state, and rule details.
+
+    - `evaluation_changed_at` and `resource_discovery_date` time stamps.
+
+    - An array of associated tags.
+  operationId: ListFindings
+  parameters:
+    - description: Limit the number of findings returned. Must be <= 1000.
+      example: 50
+      in: query
+      name: page[limit]
+      required: false
+      schema:
+        default: 100
+        format: int64
+        maximum: 1000
+        minimum: 1
+        type: integer
+    - description: Return findings for a given snapshot of time (Unix ms).
+      example: 1678721573794
+      in: query
+      name: snapshot_timestamp
+      required: false
+      schema:
+        format: int64
+        minimum: 1
+        type: integer
+    - description: Return the next page of findings pointed to by the cursor.
+      example: >-
+        eyJhZnRlciI6IkFRQUFBWWJiaEJXQS1OY1dqUUFBQUFCQldXSmlhRUpYUVVGQlJFSktkbTlDTUdaWFRVbDNRVUUiLCJ2YWx1ZXMiOlsiY3JpdGljYWwiXX0=
+      in: query
+      name: page[cursor]
+      required: false
+      schema:
+        type: string
+    - description: Return findings that have these associated tags (repeatable).
+      example: filter[tags]=cloud_provider:aws&filter[tags]=aws_account:999999999999
+      in: query
+      name: filter[tags]
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Return findings that have changed from pass to fail or vice versa on a
+        specified date (Unix ms) or date range (using comparison operators).
+      example: '>=1678721573794'
+      in: query
+      name: filter[evaluation_changed_at]
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Set to `true` to return findings that are muted. Set to `false` to
+        return unmuted findings.
+      in: query
+      name: filter[muted]
+      required: false
+      schema:
+        type: boolean
+    - description: Return findings for the specified rule ID.
+      in: query
+      name: filter[rule_id]
+      required: false
+      schema:
+        type: string
+    - description: Return findings for the specified rule.
+      in: query
+      name: filter[rule_name]
+      required: false
+      schema:
+        type: string
+    - description: Return only findings for the specified resource type.
+      in: query
+      name: filter[resource_type]
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Return findings that were found on a specified date (Unix ms) or date
+        range (using comparison operators).
+      example: '>=1678721573794'
+      in: query
+      name: filter[discovery_timestamp]
+      required: false
+      schema:
+        type: string
+    - description: Return only `pass` or `fail` findings.
+      example: pass
+      in: query
+      name: filter[evaluation]
+      required: false
+      schema:
+        $ref: ../components/schemas/FindingEvaluation.yaml
+    - description: Return only findings with the specified status.
+      example: critical
+      in: query
+      name: filter[status]
+      required: false
+      schema:
+        $ref: ../components/schemas/FindingStatus.yaml
+    - description: >-
+        Return findings that match the selected vulnerability types
+        (repeatable).
+      example:
+        - misconfiguration
+      explode: true
+      in: query
+      name: filter[vulnerability_type]
+      required: false
+      schema:
+        items:
+          $ref: ../components/schemas/FindingVulnerabilityType.yaml
+        type: array
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListFindingsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/FindingsBadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/FindingsForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/FindingsNotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/FindingsTooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_findings_read
+  summary: List findings
+  tags:
+    - Security Monitoring
+  x-pagination:
+    cursorParam: page[cursor]
+    cursorPath: meta.page.cursor
+    limitParam: page[limit]
+    resultsPath: data
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).
+patch:
+  description: Mute or unmute findings.
+  operationId: MuteFindings
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/BulkMuteFindingsRequest.yaml
+    description: >
+      ### Attributes
+
+
+      All findings are updated with the same attributes. The request body must
+      include at least two attributes: `muted` and `reason`.
+
+      The allowed reasons depend on whether the finding is being muted or
+      unmuted:
+        - To mute a finding: `PENDING_FIX`, `FALSE_POSITIVE`, `ACCEPTED_RISK`, `OTHER`.
+        - To unmute a finding : `NO_PENDING_FIX`, `HUMAN_ERROR`, `NO_LONGER_ACCEPTED_RISK`, `OTHER`.
+
+      ### Meta
+
+
+      The request body must include a list of the finding IDs to be updated.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/BulkMuteFindingsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/FindingsBadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/FindingsForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/FindingsNotFoundResponse.yaml
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: >-
+        Invalid Request: The server understands the request syntax but cannot
+        process it due to invalid data.
+    '429':
+      $ref: ../components/responses/FindingsTooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+  summary: Mute or unmute a batch of findings
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

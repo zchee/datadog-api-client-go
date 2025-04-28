@@ -1,0 +1,5 @@
+description: Your delegate service account response data.
+properties:
+  data:
+    $ref: ./GCPSTSDelegateAccount.yaml
+type: object

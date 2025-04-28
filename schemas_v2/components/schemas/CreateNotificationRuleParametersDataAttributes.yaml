@@ -1,0 +1,17 @@
+description: Attributes of the notification rule create request.
+properties:
+  enabled:
+    $ref: ./Enabled.yaml
+  name:
+    $ref: ./RuleName.yaml
+  selectors:
+    $ref: ./Selectors.yaml
+  targets:
+    $ref: ./Targets.yaml
+  time_aggregation:
+    $ref: ./TimeAggregation.yaml
+required:
+  - selectors
+  - name
+  - targets
+type: object

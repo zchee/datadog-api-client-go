@@ -1,0 +1,5 @@
+description: Request used to create a workflow instance.
+properties:
+  meta:
+    $ref: ./WorkflowInstanceCreateMeta.yaml
+type: object

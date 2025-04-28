@@ -1,0 +1,7 @@
+description: Create group request.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerGroupCreate.yaml
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+type: object

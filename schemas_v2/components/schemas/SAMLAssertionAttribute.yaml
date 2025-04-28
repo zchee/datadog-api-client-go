@@ -1,0 +1,14 @@
+description: SAML assertion attribute.
+properties:
+  attributes:
+    $ref: ./SAMLAssertionAttributeAttributes.yaml
+  id:
+    description: The ID of the SAML assertion attribute.
+    example: '0'
+    type: string
+  type:
+    $ref: ./SAMLAssertionAttributesType.yaml
+required:
+  - id
+  - type
+type: object

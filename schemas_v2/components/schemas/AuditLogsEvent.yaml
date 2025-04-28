@@ -1,0 +1,13 @@
+description: >-
+  Object description of an Audit Logs event after it is processed and stored by
+  Datadog.
+properties:
+  attributes:
+    $ref: ./AuditLogsEventAttributes.yaml
+  id:
+    description: Unique ID of the event.
+    example: AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA
+    type: string
+  type:
+    $ref: ./AuditLogsEventType.yaml
+type: object

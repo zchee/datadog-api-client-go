@@ -1,0 +1,13 @@
+description: Response with an incident todo.
+properties:
+  data:
+    $ref: ./IncidentTodoResponseData.yaml
+  included:
+    description: Included related resources that the user requested.
+    items:
+      $ref: ./IncidentTodoResponseIncludedItem.yaml
+    readOnly: true
+    type: array
+required:
+  - data
+type: object

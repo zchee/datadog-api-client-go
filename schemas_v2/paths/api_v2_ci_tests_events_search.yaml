@@ -1,0 +1,48 @@
+post:
+  description: >-
+    List endpoint returns CI Visibility test events that match a [search
+    query](https://docs.datadoghq.com/continuous_integration/explorer/search_syntax/).
+
+    [Results are paginated similarly to
+    logs](https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination).
+
+
+    Use this endpoint to build complex events filtering and search.
+  operationId: SearchCIAppTestEvents
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CIAppTestEventsRequest.yaml
+    required: false
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CIAppTestEventsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - ci_visibility_read
+  summary: Search tests events
+  tags:
+    - CI Visibility Tests
+  x-codegen-request-body-name: body
+  x-pagination:
+    cursorParam: body.page.cursor
+    cursorPath: meta.page.after
+    limitParam: body.page.limit
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - ci_visibility_read

@@ -1,0 +1,37 @@
+description: The search and filter query settings
+properties:
+  from:
+    default: now-15m
+    description: >-
+      The minimum time for the requested logs, supports date math and regular
+      timestamps (milliseconds).
+    example: now-15m
+    type: string
+  indexes:
+    default:
+      - '*'
+    description: >-
+      For customers with multiple indexes, the indexes to search. Defaults to
+      ['*'] which means all indexes.
+    example:
+      - main
+      - web
+    items:
+      description: The name of a log index.
+      type: string
+    type: array
+  query:
+    default: '*'
+    description: The search query - following the log search syntax.
+    example: service:web* AND @http.status_code:[200 TO 299]
+    type: string
+  storage_tier:
+    $ref: ./LogsStorageTier.yaml
+  to:
+    default: now
+    description: >-
+      The maximum time for the requested logs, supports date math and regular
+      timestamps (milliseconds).
+    example: now
+    type: string
+type: object

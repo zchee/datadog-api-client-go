@@ -1,0 +1,9 @@
+description: The log-based metric properties.
+properties:
+  attributes:
+    $ref: ./LogsMetricResponseAttributes.yaml
+  id:
+    $ref: ./LogsMetricID.yaml
+  type:
+    $ref: ./LogsMetricType.yaml
+type: object

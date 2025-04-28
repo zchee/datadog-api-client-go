@@ -1,0 +1,7 @@
+description: The JSON:API type.
+enum:
+  - sboms
+example: sboms
+type: string
+x-enum-varnames:
+  - SBOMS

@@ -1,0 +1,9 @@
+description: AWS External ID response body.
+properties:
+  external_id:
+    description: AWS IAM External ID for associated role.
+    example: acb8f6b8a844443dbb726d07dcb1a870
+    type: string
+required:
+  - external_id
+type: object

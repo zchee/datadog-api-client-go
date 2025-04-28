@@ -1,0 +1,21 @@
+description: A relationship reference for multiple integration metadata objects.
+example:
+  data:
+    - id: 00000000-abcd-0005-0000-000000000000
+      type: incident_integrations
+    - id: 00000000-abcd-0006-0000-000000000000
+      type: incident_integrations
+properties:
+  data:
+    description: Integration metadata relationship array
+    example:
+      - id: 00000000-abcd-0003-0000-000000000000
+        type: incident_integrations
+      - id: 00000000-abcd-0004-0000-000000000000
+        type: incident_integrations
+    items:
+      $ref: ./RelationshipToIncidentIntegrationMetadataData.yaml
+    type: array
+required:
+  - data
+type: object

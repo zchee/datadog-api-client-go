@@ -1,0 +1,3 @@
+description: The missing value to use if there is a number valued facet.
+format: double
+type: number

@@ -1,0 +1,7 @@
+description: An archive's destination.
+nullable: true
+oneOf:
+  - $ref: ./LogsArchiveDestinationAzure.yaml
+  - $ref: ./LogsArchiveDestinationGCS.yaml
+  - $ref: ./LogsArchiveDestinationS3.yaml
+type: object

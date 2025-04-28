@@ -1,0 +1,8 @@
+default: spans_metrics
+description: The type of resource. The value should always be spans_metrics.
+enum:
+  - spans_metrics
+example: spans_metrics
+type: string
+x-enum-varnames:
+  - SPANS_METRICS

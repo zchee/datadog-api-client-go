@@ -1,0 +1,6 @@
+description: Hardcoded evaluator type.
+enum:
+  - log4shell
+type: string
+x-enum-varnames:
+  - LOG4SHELL

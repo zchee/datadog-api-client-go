@@ -1,0 +1,21 @@
+description: The definition of `HTTPTokenUpdate` object.
+properties:
+  deleted:
+    description: Should the header be deleted.
+    type: boolean
+  name:
+    description: The `HTTPToken` `name`.
+    example: MyToken
+    pattern: ^[A-Za-z][A-Za-z\\d]*$
+    type: string
+  type:
+    $ref: ./TokenType.yaml
+  value:
+    description: The `HTTPToken` `value`.
+    example: Some Token Value
+    type: string
+required:
+  - name
+  - type
+  - value
+type: object

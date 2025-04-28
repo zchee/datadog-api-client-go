@@ -1,0 +1,17 @@
+description: |-
+  Represents a time restriction within a layer, specifying the days and times
+  when this layer is active or inactive.
+properties:
+  end_day:
+    $ref: ./LayerAttributesRestrictionsItemsEndDay.yaml
+  end_time:
+    description: The time of day the restriction ends (hh:mm:ss).
+    example: '17:00:00'
+    type: string
+  start_day:
+    $ref: ./LayerAttributesRestrictionsItemsStartDay.yaml
+  start_time:
+    description: The time of day the restriction begins (hh:mm:ss).
+    example: '09:00:00'
+    type: string
+type: object

@@ -1,0 +1,21 @@
+description: Configuration for enabling TLS encryption.
+properties:
+  ca_file:
+    description: >-
+      Path to the Certificate Authority (CA) file used to validate the server’s
+      TLS certificate.
+    type: string
+  crt_file:
+    description: >-
+      Path to the TLS client certificate file used to authenticate the pipeline
+      component with upstream or downstream services.
+    example: /path/to/cert.crt
+    type: string
+  key_file:
+    description: >-
+      Path to the private key file associated with the TLS client certificate.
+      Used for mutual TLS authentication.
+    type: string
+required:
+  - crt_file
+type: object

@@ -1,0 +1,13 @@
+description: The final status of the stage.
+enum:
+  - success
+  - error
+  - canceled
+  - skipped
+example: success
+type: string
+x-enum-varnames:
+  - SUCCESS
+  - ERROR
+  - CANCELED
+  - SKIPPED

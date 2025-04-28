@@ -1,0 +1,12 @@
+description: Object of a user invitation returned by the API.
+properties:
+  attributes:
+    $ref: ./UserInvitationDataAttributes.yaml
+  id:
+    description: ID of the user invitation.
+    type: string
+  relationships:
+    $ref: ./UserInvitationRelationships.yaml
+  type:
+    $ref: ./UserInvitationsType.yaml
+type: object

@@ -1,0 +1,6 @@
+additionalProperties: {}
+description: Metadata about the instances list
+properties:
+  page:
+    $ref: ./WorkflowListInstancesResponseMetaPage.yaml
+type: object

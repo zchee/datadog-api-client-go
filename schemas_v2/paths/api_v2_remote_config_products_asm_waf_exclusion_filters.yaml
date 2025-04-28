@@ -1,0 +1,67 @@
+get:
+  description: Retrieve a list of WAF exclusion filters.
+  operationId: ListApplicationSecurityWafExclusionFilters
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/ApplicationSecurityWafExclusionFiltersResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List all WAF exclusion filters
+  tags:
+    - Application Security
+  x-permission:
+    operator: AND
+    permissions:
+      - appsec_protect_read
+  x-terraform-resource: appsec_waf_exclusion_filter
+post:
+  description: >-
+    Create a new WAF exclusion filter with the given parameters.
+
+
+    A request matched by an exclusion filter will be ignored by the Application
+    Security WAF product.
+
+    Go to https://app.datadoghq.com/security/appsec/passlist to review existing
+    exclusion filters (also called passlist entries).
+  operationId: CreateApplicationSecurityWafExclusionFilter
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/ApplicationSecurityWafExclusionFilterCreateRequest.yaml
+    description: The definition of the new WAF exclusion filter.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/ApplicationSecurityWafExclusionFilterResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '409':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a WAF exclusion filter
+  tags:
+    - Application Security
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: AND
+    permissions:
+      - appsec_protect_write
+  x-terraform-resource: appsec_waf_exclusion_filter

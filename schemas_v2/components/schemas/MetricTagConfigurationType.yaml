@@ -1,0 +1,8 @@
+default: manage_tags
+description: The metric tag configuration resource type.
+enum:
+  - manage_tags
+example: manage_tags
+type: string
+x-enum-varnames:
+  - MANAGE_TAGS

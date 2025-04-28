@@ -1,0 +1,10 @@
+description: Azure config Post data.
+properties:
+  attributes:
+    $ref: ./AzureUCConfigPostRequestAttributes.yaml
+  type:
+    $ref: ./AzureUCConfigPostRequestType.yaml
+required:
+  - attributes
+  - type
+type: object

@@ -1,0 +1,6 @@
+description: Fastly Account id.
+in: path
+name: account_id
+required: true
+schema:
+  type: string

@@ -1,0 +1,12 @@
+description: The retention filter object .
+properties:
+  id:
+    description: The ID of the retention filter.
+    example: 7RBOb7dLSYWI01yc3pIH8w
+    type: string
+  type:
+    $ref: ./ApmRetentionFilterType.yaml
+required:
+  - id
+  - type
+type: object

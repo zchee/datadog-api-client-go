@@ -1,0 +1,24 @@
+description: Team link attributes
+properties:
+  label:
+    description: The link's label
+    example: Link label
+    maxLength: 256
+    type: string
+  position:
+    description: The link's position, used to sort links for the team
+    format: int32
+    maximum: 2147483647
+    type: integer
+  team_id:
+    description: ID of the team the link is associated with
+    readOnly: true
+    type: string
+  url:
+    description: The URL for the link
+    example: https://example.com
+    type: string
+required:
+  - label
+  - url
+type: object

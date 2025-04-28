@@ -1,0 +1,5 @@
+description: The JSON:API relationship to a scorecard outcome.
+properties:
+  data:
+    $ref: ./RelationshipToOutcomeData.yaml
+type: object

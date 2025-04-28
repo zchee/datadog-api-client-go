@@ -1,0 +1,5 @@
+description: All relationships associated with monitor notification rule.
+properties:
+  created_by:
+    $ref: ./MonitorNotificationRuleRelationshipsCreatedBy.yaml
+type: object

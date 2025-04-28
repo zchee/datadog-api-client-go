@@ -1,0 +1,13 @@
+description: >-
+  The object sent with the request to retrieve a list of events from your
+  organization.
+properties:
+  filter:
+    $ref: ./EventsQueryFilter.yaml
+  options:
+    $ref: ./EventsQueryOptions.yaml
+  page:
+    $ref: ./EventsRequestPage.yaml
+  sort:
+    $ref: ./EventsSort.yaml
+type: object

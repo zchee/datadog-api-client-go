@@ -1,0 +1,5 @@
+description: A standard pattern.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerStandardPattern.yaml
+type: object

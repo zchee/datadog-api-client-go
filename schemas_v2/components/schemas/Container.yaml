@@ -1,0 +1,10 @@
+description: Container object.
+properties:
+  attributes:
+    $ref: ./ContainerAttributes.yaml
+  id:
+    description: Container ID.
+    type: string
+  type:
+    $ref: ./ContainerType.yaml
+type: object

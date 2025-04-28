@@ -1,0 +1,10 @@
+description: Meta for the response from the List Custom Costs endpoints.
+properties:
+  total_filtered_count:
+    description: Number of Custom Costs files returned by the List Custom Costs endpoint
+    format: int64
+    type: integer
+  version:
+    description: Version of Custom Costs file
+    type: string
+type: object

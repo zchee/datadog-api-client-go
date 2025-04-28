@@ -1,0 +1,6 @@
+description: Include deleted incident types in the response.
+in: query
+name: include_deleted
+schema:
+  default: false
+  type: boolean

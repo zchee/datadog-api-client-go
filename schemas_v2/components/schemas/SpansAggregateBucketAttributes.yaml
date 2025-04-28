@@ -1,0 +1,21 @@
+description: A bucket values.
+properties:
+  by:
+    additionalProperties:
+      description: The values for each group by.
+    description: The key, value pairs for each group by.
+    example:
+      '@state': success
+      '@version': abc
+    type: object
+  compute:
+    description: The compute data.
+    type: object
+  computes:
+    additionalProperties:
+      $ref: ./SpansAggregateBucketValue.yaml
+    description: >-
+      A map of the metric name -> value for regular compute or list of values
+      for a timeseries.
+    type: object
+type: object

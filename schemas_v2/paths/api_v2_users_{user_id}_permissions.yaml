@@ -1,0 +1,41 @@
+get:
+  description: |-
+    Get a user permission set. Returns a list of the user’s permissions
+    granted by the associated user's roles.
+  operationId: ListUserPermissions
+  parameters:
+    - $ref: ../components/parameters/UserID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PermissionsResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - user_access_read
+  summary: Get a user permissions
+  tags:
+    - Users
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - user_access_read

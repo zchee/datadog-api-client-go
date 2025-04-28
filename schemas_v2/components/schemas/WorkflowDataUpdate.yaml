@@ -1,0 +1,15 @@
+description: Data related to the workflow being updated.
+properties:
+  attributes:
+    $ref: ./WorkflowDataUpdateAttributes.yaml
+  id:
+    description: The workflow identifier
+    type: string
+  relationships:
+    $ref: ./WorkflowDataRelationships.yaml
+  type:
+    $ref: ./WorkflowDataType.yaml
+required:
+  - type
+  - attributes
+type: object

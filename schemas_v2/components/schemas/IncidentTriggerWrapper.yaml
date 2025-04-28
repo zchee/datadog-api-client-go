@@ -1,0 +1,9 @@
+description: Schema for an Incident-based trigger.
+properties:
+  incidentTrigger:
+    $ref: ./IncidentTrigger.yaml
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - incidentTrigger
+type: object

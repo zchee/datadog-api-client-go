@@ -1,0 +1,8 @@
+default: apm_retention_filter
+description: The type of the resource.
+enum:
+  - apm_retention_filter
+example: apm_retention_filter
+type: string
+x-enum-varnames:
+  - apm_retention_filter

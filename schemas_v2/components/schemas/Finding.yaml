@@ -1,0 +1,9 @@
+description: A single finding without the message and resource configuration.
+properties:
+  attributes:
+    $ref: ./FindingAttributes.yaml
+  id:
+    $ref: ./FindingID.yaml
+  type:
+    $ref: ./FindingType.yaml
+type: object

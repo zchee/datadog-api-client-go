@@ -1,0 +1,8 @@
+default: cloudflare-accounts
+description: The JSON:API type for this API. Should always be `cloudflare-accounts`.
+enum:
+  - cloudflare-accounts
+example: cloudflare-accounts
+type: string
+x-enum-varnames:
+  - CLOUDFLARE_ACCOUNTS

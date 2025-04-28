@@ -1,0 +1,72 @@
+description: >-
+  Top-level container for a schedule object, including both the `data` payload
+  and any related `included` resources (such as teams, layers, or members).
+example:
+  data:
+    attributes:
+      name: On-Call Schedule
+      tags:
+        - tag1
+        - tag2
+      time_zone: America/New_York
+    id: 3653d3c6-0c75-11ea-ad28-fb5701eabc7d
+    relationships:
+      layers:
+        data:
+          - id: 00000000-0000-0000-0000-000000000001
+            type: layers
+      teams:
+        data:
+          - id: 00000000-da3a-0000-0000-000000000000
+            type: teams
+    type: schedules
+  included:
+    - attributes:
+        avatar: ''
+        description: Team 1 description
+        handle: team1
+        name: Team 1
+      id: 00000000-da3a-0000-0000-000000000000
+      type: teams
+    - attributes:
+        effective_date: '2025-02-03T05:00:00Z'
+        end_date: '2025-12-31T00:00:00Z'
+        interval:
+          days: 1
+        name: Layer 1
+        restrictions:
+          - end_day: friday
+            end_time: '17:00:00'
+            start_day: monday
+            start_time: '09:00:00'
+        rotation_start: '2025-02-01T00:00:00Z'
+      id: 00000000-0000-0000-0000-000000000001
+      relationships:
+        members:
+          data:
+            - id: 00000000-0000-0000-0000-000000000002
+              type: members
+      type: layers
+    - id: 00000000-0000-0000-0000-000000000002
+      relationships:
+        user:
+          data:
+            id: 00000000-aba1-0000-0000-000000000000
+            type: users
+      type: members
+    - attributes:
+        email: foo@bar.com
+        name: User 1
+      id: 00000000-aba1-0000-0000-000000000000
+      type: users
+properties:
+  data:
+    $ref: ./ScheduleData.yaml
+  included:
+    description: >-
+      Any additional resources related to this schedule, such as teams and
+      layers.
+    items:
+      $ref: ./ScheduleDataIncludedItem.yaml
+    type: array
+type: object

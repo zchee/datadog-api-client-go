@@ -1,0 +1,11 @@
+description: The mocked outputs of the action query.
+properties:
+  enabled:
+    $ref: ./ActionQueryMockedOutputsEnabled.yaml
+  outputs:
+    description: The mocked outputs of the action query, serialized as JSON.
+    example: '{"status": "success"}'
+    type: string
+required:
+  - enabled
+type: object

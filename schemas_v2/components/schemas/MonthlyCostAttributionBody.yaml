@@ -1,0 +1,10 @@
+description: Cost data.
+properties:
+  attributes:
+    $ref: ./MonthlyCostAttributionAttributes.yaml
+  id:
+    description: Unique ID of the response.
+    type: string
+  type:
+    $ref: ./CostAttributionType.yaml
+type: object

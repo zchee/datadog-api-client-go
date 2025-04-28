@@ -1,0 +1,8 @@
+description: The response object after multiple apps are successfully deleted.
+properties:
+  data:
+    description: An array of objects containing the IDs of the deleted apps.
+    items:
+      $ref: ./DeleteAppsResponseDataItems.yaml
+    type: array
+type: object

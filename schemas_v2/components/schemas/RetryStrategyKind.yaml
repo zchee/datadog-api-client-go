@@ -1,0 +1,7 @@
+description: The definition of `RetryStrategyKind` object.
+enum:
+  - RETRY_STRATEGY_LINEAR
+example: RETRY_STRATEGY_LINEAR
+type: string
+x-enum-varnames:
+  - RETRY_STRATEGY_LINEAR

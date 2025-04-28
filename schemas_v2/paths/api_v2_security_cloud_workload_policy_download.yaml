@@ -1,0 +1,29 @@
+get:
+  description: >-
+    The download endpoint generates a Cloud Workload Security policy file from
+    your currently active
+
+    Cloud Workload Security rules, and downloads them as a .policy file. This
+    file can then be deployed to
+
+    your Agents to update the policy running in your environment.
+  operationId: DownloadCloudWorkloadPolicyFile
+  responses:
+    '200':
+      content:
+        application/yaml:
+          schema:
+            format: binary
+            type: string
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the latest Cloud Workload Security policy
+  tags:
+    - CSM Threats
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_cws_agent_rules_read

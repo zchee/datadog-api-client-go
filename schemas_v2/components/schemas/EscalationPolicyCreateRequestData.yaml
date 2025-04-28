@@ -1,0 +1,14 @@
+description: >-
+  Represents the data for creating an escalation policy, including its
+  attributes, relationships, and resource type.
+properties:
+  attributes:
+    $ref: ./EscalationPolicyCreateRequestDataAttributes.yaml
+  relationships:
+    $ref: ./EscalationPolicyCreateRequestDataRelationships.yaml
+  type:
+    $ref: ./EscalationPolicyCreateRequestDataType.yaml
+required:
+  - type
+  - attributes
+type: object

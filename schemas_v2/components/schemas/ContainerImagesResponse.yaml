@@ -1,0 +1,12 @@
+description: List of Container Images.
+properties:
+  data:
+    description: Array of Container Image objects.
+    items:
+      $ref: ./ContainerImageItem.yaml
+    type: array
+  links:
+    $ref: ./ContainerImagesResponseLinks.yaml
+  meta:
+    $ref: ./ContainerImageMeta.yaml
+type: object

@@ -1,0 +1,10 @@
+description: The attributes object for a postmortem attachment.
+properties:
+  attachment:
+    $ref: ./IncidentAttachmentsPostmortemAttributesAttachmentObject.yaml
+  attachment_type:
+    $ref: ./IncidentAttachmentPostmortemAttachmentType.yaml
+required:
+  - attachment_type
+  - attachment
+type: object

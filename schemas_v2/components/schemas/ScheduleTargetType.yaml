@@ -1,0 +1,8 @@
+default: schedules
+description: Indicates that the resource is of type `schedules`.
+enum:
+  - schedules
+example: schedules
+type: string
+x-enum-varnames:
+  - SCHEDULES

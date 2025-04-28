@@ -1,0 +1,12 @@
+description: A custom connection used by an app.
+properties:
+  attributes:
+    $ref: ./CustomConnectionAttributes.yaml
+  id:
+    description: The ID of the custom connection.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+  type:
+    $ref: ./CustomConnectionType.yaml
+type: object

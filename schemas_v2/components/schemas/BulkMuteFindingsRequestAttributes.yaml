@@ -1,0 +1,8 @@
+additionalProperties: false
+description: The mute properties to be updated.
+properties:
+  mute:
+    $ref: ./BulkMuteFindingsRequestProperties.yaml
+required:
+  - mute
+type: object

@@ -1,0 +1,68 @@
+get:
+  description: >-
+    Get a mapping of billing dimensions to the corresponding keys for the
+    supported usage metering public API endpoints.
+
+    Mapping data is updated on a monthly cadence.
+
+
+    This endpoint is only accessible to [parent-level
+    organizations](https://docs.datadoghq.com/account_management/multi_organization/).
+  operationId: GetBillingDimensionMapping
+  parameters:
+    - description: >-
+        Datetime in ISO-8601 format, UTC, and for mappings beginning this month.
+        Defaults to the current month.
+      in: query
+      name: filter[month]
+      required: false
+      schema:
+        format: date-time
+        type: string
+    - description: >-
+        String to specify whether to retrieve active billing dimension mappings
+        for the contract or for all available mappings. Allowed views have the
+        string `active` or `all`. Defaults to `active`.
+      in: query
+      name: filter[view]
+      required: false
+      schema:
+        default: active
+        type: string
+  responses:
+    '200':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/BillingDimensionsMappingResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden - User is not authorized
+    '429':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Too many requests
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - usage_read
+  summary: Get billing dimension mapping for usage endpoints
+  tags:
+    - Usage Metering
+  x-permission:
+    operator: OR
+    permissions:
+      - usage_read

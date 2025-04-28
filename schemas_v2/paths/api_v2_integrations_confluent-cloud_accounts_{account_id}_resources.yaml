@@ -1,0 +1,62 @@
+get:
+  description: Get a Confluent resource for the account associated with the provided ID.
+  operationId: ListConfluentResource
+  parameters:
+    - $ref: ../components/parameters/ConfluentAccountID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ConfluentResourcesResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List Confluent Account resources
+  tags:
+    - Confluent Cloud
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+post:
+  description: Create a Confluent resource for the account associated with the provided ID.
+  operationId: CreateConfluentResource
+  parameters:
+    - $ref: ../components/parameters/ConfluentAccountID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ConfluentResourceRequest.yaml
+    description: Confluent payload
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ConfluentResourceResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Add resource to Confluent account
+  tags:
+    - Confluent Cloud
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

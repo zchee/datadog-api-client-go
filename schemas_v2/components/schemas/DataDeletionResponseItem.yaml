@@ -1,0 +1,17 @@
+description: The created data deletion request information.
+properties:
+  attributes:
+    $ref: ./DataDeletionResponseItemAttributes.yaml
+  id:
+    description: The ID of the created data deletion request.
+    example: '1'
+    type: string
+  type:
+    description: The type of the request created.
+    example: deletion_request
+    type: string
+required:
+  - id
+  - type
+  - attributes
+type: object

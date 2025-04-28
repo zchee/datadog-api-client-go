@@ -1,0 +1,47 @@
+description: Attributes to create a DORA deployment event.
+properties:
+  env:
+    description: Environment name to where the service was deployed.
+    example: staging
+    type: string
+  finished_at:
+    description: >-
+      Unix timestamp when the deployment finished. It must be in nanoseconds,
+      milliseconds, or seconds, and it should not be older than 1 hour.
+    example: 1693491984000000000
+    format: int64
+    type: integer
+  git:
+    $ref: ./DORAGitInfo.yaml
+  id:
+    description: Deployment ID.
+    type: string
+  service:
+    description: Service name.
+    example: shopist
+    type: string
+  started_at:
+    description: >-
+      Unix timestamp when the deployment started. It must be in nanoseconds,
+      milliseconds, or seconds.
+    example: 1693491974000000000
+    format: int64
+    type: integer
+  team:
+    description: >-
+      Name of the team owning the deployed service. If not provided, this is
+      automatically populated with the team associated with the service in the
+      Service Catalog.
+    example: backend
+    type: string
+  version:
+    description: >-
+      Version to correlate with [APM Deployment
+      Tracking](https://docs.datadoghq.com/tracing/services/deployment_tracking/).
+    example: v1.12.07
+    type: string
+required:
+  - service
+  - started_at
+  - finished_at
+type: object

@@ -1,0 +1,15 @@
+description: A relationship reference for an integration metadata object.
+example:
+  id: 00000000-abcd-0002-0000-000000000000
+  type: incident_integrations
+properties:
+  id:
+    description: A unique identifier that represents the integration metadata.
+    example: 00000000-abcd-0001-0000-000000000000
+    type: string
+  type:
+    $ref: ./IncidentIntegrationMetadataType.yaml
+required:
+  - id
+  - type
+type: object

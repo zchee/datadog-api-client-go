@@ -1,0 +1,24 @@
+description: >-
+  Defines a single escalation step within an escalation policy update request.
+  Contains assignment strategy, escalation timeout, an optional step ID, and a
+  list of targets.
+properties:
+  assignment:
+    $ref: ./EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment.yaml
+  escalate_after_seconds:
+    description: Defines how many seconds to wait before escalating to the next step.
+    example: 3600
+    format: int64
+    type: integer
+  id:
+    description: Specifies the unique identifier of this step.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+  targets:
+    description: Specifies the collection of escalation targets for this step.
+    items:
+      $ref: ./EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems.yaml
+    type: array
+required:
+  - targets
+type: object

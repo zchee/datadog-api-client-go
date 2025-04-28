@@ -1,0 +1,11 @@
+description: Incident integration metadata for the Slack integration.
+properties:
+  channels:
+    description: Array of Slack channels in this integration metadata.
+    example: []
+    items:
+      $ref: ./SlackIntegrationMetadataChannelItem.yaml
+    type: array
+required:
+  - channels
+type: object

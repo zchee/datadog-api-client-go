@@ -1,0 +1,15 @@
+description: Severity of the Security Signal.
+enum:
+  - info
+  - low
+  - medium
+  - high
+  - critical
+example: critical
+type: string
+x-enum-varnames:
+  - INFO
+  - LOW
+  - MEDIUM
+  - HIGH
+  - CRITICAL

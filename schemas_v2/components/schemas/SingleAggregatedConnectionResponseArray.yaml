@@ -1,0 +1,29 @@
+description: List of aggregated connections.
+example:
+  data:
+    - attributes:
+        bytes_sent_by_client: 100
+        bytes_sent_by_server: 200
+        group_bys:
+          client_team:
+            - networks
+          server_service:
+            - hucklebuck
+        packets_sent_by_client: 10
+        packets_sent_by_server: 20
+        rtt_micro_seconds: 800
+        tcp_closed_connections: 30
+        tcp_established_connections: 40
+        tcp_refusals: 7
+        tcp_resets: 5
+        tcp_retransmits: 30
+        tcp_timeouts: 6
+      id: client_team:networks, server_service:hucklebuck
+      type: aggregated_connection
+properties:
+  data:
+    description: Array of aggregated connection objects.
+    items:
+      $ref: ./SingleAggregatedConnectionResponseData.yaml
+    type: array
+type: object

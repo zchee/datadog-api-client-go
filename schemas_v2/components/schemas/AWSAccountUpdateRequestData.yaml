@@ -1,0 +1,12 @@
+description: AWS Account Update Request data.
+properties:
+  attributes:
+    $ref: ./AWSAccountUpdateRequestAttributes.yaml
+  id:
+    $ref: ./AWSAccountConfigID.yaml
+  type:
+    $ref: ./AWSAccountType.yaml
+required:
+  - attributes
+  - type
+type: object

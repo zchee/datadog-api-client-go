@@ -1,0 +1,7 @@
+description: The name of an Org Config.
+in: path
+name: org_config_name
+required: true
+schema:
+  example: monitor_timezone
+  type: string

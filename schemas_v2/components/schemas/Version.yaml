@@ -1,0 +1,4 @@
+description: Version of the notification rule. It is updated when the rule is modified.
+example: 1
+format: int64
+type: integer

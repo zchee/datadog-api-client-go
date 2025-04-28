@@ -1,0 +1,7 @@
+description: Case update priority request
+properties:
+  data:
+    $ref: ./CaseUpdatePriority.yaml
+required:
+  - data
+type: object

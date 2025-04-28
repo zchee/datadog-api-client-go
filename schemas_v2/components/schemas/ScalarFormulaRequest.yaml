@@ -1,0 +1,10 @@
+description: A single scalar query to be executed.
+properties:
+  attributes:
+    $ref: ./ScalarFormulaRequestAttributes.yaml
+  type:
+    $ref: ./ScalarFormulaRequestType.yaml
+required:
+  - type
+  - attributes
+type: object

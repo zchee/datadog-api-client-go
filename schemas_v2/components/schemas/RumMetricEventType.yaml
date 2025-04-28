@@ -1,0 +1,19 @@
+description: The type of RUM events to filter on.
+enum:
+  - session
+  - view
+  - action
+  - error
+  - resource
+  - long_task
+  - vital
+example: session
+type: string
+x-enum-varnames:
+  - SESSION
+  - VIEW
+  - ACTION
+  - ERROR
+  - RESOURCE
+  - LONG_TASK
+  - VITAL

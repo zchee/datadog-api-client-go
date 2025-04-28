@@ -1,0 +1,5 @@
+description: Cases response metadata
+properties:
+  page:
+    $ref: ./CasesResponseMetaPagination.yaml
+type: object

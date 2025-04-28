@@ -1,0 +1,7 @@
+description: The response object after creating a new workflow.
+properties:
+  data:
+    $ref: ./WorkflowData.yaml
+required:
+  - data
+type: object

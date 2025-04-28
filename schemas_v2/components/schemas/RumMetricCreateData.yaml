@@ -1,0 +1,13 @@
+description: The new rum-based metric properties.
+properties:
+  attributes:
+    $ref: ./RumMetricCreateAttributes.yaml
+  id:
+    $ref: ./RumMetricID.yaml
+  type:
+    $ref: ./RumMetricType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

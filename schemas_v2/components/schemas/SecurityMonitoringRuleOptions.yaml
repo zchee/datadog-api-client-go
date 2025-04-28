@@ -1,0 +1,23 @@
+description: Options.
+properties:
+  complianceRuleOptions:
+    $ref: ./CloudConfigurationComplianceRuleOptions.yaml
+  decreaseCriticalityBasedOnEnv:
+    $ref: ./SecurityMonitoringRuleDecreaseCriticalityBasedOnEnv.yaml
+  detectionMethod:
+    $ref: ./SecurityMonitoringRuleDetectionMethod.yaml
+  evaluationWindow:
+    $ref: ./SecurityMonitoringRuleEvaluationWindow.yaml
+  hardcodedEvaluatorType:
+    $ref: ./SecurityMonitoringRuleHardcodedEvaluatorType.yaml
+  impossibleTravelOptions:
+    $ref: ./SecurityMonitoringRuleImpossibleTravelOptions.yaml
+  keepAlive:
+    $ref: ./SecurityMonitoringRuleKeepAlive.yaml
+  maxSignalDuration:
+    $ref: ./SecurityMonitoringRuleMaxSignalDuration.yaml
+  newValueOptions:
+    $ref: ./SecurityMonitoringRuleNewValueOptions.yaml
+  thirdPartyRuleOptions:
+    $ref: ./SecurityMonitoringRuleThirdPartyOptions.yaml
+type: object

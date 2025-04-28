@@ -1,0 +1,6 @@
+description: Filter entities by excluding snapshotted entities.
+in: query
+name: filter[exclude_snapshot]
+required: false
+schema:
+  type: string

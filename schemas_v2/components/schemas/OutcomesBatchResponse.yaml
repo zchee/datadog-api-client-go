@@ -1,0 +1,10 @@
+description: Scorecard outcomes batch response.
+properties:
+  data:
+    $ref: ./OutcomesBatchResponseData.yaml
+  meta:
+    $ref: ./OutcomesBatchResponseMeta.yaml
+required:
+  - data
+  - meta
+type: object

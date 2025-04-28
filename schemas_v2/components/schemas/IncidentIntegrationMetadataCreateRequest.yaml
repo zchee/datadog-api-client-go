@@ -1,0 +1,7 @@
+description: Create request for an incident integration metadata.
+properties:
+  data:
+    $ref: ./IncidentIntegrationMetadataCreateData.yaml
+required:
+  - data
+type: object

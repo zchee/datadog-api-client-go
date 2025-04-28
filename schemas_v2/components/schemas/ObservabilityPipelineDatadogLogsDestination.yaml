@@ -1,0 +1,22 @@
+description: The `datadog_logs` destination forwards logs to Datadog Log Management.
+properties:
+  id:
+    description: The unique identifier for this component.
+    example: datadog-logs-destination
+    type: string
+  inputs:
+    description: >-
+      A list of component IDs whose output is used as the `input` for this
+      component.
+    example:
+      - filter-processor
+    items:
+      type: string
+    type: array
+  type:
+    $ref: ./ObservabilityPipelineDatadogLogsDestinationType.yaml
+required:
+  - id
+  - type
+  - inputs
+type: object

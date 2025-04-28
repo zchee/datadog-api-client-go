@@ -1,0 +1,8 @@
+default: cursor_limit
+description: Type of Container Image pagination.
+enum:
+  - cursor_limit
+example: cursor_limit
+type: string
+x-enum-varnames:
+  - CURSOR_LIMIT

@@ -1,0 +1,7 @@
+description: Create request for an incident todo.
+properties:
+  data:
+    $ref: ./IncidentTodoCreateData.yaml
+required:
+  - data
+type: object

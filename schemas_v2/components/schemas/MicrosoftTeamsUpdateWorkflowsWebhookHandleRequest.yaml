@@ -1,0 +1,7 @@
+description: Update Workflows webhook handle request.
+properties:
+  data:
+    $ref: ./MicrosoftTeamsUpdateWorkflowsWebhookHandleRequestData.yaml
+required:
+  - data
+type: object

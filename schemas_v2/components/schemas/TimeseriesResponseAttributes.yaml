@@ -1,0 +1,9 @@
+description: The object describing a timeseries response.
+properties:
+  series:
+    $ref: ./TimeseriesResponseSeriesList.yaml
+  times:
+    $ref: ./TimeseriesResponseTimes.yaml
+  values:
+    $ref: ./TimeseriesResponseValuesList.yaml
+type: object

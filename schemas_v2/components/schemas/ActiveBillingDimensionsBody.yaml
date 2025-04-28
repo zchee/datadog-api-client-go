@@ -1,0 +1,10 @@
+description: Active billing dimensions data.
+properties:
+  attributes:
+    $ref: ./ActiveBillingDimensionsAttributes.yaml
+  id:
+    description: Unique ID of the response.
+    type: string
+  type:
+    $ref: ./ActiveBillingDimensionsType.yaml
+type: object

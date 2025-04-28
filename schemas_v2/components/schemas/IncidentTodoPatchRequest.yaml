@@ -1,0 +1,7 @@
+description: Patch request for an incident todo.
+properties:
+  data:
+    $ref: ./IncidentTodoPatchData.yaml
+required:
+  - data
+type: object

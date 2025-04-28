@@ -1,0 +1,10 @@
+description: Schema for a Software Catalog-based trigger.
+properties:
+  softwareCatalogTrigger:
+    description: Trigger a workflow from Software Catalog.
+    type: object
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - softwareCatalogTrigger
+type: object

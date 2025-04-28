@@ -1,0 +1,7 @@
+description: The response object for the logs aggregate API endpoint
+properties:
+  data:
+    $ref: ./LogsAggregateResponseData.yaml
+  meta:
+    $ref: ./LogsResponseMetadata.yaml
+type: object

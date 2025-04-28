@@ -1,0 +1,27 @@
+get:
+  description: >-
+    Get the tenant, team, and channel ID of a channel in the Datadog Microsoft
+    Teams integration.
+  operationId: GetChannelByName
+  parameters:
+    - $ref: ../components/parameters/MicrosoftTeamsTenantNamePathParameter.yaml
+    - $ref: ../components/parameters/MicrosoftTeamsTeamNamePathParameter.yaml
+    - $ref: ../components/parameters/MicrosoftTeamsChannelNamePathParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MicrosoftTeamsGetChannelByNameResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get channel information by name
+  tags:
+    - Microsoft Teams Integration

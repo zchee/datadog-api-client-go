@@ -1,0 +1,27 @@
+additionalProperties: {}
+description: Object of the monitor tags.
+properties:
+  monitor_tags:
+    description: >-
+      A list of monitor tags. For example, tags that are applied directly to
+      monitors,
+
+      not tags that are used in monitor queries (which are filtered by the scope
+      parameter), to which the downtime applies.
+
+      The resulting downtime applies to monitors that match **all** provided
+      monitor tags. Setting `monitor_tags`
+
+      to `[*]` configures the downtime to mute all monitors for the given scope.
+    example:
+      - service:postgres
+      - team:frontend
+    items:
+      description: A list of monitor tags.
+      example: service:postgres
+      type: string
+    minItems: 1
+    type: array
+required:
+  - monitor_tags
+type: object

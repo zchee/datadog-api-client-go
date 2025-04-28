@@ -1,0 +1,185 @@
+get:
+  description: >
+    Get a list of vulnerable assets.
+
+
+    ### Pagination
+
+
+    Please review the [Pagination section for the "List
+    Vulnerabilities"](#pagination) endpoint.
+
+
+    ### Filtering
+
+
+    Please review the [Filtering section for the "List
+    Vulnerabilities"](#filtering) endpoint.
+
+
+    ### Metadata
+
+
+    Please review the [Metadata section for the "List
+    Vulnerabilities"](#metadata) endpoint.
+  operationId: ListVulnerableAssets
+  parameters:
+    - description: >-
+        Its value must come from the `links` section of the response of the
+        first request. Do not manually edit it.
+      example: >-
+        b82cef018aab81ed1d4bb4xb35xxfc065da7efa685fbcecdbd338f3015e3afabbbfa3a911b4984_721ee28a-zecb-4e45-9960-c42065b574f4
+      in: query
+      name: page[token]
+      required: false
+      schema:
+        type: string
+    - description: The page number to be retrieved. It should be equal or greater than `1`
+      example: 1
+      in: query
+      name: page[number]
+      required: false
+      schema:
+        format: int64
+        minimum: 1
+        type: integer
+    - description: Filter by name.
+      example: datadog-agent
+      in: query
+      name: filter[name]
+      required: false
+      schema:
+        type: string
+    - description: Filter by type.
+      example: Host
+      in: query
+      name: filter[type]
+      required: false
+      schema:
+        $ref: ../components/schemas/AssetType.yaml
+    - description: Filter by the first version of the asset since it has been vulnerable.
+      example: v1.15.1
+      in: query
+      name: filter[version.first]
+      required: false
+      schema:
+        type: string
+    - description: Filter by the last detected version of the asset.
+      example: v1.15.1
+      in: query
+      name: filter[version.last]
+      required: false
+      schema:
+        type: string
+    - description: Filter by the repository url associated to the asset.
+      example: github.com/DataDog/datadog-agent.git
+      in: query
+      name: filter[repository_url]
+      required: false
+      schema:
+        type: string
+    - description: Filter whether the asset is in production or not.
+      example: false
+      in: query
+      name: filter[risks.in_production]
+      required: false
+      schema:
+        type: boolean
+    - description: Filter whether the asset (Service) is under attack or not.
+      example: false
+      in: query
+      name: filter[risks.under_attack]
+      required: false
+      schema:
+        type: boolean
+    - description: Filter whether the asset (Host) is publicly accessible or not.
+      example: false
+      in: query
+      name: filter[risks.is_publicly_accessible]
+      required: false
+      schema:
+        type: boolean
+    - description: Filter whether the asset (Host) has privileged access or not.
+      example: false
+      in: query
+      name: filter[risks.has_privileged_access]
+      required: false
+      schema:
+        type: boolean
+    - description: Filter whether the asset (Host)  has access to sensitive data or not.
+      example: false
+      in: query
+      name: filter[risks.has_access_to_sensitive_data]
+      required: false
+      schema:
+        type: boolean
+    - description: Filter by environment.
+      example: staging
+      in: query
+      name: filter[environments]
+      required: false
+      schema:
+        type: string
+    - description: Filter by architecture.
+      example: arm64
+      in: query
+      name: filter[arch]
+      required: false
+      schema:
+        type: string
+    - description: Filter by operating system name.
+      example: ubuntu
+      in: query
+      name: filter[operating_system.name]
+      required: false
+      schema:
+        type: string
+    - description: Filter by operating system version.
+      example: '24.04'
+      in: query
+      name: filter[operating_system.version]
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListVulnerableAssetsResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: >-
+        Bad request: The server cannot process the request due to invalid syntax
+        in the request.
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: 'Forbidden: Access denied'
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: 'Not found: There is no request associated with the provided token.'
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - appsec_vm_read
+  summary: List vulnerable assets
+  tags:
+    - Security Monitoring
+  x-unstable: >-
+    **Note**: This endpoint is a private preview.
+
+    If you are interested in accessing this API, [fill out this
+    form](https://forms.gle/kMYC1sDr6WDUBDsx9).

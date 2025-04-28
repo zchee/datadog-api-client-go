@@ -1,0 +1,7 @@
+description: Create a role.
+properties:
+  data:
+    $ref: ./RoleCreateData.yaml
+required:
+  - data
+type: object

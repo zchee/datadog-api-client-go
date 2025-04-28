@@ -1,0 +1,139 @@
+delete:
+  description: Remove a team using the team's `id`.
+  operationId: DeleteTeam
+  parameters:
+    - description: None
+      in: path
+      name: team_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: No Content
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - teams_read
+        - teams_manage
+  summary: Remove a team
+  tags:
+    - Teams
+  x-permission:
+    operator: AND
+    permissions:
+      - teams_read
+      - teams_manage
+get:
+  description: Get a single team using the team's `id`.
+  operationId: GetTeam
+  parameters:
+    - description: None
+      in: path
+      name: team_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TeamResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - teams_read
+  summary: Get a team
+  tags:
+    - Teams
+  x-permission:
+    operator: OR
+    permissions:
+      - teams_read
+patch:
+  description: >-
+    Update a team using the team's `id`.
+
+    If the `team_links` relationship is present, the associated links are
+    updated to be in the order they appear in the array, and any existing team
+    links not present are removed.
+  operationId: UpdateTeam
+  parameters:
+    - description: None
+      in: path
+      name: team_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/TeamUpdateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TeamResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '409':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - teams_read
+  summary: Update a team
+  tags:
+    - Teams
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - teams_read

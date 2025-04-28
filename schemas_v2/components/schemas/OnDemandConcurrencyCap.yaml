@@ -1,0 +1,7 @@
+description: On-demand concurrency cap.
+properties:
+  attributes:
+    $ref: ./OnDemandConcurrencyCapAttributes.yaml
+  type:
+    $ref: ./OnDemandConcurrencyCapType.yaml
+type: object

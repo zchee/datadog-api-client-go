@@ -1,0 +1,8 @@
+description: Associates teams with this schedule in a data structure.
+properties:
+  data:
+    description: An array of team references for this schedule.
+    items:
+      $ref: ./ScheduleDataRelationshipsTeamsDataItems.yaml
+    type: array
+type: object

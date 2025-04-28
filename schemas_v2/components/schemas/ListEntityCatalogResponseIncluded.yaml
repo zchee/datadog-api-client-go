@@ -1,0 +1,4 @@
+description: List entity response included.
+items:
+  $ref: ./ListEntityCatalogResponseIncludedItem.yaml
+type: array

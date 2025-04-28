@@ -1,0 +1,7 @@
+description: Create tenant-based handle request.
+properties:
+  data:
+    $ref: ./MicrosoftTeamsTenantBasedHandleRequestData.yaml
+required:
+  - data
+type: object

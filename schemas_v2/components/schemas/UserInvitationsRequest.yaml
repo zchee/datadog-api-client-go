@@ -1,0 +1,11 @@
+description: Object to invite users to join the organization.
+properties:
+  data:
+    description: List of user invitations.
+    example: []
+    items:
+      $ref: ./UserInvitationData.yaml
+    type: array
+required:
+  - data
+type: object

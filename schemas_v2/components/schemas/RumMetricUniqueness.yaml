@@ -1,0 +1,9 @@
+description: >-
+  The rule to count updatable events. Is only set if `event_type` is `sessions`
+  or `views`.
+properties:
+  when:
+    $ref: ./RumMetricUniquenessWhen.yaml
+required:
+  - when
+type: object

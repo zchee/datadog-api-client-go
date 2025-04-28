@@ -1,0 +1,9 @@
+description: The identifier for the action
+enum:
+  - manage_membership
+  - edit
+readOnly: true
+type: string
+x-enum-varnames:
+  - MANAGE_MEMBERSHIP
+  - EDIT

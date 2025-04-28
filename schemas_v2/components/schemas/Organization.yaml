@@ -1,0 +1,12 @@
+description: Organization object.
+properties:
+  attributes:
+    $ref: ./OrganizationAttributes.yaml
+  id:
+    description: ID of the organization.
+    type: string
+  type:
+    $ref: ./OrganizationsType.yaml
+required:
+  - type
+type: object

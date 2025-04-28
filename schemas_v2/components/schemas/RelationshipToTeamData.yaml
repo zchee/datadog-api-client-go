@@ -1,0 +1,9 @@
+description: Relationship to Team object.
+properties:
+  id:
+    description: The unique identifier of the team.
+    example: f9bb8444-af7f-11ec-ac2c-da7ad0900001
+    type: string
+  type:
+    $ref: ./TeamType.yaml
+type: object

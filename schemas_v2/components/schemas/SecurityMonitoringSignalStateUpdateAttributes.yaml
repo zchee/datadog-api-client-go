@@ -1,0 +1,13 @@
+description: Attributes describing the change of state of a security signal.
+properties:
+  archive_comment:
+    $ref: ./SecurityMonitoringSignalArchiveComment.yaml
+  archive_reason:
+    $ref: ./SecurityMonitoringSignalArchiveReason.yaml
+  state:
+    $ref: ./SecurityMonitoringSignalState.yaml
+  version:
+    $ref: ./SecurityMonitoringSignalVersion.yaml
+required:
+  - state
+type: object

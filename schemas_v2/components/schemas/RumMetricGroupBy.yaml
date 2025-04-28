@@ -1,0 +1,15 @@
+description: A group by rule.
+properties:
+  path:
+    description: The path to the value the rum-based metric will be aggregated over.
+    example: '@browser.name'
+    type: string
+  tag_name:
+    description: >-
+      Eventual name of the tag that gets created. By default, `path` is used as
+      the tag name.
+    example: browser_name
+    type: string
+required:
+  - path
+type: object

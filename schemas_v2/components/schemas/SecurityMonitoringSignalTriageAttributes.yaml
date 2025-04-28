@@ -1,0 +1,31 @@
+description: Attributes describing a triage state update operation over a security signal.
+properties:
+  archive_comment:
+    $ref: ./SecurityMonitoringSignalArchiveComment.yaml
+  archive_comment_timestamp:
+    description: Timestamp of the last edit to the comment.
+    format: int64
+    minimum: 0
+    type: integer
+  archive_comment_user:
+    $ref: ./SecurityMonitoringTriageUser.yaml
+  archive_reason:
+    $ref: ./SecurityMonitoringSignalArchiveReason.yaml
+  assignee:
+    $ref: ./SecurityMonitoringTriageUser.yaml
+  incident_ids:
+    $ref: ./SecurityMonitoringSignalIncidentIds.yaml
+  state:
+    $ref: ./SecurityMonitoringSignalState.yaml
+  state_update_timestamp:
+    description: Timestamp of the last update to the signal state.
+    format: int64
+    minimum: 0
+    type: integer
+  state_update_user:
+    $ref: ./SecurityMonitoringTriageUser.yaml
+required:
+  - assignee
+  - state
+  - incident_ids
+type: object

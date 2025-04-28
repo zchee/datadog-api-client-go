@@ -1,0 +1,7 @@
+description: Payload schema when adding a Cloudflare account.
+properties:
+  data:
+    $ref: ./CloudflareAccountCreateRequestData.yaml
+required:
+  - data
+type: object

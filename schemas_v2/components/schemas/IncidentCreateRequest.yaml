@@ -1,0 +1,7 @@
+description: Create request for an incident.
+properties:
+  data:
+    $ref: ./IncidentCreateData.yaml
+required:
+  - data
+type: object

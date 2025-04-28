@@ -1,0 +1,15 @@
+description: Charges breakdown.
+properties:
+  charge_type:
+    description: The type of charge for a particular product.
+    example: on_demand
+    type: string
+  cost:
+    description: The cost for a particular product and charge type during a given month.
+    format: double
+    type: number
+  product_name:
+    description: The product for which cost is being reported.
+    example: infra_host
+    type: string
+type: object

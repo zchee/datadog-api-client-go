@@ -1,0 +1,10 @@
+description: Attributes object for updating a Fastly account.
+properties:
+  api_key:
+    description: The API key of the Fastly account.
+    example: ABCDEFG123
+    type: string
+  name:
+    description: The name of the Fastly account.
+    type: string
+type: object

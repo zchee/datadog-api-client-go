@@ -1,0 +1,10 @@
+description: Used to create conditions before running subsequent actions.
+properties:
+  completionCondition:
+    $ref: ./CompletionCondition.yaml
+  retryStrategy:
+    $ref: ./RetryStrategy.yaml
+required:
+  - completionCondition
+  - retryStrategy
+type: object

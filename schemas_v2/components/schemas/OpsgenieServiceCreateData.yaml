@@ -1,0 +1,10 @@
+description: Opsgenie service data for a create request.
+properties:
+  attributes:
+    $ref: ./OpsgenieServiceCreateAttributes.yaml
+  type:
+    $ref: ./OpsgenieServiceType.yaml
+required:
+  - type
+  - attributes
+type: object

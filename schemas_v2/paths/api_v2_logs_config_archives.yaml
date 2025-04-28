@@ -1,0 +1,64 @@
+get:
+  description: Get the list of configured logs archives with their definitions.
+  operationId: ListLogsArchives
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsArchives.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all archives
+  tags:
+    - Logs Archives
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_read_archives
+post:
+  description: Create an archive in your organization.
+  operationId: CreateLogsArchive
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/LogsArchiveCreateRequest.yaml
+    description: The definition of the new archive.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsArchive.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create an archive
+  tags:
+    - Logs Archives
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_write_archives

@@ -1,0 +1,13 @@
+description: Tenant-based handle data from a response.
+properties:
+  attributes:
+    $ref: ./MicrosoftTeamsTenantBasedHandleInfoResponseAttributes.yaml
+  id:
+    description: The ID of the tenant-based handle.
+    example: 596da4af-0563-4097-90ff-07230c3f9db3
+    maxLength: 100
+    minLength: 1
+    type: string
+  type:
+    $ref: ./MicrosoftTeamsTenantBasedHandleInfoType.yaml
+type: object

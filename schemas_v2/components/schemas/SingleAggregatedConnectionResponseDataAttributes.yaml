@@ -1,0 +1,69 @@
+description: Attributes for an aggregated connection.
+properties:
+  bytes_sent_by_client:
+    description: The total number of bytes sent by the client over the given period.
+    format: int64
+    type: integer
+  bytes_sent_by_server:
+    description: The total number of bytes sent by the server over the given period.
+    format: int64
+    type: integer
+  group_bys:
+    additionalProperties:
+      description: The values for each group by.
+      items:
+        type: string
+      type: array
+    description: The key, value pairs for each group by.
+    type: object
+  packets_sent_by_client:
+    description: The total number of packets sent by the client over the given period.
+    format: int64
+    type: integer
+  packets_sent_by_server:
+    description: The total number of packets sent by the server over the given period.
+    format: int64
+    type: integer
+  rtt_micro_seconds:
+    description: >-
+      Measured as TCP smoothed round trip time in microseconds (the time between
+      a TCP frame being sent and acknowledged).
+    format: int64
+    type: integer
+  tcp_closed_connections:
+    description: >-
+      The number of TCP connections in a closed state. Measured in connections
+      per second from the client.
+    format: int64
+    type: integer
+  tcp_established_connections:
+    description: >-
+      The number of TCP connections in an established state. Measured in
+      connections per second from the client.
+    format: int64
+    type: integer
+  tcp_refusals:
+    description: >-
+      The number of TCP connections that were refused by the server. Typically
+      this indicates an attempt to connect to an IP/port that is not receiving
+      connections, or a firewall/security misconfiguration.
+    format: int64
+    type: integer
+  tcp_resets:
+    description: The number of TCP connections that were reset by the server.
+    format: int64
+    type: integer
+  tcp_retransmits:
+    description: >-
+      TCP Retransmits represent detected failures that are retransmitted to
+      ensure delivery. Measured in count of retransmits from the client.
+    format: int64
+    type: integer
+  tcp_timeouts:
+    description: >-
+      The number of TCP connections that timed out from the perspective of the
+      operating system. This can indicate general connectivity and latency
+      issues.
+    format: int64
+    type: integer
+type: object

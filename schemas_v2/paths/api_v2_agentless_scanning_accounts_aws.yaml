@@ -1,0 +1,46 @@
+get:
+  description: Fetches the scan options configured for AWS accounts.
+  operationId: ListAwsScanOptions
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AwsScanOptionsListResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get AWS Scan Options
+  tags:
+    - Agentless Scanning
+post:
+  description: Activate Agentless scan options for an AWS account.
+  operationId: CreateAwsScanOptions
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AwsScanOptionsCreateRequest.yaml
+    description: The definition of the new scan options.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AwsScanOptionsResponse.yaml
+      description: Agentless scan options enabled successfully.
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Post AWS Scan Options
+  tags:
+    - Agentless Scanning
+  x-codegen-request-body-name: body

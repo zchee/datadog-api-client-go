@@ -1,0 +1,4 @@
+description: Request for uploading a Custom Costs file.
+items:
+  $ref: ./CustomCostsFileLineItem.yaml
+type: array

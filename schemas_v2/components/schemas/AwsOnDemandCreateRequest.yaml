@@ -1,0 +1,7 @@
+description: Request object that includes the on demand task to submit.
+properties:
+  data:
+    $ref: ./AwsOnDemandCreateData.yaml
+required:
+  - data
+type: object

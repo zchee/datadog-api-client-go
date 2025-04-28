@@ -1,0 +1,12 @@
+description: Case creation data
+properties:
+  attributes:
+    $ref: ./CaseCreateAttributes.yaml
+  relationships:
+    $ref: ./CaseCreateRelationships.yaml
+  type:
+    $ref: ./CaseResourceType.yaml
+required:
+  - attributes
+  - type
+type: object

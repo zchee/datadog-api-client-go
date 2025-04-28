@@ -1,0 +1,31 @@
+description: Attributes for the AWS on demand task.
+properties:
+  arn:
+    description: The arn of the resource to scan.
+    example: arn:aws:ec2:us-east-1:727000456123:instance/i-0eabb50529b67a1ba
+    type: string
+  assigned_at:
+    description: >-
+      Specifies the assignment timestamp if the task has been already assigned
+      to a scanner.
+    example: '2025-02-11T18:25:04.550564Z'
+    type: string
+  created_at:
+    description: The task submission timestamp.
+    example: '2025-02-11T18:13:24.576915Z'
+    type: string
+  status:
+    description: >-
+      Indicates the status of the task.
+
+      QUEUED: the task has been submitted successfully and the resource has not
+      been assigned to a scanner yet.
+
+      ASSIGNED: the task has been assigned.
+
+      ABORTED: the scan has been aborted after a period of time due to technical
+      reasons, such as resource not found, insufficient permissions, or the
+      absence of a configured scanner.
+    example: QUEUED
+    type: string
+type: object

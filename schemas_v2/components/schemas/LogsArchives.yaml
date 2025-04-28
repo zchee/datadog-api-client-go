@@ -1,0 +1,8 @@
+description: The available archives.
+properties:
+  data:
+    description: A list of archives.
+    items:
+      $ref: ./LogsArchiveDefinition.yaml
+    type: array
+type: object

@@ -1,0 +1,9 @@
+description: Scorecard outcomes - the result of a rule for a service.
+properties:
+  data:
+    $ref: ./OutcomesResponseData.yaml
+  included:
+    $ref: ./OutcomesResponseIncluded.yaml
+  links:
+    $ref: ./OutcomesResponseLinks.yaml
+type: object

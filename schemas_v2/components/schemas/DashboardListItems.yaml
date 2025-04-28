@@ -1,0 +1,16 @@
+description: Dashboards within a list.
+properties:
+  dashboards:
+    description: List of dashboards in the dashboard list.
+    example: []
+    items:
+      $ref: ./DashboardListItem.yaml
+    type: array
+  total:
+    description: Number of dashboards in the dashboard list.
+    format: int64
+    readOnly: true
+    type: integer
+required:
+  - dashboards
+type: object

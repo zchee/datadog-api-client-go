@@ -1,0 +1,10 @@
+description: Data for the rule version history.
+properties:
+  attributes:
+    $ref: ./RuleVersionHistory.yaml
+  id:
+    description: ID of the rule.
+    type: string
+  type:
+    $ref: ./GetRuleVersionHistoryDataType.yaml
+type: object

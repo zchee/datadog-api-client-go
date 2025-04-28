@@ -1,0 +1,31 @@
+description: A single incident attachment.
+example:
+  attributes:
+    attachment:
+      documentUrl: ''
+      title: Postmortem IR-123
+    attachment_type: postmortem
+  id: 00000000-abcd-0002-0000-000000000000
+  relationships:
+    last_modified_by_user:
+      data:
+        id: 00000000-0000-0000-cccc-000000000000
+        type: users
+  type: incident_attachments
+properties:
+  attributes:
+    $ref: ./IncidentAttachmentAttributes.yaml
+  id:
+    description: A unique identifier that represents the incident attachment.
+    example: 00000000-abcd-0001-0000-000000000000
+    type: string
+  relationships:
+    $ref: ./IncidentAttachmentRelationships.yaml
+  type:
+    $ref: ./IncidentAttachmentType.yaml
+required:
+  - type
+  - attributes
+  - id
+  - relationships
+type: object

@@ -1,0 +1,13 @@
+description: A notification handle that will be notified at incident creation.
+properties:
+  display_name:
+    description: The name of the notified handle.
+    example: Jane Doe
+    type: string
+  handle:
+    description: >-
+      The handle used for the notification. This includes an email address,
+      Slack channel, or workflow.
+    example: '@test.user@test.com'
+    type: string
+type: object

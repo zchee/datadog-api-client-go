@@ -1,0 +1,24 @@
+delete:
+  description: Delete a single entity in Software Catalog.
+  operationId: DeleteCatalogEntity
+  parameters:
+    - $ref: ../components/parameters/EntityID.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_write
+  summary: Delete a single entity
+  tags:
+    - Software Catalog

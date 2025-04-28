@@ -1,0 +1,50 @@
+description: Vulnerability remediation.
+properties:
+  auto_solvable:
+    description: >-
+      Whether the vulnerability can be resolved when recompiling the package or
+      not.
+    example: false
+    type: boolean
+  avoided_advisories:
+    description: Avoided advisories.
+    items:
+      $ref: ./Advisory.yaml
+    type: array
+  fixed_advisories:
+    description: Remediation fixed advisories.
+    items:
+      $ref: ./Advisory.yaml
+    type: array
+  library_name:
+    description: Library name remediating the vulnerability.
+    example: stdlib
+    type: string
+  library_version:
+    description: Library version remediating the vulnerability.
+    example: Upgrade to a version >= 1.20.0
+    type: string
+  new_advisories:
+    description: New advisories.
+    items:
+      $ref: ./Advisory.yaml
+    type: array
+  remaining_advisories:
+    description: Remaining advisories.
+    items:
+      $ref: ./Advisory.yaml
+    type: array
+  type:
+    description: Remediation type.
+    example: text
+    type: string
+required:
+  - type
+  - library_name
+  - library_version
+  - auto_solvable
+  - fixed_advisories
+  - remaining_advisories
+  - new_advisories
+  - avoided_advisories
+type: object

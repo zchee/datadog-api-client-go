@@ -1,0 +1,14 @@
+description: >-
+  List of recipients to notify when a notification rule is triggered. Many
+  different target types are supported,
+
+  such as email addresses, Slack channels, and PagerDuty services.
+
+  The appropriate integrations need to be properly configured to send
+  notifications to the specified targets.
+example:
+  - '@john.doe@email.com'
+items:
+  description: Recipients to notify.
+  type: string
+type: array

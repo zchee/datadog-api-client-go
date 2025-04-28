@@ -1,0 +1,9 @@
+description: >-
+  Identifies the user who is assigned to this member object. Only `id` is
+  required.
+properties:
+  id:
+    description: The user's ID.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+type: object

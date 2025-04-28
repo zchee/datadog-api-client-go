@@ -1,0 +1,38 @@
+additionalProperties: {}
+description: |-
+  The object containing all signal attributes and their
+  associated values.
+properties:
+  custom:
+    additionalProperties: {}
+    description: A JSON object of attributes in the security signal.
+    example:
+      workflow:
+        first_seen: '2020-06-23T14:46:01.000Z'
+        last_seen: '2020-06-23T14:46:49.000Z'
+        rule:
+          id: 0f5-e0c-805
+          name: 'Brute Force Attack Grouped By User '
+          version: 12
+    type: object
+  message:
+    description: >-
+      The message in the security signal defined by the rule that generated the
+      signal.
+    example: Detect Account Take Over (ATO) through brute force attempts
+    type: string
+  tags:
+    description: An array of tags associated with the security signal.
+    example:
+      - security:attack
+      - technique:T1110-brute-force
+    items:
+      description: The tag associated with the security signal.
+      type: string
+    type: array
+  timestamp:
+    description: The timestamp of the security signal.
+    example: '2019-01-02T09:42:36.320Z'
+    format: date-time
+    type: string
+type: object

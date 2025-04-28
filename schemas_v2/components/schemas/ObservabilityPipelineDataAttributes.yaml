@@ -1,0 +1,14 @@
+description: >-
+  Defines the pipeline’s name and its components (sources, processors, and
+  destinations).
+properties:
+  config:
+    $ref: ./ObservabilityPipelineConfig.yaml
+  name:
+    description: Name of the pipeline.
+    example: Main Observability Pipeline
+    type: string
+required:
+  - name
+  - config
+type: object

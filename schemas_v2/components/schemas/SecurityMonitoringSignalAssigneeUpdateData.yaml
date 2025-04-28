@@ -1,0 +1,7 @@
+description: Data containing the patch for changing the assignee of a signal.
+properties:
+  attributes:
+    $ref: ./SecurityMonitoringSignalAssigneeUpdateAttributes.yaml
+required:
+  - attributes
+type: object

@@ -1,0 +1,122 @@
+delete:
+  description: Delete an incident type.
+  operationId: DeleteIncidentType
+  parameters:
+    - $ref: ../components/parameters/IncidentTypeIDPathParameter.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_settings_write
+  summary: Delete an incident type
+  tags:
+    - Incidents
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_settings_write
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).
+get:
+  description: Get incident type details.
+  operationId: GetIncidentType
+  parameters:
+    - $ref: ../components/parameters/IncidentTypeIDPathParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentTypeResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_read
+  summary: Get incident type details
+  tags:
+    - Incidents
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_read
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).
+patch:
+  description: Update an incident type.
+  operationId: UpdateIncidentType
+  parameters:
+    - $ref: ../components/parameters/IncidentTypeIDPathParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/IncidentTypePatchRequest.yaml
+    description: Incident type payload.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentTypeResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_settings_write
+  summary: Update an incident type
+  tags:
+    - Incidents
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_settings_write
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

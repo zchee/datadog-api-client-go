@@ -1,0 +1,8 @@
+default: aws_resource
+description: The type of the on demand task. The value should always be `aws_resource`.
+enum:
+  - aws_resource
+example: aws_resource
+type: string
+x-enum-varnames:
+  - AWS_RESOURCE

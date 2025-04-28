@@ -1,0 +1,11 @@
+description: JSON API format for a Custom Costs file.
+properties:
+  attributes:
+    $ref: ./CustomCostsFileMetadata.yaml
+  id:
+    description: ID of the Custom Costs metadata.
+    type: string
+  type:
+    description: Type of the Custom Costs file metadata.
+    type: string
+type: object

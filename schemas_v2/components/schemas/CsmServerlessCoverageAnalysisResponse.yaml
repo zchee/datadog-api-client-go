@@ -1,0 +1,5 @@
+description: CSM Serverless Resources Coverage Analysis response.
+properties:
+  data:
+    $ref: ./CsmServerlessCoverageAnalysisData.yaml
+type: object

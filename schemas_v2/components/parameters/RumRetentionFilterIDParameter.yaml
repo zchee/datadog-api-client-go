@@ -1,0 +1,6 @@
+description: Retention filter ID.
+in: path
+name: rf_id
+required: true
+schema:
+  type: string

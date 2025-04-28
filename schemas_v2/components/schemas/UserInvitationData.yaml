@@ -1,0 +1,10 @@
+description: Object to create a user invitation.
+properties:
+  relationships:
+    $ref: ./UserInvitationRelationships.yaml
+  type:
+    $ref: ./UserInvitationsType.yaml
+required:
+  - type
+  - relationships
+type: object

@@ -1,0 +1,12 @@
+description: Defines a rate limit for a trigger.
+properties:
+  count:
+    description: The `TriggerRateLimit` `count`.
+    format: int64
+    type: integer
+  interval:
+    description: >-
+      The `TriggerRateLimit` `interval`. The expected format is the number of
+      seconds ending with an s. For example, 1 day is 86400s
+    type: string
+type: object

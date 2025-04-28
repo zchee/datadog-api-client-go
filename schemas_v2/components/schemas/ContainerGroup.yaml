@@ -1,0 +1,12 @@
+description: Container group object.
+properties:
+  attributes:
+    $ref: ./ContainerGroupAttributes.yaml
+  id:
+    description: Container Group ID.
+    type: string
+  relationships:
+    $ref: ./ContainerGroupRelationships.yaml
+  type:
+    $ref: ./ContainerGroupType.yaml
+type: object

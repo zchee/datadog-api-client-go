@@ -1,0 +1,6 @@
+description: Oncall type.
+enum:
+  - oncall
+type: string
+x-enum-varnames:
+  - ONCALL

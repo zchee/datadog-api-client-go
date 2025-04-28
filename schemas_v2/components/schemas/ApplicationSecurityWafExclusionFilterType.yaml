@@ -1,0 +1,8 @@
+default: exclusion_filter
+description: Type of the resource. The value should always be `exclusion_filter`.
+enum:
+  - exclusion_filter
+example: exclusion_filter
+type: string
+x-enum-varnames:
+  - EXCLUSION_FILTER

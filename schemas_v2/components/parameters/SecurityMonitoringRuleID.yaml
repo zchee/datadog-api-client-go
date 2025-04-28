@@ -1,0 +1,6 @@
+description: The ID of the rule.
+in: path
+name: rule_id
+required: true
+schema:
+  type: string

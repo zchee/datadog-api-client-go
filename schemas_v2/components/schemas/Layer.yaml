@@ -1,0 +1,16 @@
+description: >-
+  Encapsulates a layer resource, holding attributes like rotation details, plus
+  relationships to the members covering that layer.
+properties:
+  attributes:
+    $ref: ./LayerAttributes.yaml
+  id:
+    description: A unique identifier for this layer.
+    type: string
+  relationships:
+    $ref: ./LayerRelationships.yaml
+  type:
+    $ref: ./LayerType.yaml
+required:
+  - type
+type: object

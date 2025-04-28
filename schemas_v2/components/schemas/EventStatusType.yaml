@@ -1,0 +1,24 @@
+description: |-
+  If an alert event is enabled, its status is one of the following:
+  `failure`, `error`, `warning`, `info`, `success`, `user_update`,
+  `recommendation`, or `snapshot`.
+enum:
+  - failure
+  - error
+  - warning
+  - info
+  - success
+  - user_update
+  - recommendation
+  - snapshot
+example: info
+type: string
+x-enum-varnames:
+  - FAILURE
+  - ERROR
+  - WARNING
+  - INFO
+  - SUCCESS
+  - USER_UPDATE
+  - RECOMMENDATION
+  - SNAPSHOT

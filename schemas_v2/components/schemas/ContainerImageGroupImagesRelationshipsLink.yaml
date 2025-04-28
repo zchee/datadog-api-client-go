@@ -1,0 +1,7 @@
+description: Relationships to Container Images inside a Container Image Group.
+properties:
+  data:
+    $ref: ./ContainerImageGroupRelationshipsData.yaml
+  links:
+    $ref: ./ContainerImageGroupRelationshipsLinks.yaml
+type: object

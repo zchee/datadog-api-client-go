@@ -1,0 +1,14 @@
+description: >-
+  The response object with all events matching the request and pagination
+  information.
+properties:
+  data:
+    description: An array of events matching the request.
+    items:
+      $ref: ./EventResponse.yaml
+    type: array
+  links:
+    $ref: ./EventsListResponseLinks.yaml
+  meta:
+    $ref: ./EventsResponseMetadata.yaml
+type: object

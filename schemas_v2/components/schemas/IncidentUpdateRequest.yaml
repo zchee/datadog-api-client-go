@@ -1,0 +1,7 @@
+description: Update request for an incident.
+properties:
+  data:
+    $ref: ./IncidentUpdateData.yaml
+required:
+  - data
+type: object

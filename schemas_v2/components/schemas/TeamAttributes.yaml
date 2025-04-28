@@ -1,0 +1,69 @@
+description: Team attributes
+properties:
+  avatar:
+    description: >-
+      Unicode representation of the avatar for the team, limited to a single
+      grapheme
+    example: 🥑
+    nullable: true
+    type: string
+  banner:
+    description: Banner selection for the team
+    format: int64
+    nullable: true
+    type: integer
+  created_at:
+    description: Creation date of the team
+    format: date-time
+    type: string
+  description:
+    description: Free-form markdown description/content for the team's homepage
+    nullable: true
+    type: string
+  handle:
+    description: The team's identifier
+    example: example-team
+    maxLength: 195
+    type: string
+  hidden_modules:
+    description: Collection of hidden modules for the team
+    items:
+      description: String identifier of the module
+      type: string
+    type: array
+  link_count:
+    description: The number of links belonging to the team
+    format: int32
+    maximum: 2147483647
+    readOnly: true
+    type: integer
+  modified_at:
+    description: Modification date of the team
+    format: date-time
+    type: string
+  name:
+    description: The name of the team
+    example: Example Team
+    maxLength: 200
+    type: string
+  summary:
+    description: A brief summary of the team, derived from the `description`
+    maxLength: 120
+    nullable: true
+    type: string
+  user_count:
+    description: The number of users belonging to the team
+    format: int32
+    maximum: 2147483647
+    readOnly: true
+    type: integer
+  visible_modules:
+    description: Collection of visible modules for the team
+    items:
+      description: String identifier of the module
+      type: string
+    type: array
+required:
+  - handle
+  - name
+type: object

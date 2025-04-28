@@ -1,0 +1,7 @@
+description: Scorecard create rule request data.
+properties:
+  attributes:
+    $ref: ./RuleAttributes.yaml
+  type:
+    $ref: ./RuleType.yaml
+type: object

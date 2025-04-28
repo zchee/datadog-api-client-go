@@ -1,0 +1,8 @@
+default: tenant-based-handle
+description: Specifies the tenant-based handle resource type.
+enum:
+  - tenant-based-handle
+example: tenant-based-handle
+type: string
+x-enum-varnames:
+  - TENANT_BASED_HANDLE

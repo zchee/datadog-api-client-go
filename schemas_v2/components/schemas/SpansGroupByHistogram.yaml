@@ -1,0 +1,30 @@
+description: >-
+  Used to perform a histogram computation (only for measure facets).
+
+  Note: At most 100 buckets are allowed, the number of buckets is (max -
+  min)/interval.
+properties:
+  interval:
+    description: The bin size of the histogram buckets.
+    example: 10
+    format: double
+    type: number
+  max:
+    description: |-
+      The maximum value for the measure used in the histogram
+      (values greater than this one are filtered out).
+    example: 100
+    format: double
+    type: number
+  min:
+    description: |-
+      The minimum value for the measure used in the histogram
+      (values smaller than this one are filtered out).
+    example: 50
+    format: double
+    type: number
+required:
+  - interval
+  - min
+  - max
+type: object

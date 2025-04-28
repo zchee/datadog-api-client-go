@@ -1,0 +1,20 @@
+description: The aggregation type.
+enum:
+  - count
+  - cardinality
+  - sum
+  - max
+  - new_value
+  - geo_data
+  - event_count
+  - none
+type: string
+x-enum-varnames:
+  - COUNT
+  - CARDINALITY
+  - SUM
+  - MAX
+  - NEW_VALUE
+  - GEO_DATA
+  - EVENT_COUNT
+  - NONE

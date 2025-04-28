@@ -1,0 +1,6 @@
+description: The UUID of the incident.
+in: path
+name: incident_id
+required: true
+schema:
+  type: string

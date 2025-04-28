@@ -1,0 +1,12 @@
+description: The attributes of the user who created the Agent rule.
+properties:
+  handle:
+    description: The handle of the user.
+    example: datadog.user@example.com
+    type: string
+  name:
+    description: The name of the user.
+    example: Datadog User
+    nullable: true
+    type: string
+type: object

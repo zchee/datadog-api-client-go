@@ -1,0 +1,16 @@
+description: Service owner's Microsoft Teams.
+properties:
+  contact:
+    description: Contact value.
+    example: https://teams.microsoft.com/myteam
+    type: string
+  name:
+    description: Contact Microsoft Teams.
+    example: My team channel
+    type: string
+  type:
+    $ref: ./ServiceDefinitionV2MSTeamsType.yaml
+required:
+  - type
+  - contact
+type: object

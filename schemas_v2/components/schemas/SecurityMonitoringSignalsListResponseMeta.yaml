@@ -1,0 +1,5 @@
+description: Meta attributes.
+properties:
+  page:
+    $ref: ./SecurityMonitoringSignalsListResponseMetaPage.yaml
+type: object

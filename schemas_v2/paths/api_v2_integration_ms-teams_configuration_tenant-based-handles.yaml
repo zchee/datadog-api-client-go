@@ -1,0 +1,63 @@
+get:
+  description: >-
+    Get a list of all tenant-based handles from the Datadog Microsoft Teams
+    integration.
+  operationId: ListTenantBasedHandles
+  parameters:
+    - $ref: ../components/parameters/MicrosoftTeamsTenantIDQueryParameter.yaml
+    - $ref: ../components/parameters/MicrosoftTeamsHandleNameQueryParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/MicrosoftTeamsTenantBasedHandlesResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '412':
+      $ref: ../components/responses/PreconditionFailedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all tenant-based handles
+  tags:
+    - Microsoft Teams Integration
+post:
+  description: Create a tenant-based handle in the Datadog Microsoft Teams integration.
+  operationId: CreateTenantBasedHandle
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/MicrosoftTeamsCreateTenantBasedHandleRequest.yaml
+    description: Tenant-based handle payload.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MicrosoftTeamsTenantBasedHandleResponse.yaml
+      description: CREATED
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '412':
+      $ref: ../components/responses/PreconditionFailedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create tenant-based handle
+  tags:
+    - Microsoft Teams Integration
+  x-codegen-request-body-name: body

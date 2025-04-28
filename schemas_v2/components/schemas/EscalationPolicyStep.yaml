@@ -1,0 +1,16 @@
+description: >-
+  Represents a single step in an escalation policy, including its attributes,
+  relationships, and resource type.
+properties:
+  attributes:
+    $ref: ./EscalationPolicyStepAttributes.yaml
+  id:
+    description: Specifies the unique identifier of this escalation policy step.
+    type: string
+  relationships:
+    $ref: ./EscalationPolicyStepRelationships.yaml
+  type:
+    $ref: ./EscalationPolicyStepType.yaml
+required:
+  - type
+type: object

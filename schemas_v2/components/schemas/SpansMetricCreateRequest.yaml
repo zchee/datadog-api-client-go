@@ -1,0 +1,7 @@
+description: The new span-based metric body.
+properties:
+  data:
+    $ref: ./SpansMetricCreateData.yaml
+required:
+  - data
+type: object

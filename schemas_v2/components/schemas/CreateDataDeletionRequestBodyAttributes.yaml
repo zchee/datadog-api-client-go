@@ -1,0 +1,36 @@
+description: Attributes for creating a data deletion request.
+properties:
+  from:
+    description: Start of requested time window, milliseconds since Unix epoch.
+    example: 1672527600000
+    format: int64
+    type: integer
+  indexes:
+    description: >-
+      List of indexes for the search. If not provided, the search is performed
+      in all indexes.
+    example:
+      - test-index
+      - test-index-2
+    items:
+      description: Individual index.
+      type: string
+    type: array
+  query:
+    additionalProperties:
+      type: string
+    description: Query for creating a data deletion request.
+    example:
+      host: abc
+      service: xyz
+    type: object
+  to:
+    description: End of requested time window, milliseconds since Unix epoch.
+    example: 1704063600000
+    format: int64
+    type: integer
+required:
+  - query
+  - from
+  - to
+type: object

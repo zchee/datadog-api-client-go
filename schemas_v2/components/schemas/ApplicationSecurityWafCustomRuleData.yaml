@@ -1,0 +1,12 @@
+description: Object for a single WAF custom rule.
+properties:
+  attributes:
+    $ref: ./ApplicationSecurityWafCustomRuleAttributes.yaml
+  id:
+    description: The ID of the custom rule.
+    example: 2857c47d-1e3a-4300-8b2f-dc24089c084b
+    readOnly: true
+    type: string
+  type:
+    $ref: ./ApplicationSecurityWafCustomRuleType.yaml
+type: object

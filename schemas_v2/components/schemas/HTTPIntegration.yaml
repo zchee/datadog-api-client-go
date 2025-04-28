@@ -1,0 +1,16 @@
+description: The definition of `HTTPIntegration` object.
+properties:
+  base_url:
+    description: Base HTTP url for the integration
+    example: http://datadoghq.com
+    pattern: url
+    type: string
+  credentials:
+    $ref: ./HTTPCredentials.yaml
+  type:
+    $ref: ./HTTPIntegrationType.yaml
+required:
+  - type
+  - base_url
+  - credentials
+type: object

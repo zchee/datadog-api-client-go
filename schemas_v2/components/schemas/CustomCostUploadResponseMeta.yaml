@@ -1,0 +1,6 @@
+description: Meta for the response from the Upload Custom Costs endpoints.
+properties:
+  version:
+    description: Version of Custom Costs file
+    type: string
+type: object

@@ -1,0 +1,15 @@
+description: Related entity attributes.
+properties:
+  kind:
+    description: Entity kind.
+    type: string
+  name:
+    description: Entity name.
+    type: string
+  namespace:
+    description: Entity namespace.
+    type: string
+  type:
+    description: Entity relation type to the associated entity.
+    type: string
+type: object

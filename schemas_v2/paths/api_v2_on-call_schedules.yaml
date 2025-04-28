@@ -1,0 +1,39 @@
+post:
+  description: Create a new on-call schedule
+  operationId: CreateOnCallSchedule
+  parameters:
+    - description: >-
+        Comma-separated list of included relationships to be returned. Allowed
+        values: `teams`, `layers`, `layers.members`, `layers.members.user`.
+      in: query
+      name: include
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ScheduleCreateRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Schedule.yaml
+      description: Created
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Create on-call schedule
+  tags:
+    - On-Call

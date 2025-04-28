@@ -1,0 +1,10 @@
+description: Schema for a Notebook-based trigger.
+properties:
+  notebookTrigger:
+    description: Trigger a workflow from a Notebook.
+    type: object
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - notebookTrigger
+type: object

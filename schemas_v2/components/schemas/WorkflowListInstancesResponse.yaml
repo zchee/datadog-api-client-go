@@ -1,0 +1,11 @@
+additionalProperties: {}
+description: Response returned when listing workflow instances.
+properties:
+  data:
+    description: A list of workflow instances.
+    items:
+      $ref: ./WorkflowInstanceListItem.yaml
+    type: array
+  meta:
+    $ref: ./WorkflowListInstancesResponseMeta.yaml
+type: object

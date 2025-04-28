@@ -1,0 +1,15 @@
+description: Response for a list of application keys.
+properties:
+  data:
+    description: Array of application keys.
+    items:
+      $ref: ./PartialApplicationKey.yaml
+    type: array
+  included:
+    description: Array of objects related to the application key.
+    items:
+      $ref: ./ApplicationKeyResponseIncludedItem.yaml
+    type: array
+  meta:
+    $ref: ./ApplicationKeyResponseMeta.yaml
+type: object

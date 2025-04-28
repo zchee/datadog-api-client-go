@@ -1,0 +1,5 @@
+additionalProperties: false
+description: Logs association.
+items:
+  $ref: ./EntityV3DatadogLogItem.yaml
+type: array

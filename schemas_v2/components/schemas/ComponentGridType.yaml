@@ -1,0 +1,8 @@
+default: grid
+description: The grid component type.
+enum:
+  - grid
+example: grid
+type: string
+x-enum-varnames:
+  - GRID

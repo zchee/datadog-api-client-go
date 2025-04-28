@@ -1,0 +1,12 @@
+description: Object representing a uniquely identified resource.
+properties:
+  name:
+    description: Resource's name.
+    example: fallback_payments_test
+    type: string
+  type:
+    $ref: ./ChangeEventCustomAttributesChangedResourceType.yaml
+required:
+  - type
+  - name
+type: object

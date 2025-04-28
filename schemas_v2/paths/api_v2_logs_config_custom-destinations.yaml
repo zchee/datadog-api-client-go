@@ -1,0 +1,61 @@
+get:
+  description: >-
+    Get the list of configured custom destinations in your organization with
+    their definitions.
+  operationId: ListLogsCustomDestinations
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CustomDestinationsResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all custom destinations
+  tags:
+    - Logs Custom Destinations
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_read_data
+      - logs_read_config
+post:
+  description: Create a custom destination in your organization.
+  operationId: CreateLogsCustomDestination
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CustomDestinationCreateRequest.yaml
+    description: The definition of the new custom destination.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CustomDestinationResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a custom destination
+  tags:
+    - Logs Custom Destinations
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_write_forwarding_rules

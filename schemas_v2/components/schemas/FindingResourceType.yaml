@@ -1,0 +1,3 @@
+description: The resource type of this finding.
+example: azure_storage_account
+type: string

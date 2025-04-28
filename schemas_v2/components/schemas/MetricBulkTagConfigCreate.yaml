@@ -1,0 +1,12 @@
+description: Request object to bulk configure tags for metrics matching the given prefix.
+properties:
+  attributes:
+    $ref: ./MetricBulkTagConfigCreateAttributes.yaml
+  id:
+    $ref: ./MetricBulkTagConfigNamePrefix.yaml
+  type:
+    $ref: ./MetricBulkConfigureTagsType.yaml
+required:
+  - id
+  - type
+type: object

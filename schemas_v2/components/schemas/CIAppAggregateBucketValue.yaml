@@ -1,0 +1,5 @@
+description: A bucket value, can either be a timeseries or a single value.
+oneOf:
+  - $ref: ./CIAppAggregateBucketValueSingleString.yaml
+  - $ref: ./CIAppAggregateBucketValueSingleNumber.yaml
+  - $ref: ./CIAppAggregateBucketValueTimeseries.yaml

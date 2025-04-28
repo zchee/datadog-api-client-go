@@ -1,0 +1,11 @@
+description: Relationships to assets related to the metric.
+properties:
+  dashboards:
+    $ref: ./MetricAssetDashboardRelationships.yaml
+  monitors:
+    $ref: ./MetricAssetMonitorRelationships.yaml
+  notebooks:
+    $ref: ./MetricAssetNotebookRelationships.yaml
+  slos:
+    $ref: ./MetricAssetSLORelationships.yaml
+type: object

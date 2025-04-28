@@ -1,0 +1,13 @@
+description: A group by rule.
+properties:
+  path:
+    description: The path to the value the span-based metric will be aggregated over.
+    example: resource_name
+    type: string
+  tag_name:
+    description: >-
+      Eventual name of the tag that gets created. By default, the path attribute
+      is used as the tag name.
+    example: resource_name
+    type: string
+type: object

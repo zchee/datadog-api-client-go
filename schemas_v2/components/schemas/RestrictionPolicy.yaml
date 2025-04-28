@@ -1,0 +1,17 @@
+description: Restriction policy object.
+properties:
+  attributes:
+    $ref: ./RestrictionPolicyAttributes.yaml
+  id:
+    description: >-
+      The identifier, always equivalent to the value specified in the
+      `resource_id` path parameter.
+    example: dashboard:abc-def-ghi
+    type: string
+  type:
+    $ref: ./RestrictionPolicyType.yaml
+required:
+  - type
+  - id
+  - attributes
+type: object

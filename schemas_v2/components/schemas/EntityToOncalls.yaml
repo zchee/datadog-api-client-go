@@ -1,0 +1,5 @@
+description: Entity to oncalls relationship.
+properties:
+  data:
+    $ref: ./RelationshipArray.yaml
+type: object

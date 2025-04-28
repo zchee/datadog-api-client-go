@@ -1,0 +1,47 @@
+get:
+  description: Search for incidents matching a certain query.
+  operationId: SearchIncidents
+  parameters:
+    - $ref: ../components/parameters/IncidentSearchIncludeQueryParameter.yaml
+    - $ref: ../components/parameters/IncidentSearchQueryQueryParameter.yaml
+    - $ref: ../components/parameters/IncidentSearchSortQueryParameter.yaml
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageOffset.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentSearchResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_read
+  summary: Search for incidents
+  tags:
+    - Incidents
+  x-pagination:
+    limitParam: page[size]
+    pageOffsetParam: page[offset]
+    resultsPath: data.attributes.incidents
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_read
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

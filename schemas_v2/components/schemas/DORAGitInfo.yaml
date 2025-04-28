@@ -1,0 +1,10 @@
+description: Git info for DORA Metrics events.
+properties:
+  commit_sha:
+    $ref: ./GitCommitSHA.yaml
+  repository_url:
+    $ref: ./GitRepositoryURL.yaml
+required:
+  - repository_url
+  - commit_sha
+type: object

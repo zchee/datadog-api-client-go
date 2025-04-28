@@ -1,0 +1,5 @@
+description: A todo assignee.
+example: '@test.user@test.com'
+oneOf:
+  - $ref: ./IncidentTodoAssigneeHandle.yaml
+  - $ref: ./IncidentTodoAnonymousAssignee.yaml

@@ -1,0 +1,6 @@
+description: Confluent Account ID.
+in: path
+name: account_id
+required: true
+schema:
+  type: string

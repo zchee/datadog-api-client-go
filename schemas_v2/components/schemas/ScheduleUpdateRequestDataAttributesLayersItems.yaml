@@ -1,0 +1,48 @@
+description: >-
+  Represents a layer within a schedule update, including rotation details,
+  members,
+
+  and optional restrictions.
+properties:
+  effective_date:
+    description: When this updated layer takes effect (ISO 8601 format).
+    example: '2025-02-03T05:00:00Z'
+    format: date-time
+    type: string
+  end_date:
+    description: When this updated layer should stop being active (ISO 8601 format).
+    example: '2025-12-31T00:00:00Z'
+    format: date-time
+    type: string
+  id:
+    description: A unique identifier for the layer being updated.
+    example: 00000000-0000-0000-0000-000000000001
+    type: string
+  interval:
+    $ref: ./ScheduleUpdateRequestDataAttributesLayersItemsInterval.yaml
+  members:
+    description: The members assigned to this layer.
+    items:
+      $ref: ./ScheduleUpdateRequestDataAttributesLayersItemsMembersItems.yaml
+    type: array
+  name:
+    description: The name for this layer (for example, "Secondary Coverage").
+    example: Primary On-Call Layer
+    type: string
+  restrictions:
+    description: Any time restrictions that define when this layer is active.
+    items:
+      $ref: ./ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems.yaml
+    type: array
+  rotation_start:
+    description: The date/time at which the rotation begins (ISO 8601 format).
+    example: '2025-02-01T00:00:00Z'
+    format: date-time
+    type: string
+required:
+  - effective_date
+  - interval
+  - members
+  - name
+  - rotation_start
+type: object

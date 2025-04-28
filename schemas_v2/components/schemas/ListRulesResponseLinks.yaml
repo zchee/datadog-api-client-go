@@ -1,0 +1,8 @@
+description: Links attributes.
+properties:
+  next:
+    description: Link for the next set of rules.
+    example: >-
+      /api/v2/scorecard/rules?page%5Blimit%5D=2&page%5Boffset%5D=2&page%5Bsize%5D=2
+    type: string
+type: object

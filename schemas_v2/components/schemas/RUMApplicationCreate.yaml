@@ -1,0 +1,10 @@
+description: RUM application creation.
+properties:
+  attributes:
+    $ref: ./RUMApplicationCreateAttributes.yaml
+  type:
+    $ref: ./RUMApplicationCreateType.yaml
+required:
+  - attributes
+  - type
+type: object

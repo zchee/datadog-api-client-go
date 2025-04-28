@@ -1,0 +1,58 @@
+get:
+  description: List Confluent accounts.
+  operationId: ListConfluentAccount
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ConfluentAccountsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List Confluent accounts
+  tags:
+    - Confluent Cloud
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+post:
+  description: Create a Confluent account.
+  operationId: CreateConfluentAccount
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ConfluentAccountCreateRequest.yaml
+    description: Confluent payload
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ConfluentAccountResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Add Confluent account
+  tags:
+    - Confluent Cloud
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

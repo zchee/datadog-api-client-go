@@ -1,0 +1,7 @@
+description: Payload schema when updating a Fastly account.
+properties:
+  data:
+    $ref: ./FastlyAccountUpdateRequestData.yaml
+required:
+  - data
+type: object

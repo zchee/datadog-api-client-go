@@ -1,0 +1,15 @@
+description: Jira issue information
+properties:
+  issue_id:
+    description: Jira issue ID
+    type: string
+  issue_key:
+    description: Jira issue key
+    type: string
+  issue_url:
+    description: Jira issue URL
+    type: string
+  project_key:
+    description: Jira project key
+    type: string
+type: object

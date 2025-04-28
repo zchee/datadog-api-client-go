@@ -1,0 +1,14 @@
+description: The response object after an app is successfully updated.
+properties:
+  data:
+    $ref: ./UpdateAppResponseData.yaml
+  included:
+    description: Data on the version of the app that was published.
+    items:
+      $ref: ./Deployment.yaml
+    type: array
+  meta:
+    $ref: ./AppMeta.yaml
+  relationship:
+    $ref: ./AppRelationship.yaml
+type: object

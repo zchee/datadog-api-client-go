@@ -1,0 +1,7 @@
+description: Basic access authentication.
+properties:
+  type:
+    $ref: ./CustomDestinationResponseHttpDestinationAuthBasicType.yaml
+required:
+  - type
+type: object

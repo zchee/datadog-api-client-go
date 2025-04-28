@@ -1,0 +1,12 @@
+description: A single rule outcome.
+properties:
+  attributes:
+    $ref: ./OutcomesBatchResponseAttributes.yaml
+  id:
+    description: The unique ID for a rule outcome.
+    type: string
+  relationships:
+    $ref: ./RuleOutcomeRelationships.yaml
+  type:
+    $ref: ./OutcomeType.yaml
+type: object

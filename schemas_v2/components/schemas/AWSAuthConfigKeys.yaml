@@ -1,0 +1,15 @@
+description: AWS Authentication config to integrate your account using an access key pair.
+properties:
+  access_key_id:
+    description: AWS Access Key ID.
+    example: AKIAIOSFODNN7EXAMPLE
+    type: string
+  secret_access_key:
+    description: AWS Secret Access Key.
+    example: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    minLength: 1
+    type: string
+    writeOnly: true
+required:
+  - access_key_id
+type: object

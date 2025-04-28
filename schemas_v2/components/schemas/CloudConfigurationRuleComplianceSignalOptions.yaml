@@ -1,0 +1,23 @@
+description: How to generate compliance signals. Useful for cloud_configuration rules only.
+properties:
+  defaultActivationStatus:
+    description: The default activation status.
+    nullable: true
+    type: boolean
+  defaultGroupByFields:
+    description: The default group by fields.
+    items:
+      type: string
+    nullable: true
+    type: array
+  userActivationStatus:
+    description: Whether signals will be sent.
+    nullable: true
+    type: boolean
+  userGroupByFields:
+    description: Fields to use to group findings by when sending signals.
+    items:
+      type: string
+    nullable: true
+    type: array
+type: object

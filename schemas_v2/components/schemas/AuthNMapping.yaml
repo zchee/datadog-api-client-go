@@ -1,0 +1,16 @@
+description: The AuthN Mapping object returned by API.
+properties:
+  attributes:
+    $ref: ./AuthNMappingAttributes.yaml
+  id:
+    description: ID of the AuthN Mapping.
+    example: 3653d3c6-0c75-11ea-ad28-fb5701eabc7d
+    type: string
+  relationships:
+    $ref: ./AuthNMappingRelationships.yaml
+  type:
+    $ref: ./AuthNMappingsType.yaml
+required:
+  - id
+  - type
+type: object

@@ -1,0 +1,15 @@
+description: >-
+  The type of metric. The available types are `0` (unspecified), `1` (count),
+  `2` (rate), and `3` (gauge).
+enum:
+  - 0
+  - 1
+  - 2
+  - 3
+format: int32
+type: integer
+x-enum-varnames:
+  - UNSPECIFIED
+  - COUNT
+  - RATE
+  - GAUGE

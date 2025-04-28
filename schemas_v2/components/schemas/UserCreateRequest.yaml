@@ -1,0 +1,7 @@
+description: Create a user.
+properties:
+  data:
+    $ref: ./UserCreateData.yaml
+required:
+  - data
+type: object

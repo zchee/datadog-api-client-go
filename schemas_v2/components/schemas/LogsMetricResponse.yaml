@@ -1,0 +1,5 @@
+description: The log-based metric object.
+properties:
+  data:
+    $ref: ./LogsMetricResponseData.yaml
+type: object

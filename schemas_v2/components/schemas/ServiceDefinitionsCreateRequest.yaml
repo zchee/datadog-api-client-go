@@ -1,0 +1,6 @@
+description: Create service definitions request.
+oneOf:
+  - $ref: ./ServiceDefinitionV2Dot2.yaml
+  - $ref: ./ServiceDefinitionV2Dot1.yaml
+  - $ref: ./ServiceDefinitionV2.yaml
+  - $ref: ./ServiceDefinitionRaw.yaml

@@ -1,0 +1,7 @@
+description: The definition of `HTTPTokenAuthType` object.
+enum:
+  - HTTPTokenAuth
+example: HTTPTokenAuth
+type: string
+x-enum-varnames:
+  - HTTPTOKENAUTH

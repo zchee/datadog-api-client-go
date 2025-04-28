@@ -1,0 +1,4 @@
+description: Schedule for the downtime.
+oneOf:
+  - $ref: ./DowntimeScheduleRecurrencesUpdateRequest.yaml
+  - $ref: ./DowntimeScheduleOneTimeCreateUpdateRequest.yaml

@@ -1,0 +1,24 @@
+description: The definition of `HTTPTokenAuth` object.
+properties:
+  body:
+    $ref: ./HTTPBody.yaml
+  headers:
+    description: The `HTTPTokenAuth` `headers`.
+    items:
+      $ref: ./HTTPHeader.yaml
+    type: array
+  tokens:
+    description: The `HTTPTokenAuth` `tokens`.
+    items:
+      $ref: ./HTTPToken.yaml
+    type: array
+  type:
+    $ref: ./HTTPTokenAuthType.yaml
+  url_parameters:
+    description: The `HTTPTokenAuth` `url_parameters`.
+    items:
+      $ref: ./UrlParam.yaml
+    type: array
+required:
+  - type
+type: object

@@ -1,0 +1,6 @@
+description: JSON object of event system attributes.
+properties:
+  id:
+    description: Event id
+    type: string
+type: object

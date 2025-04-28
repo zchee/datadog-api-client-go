@@ -1,0 +1,57 @@
+get:
+  description: List Fastly accounts.
+  operationId: ListFastlyAccounts
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FastlyAccountsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List Fastly accounts
+  tags:
+    - Fastly Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+post:
+  description: Create a Fastly account.
+  operationId: CreateFastlyAccount
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/FastlyAccountCreateRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FastlyAccountResponse.yaml
+      description: CREATED
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Add Fastly account
+  tags:
+    - Fastly Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

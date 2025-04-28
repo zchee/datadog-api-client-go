@@ -1,0 +1,8 @@
+description: Response schema when interacting with a list of Confluent resources.
+properties:
+  data:
+    description: The JSON:API data attribute.
+    items:
+      $ref: ./ConfluentResourceResponseData.yaml
+    type: array
+type: object

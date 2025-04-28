@@ -1,0 +1,73 @@
+get:
+  description: >-
+    List all instances of a given workflow. This API requires an application key
+    scoped with the workflows_read permission.
+  operationId: ListWorkflowInstances
+  parameters:
+    - $ref: ../components/parameters/WorkflowId.yaml
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageNumber.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WorkflowListInstancesResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - workflows_read
+  summary: List workflow instances
+  tags:
+    - Workflow Automation
+  x-permission:
+    operator: OR
+    permissions:
+      - workflows_read
+post:
+  description: >-
+    Execute the given workflow. This API requires an application key scoped with
+    the workflows_run permission.
+  operationId: CreateWorkflowInstance
+  parameters:
+    - $ref: ../components/parameters/WorkflowId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/WorkflowInstanceCreateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WorkflowInstanceCreateResponse.yaml
+      description: Created
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - workflows_run
+  summary: Execute a workflow
+  tags:
+    - Workflow Automation
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - workflows_run

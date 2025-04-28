@@ -1,0 +1,9 @@
+description: The RUM retention filter.
+properties:
+  attributes:
+    $ref: ./RumRetentionFilterAttributes.yaml
+  id:
+    $ref: ./RumRetentionFilterID.yaml
+  type:
+    $ref: ./RumRetentionFilterType.yaml
+type: object

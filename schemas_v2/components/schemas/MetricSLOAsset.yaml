@@ -1,0 +1,12 @@
+description: A SLO object with title.
+properties:
+  attributes:
+    $ref: ./MetricAssetAttributes.yaml
+  id:
+    $ref: ./MetricSLOID.yaml
+  type:
+    $ref: ./MetricSLOType.yaml
+required:
+  - id
+  - type
+type: object

@@ -1,0 +1,8 @@
+default: job
+description: Used to distinguish between pipelines, stages, jobs, and steps.
+enum:
+  - job
+example: job
+type: string
+x-enum-varnames:
+  - JOB

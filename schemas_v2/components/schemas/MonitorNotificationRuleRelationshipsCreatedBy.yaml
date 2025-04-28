@@ -1,0 +1,5 @@
+description: The user who created the monitor notification rule.
+properties:
+  data:
+    $ref: ./MonitorNotificationRuleRelationshipsCreatedByData.yaml
+type: object

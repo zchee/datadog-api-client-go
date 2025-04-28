@@ -1,0 +1,17 @@
+description: Team memberships response
+properties:
+  data:
+    description: Team memberships response data
+    items:
+      $ref: ./UserTeam.yaml
+    type: array
+  included:
+    description: Resources related to the team memberships
+    items:
+      $ref: ./UserTeamIncluded.yaml
+    type: array
+  links:
+    $ref: ./TeamsResponseLinks.yaml
+  meta:
+    $ref: ./TeamsResponseMeta.yaml
+type: object

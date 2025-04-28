@@ -1,0 +1,12 @@
+description: Container Image Group object.
+properties:
+  attributes:
+    $ref: ./ContainerImageGroupAttributes.yaml
+  id:
+    description: Container Image Group ID.
+    type: string
+  relationships:
+    $ref: ./ContainerImageGroupRelationships.yaml
+  type:
+    $ref: ./ContainerImageGroupType.yaml
+type: object

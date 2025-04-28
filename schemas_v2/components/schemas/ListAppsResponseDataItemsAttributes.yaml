@@ -1,0 +1,24 @@
+description: Basic information about the app such as name, description, and tags.
+properties:
+  description:
+    description: A human-readable description for the app.
+    type: string
+  favorite:
+    description: Whether the app is marked as a favorite by the current user.
+    type: boolean
+  name:
+    description: The name of the app.
+    type: string
+  selfService:
+    description: Whether the app is enabled for use in the Datadog self-service hub.
+    type: boolean
+  tags:
+    description: A list of tags for the app, which can be used to filter apps.
+    example:
+      - service:webshop-backend
+      - team:webshop
+    items:
+      description: An individual tag for the app.
+      type: string
+    type: array
+type: object

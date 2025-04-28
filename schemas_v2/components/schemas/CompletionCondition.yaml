@@ -1,0 +1,12 @@
+description: The definition of `CompletionCondition` object.
+properties:
+  operand1:
+    description: The `CompletionCondition` `operand1`.
+  operand2:
+    description: The `CompletionCondition` `operand2`.
+  operator:
+    $ref: ./CompletionConditionOperator.yaml
+required:
+  - operand1
+  - operator
+type: object

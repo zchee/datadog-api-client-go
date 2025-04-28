@@ -1,0 +1,10 @@
+description: The definition of an archive order.
+properties:
+  attributes:
+    $ref: ./LogsArchiveOrderAttributes.yaml
+  type:
+    $ref: ./LogsArchiveOrderDefinitionType.yaml
+required:
+  - type
+  - attributes
+type: object

@@ -1,0 +1,11 @@
+description: Resources related to a case
+properties:
+  assignee:
+    $ref: ./NullableUserRelationship.yaml
+  created_by:
+    $ref: ./NullableUserRelationship.yaml
+  modified_by:
+    $ref: ./NullableUserRelationship.yaml
+  project:
+    $ref: ./ProjectRelationship.yaml
+type: object

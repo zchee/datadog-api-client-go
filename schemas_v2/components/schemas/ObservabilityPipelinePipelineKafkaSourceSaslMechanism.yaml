@@ -1,0 +1,10 @@
+description: SASL mechanism used for Kafka authentication.
+enum:
+  - PLAIN
+  - SCRAM-SHA-256
+  - SCRAM-SHA-512
+type: string
+x-enum-varnames:
+  - PLAIN
+  - SCRAMNOT_SHANOT_256
+  - SCRAMNOT_SHANOT_512

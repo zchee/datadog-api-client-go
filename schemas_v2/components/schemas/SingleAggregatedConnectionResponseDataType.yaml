@@ -1,0 +1,7 @@
+default: aggregated_connection
+description: Aggregated connection resource type.
+enum:
+  - aggregated_connection
+type: string
+x-enum-varnames:
+  - AGGREGATED_CONNECTION

@@ -1,0 +1,7 @@
+description: Type of the event.
+enum:
+  - cipipeline
+example: cipipeline
+type: string
+x-enum-varnames:
+  - CIPIPELINE

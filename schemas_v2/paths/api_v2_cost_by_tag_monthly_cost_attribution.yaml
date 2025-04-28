@@ -1,0 +1,154 @@
+get:
+  description: >-
+    Get monthly cost attribution by tag across multi-org and single root-org
+    accounts.
+
+    Cost Attribution data for a given month becomes available no later than the
+    19th of the following month.
+
+    This API endpoint is paginated. To make sure you receive all records, check
+    if the value of `next_record_id` is
+
+    set in the response. If it is, make another request and pass
+    `next_record_id` as a parameter.
+
+    Pseudo code example:
+
+    ```
+
+    response := GetMonthlyCostAttribution(start_month, end_month)
+
+    cursor := response.metadata.pagination.next_record_id
+
+    WHILE cursor != null BEGIN
+      sleep(5 seconds)  # Avoid running into rate limit
+      response := GetMonthlyCostAttribution(start_month, end_month, next_record_id=cursor)
+      cursor := response.metadata.pagination.next_record_id
+    END
+
+    ```
+
+
+    This endpoint is only accessible for [parent-level
+    organizations](https://docs.datadoghq.com/account_management/multi_organization/).
+    This endpoint is not available in the Government (US1-FED) site.
+  operationId: GetMonthlyCostAttribution
+  parameters:
+    - description: >-
+        Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for cost
+        beginning in this month.
+      in: query
+      name: start_month
+      required: true
+      schema:
+        format: date-time
+        type: string
+    - description: >-
+        Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for cost
+        ending this month.
+      in: query
+      name: end_month
+      required: false
+      schema:
+        format: date-time
+        type: string
+    - description: >-
+        Comma-separated list specifying cost types (e.g.,
+        `<billing_dimension>_on_demand_cost`,
+        `<billing_dimension>_committed_cost`, `<billing_dimension>_total_cost`)
+        and the
+
+        proportions (`<billing_dimension>_percentage_in_org`,
+        `<billing_dimension>_percentage_in_account`). Use `*` to retrieve all
+        fields.
+
+        Example: `infra_host_on_demand_cost,infra_host_percentage_in_account`
+
+        To obtain the complete list of active billing dimensions that can be
+        used to replace
+
+        `<billing_dimension>` in the field names, make a request to the [Get
+        active billing dimensions
+        API](https://docs.datadoghq.com/api/latest/usage-metering/#get-active-billing-dimensions-for-cost-attribution).
+      in: query
+      name: fields
+      required: true
+      schema:
+        type: string
+    - description: 'The direction to sort by: `[desc, asc]`.'
+      in: query
+      name: sort_direction
+      required: false
+      schema:
+        $ref: ../components/schemas/SortDirection.yaml
+    - description: >-
+        The billing dimension to sort by. Always sorted by total cost. Example:
+        `infra_host`.
+      in: query
+      name: sort_name
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Comma separated list of tag keys used to group cost. If no value is
+        provided the cost will not be broken down by tags.
+
+        To see which tags are available, look for the value of
+        `tag_config_source` in the API response.
+      in: query
+      name: tag_breakdown_keys
+      required: false
+      schema:
+        type: string
+    - description: >-
+        List following results with a next_record_id provided in the previous
+        query.
+      in: query
+      name: next_record_id
+      required: false
+      schema:
+        type: string
+    - description: Include child org cost in the response. Defaults to `true`.
+      in: query
+      name: include_descendants
+      required: false
+      schema:
+        default: true
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/MonthlyCostAttributionResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden - User is not authorized
+    '429':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Too many requests
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - usage_read
+  summary: Get Monthly Cost Attribution
+  tags:
+    - Usage Metering
+  x-permission:
+    operator: OR
+    permissions:
+      - usage_read

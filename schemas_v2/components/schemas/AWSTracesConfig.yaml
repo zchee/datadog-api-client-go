@@ -1,0 +1,5 @@
+description: AWS Traces Collection config.
+properties:
+  xray_services:
+    $ref: ./XRayServicesList.yaml
+type: object

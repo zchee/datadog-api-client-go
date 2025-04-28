@@ -1,0 +1,37 @@
+post:
+  description: Sets multiple service-rule outcomes in a single batched request.
+  operationId: CreateScorecardOutcomesBatch
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/OutcomesBatchRequest.yaml
+    description: Set of scorecard outcomes.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OutcomesBatchResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_write
+  summary: Create outcomes batch
+  tags:
+    - Service Scorecards
+  x-codegen-request-body-name: body
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

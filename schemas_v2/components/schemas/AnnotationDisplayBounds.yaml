@@ -1,0 +1,19 @@
+description: The definition of `AnnotationDisplayBounds` object.
+properties:
+  height:
+    description: The `bounds` `height`.
+    format: double
+    type: number
+  width:
+    description: The `bounds` `width`.
+    format: double
+    type: number
+  x:
+    description: The `bounds` `x`.
+    format: double
+    type: number
+  'y':
+    description: The `bounds` `y`.
+    format: double
+    type: number
+type: object

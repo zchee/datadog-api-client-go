@@ -1,0 +1,29 @@
+description: Attributes of AuthN Mapping.
+properties:
+  attribute_key:
+    description: >-
+      Key portion of a key/value pair of the attribute sent from the Identity
+      Provider.
+    example: member-of
+    type: string
+  attribute_value:
+    description: >-
+      Value portion of a key/value pair of the attribute sent from the Identity
+      Provider.
+    example: Development
+    type: string
+  created_at:
+    description: Creation time of the AuthN Mapping.
+    format: date-time
+    readOnly: true
+    type: string
+  modified_at:
+    description: Time of last AuthN Mapping modification.
+    format: date-time
+    readOnly: true
+    type: string
+  saml_assertion_attribute_id:
+    description: The ID of the SAML assertion attribute.
+    example: '0'
+    type: string
+type: object

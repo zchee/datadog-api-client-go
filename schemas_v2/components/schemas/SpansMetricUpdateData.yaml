@@ -1,0 +1,10 @@
+description: The new span-based metric properties.
+properties:
+  attributes:
+    $ref: ./SpansMetricUpdateAttributes.yaml
+  type:
+    $ref: ./SpansMetricType.yaml
+required:
+  - type
+  - attributes
+type: object

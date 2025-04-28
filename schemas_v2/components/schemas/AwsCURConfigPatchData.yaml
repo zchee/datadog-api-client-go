@@ -1,0 +1,10 @@
+description: AWS CUR config Patch data.
+properties:
+  attributes:
+    $ref: ./AwsCURConfigPatchRequestAttributes.yaml
+  type:
+    $ref: ./AwsCURConfigPatchRequestType.yaml
+required:
+  - attributes
+  - type
+type: object

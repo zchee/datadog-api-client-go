@@ -1,0 +1,10 @@
+description: All the available security filters objects.
+properties:
+  data:
+    description: A list of security filters objects.
+    items:
+      $ref: ./SecurityFilter.yaml
+    type: array
+  meta:
+    $ref: ./SecurityFilterMeta.yaml
+type: object

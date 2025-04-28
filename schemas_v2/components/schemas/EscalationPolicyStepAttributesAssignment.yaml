@@ -1,0 +1,10 @@
+description: >-
+  Specifies how this escalation step will assign targets (example `default` or
+  `round-robin`).
+enum:
+  - default
+  - round-robin
+type: string
+x-enum-varnames:
+  - DEFAULT
+  - ROUND_ROBIN

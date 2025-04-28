@@ -1,0 +1,142 @@
+description: The incident's attributes from a response.
+properties:
+  archived:
+    description: Timestamp of when the incident was archived.
+    format: date-time
+    nullable: true
+    readOnly: true
+    type: string
+  case_id:
+    description: The incident case id.
+    format: int64
+    nullable: true
+    type: integer
+  created:
+    description: Timestamp when the incident was created.
+    format: date-time
+    readOnly: true
+    type: string
+  customer_impact_duration:
+    description: >-
+      Length of the incident's customer impact in seconds.
+
+      Equals the difference between `customer_impact_start` and
+      `customer_impact_end`.
+    format: int64
+    readOnly: true
+    type: integer
+  customer_impact_end:
+    description: Timestamp when customers were no longer impacted by the incident.
+    format: date-time
+    nullable: true
+    type: string
+  customer_impact_scope:
+    description: A summary of the impact customers experienced during the incident.
+    example: An example customer impact scope
+    nullable: true
+    type: string
+  customer_impact_start:
+    description: Timestamp when customers began being impacted by the incident.
+    format: date-time
+    nullable: true
+    type: string
+  customer_impacted:
+    description: A flag indicating whether the incident caused customer impact.
+    example: false
+    type: boolean
+  detected:
+    description: Timestamp when the incident was detected.
+    format: date-time
+    nullable: true
+    type: string
+  fields:
+    additionalProperties:
+      $ref: ./IncidentFieldAttributes.yaml
+    description: A condensed view of the user-defined fields attached to incidents.
+    example:
+      severity:
+        type: dropdown
+        value: SEV-5
+    type: object
+  incident_type_uuid:
+    description: A unique identifier that represents an incident type.
+    example: 00000000-0000-0000-0000-000000000000
+    type: string
+  modified:
+    description: Timestamp when the incident was last modified.
+    format: date-time
+    readOnly: true
+    type: string
+  non_datadog_creator:
+    $ref: ./IncidentNonDatadogCreator.yaml
+  notification_handles:
+    description: Notification handles that will be notified of the incident during update.
+    example:
+      - display_name: Jane Doe
+        handle: '@user@email.com'
+      - display_name: Slack Channel
+        handle: '@slack-channel'
+      - display_name: Incident Workflow
+        handle: '@workflow-from-incident'
+    items:
+      $ref: ./IncidentNotificationHandle.yaml
+    nullable: true
+    type: array
+  public_id:
+    description: The monotonically increasing integer ID for the incident.
+    example: 1
+    format: int64
+    type: integer
+  resolved:
+    description: >-
+      Timestamp when the incident's state was last changed from active or stable
+      to resolved or completed.
+    format: date-time
+    nullable: true
+    type: string
+  severity:
+    $ref: ./IncidentSeverity.yaml
+  state:
+    description: The state incident.
+    nullable: true
+    type: string
+  time_to_detect:
+    description: |-
+      The amount of time in seconds to detect the incident.
+      Equals the difference between `customer_impact_start` and `detected`.
+    format: int64
+    readOnly: true
+    type: integer
+  time_to_internal_response:
+    description: >-
+      The amount of time in seconds to call incident after detection. Equals the
+      difference of `detected` and `created`.
+    format: int64
+    readOnly: true
+    type: integer
+  time_to_repair:
+    description: >-
+      The amount of time in seconds to resolve customer impact after detecting
+      the issue. Equals the difference between `customer_impact_end` and
+      `detected`.
+    format: int64
+    readOnly: true
+    type: integer
+  time_to_resolve:
+    description: >-
+      The amount of time in seconds to resolve the incident after it was
+      created. Equals the difference between `created` and `resolved`.
+    format: int64
+    readOnly: true
+    type: integer
+  title:
+    description: The title of the incident, which summarizes what happened.
+    example: A test incident title
+    type: string
+  visibility:
+    description: The incident visibility status.
+    nullable: true
+    type: string
+required:
+  - title
+type: object

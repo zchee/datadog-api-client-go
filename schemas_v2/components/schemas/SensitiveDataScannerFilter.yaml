@@ -1,0 +1,6 @@
+description: Filter for the Scanning Group.
+properties:
+  query:
+    description: Query to filter the events.
+    type: string
+type: object

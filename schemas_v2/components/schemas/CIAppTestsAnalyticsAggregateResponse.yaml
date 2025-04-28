@@ -1,0 +1,9 @@
+description: The response object for the test events aggregate API endpoint.
+properties:
+  data:
+    $ref: ./CIAppTestsAggregationBucketsResponse.yaml
+  links:
+    $ref: ./CIAppResponseLinks.yaml
+  meta:
+    $ref: ./CIAppResponseMetadataWithPagination.yaml
+type: object

@@ -1,0 +1,7 @@
+description: Object for API data in an `OpenAPI` format as a file.
+properties:
+  openapi_spec_file:
+    description: Binary `OpenAPI` spec file
+    format: binary
+    type: string
+type: object

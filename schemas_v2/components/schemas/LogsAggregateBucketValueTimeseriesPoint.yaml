@@ -1,0 +1,12 @@
+description: A timeseries point
+properties:
+  time:
+    description: The time value for this point
+    example: '2020-06-08T11:55:00Z'
+    type: string
+  value:
+    description: The value for this point
+    example: 19
+    format: double
+    type: number
+type: object

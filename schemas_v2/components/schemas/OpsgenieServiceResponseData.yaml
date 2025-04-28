@@ -1,0 +1,17 @@
+description: Opsgenie service data from a response.
+properties:
+  attributes:
+    $ref: ./OpsgenieServiceResponseAttributes.yaml
+  id:
+    description: The ID of the Opsgenie service.
+    example: 596da4af-0563-4097-90ff-07230c3f9db3
+    maxLength: 100
+    minLength: 1
+    type: string
+  type:
+    $ref: ./OpsgenieServiceType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

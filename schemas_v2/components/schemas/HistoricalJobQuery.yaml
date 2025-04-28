@@ -1,0 +1,44 @@
+description: Query for selecting logs analyzed by the historical job.
+properties:
+  aggregation:
+    $ref: ./SecurityMonitoringRuleQueryAggregation.yaml
+  dataSource:
+    $ref: ./SecurityMonitoringStandardDataSource.yaml
+  distinctFields:
+    description: Field for which the cardinality is measured. Sent as an array.
+    items:
+      description: Field.
+      type: string
+    type: array
+  groupByFields:
+    description: Fields to group by.
+    items:
+      description: Field.
+      type: string
+    type: array
+  hasOptionalGroupByFields:
+    description: >-
+      When false, events without a group-by value are ignored by the query. When
+      true, events with missing group-by fields are processed with `N/A`,
+      replacing the missing values.
+    example: false
+    readOnly: true
+    type: boolean
+  metrics:
+    description: >-
+      Group of target fields to aggregate over when using the sum, max, geo
+      data, or new value aggregations. The sum, max, and geo data aggregations
+      only accept one value in this list, whereas the new value aggregation
+      accepts up to five values.
+    items:
+      description: Field.
+      type: string
+    type: array
+  name:
+    description: Name of the query.
+    type: string
+  query:
+    description: Query to run on logs.
+    example: a > 3
+    type: string
+type: object

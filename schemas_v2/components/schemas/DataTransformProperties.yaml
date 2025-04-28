@@ -1,0 +1,10 @@
+description: The properties of the data transformer.
+properties:
+  outputs:
+    description: A JavaScript function that returns the transformed data.
+    example: |-
+      ${(() => {return {
+          allItems: [...fetchOrder1.outputs.items, ...fetchOrder2.outputs.items],
+      }})()}
+    type: string
+type: object

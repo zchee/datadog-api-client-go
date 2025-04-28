@@ -1,0 +1,99 @@
+delete:
+  description: Delete a Cloudflare account.
+  operationId: DeleteCloudflareAccount
+  parameters:
+    - description: None
+      in: path
+      name: account_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete Cloudflare account
+  tags:
+    - Cloudflare Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations
+get:
+  description: Get a Cloudflare account.
+  operationId: GetCloudflareAccount
+  parameters:
+    - description: None
+      in: path
+      name: account_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CloudflareAccountResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get Cloudflare account
+  tags:
+    - Cloudflare Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+patch:
+  description: Update a Cloudflare account.
+  operationId: UpdateCloudflareAccount
+  parameters:
+    - description: None
+      in: path
+      name: account_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CloudflareAccountUpdateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CloudflareAccountResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update Cloudflare account
+  tags:
+    - Cloudflare Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

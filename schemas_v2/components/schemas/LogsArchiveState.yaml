@@ -1,0 +1,13 @@
+description: The state of the archive.
+enum:
+  - UNKNOWN
+  - WORKING
+  - FAILING
+  - WORKING_AUTH_LEGACY
+example: WORKING
+type: string
+x-enum-varnames:
+  - UNKNOWN
+  - WORKING
+  - FAILING
+  - WORKING_AUTH_LEGACY

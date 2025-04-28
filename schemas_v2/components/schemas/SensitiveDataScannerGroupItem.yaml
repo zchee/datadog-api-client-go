@@ -1,0 +1,8 @@
+description: Data related to a Sensitive Data Scanner Group.
+properties:
+  id:
+    description: ID of the group.
+    type: string
+  type:
+    $ref: ./SensitiveDataScannerGroupType.yaml
+type: object

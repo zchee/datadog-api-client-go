@@ -1,0 +1,7 @@
+description: Relationship of AuthN Mapping to a Role.
+properties:
+  role:
+    $ref: ./RelationshipToRole.yaml
+required:
+  - role
+type: object

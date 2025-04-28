@@ -1,0 +1,15 @@
+description: List of errors.
+properties:
+  detail:
+    description: Error message.
+    example: Malformed payload
+    type: string
+  status:
+    description: Error code.
+    example: '400'
+    type: string
+  title:
+    description: Error title.
+    example: Bad Request
+    type: string
+type: object

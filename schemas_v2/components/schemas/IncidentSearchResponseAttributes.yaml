@@ -1,0 +1,20 @@
+description: Attributes returned by an incident search.
+properties:
+  facets:
+    $ref: ./IncidentSearchResponseFacetsData.yaml
+  incidents:
+    description: Incidents returned by the search.
+    items:
+      $ref: ./IncidentSearchResponseIncidentsData.yaml
+    type: array
+  total:
+    description: Number of incidents returned by the search.
+    example: 10
+    format: int32
+    maximum: 2147483647
+    type: integer
+required:
+  - facets
+  - incidents
+  - total
+type: object

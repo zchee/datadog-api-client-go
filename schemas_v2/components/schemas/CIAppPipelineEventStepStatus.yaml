@@ -1,0 +1,9 @@
+description: The final status of the step.
+enum:
+  - success
+  - error
+example: success
+type: string
+x-enum-varnames:
+  - SUCCESS
+  - ERROR

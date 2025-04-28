@@ -1,0 +1,17 @@
+description: The HTTP destination.
+properties:
+  auth:
+    $ref: ./CustomDestinationResponseHttpDestinationAuth.yaml
+  endpoint:
+    description: |-
+      The destination for which logs will be forwarded to.
+      Must have HTTPS scheme and forwarding back to Datadog is not allowed.
+    example: https://example.com
+    type: string
+  type:
+    $ref: ./CustomDestinationResponseForwardDestinationHttpType.yaml
+required:
+  - type
+  - endpoint
+  - auth
+type: object

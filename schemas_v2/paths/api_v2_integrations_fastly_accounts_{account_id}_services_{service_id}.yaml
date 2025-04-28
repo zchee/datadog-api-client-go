@@ -1,0 +1,87 @@
+delete:
+  description: Delete a Fastly service for an account.
+  operationId: DeleteFastlyService
+  parameters:
+    - $ref: ../components/parameters/FastlyAccountID.yaml
+    - $ref: ../components/parameters/FastlyServiceID.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete Fastly service
+  tags:
+    - Fastly Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations
+get:
+  description: Get a Fastly service for an account.
+  operationId: GetFastlyService
+  parameters:
+    - $ref: ../components/parameters/FastlyAccountID.yaml
+    - $ref: ../components/parameters/FastlyServiceID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FastlyServiceResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get Fastly service
+  tags:
+    - Fastly Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+patch:
+  description: Update a Fastly service for an account.
+  operationId: UpdateFastlyService
+  parameters:
+    - $ref: ../components/parameters/FastlyAccountID.yaml
+    - $ref: ../components/parameters/FastlyServiceID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/FastlyServiceRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FastlyServiceResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update Fastly service
+  tags:
+    - Fastly Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

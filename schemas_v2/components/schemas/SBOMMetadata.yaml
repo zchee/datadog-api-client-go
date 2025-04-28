@@ -1,0 +1,5 @@
+description: Provides additional information about a BOM.
+properties:
+  component:
+    $ref: ./SBOMMetadataComponent.yaml
+type: object

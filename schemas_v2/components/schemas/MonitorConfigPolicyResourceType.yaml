@@ -1,0 +1,8 @@
+default: monitor-config-policy
+description: Monitor configuration policy resource type.
+enum:
+  - monitor-config-policy
+example: monitor-config-policy
+type: string
+x-enum-varnames:
+  - MONITOR_CONFIG_POLICY

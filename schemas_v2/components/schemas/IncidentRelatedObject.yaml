@@ -1,0 +1,8 @@
+description: Object related to an incident.
+enum:
+  - users
+  - attachments
+type: string
+x-enum-varnames:
+  - USERS
+  - ATTACHMENTS

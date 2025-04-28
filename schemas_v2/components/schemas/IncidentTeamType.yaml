@@ -1,0 +1,8 @@
+default: teams
+description: Incident Team resource type.
+enum:
+  - teams
+example: teams
+type: string
+x-enum-varnames:
+  - TEAMS

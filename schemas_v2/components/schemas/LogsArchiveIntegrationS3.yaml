@@ -1,0 +1,14 @@
+description: The S3 Archive's integration destination.
+properties:
+  account_id:
+    description: The account ID for the integration.
+    example: '123456789012'
+    type: string
+  role_name:
+    description: The path of the integration.
+    example: role-name
+    type: string
+required:
+  - role_name
+  - account_id
+type: object

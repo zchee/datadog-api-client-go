@@ -1,0 +1,10 @@
+description: Run a historical job request.
+properties:
+  fromRule:
+    $ref: ./JobDefinitionFromRule.yaml
+  id:
+    description: Request ID.
+    type: string
+  jobDefinition:
+    $ref: ./JobDefinition.yaml
+type: object

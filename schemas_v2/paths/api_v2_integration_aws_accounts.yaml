@@ -1,0 +1,69 @@
+get:
+  description: Get a list of AWS Account Integration Configs.
+  operationId: ListAWSAccounts
+  parameters:
+    - description: >-
+        Optional query parameter to filter accounts by AWS Account ID. If not
+        provided, all accounts are returned.
+      example: '123456789012'
+      in: query
+      name: aws_account_id
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AWSAccountsResponse.yaml
+      description: AWS Accounts List object
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List all AWS integrations
+  tags:
+    - AWS Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_read
+  x-unstable: |-
+    **Note: This endpoint is in Preview. If you have any feedback,
+    contact [Datadog support](https://docs.datadoghq.com/help/).**
+post:
+  description: Create a new AWS Account Integration Config.
+  operationId: CreateAWSAccount
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AWSAccountCreateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AWSAccountResponse.yaml
+      description: AWS Account object
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create an AWS integration
+  tags:
+    - AWS Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configurations_manage
+  x-unstable: |-
+    **Note: This endpoint is in Preview. If you have any feedback,
+    contact [Datadog support](https://docs.datadoghq.com/help/).**

@@ -1,0 +1,30 @@
+description: >-
+  [Definition of a UI component in the
+  app](https://docs.datadoghq.com/service_management/app_builder/components/)
+properties:
+  events:
+    description: Events to listen for on the UI component.
+    items:
+      $ref: ./AppBuilderEvent.yaml
+    type: array
+  id:
+    description: >-
+      The ID of the UI component. This property is deprecated; use `name` to
+      identify individual components instead.
+    nullable: true
+    type: string
+  name:
+    description: >-
+      A unique identifier for this UI component. This name is also visible in
+      the app editor.
+    example: ''
+    type: string
+  properties:
+    $ref: ./ComponentProperties.yaml
+  type:
+    $ref: ./ComponentType.yaml
+required:
+  - name
+  - type
+  - properties
+type: object

@@ -1,0 +1,79 @@
+delete:
+  description: Delete a specific WAF custom rule.
+  operationId: DeleteApplicationSecurityWafCustomRule
+  parameters:
+    - $ref: ../components/parameters/ApplicationSecurityWafCustomRuleIDParam.yaml
+  responses:
+    '204':
+      description: No Content
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a WAF Custom Rule
+  tags:
+    - Application Security
+  x-terraform-resource: appsec_waf_custom_rule
+get:
+  description: Retrieve a WAF custom rule by ID.
+  operationId: GetApplicationSecurityWafCustomRule
+  parameters:
+    - $ref: ../components/parameters/ApplicationSecurityWafCustomRuleIDParam.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/ApplicationSecurityWafCustomRuleResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a WAF custom rule
+  tags:
+    - Application Security
+  x-terraform-resource: appsec_waf_custom_rule
+put:
+  description: |-
+    Update a specific WAF custom Rule.
+    Returns the Custom Rule object when the request is successful.
+  operationId: UpdateApplicationSecurityWafCustomRule
+  parameters:
+    - $ref: ../components/parameters/ApplicationSecurityWafCustomRuleIDParam.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/ApplicationSecurityWafCustomRuleUpdateRequest.yaml
+    description: New definition of the WAF Custom Rule.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/ApplicationSecurityWafCustomRuleResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a WAF Custom Rule
+  tags:
+    - Application Security
+  x-codegen-request-body-name: body
+  x-terraform-resource: appsec_waf_custom_rule

@@ -1,0 +1,8 @@
+default: opsgenie-service
+description: Opsgenie service resource type.
+enum:
+  - opsgenie-service
+example: opsgenie-service
+type: string
+x-enum-varnames:
+  - OPSGENIE_SERVICE

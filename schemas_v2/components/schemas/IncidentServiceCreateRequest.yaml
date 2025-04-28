@@ -1,0 +1,7 @@
+description: Create request with an incident service payload.
+properties:
+  data:
+    $ref: ./IncidentServiceCreateData.yaml
+required:
+  - data
+type: object

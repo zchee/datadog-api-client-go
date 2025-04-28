@@ -1,0 +1,5 @@
+description: Count of the facet value appearing in search results.
+example: 5
+format: int32
+maximum: 2147483647
+type: integer

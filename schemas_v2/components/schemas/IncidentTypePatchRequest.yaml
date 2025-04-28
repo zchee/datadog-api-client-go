@@ -1,0 +1,7 @@
+description: Patch request for an incident type.
+properties:
+  data:
+    $ref: ./IncidentTypePatchData.yaml
+required:
+  - data
+type: object

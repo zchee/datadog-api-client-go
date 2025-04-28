@@ -1,0 +1,14 @@
+description: >-
+  Links the schedule to a team within an update request, identified by `id` and
+  `type`.
+properties:
+  id:
+    description: The unique team identifier.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+  type:
+    $ref: ./ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType.yaml
+required:
+  - type
+  - id
+type: object

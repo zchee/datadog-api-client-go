@@ -1,0 +1,7 @@
+description: The ID of the Agent rule.
+example: 3b5-v82-ns6
+in: path
+name: agent_rule_id
+required: true
+schema:
+  type: string

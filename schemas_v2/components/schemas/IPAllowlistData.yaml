@@ -1,0 +1,12 @@
+description: IP allowlist data.
+properties:
+  attributes:
+    $ref: ./IPAllowlistAttributes.yaml
+  id:
+    description: The unique identifier of the org.
+    type: string
+  type:
+    $ref: ./IPAllowlistType.yaml
+required:
+  - type
+type: object

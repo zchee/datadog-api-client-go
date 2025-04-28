@@ -1,0 +1,7 @@
+description: Request body for changing the state of a given security monitoring signal.
+properties:
+  data:
+    $ref: ./SecurityMonitoringSignalStateUpdateData.yaml
+required:
+  - data
+type: object

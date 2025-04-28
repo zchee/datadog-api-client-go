@@ -1,0 +1,7 @@
+description: The definition of Entity V3 Datastore Kind object.
+enum:
+  - datastore
+example: datastore
+type: string
+x-enum-varnames:
+  - DATASTORE

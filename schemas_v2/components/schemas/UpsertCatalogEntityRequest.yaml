@@ -1,0 +1,4 @@
+description: Create or update entity request.
+oneOf:
+  - $ref: ./EntityV3.yaml
+  - $ref: ./EntityRaw.yaml

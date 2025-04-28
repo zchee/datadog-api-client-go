@@ -1,0 +1,7 @@
+description: The definition of `AWSIntegrationType` object.
+enum:
+  - AWS
+example: AWS
+type: string
+x-enum-varnames:
+  - AWS

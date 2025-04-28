@@ -1,0 +1,18 @@
+description: >-
+  Provides core properties of a schedule object, such as its name, time zone,
+  and tags.
+properties:
+  name:
+    description: A short name for the schedule.
+    example: Primary On-Call
+    type: string
+  tags:
+    description: A list of tags associated with this schedule.
+    items:
+      type: string
+    type: array
+  time_zone:
+    description: The time zone in which this schedule operates.
+    example: America/New_York
+    type: string
+type: object

@@ -1,0 +1,9 @@
+description: Get all groups response.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerGetConfigResponseData.yaml
+  included:
+    $ref: ./SensitiveDataScannerGetConfigIncludedArray.yaml
+  meta:
+    $ref: ./SensitiveDataScannerMeta.yaml
+type: object

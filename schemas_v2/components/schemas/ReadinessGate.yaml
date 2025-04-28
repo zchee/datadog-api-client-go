@@ -1,0 +1,7 @@
+description: Used to merge multiple branches into a single branch.
+properties:
+  thresholdType:
+    $ref: ./ReadinessGateThresholdType.yaml
+required:
+  - thresholdType
+type: object

@@ -1,0 +1,5 @@
+description: The response object after an app is successfully published.
+properties:
+  data:
+    $ref: ./Deployment.yaml
+type: object

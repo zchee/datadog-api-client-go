@@ -1,0 +1,23 @@
+description: Basic information about a service.
+properties:
+  dd-service:
+    description: >-
+      Unique identifier of the service. Must be unique across all services and
+      is used to match with a service in Datadog.
+    example: myservice
+    type: string
+  description:
+    description: A short description of the service.
+    example: A shopping cart service
+    type: string
+  display-name:
+    description: A friendly name of the service.
+    example: My Service
+    type: string
+  service-tier:
+    description: Service tier.
+    example: Tier 1
+    type: string
+required:
+  - dd-service
+type: object

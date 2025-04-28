@@ -1,0 +1,10 @@
+description: Included oncall.
+properties:
+  attributes:
+    $ref: ./EntityResponseIncludedRelatedOncallAttributes.yaml
+  id:
+    description: Oncall ID.
+    type: string
+  type:
+    $ref: ./EntityResponseIncludedOncallType.yaml
+type: object

@@ -1,0 +1,25 @@
+description: Paging attributes.
+properties:
+  cursor:
+    description: The cursor used to get the current results, if any.
+    type: string
+  limit:
+    description: Number of results returned
+    format: int32
+    maximum: 10000
+    minimum: 0
+    type: integer
+  next_cursor:
+    description: The cursor used to get the next results, if any.
+    type: string
+  prev_cursor:
+    description: The cursor used to get the previous results, if any.
+    nullable: true
+    type: string
+  total:
+    description: Total number of records that match the query.
+    format: int64
+    type: integer
+  type:
+    $ref: ./ContainerImageMetaPageType.yaml
+type: object

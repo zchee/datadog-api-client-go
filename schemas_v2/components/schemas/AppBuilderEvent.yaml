@@ -1,0 +1,8 @@
+additionalProperties: {}
+description: An event on a UI component that triggers a response or action in an app.
+properties:
+  name:
+    $ref: ./AppBuilderEventName.yaml
+  type:
+    $ref: ./AppBuilderEventType.yaml
+type: object

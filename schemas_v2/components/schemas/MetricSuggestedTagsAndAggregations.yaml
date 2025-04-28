@@ -1,0 +1,9 @@
+description: Object for a single metric's actively queried tags and aggregations.
+properties:
+  attributes:
+    $ref: ./MetricSuggestedTagsAttributes.yaml
+  id:
+    $ref: ./MetricName.yaml
+  type:
+    $ref: ./MetricActiveConfigurationType.yaml
+type: object

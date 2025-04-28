@@ -1,0 +1,64 @@
+get:
+  deprecated: true
+  description: List APIs and their IDs.
+  operationId: ListAPIs
+  parameters:
+    - description: Filter APIs by name
+      in: query
+      name: query
+      required: false
+      schema:
+        example: payments
+        type: string
+    - description: Number of items per page.
+      in: query
+      name: page[limit]
+      required: false
+      schema:
+        default: 20
+        format: int64
+        minimum: 1
+        type: integer
+    - description: Offset for pagination.
+      in: query
+      name: page[offset]
+      required: false
+      schema:
+        default: 0
+        format: int64
+        minimum: 0
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListAPIsResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_api_catalog_read
+  summary: List APIs
+  tags:
+    - API Management
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_api_catalog_read
+  x-unstable: '**Note**: This endpoint is deprecated.'

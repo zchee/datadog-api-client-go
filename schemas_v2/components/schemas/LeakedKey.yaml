@@ -1,0 +1,15 @@
+description: The definition of LeakedKey object.
+properties:
+  attributes:
+    $ref: ./LeakedKeyAttributes.yaml
+  id:
+    description: The LeakedKey id.
+    example: id
+    type: string
+  type:
+    $ref: ./LeakedKeyType.yaml
+required:
+  - attributes
+  - id
+  - type
+type: object

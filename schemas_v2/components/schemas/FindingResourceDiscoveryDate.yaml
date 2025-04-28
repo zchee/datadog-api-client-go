@@ -1,0 +1,5 @@
+description: The date on which the resource was discovered (Unix ms).
+example: 1678721573794
+format: int64
+minimum: 1
+type: integer

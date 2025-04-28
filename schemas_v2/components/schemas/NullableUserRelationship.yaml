@@ -1,0 +1,8 @@
+description: Relationship to user.
+nullable: true
+properties:
+  data:
+    $ref: ./NullableUserRelationshipData.yaml
+required:
+  - data
+type: object

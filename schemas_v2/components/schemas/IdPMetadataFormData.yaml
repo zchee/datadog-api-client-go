@@ -1,0 +1,8 @@
+description: The form data submitted to upload IdP metadata
+properties:
+  idp_file:
+    description: The IdP metadata XML file
+    format: binary
+    type: string
+    x-mimetype: application/xml
+type: object

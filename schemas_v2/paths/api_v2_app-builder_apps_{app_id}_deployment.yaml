@@ -1,0 +1,100 @@
+delete:
+  description: >-
+    Unpublish an app, removing the live version of the app. Unpublishing creates
+    a new instance of a `deployment` object on the app, with a nil
+    `app_version_id` (`00000000-0000-0000-0000-000000000000`). The app can still
+    be updated and published again in the future.
+  operationId: UnpublishApp
+  parameters:
+    - description: The ID of the app to unpublish.
+      example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+      in: path
+      name: app_id
+      required: true
+      schema:
+        format: uuid
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UnpublishAppResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Unpublish App
+  tags:
+    - App Builder
+  x-permission:
+    operator: OR
+    permissions:
+      - apps_write
+post:
+  description: >-
+    Publish an app for use by other users. To ensure the app is accessible to
+    the correct users, you also need to set a [Restriction
+    Policy](https://docs.datadoghq.com/api/latest/restriction-policies/) on the
+    app if a policy does not yet exist.
+  operationId: PublishApp
+  parameters:
+    - description: The ID of the app to publish.
+      example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+      in: path
+      name: app_id
+      required: true
+      schema:
+        format: uuid
+        type: string
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PublishAppResponse.yaml
+      description: Created
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Publish App
+  tags:
+    - App Builder
+  x-permission:
+    operator: OR
+    permissions:
+      - apps_write

@@ -1,0 +1,8 @@
+additionalProperties: false
+description: A base schema for defining third-party integrations.
+properties:
+  opsgenie:
+    $ref: ./EntityV3DatadogIntegrationOpsgenie.yaml
+  pagerduty:
+    $ref: ./EntityV3DatadogIntegrationPagerduty.yaml
+type: object

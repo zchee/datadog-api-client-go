@@ -1,0 +1,6 @@
+description: Your channel name.
+in: path
+name: channel_name
+required: true
+schema:
+  type: string

@@ -1,0 +1,31 @@
+description: Attributes for converting historical job results to signals.
+properties:
+  id:
+    description: Request ID.
+    type: string
+  jobResultIds:
+    description: Job result IDs.
+    example:
+      - ''
+    items:
+      type: string
+    type: array
+  notifications:
+    description: Notifications sent.
+    example:
+      - ''
+    items:
+      type: string
+    type: array
+  signalMessage:
+    description: Message of generated signals.
+    example: A large number of failed login attempts.
+    type: string
+  signalSeverity:
+    $ref: ./SecurityMonitoringRuleSeverity.yaml
+required:
+  - jobResultIds
+  - signalSeverity
+  - signalMessage
+  - notifications
+type: object

@@ -1,0 +1,10 @@
+description: Team link create
+properties:
+  attributes:
+    $ref: ./TeamLinkAttributes.yaml
+  type:
+    $ref: ./TeamLinkType.yaml
+required:
+  - attributes
+  - type
+type: object

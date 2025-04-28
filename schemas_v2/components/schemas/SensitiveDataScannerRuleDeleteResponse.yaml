@@ -1,0 +1,5 @@
+description: Delete rule response.
+properties:
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+type: object

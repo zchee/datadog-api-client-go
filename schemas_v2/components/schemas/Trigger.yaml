@@ -1,0 +1,18 @@
+description: One of the triggers that can start the execution of a workflow.
+oneOf:
+  - $ref: ./APITriggerWrapper.yaml
+  - $ref: ./AppTriggerWrapper.yaml
+  - $ref: ./CaseTriggerWrapper.yaml
+  - $ref: ./ChangeEventTriggerWrapper.yaml
+  - $ref: ./DatabaseMonitoringTriggerWrapper.yaml
+  - $ref: ./DashboardTriggerWrapper.yaml
+  - $ref: ./GithubWebhookTriggerWrapper.yaml
+  - $ref: ./IncidentTriggerWrapper.yaml
+  - $ref: ./MonitorTriggerWrapper.yaml
+  - $ref: ./NotebookTriggerWrapper.yaml
+  - $ref: ./ScheduleTriggerWrapper.yaml
+  - $ref: ./SecurityTriggerWrapper.yaml
+  - $ref: ./SelfServiceTriggerWrapper.yaml
+  - $ref: ./SlackTriggerWrapper.yaml
+  - $ref: ./SoftwareCatalogTriggerWrapper.yaml
+  - $ref: ./WorkflowTriggerWrapper.yaml

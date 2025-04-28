@@ -1,0 +1,47 @@
+description: Case attributes
+properties:
+  archived_at:
+    description: Timestamp of when the case was archived
+    format: date-time
+    nullable: true
+    readOnly: true
+    type: string
+  closed_at:
+    description: Timestamp of when the case was closed
+    format: date-time
+    nullable: true
+    readOnly: true
+    type: string
+  created_at:
+    description: Timestamp of when the case was created
+    format: date-time
+    readOnly: true
+    type: string
+  description:
+    description: Description
+    type: string
+  jira_issue:
+    $ref: ./JiraIssue.yaml
+  key:
+    description: Key
+    example: CASEM-4523
+    type: string
+  modified_at:
+    description: Timestamp of when the case was last modified
+    format: date-time
+    nullable: true
+    readOnly: true
+    type: string
+  priority:
+    $ref: ./CasePriority.yaml
+  service_now_ticket:
+    $ref: ./ServiceNowTicket.yaml
+  status:
+    $ref: ./CaseStatus.yaml
+  title:
+    description: Title
+    example: Memory leak investigation on API
+    type: string
+  type:
+    $ref: ./CaseType.yaml
+type: object

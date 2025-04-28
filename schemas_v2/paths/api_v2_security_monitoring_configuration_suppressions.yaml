@@ -1,0 +1,57 @@
+get:
+  description: Get the list of all suppression rules.
+  operationId: ListSecurityMonitoringSuppressions
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringSuppressionsResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_suppressions_read
+  summary: Get all suppression rules
+  tags:
+    - Security Monitoring
+post:
+  description: Create a new suppression rule.
+  operationId: CreateSecurityMonitoringSuppression
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/SecurityMonitoringSuppressionCreateRequest.yaml
+    description: The definition of the new suppression rule.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringSuppressionResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_suppressions_write
+  summary: Create a suppression rule
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body

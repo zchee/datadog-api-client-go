@@ -1,0 +1,8 @@
+description: Metadata about the list of jobs.
+properties:
+  totalCount:
+    description: Number of jobs in the list.
+    format: int32
+    maximum: 2147483647
+    type: integer
+type: object

@@ -1,0 +1,7 @@
+description: An object of type `dashboard` that can be referenced in the `included` data.
+properties:
+  id:
+    $ref: ./MetricDashboardID.yaml
+  type:
+    $ref: ./MetricDashboardType.yaml
+type: object

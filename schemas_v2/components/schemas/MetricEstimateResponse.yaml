@@ -1,0 +1,5 @@
+description: Response object that includes metric cardinality estimates.
+properties:
+  data:
+    $ref: ./MetricEstimate.yaml
+type: object

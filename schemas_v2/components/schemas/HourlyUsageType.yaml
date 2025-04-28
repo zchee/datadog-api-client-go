@@ -1,0 +1,11 @@
+description: Usage type that is being measured.
+enum:
+  - app_sec_host_count
+  - observability_pipelines_bytes_processed
+  - lambda_traced_invocations_count
+example: observability_pipelines_bytes_processed
+type: string
+x-enum-varnames:
+  - APP_SEC_HOST_COUNT
+  - OBSERVABILITY_PIPELINES_BYTES_PROCESSSED
+  - LAMBDA_TRACED_INVOCATIONS_COUNT

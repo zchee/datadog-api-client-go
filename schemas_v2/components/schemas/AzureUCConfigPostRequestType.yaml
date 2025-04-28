@@ -1,0 +1,8 @@
+default: azure_uc_config_post_request
+description: Type of Azure config Post Request.
+enum:
+  - azure_uc_config_post_request
+example: azure_uc_config_post_request
+type: string
+x-enum-varnames:
+  - AZURE_UC_CONFIG_POST_REQUEST

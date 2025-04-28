@@ -1,0 +1,7 @@
+description: Request used to update an application key.
+properties:
+  data:
+    $ref: ./ApplicationKeyUpdateData.yaml
+required:
+  - data
+type: object

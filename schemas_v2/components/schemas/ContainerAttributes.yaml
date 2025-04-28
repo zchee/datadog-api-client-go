@@ -1,0 +1,39 @@
+description: Attributes for a container.
+properties:
+  container_id:
+    description: The ID of the container.
+    type: string
+  created_at:
+    description: Time the container was created.
+    type: string
+  host:
+    description: Hostname of the host running the container.
+    type: string
+  image_digest:
+    description: Digest of the compressed image manifest.
+    nullable: true
+    type: string
+  image_name:
+    description: Name of the associated container image.
+    type: string
+  image_tags:
+    description: List of image tags associated with the container image.
+    items:
+      type: string
+    nullable: true
+    type: array
+  name:
+    description: Name of the container.
+    type: string
+  started_at:
+    description: Time the container was started.
+    type: string
+  state:
+    description: State of the container. This depends on the container runtime.
+    type: string
+  tags:
+    description: List of tags associated with the container.
+    items:
+      type: string
+    type: array
+type: object

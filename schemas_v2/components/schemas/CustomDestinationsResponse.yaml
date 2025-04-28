@@ -1,0 +1,8 @@
+description: The available custom destinations.
+properties:
+  data:
+    description: A list of custom destinations.
+    items:
+      $ref: ./CustomDestinationResponseDefinition.yaml
+    type: array
+type: object

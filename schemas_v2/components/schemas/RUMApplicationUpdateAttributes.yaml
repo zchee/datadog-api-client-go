@@ -1,0 +1,14 @@
+description: RUM application update attributes.
+properties:
+  name:
+    description: Name of the RUM application.
+    example: updated_name_for_my_existing_rum_application
+    type: string
+  type:
+    description: >-
+      Type of the RUM application. Supported values are `browser`, `ios`,
+      `android`, `react-native`, `flutter`, `roku`, `electron`, `unity`,
+      `kotlin-multiplatform`.
+    example: browser
+    type: string
+type: object

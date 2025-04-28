@@ -1,0 +1,30 @@
+additionalProperties: false
+description: Information about the mute status of this finding.
+properties:
+  description:
+    description: >-
+      Additional information about the reason why this finding is muted or
+      unmuted.
+    example: To be resolved later
+    type: string
+  expiration_date:
+    description: The expiration date of the mute or unmute action (Unix ms).
+    example: 1778721573794
+    format: int64
+    type: integer
+  muted:
+    description: Whether this finding is muted or unmuted.
+    example: true
+    type: boolean
+  reason:
+    $ref: ./FindingMuteReason.yaml
+  start_date:
+    description: The start of the mute period.
+    example: 1678721573794
+    format: int64
+    type: integer
+  uuid:
+    description: The ID of the user who muted or unmuted this finding.
+    example: e51c9744-d158-11ec-ad23-da7ad0900002
+    type: string
+type: object

@@ -1,0 +1,8 @@
+default: saml_assertion_attributes
+description: SAML assertion attributes resource type.
+enum:
+  - saml_assertion_attributes
+example: saml_assertion_attributes
+type: string
+x-enum-varnames:
+  - SAML_ASSERTION_ATTRIBUTES

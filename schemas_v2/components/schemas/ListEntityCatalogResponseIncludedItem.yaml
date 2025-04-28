@@ -1,0 +1,7 @@
+description: List entity response included item.
+oneOf:
+  - $ref: ./EntityResponseIncludedSchema.yaml
+  - $ref: ./EntityResponseIncludedRawSchema.yaml
+  - $ref: ./EntityResponseIncludedRelatedEntity.yaml
+  - $ref: ./EntityResponseIncludedOncall.yaml
+  - $ref: ./EntityResponseIncludedIncident.yaml

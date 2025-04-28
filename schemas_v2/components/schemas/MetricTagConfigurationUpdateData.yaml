@@ -1,0 +1,20 @@
+description: Object for a single tag configuration to be edited.
+example:
+  attributes:
+    group_by:
+      - app
+      - datacenter
+    include_percentiles: false
+  id: http.endpoint.request
+  type: manage_tags
+properties:
+  attributes:
+    $ref: ./MetricTagConfigurationUpdateAttributes.yaml
+  id:
+    $ref: ./MetricName.yaml
+  type:
+    $ref: ./MetricTagConfigurationType.yaml
+required:
+  - id
+  - type
+type: object

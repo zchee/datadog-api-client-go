@@ -1,0 +1,8 @@
+default: downtime
+description: Downtime resource type.
+enum:
+  - downtime
+example: downtime
+type: string
+x-enum-varnames:
+  - DOWNTIME

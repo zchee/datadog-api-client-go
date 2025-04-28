@@ -1,0 +1,5 @@
+description: Response containing information about the IP allowlist.
+properties:
+  data:
+    $ref: ./IPAllowlistData.yaml
+type: object

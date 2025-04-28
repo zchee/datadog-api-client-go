@@ -1,0 +1,8 @@
+description: The expected response schema when getting Fastly accounts.
+properties:
+  data:
+    description: The JSON:API data schema.
+    items:
+      $ref: ./FastlyAccountResponseData.yaml
+    type: array
+type: object

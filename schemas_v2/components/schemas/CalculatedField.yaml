@@ -1,0 +1,14 @@
+description: Calculated field.
+properties:
+  expression:
+    description: Expression.
+    example: '@request_end_timestamp - @request_start_timestamp'
+    type: string
+  name:
+    description: Field name.
+    example: response_time
+    type: string
+required:
+  - name
+  - expression
+type: object

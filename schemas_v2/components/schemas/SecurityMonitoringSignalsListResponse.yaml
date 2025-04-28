@@ -1,0 +1,14 @@
+description: |-
+  The response object with all security signals matching the request
+  and pagination information.
+properties:
+  data:
+    description: An array of security signals matching the request.
+    items:
+      $ref: ./SecurityMonitoringSignal.yaml
+    type: array
+  links:
+    $ref: ./SecurityMonitoringSignalsListResponseLinks.yaml
+  meta:
+    $ref: ./SecurityMonitoringSignalsListResponseMeta.yaml
+type: object

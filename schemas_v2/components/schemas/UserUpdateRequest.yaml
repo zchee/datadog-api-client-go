@@ -1,0 +1,7 @@
+description: Update a user.
+properties:
+  data:
+    $ref: ./UserUpdateData.yaml
+required:
+  - data
+type: object

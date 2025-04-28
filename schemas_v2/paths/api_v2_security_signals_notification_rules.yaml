@@ -1,0 +1,65 @@
+get:
+  description: Returns the list of notification rules for security signals.
+  operationId: GetSignalNotificationRules
+  responses:
+    '200':
+      $ref: ../components/responses/NotificationRulesList.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_notification_profiles_read
+  summary: Get the list of signal-based notification rules
+  tags:
+    - Security Monitoring
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_notification_profiles_read
+post:
+  description: >-
+    Create a new notification rule for security signals and return the created
+    rule.
+  operationId: CreateSignalNotificationRule
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CreateNotificationRuleParameters.yaml
+    description: >
+      The body of the create notification rule request is composed of the rule
+      type and the rule attributes:
+
+      the rule name, the selectors, the notification targets, and the rule
+      enabled status.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/NotificationRuleResponse.yaml
+      description: Successfully created the notification rule.
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_notification_profiles_write
+  summary: Create a new signal-based notification rule
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_notification_profiles_write

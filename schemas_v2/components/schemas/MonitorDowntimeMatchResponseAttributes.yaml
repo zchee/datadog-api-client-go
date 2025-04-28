@@ -1,0 +1,26 @@
+description: Downtime match details.
+properties:
+  end:
+    description: The end of the downtime.
+    example: '2020-01-02 03:04:00+00:00'
+    format: date-time
+    nullable: true
+    type: string
+  groups:
+    description: An array of groups associated with the downtime.
+    example:
+      - service:postgres
+      - team:frontend
+    items:
+      description: An array of groups.
+      example: service:postgres
+      type: string
+    type: array
+  scope:
+    $ref: ./DowntimeScope.yaml
+  start:
+    description: The start of the downtime.
+    example: '2020-01-02 03:04:00+00:00'
+    format: date-time
+    type: string
+type: object

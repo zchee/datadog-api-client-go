@@ -1,0 +1,6 @@
+description: Type of data.
+enum:
+  - historicalDetectionsJobCreate
+type: string
+x-enum-varnames:
+  - HISTORICALDETECTIONSJOBCREATE

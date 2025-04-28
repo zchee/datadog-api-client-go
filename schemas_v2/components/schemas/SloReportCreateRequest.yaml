@@ -1,0 +1,7 @@
+description: The SLO report request body.
+properties:
+  data:
+    $ref: ./SloReportCreateRequestData.yaml
+required:
+  - data
+type: object

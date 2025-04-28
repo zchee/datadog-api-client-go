@@ -1,0 +1,16 @@
+description: CSM Cloud Accounts Coverage Analysis data.
+properties:
+  attributes:
+    $ref: ./CsmCloudAccountsCoverageAnalysisAttributes.yaml
+  id:
+    description: The ID of your organization.
+    example: 66b3c6b5-5c9a-457e-b1c3-f247ca23afa3
+    type: string
+  type:
+    default: get_cloud_accounts_coverage_analysis_response_public_v0
+    description: >-
+      The type of the resource. The value should always be
+      `get_cloud_accounts_coverage_analysis_response_public_v0`.
+    example: get_cloud_accounts_coverage_analysis_response_public_v0
+    type: string
+type: object

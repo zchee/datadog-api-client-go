@@ -1,0 +1,29 @@
+description: Entity attributes.
+properties:
+  apiVersion:
+    description: The API version.
+    type: string
+  description:
+    description: The description.
+    type: string
+  displayName:
+    description: The display name.
+    type: string
+  kind:
+    description: The kind.
+    type: string
+  name:
+    description: The name.
+    type: string
+  namespace:
+    description: The namespace.
+    type: string
+  owner:
+    description: The owner.
+    type: string
+  tags:
+    description: The tags.
+    items:
+      type: string
+    type: array
+type: object

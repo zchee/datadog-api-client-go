@@ -1,0 +1,10 @@
+description: Data object containing the deployment ID.
+properties:
+  id:
+    description: The deployment ID.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+  type:
+    $ref: ./AppDeploymentType.yaml
+type: object

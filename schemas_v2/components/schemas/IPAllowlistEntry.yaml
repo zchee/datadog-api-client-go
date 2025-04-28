@@ -1,0 +1,7 @@
+description: IP allowlist entry object.
+properties:
+  data:
+    $ref: ./IPAllowlistEntryData.yaml
+required:
+  - data
+type: object

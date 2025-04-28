@@ -1,0 +1,15 @@
+description: Entity data.
+properties:
+  attributes:
+    $ref: ./EntityAttributes.yaml
+  id:
+    description: Entity ID.
+    type: string
+  meta:
+    $ref: ./EntityMeta.yaml
+  relationships:
+    $ref: ./EntityRelationships.yaml
+  type:
+    description: Entity.
+    type: string
+type: object

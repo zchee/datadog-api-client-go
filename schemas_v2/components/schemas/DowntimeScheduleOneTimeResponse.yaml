@@ -1,0 +1,16 @@
+description: A one-time downtime definition.
+properties:
+  end:
+    description: ISO-8601 Datetime to end the downtime.
+    example: '2020-01-02 03:04:00+00:00'
+    format: date-time
+    nullable: true
+    type: string
+  start:
+    description: ISO-8601 Datetime to start the downtime.
+    example: '2020-01-02 03:04:00+00:00'
+    format: date-time
+    type: string
+required:
+  - start
+type: object

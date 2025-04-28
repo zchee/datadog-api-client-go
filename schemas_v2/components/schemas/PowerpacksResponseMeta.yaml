@@ -1,0 +1,5 @@
+description: Powerpack response metadata.
+properties:
+  pagination:
+    $ref: ./PowerpacksResponseMetaPagination.yaml
+type: object

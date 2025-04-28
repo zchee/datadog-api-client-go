@@ -1,0 +1,15 @@
+description: The postmortem relationship data.
+example:
+  id: 00000000-0000-abcd-2000-000000000000
+  type: incident_postmortems
+properties:
+  id:
+    description: A unique identifier that represents the postmortem.
+    example: 00000000-0000-abcd-1000-000000000000
+    type: string
+  type:
+    $ref: ./IncidentPostmortemType.yaml
+required:
+  - id
+  - type
+type: object

@@ -1,0 +1,4 @@
+description: An object related to an incident that is included in the response.
+oneOf:
+  - $ref: ./IncidentUserData.yaml
+  - $ref: ./IncidentAttachmentData.yaml

@@ -1,0 +1,9 @@
+description: >-
+  The log-based metric filter. Logs matching this filter will be aggregated in
+  this metric.
+properties:
+  query:
+    description: The search query - following the log search syntax.
+    example: service:web* AND @http.status_code:[200 TO 299]
+    type: string
+type: object

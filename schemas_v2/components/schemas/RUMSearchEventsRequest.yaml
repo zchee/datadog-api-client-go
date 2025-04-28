@@ -1,0 +1,11 @@
+description: The request for a RUM events list.
+properties:
+  filter:
+    $ref: ./RUMQueryFilter.yaml
+  options:
+    $ref: ./RUMQueryOptions.yaml
+  page:
+    $ref: ./RUMQueryPageOptions.yaml
+  sort:
+    $ref: ./RUMSort.yaml
+type: object

@@ -1,0 +1,6 @@
+description: The ID of the workflow.
+in: path
+name: workflow_id
+required: true
+schema:
+  type: string

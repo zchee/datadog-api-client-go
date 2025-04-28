@@ -1,0 +1,13 @@
+default: IN_PROGRESS
+description: Case status
+enum:
+  - IN_PROGRESS
+  - COMPLETED
+  - FAILED
+example: COMPLETED
+readOnly: true
+type: string
+x-enum-varnames:
+  - IN_PROGRESS
+  - COMPLETED
+  - FAILED

@@ -1,0 +1,9 @@
+description: Unit for quota enforcement in bytes for data size or events for count.
+enum:
+  - bytes
+  - events
+example: bytes
+type: string
+x-enum-varnames:
+  - BYTES
+  - EVENTS

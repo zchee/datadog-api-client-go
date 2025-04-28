@@ -1,0 +1,8 @@
+default: incident_postmortems
+description: Incident postmortem resource type.
+enum:
+  - incident_postmortems
+example: incident_postmortems
+type: string
+x-enum-varnames:
+  - INCIDENT_POSTMORTEMS

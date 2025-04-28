@@ -1,0 +1,13 @@
+description: The new RUM retention filter properties to update.
+properties:
+  attributes:
+    $ref: ./RumRetentionFilterUpdateAttributes.yaml
+  id:
+    $ref: ./RumRetentionFilterID.yaml
+  type:
+    $ref: ./RumRetentionFilterType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

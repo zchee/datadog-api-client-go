@@ -1,0 +1,10 @@
+description: >-
+  A list of input parameters for the workflow. These can be used as dynamic
+  runtime values in your workflow.
+properties:
+  parameters:
+    description: The `InputSchema` `parameters`.
+    items:
+      $ref: ./InputSchemaParameters.yaml
+    type: array
+type: object

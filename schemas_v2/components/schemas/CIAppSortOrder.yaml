@@ -1,0 +1,9 @@
+description: The order to use, ascending or descending.
+enum:
+  - asc
+  - desc
+example: asc
+type: string
+x-enum-varnames:
+  - ASCENDING
+  - DESCENDING

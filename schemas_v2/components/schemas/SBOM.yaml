@@ -1,0 +1,13 @@
+description: A single SBOM
+properties:
+  attributes:
+    $ref: ./SBOMAttributes.yaml
+  id:
+    description: >-
+      The unique ID for this SBOM (it is equivalent to the `asset_name` or
+      `asset_name@repo_digest` (Image)
+    example: github.com/datadog/datadog-agent
+    type: string
+  type:
+    $ref: ./SBOMType.yaml
+type: object

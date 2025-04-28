@@ -1,0 +1,10 @@
+description: Object used to create an API key.
+properties:
+  attributes:
+    $ref: ./APIKeyCreateAttributes.yaml
+  type:
+    $ref: ./APIKeysType.yaml
+required:
+  - attributes
+  - type
+type: object

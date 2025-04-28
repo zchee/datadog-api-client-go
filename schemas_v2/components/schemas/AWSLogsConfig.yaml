@@ -1,0 +1,5 @@
+description: AWS Logs Collection config.
+properties:
+  lambda_forwarder:
+    $ref: ./AWSLambdaForwarderConfig.yaml
+type: object

@@ -1,0 +1,3 @@
+description: The ID of the monitor notification rule.
+example: 00000000-0000-1234-0000-000000000000
+type: string

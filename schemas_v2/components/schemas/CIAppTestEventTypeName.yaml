@@ -1,0 +1,7 @@
+description: Type of the event.
+enum:
+  - citest
+example: citest
+type: string
+x-enum-varnames:
+  - CITEST

@@ -1,0 +1,19 @@
+description: Attributes of the Sensitive Data Scanner group.
+properties:
+  description:
+    description: Description of the group.
+    type: string
+  filter:
+    $ref: ./SensitiveDataScannerFilter.yaml
+  is_enabled:
+    description: Whether or not the group is enabled.
+    type: boolean
+  name:
+    description: Name of the group.
+    type: string
+  product_list:
+    description: List of products the scanning group applies.
+    items:
+      $ref: ./SensitiveDataScannerProduct.yaml
+    type: array
+type: object

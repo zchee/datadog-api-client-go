@@ -1,0 +1,5 @@
+description: Create a new rule.
+oneOf:
+  - $ref: ./SecurityMonitoringStandardRuleCreatePayload.yaml
+  - $ref: ./SecurityMonitoringSignalRuleCreatePayload.yaml
+  - $ref: ./CloudConfigurationRuleCreatePayload.yaml

@@ -1,0 +1,5 @@
+description: Possible values for action
+items:
+  $ref: ./TeamPermissionSettingValue.yaml
+readOnly: true
+type: array

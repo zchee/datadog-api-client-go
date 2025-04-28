@@ -1,0 +1,9 @@
+description: >-
+  Represents included related resources when retrieving an escalation policy,
+  such as teams, steps, or targets.
+oneOf:
+  - $ref: ./TeamReference.yaml
+  - $ref: ./EscalationPolicyStep.yaml
+  - $ref: ./UserTarget.yaml
+  - $ref: ./ScheduleTarget.yaml
+  - $ref: ./TeamTarget.yaml

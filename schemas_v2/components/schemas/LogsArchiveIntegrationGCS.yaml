@@ -1,0 +1,13 @@
+description: The GCS archive's integration destination.
+properties:
+  client_email:
+    description: A client email.
+    example: youremail@example.com
+    type: string
+  project_id:
+    description: A project ID.
+    example: project-id
+    type: string
+required:
+  - client_email
+type: object

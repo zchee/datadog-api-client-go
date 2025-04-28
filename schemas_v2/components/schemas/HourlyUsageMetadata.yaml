@@ -1,0 +1,5 @@
+description: The object containing document metadata.
+properties:
+  pagination:
+    $ref: ./HourlyUsagePagination.yaml
+type: object

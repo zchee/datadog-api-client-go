@@ -1,0 +1,13 @@
+description: Object containing the definition of a metric's tags.
+properties:
+  tags:
+    description: List of indexed tag value pairs.
+    example:
+      - sport:golf
+      - sport:football
+      - animal:dog
+    items:
+      description: Tag key-value pairs.
+      type: string
+    type: array
+type: object

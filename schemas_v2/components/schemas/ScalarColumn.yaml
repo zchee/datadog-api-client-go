@@ -1,0 +1,4 @@
+description: A single column in a scalar query response.
+oneOf:
+  - $ref: ./GroupScalarColumn.yaml
+  - $ref: ./DataScalarColumn.yaml

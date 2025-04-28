@@ -1,0 +1,12 @@
+description: Datadog application key.
+properties:
+  attributes:
+    $ref: ./FullApplicationKeyAttributes.yaml
+  id:
+    description: ID of the application key.
+    type: string
+  relationships:
+    $ref: ./ApplicationKeyRelationships.yaml
+  type:
+    $ref: ./ApplicationKeysType.yaml
+type: object

@@ -1,0 +1,77 @@
+get:
+  description: Get a list of entities from Software Catalog.
+  operationId: ListCatalogEntity
+  parameters:
+    - $ref: ../components/parameters/PageOffset.yaml
+    - description: Maximum number of entities in the response.
+      example: 100
+      in: query
+      name: page[limit]
+      required: false
+      schema:
+        default: 100
+        format: int64
+        type: integer
+    - $ref: ../components/parameters/FilterByID.yaml
+    - $ref: ../components/parameters/FilterByRef.yaml
+    - $ref: ../components/parameters/FilterByName.yaml
+    - $ref: ../components/parameters/FilterByKind.yaml
+    - $ref: ../components/parameters/FilterByOwner.yaml
+    - $ref: ../components/parameters/FilterByRelationType.yaml
+    - $ref: ../components/parameters/FilterByExcludeSnapshot.yaml
+    - $ref: ../components/parameters/Include.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListEntityCatalogResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_read
+  summary: Get a list of entities
+  tags:
+    - Software Catalog
+  x-pagination:
+    limitParam: page[limit]
+    pageOffsetParam: page[offset]
+    resultsPath: data
+post:
+  description: Create or update entities in Software Catalog.
+  operationId: UpsertCatalogEntity
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/UpsertCatalogEntityRequest.yaml
+    description: Entity YAML or JSON.
+    required: true
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UpsertCatalogEntityResponse.yaml
+      description: ACCEPTED
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_write
+  summary: Create or update entities
+  tags:
+    - Software Catalog
+  x-codegen-request-body-name: body

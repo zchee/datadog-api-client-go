@@ -1,0 +1,14 @@
+description: >-
+  Defines a relationship to a single team within an escalation policy. Contains
+  the team's `id` and `type`.
+properties:
+  id:
+    description: Specifies the unique identifier for the team resource.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+  type:
+    $ref: ./EscalationPolicyDataRelationshipsTeamsDataItemsType.yaml
+required:
+  - type
+  - id
+type: object

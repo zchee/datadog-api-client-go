@@ -1,0 +1,10 @@
+description: User object returned by the API.
+properties:
+  attributes:
+    $ref: ./IncidentUserAttributes.yaml
+  id:
+    description: ID of the user.
+    type: string
+  type:
+    $ref: ./UsersType.yaml
+type: object

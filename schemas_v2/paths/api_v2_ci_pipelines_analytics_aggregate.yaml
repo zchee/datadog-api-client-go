@@ -1,0 +1,38 @@
+post:
+  description: >-
+    Use this API endpoint to aggregate CI Visibility pipeline events into
+    buckets of computed metrics and timeseries.
+  operationId: AggregateCIAppPipelineEvents
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CIAppPipelinesAggregateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/CIAppPipelinesAnalyticsAggregateResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - ci_visibility_read
+  summary: Aggregate pipelines events
+  tags:
+    - CI Visibility Pipelines
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - ci_visibility_read

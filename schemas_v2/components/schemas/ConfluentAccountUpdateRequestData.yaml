@@ -1,0 +1,10 @@
+description: Data object for updating a Confluent account.
+properties:
+  attributes:
+    $ref: ./ConfluentAccountUpdateRequestAttributes.yaml
+  type:
+    $ref: ./ConfluentAccountType.yaml
+required:
+  - attributes
+  - type
+type: object

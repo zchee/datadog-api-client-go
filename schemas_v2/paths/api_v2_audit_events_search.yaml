@@ -1,0 +1,45 @@
+post:
+  description: >-
+    List endpoint returns Audit Logs events that match an Audit search query.
+
+    [Results are paginated][1].
+
+
+    Use this endpoint to build complex Audit Logs events filtering and search.
+
+
+    [1]:
+    https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination
+  operationId: SearchAuditLogs
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AuditLogsSearchEventsRequest.yaml
+    required: false
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AuditLogsEventsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Search Audit Logs events
+  tags:
+    - Audit
+  x-codegen-request-body-name: body
+  x-pagination:
+    cursorParam: body.page.cursor
+    cursorPath: meta.page.after
+    limitParam: body.page.limit
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - audit_logs_read

@@ -1,0 +1,18 @@
+description: >-
+  Defines a custom quota limit that applies to specific log events based on
+  matching field values.
+properties:
+  fields:
+    description: >-
+      A list of field matchers used to apply a specific override. If an event
+      matches all listed key-value pairs, the corresponding override limit is
+      enforced.
+    items:
+      $ref: ./ObservabilityPipelineFieldValue.yaml
+    type: array
+  limit:
+    $ref: ./ObservabilityPipelineQuotaProcessorLimit.yaml
+required:
+  - fields
+  - limit
+type: object

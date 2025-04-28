@@ -1,0 +1,5 @@
+description: Object describing meta attributes of response.
+properties:
+  page:
+    $ref: ./Pagination.yaml
+type: object

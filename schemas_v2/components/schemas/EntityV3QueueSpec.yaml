@@ -1,0 +1,20 @@
+additionalProperties: false
+description: The definition of Entity V3 Queue Spec object.
+properties:
+  componentOf:
+    description: A list of components the queue is a part of
+    items:
+      type: string
+    type: array
+  lifecycle:
+    description: The lifecycle state of the queue.
+    minLength: 1
+    type: string
+  tier:
+    description: The importance of the queue.
+    minLength: 1
+    type: string
+  type:
+    description: The type of queue.
+    type: string
+type: object

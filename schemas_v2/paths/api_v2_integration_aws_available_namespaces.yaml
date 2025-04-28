@@ -1,0 +1,26 @@
+get:
+  description: >-
+    Get a list of available AWS CloudWatch namespaces that can send metrics to
+    Datadog.
+  operationId: ListAWSNamespaces
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AWSNamespacesResponse.yaml
+      description: AWS Namespaces List object
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List available namespaces
+  tags:
+    - AWS Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_read
+  x-unstable: |-
+    **Note: This endpoint is in Preview. If you have any feedback,
+    contact [Datadog support](https://docs.datadoghq.com/help/).**

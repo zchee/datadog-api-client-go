@@ -1,0 +1,11 @@
+description: Relationships of the user object returned by the API.
+properties:
+  org:
+    $ref: ./RelationshipToOrganization.yaml
+  other_orgs:
+    $ref: ./RelationshipToOrganizations.yaml
+  other_users:
+    $ref: ./RelationshipToUsers.yaml
+  roles:
+    $ref: ./RelationshipToRoles.yaml
+type: object

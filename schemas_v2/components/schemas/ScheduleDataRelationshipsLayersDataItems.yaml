@@ -1,0 +1,14 @@
+description: >-
+  Relates a layer to this schedule, identified by `id` and `type` (must be
+  `layers`).
+properties:
+  id:
+    description: The unique identifier of the layer in this relationship.
+    example: 00000000-0000-0000-0000-000000000001
+    type: string
+  type:
+    $ref: ./ScheduleDataRelationshipsLayersDataItemsType.yaml
+required:
+  - type
+  - id
+type: object

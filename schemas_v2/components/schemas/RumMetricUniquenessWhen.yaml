@@ -1,0 +1,11 @@
+description: >-
+  When to count updatable events. `match` when the event is first seen, or `end`
+  when the event is complete.
+enum:
+  - match
+  - end
+example: match
+type: string
+x-enum-varnames:
+  - WHEN_MATCH
+  - WHEN_END

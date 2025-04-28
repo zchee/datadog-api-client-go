@@ -1,0 +1,119 @@
+delete:
+  description: Delete an AuthN Mapping specified by AuthN Mapping UUID.
+  operationId: DeleteAuthNMapping
+  parameters:
+    - $ref: ../components/parameters/AuthNMappingID.yaml
+  responses:
+    '204':
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete an AuthN Mapping
+  tags:
+    - AuthN Mappings
+  x-permission:
+    operator: OR
+    permissions:
+      - user_access_manage
+get:
+  description: Get an AuthN Mapping specified by the AuthN Mapping UUID.
+  operationId: GetAuthNMapping
+  parameters:
+    - $ref: ../components/parameters/AuthNMappingID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AuthNMappingResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get an AuthN Mapping by UUID
+  tags:
+    - AuthN Mappings
+  x-permission:
+    operator: OPEN
+    permissions: []
+patch:
+  description: Edit an AuthN Mapping.
+  operationId: UpdateAuthNMapping
+  parameters:
+    - $ref: ../components/parameters/AuthNMappingID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AuthNMappingUpdateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AuthNMappingResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '409':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Conflict
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Unprocessable Entity
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Edit an AuthN Mapping
+  tags:
+    - AuthN Mappings
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - user_access_manage

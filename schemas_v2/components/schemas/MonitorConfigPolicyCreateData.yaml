@@ -1,0 +1,10 @@
+description: A monitor configuration policy data.
+properties:
+  attributes:
+    $ref: ./MonitorConfigPolicyAttributeCreateRequest.yaml
+  type:
+    $ref: ./MonitorConfigPolicyResourceType.yaml
+required:
+  - type
+  - attributes
+type: object

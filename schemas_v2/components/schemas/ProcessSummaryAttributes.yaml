@@ -1,0 +1,32 @@
+description: Attributes for a process summary.
+properties:
+  cmdline:
+    description: Process command line.
+    type: string
+  host:
+    description: Host running the process.
+    type: string
+  pid:
+    description: Process ID.
+    format: int64
+    type: integer
+  ppid:
+    description: Parent process ID.
+    format: int64
+    type: integer
+  start:
+    description: Time the process was started.
+    type: string
+  tags:
+    description: List of tags associated with the process.
+    items:
+      description: A tag associated with the process.
+      type: string
+    type: array
+  timestamp:
+    description: Time the process was seen.
+    type: string
+  user:
+    description: Process owner.
+    type: string
+type: object

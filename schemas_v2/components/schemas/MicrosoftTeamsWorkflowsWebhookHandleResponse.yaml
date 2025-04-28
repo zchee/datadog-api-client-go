@@ -1,0 +1,7 @@
+description: Response of a Workflows webhook handle.
+properties:
+  data:
+    $ref: ./MicrosoftTeamsWorkflowsWebhookHandleResponseData.yaml
+required:
+  - data
+type: object

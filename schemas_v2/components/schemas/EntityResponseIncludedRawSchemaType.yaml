@@ -1,0 +1,6 @@
+description: Raw schema type.
+enum:
+  - rawSchema
+type: string
+x-enum-varnames:
+  - RAW_SCHEMA

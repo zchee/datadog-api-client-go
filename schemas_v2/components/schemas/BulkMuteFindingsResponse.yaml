@@ -1,0 +1,7 @@
+description: The expected response schema.
+properties:
+  data:
+    $ref: ./BulkMuteFindingsResponseData.yaml
+required:
+  - data
+type: object

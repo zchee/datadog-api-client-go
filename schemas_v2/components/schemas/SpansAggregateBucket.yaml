@@ -1,0 +1,10 @@
+description: Spans aggregate.
+properties:
+  attributes:
+    $ref: ./SpansAggregateBucketAttributes.yaml
+  id:
+    description: ID of the spans aggregate.
+    type: string
+  type:
+    $ref: ./SpansAggregateBucketType.yaml
+type: object

@@ -1,0 +1,8 @@
+default: process
+description: Type of process summary.
+enum:
+  - process
+example: process
+type: string
+x-enum-varnames:
+  - PROCESS

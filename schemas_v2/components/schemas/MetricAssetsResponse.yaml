@@ -1,0 +1,12 @@
+description: >-
+  Response object that includes related dashboards, monitors, notebooks, and
+  SLOs.
+properties:
+  data:
+    $ref: ./MetricAssetResponseData.yaml
+  included:
+    description: Array of objects related to the metric assets.
+    items:
+      $ref: ./MetricAssetResponseIncluded.yaml
+    type: array
+type: object

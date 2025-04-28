@@ -1,0 +1,7 @@
+description: The response from the cancel data deletion request endpoint.
+properties:
+  data:
+    $ref: ./DataDeletionResponseItem.yaml
+  meta:
+    $ref: ./DataDeletionResponseMeta.yaml
+type: object

@@ -1,0 +1,12 @@
+description: Object to create a user.
+properties:
+  attributes:
+    $ref: ./UserCreateAttributes.yaml
+  relationships:
+    $ref: ./UserRelationships.yaml
+  type:
+    $ref: ./UsersType.yaml
+required:
+  - attributes
+  - type
+type: object

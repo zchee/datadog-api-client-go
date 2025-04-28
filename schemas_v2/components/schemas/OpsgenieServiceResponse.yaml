@@ -1,0 +1,7 @@
+description: Response of an Opsgenie service.
+properties:
+  data:
+    $ref: ./OpsgenieServiceResponseData.yaml
+required:
+  - data
+type: object

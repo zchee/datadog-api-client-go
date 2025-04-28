@@ -1,0 +1,17 @@
+description: The duration in days after which a learned value is forgotten.
+enum:
+  - 1
+  - 2
+  - 7
+  - 14
+  - 21
+  - 28
+format: int32
+type: integer
+x-enum-varnames:
+  - ONE_DAY
+  - TWO_DAYS
+  - ONE_WEEK
+  - TWO_WEEKS
+  - THREE_WEEKS
+  - FOUR_WEEKS

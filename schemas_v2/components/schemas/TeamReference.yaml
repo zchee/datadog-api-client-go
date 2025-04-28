@@ -1,0 +1,16 @@
+description: >-
+  Provides a reference to a team, including ID, type, and basic
+  attributes/relationships.
+properties:
+  attributes:
+    $ref: ./TeamReferenceAttributes.yaml
+  id:
+    description: The team's unique identifier.
+    type: string
+  relationships:
+    $ref: ./TeamReferenceRelationships.yaml
+  type:
+    $ref: ./TeamReferenceType.yaml
+required:
+  - type
+type: object

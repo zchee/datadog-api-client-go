@@ -1,0 +1,10 @@
+description: Data containing the updated triage attributes of the signal.
+properties:
+  attributes:
+    $ref: ./SecurityMonitoringSignalTriageAttributes.yaml
+  id:
+    description: The unique ID of the security signal.
+    type: string
+  type:
+    $ref: ./SecurityMonitoringSignalMetadataType.yaml
+type: object

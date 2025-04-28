@@ -1,0 +1,13 @@
+description: The component that the BOM describes.
+properties:
+  name:
+    description: >-
+      The name of the component. This will often be a shortened, single name of
+      the component.
+    example: github.com/datadog/datadog-agent
+    type: string
+  type:
+    description: Specifies the type of the component.
+    example: application
+    type: string
+type: object

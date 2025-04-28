@@ -1,0 +1,14 @@
+description: Response data related to the scanning groups.
+properties:
+  attributes:
+    additionalProperties: {}
+    description: Attributes of the Sensitive Data configuration.
+    type: object
+  id:
+    description: ID of the configuration.
+    type: string
+  relationships:
+    $ref: ./SensitiveDataScannerConfigurationRelationships.yaml
+  type:
+    $ref: ./SensitiveDataScannerConfigurationType.yaml
+type: object

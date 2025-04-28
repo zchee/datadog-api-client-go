@@ -1,0 +1,10 @@
+description: A field with a single value selected.
+properties:
+  type:
+    $ref: ./IncidentFieldAttributesSingleValueType.yaml
+  value:
+    description: The single value selected for this field.
+    example: SEV-1
+    nullable: true
+    type: string
+type: object

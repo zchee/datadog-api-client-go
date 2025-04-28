@@ -1,0 +1,8 @@
+default: container_image_group
+description: Type of Container Image Group.
+enum:
+  - container_image_group
+example: container_image_group
+type: string
+x-enum-varnames:
+  - CONTAINER_IMAGE_GROUP

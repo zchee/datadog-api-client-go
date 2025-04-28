@@ -1,0 +1,7 @@
+description: AWS Account Update Request body.
+properties:
+  data:
+    $ref: ./AWSAccountUpdateRequestData.yaml
+required:
+  - data
+type: object

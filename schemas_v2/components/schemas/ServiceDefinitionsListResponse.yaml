@@ -1,0 +1,8 @@
+description: Create service definitions response.
+properties:
+  data:
+    description: Data representing service definitions.
+    items:
+      $ref: ./ServiceDefinitionData.yaml
+    type: array
+type: object

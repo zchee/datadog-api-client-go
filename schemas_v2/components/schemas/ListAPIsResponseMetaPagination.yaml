@@ -1,0 +1,18 @@
+description: Pagination metadata information for `ListAPIsResponse`.
+properties:
+  limit:
+    description: Number of items in the current page.
+    example: 20
+    format: int64
+    type: integer
+  offset:
+    description: Offset for pagination.
+    example: 0
+    format: int64
+    type: integer
+  total_count:
+    description: Total number of items.
+    example: 35
+    format: int64
+    type: integer
+type: object

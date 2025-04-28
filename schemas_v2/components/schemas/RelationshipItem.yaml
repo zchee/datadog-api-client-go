@@ -1,0 +1,9 @@
+description: Relationship entry.
+properties:
+  id:
+    description: Associated data ID.
+    type: string
+  type:
+    description: Relationship type.
+    type: string
+type: object

@@ -1,0 +1,8 @@
+description: Confluent account returned by the API.
+properties:
+  data:
+    description: The Confluent account.
+    items:
+      $ref: ./ConfluentAccountResponseData.yaml
+    type: array
+type: object

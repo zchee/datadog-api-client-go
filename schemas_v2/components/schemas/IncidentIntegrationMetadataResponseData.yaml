@@ -1,0 +1,16 @@
+description: Incident integration metadata from a response.
+properties:
+  attributes:
+    $ref: ./IncidentIntegrationMetadataAttributes.yaml
+  id:
+    description: The incident integration metadata's ID.
+    example: 00000000-0000-0000-1234-000000000000
+    type: string
+  relationships:
+    $ref: ./IncidentIntegrationRelationships.yaml
+  type:
+    $ref: ./IncidentIntegrationMetadataType.yaml
+required:
+  - id
+  - type
+type: object

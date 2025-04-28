@@ -1,0 +1,5 @@
+description: RUM application response.
+properties:
+  data:
+    $ref: ./RUMApplication.yaml
+type: object

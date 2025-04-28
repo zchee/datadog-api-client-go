@@ -1,0 +1,4 @@
+description: Monitor identifier for the downtime.
+oneOf:
+  - $ref: ./DowntimeMonitorIdentifierId.yaml
+  - $ref: ./DowntimeMonitorIdentifierTags.yaml

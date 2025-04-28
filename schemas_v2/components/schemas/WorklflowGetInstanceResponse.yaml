@@ -1,0 +1,6 @@
+additionalProperties: {}
+description: The state of the given workflow instance.
+properties:
+  data:
+    $ref: ./WorklflowGetInstanceResponseData.yaml
+type: object

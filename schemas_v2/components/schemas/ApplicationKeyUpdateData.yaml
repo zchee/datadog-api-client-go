@@ -1,0 +1,15 @@
+description: Object used to update an application key.
+properties:
+  attributes:
+    $ref: ./ApplicationKeyUpdateAttributes.yaml
+  id:
+    description: ID of the application key.
+    example: 00112233-4455-6677-8899-aabbccddeeff
+    type: string
+  type:
+    $ref: ./ApplicationKeysType.yaml
+required:
+  - attributes
+  - id
+  - type
+type: object

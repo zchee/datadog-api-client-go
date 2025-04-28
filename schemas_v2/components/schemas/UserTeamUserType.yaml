@@ -1,0 +1,8 @@
+default: users
+description: User team user type
+enum:
+  - users
+example: users
+type: string
+x-enum-varnames:
+  - USERS

@@ -1,0 +1,5 @@
+description: Metadata for the metric.
+properties:
+  origin:
+    $ref: ./MetricOrigin.yaml
+type: object

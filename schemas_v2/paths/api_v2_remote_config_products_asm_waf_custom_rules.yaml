@@ -1,0 +1,49 @@
+get:
+  description: Retrieve a list of WAF custom rule.
+  operationId: ListApplicationSecurityWAFCustomRules
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/ApplicationSecurityWafCustomRuleListResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List all WAF custom rules
+  tags:
+    - Application Security
+post:
+  description: Create a new WAF custom rule with the given parameters.
+  operationId: CreateApplicationSecurityWafCustomRule
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/ApplicationSecurityWafCustomRuleCreateRequest.yaml
+    description: The definition of the new WAF Custom Rule.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/ApplicationSecurityWafCustomRuleResponse.yaml
+      description: Created
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '409':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a WAF custom rule
+  tags:
+    - Application Security
+  x-codegen-request-body-name: body

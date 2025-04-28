@@ -1,0 +1,57 @@
+get:
+  description: List Okta accounts.
+  operationId: ListOktaAccounts
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OktaAccountsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List Okta accounts
+  tags:
+    - Okta Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+post:
+  description: Create an Okta account.
+  operationId: CreateOktaAccount
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/OktaAccountRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OktaAccountResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Add Okta account
+  tags:
+    - Okta Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

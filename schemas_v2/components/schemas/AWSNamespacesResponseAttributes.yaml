@@ -1,0 +1,13 @@
+description: AWS Namespaces response attributes.
+properties:
+  namespaces:
+    description: AWS CloudWatch namespace.
+    example:
+      - AWS/ApiGateway
+    items:
+      example: AWS/ApiGateway
+      type: string
+    type: array
+required:
+  - namespaces
+type: object

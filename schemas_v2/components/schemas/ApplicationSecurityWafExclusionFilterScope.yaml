@@ -1,0 +1,11 @@
+description: Deploy on services based on their environment and/or service name.
+properties:
+  env:
+    description: Deploy on this environment.
+    example: www
+    type: string
+  service:
+    description: Deploy on this service.
+    example: prod
+    type: string
+type: object

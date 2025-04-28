@@ -1,0 +1,8 @@
+description: The query results.
+properties:
+  buckets:
+    description: The list of matching buckets, one item per bucket.
+    items:
+      $ref: ./CIAppPipelinesBucketResponse.yaml
+    type: array
+type: object

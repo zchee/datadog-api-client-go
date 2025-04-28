@@ -1,0 +1,8 @@
+default: roles
+description: Roles type.
+enum:
+  - roles
+example: roles
+type: string
+x-enum-varnames:
+  - ROLES

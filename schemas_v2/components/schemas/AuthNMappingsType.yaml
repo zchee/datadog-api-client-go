@@ -1,0 +1,8 @@
+default: authn_mappings
+description: AuthN Mappings resource type.
+enum:
+  - authn_mappings
+example: authn_mappings
+type: string
+x-enum-varnames:
+  - AUTHN_MAPPINGS

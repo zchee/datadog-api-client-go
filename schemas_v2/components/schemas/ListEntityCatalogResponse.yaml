@@ -1,0 +1,11 @@
+description: List entity response.
+properties:
+  data:
+    $ref: ./EntityResponseData.yaml
+  included:
+    $ref: ./ListEntityCatalogResponseIncluded.yaml
+  links:
+    $ref: ./ListEntityCatalogResponseLinks.yaml
+  meta:
+    $ref: ./EntityResponseMeta.yaml
+type: object

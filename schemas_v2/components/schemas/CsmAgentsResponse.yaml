@@ -1,0 +1,10 @@
+description: Response object that includes a list of CSM Agents.
+properties:
+  data:
+    description: A list of Agents.
+    items:
+      $ref: ./CsmAgentData.yaml
+    type: array
+  meta:
+    $ref: ./CSMAgentsMetadata.yaml
+type: object

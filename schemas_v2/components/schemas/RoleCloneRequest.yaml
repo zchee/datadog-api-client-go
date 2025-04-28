@@ -1,0 +1,7 @@
+description: Request to create a role by cloning an existing role.
+properties:
+  data:
+    $ref: ./RoleClone.yaml
+required:
+  - data
+type: object

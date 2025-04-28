@@ -1,0 +1,18 @@
+description: Service documents.
+properties:
+  name:
+    description: Document name.
+    example: Architecture
+    type: string
+  provider:
+    description: Document provider.
+    example: google drive
+    type: string
+  url:
+    description: Document URL.
+    example: https://gdrive/mydoc
+    type: string
+required:
+  - name
+  - url
+type: object

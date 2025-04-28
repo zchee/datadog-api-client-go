@@ -1,0 +1,56 @@
+get:
+  description: >-
+    List your Datadog-GCP STS delegate account configured in your Datadog
+    account.
+  operationId: GetGCPSTSDelegate
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GCPSTSDelegateAccountResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List delegate account
+  tags:
+    - GCP Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - gcp_configuration_read
+post:
+  description: Create a Datadog GCP principal.
+  operationId: MakeGCPSTSDelegate
+  requestBody:
+    content:
+      application/json:
+        schema:
+          example: {}
+          type: object
+    description: Create a delegate service account within Datadog.
+    required: false
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GCPSTSDelegateAccountResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a Datadog GCP principal
+  tags:
+    - GCP Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - gcp_configuration_edit

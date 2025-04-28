@@ -1,0 +1,43 @@
+description: Metadata of an app.
+properties:
+  created_at:
+    description: Timestamp of when the app was created.
+    format: date-time
+    type: string
+  deleted_at:
+    description: Timestamp of when the app was deleted.
+    format: date-time
+    type: string
+  org_id:
+    description: The Datadog organization ID that owns the app.
+    format: int64
+    type: integer
+  updated_at:
+    description: Timestamp of when the app was last updated.
+    format: date-time
+    type: string
+  updated_since_deployment:
+    description: >-
+      Whether the app was updated since it was last published. Published apps
+      are pinned to a specific version and do not automatically update when the
+      app is updated.
+    type: boolean
+  user_id:
+    description: The ID of the user who created the app.
+    format: int64
+    type: integer
+  user_name:
+    description: The name (or email address) of the user who created the app.
+    type: string
+  user_uuid:
+    description: The UUID of the user who created the app.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+  version:
+    description: >-
+      The version number of the app. This starts at 1 and increments with each
+      update.
+    format: int64
+    type: integer
+type: object

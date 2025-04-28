@@ -1,0 +1,12 @@
+additionalProperties: false
+description: Metadata for pagination.
+properties:
+  page:
+    $ref: ./ListFindingsPage.yaml
+  snapshot_timestamp:
+    description: The point in time corresponding to the listed findings.
+    example: 1678721573794
+    format: int64
+    minimum: 1
+    type: integer
+type: object

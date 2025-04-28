@@ -1,0 +1,12 @@
+description: Data related to the update of a group.
+properties:
+  attributes:
+    $ref: ./SensitiveDataScannerGroupAttributes.yaml
+  id:
+    description: ID of the group.
+    type: string
+  relationships:
+    $ref: ./SensitiveDataScannerGroupRelationships.yaml
+  type:
+    $ref: ./SensitiveDataScannerGroupType.yaml
+type: object

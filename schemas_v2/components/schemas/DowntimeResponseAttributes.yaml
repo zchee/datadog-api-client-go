@@ -1,0 +1,37 @@
+description: Downtime details.
+properties:
+  canceled:
+    description: Time that the downtime was canceled.
+    example: 2020-01-02T03:04:05.282979+0000
+    format: date-time
+    nullable: true
+    type: string
+  created:
+    description: Creation time of the downtime.
+    example: 2020-01-02T03:04:05.282979+0000
+    format: date-time
+    type: string
+  display_timezone:
+    $ref: ./DowntimeDisplayTimezone.yaml
+  message:
+    $ref: ./DowntimeMessage.yaml
+  modified:
+    description: Time that the downtime was last modified.
+    example: 2020-01-02T03:04:05.282979+0000
+    format: date-time
+    type: string
+  monitor_identifier:
+    $ref: ./DowntimeMonitorIdentifier.yaml
+  mute_first_recovery_notification:
+    $ref: ./DowntimeMuteFirstRecoveryNotification.yaml
+  notify_end_states:
+    $ref: ./DowntimeNotifyEndStates.yaml
+  notify_end_types:
+    $ref: ./DowntimeNotifyEndTypes.yaml
+  schedule:
+    $ref: ./DowntimeScheduleResponse.yaml
+  scope:
+    $ref: ./DowntimeScope.yaml
+  status:
+    $ref: ./DowntimeStatus.yaml
+type: object

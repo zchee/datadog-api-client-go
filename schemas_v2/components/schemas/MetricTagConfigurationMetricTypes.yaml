@@ -1,0 +1,14 @@
+default: gauge
+description: The metric's type.
+enum:
+  - gauge
+  - count
+  - rate
+  - distribution
+example: count
+type: string
+x-enum-varnames:
+  - GAUGE
+  - COUNT
+  - RATE
+  - DISTRIBUTION

@@ -1,0 +1,4 @@
+description: Upsert entity response included.
+items:
+  $ref: ./UpsertCatalogEntityResponseIncludedItem.yaml
+type: array

@@ -1,0 +1,8 @@
+description: A Sensitive Data Scanner configuration.
+properties:
+  id:
+    description: ID of the configuration.
+    type: string
+  type:
+    $ref: ./SensitiveDataScannerConfigurationType.yaml
+type: object

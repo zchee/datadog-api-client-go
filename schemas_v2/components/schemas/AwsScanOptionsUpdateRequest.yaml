@@ -1,0 +1,7 @@
+description: Request object that includes the scan options to update.
+properties:
+  data:
+    $ref: ./AwsScanOptionsUpdateData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,14 @@
+description: Project creation attributes
+properties:
+  key:
+    description: Project's key. Cannot be "CASE"
+    example: SEC
+    type: string
+  name:
+    description: name
+    example: Security Investigation
+    type: string
+required:
+  - name
+  - key
+type: object

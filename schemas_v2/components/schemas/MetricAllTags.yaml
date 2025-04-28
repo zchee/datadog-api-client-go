@@ -1,0 +1,9 @@
+description: Object for a single metric's indexed tags.
+properties:
+  attributes:
+    $ref: ./MetricAllTagsAttributes.yaml
+  id:
+    $ref: ./MetricName.yaml
+  type:
+    $ref: ./MetricType.yaml
+type: object

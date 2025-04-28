@@ -1,0 +1,8 @@
+description: All the available span-based metric objects.
+properties:
+  data:
+    description: A list of span-based metric objects.
+    items:
+      $ref: ./SpansMetricResponseData.yaml
+    type: array
+type: object

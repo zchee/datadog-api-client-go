@@ -1,0 +1,15 @@
+description: >-
+  Data of the notification rule patch request: the rule ID, the rule type, and
+  the rule attributes. All fields are required.
+properties:
+  attributes:
+    $ref: ./PatchNotificationRuleParametersDataAttributes.yaml
+  id:
+    $ref: ./ID.yaml
+  type:
+    $ref: ./NotificationRulesType.yaml
+required:
+  - attributes
+  - id
+  - type
+type: object

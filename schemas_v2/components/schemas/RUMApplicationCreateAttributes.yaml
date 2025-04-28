@@ -1,0 +1,16 @@
+description: RUM application creation attributes.
+properties:
+  name:
+    description: Name of the RUM application.
+    example: my_new_rum_application
+    type: string
+  type:
+    description: >-
+      Type of the RUM application. Supported values are `browser`, `ios`,
+      `android`, `react-native`, `flutter`, `roku`, `electron`, `unity`,
+      `kotlin-multiplatform`.
+    example: browser
+    type: string
+required:
+  - name
+type: object

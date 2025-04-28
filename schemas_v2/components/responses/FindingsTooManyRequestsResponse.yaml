@@ -1,0 +1,5 @@
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/JSONAPIErrorResponse.yaml
+description: 'Too many requests: The rate limit set by the API has been exceeded.'

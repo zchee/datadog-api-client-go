@@ -1,0 +1,12 @@
+description: The definition of `WorkflowUserRelationshipData` object.
+properties:
+  id:
+    description: The user identifier
+    example: ''
+    type: string
+  type:
+    $ref: ./WorkflowUserRelationshipType.yaml
+required:
+  - type
+  - id
+type: object

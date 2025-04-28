@@ -1,0 +1,17 @@
+description: >-
+  Represents the data for a single escalation policy, including its attributes,
+  ID, relationships, and resource type.
+properties:
+  attributes:
+    $ref: ./EscalationPolicyDataAttributes.yaml
+  id:
+    description: Specifies the unique identifier of the escalation policy.
+    example: ab000000-0000-0000-0000-000000000000
+    type: string
+  relationships:
+    $ref: ./EscalationPolicyDataRelationships.yaml
+  type:
+    $ref: ./EscalationPolicyDataType.yaml
+required:
+  - type
+type: object

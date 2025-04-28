@@ -1,0 +1,28 @@
+description: Sorting options for AuthN Mappings.
+enum:
+  - created_at
+  - '-created_at'
+  - role_id
+  - '-role_id'
+  - saml_assertion_attribute_id
+  - '-saml_assertion_attribute_id'
+  - role.name
+  - '-role.name'
+  - saml_assertion_attribute.attribute_key
+  - '-saml_assertion_attribute.attribute_key'
+  - saml_assertion_attribute.attribute_value
+  - '-saml_assertion_attribute.attribute_value'
+type: string
+x-enum-varnames:
+  - CREATED_AT_ASCENDING
+  - CREATED_AT_DESCENDING
+  - ROLE_ID_ASCENDING
+  - ROLE_ID_DESCENDING
+  - SAML_ASSERTION_ATTRIBUTE_ID_ASCENDING
+  - SAML_ASSERTION_ATTRIBUTE_ID_DESCENDING
+  - ROLE_NAME_ASCENDING
+  - ROLE_NAME_DESCENDING
+  - SAML_ASSERTION_ATTRIBUTE_KEY_ASCENDING
+  - SAML_ASSERTION_ATTRIBUTE_KEY_DESCENDING
+  - SAML_ASSERTION_ATTRIBUTE_VALUE_ASCENDING
+  - SAML_ASSERTION_ATTRIBUTE_VALUE_DESCENDING

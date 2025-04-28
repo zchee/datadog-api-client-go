@@ -1,0 +1,6 @@
+description: Response object that includes a single metric's indexed tags.
+properties:
+  data:
+    $ref: ./MetricAllTags.yaml
+readOnly: true
+type: object

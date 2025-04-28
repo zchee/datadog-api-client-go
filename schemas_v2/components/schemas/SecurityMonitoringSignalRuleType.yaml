@@ -1,0 +1,6 @@
+description: The rule type.
+enum:
+  - signal_correlation
+type: string
+x-enum-varnames:
+  - SIGNAL_CORRELATION

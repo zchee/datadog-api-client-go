@@ -1,0 +1,6 @@
+description: The metadata object containing pagination metadata.
+properties:
+  pagination:
+    $ref: ./IncidentResponseMetaPagination.yaml
+readOnly: true
+type: object

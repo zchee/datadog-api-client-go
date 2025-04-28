@@ -1,0 +1,7 @@
+description: Request object for updating a single WAF exclusion filter.
+properties:
+  data:
+    $ref: ./ApplicationSecurityWafExclusionFilterUpdateData.yaml
+required:
+  - data
+type: object

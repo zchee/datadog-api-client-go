@@ -1,0 +1,11 @@
+description: Rule details.
+properties:
+  attributes:
+    $ref: ./RuleAttributes.yaml
+  id:
+    $ref: ./RuleId.yaml
+  relationships:
+    $ref: ./RelationshipToRule.yaml
+  type:
+    $ref: ./RuleType.yaml
+type: object

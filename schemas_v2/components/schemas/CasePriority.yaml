@@ -1,0 +1,18 @@
+default: NOT_DEFINED
+description: Case priority
+enum:
+  - NOT_DEFINED
+  - P1
+  - P2
+  - P3
+  - P4
+  - P5
+example: NOT_DEFINED
+type: string
+x-enum-varnames:
+  - NOT_DEFINED
+  - P1
+  - P2
+  - P3
+  - P4
+  - P5

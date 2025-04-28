@@ -1,0 +1,11 @@
+description: Relationship to organizations.
+properties:
+  data:
+    description: Relationships to organization objects.
+    example: []
+    items:
+      $ref: ./RelationshipToOrganizationData.yaml
+    type: array
+required:
+  - data
+type: object

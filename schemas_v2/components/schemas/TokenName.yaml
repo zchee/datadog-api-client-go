@@ -1,0 +1,4 @@
+description: Name for tokens.
+example: MyTokenName
+pattern: ^[A-Za-z][A-Za-z\\d]*$
+type: string

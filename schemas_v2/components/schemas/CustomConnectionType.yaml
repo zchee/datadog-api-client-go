@@ -1,0 +1,8 @@
+default: custom_connections
+description: The custom connection type.
+enum:
+  - custom_connections
+example: custom_connections
+type: string
+x-enum-varnames:
+  - CUSTOM_CONNECTIONS

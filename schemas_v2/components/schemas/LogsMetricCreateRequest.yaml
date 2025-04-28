@@ -1,0 +1,7 @@
+description: The new log-based metric body.
+properties:
+  data:
+    $ref: ./LogsMetricCreateData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,17 @@
+description: The action query spec object.
+properties:
+  connectionGroup:
+    $ref: ./ActionQuerySpecConnectionGroup.yaml
+  connectionId:
+    description: The ID of the custom connection to use for this action query.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    type: string
+  fqn:
+    description: The fully qualified name of the action type.
+    example: com.datadoghq.http.request
+    type: string
+  inputs:
+    $ref: ./ActionQuerySpecInputs.yaml
+required:
+  - fqn
+type: object

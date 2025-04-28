@@ -1,0 +1,8 @@
+default: incidents_search_results
+description: Incident search result type.
+enum:
+  - incidents_search_results
+example: incidents_search_results
+type: string
+x-enum-varnames:
+  - INCIDENTS_SEARCH_RESULTS

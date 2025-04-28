@@ -1,0 +1,8 @@
+description: The tags associated with this finding.
+example:
+  - cloud_provider:aws
+  - myTag:myValue
+items:
+  description: The list of tags.
+  type: string
+type: array

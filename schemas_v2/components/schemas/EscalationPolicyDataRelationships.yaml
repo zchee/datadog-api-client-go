@@ -1,0 +1,11 @@
+description: >-
+  Represents the relationships for an escalation policy, including references to
+  steps and teams.
+properties:
+  steps:
+    $ref: ./EscalationPolicyDataRelationshipsSteps.yaml
+  teams:
+    $ref: ./EscalationPolicyDataRelationshipsTeams.yaml
+required:
+  - steps
+type: object

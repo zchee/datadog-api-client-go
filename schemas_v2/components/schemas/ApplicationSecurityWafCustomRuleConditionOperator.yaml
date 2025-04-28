@@ -1,0 +1,27 @@
+description: Operator to use for the WAF Condition.
+enum:
+  - match_regex
+  - '!match_regex'
+  - phrase_match
+  - '!phrase_match'
+  - is_xss
+  - is_sqli
+  - exact_match
+  - '!exact_match'
+  - ip_match
+  - '!ip_match'
+  - capture_data
+example: match_regex
+type: string
+x-enum-varnames:
+  - MATCH_REGEX
+  - NOT_MATCH_REGEX
+  - PHRASE_MATCH
+  - NOT_PHRASE_MATCH
+  - IS_XSS
+  - IS_SQLI
+  - EXACT_MATCH
+  - NOT_EXACT_MATCH
+  - IP_MATCH
+  - NOT_IP_MATCH
+  - CAPTURE_DATA

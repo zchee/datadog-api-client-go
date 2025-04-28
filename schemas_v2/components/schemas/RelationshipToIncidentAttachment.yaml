@@ -1,0 +1,10 @@
+description: A relationship reference for attachments.
+properties:
+  data:
+    description: An array of incident attachments.
+    items:
+      $ref: ./RelationshipToIncidentAttachmentData.yaml
+    type: array
+required:
+  - data
+type: object

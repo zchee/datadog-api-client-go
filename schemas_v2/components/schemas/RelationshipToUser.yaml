@@ -1,0 +1,7 @@
+description: Relationship to user.
+properties:
+  data:
+    $ref: ./RelationshipToUserData.yaml
+required:
+  - data
+type: object

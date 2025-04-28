@@ -1,0 +1,6 @@
+description: Service definition schema.
+oneOf:
+  - $ref: ./ServiceDefinitionV1.yaml
+  - $ref: ./ServiceDefinitionV2.yaml
+  - $ref: ./ServiceDefinitionV2Dot1.yaml
+  - $ref: ./ServiceDefinitionV2Dot2.yaml

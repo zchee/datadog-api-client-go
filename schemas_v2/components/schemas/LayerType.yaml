@@ -1,0 +1,8 @@
+default: layers
+description: Layers resource type.
+enum:
+  - layers
+example: layers
+type: string
+x-enum-varnames:
+  - LAYERS

@@ -1,0 +1,8 @@
+default: metric_cardinality_estimate
+description: The metric estimate resource type.
+enum:
+  - metric_cardinality_estimate
+example: metric_cardinality_estimate
+type: string
+x-enum-varnames:
+  - METRIC_CARDINALITY_ESTIMATE

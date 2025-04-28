@@ -1,0 +1,9 @@
+description: The incident's relationships for an update request.
+properties:
+  commander_user:
+    $ref: ./NullableRelationshipToUser.yaml
+  integrations:
+    $ref: ./RelationshipToIncidentIntegrationMetadatas.yaml
+  postmortem:
+    $ref: ./RelationshipToIncidentPostmortem.yaml
+type: object

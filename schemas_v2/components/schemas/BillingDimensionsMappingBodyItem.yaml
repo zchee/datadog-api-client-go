@@ -1,0 +1,10 @@
+description: The mapping data for each billing dimension.
+properties:
+  attributes:
+    $ref: ./BillingDimensionsMappingBodyItemAttributes.yaml
+  id:
+    description: ID of the billing dimension.
+    type: string
+  type:
+    $ref: ./ActiveBillingDimensionsType.yaml
+type: object

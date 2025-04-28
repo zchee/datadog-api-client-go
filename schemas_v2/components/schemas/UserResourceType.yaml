@@ -1,0 +1,8 @@
+default: user
+description: User resource type.
+enum:
+  - user
+example: user
+type: string
+x-enum-varnames:
+  - USER

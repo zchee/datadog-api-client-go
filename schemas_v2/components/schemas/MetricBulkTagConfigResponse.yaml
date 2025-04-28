@@ -1,0 +1,5 @@
+description: Wrapper for a single bulk tag configuration status response.
+properties:
+  data:
+    $ref: ./MetricBulkTagConfigStatus.yaml
+type: object

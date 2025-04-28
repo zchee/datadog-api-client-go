@@ -1,0 +1,21 @@
+description: Object for a single metric to be configure tags on.
+example:
+  attributes:
+    include_percentiles: false
+    metric_type: distribution
+    tags:
+      - app
+      - datacenter
+  id: http.endpoint.request
+  type: manage_tags
+properties:
+  attributes:
+    $ref: ./MetricTagConfigurationCreateAttributes.yaml
+  id:
+    $ref: ./MetricName.yaml
+  type:
+    $ref: ./MetricTagConfigurationType.yaml
+required:
+  - id
+  - type
+type: object

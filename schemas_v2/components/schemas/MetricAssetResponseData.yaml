@@ -1,0 +1,12 @@
+description: Metric assets response data.
+properties:
+  id:
+    $ref: ./MetricName.yaml
+  relationships:
+    $ref: ./MetricAssetResponseRelationships.yaml
+  type:
+    $ref: ./MetricType.yaml
+required:
+  - id
+  - type
+type: object

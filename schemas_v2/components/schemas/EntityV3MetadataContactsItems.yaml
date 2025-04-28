@@ -1,0 +1,19 @@
+additionalProperties: false
+description: The definition of Entity V3 Metadata Contacts Items object.
+properties:
+  contact:
+    description: Contact value.
+    example: https://slack/
+    type: string
+  name:
+    description: Contact name.
+    minLength: 2
+    type: string
+  type:
+    description: Contact type.
+    example: slack
+    type: string
+required:
+  - type
+  - contact
+type: object

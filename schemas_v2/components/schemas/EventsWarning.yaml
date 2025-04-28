@@ -1,0 +1,17 @@
+description: A warning message indicating something is wrong with the query.
+properties:
+  code:
+    description: A unique code for this type of warning.
+    example: unknown_index
+    type: string
+  detail:
+    description: A detailed explanation of this specific warning.
+    example: 'indexes: foo, bar'
+    type: string
+  title:
+    description: A short human-readable summary of the warning.
+    example: >-
+      One or several indexes are missing or invalid. Results hold data from the
+      other indexes.
+    type: string
+type: object

@@ -1,0 +1,131 @@
+delete:
+  description: >-
+    Delete a workflow by ID. This API requires an application key scoped with
+    the `workflows_write` permission.
+  operationId: DeleteWorkflow
+  parameters:
+    - $ref: ../components/parameters/WorkflowId.yaml
+  responses:
+    '204':
+      description: Successfully deleted a workflow.
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not found
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Too many requests
+  summary: Delete an existing Workflow
+  tags:
+    - Workflow Automation
+  x-permission:
+    operator: OR
+    permissions:
+      - workflows_write
+get:
+  description: >-
+    Get a workflow by ID.  This API requires an application key scoped with the
+    `workflows_read` permission.
+  operationId: GetWorkflow
+  parameters:
+    - $ref: ../components/parameters/WorkflowId.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetWorkflowResponse.yaml
+      description: Successfully got a workflow.
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not found
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Too many requests
+  summary: Get an existing Workflow
+  tags:
+    - Workflow Automation
+  x-permission:
+    operator: OR
+    permissions:
+      - workflows_read
+patch:
+  description: >-
+    Update a workflow by ID. This API requires an application key scoped with
+    the `workflows_write` permission.
+  operationId: UpdateWorkflow
+  parameters:
+    - $ref: ../components/parameters/WorkflowId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/UpdateWorkflowRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UpdateWorkflowResponse.yaml
+      description: Successfully updated a workflow.
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not found
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Too many requests
+  summary: Update an existing Workflow
+  tags:
+    - Workflow Automation
+  x-permission:
+    operator: OR
+    permissions:
+      - workflows_write

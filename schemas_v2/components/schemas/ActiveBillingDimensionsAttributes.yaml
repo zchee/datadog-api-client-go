@@ -1,0 +1,16 @@
+description: List of active billing dimensions.
+properties:
+  month:
+    description: 'Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]`.'
+    format: date-time
+    type: string
+  values:
+    description: >-
+      List of active billing dimensions. Example: `[infra_host, apm_host,
+      serverless_infra]`.
+    items:
+      description: A given billing dimension in a list.
+      example: infra_host
+      type: string
+    type: array
+type: object

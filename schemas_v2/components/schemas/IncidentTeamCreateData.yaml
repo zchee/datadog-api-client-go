@@ -1,0 +1,11 @@
+description: Incident Team data for a create request.
+properties:
+  attributes:
+    $ref: ./IncidentTeamCreateAttributes.yaml
+  relationships:
+    $ref: ./IncidentTeamRelationships.yaml
+  type:
+    $ref: ./IncidentTeamType.yaml
+required:
+  - type
+type: object

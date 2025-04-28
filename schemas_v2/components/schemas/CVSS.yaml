@@ -1,0 +1,18 @@
+description: Vulnerability severity.
+properties:
+  score:
+    description: Vulnerability severity score.
+    example: 4.5
+    format: double
+    type: number
+  severity:
+    $ref: ./VulnerabilitySeverity.yaml
+  vector:
+    description: Vulnerability CVSS vector.
+    example: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+    type: string
+required:
+  - score
+  - severity
+  - vector
+type: object

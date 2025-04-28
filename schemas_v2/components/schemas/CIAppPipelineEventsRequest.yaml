@@ -1,0 +1,11 @@
+description: The request for a pipelines search.
+properties:
+  filter:
+    $ref: ./CIAppPipelinesQueryFilter.yaml
+  options:
+    $ref: ./CIAppQueryOptions.yaml
+  page:
+    $ref: ./CIAppQueryPageOptions.yaml
+  sort:
+    $ref: ./CIAppSort.yaml
+type: object

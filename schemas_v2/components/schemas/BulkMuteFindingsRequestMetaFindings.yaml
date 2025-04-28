@@ -1,0 +1,5 @@
+description: Finding object containing the finding information.
+properties:
+  finding_id:
+    $ref: ./FindingID.yaml
+type: object

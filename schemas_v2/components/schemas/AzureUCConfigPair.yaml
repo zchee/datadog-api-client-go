@@ -1,0 +1,14 @@
+description: Azure config pair.
+properties:
+  attributes:
+    $ref: ./AzureUCConfigPairAttributes.yaml
+  id:
+    description: The ID of Cloud Cost Management account.
+    format: int64
+    type: integer
+  type:
+    $ref: ./AzureUCConfigPairType.yaml
+required:
+  - attributes
+  - type
+type: object

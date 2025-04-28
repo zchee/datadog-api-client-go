@@ -1,0 +1,11 @@
+description: User creating or modifying a rule.
+properties:
+  handle:
+    description: The user handle.
+    example: john.doe@domain.com
+    type: string
+  name:
+    description: The user name.
+    example: John Doe
+    type: string
+type: object

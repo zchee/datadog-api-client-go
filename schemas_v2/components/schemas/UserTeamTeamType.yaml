@@ -1,0 +1,8 @@
+default: team
+description: User team team type
+enum:
+  - team
+example: team
+type: string
+x-enum-varnames:
+  - TEAM

@@ -1,0 +1,7 @@
+description: Team update request
+properties:
+  data:
+    $ref: ./TeamUpdate.yaml
+required:
+  - data
+type: object

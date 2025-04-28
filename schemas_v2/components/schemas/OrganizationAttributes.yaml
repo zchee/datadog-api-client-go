@@ -1,0 +1,29 @@
+description: Attributes of the organization.
+properties:
+  created_at:
+    description: Creation time of the organization.
+    format: date-time
+    type: string
+  description:
+    description: Description of the organization.
+    type: string
+  disabled:
+    description: Whether or not the organization is disabled.
+    type: boolean
+  modified_at:
+    description: Time of last organization modification.
+    format: date-time
+    type: string
+  name:
+    description: Name of the organization.
+    type: string
+  public_id:
+    description: Public ID of the organization.
+    type: string
+  sharing:
+    description: Sharing type of the organization.
+    type: string
+  url:
+    description: URL of the site that this organization exists at.
+    type: string
+type: object

@@ -1,0 +1,12 @@
+description: The interfaces list data
+properties:
+  attributes:
+    $ref: ./InterfaceAttributes.yaml
+  id:
+    description: The interface ID
+    example: example:1.2.3.4:99
+    type: string
+  type:
+    description: The type of the resource. The value should always be interface.
+    type: string
+type: object

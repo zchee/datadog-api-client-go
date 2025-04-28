@@ -1,0 +1,56 @@
+delete:
+  description: Remove a project using the project's `id`.
+  operationId: DeleteProject
+  parameters:
+    - $ref: ../components/parameters/ProjectIDPathParameter.yaml
+  responses:
+    '204':
+      description: No Content
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - cases_write
+  summary: Remove a project
+  tags:
+    - Case Management
+get:
+  description: Get the details of a project by `project_id`.
+  operationId: GetProject
+  parameters:
+    - $ref: ../components/parameters/ProjectIDPathParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ProjectResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - cases_read
+  summary: Get the details of a project
+  tags:
+    - Case Management

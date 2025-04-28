@@ -1,0 +1,7 @@
+description: Entity schema v3.
+oneOf:
+  - $ref: ./EntityV3Service.yaml
+  - $ref: ./EntityV3Datastore.yaml
+  - $ref: ./EntityV3Queue.yaml
+  - $ref: ./EntityV3System.yaml
+  - $ref: ./EntityV3API.yaml

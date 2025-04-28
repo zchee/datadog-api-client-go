@@ -1,0 +1,7 @@
+description: The JSON:API type.
+enum:
+  - assets
+example: assets
+type: string
+x-enum-varnames:
+  - ASSETS

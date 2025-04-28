@@ -1,0 +1,4 @@
+description: Authentication method of the HTTP requests.
+oneOf:
+  - $ref: ./CustomDestinationResponseHttpDestinationAuthBasic.yaml
+  - $ref: ./CustomDestinationResponseHttpDestinationAuthCustomHeader.yaml

@@ -1,0 +1,9 @@
+description: The request for a security signal list.
+properties:
+  filter:
+    $ref: ./SecurityMonitoringSignalListRequestFilter.yaml
+  page:
+    $ref: ./SecurityMonitoringSignalListRequestPage.yaml
+  sort:
+    $ref: ./SecurityMonitoringSignalsSort.yaml
+type: object

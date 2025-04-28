@@ -1,0 +1,7 @@
+description: Payload schema when updating an Okta account.
+properties:
+  data:
+    $ref: ./OktaAccountUpdateRequestData.yaml
+required:
+  - data
+type: object

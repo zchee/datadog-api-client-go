@@ -1,0 +1,7 @@
+description: The new rum-based metric body.
+properties:
+  data:
+    $ref: ./RumMetricCreateData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,21 @@
+description: >-
+  Defines a time restriction object for a layer within a schedule update,
+  including
+
+  start and end days, as well as times.
+properties:
+  end_day:
+    $ref: >-
+      ./ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsEndDay.yaml
+  end_time:
+    description: The time at which this restriction ends (hh:mm:ss).
+    example: '17:00:00'
+    type: string
+  start_day:
+    $ref: >-
+      ./ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsStartDay.yaml
+  start_time:
+    description: The time at which this restriction starts (hh:mm:ss).
+    example: '09:00:00'
+    type: string
+type: object

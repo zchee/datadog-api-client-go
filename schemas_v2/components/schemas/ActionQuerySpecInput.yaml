@@ -1,0 +1,6 @@
+additionalProperties: {}
+description: >-
+  The inputs to the action query. See the [Actions
+  Catalog](https://docs.datadoghq.com/actions/actions_catalog/) for more detail
+  on each action and its inputs.
+type: object

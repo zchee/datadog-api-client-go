@@ -1,0 +1,10 @@
+description: Attributes for a container group.
+properties:
+  count:
+    description: Number of containers in the group.
+    format: int64
+    type: integer
+  tags:
+    description: Tags from the group name parsed in key/value format.
+    type: object
+type: object

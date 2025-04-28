@@ -1,0 +1,28 @@
+description: Case when signal is generated.
+properties:
+  actions:
+    description: Action to perform for each rule case.
+    items:
+      $ref: ./SecurityMonitoringRuleCaseAction.yaml
+    type: array
+  condition:
+    description: >-
+      A case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if
+      a signal should be generated
+
+      based on the event counts in the previously defined queries.
+    type: string
+  name:
+    description: Name of the case.
+    type: string
+  notifications:
+    description: Notification targets.
+    items:
+      description: Notification.
+      type: string
+    type: array
+  status:
+    $ref: ./SecurityMonitoringRuleSeverity.yaml
+required:
+  - status
+type: object

@@ -1,0 +1,20 @@
+additionalProperties: {}
+description: Attributes of the monitor notification rule.
+properties:
+  created:
+    description: Creation time of the monitor notification rule.
+    example: '2020-01-02 03:04:00+00:00'
+    format: date-time
+    type: string
+  filter:
+    $ref: ./MonitorNotificationRuleFilter.yaml
+  modified:
+    description: Time the monitor notification rule was last modified.
+    example: '2020-01-02 03:04:00+00:00'
+    format: date-time
+    type: string
+  name:
+    $ref: ./MonitorNotificationRuleName.yaml
+  recipients:
+    $ref: ./MonitorNotificationRuleRecipients.yaml
+type: object

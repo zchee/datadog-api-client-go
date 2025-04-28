@@ -1,0 +1,26 @@
+description: An individual timeseries events query.
+properties:
+  compute:
+    $ref: ./EventsCompute.yaml
+  data_source:
+    $ref: ./EventsDataSource.yaml
+  group_by:
+    $ref: ./EventsQueryGroupBys.yaml
+  indexes:
+    description: The indexes in which to search.
+    example:
+      - main
+    items:
+      description: The unique index name.
+      example: main
+      type: string
+    type: array
+  name:
+    description: The variable name for use in formulas.
+    type: string
+  search:
+    $ref: ./EventsSearch.yaml
+required:
+  - data_source
+  - compute
+type: object

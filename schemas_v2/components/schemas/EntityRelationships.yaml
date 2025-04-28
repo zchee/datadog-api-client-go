@@ -1,0 +1,13 @@
+description: Entity relationships.
+properties:
+  incidents:
+    $ref: ./EntityToIncidents.yaml
+  oncall:
+    $ref: ./EntityToOncalls.yaml
+  rawSchema:
+    $ref: ./EntityToRawSchema.yaml
+  relatedEntities:
+    $ref: ./EntityToRelatedEntities.yaml
+  schema:
+    $ref: ./EntityToSchema.yaml
+type: object

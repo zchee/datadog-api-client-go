@@ -1,0 +1,5 @@
+description: Response with channel, team, and tenant ID information.
+properties:
+  data:
+    $ref: ./MicrosoftTeamsChannelInfoResponseData.yaml
+type: object

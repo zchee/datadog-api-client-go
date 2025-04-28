@@ -1,0 +1,9 @@
+description: >-
+  Action to perform when a signal is triggered. Only available for Application
+  Security rule type.
+properties:
+  options:
+    $ref: ./SecurityMonitoringRuleCaseActionOptions.yaml
+  type:
+    $ref: ./SecurityMonitoringRuleCaseActionType.yaml
+type: object

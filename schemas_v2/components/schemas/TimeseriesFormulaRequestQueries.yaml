@@ -1,0 +1,7 @@
+description: List of queries to be run and used as inputs to the formulas.
+example:
+  - data_source: metrics
+    query: avg:system.cpu.user{*} by {env}
+items:
+  $ref: ./TimeseriesQuery.yaml
+type: array

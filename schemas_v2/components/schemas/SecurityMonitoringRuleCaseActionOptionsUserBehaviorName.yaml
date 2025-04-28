@@ -1,0 +1,4 @@
+description: >-
+  Used with the case action of type 'user_behavior'. The value specified in this
+  field is applied as a risk tag to all users affected by the rule.
+type: string

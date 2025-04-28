@@ -1,0 +1,87 @@
+get:
+  description: >-
+    The list endpoint returns security signals that match a search query.
+
+    Both this endpoint and the POST endpoint can be used interchangeably when
+    listing
+
+    security signals.
+  operationId: ListSecurityMonitoringSignals
+  parameters:
+    - description: The search query for security signals.
+      example: security:attack status:high
+      in: query
+      name: filter[query]
+      required: false
+      schema:
+        type: string
+    - description: The minimum timestamp for requested security signals.
+      example: '2019-01-02T09:42:36.320Z'
+      in: query
+      name: filter[from]
+      required: false
+      schema:
+        format: date-time
+        type: string
+    - description: The maximum timestamp for requested security signals.
+      example: '2019-01-03T09:42:36.320Z'
+      in: query
+      name: filter[to]
+      required: false
+      schema:
+        format: date-time
+        type: string
+    - description: The order of the security signals in results.
+      in: query
+      name: sort
+      required: false
+      schema:
+        $ref: ../components/schemas/SecurityMonitoringSignalsSort.yaml
+    - description: A list of results using the cursor provided in the previous query.
+      example: >-
+        eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==
+      in: query
+      name: page[cursor]
+      required: false
+      schema:
+        type: string
+    - description: The maximum number of security signals in the response.
+      example: 25
+      in: query
+      name: page[limit]
+      required: false
+      schema:
+        default: 10
+        format: int32
+        maximum: 1000
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringSignalsListResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_signals_read
+  summary: Get a quick list of security signals
+  tags:
+    - Security Monitoring
+  x-pagination:
+    cursorParam: page[cursor]
+    cursorPath: meta.page.after
+    limitParam: page[limit]
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_signals_read

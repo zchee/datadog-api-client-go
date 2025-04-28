@@ -1,0 +1,5 @@
+description: The response for an updated connection.
+properties:
+  data:
+    $ref: ./ActionConnectionData.yaml
+type: object

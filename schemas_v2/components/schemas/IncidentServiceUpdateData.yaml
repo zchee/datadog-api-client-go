@@ -1,0 +1,15 @@
+description: Incident Service payload for update requests.
+properties:
+  attributes:
+    $ref: ./IncidentServiceUpdateAttributes.yaml
+  id:
+    description: The incident service's ID.
+    example: 00000000-0000-0000-0000-000000000000
+    type: string
+  relationships:
+    $ref: ./IncidentServiceRelationships.yaml
+  type:
+    $ref: ./IncidentServiceType.yaml
+required:
+  - type
+type: object

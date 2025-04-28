@@ -1,0 +1,29 @@
+description: >-
+  A grid component. The grid component is the root canvas for an app and
+  contains all other components.
+properties:
+  events:
+    description: Events to listen for on the grid component.
+    items:
+      $ref: ./AppBuilderEvent.yaml
+    type: array
+  id:
+    description: >-
+      The ID of the grid component. This property is deprecated; use `name` to
+      identify individual components instead.
+    type: string
+  name:
+    description: >-
+      A unique identifier for this grid component. This name is also visible in
+      the app editor.
+    example: ''
+    type: string
+  properties:
+    $ref: ./ComponentGridProperties.yaml
+  type:
+    $ref: ./ComponentGridType.yaml
+required:
+  - name
+  - type
+  - properties
+type: object

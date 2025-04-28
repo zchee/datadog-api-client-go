@@ -1,0 +1,7 @@
+description: Team link create request
+properties:
+  data:
+    $ref: ./TeamLinkCreate.yaml
+required:
+  - data
+type: object

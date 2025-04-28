@@ -1,0 +1,16 @@
+default: STANDARD
+description: The storage class where the archive will be stored.
+enum:
+  - STANDARD
+  - STANDARD_IA
+  - ONEZONE_IA
+  - INTELLIGENT_TIERING
+  - GLACIER_IR
+example: STANDARD
+type: string
+x-enum-varnames:
+  - STANDARD
+  - STANDARD_IA
+  - ONEZONE_IA
+  - INTELLIGENT_TIERING
+  - GLACIER_IR

@@ -1,0 +1,14 @@
+description: >-
+  If specified, the app will poll the query at the specified interval in
+  milliseconds. The minimum polling interval is 15 seconds. The query will only
+  poll when the app's browser tab is active.
+oneOf:
+  - example: 30000
+    format: double
+    minimum: 15000
+    type: number
+  - description: >-
+      If this is a string, it must be a valid JavaScript expression that
+      evaluates to a number.
+    example: ${15000}
+    type: string

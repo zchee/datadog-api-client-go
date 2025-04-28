@@ -1,0 +1,74 @@
+description: Details of a CI step.
+properties:
+  end:
+    description: Time when the step run finished. The time format must be RFC3339.
+    example: '2023-05-31T15:30:00Z'
+    format: date-time
+    type: string
+  error:
+    $ref: ./CIAppCIError.yaml
+  git:
+    $ref: ./CIAppGitInfo.yaml
+  id:
+    description: UUID for the step. It has to be unique within each pipeline execution.
+    example: c2d517a8-4f3a-4b41-b4ae-69df0c864c79
+    type: string
+  job_id:
+    description: The parent job UUID (if applicable).
+    nullable: true
+    type: string
+  job_name:
+    description: The parent job name (if applicable).
+    nullable: true
+    type: string
+  level:
+    $ref: ./CIAppPipelineEventStepLevel.yaml
+  metrics:
+    $ref: ./CIAppPipelineEventMetrics.yaml
+  name:
+    description: The name for the step.
+    example: test-server
+    type: string
+  node:
+    $ref: ./CIAppHostInfo.yaml
+  parameters:
+    $ref: ./CIAppPipelineEventParameters.yaml
+  pipeline_name:
+    description: The parent pipeline name.
+    example: Build
+    type: string
+  pipeline_unique_id:
+    description: The parent pipeline UUID.
+    example: 76b572af-a078-42b2-a08a-cc28f98b944f
+    type: string
+  stage_id:
+    description: The parent stage UUID (if applicable).
+    nullable: true
+    type: string
+  stage_name:
+    description: The parent stage name (if applicable).
+    nullable: true
+    type: string
+  start:
+    description: Time when the step run started. The time format must be RFC3339.
+    example: '2023-05-31T15:30:00Z'
+    format: date-time
+    type: string
+  status:
+    $ref: ./CIAppPipelineEventStepStatus.yaml
+  tags:
+    $ref: ./CIAppPipelineEventTags.yaml
+  url:
+    description: The URL to look at the step in the CI provider UI.
+    nullable: true
+    type: string
+required:
+  - level
+  - id
+  - name
+  - pipeline_unique_id
+  - pipeline_name
+  - start
+  - end
+  - status
+type: object

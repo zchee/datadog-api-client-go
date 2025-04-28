@@ -1,0 +1,8 @@
+default: logs_metrics
+description: The type of the resource. The value should always be logs_metrics.
+enum:
+  - logs_metrics
+example: logs_metrics
+type: string
+x-enum-varnames:
+  - LOGS_METRICS

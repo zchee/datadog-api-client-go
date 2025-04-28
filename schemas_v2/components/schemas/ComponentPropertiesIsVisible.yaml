@@ -1,0 +1,10 @@
+description: >-
+  Whether the UI component is visible. If this is a string, it must be a valid
+  JavaScript expression that evaluates to a boolean.
+oneOf:
+  - type: boolean
+  - description: >-
+      If this is a string, it must be a valid JavaScript expression that
+      evaluates to a boolean.
+    example: ${true}
+    type: string

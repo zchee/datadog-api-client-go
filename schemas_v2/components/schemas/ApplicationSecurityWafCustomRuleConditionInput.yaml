@@ -1,0 +1,12 @@
+description: Input from the request on which the condition should apply.
+properties:
+  address:
+    $ref: ./ApplicationSecurityWafCustomRuleConditionInputAddress.yaml
+  key_path:
+    description: Specific path for the input.
+    items:
+      type: string
+    type: array
+required:
+  - address
+type: object

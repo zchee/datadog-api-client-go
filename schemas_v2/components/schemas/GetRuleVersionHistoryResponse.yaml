@@ -1,0 +1,5 @@
+description: Response for getting the rule version history.
+properties:
+  data:
+    $ref: ./GetRuleVersionHistoryData.yaml
+type: object

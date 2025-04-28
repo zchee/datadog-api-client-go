@@ -1,0 +1,11 @@
+default: duration
+description: >-
+  The learning method used to determine when signals should be generated for
+  values that weren't learned.
+enum:
+  - duration
+  - threshold
+type: string
+x-enum-varnames:
+  - DURATION
+  - THRESHOLD

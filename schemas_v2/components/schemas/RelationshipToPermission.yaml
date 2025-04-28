@@ -1,0 +1,5 @@
+description: Relationship to a permissions object.
+properties:
+  data:
+    $ref: ./RelationshipToPermissionData.yaml
+type: object

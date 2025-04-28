@@ -1,0 +1,14 @@
+description: Response object containing the version history of a rule.
+properties:
+  count:
+    description: The number of rule versions.
+    format: int32
+    maximum: 2147483647
+    type: integer
+  data:
+    additionalProperties:
+      $ref: ./RuleVersions.yaml
+      description: A rule version with a list of updates.
+    description: The `RuleVersionHistory` `data`.
+    type: object
+type: object

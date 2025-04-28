@@ -1,0 +1,10 @@
+description: List devices response.
+properties:
+  data:
+    description: The list devices response data.
+    items:
+      $ref: ./DevicesListData.yaml
+    type: array
+  meta:
+    $ref: ./ListDevicesResponseMetadata.yaml
+type: object

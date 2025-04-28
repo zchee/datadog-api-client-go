@@ -1,0 +1,13 @@
+description: A time and space aggregation combination for use in query.
+example:
+  space: sum
+  time: sum
+properties:
+  space:
+    $ref: ./MetricCustomSpaceAggregation.yaml
+  time:
+    $ref: ./MetricCustomTimeAggregation.yaml
+required:
+  - time
+  - space
+type: object

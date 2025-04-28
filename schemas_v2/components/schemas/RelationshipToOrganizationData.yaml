@@ -1,0 +1,12 @@
+description: Relationship to organization object.
+properties:
+  id:
+    description: ID of the organization.
+    example: 00000000-0000-beef-0000-000000000000
+    type: string
+  type:
+    $ref: ./OrganizationsType.yaml
+required:
+  - id
+  - type
+type: object

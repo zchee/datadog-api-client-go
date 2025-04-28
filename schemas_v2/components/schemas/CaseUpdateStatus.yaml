@@ -1,0 +1,10 @@
+description: Case update status
+properties:
+  attributes:
+    $ref: ./CaseUpdateStatusAttributes.yaml
+  type:
+    $ref: ./CaseResourceType.yaml
+required:
+  - attributes
+  - type
+type: object

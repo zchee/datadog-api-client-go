@@ -1,0 +1,28 @@
+default: count
+description: The type of aggregation that can be performed on events-based queries.
+enum:
+  - count
+  - cardinality
+  - pc75
+  - pc90
+  - pc95
+  - pc98
+  - pc99
+  - sum
+  - min
+  - max
+  - avg
+example: count
+type: string
+x-enum-varnames:
+  - COUNT
+  - CARDINALITY
+  - PC75
+  - PC90
+  - PC95
+  - PC98
+  - PC99
+  - SUM
+  - MIN
+  - MAX
+  - AVG

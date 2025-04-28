@@ -1,0 +1,6 @@
+description: Name of the product to be deleted, either `logs` or `rum`.
+in: path
+name: product
+required: true
+schema:
+  type: string

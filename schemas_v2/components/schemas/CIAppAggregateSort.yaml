@@ -1,0 +1,16 @@
+description: A sort rule. The `aggregation` field is required when `type` is `measure`.
+example:
+  aggregation: count
+  order: asc
+properties:
+  aggregation:
+    $ref: ./CIAppAggregationFunction.yaml
+  metric:
+    description: The metric to sort by (only used for `type=measure`).
+    example: '@duration'
+    type: string
+  order:
+    $ref: ./CIAppSortOrder.yaml
+  type:
+    $ref: ./CIAppAggregateSortType.yaml
+type: object

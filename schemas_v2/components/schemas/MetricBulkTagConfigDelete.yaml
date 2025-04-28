@@ -1,0 +1,14 @@
+description: >-
+  Request object to bulk delete all tag configurations for metrics matching the
+  given prefix.
+properties:
+  attributes:
+    $ref: ./MetricBulkTagConfigDeleteAttributes.yaml
+  id:
+    $ref: ./MetricBulkTagConfigNamePrefix.yaml
+  type:
+    $ref: ./MetricBulkConfigureTagsType.yaml
+required:
+  - id
+  - type
+type: object

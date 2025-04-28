@@ -1,0 +1,8 @@
+default: cipipeline_resource_request
+description: Type of the event.
+enum:
+  - cipipeline_resource_request
+example: cipipeline_resource_request
+type: string
+x-enum-varnames:
+  - CIPIPELINE_RESOURCE_REQUEST

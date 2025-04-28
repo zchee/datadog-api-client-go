@@ -1,0 +1,8 @@
+description: The definition of `WorkflowDataRelationships` object.
+properties:
+  creator:
+    $ref: ./WorkflowUserRelationship.yaml
+  owner:
+    $ref: ./WorkflowUserRelationship.yaml
+readOnly: true
+type: object

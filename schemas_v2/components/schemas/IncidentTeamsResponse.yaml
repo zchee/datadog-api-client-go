@@ -1,0 +1,23 @@
+description: Response with a list of incident team payloads.
+properties:
+  data:
+    description: An array of incident teams.
+    example:
+      - attributes:
+          name: team name
+        id: 00000000-7ea3-0000-0000-000000000000
+        type: teams
+    items:
+      $ref: ./IncidentTeamResponseData.yaml
+    type: array
+  included:
+    description: Included related resources which the user requested.
+    items:
+      $ref: ./IncidentTeamIncludedItems.yaml
+    readOnly: true
+    type: array
+  meta:
+    $ref: ./IncidentResponseMeta.yaml
+required:
+  - data
+type: object

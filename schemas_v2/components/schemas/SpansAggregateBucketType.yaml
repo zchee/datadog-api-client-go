@@ -1,0 +1,7 @@
+description: The spans aggregate bucket type.
+enum:
+  - bucket
+example: bucket
+type: string
+x-enum-varnames:
+  - BUCKET

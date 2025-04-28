@@ -1,0 +1,13 @@
+description: Creator of the object.
+properties:
+  email:
+    description: Email of the creator.
+    type: string
+  handle:
+    description: Handle of the creator.
+    type: string
+  name:
+    description: Name of the creator.
+    nullable: true
+    type: string
+type: object

@@ -1,0 +1,85 @@
+get:
+  description: Search cases.
+  operationId: SearchCases
+  parameters:
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageNumber.yaml
+    - $ref: ../components/parameters/CaseSortableFieldParameter.yaml
+    - description: Search query
+      in: query
+      name: filter
+      required: false
+      schema:
+        example: status:open (team:case-management OR team:event-management)
+        type: string
+    - description: Specify if order is ascending or not
+      in: query
+      name: sort[asc]
+      required: false
+      schema:
+        default: false
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CasesResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - cases_read
+  summary: Search cases
+  tags:
+    - Case Management
+  x-pagination:
+    limitParam: page[size]
+    pageParam: page[number]
+    resultsPath: data
+post:
+  description: Create a Case
+  operationId: CreateCase
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CaseCreateRequest.yaml
+    description: Case payload
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CaseResponse.yaml
+      description: CREATED
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - cases_write
+  summary: Create a case
+  tags:
+    - Case Management

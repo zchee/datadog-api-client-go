@@ -1,0 +1,26 @@
+description: The Azure archive destination.
+properties:
+  container:
+    description: The container where the archive will be stored.
+    example: container-name
+    type: string
+  integration:
+    $ref: ./LogsArchiveIntegrationAzure.yaml
+  path:
+    description: The archive path.
+    type: string
+  region:
+    description: The region where the archive will be stored.
+    type: string
+  storage_account:
+    description: The associated storage account.
+    example: account-name
+    type: string
+  type:
+    $ref: ./LogsArchiveDestinationAzureType.yaml
+required:
+  - storage_account
+  - container
+  - integration
+  - type
+type: object

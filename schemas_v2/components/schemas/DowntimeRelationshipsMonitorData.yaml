@@ -1,0 +1,10 @@
+description: Data for the monitor.
+nullable: true
+properties:
+  id:
+    description: Monitor ID of the downtime.
+    example: '12345'
+    type: string
+  type:
+    $ref: ./DowntimeIncludedMonitorType.yaml
+type: object

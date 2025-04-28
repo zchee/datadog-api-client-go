@@ -1,0 +1,30 @@
+description: Vulnerability counts associated with the Container Image.
+properties:
+  asset_id:
+    description: ID of the Container Image.
+    type: string
+  critical:
+    description: Number of vulnerabilities with CVSS Critical severity.
+    format: int64
+    type: integer
+  high:
+    description: Number of vulnerabilities with CVSS High severity.
+    format: int64
+    type: integer
+  low:
+    description: Number of vulnerabilities with CVSS Low severity.
+    format: int64
+    type: integer
+  medium:
+    description: Number of vulnerabilities with CVSS Medium severity.
+    format: int64
+    type: integer
+  none:
+    description: Number of vulnerabilities with CVSS None severity.
+    format: int64
+    type: integer
+  unknown:
+    description: Number of vulnerabilities with an unknown CVSS severity.
+    format: int64
+    type: integer
+type: object

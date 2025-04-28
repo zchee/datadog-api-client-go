@@ -1,0 +1,26 @@
+description: Metadata about a service definition.
+properties:
+  github-html-url:
+    description: GitHub HTML URL.
+    type: string
+  ingested-schema-version:
+    description: Ingestion schema version.
+    type: string
+  ingestion-source:
+    description: Ingestion source of the service definition.
+    type: string
+  last-modified-time:
+    description: Last modified time of the service definition.
+    type: string
+  origin:
+    description: User defined origin of the service definition.
+    type: string
+  origin-detail:
+    description: User defined origin's detail of the service definition.
+    type: string
+  warnings:
+    description: A list of schema validation warnings.
+    items:
+      $ref: ./ServiceDefinitionMetaWarnings.yaml
+    type: array
+type: object

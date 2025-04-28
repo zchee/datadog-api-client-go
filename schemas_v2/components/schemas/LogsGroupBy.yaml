@@ -1,0 +1,27 @@
+description: A group by rule
+properties:
+  facet:
+    description: The name of the facet to use (required)
+    example: host
+    type: string
+  histogram:
+    $ref: ./LogsGroupByHistogram.yaml
+  limit:
+    default: 10
+    description: >-
+      The maximum buckets to return for this group by. Note: at most 10000
+      buckets are allowed.
+
+      If grouping by multiple facets, the product of limits must not exceed
+      10000.
+    format: int64
+    type: integer
+  missing:
+    $ref: ./LogsGroupByMissing.yaml
+  sort:
+    $ref: ./LogsAggregateSort.yaml
+  total:
+    $ref: ./LogsGroupByTotal.yaml
+required:
+  - facet
+type: object

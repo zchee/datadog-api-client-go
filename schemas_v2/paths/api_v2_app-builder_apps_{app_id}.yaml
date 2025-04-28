@@ -1,0 +1,163 @@
+delete:
+  description: Delete a single app.
+  operationId: DeleteApp
+  parameters:
+    - description: The ID of the app to delete.
+      example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+      in: path
+      name: app_id
+      required: true
+      schema:
+        format: uuid
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DeleteAppResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not Found
+    '410':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Gone
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete App
+  tags:
+    - App Builder
+  x-permission:
+    operator: OR
+    permissions:
+      - apps_write
+get:
+  description: Get the full definition of an app.
+  operationId: GetApp
+  parameters:
+    - description: The ID of the app to retrieve.
+      example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+      in: path
+      name: app_id
+      required: true
+      schema:
+        format: uuid
+        type: string
+    - description: >-
+        The version number of the app to retrieve. If not specified, the latest
+        version is returned. Version numbers start at 1 and increment with each
+        update. The special values `latest` and `deployed` can be used to
+        retrieve the latest version or the published version, respectively.
+      in: query
+      name: version
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetAppResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not Found
+    '410':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Gone
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get App
+  tags:
+    - App Builder
+  x-permission:
+    operator: AND
+    permissions:
+      - apps_run
+      - connections_read
+patch:
+  description: Update an existing app. This creates a new version of the app.
+  operationId: UpdateApp
+  parameters:
+    - description: The ID of the app to update.
+      example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+      in: path
+      name: app_id
+      required: true
+      schema:
+        format: uuid
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/UpdateAppRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UpdateAppResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update App
+  tags:
+    - App Builder
+  x-permission:
+    operator: AND
+    permissions:
+      - apps_write
+      - connections_resolve
+      - workflows_run

@@ -1,0 +1,8 @@
+description: Errors occurred.
+properties:
+  errors:
+    description: Structured errors.
+    items:
+      $ref: ./HTTPCIAppError.yaml
+    type: array
+type: object

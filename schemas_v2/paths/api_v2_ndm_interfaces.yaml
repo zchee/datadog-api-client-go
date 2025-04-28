@@ -1,0 +1,32 @@
+get:
+  description: Get the list of interfaces of the device.
+  operationId: GetInterfaces
+  parameters:
+    - description: The ID of the device to get interfaces from.
+      example: example:1.2.3.4
+      in: query
+      name: device_id
+      required: true
+      schema:
+        type: string
+    - description: Whether to get the IP addresses of the interfaces.
+      example: true
+      in: query
+      name: get_ip_addresses
+      required: false
+      schema:
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetInterfacesResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the list of interfaces of the device
+  tags:
+    - Network Device Monitoring

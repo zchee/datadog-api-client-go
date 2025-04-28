@@ -1,0 +1,8 @@
+default: sensitive_data_scanner_configuration
+description: Sensitive Data Scanner configuration type.
+enum:
+  - sensitive_data_scanner_configuration
+example: sensitive_data_scanner_configuration
+type: string
+x-enum-varnames:
+  - SENSITIVE_DATA_SCANNER_CONFIGURATIONS

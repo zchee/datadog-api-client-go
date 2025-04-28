@@ -1,0 +1,5 @@
+description: The logs archive.
+properties:
+  data:
+    $ref: ./LogsArchiveDefinition.yaml
+type: object

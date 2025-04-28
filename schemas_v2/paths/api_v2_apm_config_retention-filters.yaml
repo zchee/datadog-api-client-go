@@ -1,0 +1,63 @@
+get:
+  description: Get the list of APM retention filters.
+  operationId: ListApmRetentionFilters
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RetentionFiltersResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List all APM retention filters
+  tags:
+    - APM Retention Filters
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_retention_filter_read
+      - apm_pipelines_read
+post:
+  description: >-
+    Create a retention filter to index spans in your organization.
+
+    Returns the retention filter definition when the request is successful.
+
+
+    Default filters with types spans-errors-sampling-processor and
+    spans-appsec-sampling-processor cannot be created.
+  operationId: CreateApmRetentionFilter
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RetentionFilterCreateRequest.yaml
+    description: The definition of the new retention filter.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RetentionFilterCreateResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a retention filter
+  tags:
+    - APM Retention Filters
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_retention_filter_write
+      - apm_pipelines_write

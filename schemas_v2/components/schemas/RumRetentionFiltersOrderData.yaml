@@ -1,0 +1,10 @@
+description: The RUM retention filter data for ordering.
+properties:
+  id:
+    $ref: ./RumRetentionFilterID.yaml
+  type:
+    $ref: ./RumRetentionFilterType.yaml
+required:
+  - id
+  - type
+type: object

@@ -1,0 +1,6 @@
+description: Type of payload.
+enum:
+  - historicalDetectionsJob
+type: string
+x-enum-varnames:
+  - HISTORICALDETECTIONSJOB

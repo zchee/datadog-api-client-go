@@ -1,0 +1,20 @@
+description: Specifies the order of returned team memberships
+enum:
+  - manager_name
+  - '-manager_name'
+  - name
+  - '-name'
+  - handle
+  - '-handle'
+  - email
+  - '-email'
+type: string
+x-enum-varnames:
+  - MANAGER_NAME
+  - _MANAGER_NAME
+  - NAME
+  - _NAME
+  - HANDLE
+  - _HANDLE
+  - EMAIL
+  - _EMAIL

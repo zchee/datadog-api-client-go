@@ -1,0 +1,19 @@
+description: Optional attributes for the status of a bulk tag configuration request.
+properties:
+  emails:
+    $ref: ./MetricBulkTagConfigEmailList.yaml
+  exclude_tags_mode:
+    description: >-
+      When set to true, the configuration will exclude the configured tags and
+      include any other submitted tags.
+
+      When set to false, the configuration will include the configured tags and
+      exclude any other submitted tags.
+    type: boolean
+  status:
+    description: The status of the request.
+    example: Accepted
+    type: string
+  tags:
+    $ref: ./MetricBulkTagConfigTagNameList.yaml
+type: object

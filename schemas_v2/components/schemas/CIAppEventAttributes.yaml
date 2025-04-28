@@ -1,0 +1,14 @@
+description: JSON object containing all event attributes and their associated values.
+properties:
+  attributes:
+    additionalProperties: {}
+    description: JSON object of attributes from CI Visibility test events.
+    example:
+      customAttribute: 123
+      duration: 2345
+    type: object
+  tags:
+    $ref: ./TagsEventAttribute.yaml
+  test_level:
+    $ref: ./CIAppTestLevel.yaml
+type: object

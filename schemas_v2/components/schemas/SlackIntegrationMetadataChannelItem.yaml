@@ -1,0 +1,23 @@
+description: Item in the Slack integration metadata channel array.
+properties:
+  channel_id:
+    description: Slack channel ID.
+    example: C0123456789
+    type: string
+  channel_name:
+    description: Name of the Slack channel.
+    example: '#example-channel-name'
+    type: string
+  redirect_url:
+    description: URL redirecting to the Slack channel.
+    example: https://slack.com/app_redirect?channel=C0123456789&team=T01234567
+    type: string
+  team_id:
+    description: Slack team ID.
+    example: T01234567
+    type: string
+required:
+  - channel_id
+  - channel_name
+  - redirect_url
+type: object

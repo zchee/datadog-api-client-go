@@ -1,0 +1,5 @@
+description: The response object after a new app is successfully created, with the app ID.
+properties:
+  data:
+    $ref: ./CreateAppResponseData.yaml
+type: object

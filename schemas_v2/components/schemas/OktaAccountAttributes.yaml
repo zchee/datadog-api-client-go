@@ -1,0 +1,30 @@
+description: Attributes object for an Okta account.
+properties:
+  api_key:
+    description: The API key of the Okta account.
+    type: string
+    writeOnly: true
+  auth_method:
+    description: The authorization method for an Okta account.
+    example: oauth
+    type: string
+  client_id:
+    description: The Client ID of an Okta app integration.
+    type: string
+  client_secret:
+    description: The client secret of an Okta app integration.
+    type: string
+    writeOnly: true
+  domain:
+    description: The domain of the Okta account.
+    example: https://example.okta.com/
+    type: string
+  name:
+    description: The name of the Okta account.
+    example: Okta-Prod
+    type: string
+required:
+  - auth_method
+  - domain
+  - name
+type: object

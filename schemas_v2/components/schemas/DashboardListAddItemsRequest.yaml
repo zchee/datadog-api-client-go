@@ -1,0 +1,8 @@
+description: Request containing a list of dashboards to add.
+properties:
+  dashboards:
+    description: List of dashboards to add the dashboard list.
+    items:
+      $ref: ./DashboardListItemRequest.yaml
+    type: array
+type: object

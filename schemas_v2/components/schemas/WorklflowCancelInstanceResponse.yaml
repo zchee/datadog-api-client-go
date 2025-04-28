@@ -1,0 +1,5 @@
+description: Information about the canceled instance.
+properties:
+  data:
+    $ref: ./WorklflowCancelInstanceResponseData.yaml
+type: object

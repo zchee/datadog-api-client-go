@@ -1,0 +1,19 @@
+description: The incident's relationships from a response.
+properties:
+  attachments:
+    $ref: ./RelationshipToIncidentAttachment.yaml
+  commander_user:
+    $ref: ./NullableRelationshipToUser.yaml
+  created_by_user:
+    $ref: ./RelationshipToUser.yaml
+  impacts:
+    $ref: ./RelationshipToIncidentImpacts.yaml
+  integrations:
+    $ref: ./RelationshipToIncidentIntegrationMetadatas.yaml
+  last_modified_by_user:
+    $ref: ./RelationshipToUser.yaml
+  responders:
+    $ref: ./RelationshipToIncidentResponders.yaml
+  user_defined_fields:
+    $ref: ./RelationshipToIncidentUserDefinedFields.yaml
+type: object

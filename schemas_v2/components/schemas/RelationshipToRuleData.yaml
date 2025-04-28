@@ -1,0 +1,5 @@
+description: Relationship data for a rule.
+properties:
+  data:
+    $ref: ./RelationshipToRuleDataObject.yaml
+type: object

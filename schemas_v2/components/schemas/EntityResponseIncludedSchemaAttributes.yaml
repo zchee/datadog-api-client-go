@@ -1,0 +1,5 @@
+description: Included schema.
+properties:
+  schema:
+    $ref: ./EntityV3.yaml
+type: object

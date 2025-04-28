@@ -1,0 +1,16 @@
+description: Incident data for an update request.
+properties:
+  attributes:
+    $ref: ./IncidentUpdateAttributes.yaml
+  id:
+    description: The incident's ID.
+    example: 00000000-0000-0000-4567-000000000000
+    type: string
+  relationships:
+    $ref: ./IncidentUpdateRelationships.yaml
+  type:
+    $ref: ./IncidentType.yaml
+required:
+  - id
+  - type
+type: object

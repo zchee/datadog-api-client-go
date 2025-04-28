@@ -1,0 +1,37 @@
+post:
+  description: Create a new Action Connection
+  operationId: CreateActionConnection
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CreateActionConnectionRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreateActionConnectionResponse.yaml
+      description: Successfully created Action Connection
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Too Many Request
+  summary: Create a new Action Connection
+  tags:
+    - Action Connection

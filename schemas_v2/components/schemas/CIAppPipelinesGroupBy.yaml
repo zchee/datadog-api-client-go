@@ -1,0 +1,22 @@
+description: A group-by rule.
+properties:
+  facet:
+    description: The name of the facet to use (required).
+    example: '@ci.status'
+    type: string
+  histogram:
+    $ref: ./CIAppGroupByHistogram.yaml
+  limit:
+    default: 10
+    description: The maximum buckets to return for this group-by.
+    format: int64
+    type: integer
+  missing:
+    $ref: ./CIAppGroupByMissing.yaml
+  sort:
+    $ref: ./CIAppAggregateSort.yaml
+  total:
+    $ref: ./CIAppGroupByTotal.yaml
+required:
+  - facet
+type: object

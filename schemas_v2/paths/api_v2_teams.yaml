@@ -1,0 +1,88 @@
+get:
+  deprecated: true
+  description: >-
+    Get all incident teams for the requesting user's organization. If the
+    `include[users]` query parameter is provided, the included attribute will
+    contain the users related to these incident teams.
+  operationId: ListIncidentTeams
+  parameters:
+    - $ref: ../components/parameters/IncidentTeamIncludeQueryParameter.yaml
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageOffset.yaml
+    - $ref: ../components/parameters/IncidentTeamSearchQueryParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentTeamsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_read
+  summary: Get a list of all incident teams
+  tags:
+    - Incident Teams
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_read
+  x-unstable: >-
+    **Note**: This endpoint is deprecated. See the [Teams API
+    endpoints](https://docs.datadoghq.com/api/latest/teams/).
+post:
+  deprecated: true
+  description: Creates a new incident team.
+  operationId: CreateIncidentTeam
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/IncidentTeamCreateRequest.yaml
+    description: Incident Team Payload.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentTeamResponse.yaml
+      description: CREATED
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_settings_write
+  summary: Create a new incident team
+  tags:
+    - Incident Teams
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_settings_write
+  x-unstable: >-
+    **Note**: This endpoint is deprecated. See the [Teams API
+    endpoints](https://docs.datadoghq.com/api/latest/teams/).

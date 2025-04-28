@@ -1,0 +1,10 @@
+description: Object for a single suppression rule.
+properties:
+  attributes:
+    $ref: ./SecurityMonitoringSuppressionCreateAttributes.yaml
+  type:
+    $ref: ./SecurityMonitoringSuppressionType.yaml
+required:
+  - type
+  - attributes
+type: object

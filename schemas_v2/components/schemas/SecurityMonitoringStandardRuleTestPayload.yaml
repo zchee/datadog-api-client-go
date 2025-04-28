@@ -1,0 +1,84 @@
+description: The payload of a rule to test
+properties:
+  cases:
+    description: Cases for generating signals.
+    example: []
+    items:
+      $ref: ./SecurityMonitoringRuleCaseCreate.yaml
+    type: array
+  filters:
+    description: >-
+      Additional queries to filter matched events before they are processed.
+      This field is deprecated for log detection, signal correlation, and
+      workload security rules.
+    items:
+      $ref: ./SecurityMonitoringFilter.yaml
+    type: array
+  groupSignalsBy:
+    description: >-
+      Additional grouping to perform on top of the existing groups in the query
+      section. Must be a subset of the existing groups.
+    example:
+      - service
+    items:
+      description: Field to group by.
+      type: string
+    type: array
+  hasExtendedTitle:
+    description: >-
+      Whether the notifications include the triggering group-by values in their
+      title.
+    example: true
+    type: boolean
+  isEnabled:
+    description: Whether the rule is enabled.
+    example: true
+    type: boolean
+  message:
+    description: Message for generated signals.
+    example: ''
+    type: string
+  name:
+    description: The name of the rule.
+    example: My security monitoring rule.
+    type: string
+  options:
+    $ref: ./SecurityMonitoringRuleOptions.yaml
+  queries:
+    description: Queries for selecting logs which are part of the rule.
+    example: []
+    items:
+      $ref: ./SecurityMonitoringStandardRuleQuery.yaml
+    type: array
+  referenceTables:
+    description: Reference tables for the rule.
+    items:
+      $ref: ./SecurityMonitoringReferenceTable.yaml
+    type: array
+  tags:
+    description: Tags for generated signals.
+    example:
+      - env:prod
+      - team:security
+    items:
+      description: Tag.
+      type: string
+    type: array
+  thirdPartyCases:
+    description: >-
+      Cases for generating signals from third-party rules. Only available for
+      third-party rules.
+    example: []
+    items:
+      $ref: ./SecurityMonitoringThirdPartyRuleCaseCreate.yaml
+    type: array
+  type:
+    $ref: ./SecurityMonitoringRuleTypeTest.yaml
+required:
+  - name
+  - isEnabled
+  - queries
+  - options
+  - cases
+  - message
+type: object

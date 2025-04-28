@@ -1,0 +1,6 @@
+description: The name of the rum-based metric.
+in: path
+name: metric_id
+required: true
+schema:
+  type: string

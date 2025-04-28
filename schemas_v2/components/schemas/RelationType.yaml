@@ -1,0 +1,24 @@
+description: Supported relation types.
+enum:
+  - RelationTypeOwns
+  - RelationTypeOwnedBy
+  - RelationTypeDependsOn
+  - RelationTypeDependencyOf
+  - RelationTypePartsOf
+  - RelationTypeHasPart
+  - RelationTypeOtherOwns
+  - RelationTypeOtherOwnedBy
+  - RelationTypeImplementedBy
+  - RelationTypeImplements
+type: string
+x-enum-varnames:
+  - RELATIONTYPEOWNS
+  - RELATIONTYPEOWNEDBY
+  - RELATIONTYPEDEPENDSON
+  - RELATIONTYPEDEPENDENCYOF
+  - RELATIONTYPEPARTSOF
+  - RELATIONTYPEHASPART
+  - RELATIONTYPEOTHEROWNS
+  - RELATIONTYPEOTHEROWNEDBY
+  - RELATIONTYPEIMPLEMENTEDBY
+  - RELATIONTYPEIMPLEMENTS

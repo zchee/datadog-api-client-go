@@ -1,0 +1,78 @@
+get:
+  description: Get a list of all powerpacks.
+  operationId: ListPowerpacks
+  parameters:
+    - description: Maximum number of powerpacks in the response.
+      example: 25
+      in: query
+      name: page[limit]
+      required: false
+      schema:
+        default: 25
+        format: int64
+        maximum: 1000
+        type: integer
+    - $ref: ../components/parameters/PageOffset.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListPowerpacksResponse.yaml
+      description: OK
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_read
+  summary: Get all powerpacks
+  tags:
+    - Powerpack
+  x-pagination:
+    limitParam: page[limit]
+    pageOffsetParam: page[offset]
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_read
+post:
+  description: Create a powerpack.
+  operationId: CreatePowerpack
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Powerpack.yaml
+    description: Create a powerpack request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PowerpackResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - dashboards_write
+  summary: Create a new powerpack
+  tags:
+    - Powerpack
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - dashboards_write

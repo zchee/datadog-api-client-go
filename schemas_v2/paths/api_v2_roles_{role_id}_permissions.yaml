@@ -1,0 +1,137 @@
+delete:
+  description: Removes a permission from a role.
+  operationId: RemovePermissionFromRole
+  parameters:
+    - $ref: ../components/parameters/RoleID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RelationshipToPermission.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PermissionsResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - user_access_manage
+  summary: Revoke permission
+  tags:
+    - Roles
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - user_access_manage
+get:
+  description: Returns a list of all permissions for a single role.
+  operationId: ListRolePermissions
+  parameters:
+    - $ref: ../components/parameters/RoleID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PermissionsResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - user_access_read
+  summary: List permissions for a role
+  tags:
+    - Roles
+  x-codegen-request-body-name: body
+post:
+  description: Adds a permission to a role.
+  operationId: AddPermissionToRole
+  parameters:
+    - $ref: ../components/parameters/RoleID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RelationshipToPermission.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PermissionsResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - user_access_manage
+  summary: Grant permission to a role
+  tags:
+    - Roles
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - user_access_manage

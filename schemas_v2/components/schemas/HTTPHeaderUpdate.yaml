@@ -1,0 +1,17 @@
+description: The definition of `HTTPHeaderUpdate` object.
+properties:
+  deleted:
+    description: Should the header be deleted.
+    type: boolean
+  name:
+    description: The `HTTPHeaderUpdate` `name`.
+    example: MyHttpHeader
+    pattern: ^[A-Za-z][A-Za-z\\d\\-\\_]*$
+    type: string
+  value:
+    description: The `HTTPHeaderUpdate` `value`.
+    example: Updated Header Value
+    type: string
+required:
+  - name
+type: object

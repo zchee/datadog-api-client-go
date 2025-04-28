@@ -1,0 +1,10 @@
+description: Case assign
+properties:
+  attributes:
+    $ref: ./CaseAssignAttributes.yaml
+  type:
+    $ref: ./CaseResourceType.yaml
+required:
+  - attributes
+  - type
+type: object

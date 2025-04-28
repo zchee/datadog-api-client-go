@@ -1,0 +1,4 @@
+description: Relationship of AuthN Mapping create object to a Role or Team.
+oneOf:
+  - $ref: ./AuthNMappingRelationshipToRole.yaml
+  - $ref: ./AuthNMappingRelationshipToTeam.yaml

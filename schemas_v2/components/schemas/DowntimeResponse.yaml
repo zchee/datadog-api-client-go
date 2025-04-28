@@ -1,0 +1,14 @@
+description: |-
+  Downtiming gives you greater control over monitor notifications by
+  allowing you to globally exclude scopes from alerting.
+  Downtime settings, which can be scheduled with start and end times,
+  prevent all alerting related to specified Datadog tags.
+properties:
+  data:
+    $ref: ./DowntimeResponseData.yaml
+  included:
+    description: Array of objects related to the downtime that the user requested.
+    items:
+      $ref: ./DowntimeResponseIncludedItem.yaml
+    type: array
+type: object

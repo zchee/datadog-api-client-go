@@ -1,0 +1,103 @@
+get:
+  description: Get all processes for your organization.
+  operationId: ListProcesses
+  parameters:
+    - description: String to search processes by.
+      in: query
+      name: search
+      required: false
+      schema:
+        type: string
+    - description: Comma-separated list of tags to filter processes by.
+      example: account:prod,user:admin
+      in: query
+      name: tags
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Unix timestamp (number of seconds since epoch) of the start of the query
+        window.
+
+        If not provided, the start of the query window will be 15 minutes before
+        the `to` timestamp. If neither
+
+        `from` nor `to` are provided, the query window will be `[now - 15m,
+        now]`.
+      in: query
+      name: from
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: >-
+        Unix timestamp (number of seconds since epoch) of the end of the query
+        window.
+
+        If not provided, the end of the query window will be 15 minutes after
+        the `from` timestamp. If neither
+
+        `from` nor `to` are provided, the query window will be `[now - 15m,
+        now]`.
+      in: query
+      name: to
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: Maximum number of results returned.
+      in: query
+      name: page[limit]
+      required: false
+      schema:
+        default: 1000
+        format: int32
+        maximum: 10000
+        minimum: 1
+        type: integer
+    - description: >-
+        String to query the next page of results.
+
+        This key is provided with each valid response from the API in
+        `meta.page.after`.
+      in: query
+      name: page[cursor]
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ProcessSummariesResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication Error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Get all processes
+  tags:
+    - Processes
+  x-pagination:
+    cursorParam: page[cursor]
+    cursorPath: meta.page.after
+    limitParam: page[limit]
+    resultsPath: data
+  x-permission:
+    operator: OPEN
+    permissions: []

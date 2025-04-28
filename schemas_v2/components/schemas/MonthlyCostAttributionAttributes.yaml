@@ -1,0 +1,33 @@
+description: Cost Attribution by Tag for a given organization.
+properties:
+  month:
+    description: 'Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]`.'
+    format: date-time
+    type: string
+  org_name:
+    description: The name of the organization.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+  tag_config_source:
+    description: >-
+      The source of the cost attribution tag configuration and the selected tags
+      in the format `<source_org_name>:::<selected tag 1>///<selected tag
+      2>///<selected tag 3>`.
+    type: string
+  tags:
+    $ref: ./CostAttributionTagNames.yaml
+  updated_at:
+    description: >-
+      Shows the most recent hour in the current months for all organizations for
+      which all costs were calculated.
+    type: string
+  values:
+    description: >-
+      Fields in Cost Attribution by tag(s). Example:
+      `infra_host_on_demand_cost`, `infra_host_committed_cost`,
+      `infra_host_total_cost`, `infra_host_percentage_in_org`,
+      `infra_host_percentage_in_account`.
+    type: object
+type: object

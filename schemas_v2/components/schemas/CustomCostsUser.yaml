@@ -1,0 +1,15 @@
+description: Metadata of the user that has uploaded the Custom Costs file.
+properties:
+  email:
+    description: The name of the Custom Costs file.
+    example: email.test@datadohq.com
+    type: string
+  icon:
+    description: The name of the Custom Costs file.
+    example: icon.png
+    type: string
+  name:
+    description: Name of the user.
+    example: Test User
+    type: string
+type: object

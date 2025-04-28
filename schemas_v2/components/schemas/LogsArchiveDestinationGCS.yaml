@@ -1,0 +1,18 @@
+description: The GCS archive destination.
+properties:
+  bucket:
+    description: The bucket where the archive will be stored.
+    example: bucket-name
+    type: string
+  integration:
+    $ref: ./LogsArchiveIntegrationGCS.yaml
+  path:
+    description: The archive path.
+    type: string
+  type:
+    $ref: ./LogsArchiveDestinationGCSType.yaml
+required:
+  - bucket
+  - integration
+  - type
+type: object

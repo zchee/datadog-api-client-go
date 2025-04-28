@@ -1,0 +1,39 @@
+post:
+  description: Test a rule.
+  operationId: TestSecurityMonitoringRule
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SecurityMonitoringRuleTestRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringRuleTestResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_rules_write
+  summary: Test a rule
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_rules_write

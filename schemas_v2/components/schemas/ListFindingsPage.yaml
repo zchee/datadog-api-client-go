@@ -1,0 +1,14 @@
+additionalProperties: false
+description: Pagination and findings count information.
+properties:
+  cursor:
+    description: The cursor used to paginate requests.
+    example: >-
+      eyJhZnRlciI6IkFRQUFBWWJiaEJXQS1OY1dqUUFBQUFCQldXSmlhRUpYUVVGQlJFSktkbTlDTUdaWFRVbDNRVUUiLCJ2YWx1ZXMiOlsiY3JpdGljYWwiXX0=
+    type: string
+  total_filtered_count:
+    description: The total count of findings after the filter has been applied.
+    example: 213
+    format: int64
+    type: integer
+type: object

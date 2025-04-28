@@ -1,0 +1,47 @@
+description: Event attributes.
+properties:
+  aggregation_key:
+    description: >-
+      An arbitrary string to use for aggregation when correlating events.
+      Limited to 100 characters.
+    maxLength: 100
+    type: string
+  attributes:
+    $ref: ./EventPayloadAttributes.yaml
+  category:
+    $ref: ./EventCategory.yaml
+  message:
+    description: The body of the event. Limited to 4000 characters.
+    example: payment_processed feature flag has been enabled
+    maxLength: 4000
+    type: string
+  tags:
+    description: |-
+      A list of tags to apply to the event.
+      Refer to [Tags docs](https://docs.datadoghq.com/getting_started/tagging/).
+    example:
+      - env:test
+    items:
+      description: A tag.
+      type: string
+    type: array
+  timestamp:
+    description: >-
+      Timestamp when the event occurred. Must follow [ISO
+      8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+      For example `"2017-01-15T01:30:15.010000Z"`.
+
+      Defaults to the timestamp of receipt. Limited to values no older than 18
+      hours.
+    type: string
+  title:
+    description: The event title. Limited to 500 characters.
+    example: payment_processed feature flag updated
+    maxLength: 500
+    type: string
+required:
+  - title
+  - category
+  - attributes
+type: object

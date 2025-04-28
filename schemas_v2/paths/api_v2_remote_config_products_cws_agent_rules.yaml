@@ -1,0 +1,50 @@
+get:
+  description: Get the list of Cloud Security Management Threats Agent rules.
+  operationId: ListCSMThreatsAgentRules
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/CloudWorkloadSecurityAgentRulesListResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all CSM Threats Agent rules
+  tags:
+    - CSM Threats
+post:
+  description: >-
+    Create a new Cloud Security Management Threats Agent rule with the given
+    parameters.
+  operationId: CreateCSMThreatsAgentRule
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/CloudWorkloadSecurityAgentRuleCreateRequest.yaml
+    description: The definition of the new Agent rule.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CloudWorkloadSecurityAgentRuleResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a CSM Threats Agent rule
+  tags:
+    - CSM Threats
+  x-codegen-request-body-name: body

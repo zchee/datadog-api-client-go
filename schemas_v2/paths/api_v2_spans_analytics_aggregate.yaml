@@ -1,0 +1,39 @@
+post:
+  description: >-
+    The API endpoint to aggregate spans into buckets and compute metrics and
+    timeseries.
+
+    This endpoint is rate limited to `300` requests per hour.
+  operationId: AggregateSpans
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SpansAggregateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SpansAggregateResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_read
+  summary: Aggregate spans
+  tags:
+    - Spans
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_read

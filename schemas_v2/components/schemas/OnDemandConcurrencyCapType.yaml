@@ -1,0 +1,6 @@
+description: On-demand concurrency cap type.
+enum:
+  - on_demand_concurrency_cap
+type: string
+x-enum-varnames:
+  - ON_DEMAND_CONCURRENCY_CAP

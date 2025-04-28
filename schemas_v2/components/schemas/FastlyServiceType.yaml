@@ -1,0 +1,8 @@
+default: fastly-services
+description: The JSON:API type for this API. Should always be `fastly-services`.
+enum:
+  - fastly-services
+example: fastly-services
+type: string
+x-enum-varnames:
+  - FASTLY_SERVICES

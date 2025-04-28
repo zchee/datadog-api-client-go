@@ -1,0 +1,24 @@
+additionalProperties: false
+description: The definition of Entity V3 Metadata Links Items object.
+properties:
+  name:
+    description: Link name.
+    example: mylink
+    type: string
+  provider:
+    description: Link provider.
+    type: string
+  type:
+    default: other
+    description: Link type.
+    example: link
+    type: string
+  url:
+    description: Link URL.
+    example: https://mylink
+    type: string
+required:
+  - name
+  - type
+  - url
+type: object

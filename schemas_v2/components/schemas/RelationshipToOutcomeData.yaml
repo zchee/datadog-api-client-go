@@ -1,0 +1,7 @@
+description: The JSON:API relationship to an outcome, which returns the related rule id.
+properties:
+  id:
+    $ref: ./RuleId.yaml
+  type:
+    $ref: ./RuleType.yaml
+type: object

@@ -1,0 +1,4 @@
+description: The identifier of the WAF exclusion filter.
+example: 3dd-0uc-h1s
+readOnly: true
+type: string

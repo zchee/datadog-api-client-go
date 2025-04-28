@@ -1,0 +1,7 @@
+description: >-
+  Represents relationships in an escalation policy creation request, including
+  references to teams.
+properties:
+  teams:
+    $ref: ./EscalationPolicyCreateRequestDataRelationshipsTeams.yaml
+type: object

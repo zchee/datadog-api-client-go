@@ -1,0 +1,7 @@
+description: Information pointing to the app's publication status.
+properties:
+  data:
+    $ref: ./DeploymentRelationshipData.yaml
+  meta:
+    $ref: ./DeploymentMetadata.yaml
+type: object

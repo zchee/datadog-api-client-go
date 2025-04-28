@@ -1,0 +1,19 @@
+description: >-
+  The object sent with the request to retrieve aggregation buckets of test
+  events from your organization.
+properties:
+  compute:
+    description: The list of metrics or timeseries to compute for the retrieved buckets.
+    items:
+      $ref: ./CIAppCompute.yaml
+    type: array
+  filter:
+    $ref: ./CIAppTestsQueryFilter.yaml
+  group_by:
+    description: The rules for the group-by.
+    items:
+      $ref: ./CIAppTestsGroupBy.yaml
+    type: array
+  options:
+    $ref: ./CIAppQueryOptions.yaml
+type: object

@@ -1,0 +1,9 @@
+description: User team permission attributes
+properties:
+  permissions:
+    description: >-
+      Object of team permission actions and boolean values that a logged in user
+      can perform on this team.
+    readOnly: true
+    type: object
+type: object

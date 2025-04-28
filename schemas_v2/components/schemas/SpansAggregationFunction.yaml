@@ -1,0 +1,29 @@
+description: An aggregation function.
+enum:
+  - count
+  - cardinality
+  - pc75
+  - pc90
+  - pc95
+  - pc98
+  - pc99
+  - sum
+  - min
+  - max
+  - avg
+  - median
+example: pc90
+type: string
+x-enum-varnames:
+  - COUNT
+  - CARDINALITY
+  - PERCENTILE_75
+  - PERCENTILE_90
+  - PERCENTILE_95
+  - PERCENTILE_98
+  - PERCENTILE_99
+  - SUM
+  - MIN
+  - MAX
+  - AVG
+  - MEDIAN

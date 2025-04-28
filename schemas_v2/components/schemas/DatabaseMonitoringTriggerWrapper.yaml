@@ -1,0 +1,10 @@
+description: Schema for a Database Monitoring-based trigger.
+properties:
+  databaseMonitoringTrigger:
+    description: Trigger a workflow from Database Monitoring.
+    type: object
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - databaseMonitoringTrigger
+type: object

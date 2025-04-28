@@ -1,0 +1,8 @@
+default: splunk_hec
+description: Type of the Splunk HTTP Event Collector (HEC) destination.
+enum:
+  - splunk_hec
+example: splunk_hec
+type: string
+x-enum-varnames:
+  - SPLUNK_HEC

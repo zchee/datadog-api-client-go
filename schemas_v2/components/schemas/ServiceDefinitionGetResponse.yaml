@@ -1,0 +1,5 @@
+description: Get service definition response.
+properties:
+  data:
+    $ref: ./ServiceDefinitionData.yaml
+type: object

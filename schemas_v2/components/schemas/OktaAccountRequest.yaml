@@ -1,0 +1,7 @@
+description: Request object for an Okta account.
+properties:
+  data:
+    $ref: ./OktaAccount.yaml
+required:
+  - data
+type: object

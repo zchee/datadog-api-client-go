@@ -1,0 +1,14 @@
+description: Attributes object of a Fastly account.
+properties:
+  name:
+    description: The name of the Fastly account.
+    example: test-name
+    type: string
+  services:
+    description: A list of services belonging to the parent account.
+    items:
+      $ref: ./FastlyService.yaml
+    type: array
+required:
+  - name
+type: object

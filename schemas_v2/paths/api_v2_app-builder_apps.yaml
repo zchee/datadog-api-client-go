@@ -1,0 +1,191 @@
+delete:
+  description: Delete multiple apps in a single request from a list of app IDs.
+  operationId: DeleteApps
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/DeleteAppsRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DeleteAppsResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete Multiple Apps
+  tags:
+    - App Builder
+  x-permission:
+    operator: OR
+    permissions:
+      - apps_write
+get:
+  description: >-
+    List all apps, with optional filters and sorting. This endpoint is
+    paginated. Only basic app information such as the app ID, name, and
+    description is returned by this endpoint.
+  operationId: ListApps
+  parameters:
+    - description: The number of apps to return per page.
+      in: query
+      name: limit
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: The page number to return.
+      in: query
+      name: page
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: Filter apps by the app creator. Usually the user's email.
+      in: query
+      name: filter[user_name]
+      required: false
+      schema:
+        type: string
+    - description: Filter apps by the app creator's UUID.
+      example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+      in: query
+      name: filter[user_uuid]
+      required: false
+      schema:
+        format: uuid
+        type: string
+    - description: Filter by app name.
+      in: query
+      name: filter[name]
+      required: false
+      schema:
+        type: string
+    - description: Filter apps by the app name or the app creator.
+      in: query
+      name: filter[query]
+      required: false
+      schema:
+        type: string
+    - description: Filter apps by whether they are published.
+      in: query
+      name: filter[deployed]
+      required: false
+      schema:
+        type: boolean
+    - description: Filter apps by tags.
+      in: query
+      name: filter[tags]
+      required: false
+      schema:
+        type: string
+    - description: Filter apps by whether you have added them to your favorites.
+      in: query
+      name: filter[favorite]
+      required: false
+      schema:
+        type: boolean
+    - description: Filter apps by whether they are enabled for self-service.
+      in: query
+      name: filter[self_service]
+      required: false
+      schema:
+        type: boolean
+    - description: The fields and direction to sort apps by.
+      explode: false
+      in: query
+      name: sort
+      required: false
+      schema:
+        items:
+          $ref: ../components/schemas/AppsSortField.yaml
+        type: array
+      style: form
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListAppsResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List Apps
+  tags:
+    - App Builder
+  x-permission:
+    operator: OR
+    permissions:
+      - apps_run
+post:
+  description: Create a new app, returning the app ID.
+  operationId: CreateApp
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CreateAppRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreateAppResponse.yaml
+      description: Created
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create App
+  tags:
+    - App Builder
+  x-permission:
+    operator: AND
+    permissions:
+      - apps_write
+      - connections_resolve
+      - workflows_run

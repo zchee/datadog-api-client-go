@@ -1,0 +1,15 @@
+description: Data object of a Cloudflare account.
+properties:
+  attributes:
+    $ref: ./CloudflareAccountResponseAttributes.yaml
+  id:
+    description: The ID of the Cloudflare account, a hash of the account name.
+    example: c1a8e059bfd1e911cf10b626340c9a54
+    type: string
+  type:
+    $ref: ./CloudflareAccountType.yaml
+required:
+  - attributes
+  - id
+  - type
+type: object

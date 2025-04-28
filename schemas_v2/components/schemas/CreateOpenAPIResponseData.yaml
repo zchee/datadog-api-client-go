@@ -1,0 +1,7 @@
+description: Data envelope for `CreateOpenAPIResponse`.
+properties:
+  attributes:
+    $ref: ./CreateOpenAPIResponseAttributes.yaml
+  id:
+    $ref: ./ApiID.yaml
+type: object

@@ -1,0 +1,10 @@
+description: The new RUM retention filter properties to create.
+properties:
+  attributes:
+    $ref: ./RumRetentionFilterCreateAttributes.yaml
+  type:
+    $ref: ./RumRetentionFilterType.yaml
+required:
+  - type
+  - attributes
+type: object

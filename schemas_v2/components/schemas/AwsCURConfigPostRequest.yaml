@@ -1,0 +1,7 @@
+description: AWS CUR config Post Request.
+properties:
+  data:
+    $ref: ./AwsCURConfigPostData.yaml
+required:
+  - data
+type: object

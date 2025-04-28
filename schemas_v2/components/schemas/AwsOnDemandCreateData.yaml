@@ -1,0 +1,10 @@
+description: Object for a single AWS on demand task.
+properties:
+  attributes:
+    $ref: ./AwsOnDemandCreateAttributes.yaml
+  type:
+    $ref: ./AwsOnDemandType.yaml
+required:
+  - type
+  - attributes
+type: object

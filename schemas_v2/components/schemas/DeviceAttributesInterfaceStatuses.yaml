@@ -1,0 +1,24 @@
+description: Count of the device interfaces by status
+example:
+  down: 1
+  'off': 2
+  up: 12
+  warning: 5
+properties:
+  down:
+    description: The number of interfaces that are down
+    format: int64
+    type: integer
+  'off':
+    description: The number of interfaces that are off
+    format: int64
+    type: integer
+  up:
+    description: The number of interfaces that are up
+    format: int64
+    type: integer
+  warning:
+    description: The number of interfaces that are in a warning state
+    format: int64
+    type: integer
+type: object

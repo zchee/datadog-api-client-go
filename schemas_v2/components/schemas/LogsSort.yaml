@@ -1,0 +1,8 @@
+description: Sort parameters when querying logs.
+enum:
+  - timestamp
+  - '-timestamp'
+type: string
+x-enum-varnames:
+  - TIMESTAMP_ASCENDING
+  - TIMESTAMP_DESCENDING

@@ -1,0 +1,16 @@
+description: Workflows Webhook handle attributes.
+properties:
+  name:
+    description: Workflows Webhook handle name.
+    example: fake-handle-name
+    maxLength: 255
+    type: string
+  url:
+    description: Workflows Webhook URL.
+    example: https://fake.url.com
+    maxLength: 255
+    type: string
+required:
+  - name
+  - url
+type: object

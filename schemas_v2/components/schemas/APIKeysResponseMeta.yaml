@@ -1,0 +1,9 @@
+description: Additional information related to api keys response.
+properties:
+  max_allowed:
+    description: Max allowed number of API keys.
+    format: int64
+    type: integer
+  page:
+    $ref: ./APIKeysResponseMetaPage.yaml
+type: object

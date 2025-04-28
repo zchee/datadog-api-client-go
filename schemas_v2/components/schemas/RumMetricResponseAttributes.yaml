@@ -1,0 +1,16 @@
+description: The object describing a Datadog rum-based metric.
+properties:
+  compute:
+    $ref: ./RumMetricResponseCompute.yaml
+  event_type:
+    $ref: ./RumMetricEventType.yaml
+  filter:
+    $ref: ./RumMetricResponseFilter.yaml
+  group_by:
+    description: The rules for the group by.
+    items:
+      $ref: ./RumMetricResponseGroupBy.yaml
+    type: array
+  uniqueness:
+    $ref: ./RumMetricResponseUniqueness.yaml
+type: object

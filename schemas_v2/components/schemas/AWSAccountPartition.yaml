@@ -1,0 +1,16 @@
+description: >-
+  AWS partition your AWS account is scoped to. Defaults to `aws`.
+
+  See
+  [Partitions](https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/partitions.html)
+  in the AWS documentation for more information.
+enum:
+  - aws
+  - aws-cn
+  - aws-us-gov
+example: aws
+type: string
+x-enum-varnames:
+  - AWS
+  - AWS_CN
+  - AWS_US_GOV

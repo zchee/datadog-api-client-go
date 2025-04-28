@@ -1,0 +1,7 @@
+description: Request object that includes the scan options to create.
+properties:
+  data:
+    $ref: ./AwsScanOptionsCreateData.yaml
+required:
+  - data
+type: object

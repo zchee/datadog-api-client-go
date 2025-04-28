@@ -1,0 +1,17 @@
+description: Facet data for the incident property fields.
+properties:
+  aggregates:
+    $ref: ./IncidentSearchResponseNumericFacetDataAggregates.yaml
+  facets:
+    description: Facet data for the property field of an incident.
+    items:
+      $ref: ./IncidentSearchResponseFieldFacetData.yaml
+    type: array
+  name:
+    description: Name of the incident property field.
+    example: Severity
+    type: string
+required:
+  - facets
+  - name
+type: object

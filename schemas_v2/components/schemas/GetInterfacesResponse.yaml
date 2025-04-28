@@ -1,0 +1,8 @@
+description: The `GetInterfaces` operation's response.
+properties:
+  data:
+    description: Get Interfaces response
+    items:
+      $ref: ./GetInterfacesData.yaml
+    type: array
+type: object

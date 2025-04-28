@@ -1,0 +1,7 @@
+description: The new bulk mute finding request.
+properties:
+  data:
+    $ref: ./BulkMuteFindingsRequestData.yaml
+required:
+  - data
+type: object

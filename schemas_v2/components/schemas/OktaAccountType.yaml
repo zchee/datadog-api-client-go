@@ -1,0 +1,8 @@
+default: okta-accounts
+description: Account type for an Okta account.
+enum:
+  - okta-accounts
+example: okta-accounts
+type: string
+x-enum-varnames:
+  - OKTA_ACCOUNTS

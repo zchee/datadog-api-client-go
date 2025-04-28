@@ -1,0 +1,8 @@
+description: The rule's suppression filter.
+properties:
+  action:
+    $ref: ./SecurityMonitoringFilterAction.yaml
+  query:
+    description: Query for selecting logs to apply the filtering action.
+    type: string
+type: object

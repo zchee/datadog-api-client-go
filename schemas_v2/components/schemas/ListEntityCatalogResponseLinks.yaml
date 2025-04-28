@@ -1,0 +1,12 @@
+description: List entity response links.
+properties:
+  next:
+    description: Next link.
+    type: string
+  previous:
+    description: Previous link.
+    type: string
+  self:
+    description: Current link.
+    type: string
+type: object

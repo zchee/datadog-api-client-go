@@ -1,0 +1,15 @@
+description: A paginated list of apps matching the specified filters and sorting.
+properties:
+  data:
+    description: An array of app definitions.
+    items:
+      $ref: ./ListAppsResponseDataItems.yaml
+    type: array
+  included:
+    description: Data on the version of the app that was published.
+    items:
+      $ref: ./Deployment.yaml
+    type: array
+  meta:
+    $ref: ./ListAppsResponseMeta.yaml
+type: object

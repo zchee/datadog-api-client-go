@@ -1,0 +1,15 @@
+description: AWS External ID response body.
+properties:
+  attributes:
+    $ref: ./AWSNewExternalIDResponseAttributes.yaml
+  id:
+    default: external_id
+    description: The `AWSNewExternalIDResponseData` `id`.
+    example: external_id
+    type: string
+  type:
+    $ref: ./AWSNewExternalIDResponseDataType.yaml
+required:
+  - id
+  - type
+type: object

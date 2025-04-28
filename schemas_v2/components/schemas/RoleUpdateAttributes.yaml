@@ -1,0 +1,21 @@
+description: Attributes of the role.
+properties:
+  created_at:
+    description: Creation time of the role.
+    format: date-time
+    readOnly: true
+    type: string
+  modified_at:
+    description: Time of last role modification.
+    format: date-time
+    readOnly: true
+    type: string
+  name:
+    description: Name of the role.
+    type: string
+  user_count:
+    description: The user count.
+    format: int32
+    maximum: 2147483647
+    type: integer
+type: object

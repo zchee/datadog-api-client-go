@@ -1,0 +1,10 @@
+additionalProperties: false
+description: Log association item.
+properties:
+  name:
+    description: The name of the query.
+    type: string
+  query:
+    description: The query to run.
+    type: string
+type: object

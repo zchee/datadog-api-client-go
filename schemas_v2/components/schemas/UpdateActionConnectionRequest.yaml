@@ -1,0 +1,7 @@
+description: Request used to update an action connection.
+properties:
+  data:
+    $ref: ./ActionConnectionDataUpdate.yaml
+required:
+  - data
+type: object

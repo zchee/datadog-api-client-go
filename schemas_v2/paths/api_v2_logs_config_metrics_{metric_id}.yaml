@@ -1,0 +1,85 @@
+delete:
+  description: Delete a specific log-based metric from your organization.
+  operationId: DeleteLogsMetric
+  parameters:
+    - $ref: ../components/parameters/MetricID.yaml
+  responses:
+    '204':
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a log-based metric
+  tags:
+    - Logs Metrics
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_generate_metrics
+get:
+  description: Get a specific log-based metric from your organization.
+  operationId: GetLogsMetric
+  parameters:
+    - $ref: ../components/parameters/MetricID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsMetricResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a log-based metric
+  tags:
+    - Logs Metrics
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_read_config
+patch:
+  description: >-
+    Update a specific log-based metric from your organization.
+
+    Returns the log-based metric object from the request body when the request
+    is successful.
+  operationId: UpdateLogsMetric
+  parameters:
+    - $ref: ../components/parameters/MetricID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/LogsMetricUpdateRequest.yaml
+    description: New definition of the log-based metric.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsMetricResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a log-based metric
+  tags:
+    - Logs Metrics
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_generate_metrics

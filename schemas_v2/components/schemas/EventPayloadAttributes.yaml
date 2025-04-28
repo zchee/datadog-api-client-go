@@ -1,0 +1,5 @@
+description: >-
+  JSON object for custom attributes. Schema are different per each event
+  category.
+oneOf:
+  - $ref: ./ChangeEventCustomAttributes.yaml

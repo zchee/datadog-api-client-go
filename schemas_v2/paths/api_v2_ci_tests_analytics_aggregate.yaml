@@ -1,0 +1,37 @@
+post:
+  description: >-
+    The API endpoint to aggregate CI Visibility test events into buckets of
+    computed metrics and timeseries.
+  operationId: AggregateCIAppTestEvents
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CIAppTestsAggregateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CIAppTestsAnalyticsAggregateResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - ci_visibility_read
+  summary: Aggregate tests events
+  tags:
+    - CI Visibility Tests
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - ci_visibility_read

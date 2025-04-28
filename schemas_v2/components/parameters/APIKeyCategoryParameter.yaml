@@ -1,0 +1,6 @@
+description: Filter API keys by category.
+in: query
+name: filter[category]
+required: false
+schema:
+  type: string

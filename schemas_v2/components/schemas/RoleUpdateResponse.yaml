@@ -1,0 +1,5 @@
+description: Response containing information about an updated role.
+properties:
+  data:
+    $ref: ./RoleUpdateResponseData.yaml
+type: object

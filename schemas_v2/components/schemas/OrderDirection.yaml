@@ -1,0 +1,9 @@
+description: The sort direction for results.
+enum:
+  - asc
+  - desc
+example: asc
+type: string
+x-enum-varnames:
+  - ASC
+  - DESC

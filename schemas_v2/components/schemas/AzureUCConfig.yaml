@@ -1,0 +1,76 @@
+description: Azure config.
+properties:
+  account_id:
+    description: The tenant ID of the azure account.
+    example: 1234abcd-1234-abcd-1234-1234abcd1234
+    type: string
+  client_id:
+    description: The client ID of the Azure account.
+    example: 1234abcd-1234-abcd-1234-1234abcd1234
+    type: string
+  created_at:
+    description: The timestamp when the Azure config was created.
+    pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{6}$
+    type: string
+  dataset_type:
+    description: The dataset type of the Azure config.
+    example: actual
+    type: string
+  error_messages:
+    description: The error messages for the Azure config.
+    items:
+      type: string
+    type: array
+  export_name:
+    description: The name of the configured Azure Export.
+    example: dd-actual-export
+    type: string
+  export_path:
+    description: The path where the Azure Export is saved.
+    example: dd-export-path
+    type: string
+  id:
+    description: The ID of the Azure config.
+    format: int64
+    type: integer
+  months:
+    deprecated: true
+    description: The number of months the report has been backfilled.
+    format: int32
+    maximum: 36
+    type: integer
+  scope:
+    description: The scope of your observed subscription.
+    example: /subscriptions/1234abcd-1234-abcd-1234-1234abcd1234
+    type: string
+  status:
+    description: The status of the Azure config.
+    example: active
+    type: string
+  status_updated_at:
+    description: The timestamp when the Azure config status was last updated.
+    pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{6}$
+    type: string
+  storage_account:
+    description: The name of the storage account where the Azure Export is saved.
+    example: dd-storage-account
+    type: string
+  storage_container:
+    description: The name of the storage container where the Azure Export is saved.
+    example: dd-storage-container
+    type: string
+  updated_at:
+    description: The timestamp when the Azure config was last updated.
+    pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{6}$
+    type: string
+required:
+  - account_id
+  - client_id
+  - dataset_type
+  - export_name
+  - export_path
+  - scope
+  - status
+  - storage_account
+  - storage_container
+type: object

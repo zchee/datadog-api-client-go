@@ -1,0 +1,6 @@
+description: Array of todo assignees.
+example:
+  - '@test.user@test.com'
+items:
+  $ref: ./IncidentTodoAssignee.yaml
+type: array

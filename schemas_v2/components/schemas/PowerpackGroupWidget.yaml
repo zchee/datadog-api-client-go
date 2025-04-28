@@ -1,0 +1,11 @@
+description: Powerpack group widget definition object.
+properties:
+  definition:
+    $ref: ./PowerpackGroupWidgetDefinition.yaml
+  layout:
+    $ref: ./PowerpackGroupWidgetLayout.yaml
+  live_span:
+    $ref: ./WidgetLiveSpan.yaml
+required:
+  - definition
+type: object

@@ -1,0 +1,26 @@
+description: AWS Metrics Collection config.
+properties:
+  automute_enabled:
+    description: Enable EC2 automute for AWS metrics. Defaults to `true`.
+    example: true
+    type: boolean
+  collect_cloudwatch_alarms:
+    description: Enable CloudWatch alarms collection. Defaults to `false`.
+    example: false
+    type: boolean
+  collect_custom_metrics:
+    description: Enable custom metrics collection. Defaults to `false`.
+    example: false
+    type: boolean
+  enabled:
+    description: Enable AWS metrics collection. Defaults to `true`.
+    example: true
+    type: boolean
+  namespace_filters:
+    $ref: ./AWSNamespaceFilters.yaml
+  tag_filters:
+    description: AWS Metrics collection tag filters list. Defaults to `[]`.
+    items:
+      $ref: ./AWSNamespaceTagFilter.yaml
+    type: array
+type: object

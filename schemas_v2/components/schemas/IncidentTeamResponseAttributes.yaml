@@ -1,0 +1,17 @@
+description: The incident team's attributes from a response.
+properties:
+  created:
+    description: Timestamp of when the incident team was created.
+    format: date-time
+    readOnly: true
+    type: string
+  modified:
+    description: Timestamp of when the incident team was modified.
+    format: date-time
+    readOnly: true
+    type: string
+  name:
+    description: Name of the incident team.
+    example: team name
+    type: string
+type: object

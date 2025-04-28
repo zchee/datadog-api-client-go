@@ -1,0 +1,7 @@
+description: Update request for a restriction policy.
+properties:
+  data:
+    $ref: ./RestrictionPolicy.yaml
+required:
+  - data
+type: object

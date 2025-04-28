@@ -1,0 +1,8 @@
+default: services
+description: Incident service resource type.
+enum:
+  - services
+example: services
+type: string
+x-enum-varnames:
+  - SERVICES

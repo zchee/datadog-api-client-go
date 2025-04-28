@@ -1,0 +1,8 @@
+default: appDefinitions
+description: The app definition type.
+enum:
+  - appDefinitions
+example: appDefinitions
+type: string
+x-enum-varnames:
+  - APPDEFINITIONS

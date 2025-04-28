@@ -1,0 +1,16 @@
+description: Basic access authentication.
+properties:
+  password:
+    description: The password of the authentication. This field is not returned by the API.
+    example: datadog-custom-destination-password
+    type: string
+    writeOnly: true
+  username:
+    description: The username of the authentication. This field is not returned by the API.
+    example: datadog-custom-destination-username
+    type: string
+    writeOnly: true
+required:
+  - username
+  - password
+type: object

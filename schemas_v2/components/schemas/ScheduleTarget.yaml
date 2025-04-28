@@ -1,0 +1,14 @@
+description: >-
+  Represents a schedule target for an escalation policy step, including its ID
+  and resource type.
+properties:
+  id:
+    description: Specifies the unique identifier of the schedule resource.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+  type:
+    $ref: ./ScheduleTargetType.yaml
+required:
+  - type
+  - id
+type: object

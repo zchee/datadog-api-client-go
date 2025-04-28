@@ -1,0 +1,8 @@
+description: Response containing a list of added dashboards.
+properties:
+  added_dashboards_to_list:
+    description: List of dashboards added to the dashboard list.
+    items:
+      $ref: ./DashboardListItemResponse.yaml
+    type: array
+type: object

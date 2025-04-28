@@ -1,0 +1,19 @@
+description: A compute rule to compute metrics or timeseries.
+properties:
+  aggregation:
+    $ref: ./CIAppAggregationFunction.yaml
+  interval:
+    description: |-
+      The time buckets' size (only used for type=timeseries)
+      Defaults to a resolution of 150 points.
+    example: 5m
+    type: string
+  metric:
+    description: The metric to use.
+    example: '@duration'
+    type: string
+  type:
+    $ref: ./CIAppComputeType.yaml
+required:
+  - aggregation
+type: object

@@ -1,0 +1,5 @@
+description: Teams response metadata.
+properties:
+  pagination:
+    $ref: ./TeamsResponseMetaPagination.yaml
+type: object

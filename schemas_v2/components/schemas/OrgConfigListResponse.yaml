@@ -1,0 +1,10 @@
+description: A response with multiple Org Configs.
+properties:
+  data:
+    description: An array of Org Configs.
+    items:
+      $ref: ./OrgConfigRead.yaml
+    type: array
+required:
+  - data
+type: object

@@ -1,0 +1,7 @@
+description: Case type
+enum:
+  - STANDARD
+example: STANDARD
+type: string
+x-enum-varnames:
+  - STANDARD

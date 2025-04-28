@@ -1,0 +1,8 @@
+default: filter
+description: The processor type. The value should always be `filter`.
+enum:
+  - filter
+example: filter
+type: string
+x-enum-varnames:
+  - FILTER

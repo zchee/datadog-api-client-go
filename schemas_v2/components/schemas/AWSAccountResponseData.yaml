@@ -1,0 +1,12 @@
+description: AWS Account response data.
+properties:
+  attributes:
+    $ref: ./AWSAccountResponseAttributes.yaml
+  id:
+    $ref: ./AWSAccountConfigID.yaml
+  type:
+    $ref: ./AWSAccountType.yaml
+required:
+  - id
+  - type
+type: object

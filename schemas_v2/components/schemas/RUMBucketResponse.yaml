@@ -1,0 +1,19 @@
+description: Bucket values.
+properties:
+  by:
+    additionalProperties:
+      description: The values for each group-by.
+      type: string
+    description: The key-value pairs for each group-by.
+    example:
+      '@session.type': user
+      '@type': view
+    type: object
+  computes:
+    additionalProperties:
+      $ref: ./RUMAggregateBucketValue.yaml
+    description: >-
+      A map of the metric name to value for regular compute, or a list of values
+      for a timeseries.
+    type: object
+type: object

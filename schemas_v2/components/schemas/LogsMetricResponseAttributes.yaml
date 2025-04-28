@@ -1,0 +1,12 @@
+description: The object describing a Datadog log-based metric.
+properties:
+  compute:
+    $ref: ./LogsMetricResponseCompute.yaml
+  filter:
+    $ref: ./LogsMetricResponseFilter.yaml
+  group_by:
+    description: The rules for the group by.
+    items:
+      $ref: ./LogsMetricResponseGroupBy.yaml
+    type: array
+type: object

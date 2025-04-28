@@ -1,0 +1,5 @@
+description: Response with a team
+properties:
+  data:
+    $ref: ./Team.yaml
+type: object

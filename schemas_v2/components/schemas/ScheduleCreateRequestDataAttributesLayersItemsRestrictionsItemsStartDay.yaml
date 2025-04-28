@@ -1,0 +1,18 @@
+description: The weekday when the restriction period starts (Monday through Sunday).
+enum:
+  - monday
+  - tuesday
+  - wednesday
+  - thursday
+  - friday
+  - saturday
+  - sunday
+type: string
+x-enum-varnames:
+  - MONDAY
+  - TUESDAY
+  - WEDNESDAY
+  - THURSDAY
+  - FRIDAY
+  - SATURDAY
+  - SUNDAY

@@ -1,0 +1,19 @@
+description: Exclusion filter for the security filter.
+example:
+  name: Exclude staging
+  query: source:staging
+properties:
+  name:
+    description: Exclusion filter name.
+    example: Exclude staging
+    type: string
+  query:
+    description: >-
+      Exclusion filter query. Logs that match this query are excluded from the
+      security filter.
+    example: source:staging
+    type: string
+required:
+  - name
+  - query
+type: object

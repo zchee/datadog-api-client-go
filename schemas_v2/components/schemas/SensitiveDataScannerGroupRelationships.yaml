@@ -1,0 +1,7 @@
+description: Relationships of the group.
+properties:
+  configuration:
+    $ref: ./SensitiveDataScannerConfigurationData.yaml
+  rules:
+    $ref: ./SensitiveDataScannerRuleData.yaml
+type: object

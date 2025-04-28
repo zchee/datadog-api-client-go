@@ -1,0 +1,9 @@
+description: >-
+  The response returned after all triage operations, containing the updated
+  signal triage data.
+properties:
+  data:
+    $ref: ./SecurityMonitoringSignalTriageUpdateData.yaml
+required:
+  - data
+type: object

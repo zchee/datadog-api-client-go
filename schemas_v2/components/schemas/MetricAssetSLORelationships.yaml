@@ -1,0 +1,10 @@
+description: >-
+  An object containing a list of SLOs that can be referenced in the `included`
+  data.
+properties:
+  data:
+    description: A list of SLOs that can be referenced in the `included` data.
+    items:
+      $ref: ./MetricAssetSLORelationship.yaml
+    type: array
+type: object

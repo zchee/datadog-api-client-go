@@ -1,0 +1,5 @@
+description: Response for retrieving a monitor configuration policy.
+properties:
+  data:
+    $ref: ./MonitorConfigPolicyResponseData.yaml
+type: object

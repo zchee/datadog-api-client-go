@@ -1,0 +1,12 @@
+description: Permission object.
+properties:
+  attributes:
+    $ref: ./PermissionAttributes.yaml
+  id:
+    description: ID of the permission.
+    type: string
+  type:
+    $ref: ./PermissionsType.yaml
+required:
+  - type
+type: object

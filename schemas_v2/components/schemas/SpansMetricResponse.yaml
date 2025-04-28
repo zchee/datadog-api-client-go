@@ -1,0 +1,5 @@
+description: The span-based metric object.
+properties:
+  data:
+    $ref: ./SpansMetricResponseData.yaml
+type: object

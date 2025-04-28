@@ -1,0 +1,8 @@
+description: Application Security Monitoring usage response.
+properties:
+  data:
+    description: Response containing Application Security Monitoring usage.
+    items:
+      $ref: ./UsageDataObject.yaml
+    type: array
+type: object

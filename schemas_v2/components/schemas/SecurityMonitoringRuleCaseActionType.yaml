@@ -1,0 +1,10 @@
+description: The action type.
+enum:
+  - block_ip
+  - block_user
+  - user_behavior
+type: string
+x-enum-varnames:
+  - BLOCK_IP
+  - BLOCK_USER
+  - USER_BEHAVIOR

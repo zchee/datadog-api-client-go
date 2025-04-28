@@ -1,0 +1,7 @@
+description: Additional information related to the API keys response.
+properties:
+  total_filtered_count:
+    description: Total filtered application key count.
+    format: int64
+    type: integer
+type: object

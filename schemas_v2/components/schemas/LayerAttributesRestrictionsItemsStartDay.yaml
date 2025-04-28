@@ -1,0 +1,18 @@
+description: Defines the start day of the restriction within a Layer.
+enum:
+  - monday
+  - tuesday
+  - wednesday
+  - thursday
+  - friday
+  - saturday
+  - sunday
+type: string
+x-enum-varnames:
+  - MONDAY
+  - TUESDAY
+  - WEDNESDAY
+  - THURSDAY
+  - FRIDAY
+  - SATURDAY
+  - SUNDAY

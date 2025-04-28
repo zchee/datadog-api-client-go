@@ -1,0 +1,14 @@
+description: Schema for an Okta account.
+properties:
+  attributes:
+    $ref: ./OktaAccountAttributes.yaml
+  id:
+    description: The ID of the Okta account, a UUID hash of the account name.
+    example: f749daaf-682e-4208-a38d-c9b43162c609
+    type: string
+  type:
+    $ref: ./OktaAccountType.yaml
+required:
+  - attributes
+  - type
+type: object

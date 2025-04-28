@@ -1,0 +1,19 @@
+description: Attributes for the AWS scan options.
+properties:
+  lambda:
+    description: Indicates if scanning of Lambda functions is enabled.
+    example: true
+    type: boolean
+  sensitive_data:
+    description: Indicates if scanning for sensitive data is enabled.
+    example: false
+    type: boolean
+  vuln_containers_os:
+    description: Indicates if scanning for vulnerabilities in containers is enabled.
+    example: true
+    type: boolean
+  vuln_host_os:
+    description: Indicates if scanning for vulnerabilities in hosts is enabled.
+    example: true
+    type: boolean
+type: object

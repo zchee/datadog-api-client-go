@@ -1,0 +1,8 @@
+description: RUM applications response.
+properties:
+  data:
+    description: RUM applications array response.
+    items:
+      $ref: ./RUMApplicationList.yaml
+    type: array
+type: object

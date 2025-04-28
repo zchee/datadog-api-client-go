@@ -1,0 +1,14 @@
+description: >-
+  Points to the user data associated with this schedule member, including an ID
+  and type.
+properties:
+  id:
+    description: The user's unique identifier.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+  type:
+    $ref: ./ScheduleMemberRelationshipsUserDataType.yaml
+required:
+  - type
+  - id
+type: object

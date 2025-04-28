@@ -1,0 +1,15 @@
+description: Link type.
+enum:
+  - doc
+  - repo
+  - runbook
+  - dashboard
+  - other
+example: runbook
+type: string
+x-enum-varnames:
+  - DOC
+  - REPO
+  - RUNBOOK
+  - DASHBOARD
+  - OTHER

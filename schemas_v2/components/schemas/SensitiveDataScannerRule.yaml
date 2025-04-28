@@ -1,0 +1,8 @@
+description: Rule item included in the group.
+properties:
+  id:
+    description: ID of the rule.
+    type: string
+  type:
+    $ref: ./SensitiveDataScannerRuleType.yaml
+type: object

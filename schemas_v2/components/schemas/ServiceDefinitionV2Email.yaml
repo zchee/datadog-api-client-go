@@ -1,0 +1,16 @@
+description: Service owner's email.
+properties:
+  contact:
+    description: Contact value.
+    example: contact@datadoghq.com
+    type: string
+  name:
+    description: Contact email.
+    example: Team Email
+    type: string
+  type:
+    $ref: ./ServiceDefinitionV2EmailType.yaml
+required:
+  - type
+  - contact
+type: object

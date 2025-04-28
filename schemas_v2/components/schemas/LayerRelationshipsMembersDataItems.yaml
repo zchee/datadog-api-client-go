@@ -1,0 +1,14 @@
+description: |-
+  Represents a single member object in a layer's `members` array, referencing
+  a unique Datadog user ID.
+properties:
+  id:
+    description: The unique user ID of the layer member.
+    example: 00000000-0000-0000-0000-000000000002
+    type: string
+  type:
+    $ref: ./LayerRelationshipsMembersDataItemsType.yaml
+required:
+  - type
+  - id
+type: object

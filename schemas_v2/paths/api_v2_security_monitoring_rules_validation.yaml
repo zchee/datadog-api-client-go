@@ -1,0 +1,31 @@
+post:
+  description: Validate a detection rule.
+  operationId: ValidateSecurityMonitoringRule
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SecurityMonitoringRuleValidatePayload.yaml
+    required: true
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_rules_write
+  summary: Validate a detection rule
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_rules_write

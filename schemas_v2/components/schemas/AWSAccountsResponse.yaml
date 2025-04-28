@@ -1,0 +1,10 @@
+description: AWS Accounts response body.
+properties:
+  data:
+    description: List of AWS Account Integration Configs.
+    items:
+      $ref: ./AWSAccountResponseData.yaml
+    type: array
+required:
+  - data
+type: object

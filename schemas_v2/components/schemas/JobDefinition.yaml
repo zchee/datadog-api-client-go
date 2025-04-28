@@ -1,0 +1,81 @@
+description: Definition of a historical job.
+properties:
+  calculatedFields:
+    description: Calculated fields.
+    items:
+      $ref: ./CalculatedField.yaml
+    type: array
+  cases:
+    description: Cases used for generating job results.
+    items:
+      $ref: ./SecurityMonitoringRuleCaseCreate.yaml
+    type: array
+  from:
+    description: Starting time of data analyzed by the job.
+    example: 1729843470000
+    format: int64
+    type: integer
+  groupSignalsBy:
+    description: >-
+      Additional grouping to perform on top of the existing groups in the query
+      section. Must be a subset of the existing groups.
+    example:
+      - service
+    items:
+      description: Field to group by.
+      type: string
+    type: array
+  index:
+    description: Index used to load the data.
+    example: cloud_siem
+    type: string
+  message:
+    description: Message for generated results.
+    example: A large number of failed login attempts.
+    type: string
+  name:
+    description: Job name.
+    example: Excessive number of failed attempts.
+    type: string
+  options:
+    $ref: ./HistoricalJobOptions.yaml
+  queries:
+    description: Queries for selecting logs analyzed by the job.
+    items:
+      $ref: ./HistoricalJobQuery.yaml
+    type: array
+  referenceTables:
+    description: Reference tables used in the queries.
+    items:
+      $ref: ./SecurityMonitoringReferenceTable.yaml
+    type: array
+  tags:
+    description: Tags for generated signals.
+    items:
+      type: string
+    type: array
+  thirdPartyCases:
+    description: >-
+      Cases for generating results from third-party detection method. Only
+      available for third-party detection method.
+    example: []
+    items:
+      $ref: ./SecurityMonitoringThirdPartyRuleCaseCreate.yaml
+    type: array
+  to:
+    description: Ending time of data analyzed by the job.
+    example: 1729847070000
+    format: int64
+    type: integer
+  type:
+    description: Job type.
+    type: string
+required:
+  - from
+  - to
+  - index
+  - name
+  - cases
+  - queries
+  - message
+type: object

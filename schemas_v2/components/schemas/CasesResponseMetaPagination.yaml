@@ -1,0 +1,15 @@
+description: Pagination metadata
+properties:
+  current:
+    description: Current page number
+    format: int64
+    type: integer
+  size:
+    description: Number of cases in current page
+    format: int64
+    type: integer
+  total:
+    description: Total number of pages
+    format: int64
+    type: integer
+type: object

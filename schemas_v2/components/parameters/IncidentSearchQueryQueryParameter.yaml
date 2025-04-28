@@ -1,0 +1,14 @@
+description: >-
+  Specifies which incidents should be returned. The query can contain any number
+  of incident facets
+
+  joined by `ANDs`, along with multiple values for each of those facets joined
+  by `OR`s. For
+
+  example: `state:active AND severity:(SEV-2 OR SEV-1)`.
+explode: false
+in: query
+name: query
+required: true
+schema:
+  type: string

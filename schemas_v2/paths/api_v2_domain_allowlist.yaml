@@ -1,0 +1,54 @@
+get:
+  description: Get the domain allowlist for an organization.
+  operationId: GetDomainAllowlist
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DomainAllowlistResponse.yaml
+      description: OK
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - org_management
+  summary: Get Domain Allowlist
+  tags:
+    - Domain Allowlist
+  x-permission:
+    operator: OR
+    permissions:
+      - org_management
+patch:
+  description: Update the domain allowlist for an organization.
+  operationId: PatchDomainAllowlist
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/DomainAllowlistRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DomainAllowlistResponse.yaml
+      description: OK
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - org_management
+  summary: Sets Domain Allowlist
+  tags:
+    - Domain Allowlist
+  x-permission:
+    operator: OR
+    permissions:
+      - org_management

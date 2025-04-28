@@ -1,0 +1,9 @@
+description: Resource's type.
+enum:
+  - feature_flag
+  - configuration
+example: feature_flag
+type: string
+x-enum-varnames:
+  - FEATURE_FLAG
+  - CONFIGURATION

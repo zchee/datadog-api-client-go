@@ -1,0 +1,5 @@
+description: Response object containing a single suppression rule.
+properties:
+  data:
+    $ref: ./SecurityMonitoringSuppression.yaml
+type: object

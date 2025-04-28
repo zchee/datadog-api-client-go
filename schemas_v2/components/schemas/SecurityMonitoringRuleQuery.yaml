@@ -1,0 +1,4 @@
+description: Query for matching rule.
+oneOf:
+  - $ref: ./SecurityMonitoringStandardRuleQuery.yaml
+  - $ref: ./SecurityMonitoringSignalRuleQuery.yaml

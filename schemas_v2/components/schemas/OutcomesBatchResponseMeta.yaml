@@ -1,0 +1,11 @@
+description: Metadata pertaining to the bulk operation.
+properties:
+  total_received:
+    description: Total number of scorecard results received during the bulk operation.
+    format: int64
+    type: integer
+  total_updated:
+    description: Total number of scorecard results modified during the bulk operation.
+    format: int64
+    type: integer
+type: object

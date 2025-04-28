@@ -1,0 +1,11 @@
+description: The region for the Opsgenie service.
+enum:
+  - us
+  - eu
+  - custom
+example: us
+type: string
+x-enum-varnames:
+  - US
+  - EU
+  - CUSTOM

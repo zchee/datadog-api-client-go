@@ -1,0 +1,5 @@
+description: Delete group response.
+properties:
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+type: object

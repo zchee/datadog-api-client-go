@@ -1,0 +1,8 @@
+default: users
+description: Indicates that the resource is of type `users`.
+enum:
+  - users
+example: users
+type: string
+x-enum-varnames:
+  - USERS

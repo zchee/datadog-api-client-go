@@ -1,0 +1,8 @@
+default: policies
+description: Indicates that the resource is of type `policies`.
+enum:
+  - policies
+example: policies
+type: string
+x-enum-varnames:
+  - POLICIES

@@ -1,0 +1,7 @@
+description: Only include application keys created on or before the specified date.
+in: query
+name: filter[created_at][end]
+required: false
+schema:
+  example: '2020-11-24T18:46:21+00:00'
+  type: string

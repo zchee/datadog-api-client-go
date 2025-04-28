@@ -1,0 +1,4 @@
+description: An object related to the configuration.
+oneOf:
+  - $ref: ./SensitiveDataScannerRuleIncludedItem.yaml
+  - $ref: ./SensitiveDataScannerGroupIncludedItem.yaml

@@ -1,0 +1,7 @@
+description: Attributes of the monitor identified by the downtime.
+properties:
+  name:
+    description: The name of the monitor identified by the downtime.
+    example: A monitor name
+    type: string
+type: object

@@ -1,0 +1,20 @@
+get:
+  description: |-
+    Get the CSM Coverage Analysis of your Serverless Resources.
+    This is calculated based on the number of agents running on your Serverless
+    Resources with CSM feature(s) enabled.
+  operationId: GetCSMServerlessCoverageAnalysis
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CsmServerlessCoverageAnalysisResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the CSM Serverless Coverage Analysis
+  tags:
+    - CSM Coverage Analysis

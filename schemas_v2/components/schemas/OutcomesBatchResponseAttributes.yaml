@@ -1,0 +1,23 @@
+description: The JSON:API attributes for an outcome.
+properties:
+  created_at:
+    description: Creation time of the rule outcome.
+    format: date-time
+    type: string
+  modified_at:
+    description: Time of last rule outcome modification.
+    format: date-time
+    type: string
+  remarks:
+    description: >-
+      Any remarks regarding the scorecard rule's evaluation, and supports HTML
+      hyperlinks.
+    example: 'See: <a href="https://app.datadoghq.com/services">Services</a>'
+    type: string
+  service_name:
+    description: The unique name for a service in the catalog.
+    example: my-service
+    type: string
+  state:
+    $ref: ./State.yaml
+type: object

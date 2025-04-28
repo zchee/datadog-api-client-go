@@ -1,0 +1,31 @@
+description: Query for matching rule on signals.
+properties:
+  aggregation:
+    $ref: ./SecurityMonitoringRuleQueryAggregation.yaml
+  correlatedByFields:
+    description: Fields to group by.
+    items:
+      description: Field.
+      type: string
+    type: array
+  correlatedQueryIndex:
+    description: Index of the rule query used to retrieve the correlated field.
+    format: int32
+    maximum: 9
+    type: integer
+  metrics:
+    description: Group of target fields to aggregate over.
+    items:
+      description: Field.
+      type: string
+    type: array
+  name:
+    description: Name of the query.
+    type: string
+  ruleId:
+    description: Rule ID to match on signals.
+    example: org-ru1-e1d
+    type: string
+required:
+  - ruleId
+type: object

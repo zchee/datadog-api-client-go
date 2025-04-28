@@ -1,0 +1,9 @@
+description: A user's relationship with a team
+properties:
+  attributes:
+    $ref: ./UserTeamAttributes.yaml
+  type:
+    $ref: ./UserTeamType.yaml
+required:
+  - type
+type: object

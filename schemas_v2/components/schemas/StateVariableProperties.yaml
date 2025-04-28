@@ -1,0 +1,6 @@
+description: The properties of the state variable.
+properties:
+  defaultValue:
+    description: The default value of the state variable.
+    example: ${['order_3145', 'order_4920']}
+type: object

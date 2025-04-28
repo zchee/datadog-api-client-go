@@ -1,0 +1,11 @@
+description: Data containing the patch for changing the state of a signal.
+properties:
+  attributes:
+    $ref: ./SecurityMonitoringSignalStateUpdateAttributes.yaml
+  id:
+    description: The unique ID of the security signal.
+  type:
+    $ref: ./SecurityMonitoringSignalMetadataType.yaml
+required:
+  - attributes
+type: object

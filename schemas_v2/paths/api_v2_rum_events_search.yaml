@@ -1,0 +1,48 @@
+post:
+  description: >-
+    List endpoint returns RUM events that match a RUM search query.
+
+    [Results are paginated][1].
+
+
+    Use this endpoint to build complex RUM events filtering and search.
+
+
+    [1]:
+    https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination
+  operationId: SearchRUMEvents
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RUMSearchEventsRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RUMEventsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Search RUM events
+  tags:
+    - RUM
+  x-codegen-request-body-name: body
+  x-pagination:
+    cursorParam: body.page.cursor
+    cursorPath: meta.page.after
+    limitParam: body.page.limit
+    resultsPath: data
+  x-permission:
+    operator: OPEN
+    permissions: []

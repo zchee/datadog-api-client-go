@@ -1,0 +1,14 @@
+default: multiselect
+description: Type of the multiple value field definitions.
+enum:
+  - multiselect
+  - textarray
+  - metrictag
+  - autocomplete
+example: multiselect
+type: string
+x-enum-varnames:
+  - MULTISELECT
+  - TEXTARRAY
+  - METRICTAG
+  - AUTOCOMPLETE

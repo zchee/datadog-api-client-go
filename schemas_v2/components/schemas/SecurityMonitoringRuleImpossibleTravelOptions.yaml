@@ -1,0 +1,5 @@
+description: Options on impossible travel detection method.
+properties:
+  baselineUserLocations:
+    $ref: ./SecurityMonitoringRuleImpossibleTravelOptionsBaselineUserLocations.yaml
+type: object

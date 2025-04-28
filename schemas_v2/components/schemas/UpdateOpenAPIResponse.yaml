@@ -1,0 +1,5 @@
+description: Response for `UpdateOpenAPI`.
+properties:
+  data:
+    $ref: ./UpdateOpenAPIResponseData.yaml
+type: object

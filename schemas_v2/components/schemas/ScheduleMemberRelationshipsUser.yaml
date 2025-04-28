@@ -1,0 +1,7 @@
+description: Wraps the user data reference for a schedule member.
+properties:
+  data:
+    $ref: ./ScheduleMemberRelationshipsUserData.yaml
+required:
+  - data
+type: object

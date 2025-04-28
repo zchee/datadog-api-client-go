@@ -1,0 +1,28 @@
+put:
+  description: Re-order the execution order of retention filters.
+  operationId: ReorderApmRetentionFilters
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ReorderRetentionFiltersRequest.yaml
+    description: The list of retention filters in the new order.
+    required: true
+  responses:
+    '200':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Re-order retention filters
+  tags:
+    - APM Retention Filters
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_retention_filter_write
+      - apm_pipelines_write

@@ -1,0 +1,8 @@
+default: http
+description: Type of the HTTP destination.
+enum:
+  - http
+example: http
+type: string
+x-enum-varnames:
+  - HTTP

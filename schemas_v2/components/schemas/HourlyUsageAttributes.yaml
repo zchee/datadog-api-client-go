@@ -1,0 +1,32 @@
+description: Attributes of hourly usage for a product family for an org for a time period.
+properties:
+  account_name:
+    description: The account name.
+    type: string
+  account_public_id:
+    description: The account public ID.
+    type: string
+  measurements:
+    description: >-
+      List of the measured usage values for the product family for the org for
+      the time period.
+    items:
+      $ref: ./HourlyUsageMeasurement.yaml
+    type: array
+  org_name:
+    description: The organization name.
+    type: string
+  product_family:
+    description: The product for which usage is being reported.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+  region:
+    description: The region of the Datadog instance that the organization belongs to.
+    type: string
+  timestamp:
+    description: Datetime in ISO-8601 format, UTC. The hour for the usage.
+    format: date-time
+    type: string
+type: object

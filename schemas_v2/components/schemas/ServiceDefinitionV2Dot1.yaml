@@ -1,0 +1,64 @@
+description: Service definition v2.1 for providing service metadata and integrations.
+properties:
+  application:
+    description: >-
+      Identifier for a group of related services serving a product feature,
+      which the service is a part of.
+    example: my-app
+    type: string
+  contacts:
+    description: A list of contacts related to the services.
+    items:
+      $ref: ./ServiceDefinitionV2Dot1Contact.yaml
+    type: array
+  dd-service:
+    description: >-
+      Unique identifier of the service. Must be unique across all services and
+      is used to match with a service in Datadog.
+    example: my-service
+    type: string
+  description:
+    description: A short description of the service.
+    example: My service description
+    type: string
+  extensions:
+    additionalProperties: {}
+    description: Extensions to v2.1 schema.
+    example:
+      myorg/extension: extensionValue
+    type: object
+  integrations:
+    $ref: ./ServiceDefinitionV2Dot1Integrations.yaml
+  lifecycle:
+    description: The current life cycle phase of the service.
+    example: sandbox
+    type: string
+  links:
+    description: A list of links related to the services.
+    items:
+      $ref: ./ServiceDefinitionV2Dot1Link.yaml
+    type: array
+  schema-version:
+    $ref: ./ServiceDefinitionV2Dot1Version.yaml
+  tags:
+    description: A set of custom tags.
+    example:
+      - my:tag
+      - service:tag
+    items:
+      type: string
+    type: array
+  team:
+    description: >-
+      Team that owns the service. It is used to locate a team defined in Datadog
+      Teams if it exists.
+    example: my-team
+    type: string
+  tier:
+    description: Importance of the service.
+    example: High
+    type: string
+required:
+  - schema-version
+  - dd-service
+type: object

@@ -1,0 +1,22 @@
+description: Search and filter query settings.
+properties:
+  from:
+    default: now-15m
+    description: >-
+      Minimum time for the requested events. Supports date, math, and regular
+      timestamps (in milliseconds).
+    example: now-15m
+    type: string
+  query:
+    default: '*'
+    description: Search query following the Audit Logs search syntax.
+    example: '@type:session AND @session.type:user'
+    type: string
+  to:
+    default: now
+    description: >-
+      Maximum time for the requested events. Supports date, math, and regular
+      timestamps (in milliseconds).
+    example: now
+    type: string
+type: object

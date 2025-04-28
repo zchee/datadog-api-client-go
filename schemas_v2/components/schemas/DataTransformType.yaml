@@ -1,0 +1,8 @@
+default: dataTransform
+description: The data transform type.
+enum:
+  - dataTransform
+example: dataTransform
+type: string
+x-enum-varnames:
+  - DATATRANSFORM

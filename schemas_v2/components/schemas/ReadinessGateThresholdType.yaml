@@ -1,0 +1,9 @@
+description: The definition of `ReadinessGateThresholdType` object.
+enum:
+  - ANY
+  - ALL
+example: ANY
+type: string
+x-enum-varnames:
+  - ANY
+  - ALL

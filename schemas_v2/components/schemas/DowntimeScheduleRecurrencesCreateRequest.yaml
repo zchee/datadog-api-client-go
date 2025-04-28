@@ -1,0 +1,15 @@
+description: A recurring downtime schedule definition.
+properties:
+  recurrences:
+    description: A list of downtime recurrences.
+    items:
+      $ref: ./DowntimeScheduleRecurrenceCreateUpdateRequest.yaml
+    type: array
+  timezone:
+    default: UTC
+    description: The timezone in which to schedule the downtime.
+    example: America/New_York
+    type: string
+required:
+  - recurrences
+type: object

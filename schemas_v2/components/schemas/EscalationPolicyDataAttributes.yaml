@@ -1,0 +1,23 @@
+description: >-
+  Defines the main attributes of an escalation policy, such as its description,
+  name, and behavior on policy end.
+properties:
+  description:
+    description: Provides a detailed text description of the escalation policy.
+    type: string
+  name:
+    description: Specifies the name of the escalation policy.
+    example: On-call Escalation Policy
+    type: string
+  resolve_page_on_policy_end:
+    description: Indicates whether the page is automatically resolved when the policy ends.
+    type: boolean
+  retries:
+    description: >-
+      Specifies how many times the escalation sequence is retried if there is no
+      response.
+    format: int64
+    type: integer
+required:
+  - name
+type: object

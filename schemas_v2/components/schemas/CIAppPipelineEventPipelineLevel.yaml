@@ -1,0 +1,8 @@
+default: pipeline
+description: Used to distinguish between pipelines, stages, jobs, and steps.
+enum:
+  - pipeline
+example: pipeline
+type: string
+x-enum-varnames:
+  - PIPELINE

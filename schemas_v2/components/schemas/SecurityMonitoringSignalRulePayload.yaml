@@ -1,0 +1,61 @@
+description: The payload of a signal correlation rule.
+properties:
+  cases:
+    description: Cases for generating signals.
+    example: []
+    items:
+      $ref: ./SecurityMonitoringRuleCaseCreate.yaml
+    type: array
+  filters:
+    description: >-
+      Additional queries to filter matched events before they are processed.
+      This field is deprecated for log detection, signal correlation, and
+      workload security rules.
+    items:
+      $ref: ./SecurityMonitoringFilter.yaml
+    type: array
+  hasExtendedTitle:
+    description: >-
+      Whether the notifications include the triggering group-by values in their
+      title.
+    example: true
+    type: boolean
+  isEnabled:
+    description: Whether the rule is enabled.
+    example: true
+    type: boolean
+  message:
+    description: Message for generated signals.
+    example: ''
+    type: string
+  name:
+    description: The name of the rule.
+    example: My security monitoring rule.
+    type: string
+  options:
+    $ref: ./SecurityMonitoringRuleOptions.yaml
+  queries:
+    description: Queries for selecting signals which are part of the rule.
+    example: []
+    items:
+      $ref: ./SecurityMonitoringSignalRuleQuery.yaml
+    type: array
+  tags:
+    description: Tags for generated signals.
+    example:
+      - env:prod
+      - team:security
+    items:
+      description: Tag.
+      type: string
+    type: array
+  type:
+    $ref: ./SecurityMonitoringSignalRuleType.yaml
+required:
+  - name
+  - isEnabled
+  - queries
+  - options
+  - cases
+  - message
+type: object

@@ -1,0 +1,8 @@
+default: number
+description: The type of column present for numbers.
+enum:
+  - number
+example: number
+type: string
+x-enum-varnames:
+  - NUMBER

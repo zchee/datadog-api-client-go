@@ -1,0 +1,5 @@
+description: Validate a rule.
+oneOf:
+  - $ref: ./SecurityMonitoringStandardRulePayload.yaml
+  - $ref: ./SecurityMonitoringSignalRulePayload.yaml
+  - $ref: ./CloudConfigurationRulePayload.yaml

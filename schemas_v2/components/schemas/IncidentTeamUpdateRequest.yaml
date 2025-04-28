@@ -1,0 +1,7 @@
+description: Update request with an incident team payload.
+properties:
+  data:
+    $ref: ./IncidentTeamUpdateData.yaml
+required:
+  - data
+type: object

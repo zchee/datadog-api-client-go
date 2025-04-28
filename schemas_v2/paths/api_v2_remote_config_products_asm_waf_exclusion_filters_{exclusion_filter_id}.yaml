@@ -1,0 +1,93 @@
+delete:
+  description: Delete a specific WAF exclusion filter using its identifier.
+  operationId: DeleteApplicationSecurityWafExclusionFilter
+  parameters:
+    - $ref: ../components/parameters/ApplicationSecurityWafExclusionFilterID.yaml
+  responses:
+    '204':
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a WAF exclusion filter
+  tags:
+    - Application Security
+  x-permission:
+    operator: AND
+    permissions:
+      - appsec_protect_write
+  x-terraform-resource: appsec_waf_exclusion_filter
+get:
+  description: Retrieve a specific WAF exclusion filter using its identifier.
+  operationId: GetApplicationSecurityWafExclusionFilter
+  parameters:
+    - $ref: ../components/parameters/ApplicationSecurityWafExclusionFilterID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/ApplicationSecurityWafExclusionFilterResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a WAF exclusion filter
+  tags:
+    - Application Security
+  x-permission:
+    operator: AND
+    permissions:
+      - appsec_protect_read
+  x-terraform-resource: appsec_waf_exclusion_filter
+put:
+  description: |-
+    Update a specific WAF exclusion filter using its identifier.
+    Returns the exclusion filter object when the request is successful.
+  operationId: UpdateApplicationSecurityWafExclusionFilter
+  parameters:
+    - $ref: ../components/parameters/ApplicationSecurityWafExclusionFilterID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/ApplicationSecurityWafExclusionFilterUpdateRequest.yaml
+    description: The exclusion filter to update.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/ApplicationSecurityWafExclusionFilterResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a WAF exclusion filter
+  tags:
+    - Application Security
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: AND
+    permissions:
+      - appsec_protect_write
+  x-terraform-resource: appsec_waf_exclusion_filter

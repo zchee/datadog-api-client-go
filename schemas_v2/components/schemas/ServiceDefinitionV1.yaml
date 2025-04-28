@@ -1,0 +1,38 @@
+deprecated: true
+description: >-
+  Deprecated - Service definition V1 for providing additional service metadata
+  and integrations.
+properties:
+  contact:
+    $ref: ./ServiceDefinitionV1Contact.yaml
+  extensions:
+    additionalProperties: {}
+    description: Extensions to V1 schema.
+    example:
+      myorg/extension: extensionValue
+    type: object
+  external-resources:
+    description: A list of external links related to the services.
+    items:
+      $ref: ./ServiceDefinitionV1Resource.yaml
+    type: array
+  info:
+    $ref: ./ServiceDefinitionV1Info.yaml
+  integrations:
+    $ref: ./ServiceDefinitionV1Integrations.yaml
+  org:
+    $ref: ./ServiceDefinitionV1Org.yaml
+  schema-version:
+    $ref: ./ServiceDefinitionV1Version.yaml
+  tags:
+    description: A set of custom tags.
+    example:
+      - my:tag
+      - service:tag
+    items:
+      type: string
+    type: array
+required:
+  - schema-version
+  - info
+type: object

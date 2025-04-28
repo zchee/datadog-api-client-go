@@ -1,0 +1,11 @@
+description: Single Agent Data.
+properties:
+  attributes:
+    $ref: ./CsmAgentsAttributes.yaml
+  id:
+    description: The ID of the Agent.
+    example: fffffc5505f6a006fdf7cf5aae053653
+    type: string
+  type:
+    $ref: ./CSMAgentsType.yaml
+type: object

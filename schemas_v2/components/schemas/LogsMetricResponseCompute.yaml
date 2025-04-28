@@ -1,0 +1,13 @@
+description: The compute rule to compute the log-based metric.
+properties:
+  aggregation_type:
+    $ref: ./LogsMetricResponseComputeAggregationType.yaml
+  include_percentiles:
+    $ref: ./LogsMetricComputeIncludePercentiles.yaml
+  path:
+    description: >-
+      The path to the value the log-based metric will aggregate on (only used if
+      the aggregation type is a "distribution").
+    example: '@duration'
+    type: string
+type: object

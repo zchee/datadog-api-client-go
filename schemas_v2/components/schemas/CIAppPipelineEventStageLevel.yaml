@@ -1,0 +1,8 @@
+default: stage
+description: Used to distinguish between pipelines, stages, jobs and steps.
+enum:
+  - stage
+example: stage
+type: string
+x-enum-varnames:
+  - STAGE

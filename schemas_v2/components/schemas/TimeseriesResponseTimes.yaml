@@ -1,0 +1,7 @@
+description: Array of times, 1-1 match with individual values arrays.
+items:
+  description: Start date (inclusive) of the query in seconds since the Unix epoch.
+  example: 1568899800000
+  format: int64
+  type: integer
+type: array

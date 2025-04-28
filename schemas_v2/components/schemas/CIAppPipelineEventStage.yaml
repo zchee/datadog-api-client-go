@@ -1,0 +1,73 @@
+description: Details of a CI stage.
+properties:
+  dependencies:
+    description: A list of stage IDs that this stage depends on.
+    example:
+      - f7e6a006-a029-46c3-b0cc-742c9d7d363b
+      - c8a69849-3c3b-4721-8b33-3e8ec2df1ebe
+    items:
+      description: A list of stage IDs.
+      type: string
+    nullable: true
+    type: array
+  end:
+    description: Time when the stage run finished. The time format must be RFC3339.
+    example: '2023-05-31T15:30:00Z'
+    format: date-time
+    type: string
+  error:
+    $ref: ./CIAppCIError.yaml
+  git:
+    $ref: ./CIAppGitInfo.yaml
+  id:
+    description: UUID for the stage. It has to be unique at least in the pipeline scope.
+    example: 562bdbbb-7cab-48c8-851c-b24ca14628bf
+    type: string
+  level:
+    $ref: ./CIAppPipelineEventStageLevel.yaml
+  metrics:
+    $ref: ./CIAppPipelineEventMetrics.yaml
+  name:
+    description: The name for the stage.
+    example: build
+    type: string
+  node:
+    $ref: ./CIAppHostInfo.yaml
+  parameters:
+    $ref: ./CIAppPipelineEventParameters.yaml
+  pipeline_name:
+    description: The parent pipeline name.
+    example: Build
+    type: string
+  pipeline_unique_id:
+    description: The parent pipeline UUID.
+    example: 76b572af-a078-42b2-a08a-cc28f98b944f
+    type: string
+  queue_time:
+    description: The queue time in milliseconds, if applicable.
+    example: 1004
+    format: int64
+    minimum: 0
+    nullable: true
+    type: integer
+  start:
+    description: >-
+      Time when the stage run started (it should not include any queue time).
+      The time format must be RFC3339.
+    example: '2023-05-31T15:30:00Z'
+    format: date-time
+    type: string
+  status:
+    $ref: ./CIAppPipelineEventStageStatus.yaml
+  tags:
+    $ref: ./CIAppPipelineEventTags.yaml
+required:
+  - level
+  - id
+  - name
+  - pipeline_unique_id
+  - pipeline_name
+  - start
+  - end
+  - status
+type: object

@@ -1,0 +1,14 @@
+description: JSON object containing all event attributes and their associated values.
+properties:
+  attributes:
+    additionalProperties: {}
+    description: JSON object of attributes from CI Visibility pipeline events.
+    example:
+      customAttribute: 123
+      duration: 2345
+    type: object
+  ci_level:
+    $ref: ./CIAppPipelineLevel.yaml
+  tags:
+    $ref: ./TagsEventAttribute.yaml
+type: object

@@ -1,0 +1,12 @@
+description: List of containers.
+properties:
+  data:
+    description: Array of Container objects.
+    items:
+      $ref: ./ContainerItem.yaml
+    type: array
+  links:
+    $ref: ./ContainersResponseLinks.yaml
+  meta:
+    $ref: ./ContainerMeta.yaml
+type: object

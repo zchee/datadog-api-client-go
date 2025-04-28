@@ -1,0 +1,16 @@
+description: The `datadog_agent` source collects logs from the Datadog Agent.
+properties:
+  id:
+    description: >-
+      The unique identifier for this component. Used to reference this component
+      in other parts of the pipeline (e.g., as input to downstream components).
+    example: datadog-agent-source
+    type: string
+  tls:
+    $ref: ./ObservabilityPipelineTls.yaml
+  type:
+    $ref: ./ObservabilityPipelineDatadogAgentSourceType.yaml
+required:
+  - id
+  - type
+type: object

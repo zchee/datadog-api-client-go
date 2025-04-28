@@ -1,0 +1,10 @@
+description: Response for List Custom Costs files.
+properties:
+  data:
+    description: List of Custom Costs files.
+    items:
+      $ref: ./CustomCostsFileMetadataHighLevel.yaml
+    type: array
+  meta:
+    $ref: ./CustomCostListResponseMeta.yaml
+type: object

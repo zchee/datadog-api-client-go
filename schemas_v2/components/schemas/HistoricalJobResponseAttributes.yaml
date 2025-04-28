@@ -1,0 +1,26 @@
+description: Historical job attributes.
+properties:
+  createdAt:
+    description: Time when the job was created.
+    type: string
+  createdByHandle:
+    description: The handle of the user who created the job.
+    type: string
+  createdByName:
+    description: The name of the user who created the job.
+    type: string
+  createdFromRuleId:
+    description: ID of the rule used to create the job (if it is created from a rule).
+    type: string
+  jobDefinition:
+    $ref: ./JobDefinition.yaml
+  jobName:
+    description: Job name.
+    type: string
+  jobStatus:
+    description: Job status.
+    type: string
+  modifiedAt:
+    description: Last modification time of the job.
+    type: string
+type: object

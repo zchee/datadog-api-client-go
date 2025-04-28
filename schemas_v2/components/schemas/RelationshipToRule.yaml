@@ -1,0 +1,5 @@
+description: Scorecard create rule response relationship.
+properties:
+  scorecard:
+    $ref: ./RelationshipToRuleData.yaml
+type: object

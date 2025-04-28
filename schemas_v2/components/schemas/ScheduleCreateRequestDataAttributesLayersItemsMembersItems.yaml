@@ -1,0 +1,7 @@
+description: >-
+  Defines a single member within a schedule layer, including the reference to
+  the underlying user.
+properties:
+  user:
+    $ref: ./ScheduleCreateRequestDataAttributesLayersItemsMembersItemsUser.yaml
+type: object

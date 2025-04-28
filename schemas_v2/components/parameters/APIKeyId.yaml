@@ -1,0 +1,6 @@
+description: The ID of the API key.
+in: path
+name: api_key_id
+required: true
+schema:
+  type: string

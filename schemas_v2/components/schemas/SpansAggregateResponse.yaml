@@ -1,0 +1,10 @@
+description: The response object for the spans aggregate API endpoint.
+properties:
+  data:
+    description: The list of matching buckets, one item per bucket.
+    items:
+      $ref: ./SpansAggregateBucket.yaml
+    type: array
+  meta:
+    $ref: ./SpansAggregateResponseMetadata.yaml
+type: object

@@ -1,0 +1,10 @@
+description: List of historical jobs.
+properties:
+  data:
+    description: Array containing the list of historical jobs.
+    items:
+      $ref: ./HistoricalJobResponseData.yaml
+    type: array
+  meta:
+    $ref: ./HistoricalJobListMeta.yaml
+type: object

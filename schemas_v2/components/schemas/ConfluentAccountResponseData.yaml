@@ -1,0 +1,15 @@
+description: An API key and API secret pair that represents a Confluent account.
+properties:
+  attributes:
+    $ref: ./ConfluentAccountResponseAttributes.yaml
+  id:
+    description: A randomly generated ID associated with a Confluent account.
+    example: account_id_abc123
+    type: string
+  type:
+    $ref: ./ConfluentAccountType.yaml
+required:
+  - attributes
+  - id
+  - type
+type: object

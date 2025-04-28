@@ -1,0 +1,15 @@
+description: Aggregate information for numeric incident data.
+properties:
+  max:
+    description: Maximum value of the numeric aggregates.
+    example: 1234
+    format: double
+    nullable: true
+    type: number
+  min:
+    description: Minimum value of the numeric aggregates.
+    example: 20
+    format: double
+    nullable: true
+    type: number
+type: object

@@ -1,0 +1,86 @@
+get:
+  description: >-
+    Get historical cost across multi-org and single root-org accounts.
+
+    Cost data for a given month becomes available no later than the 16th of the
+    following month.
+
+
+    This endpoint is only accessible for [parent-level
+    organizations](https://docs.datadoghq.com/account_management/multi_organization/).
+  operationId: GetHistoricalCostByOrg
+  parameters:
+    - description: >-
+        String to specify whether cost is broken down at a parent-org level or
+        at the sub-org level. Available views are `summary` and `sub-org`. 
+        Defaults to `summary`.
+      in: query
+      name: view
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for cost
+        beginning this month.
+      in: query
+      name: start_month
+      required: true
+      schema:
+        format: date-time
+        type: string
+    - description: >-
+        Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for cost
+        ending this month.
+      in: query
+      name: end_month
+      required: false
+      schema:
+        format: date-time
+        type: string
+    - description: >-
+        Boolean to specify whether to include accounts connected to the current
+        account as partner customers in the Datadog partner network program.
+        Defaults to `false`. 
+      in: query
+      name: include_connected_accounts
+      required: false
+      schema:
+        default: false
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/CostByOrgResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden - User is not authorized
+    '429':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Too many requests
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - usage_read
+  summary: Get historical cost across your account
+  tags:
+    - Usage Metering
+  x-permission:
+    operator: OR
+    permissions:
+      - usage_read

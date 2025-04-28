@@ -1,0 +1,15 @@
+description: The attributes from an Opsgenie service response.
+properties:
+  custom_url:
+    description: The custom URL for a custom region.
+    example: null
+    nullable: true
+    type: string
+  name:
+    description: The name for the Opsgenie service.
+    example: fake-opsgenie-service-name
+    maxLength: 100
+    type: string
+  region:
+    $ref: ./OpsgenieServiceRegionType.yaml
+type: object

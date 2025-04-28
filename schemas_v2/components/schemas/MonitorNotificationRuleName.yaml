@@ -1,0 +1,5 @@
+description: The name of the monitor notification rule.
+example: A notification rule name
+maxLength: 1000
+minLength: 1
+type: string

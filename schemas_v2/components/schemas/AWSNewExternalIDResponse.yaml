@@ -1,0 +1,7 @@
+description: AWS External ID response body.
+properties:
+  data:
+    $ref: ./AWSNewExternalIDResponseData.yaml
+required:
+  - data
+type: object

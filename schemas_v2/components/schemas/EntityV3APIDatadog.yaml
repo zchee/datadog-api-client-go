@@ -1,0 +1,14 @@
+additionalProperties: false
+description: Datadog product integrations for the API entity.
+properties:
+  codeLocations:
+    $ref: ./EntityV3DatadogCodeLocations.yaml
+  events:
+    $ref: ./EntityV3DatadogEvents.yaml
+  logs:
+    $ref: ./EntityV3DatadogLogs.yaml
+  performanceData:
+    $ref: ./EntityV3DatadogPerformance.yaml
+  pipelines:
+    $ref: ./EntityV3DatadogPipelines.yaml
+type: object

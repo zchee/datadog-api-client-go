@@ -1,0 +1,13 @@
+description: The interface status
+enum:
+  - up
+  - down
+  - warning
+  - 'off'
+example: up
+type: string
+x-enum-varnames:
+  - UP
+  - DOWN
+  - WARNING
+  - 'OFF'

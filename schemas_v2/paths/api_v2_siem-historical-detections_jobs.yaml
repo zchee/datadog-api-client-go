@@ -1,0 +1,85 @@
+get:
+  description: List historical jobs.
+  operationId: ListHistoricalJobs
+  parameters:
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageNumber.yaml
+    - description: The order of the jobs in results.
+      example: status
+      in: query
+      name: sort
+      required: false
+      schema:
+        type: string
+    - description: Query used to filter items from the fetched list.
+      example: security:attack status:high
+      in: query
+      name: filter[query]
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListHistoricalJobsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: List historical jobs
+  tags:
+    - Security Monitoring
+  x-unstable: |-
+    **Note**: This endpoint is in beta and may be subject to changes.
+    Please check the documentation regularly for updates.
+post:
+  description: Run a historical job.
+  operationId: RunHistoricalJob
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RunHistoricalJobRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JobCreateResponse.yaml
+      description: Status created
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_rules_write
+  summary: Run a historical job
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_rules_write
+  x-unstable: |-
+    **Note**: This endpoint is in beta and may be subject to changes.
+    Please check the documentation regularly for updates.

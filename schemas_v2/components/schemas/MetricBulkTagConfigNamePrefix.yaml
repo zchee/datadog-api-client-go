@@ -1,0 +1,3 @@
+description: A text prefix to match against metric names.
+example: kafka.lag
+type: string

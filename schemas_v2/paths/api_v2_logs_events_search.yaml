@@ -1,0 +1,54 @@
+post:
+  description: >-
+    List endpoint returns logs that match a log search query.
+
+    [Results are paginated][1].
+
+
+    Use this endpoint to search and filter your logs.
+
+
+    **If you are considering archiving logs for your organization,
+
+    consider use of the Datadog archive capabilities instead of the log list
+    API.
+
+    See [Datadog Logs Archive documentation][2].**
+
+
+    [1]: /logs/guide/collect-multiple-logs-with-pagination
+
+    [2]: https://docs.datadoghq.com/logs/archives
+  operationId: ListLogs
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/LogsListRequest.yaml
+    required: false
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsListResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Search logs (POST)
+  tags:
+    - Logs
+  x-codegen-request-body-name: body
+  x-pagination:
+    cursorParam: body.page.cursor
+    cursorPath: meta.page.after
+    limitParam: body.page.limit
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_read_data

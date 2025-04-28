@@ -1,0 +1,20 @@
+description: Service owner's contacts information.
+properties:
+  contact:
+    description: Contact value.
+    example: https://teams.microsoft.com/myteam
+    type: string
+  name:
+    description: Contact Name.
+    example: My team channel
+    type: string
+  type:
+    description: >-
+      Contact type. Datadog recognizes the following types: `email`, `slack`,
+      and `microsoft-teams`.
+    example: slack
+    type: string
+required:
+  - type
+  - contact
+type: object

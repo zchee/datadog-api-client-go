@@ -1,0 +1,6 @@
+description: Data about the canceled instance.
+properties:
+  id:
+    description: The id of the canceled instance
+    type: string
+type: object

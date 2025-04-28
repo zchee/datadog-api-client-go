@@ -1,0 +1,11 @@
+description: >-
+  Action that will trigger a monitor notification if the downtime is in the
+  `notify_end_types` state.
+enum:
+  - canceled
+  - expired
+example: canceled
+type: string
+x-enum-varnames:
+  - CANCELED
+  - EXPIRED

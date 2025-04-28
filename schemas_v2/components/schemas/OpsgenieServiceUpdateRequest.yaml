@@ -1,0 +1,7 @@
+description: Update request for an Opsgenie service.
+properties:
+  data:
+    $ref: ./OpsgenieServiceUpdateData.yaml
+required:
+  - data
+type: object

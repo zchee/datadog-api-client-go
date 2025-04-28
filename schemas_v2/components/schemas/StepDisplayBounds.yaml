@@ -1,0 +1,11 @@
+description: The definition of `StepDisplayBounds` object.
+properties:
+  x:
+    description: The `bounds` `x`.
+    format: double
+    type: number
+  'y':
+    description: The `bounds` `y`.
+    format: double
+    type: number
+type: object

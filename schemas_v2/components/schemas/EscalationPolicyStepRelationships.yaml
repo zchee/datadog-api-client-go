@@ -1,0 +1,5 @@
+description: Represents the relationship of an escalation policy step to its targets.
+properties:
+  targets:
+    $ref: ./EscalationTarget.yaml
+type: object

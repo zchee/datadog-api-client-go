@@ -1,0 +1,8 @@
+description: All RUM retention filters for a RUM application.
+properties:
+  data:
+    description: A list of RUM retention filters.
+    items:
+      $ref: ./RumRetentionFilterData.yaml
+    type: array
+type: object

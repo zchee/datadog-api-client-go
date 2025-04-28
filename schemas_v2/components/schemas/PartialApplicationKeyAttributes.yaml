@@ -1,0 +1,30 @@
+description: Attributes of a partial application key.
+properties:
+  created_at:
+    description: Creation date of the application key.
+    example: '2020-11-23T10:00:00.000Z'
+    readOnly: true
+    type: string
+  last4:
+    description: The last four characters of the application key.
+    example: abcd
+    maxLength: 4
+    minLength: 4
+    readOnly: true
+    type: string
+  name:
+    description: Name of the application key.
+    example: Application Key for managing dashboards
+    type: string
+  scopes:
+    description: Array of scopes to grant the application key.
+    example:
+      - dashboards_read
+      - dashboards_write
+      - dashboards_public_share
+    items:
+      description: Name of scope.
+      type: string
+    nullable: true
+    type: array
+type: object

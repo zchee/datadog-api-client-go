@@ -1,0 +1,37 @@
+description: Powerpack group widget object.
+properties:
+  layout_type:
+    description: Layout type of widgets.
+    example: ordered
+    type: string
+  show_title:
+    description: Boolean indicating whether powerpack group title should be visible or not.
+    example: true
+    type: boolean
+  title:
+    description: Name for the group widget.
+    example: Sample Powerpack
+    type: string
+  type:
+    description: Type of widget, must be group.
+    example: group
+    type: string
+  widgets:
+    description: Widgets inside the powerpack.
+    example:
+      - definition:
+          content: example
+          type: note
+        layout:
+          height: 5
+          width: 10
+          x: 0
+          'y': 0
+    items:
+      $ref: ./PowerpackInnerWidgets.yaml
+    type: array
+required:
+  - widgets
+  - layout_type
+  - type
+type: object

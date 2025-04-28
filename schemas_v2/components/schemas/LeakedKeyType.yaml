@@ -1,0 +1,8 @@
+default: leaked_keys
+description: The definition of LeakedKeyType object.
+enum:
+  - leaked_keys
+example: leaked_keys
+type: string
+x-enum-varnames:
+  - LEAKED_KEYS

@@ -1,0 +1,38 @@
+description: A Step is a sub-component of a workflow. Each Step performs an action.
+properties:
+  actionId:
+    description: The unique identifier of an action.
+    example: ''
+    type: string
+  completionGate:
+    $ref: ./CompletionGate.yaml
+  connectionLabel:
+    description: The unique identifier of a connection defined in the spec.
+    type: string
+  display:
+    $ref: ./StepDisplay.yaml
+  errorHandlers:
+    description: The `Step` `errorHandlers`.
+    items:
+      $ref: ./ErrorHandler.yaml
+    type: array
+  name:
+    description: Name of the step.
+    example: ''
+    type: string
+  outboundEdges:
+    description: A list of subsequent actions to run.
+    items:
+      $ref: ./OutboundEdge.yaml
+    type: array
+  parameters:
+    description: A list of inputs for an action.
+    items:
+      $ref: ./Parameter.yaml
+    type: array
+  readinessGate:
+    $ref: ./ReadinessGate.yaml
+required:
+  - name
+  - actionId
+type: object

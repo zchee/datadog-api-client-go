@@ -1,0 +1,13 @@
+description: An object containing the ID of an app to delete.
+properties:
+  id:
+    description: The ID of the app to delete.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+  type:
+    $ref: ./AppDefinitionType.yaml
+required:
+  - id
+  - type
+type: object

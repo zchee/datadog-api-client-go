@@ -1,0 +1,8 @@
+default: spans
+description: Type of the span.
+enum:
+  - spans
+example: spans
+type: string
+x-enum-varnames:
+  - SPANS

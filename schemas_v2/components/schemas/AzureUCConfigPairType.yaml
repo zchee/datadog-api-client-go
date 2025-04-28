@@ -1,0 +1,8 @@
+default: azure_uc_configs
+description: Type of Azure config pair.
+enum:
+  - azure_uc_configs
+example: azure_uc_configs
+type: string
+x-enum-varnames:
+  - AZURE_UC_CONFIGS

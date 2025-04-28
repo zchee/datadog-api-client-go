@@ -1,0 +1,19 @@
+description: >-
+  Defines a time restriction for a schedule layer, including which day of the
+  week
+
+  it starts and ends, along with start/end times.
+properties:
+  end_day:
+    $ref: >-
+      ./ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsEndDay.yaml
+  end_time:
+    description: The time of day when the restriction ends (hh:mm:ss).
+    type: string
+  start_day:
+    $ref: >-
+      ./ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsStartDay.yaml
+  start_time:
+    description: The time of day when the restriction begins (hh:mm:ss).
+    type: string
+type: object

@@ -1,0 +1,7 @@
+description: >-
+  Whether the grid component and its children are visible. If a string, it must
+  be a valid JavaScript expression that evaluates to a boolean.
+oneOf:
+  - type: string
+  - default: true
+    type: boolean

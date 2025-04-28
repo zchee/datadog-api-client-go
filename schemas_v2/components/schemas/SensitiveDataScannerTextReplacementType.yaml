@@ -1,0 +1,21 @@
+default: none
+description: |-
+  Type of the replacement text. None means no replacement.
+  hash means the data will be stubbed. replacement_string means that
+  one can chose a text to replace the data. partial_replacement_from_beginning
+  allows a user to partially replace the data from the beginning, and
+  partial_replacement_from_end on the other hand, allows to replace data from
+  the end.
+enum:
+  - none
+  - hash
+  - replacement_string
+  - partial_replacement_from_beginning
+  - partial_replacement_from_end
+type: string
+x-enum-varnames:
+  - NONE
+  - HASH
+  - REPLACEMENT_STRING
+  - PARTIAL_REPLACEMENT_FROM_BEGINNING
+  - PARTIAL_REPLACEMENT_FROM_END

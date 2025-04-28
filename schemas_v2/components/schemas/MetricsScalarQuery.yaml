@@ -1,0 +1,18 @@
+description: An individual scalar metrics query.
+properties:
+  aggregator:
+    $ref: ./MetricsAggregator.yaml
+  data_source:
+    $ref: ./MetricsDataSource.yaml
+  name:
+    description: The variable name for use in formulas.
+    type: string
+  query:
+    description: A classic metrics query string.
+    example: avg:system.cpu.user{*} by {env}
+    type: string
+required:
+  - data_source
+  - query
+  - aggregator
+type: object

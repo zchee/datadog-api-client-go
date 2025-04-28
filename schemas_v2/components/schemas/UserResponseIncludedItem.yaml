@@ -1,0 +1,5 @@
+description: An object related to a user.
+oneOf:
+  - $ref: ./Organization.yaml
+  - $ref: ./Permission.yaml
+  - $ref: ./Role.yaml

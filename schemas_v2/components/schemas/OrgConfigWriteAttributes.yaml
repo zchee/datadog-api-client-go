@@ -1,0 +1,7 @@
+description: Writable attributes of an Org Config.
+properties:
+  value:
+    description: The value of an Org Config.
+required:
+  - value
+type: object

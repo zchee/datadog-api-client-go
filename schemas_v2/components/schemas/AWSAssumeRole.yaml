@@ -1,0 +1,28 @@
+description: The definition of `AWSAssumeRole` object.
+properties:
+  account_id:
+    description: AWS account the connection is created for
+    example: '111222333444'
+    pattern: ^\d{12}$
+    type: string
+  external_id:
+    description: External ID used to scope which connection can be used to assume the role
+    example: 33a1011635c44b38a064cf14e82e1d8f
+    readOnly: true
+    type: string
+  principal_id:
+    description: AWS account that will assume the role
+    example: '123456789012'
+    readOnly: true
+    type: string
+  role:
+    description: Role to assume
+    example: my-role
+    type: string
+  type:
+    $ref: ./AWSAssumeRoleType.yaml
+required:
+  - type
+  - account_id
+  - role
+type: object

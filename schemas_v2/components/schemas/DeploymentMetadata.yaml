@@ -1,0 +1,19 @@
+description: Metadata object containing the publication creation information.
+properties:
+  created_at:
+    description: Timestamp of when the app was published.
+    format: date-time
+    type: string
+  user_id:
+    description: The ID of the user who published the app.
+    format: int64
+    type: integer
+  user_name:
+    description: The name (or email address) of the user who published the app.
+    type: string
+  user_uuid:
+    description: The UUID of the user who published the app.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+type: object

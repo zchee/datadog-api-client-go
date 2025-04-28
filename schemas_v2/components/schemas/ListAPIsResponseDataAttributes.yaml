@@ -1,0 +1,7 @@
+description: Attributes for `ListAPIsResponseData`.
+properties:
+  name:
+    description: API name.
+    example: Payments API
+    type: string
+type: object

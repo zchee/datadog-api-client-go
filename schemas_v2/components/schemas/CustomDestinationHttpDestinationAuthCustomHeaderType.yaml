@@ -1,0 +1,8 @@
+default: custom_header
+description: Type of the custom header access authentication.
+enum:
+  - custom_header
+example: custom_header
+type: string
+x-enum-varnames:
+  - CUSTOM_HEADER

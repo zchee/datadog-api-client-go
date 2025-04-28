@@ -1,0 +1,43 @@
+post:
+  description: >-
+    Convert a rule that doesn't (yet) exist from JSON to Terraform for datadog
+    provider
+
+    resource datadog_security_monitoring_rule.
+  operationId: ConvertSecurityMonitoringRuleFromJSONToTerraform
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SecurityMonitoringRuleConvertPayload.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringRuleConvertResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_rules_write
+  summary: Convert a rule from JSON to Terraform
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_rules_write

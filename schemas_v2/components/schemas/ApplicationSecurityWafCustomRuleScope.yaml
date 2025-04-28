@@ -1,0 +1,14 @@
+description: The scope of the WAF custom rule.
+properties:
+  env:
+    description: The environment scope for the WAF custom rule.
+    example: prod
+    type: string
+  service:
+    description: The service scope for the WAF custom rule.
+    example: billing-service
+    type: string
+required:
+  - service
+  - env
+type: object

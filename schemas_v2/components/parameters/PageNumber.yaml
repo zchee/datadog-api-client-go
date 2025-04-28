@@ -1,0 +1,9 @@
+description: Specific page number to return.
+in: query
+name: page[number]
+required: false
+schema:
+  default: 0
+  example: 0
+  format: int64
+  type: integer

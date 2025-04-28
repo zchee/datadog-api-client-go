@@ -1,0 +1,10 @@
+description: Object for a single WAF custom rule.
+properties:
+  attributes:
+    $ref: ./ApplicationSecurityWafCustomRuleCreateAttributes.yaml
+  type:
+    $ref: ./ApplicationSecurityWafCustomRuleType.yaml
+required:
+  - attributes
+  - type
+type: object

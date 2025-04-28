@@ -1,0 +1,21 @@
+description: >-
+  The object sent with the request to retrieve aggregation buckets of RUM events
+  from your organization.
+properties:
+  compute:
+    description: The list of metrics or timeseries to compute for the retrieved buckets.
+    items:
+      $ref: ./RUMCompute.yaml
+    type: array
+  filter:
+    $ref: ./RUMQueryFilter.yaml
+  group_by:
+    description: The rules for the group by.
+    items:
+      $ref: ./RUMGroupBy.yaml
+    type: array
+  options:
+    $ref: ./RUMQueryOptions.yaml
+  page:
+    $ref: ./RUMQueryPageOptions.yaml
+type: object

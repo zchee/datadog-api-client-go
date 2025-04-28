@@ -1,0 +1,21 @@
+description: Team membership attributes
+properties:
+  provisioned_by:
+    description: >-
+      The mechanism responsible for provisioning the team relationship.
+
+      Possible values: null for added by a user, "service_account" if added by a
+      service account, and "saml_mapping" if provisioned via SAML mapping.
+    nullable: true
+    readOnly: true
+    type: string
+  provisioned_by_id:
+    description: >-
+      UUID of the User or Service Account who provisioned this team membership,
+      or null if provisioned via SAML mapping.
+    nullable: true
+    readOnly: true
+    type: string
+  role:
+    $ref: ./UserTeamRole.yaml
+type: object

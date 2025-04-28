@@ -1,0 +1,25 @@
+description: Asset risks.
+properties:
+  has_access_to_sensitive_data:
+    description: Whether the asset has access to sensitive data or not.
+    example: false
+    type: boolean
+  has_privileged_access:
+    description: Whether the asset has privileged access or not.
+    example: false
+    type: boolean
+  in_production:
+    description: Whether the asset is in production or not.
+    example: false
+    type: boolean
+  is_publicly_accessible:
+    description: Whether the asset is publicly accessible or not.
+    example: false
+    type: boolean
+  under_attack:
+    description: Whether the asset is under attack or not.
+    example: false
+    type: boolean
+required:
+  - in_production
+type: object

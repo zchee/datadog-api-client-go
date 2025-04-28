@@ -1,0 +1,71 @@
+get:
+  description: Get the list of configured security filters with their definitions.
+  operationId: ListSecurityFilters
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityFiltersResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_filters_read
+  summary: Get all security filters
+  tags:
+    - Security Monitoring
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_filters_read
+post:
+  description: >-
+    Create a security filter.
+
+
+    See the [security filter
+    guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+
+    for more examples.
+  operationId: CreateSecurityFilter
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SecurityFilterCreateRequest.yaml
+    description: The definition of the new security filter.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityFilterResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_filters_write
+  summary: Create a security filter
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_filters_write

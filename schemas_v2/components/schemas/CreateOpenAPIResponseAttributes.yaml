@@ -1,0 +1,8 @@
+description: Attributes for `CreateOpenAPI`.
+properties:
+  failed_endpoints:
+    description: List of endpoints which couldn't be parsed.
+    items:
+      $ref: ./OpenAPIEndpoint.yaml
+    type: array
+type: object

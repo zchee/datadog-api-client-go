@@ -1,0 +1,6 @@
+description: Your Workflows webhook handle id.
+in: path
+name: handle_id
+required: true
+schema:
+  type: string

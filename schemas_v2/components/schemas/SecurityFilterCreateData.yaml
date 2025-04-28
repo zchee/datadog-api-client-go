@@ -1,0 +1,10 @@
+description: Object for a single security filter.
+properties:
+  attributes:
+    $ref: ./SecurityFilterCreateAttributes.yaml
+  type:
+    $ref: ./SecurityFilterType.yaml
+required:
+  - type
+  - attributes
+type: object

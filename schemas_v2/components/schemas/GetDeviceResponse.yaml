@@ -1,0 +1,5 @@
+description: The `GetDevice` operation's response.
+properties:
+  data:
+    $ref: ./GetDeviceData.yaml
+type: object

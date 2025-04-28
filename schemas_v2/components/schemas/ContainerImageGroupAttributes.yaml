@@ -1,0 +1,13 @@
+description: Attributes for a Container Image Group.
+properties:
+  count:
+    description: Number of Container Images in the group.
+    format: int64
+    type: integer
+  name:
+    description: Name of the Container Image group.
+    type: string
+  tags:
+    description: Tags from the group name parsed in key/value format.
+    type: object
+type: object

@@ -1,0 +1,7 @@
+description: Payload schema when adding a Confluent account.
+properties:
+  data:
+    $ref: ./ConfluentAccountCreateRequestData.yaml
+required:
+  - data
+type: object

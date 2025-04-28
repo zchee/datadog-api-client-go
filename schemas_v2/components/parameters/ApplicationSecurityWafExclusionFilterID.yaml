@@ -1,0 +1,7 @@
+description: The identifier of the WAF exclusion filter.
+example: 3b5-v82-ns6
+in: path
+name: exclusion_filter_id
+required: true
+schema:
+  type: string

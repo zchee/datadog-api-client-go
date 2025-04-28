@@ -1,0 +1,10 @@
+description: Projected Cost data.
+properties:
+  attributes:
+    $ref: ./ProjectedCostAttributes.yaml
+  id:
+    description: Unique ID of the response.
+    type: string
+  type:
+    $ref: ./ProjectedCostType.yaml
+type: object

@@ -1,0 +1,15 @@
+description: Response for a list of API keys.
+properties:
+  data:
+    description: Array of API keys.
+    items:
+      $ref: ./PartialAPIKey.yaml
+    type: array
+  included:
+    description: Array of objects related to the API key.
+    items:
+      $ref: ./APIKeyResponseIncludedItem.yaml
+    type: array
+  meta:
+    $ref: ./APIKeysResponseMeta.yaml
+type: object

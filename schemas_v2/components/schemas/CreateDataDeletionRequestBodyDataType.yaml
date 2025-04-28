@@ -1,0 +1,7 @@
+description: The deletion request type.
+enum:
+  - create_deletion_req
+example: create_deletion_req
+type: string
+x-enum-varnames:
+  - CREATE_DELETION_REQ

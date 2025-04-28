@@ -1,0 +1,9 @@
+description: A list of user-defined tags. The tags must follow the `key:value` pattern.
+example:
+  - team:backend
+  - type:deployment
+items:
+  description: Tags in the form of `key:value`.
+  type: string
+nullable: true
+type: array

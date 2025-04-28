@@ -1,0 +1,5 @@
+description: Response containing information about created event.
+properties:
+  data:
+    $ref: ./EventCreateResponse.yaml
+type: object

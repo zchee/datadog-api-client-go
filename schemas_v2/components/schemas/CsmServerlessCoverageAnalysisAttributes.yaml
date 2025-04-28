@@ -1,0 +1,12 @@
+description: CSM Serverless Resources Coverage Analysis attributes.
+properties:
+  cws_coverage:
+    $ref: ./CsmCoverageAnalysis.yaml
+  org_id:
+    description: The ID of your organization.
+    example: 123456
+    format: int64
+    type: integer
+  total_coverage:
+    $ref: ./CsmCoverageAnalysis.yaml
+type: object

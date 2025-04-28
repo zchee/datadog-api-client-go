@@ -1,0 +1,33 @@
+description: Attributes of the Sensitive Data Scanner standard pattern.
+properties:
+  description:
+    description: Description of the standard pattern.
+    type: string
+  included_keywords:
+    description: List of included keywords.
+    items:
+      type: string
+    type: array
+  name:
+    description: Name of the standard pattern.
+    type: string
+  pattern:
+    deprecated: true
+    description: >-
+      (Deprecated) Regex to match, optionally documented for older standard
+      rules. Refer to the `description` field to understand what the rule does.
+    type: string
+  priority:
+    description: >-
+      Integer from 1 (high) to 5 (low) indicating standard pattern issue
+      severity.
+    format: int64
+    maximum: 5
+    minimum: 1
+    type: integer
+  tags:
+    description: List of tags.
+    items:
+      type: string
+    type: array
+type: object

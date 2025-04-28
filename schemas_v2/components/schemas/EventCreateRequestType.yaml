@@ -1,0 +1,7 @@
+description: Entity type.
+enum:
+  - event
+example: event
+type: string
+x-enum-varnames:
+  - EVENT

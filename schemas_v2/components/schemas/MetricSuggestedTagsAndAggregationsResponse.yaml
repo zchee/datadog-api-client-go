@@ -1,0 +1,8 @@
+description: >-
+  Response object that includes a single metric's actively queried tags and
+  aggregations.
+properties:
+  data:
+    $ref: ./MetricSuggestedTagsAndAggregations.yaml
+readOnly: true
+type: object

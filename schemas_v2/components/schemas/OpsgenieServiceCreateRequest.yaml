@@ -1,0 +1,7 @@
+description: Create request for an Opsgenie service.
+properties:
+  data:
+    $ref: ./OpsgenieServiceCreateData.yaml
+required:
+  - data
+type: object

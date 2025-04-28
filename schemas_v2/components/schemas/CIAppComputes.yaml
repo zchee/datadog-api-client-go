@@ -1,0 +1,6 @@
+additionalProperties:
+  $ref: ./CIAppAggregateBucketValue.yaml
+description: >-
+  A map of the metric name to value for regular compute, or a list of values for
+  a timeseries.
+type: object

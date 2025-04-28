@@ -1,0 +1,13 @@
+description: The definition of `ApplicationSecurityWafCustomRuleActionParameters` object.
+properties:
+  location:
+    description: The location to redirect to when the WAF custom rule triggers.
+    example: /blocking
+    type: string
+  status_code:
+    default: 403
+    description: The status code to return when the WAF custom rule triggers.
+    example: 403
+    format: int64
+    type: integer
+type: object

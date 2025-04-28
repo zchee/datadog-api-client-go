@@ -1,0 +1,7 @@
+description: Payload schema for Fastly service requests.
+properties:
+  data:
+    $ref: ./FastlyServiceData.yaml
+required:
+  - data
+type: object

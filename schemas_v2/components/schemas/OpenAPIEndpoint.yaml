@@ -1,0 +1,9 @@
+description: Endpoint info extracted from an `OpenAPI` specification.
+properties:
+  method:
+    description: The endpoint method.
+    type: string
+  path:
+    description: The endpoint path.
+    type: string
+type: object

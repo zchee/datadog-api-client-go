@@ -1,0 +1,7 @@
+description: Request object for creating a single WAF exclusion filter.
+properties:
+  data:
+    $ref: ./ApplicationSecurityWafExclusionFilterCreateData.yaml
+required:
+  - data
+type: object

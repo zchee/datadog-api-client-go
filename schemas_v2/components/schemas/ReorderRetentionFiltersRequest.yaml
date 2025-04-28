@@ -1,0 +1,10 @@
+description: A list of retention filters to reorder.
+properties:
+  data:
+    description: A list of retention filters objects.
+    items:
+      $ref: ./RetentionFilterWithoutAttributes.yaml
+    type: array
+required:
+  - data
+type: object

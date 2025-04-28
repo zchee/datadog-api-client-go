@@ -1,0 +1,22 @@
+description: The definition of `ConnectionGroup` object.
+properties:
+  connectionGroupId:
+    description: The `ConnectionGroup` `connectionGroupId`.
+    example: ''
+    type: string
+  label:
+    description: The `ConnectionGroup` `label`.
+    example: ''
+    type: string
+  tags:
+    description: The `ConnectionGroup` `tags`.
+    example:
+      - ''
+    items:
+      type: string
+    type: array
+required:
+  - connectionGroupId
+  - label
+  - tags
+type: object

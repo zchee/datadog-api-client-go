@@ -1,0 +1,38 @@
+description: The JSON:API attributes of the SBOM.
+properties:
+  bomFormat:
+    description: >-
+      Specifies the format of the BOM. This helps to identify the file as
+      CycloneDX since BOM do not have a filename convention nor does JSON schema
+      support namespaces. This value MUST be `CycloneDX`.
+    example: CycloneDX
+    type: string
+  components:
+    description: A list of software and hardware components.
+    items:
+      $ref: ./SBOMComponent.yaml
+    type: array
+  metadata:
+    $ref: ./SBOMMetadata.yaml
+  serialNumber:
+    description: >-
+      Every BOM generated has a unique serial number, even if the contents of
+      the BOM have not changed overt time. The serial number follows
+      [RFC-4122](https://datatracker.ietf.org/doc/html/rfc4122)
+    example: urn:uuid:f7119d2f-1vgh-24b5-91f0-12010db72da7
+    type: string
+  specVersion:
+    $ref: ./SpecVersion.yaml
+  version:
+    description: It increments when a BOM is modified. The default value is 1.
+    example: 1
+    format: int64
+    type: integer
+required:
+  - bomFormat
+  - specVersion
+  - components
+  - metadata
+  - serialNumber
+  - version
+type: object

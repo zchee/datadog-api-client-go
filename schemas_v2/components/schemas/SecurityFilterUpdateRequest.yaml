@@ -1,0 +1,7 @@
+description: The new security filter body.
+properties:
+  data:
+    $ref: ./SecurityFilterUpdateData.yaml
+required:
+  - data
+type: object

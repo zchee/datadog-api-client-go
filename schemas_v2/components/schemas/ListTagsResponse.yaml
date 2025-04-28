@@ -1,0 +1,5 @@
+description: List tags response.
+properties:
+  data:
+    $ref: ./ListTagsResponseData.yaml
+type: object

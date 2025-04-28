@@ -1,0 +1,7 @@
+description: Wrapper object for a single bulk tag deletion request.
+properties:
+  data:
+    $ref: ./MetricBulkTagConfigDelete.yaml
+required:
+  - data
+type: object

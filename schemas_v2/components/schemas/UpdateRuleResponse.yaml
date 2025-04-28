@@ -1,0 +1,5 @@
+description: The response from a rule update request.
+properties:
+  data:
+    $ref: ./UpdateRuleResponseData.yaml
+type: object

@@ -1,0 +1,8 @@
+default: add_fields
+description: The processor type. The value should always be `add_fields`.
+enum:
+  - add_fields
+example: add_fields
+type: string
+x-enum-varnames:
+  - ADD_FIELDS

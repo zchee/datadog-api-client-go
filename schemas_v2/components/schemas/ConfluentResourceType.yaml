@@ -1,0 +1,8 @@
+default: confluent-cloud-resources
+description: The JSON:API type for this request.
+enum:
+  - confluent-cloud-resources
+example: confluent-cloud-resources
+type: string
+x-enum-varnames:
+  - CONFLUENT_CLOUD_RESOURCES

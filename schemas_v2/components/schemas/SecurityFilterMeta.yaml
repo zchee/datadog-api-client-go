@@ -1,0 +1,9 @@
+description: Optional metadata associated to the response.
+properties:
+  warning:
+    description: A warning message.
+    example: >-
+      All the security filters are disabled. As a result, no logs are being
+      analyzed.
+    type: string
+type: object

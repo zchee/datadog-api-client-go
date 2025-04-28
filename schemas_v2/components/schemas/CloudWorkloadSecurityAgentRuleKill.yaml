@@ -1,0 +1,6 @@
+description: Kill system call applied on the container matching the rule
+properties:
+  signal:
+    description: Supported signals for the kill system call.
+    type: string
+type: object

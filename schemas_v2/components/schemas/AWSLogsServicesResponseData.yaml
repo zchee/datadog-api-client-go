@@ -1,0 +1,15 @@
+description: AWS Logs Services response body
+properties:
+  attributes:
+    $ref: ./AWSLogsServicesResponseAttributes.yaml
+  id:
+    default: logs_services
+    description: The `AWSLogsServicesResponseData` `id`.
+    example: logs_services
+    type: string
+  type:
+    $ref: ./AWSLogsServicesResponseDataType.yaml
+required:
+  - id
+  - type
+type: object

@@ -1,0 +1,8 @@
+default: project
+description: Project resource type
+enum:
+  - project
+example: project
+type: string
+x-enum-varnames:
+  - PROJECT

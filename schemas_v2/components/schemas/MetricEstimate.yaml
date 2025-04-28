@@ -1,0 +1,9 @@
+description: Object for a metric cardinality estimate.
+properties:
+  attributes:
+    $ref: ./MetricEstimateAttributes.yaml
+  id:
+    $ref: ./MetricName.yaml
+  type:
+    $ref: ./MetricEstimateResourceType.yaml
+type: object

@@ -1,0 +1,28 @@
+get:
+  description: Get a signal's details.
+  operationId: GetSecurityMonitoringSignal
+  parameters:
+    - $ref: ../components/parameters/SignalID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringSignalResponse.yaml
+      description: OK
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_signals_read
+  summary: Get a signal's details
+  tags:
+    - Security Monitoring
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_signals_read

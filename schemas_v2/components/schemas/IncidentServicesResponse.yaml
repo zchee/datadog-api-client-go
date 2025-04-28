@@ -1,0 +1,21 @@
+description: Response with a list of incident service payloads.
+properties:
+  data:
+    description: An array of incident services.
+    example:
+      - id: 00000000-0000-0000-0000-000000000000
+        type: services
+    items:
+      $ref: ./IncidentServiceResponseData.yaml
+    type: array
+  included:
+    description: Included related resources which the user requested.
+    items:
+      $ref: ./IncidentServiceIncludedItems.yaml
+    readOnly: true
+    type: array
+  meta:
+    $ref: ./IncidentResponseMeta.yaml
+required:
+  - data
+type: object

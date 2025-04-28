@@ -1,0 +1,23 @@
+description: The JSON:API attributes of the finding.
+properties:
+  evaluation:
+    $ref: ./FindingEvaluation.yaml
+  evaluation_changed_at:
+    $ref: ./FindingEvaluationChangedAt.yaml
+  mute:
+    $ref: ./FindingMute.yaml
+  resource:
+    $ref: ./FindingResource.yaml
+  resource_discovery_date:
+    $ref: ./FindingResourceDiscoveryDate.yaml
+  resource_type:
+    $ref: ./FindingResourceType.yaml
+  rule:
+    $ref: ./FindingRule.yaml
+  status:
+    $ref: ./FindingStatus.yaml
+  tags:
+    $ref: ./FindingTags.yaml
+  vulnerability_type:
+    $ref: ./FindingVulnerabilityType.yaml
+type: object

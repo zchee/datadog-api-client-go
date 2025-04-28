@@ -1,0 +1,9 @@
+description: The response object for the RUM events aggregate API endpoint.
+properties:
+  data:
+    $ref: ./RUMAggregationBucketsResponse.yaml
+  links:
+    $ref: ./RUMResponseLinks.yaml
+  meta:
+    $ref: ./RUMResponseMetadata.yaml
+type: object

@@ -1,0 +1,43 @@
+post:
+  description: >-
+    Create a new workflow, returning the workflow ID. This API requires an
+    application key scoped with the `workflows_write` permission.
+  operationId: CreateWorkflow
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CreateWorkflowRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreateWorkflowResponse.yaml
+      description: Successfully created a workflow.
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Too many requests
+  summary: Create a Workflow
+  tags:
+    - Workflow Automation
+  x-permission:
+    operator: OR
+    permissions:
+      - workflows_write

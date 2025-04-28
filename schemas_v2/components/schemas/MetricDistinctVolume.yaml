@@ -1,0 +1,9 @@
+description: Object for a single metric's distinct volume.
+properties:
+  attributes:
+    $ref: ./MetricDistinctVolumeAttributes.yaml
+  id:
+    $ref: ./MetricName.yaml
+  type:
+    $ref: ./MetricDistinctVolumeType.yaml
+type: object

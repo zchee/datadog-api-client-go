@@ -1,0 +1,7 @@
+description: RUM application update request.
+properties:
+  data:
+    $ref: ./RUMApplicationUpdate.yaml
+required:
+  - data
+type: object

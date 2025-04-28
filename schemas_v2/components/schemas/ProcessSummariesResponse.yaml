@@ -1,0 +1,10 @@
+description: List of process summaries.
+properties:
+  data:
+    description: Array of process summary objects.
+    items:
+      $ref: ./ProcessSummary.yaml
+    type: array
+  meta:
+    $ref: ./ProcessSummariesMeta.yaml
+type: object

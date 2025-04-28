@@ -1,0 +1,51 @@
+description: Attributes from the monitor that triggered the event.
+nullable: true
+properties:
+  created_at:
+    description: The POSIX timestamp of the monitor's creation in nanoseconds.
+    example: 1646318692000
+    format: int64
+    type: integer
+  group_status:
+    description: Monitor group status used when there is no `result_groups`.
+    format: int32
+    maximum: 2147483647
+    type: integer
+  groups:
+    description: Groups to which the monitor belongs.
+    items:
+      description: A group.
+      type: string
+    type: array
+  id:
+    description: The monitor ID.
+    format: int64
+    type: integer
+  message:
+    description: The monitor message.
+    type: string
+  modified:
+    description: The monitor's last-modified timestamp.
+    format: int64
+    type: integer
+  name:
+    description: The monitor name.
+    type: string
+  query:
+    description: The query that triggers the alert.
+    type: string
+  tags:
+    description: A list of tags attached to the monitor.
+    example:
+      - environment:test
+    items:
+      description: A tag.
+      type: string
+    type: array
+  templated_name:
+    description: The templated name of the monitor before resolving any template variables.
+    type: string
+  type:
+    description: The monitor type.
+    type: string
+type: object

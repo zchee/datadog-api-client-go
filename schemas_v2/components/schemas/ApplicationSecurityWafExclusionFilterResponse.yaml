@@ -1,0 +1,5 @@
+description: Response object for a single WAF exclusion filter.
+properties:
+  data:
+    $ref: ./ApplicationSecurityWafExclusionFilterResource.yaml
+type: object

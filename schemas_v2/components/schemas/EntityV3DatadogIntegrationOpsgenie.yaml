@@ -1,0 +1,15 @@
+additionalProperties: false
+description: An Opsgenie integration schema.
+properties:
+  region:
+    description: The region for the Opsgenie integration.
+    minLength: 1
+    type: string
+  serviceURL:
+    description: The service URL for the Opsgenie integration.
+    example: https://www.opsgenie.com/service/shopping-cart
+    minLength: 1
+    type: string
+required:
+  - serviceURL
+type: object

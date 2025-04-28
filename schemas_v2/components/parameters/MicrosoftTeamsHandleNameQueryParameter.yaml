@@ -1,0 +1,6 @@
+description: Your tenant-based handle name.
+in: query
+name: name
+required: false
+schema:
+  type: string

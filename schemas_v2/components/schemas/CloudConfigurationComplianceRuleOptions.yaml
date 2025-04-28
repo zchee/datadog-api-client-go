@@ -1,0 +1,23 @@
+additionalProperties: {}
+description: >
+  Options for cloud_configuration rules.
+
+  Fields `resourceType` and `regoRule` are mandatory when managing custom
+  `cloud_configuration` rules.
+properties:
+  complexRule:
+    description: >
+      Whether the rule is a complex one.
+
+      Must be set to true if `regoRule.resourceTypes` contains more than one
+      item. Defaults to false.
+    type: boolean
+  regoRule:
+    $ref: ./CloudConfigurationRegoRule.yaml
+  resourceType:
+    description: >
+      Main resource type to be checked by the rule. It should be specified again
+      in `regoRule.resourceTypes`.
+    example: aws_acm
+    type: string
+type: object

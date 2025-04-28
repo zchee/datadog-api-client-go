@@ -1,0 +1,17 @@
+description: Response with multiple teams
+properties:
+  data:
+    description: Teams response data
+    items:
+      $ref: ./Team.yaml
+    type: array
+  included:
+    description: Resources related to the team
+    items:
+      $ref: ./TeamIncluded.yaml
+    type: array
+  links:
+    $ref: ./TeamsResponseLinks.yaml
+  meta:
+    $ref: ./TeamsResponseMeta.yaml
+type: object

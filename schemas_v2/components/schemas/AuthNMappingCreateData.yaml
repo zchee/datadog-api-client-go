@@ -1,0 +1,11 @@
+description: Data for creating an AuthN Mapping.
+properties:
+  attributes:
+    $ref: ./AuthNMappingCreateAttributes.yaml
+  relationships:
+    $ref: ./AuthNMappingCreateRelationships.yaml
+  type:
+    $ref: ./AuthNMappingsType.yaml
+required:
+  - type
+type: object

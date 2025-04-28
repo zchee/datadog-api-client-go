@@ -1,0 +1,7 @@
+description: PagerDuty integration for the service.
+properties:
+  service-url:
+    description: PagerDuty service url.
+    example: https://my-org.pagerduty.com/service-directory/PMyService
+    type: string
+type: object

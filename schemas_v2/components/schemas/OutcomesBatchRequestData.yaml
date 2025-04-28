@@ -1,0 +1,7 @@
+description: Scorecard outcomes batch request data.
+properties:
+  attributes:
+    $ref: ./OutcomesBatchAttributes.yaml
+  type:
+    $ref: ./OutcomesBatchType.yaml
+type: object

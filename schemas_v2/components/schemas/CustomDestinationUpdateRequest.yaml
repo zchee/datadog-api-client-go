@@ -1,0 +1,5 @@
+description: The custom destination.
+properties:
+  data:
+    $ref: ./CustomDestinationUpdateRequestDefinition.yaml
+type: object

@@ -1,0 +1,10 @@
+description: Relationship to incident responders.
+properties:
+  data:
+    description: An array of incident responders.
+    items:
+      $ref: ./RelationshipToIncidentResponderData.yaml
+    type: array
+required:
+  - data
+type: object

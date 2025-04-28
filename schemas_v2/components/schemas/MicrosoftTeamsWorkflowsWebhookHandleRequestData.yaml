@@ -1,0 +1,10 @@
+description: Workflows Webhook handle data from a response.
+properties:
+  attributes:
+    $ref: ./MicrosoftTeamsWorkflowsWebhookHandleRequestAttributes.yaml
+  type:
+    $ref: ./MicrosoftTeamsWorkflowsWebhookHandleType.yaml
+required:
+  - type
+  - attributes
+type: object

@@ -1,0 +1,34 @@
+description: Supported teams field.
+enum:
+  - id
+  - name
+  - handle
+  - summary
+  - description
+  - avatar
+  - banner
+  - visible_modules
+  - hidden_modules
+  - created_at
+  - modified_at
+  - user_count
+  - link_count
+  - team_links
+  - user_team_permissions
+type: string
+x-enum-varnames:
+  - ID
+  - NAME
+  - HANDLE
+  - SUMMARY
+  - DESCRIPTION
+  - AVATAR
+  - BANNER
+  - VISIBLE_MODULES
+  - HIDDEN_MODULES
+  - CREATED_AT
+  - MODIFIED_AT
+  - USER_COUNT
+  - LINK_COUNT
+  - TEAM_LINKS
+  - USER_TEAM_PERMISSIONS

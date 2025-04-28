@@ -1,0 +1,119 @@
+delete:
+  description: Delete an on-call escalation policy
+  operationId: DeleteOnCallEscalationPolicy
+  parameters:
+    - description: The ID of the escalation policy
+      in: path
+      name: policy_id
+      required: true
+      schema:
+        example: a3000000-0000-0000-0000-000000000000
+        type: string
+  responses:
+    '204':
+      description: No Content
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Delete on-call escalation policy
+  tags:
+    - On-Call
+get:
+  description: Get an on-call escalation policy
+  operationId: GetOnCallEscalationPolicy
+  parameters:
+    - description: The ID of the escalation policy
+      in: path
+      name: policy_id
+      required: true
+      schema:
+        example: a3000000-0000-0000-0000-000000000000
+        type: string
+    - description: >-
+        Comma-separated list of included relationships to be returned. Allowed
+        values: `teams`, `steps`, `steps.targets`.
+      in: query
+      name: include
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EscalationPolicy.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Get on-call escalation policy
+  tags:
+    - On-Call
+put:
+  description: Update an on-call escalation policy
+  operationId: UpdateOnCallEscalationPolicy
+  parameters:
+    - description: The ID of the escalation policy
+      in: path
+      name: policy_id
+      required: true
+      schema:
+        example: a3000000-0000-0000-0000-000000000000
+        type: string
+    - description: >-
+        Comma-separated list of included relationships to be returned. Allowed
+        values: `teams`, `steps`, `steps.targets`.
+      in: query
+      name: include
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/EscalationPolicyUpdateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EscalationPolicy.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Update on-call escalation policy
+  tags:
+    - On-Call

@@ -1,0 +1,10 @@
+description: Object for updating a single WAF exclusion filter.
+properties:
+  attributes:
+    $ref: ./ApplicationSecurityWafExclusionFilterUpdateAttributes.yaml
+  type:
+    $ref: ./ApplicationSecurityWafExclusionFilterType.yaml
+required:
+  - attributes
+  - type
+type: object

@@ -1,0 +1,12 @@
+description: Custom header access authentication.
+properties:
+  header_name:
+    description: The header name of the authentication.
+    example: CUSTOM-HEADER-NAME
+    type: string
+  type:
+    $ref: ./CustomDestinationResponseHttpDestinationAuthCustomHeaderType.yaml
+required:
+  - type
+  - header_name
+type: object

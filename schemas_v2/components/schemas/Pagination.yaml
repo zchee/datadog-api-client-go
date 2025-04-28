@@ -1,0 +1,11 @@
+description: Pagination object.
+properties:
+  total_count:
+    description: Total count.
+    format: int64
+    type: integer
+  total_filtered_count:
+    description: Total count of elements matched by the filter.
+    format: int64
+    type: integer
+type: object

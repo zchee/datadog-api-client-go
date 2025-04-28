@@ -1,0 +1,9 @@
+description: Include all services.
+properties:
+  include_all:
+    description: Include all services.
+    example: false
+    type: boolean
+required:
+  - include_all
+type: object

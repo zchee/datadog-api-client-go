@@ -1,0 +1,6 @@
+description: The ID of a group of rules.
+in: path
+name: group_id
+required: true
+schema:
+  type: string

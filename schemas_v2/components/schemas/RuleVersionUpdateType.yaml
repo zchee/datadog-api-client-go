@@ -1,0 +1,10 @@
+description: The type of change.
+enum:
+  - create
+  - update
+  - delete
+type: string
+x-enum-varnames:
+  - CREATE
+  - UPDATE
+  - DELETE

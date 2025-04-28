@@ -1,0 +1,15 @@
+description: Powerpack group widget definition of individual widgets.
+properties:
+  definition:
+    additionalProperties: {}
+    description: Information about widget.
+    example:
+      definition:
+        content: example
+        type: note
+    type: object
+  layout:
+    $ref: ./PowerpackInnerWidgetLayout.yaml
+required:
+  - definition
+type: object

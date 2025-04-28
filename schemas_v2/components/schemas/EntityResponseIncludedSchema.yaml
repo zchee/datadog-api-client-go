@@ -1,0 +1,10 @@
+description: Included detail entity schema.
+properties:
+  attributes:
+    $ref: ./EntityResponseIncludedSchemaAttributes.yaml
+  id:
+    description: Entity ID.
+    type: string
+  type:
+    $ref: ./EntityResponseIncludedSchemaType.yaml
+type: object

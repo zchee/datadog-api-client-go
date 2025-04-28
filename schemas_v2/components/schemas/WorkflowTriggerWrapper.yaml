@@ -1,0 +1,12 @@
+description: Schema for a Workflow-based trigger.
+properties:
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+  workflowTrigger:
+    description: >-
+      Trigger a workflow from the Datadog UI. Only required if no other trigger
+      exists.
+    type: object
+required:
+  - workflowTrigger
+type: object

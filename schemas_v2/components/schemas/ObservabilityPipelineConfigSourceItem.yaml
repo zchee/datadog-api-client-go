@@ -1,0 +1,4 @@
+description: A data source for the pipeline.
+oneOf:
+  - $ref: ./ObservabilityPipelineKafkaSource.yaml
+  - $ref: ./ObservabilityPipelineDatadogAgentSource.yaml

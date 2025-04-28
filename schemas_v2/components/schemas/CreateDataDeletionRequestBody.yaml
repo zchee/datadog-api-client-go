@@ -1,0 +1,7 @@
+description: Object needed to create a data deletion request.
+properties:
+  data:
+    $ref: ./CreateDataDeletionRequestBodyData.yaml
+required:
+  - data
+type: object

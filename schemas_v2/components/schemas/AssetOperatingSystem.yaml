@@ -1,0 +1,13 @@
+description: Asset operating system.
+properties:
+  description:
+    description: Operating system version.
+    example: '24.04'
+    type: string
+  name:
+    description: Operating system name.
+    example: ubuntu
+    type: string
+required:
+  - name
+type: object

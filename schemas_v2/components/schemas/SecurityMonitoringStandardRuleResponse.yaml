@@ -1,0 +1,111 @@
+description: Rule.
+properties:
+  cases:
+    description: Cases for generating signals.
+    items:
+      $ref: ./SecurityMonitoringRuleCase.yaml
+    type: array
+  complianceSignalOptions:
+    $ref: ./CloudConfigurationRuleComplianceSignalOptions.yaml
+  createdAt:
+    description: When the rule was created, timestamp in milliseconds.
+    format: int64
+    type: integer
+  creationAuthorId:
+    description: User ID of the user who created the rule.
+    format: int64
+    type: integer
+  defaultTags:
+    description: Default Tags for default rules (included in tags)
+    example:
+      - security:attacks
+    items:
+      description: Default Tag.
+      type: string
+    type: array
+  deprecationDate:
+    description: When the rule will be deprecated, timestamp in milliseconds.
+    format: int64
+    type: integer
+  filters:
+    description: >-
+      Additional queries to filter matched events before they are processed.
+      This field is deprecated for log detection, signal correlation, and
+      workload security rules.
+    items:
+      $ref: ./SecurityMonitoringFilter.yaml
+    type: array
+  groupSignalsBy:
+    description: >-
+      Additional grouping to perform on top of the existing groups in the query
+      section. Must be a subset of the existing groups.
+    example:
+      - service
+    items:
+      description: Field to group by.
+      type: string
+    type: array
+  hasExtendedTitle:
+    description: >-
+      Whether the notifications include the triggering group-by values in their
+      title.
+    type: boolean
+  id:
+    description: The ID of the rule.
+    type: string
+  isDefault:
+    description: Whether the rule is included by default.
+    type: boolean
+  isDeleted:
+    description: Whether the rule has been deleted.
+    type: boolean
+  isEnabled:
+    description: Whether the rule is enabled.
+    type: boolean
+  message:
+    description: Message for generated signals.
+    type: string
+  name:
+    description: The name of the rule.
+    type: string
+  options:
+    $ref: ./SecurityMonitoringRuleOptions.yaml
+  queries:
+    description: Queries for selecting logs which are part of the rule.
+    items:
+      $ref: ./SecurityMonitoringStandardRuleQuery.yaml
+    type: array
+  referenceTables:
+    description: Reference tables for the rule.
+    items:
+      $ref: ./SecurityMonitoringReferenceTable.yaml
+    type: array
+  tags:
+    description: Tags for generated signals.
+    items:
+      description: Tag.
+      type: string
+    type: array
+  thirdPartyCases:
+    description: >-
+      Cases for generating signals from third-party rules. Only available for
+      third-party rules.
+    example: []
+    items:
+      $ref: ./SecurityMonitoringThirdPartyRuleCase.yaml
+    type: array
+  type:
+    $ref: ./SecurityMonitoringRuleTypeRead.yaml
+  updateAuthorId:
+    description: User ID of the user who updated the rule.
+    format: int64
+    type: integer
+  updatedAt:
+    description: The date the rule was last updated, in milliseconds.
+    format: int64
+    type: integer
+  version:
+    description: The version of the rule.
+    format: int64
+    type: integer
+type: object

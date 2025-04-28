@@ -1,0 +1,76 @@
+delete:
+  description: Delete a RUM retention filter for a RUM application.
+  operationId: DeleteRetentionFilter
+  parameters:
+    - $ref: ../components/parameters/RumApplicationIDParameter.yaml
+    - $ref: ../components/parameters/RumRetentionFilterIDParameter.yaml
+  responses:
+    '204':
+      description: No Content
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a RUM retention filter
+  tags:
+    - Rum Retention Filters
+get:
+  description: Get a RUM retention filter for a RUM application.
+  operationId: GetRetentionFilter
+  parameters:
+    - $ref: ../components/parameters/RumApplicationIDParameter.yaml
+    - $ref: ../components/parameters/RumRetentionFilterIDParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RumRetentionFilterResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a RUM retention filter
+  tags:
+    - Rum Retention Filters
+patch:
+  description: >-
+    Update a RUM retention filter for a RUM application.
+
+    Returns RUM retention filter objects from the request body when the request
+    is successful.
+  operationId: UpdateRetentionFilter
+  parameters:
+    - $ref: ../components/parameters/RumApplicationIDParameter.yaml
+    - $ref: ../components/parameters/RumRetentionFilterIDParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RumRetentionFilterUpdateRequest.yaml
+    description: New definition of the RUM retention filter.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RumRetentionFilterResponse.yaml
+      description: Updated
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a RUM retention filter
+  tags:
+    - Rum Retention Filters
+  x-codegen-request-body-name: body

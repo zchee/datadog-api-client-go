@@ -1,0 +1,24 @@
+get:
+  description: Get a list of AWS services that can send logs to Datadog.
+  operationId: ListAWSLogsServices
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AWSLogsServicesResponse.yaml
+      description: AWS Logs Services List object
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get list of AWS log ready services
+  tags:
+    - AWS Logs Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_read
+  x-unstable: |-
+    **Note: This endpoint is in public beta. If you have any feedback,
+    contact [Datadog support](https://docs.datadoghq.com/help/).**

@@ -1,0 +1,7 @@
+description: The RUM retention filter body to update.
+properties:
+  data:
+    $ref: ./RumRetentionFilterUpdateData.yaml
+required:
+  - data
+type: object

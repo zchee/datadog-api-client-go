@@ -1,0 +1,46 @@
+get:
+  description: Get the on-demand concurrency cap.
+  operationId: GetOnDemandConcurrencyCap
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OnDemandConcurrencyCapResponse.yaml
+      description: OK
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the on-demand concurrency cap
+  tags:
+    - Synthetics
+  x-permission:
+    operator: OR
+    permissions:
+      - billing_read
+post:
+  description: Save new value for on-demand concurrency cap.
+  operationId: SetOnDemandConcurrencyCap
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/OnDemandConcurrencyCapAttributes.yaml
+    description: .
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OnDemandConcurrencyCapResponse.yaml
+      description: OK
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Save new value for on-demand concurrency cap
+  tags:
+    - Synthetics
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - billing_edit

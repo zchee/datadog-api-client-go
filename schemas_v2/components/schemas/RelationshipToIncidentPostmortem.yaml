@@ -1,0 +1,11 @@
+description: A relationship reference for postmortems.
+example:
+  data:
+    id: 00000000-0000-abcd-3000-000000000000
+    type: incident_postmortems
+properties:
+  data:
+    $ref: ./RelationshipToIncidentPostmortemData.yaml
+required:
+  - data
+type: object

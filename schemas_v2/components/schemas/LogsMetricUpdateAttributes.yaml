@@ -1,0 +1,12 @@
+description: The log-based metric properties that will be updated.
+properties:
+  compute:
+    $ref: ./LogsMetricUpdateCompute.yaml
+  filter:
+    $ref: ./LogsMetricFilter.yaml
+  group_by:
+    description: The rules for the group by.
+    items:
+      $ref: ./LogsMetricGroupBy.yaml
+    type: array
+type: object

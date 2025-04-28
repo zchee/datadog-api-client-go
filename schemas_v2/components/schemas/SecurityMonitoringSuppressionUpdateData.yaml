@@ -1,0 +1,10 @@
+description: The new suppression properties; partial updates are supported.
+properties:
+  attributes:
+    $ref: ./SecurityMonitoringSuppressionUpdateAttributes.yaml
+  type:
+    $ref: ./SecurityMonitoringSuppressionType.yaml
+required:
+  - type
+  - attributes
+type: object

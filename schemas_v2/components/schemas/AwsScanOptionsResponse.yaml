@@ -1,0 +1,5 @@
+description: Response object that includes the scan options of an AWS account.
+properties:
+  data:
+    $ref: ./AwsScanOptionsData.yaml
+type: object

@@ -1,0 +1,5 @@
+description: Response of AWS CUR config.
+properties:
+  data:
+    $ref: ./AwsCURConfig.yaml
+type: object

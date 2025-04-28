@@ -1,0 +1,7 @@
+description: Service definition attributes.
+properties:
+  meta:
+    $ref: ./ServiceDefinitionMeta.yaml
+  schema:
+    $ref: ./ServiceDefinitionSchema.yaml
+type: object

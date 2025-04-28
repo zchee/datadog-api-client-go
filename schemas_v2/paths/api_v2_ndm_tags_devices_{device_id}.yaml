@@ -1,0 +1,60 @@
+get:
+  description: Get the list of tags for a device.
+  operationId: ListDeviceUserTags
+  parameters:
+    - description: The id of the device to fetch tags for.
+      example: example:1.2.3.4
+      in: path
+      name: device_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListTagsResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the list of tags for a device
+  tags:
+    - Network Device Monitoring
+patch:
+  description: Update the tags for a device.
+  operationId: UpdateDeviceUserTags
+  parameters:
+    - description: The id of the device to update tags for.
+      example: example:1.2.3.4
+      in: path
+      name: device_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ListTagsResponse.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListTagsResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update the tags for a device
+  tags:
+    - Network Device Monitoring

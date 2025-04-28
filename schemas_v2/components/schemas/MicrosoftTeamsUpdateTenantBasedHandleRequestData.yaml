@@ -1,0 +1,10 @@
+description: Tenant-based handle data from a response.
+properties:
+  attributes:
+    $ref: ./MicrosoftTeamsTenantBasedHandleAttributes.yaml
+  type:
+    $ref: ./MicrosoftTeamsTenantBasedHandleType.yaml
+required:
+  - type
+  - attributes
+type: object

@@ -1,0 +1,17 @@
+description: The object describing attributes of a RUM retention filter to create.
+properties:
+  enabled:
+    $ref: ./RumRetentionFilterEnabled.yaml
+  event_type:
+    $ref: ./RumRetentionFilterEventType.yaml
+  name:
+    $ref: ./RunRetentionFilterName.yaml
+  query:
+    $ref: ./RumRetentionFilterQuery.yaml
+  sample_rate:
+    $ref: ./RumRetentionFilterSampleRate.yaml
+required:
+  - event_type
+  - name
+  - sample_rate
+type: object

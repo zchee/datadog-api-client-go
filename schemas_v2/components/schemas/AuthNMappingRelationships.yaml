@@ -1,0 +1,9 @@
+description: All relationships associated with AuthN Mapping.
+properties:
+  role:
+    $ref: ./RelationshipToRole.yaml
+  saml_assertion_attribute:
+    $ref: ./RelationshipToSAMLAssertionAttribute.yaml
+  team:
+    $ref: ./RelationshipToTeam.yaml
+type: object

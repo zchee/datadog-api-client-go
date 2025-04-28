@@ -1,0 +1,4 @@
+description: Billing dimensions mapping data.
+items:
+  $ref: ./BillingDimensionsMappingBodyItem.yaml
+type: array

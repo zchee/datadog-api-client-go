@@ -1,0 +1,5 @@
+description: On-demand concurrency cap response.
+properties:
+  data:
+    $ref: ./OnDemandConcurrencyCap.yaml
+type: object

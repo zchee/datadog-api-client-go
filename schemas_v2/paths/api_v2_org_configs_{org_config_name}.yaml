@@ -1,0 +1,63 @@
+get:
+  description: Return the name, description, and value of a specific Org Config.
+  operationId: GetOrgConfig
+  parameters:
+    - $ref: ../components/parameters/OrgConfigName.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OrgConfigGetResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a specific Org Config value
+  tags:
+    - Organizations
+  x-permission:
+    operator: OPEN
+    permissions: []
+patch:
+  description: Update the value of a specific Org Config.
+  operationId: UpdateOrgConfig
+  parameters:
+    - $ref: ../components/parameters/OrgConfigName.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/OrgConfigWriteRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OrgConfigGetResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a specific Org Config
+  tags:
+    - Organizations
+  x-permission:
+    operator: OR
+    permissions:
+      - org_management

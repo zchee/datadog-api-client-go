@@ -1,0 +1,14 @@
+description: Incident type response data.
+properties:
+  attributes:
+    $ref: ./IncidentTypeAttributes.yaml
+  id:
+    description: The incident type's ID.
+    example: 00000000-0000-0000-0000-000000000000
+    type: string
+  type:
+    $ref: ./IncidentTypeType.yaml
+required:
+  - id
+  - type
+type: object

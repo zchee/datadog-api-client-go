@@ -1,0 +1,11 @@
+description: Monitor notification rule data.
+properties:
+  attributes:
+    $ref: ./MonitorNotificationRuleResponseAttributes.yaml
+  id:
+    $ref: ./MonitorNotificationRuleId.yaml
+  relationships:
+    $ref: ./MonitorNotificationRuleRelationships.yaml
+  type:
+    $ref: ./MonitorNotificationRuleResourceType.yaml
+type: object

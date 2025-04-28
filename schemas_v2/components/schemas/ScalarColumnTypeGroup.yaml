@@ -1,0 +1,8 @@
+default: group
+description: The type of column present for groups.
+enum:
+  - group
+example: group
+type: string
+x-enum-varnames:
+  - GROUP

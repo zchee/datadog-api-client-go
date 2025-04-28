@@ -1,0 +1,15 @@
+description: An RRULE-based recurring downtime.
+properties:
+  duration:
+    $ref: ./DowntimeScheduleRecurrenceDuration.yaml
+  rrule:
+    $ref: ./DowntimeScheduleRecurrenceRrule.yaml
+  start:
+    description: >-
+      ISO-8601 Datetime to start the downtime. Must not include a UTC offset. If
+      not provided, the
+
+      downtime starts the moment it is created.
+    example: 2020-01-02T03:04
+    type: string
+type: object

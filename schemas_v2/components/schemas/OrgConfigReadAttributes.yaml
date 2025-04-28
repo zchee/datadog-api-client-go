@@ -1,0 +1,27 @@
+description: Readable attributes of an Org Config.
+properties:
+  description:
+    description: The description of an Org Config.
+    example: Frobulate the turbo encabulator manifold
+    type: string
+  modified_at:
+    description: The timestamp of the last Org Config update (if any).
+    format: date-time
+    nullable: true
+    type: string
+  name:
+    description: The machine-friendly name of an Org Config.
+    example: monitor_timezone
+    type: string
+  value:
+    description: The value of an Org Config.
+  value_type:
+    description: The type of an Org Config value.
+    example: bool
+    type: string
+required:
+  - name
+  - description
+  - value_type
+  - value
+type: object

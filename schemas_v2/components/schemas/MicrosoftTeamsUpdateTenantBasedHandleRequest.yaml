@@ -1,0 +1,7 @@
+description: Update tenant-based handle request.
+properties:
+  data:
+    $ref: ./MicrosoftTeamsUpdateTenantBasedHandleRequestData.yaml
+required:
+  - data
+type: object

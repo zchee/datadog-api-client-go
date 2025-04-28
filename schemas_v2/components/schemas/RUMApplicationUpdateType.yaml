@@ -1,0 +1,8 @@
+default: rum_application_update
+description: RUM application update type.
+enum:
+  - rum_application_update
+example: rum_application_update
+type: string
+x-enum-varnames:
+  - RUM_APPLICATION_UPDATE

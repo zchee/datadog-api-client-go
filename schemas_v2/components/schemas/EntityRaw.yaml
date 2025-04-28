@@ -1,0 +1,7 @@
+description: Entity definition in raw JSON or YAML representation.
+example: |
+  apiVersion: v3
+  kind: service
+  metadata:
+    name: myservice
+type: string

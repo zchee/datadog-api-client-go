@@ -1,0 +1,16 @@
+description: Data related to the workflow.
+properties:
+  attributes:
+    $ref: ./WorkflowDataAttributes.yaml
+  id:
+    description: The workflow identifier
+    readOnly: true
+    type: string
+  relationships:
+    $ref: ./WorkflowDataRelationships.yaml
+  type:
+    $ref: ./WorkflowDataType.yaml
+required:
+  - type
+  - attributes
+type: object

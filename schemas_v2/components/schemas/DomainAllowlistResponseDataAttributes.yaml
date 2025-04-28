@@ -1,0 +1,11 @@
+description: The details of the email domain allowlist.
+properties:
+  domains:
+    description: The list of domains in the email domain allowlist.
+    items:
+      type: string
+    type: array
+  enabled:
+    description: Whether the email domain allowlist is enabled for the org.
+    type: boolean
+type: object

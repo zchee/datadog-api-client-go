@@ -1,0 +1,10 @@
+description: The expected response schema when listing findings.
+properties:
+  data:
+    $ref: ./ListFindingsData.yaml
+  meta:
+    $ref: ./ListFindingsMeta.yaml
+required:
+  - data
+  - meta
+type: object

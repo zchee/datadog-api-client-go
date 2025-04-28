@@ -1,0 +1,10 @@
+description: Object to create a downtime.
+properties:
+  attributes:
+    $ref: ./DowntimeCreateRequestAttributes.yaml
+  type:
+    $ref: ./DowntimeResourceType.yaml
+required:
+  - type
+  - attributes
+type: object

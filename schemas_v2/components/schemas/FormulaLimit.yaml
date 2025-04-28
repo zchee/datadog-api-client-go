@@ -1,0 +1,13 @@
+description: |-
+  Message for specifying limits to the number of values returned by a query.
+  This limit is only for scalar queries and has no effect on timeseries queries.
+properties:
+  count:
+    description: The number of results to which to limit.
+    example: 10
+    format: int32
+    maximum: 2147483647
+    type: integer
+  order:
+    $ref: ./QuerySortOrder.yaml
+type: object

@@ -1,0 +1,20 @@
+description: Attributes used to create an application Key.
+properties:
+  name:
+    description: Name of the application key.
+    example: Application Key for managing dashboards
+    type: string
+  scopes:
+    description: Array of scopes to grant the application key.
+    example:
+      - dashboards_read
+      - dashboards_write
+      - dashboards_public_share
+    items:
+      description: Name of scope.
+      type: string
+    nullable: true
+    type: array
+required:
+  - name
+type: object

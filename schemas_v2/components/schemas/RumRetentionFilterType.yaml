@@ -1,0 +1,8 @@
+default: retention_filters
+description: The type of the resource. The value should always be retention_filters.
+enum:
+  - retention_filters
+example: retention_filters
+type: string
+x-enum-varnames:
+  - RETENTION_FILTERS

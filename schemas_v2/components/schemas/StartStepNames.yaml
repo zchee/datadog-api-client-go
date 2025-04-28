@@ -1,0 +1,7 @@
+description: A list of steps that run first after a trigger fires.
+example:
+  - ''
+items:
+  description: The `StartStepNames` `items`.
+  type: string
+type: array

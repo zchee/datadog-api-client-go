@@ -1,0 +1,10 @@
+description: Project create
+properties:
+  attributes:
+    $ref: ./ProjectCreateAttributes.yaml
+  type:
+    $ref: ./ProjectResourceType.yaml
+required:
+  - attributes
+  - type
+type: object

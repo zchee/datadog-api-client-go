@@ -1,0 +1,6 @@
+description: The UUID of the incident integration metadata.
+in: path
+name: integration_metadata_id
+required: true
+schema:
+  type: string

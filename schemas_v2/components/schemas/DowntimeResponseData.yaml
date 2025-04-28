@@ -1,0 +1,13 @@
+description: Downtime data.
+properties:
+  attributes:
+    $ref: ./DowntimeResponseAttributes.yaml
+  id:
+    description: The downtime ID.
+    example: 00000000-0000-1234-0000-000000000000
+    type: string
+  relationships:
+    $ref: ./DowntimeRelationships.yaml
+  type:
+    $ref: ./DowntimeResourceType.yaml
+type: object

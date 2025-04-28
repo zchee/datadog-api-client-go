@@ -1,0 +1,14 @@
+description: Team permission setting
+properties:
+  attributes:
+    $ref: ./TeamPermissionSettingAttributes.yaml
+  id:
+    description: The team permission setting's identifier
+    example: TeamPermission-aeadc05e-98a8-11ec-ac2c-da7ad0900001-edit
+    type: string
+  type:
+    $ref: ./TeamPermissionSettingType.yaml
+required:
+  - id
+  - type
+type: object

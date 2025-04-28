@@ -1,0 +1,66 @@
+get:
+  description: >-
+    Get a list of all Workflows webhook handles from the Datadog Microsoft Teams
+    integration.
+  operationId: ListWorkflowsWebhookHandles
+  parameters:
+    - $ref: >-
+        ../components/parameters/MicrosoftTeamsWorkflowsWebhookHandleNameQueryParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/MicrosoftTeamsWorkflowsWebhookHandlesResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '412':
+      $ref: ../components/responses/PreconditionFailedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all Workflows webhook handles
+  tags:
+    - Microsoft Teams Integration
+post:
+  description: >-
+    Create a Workflows webhook handle in the Datadog Microsoft Teams
+    integration.
+  operationId: CreateWorkflowsWebhookHandle
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/MicrosoftTeamsCreateWorkflowsWebhookHandleRequest.yaml
+    description: Workflows Webhook handle payload.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/MicrosoftTeamsWorkflowsWebhookHandleResponse.yaml
+      description: CREATED
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '412':
+      $ref: ../components/responses/PreconditionFailedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create Workflows webhook handle
+  tags:
+    - Microsoft Teams Integration
+  x-codegen-request-body-name: body

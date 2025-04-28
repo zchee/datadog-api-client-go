@@ -1,0 +1,7 @@
+description: Request to create a DORA incident event.
+properties:
+  data:
+    $ref: ./DORAIncidentRequestData.yaml
+required:
+  - data
+type: object

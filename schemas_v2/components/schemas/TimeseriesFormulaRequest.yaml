@@ -1,0 +1,10 @@
+description: A single timeseries query to be executed.
+properties:
+  attributes:
+    $ref: ./TimeseriesFormulaRequestAttributes.yaml
+  type:
+    $ref: ./TimeseriesFormulaRequestType.yaml
+required:
+  - type
+  - attributes
+type: object

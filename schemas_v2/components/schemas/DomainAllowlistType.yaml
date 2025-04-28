@@ -1,0 +1,8 @@
+default: domain_allowlist
+description: Email domain allowlist allowlist type.
+enum:
+  - domain_allowlist
+example: domain_allowlist
+type: string
+x-enum-varnames:
+  - DOMAIN_ALLOWLIST

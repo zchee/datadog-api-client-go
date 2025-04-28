@@ -1,0 +1,8 @@
+description: Meta object containing the findings to be updated.
+properties:
+  findings:
+    description: Array of findings.
+    items:
+      $ref: ./BulkMuteFindingsRequestMetaFindings.yaml
+    type: array
+type: object

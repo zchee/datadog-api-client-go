@@ -1,0 +1,8 @@
+description: List of Azure accounts with configs.
+properties:
+  data:
+    description: An Azure config pair.
+    items:
+      $ref: ./AzureUCConfigPair.yaml
+    type: array
+type: object

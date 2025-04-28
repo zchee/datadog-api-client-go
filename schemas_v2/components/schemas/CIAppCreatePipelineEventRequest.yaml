@@ -1,0 +1,5 @@
+description: Request object.
+properties:
+  data:
+    $ref: ./CIAppCreatePipelineEventRequestData.yaml
+type: object

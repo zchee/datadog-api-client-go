@@ -1,0 +1,8 @@
+description: User invitations as returned by the API.
+properties:
+  data:
+    description: Array of user invitations.
+    items:
+      $ref: ./UserInvitationResponseData.yaml
+    type: array
+type: object

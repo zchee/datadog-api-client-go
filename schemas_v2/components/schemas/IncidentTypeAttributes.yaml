@@ -1,0 +1,53 @@
+description: Incident type's attributes.
+properties:
+  createdAt:
+    description: Timestamp when the incident type was created.
+    format: date-time
+    readOnly: true
+    type: string
+  createdBy:
+    description: >-
+      A unique identifier that represents the user that created the incident
+      type.
+    example: 00000000-0000-0000-0000-000000000000
+    readOnly: true
+    type: string
+  description:
+    description: Text that describes the incident type.
+    example: >-
+      Any incidents that harm (or have the potential to) the confidentiality,
+      integrity, or availability of our data.
+    type: string
+  is_default:
+    default: false
+    description: >-
+      If true, this incident type will be used as the default incident type if a
+      type is not specified during the creation of incident resources.
+    example: false
+    type: boolean
+  lastModifiedBy:
+    description: >-
+      A unique identifier that represents the user that last modified the
+      incident type.
+    example: 00000000-0000-0000-0000-000000000000
+    readOnly: true
+    type: string
+  modifiedAt:
+    description: Timestamp when the incident type was last modified.
+    format: date-time
+    readOnly: true
+    type: string
+  name:
+    description: The name of the incident type.
+    example: Security Incident
+    type: string
+  prefix:
+    description: >-
+      The string that will be prepended to the incident title across the Datadog
+      app.
+    example: IR
+    readOnly: true
+    type: string
+required:
+  - name
+type: object

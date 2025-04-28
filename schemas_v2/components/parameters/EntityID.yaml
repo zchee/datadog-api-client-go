@@ -1,0 +1,7 @@
+description: UUID or Entity Ref.
+in: path
+name: entity_id
+required: true
+schema:
+  example: service:myservice
+  type: string

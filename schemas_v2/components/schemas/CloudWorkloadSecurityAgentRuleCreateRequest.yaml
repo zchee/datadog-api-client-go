@@ -1,0 +1,7 @@
+description: Request object that includes the Agent rule to create.
+properties:
+  data:
+    $ref: ./CloudWorkloadSecurityAgentRuleCreateData.yaml
+required:
+  - data
+type: object

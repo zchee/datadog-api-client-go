@@ -1,0 +1,7 @@
+description: Response containing information about a single restriction policy.
+properties:
+  data:
+    $ref: ./RestrictionPolicy.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,7 @@
+description: Data for converting historical job results to signals.
+properties:
+  attributes:
+    $ref: ./ConvertJobResultsToSignalsAttributes.yaml
+  type:
+    $ref: ./ConvertJobResultsToSignalsDataType.yaml
+type: object

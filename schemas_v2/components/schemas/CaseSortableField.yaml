@@ -1,0 +1,11 @@
+description: Case field that can be sorted on
+enum:
+  - created_at
+  - priority
+  - status
+example: created_at
+type: string
+x-enum-varnames:
+  - CREATED_AT
+  - PRIORITY
+  - STATUS

@@ -1,0 +1,7 @@
+description: The definition of `TokenType` object.
+enum:
+  - SECRET
+example: SECRET
+type: string
+x-enum-varnames:
+  - SECRET

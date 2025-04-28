@@ -1,0 +1,4 @@
+description: The value to use for logs that don't have the facet used to group-by.
+oneOf:
+  - $ref: ./CIAppGroupByMissingString.yaml
+  - $ref: ./CIAppGroupByMissingNumber.yaml

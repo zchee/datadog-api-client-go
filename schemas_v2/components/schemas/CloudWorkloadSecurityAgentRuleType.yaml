@@ -1,0 +1,8 @@
+default: agent_rule
+description: The type of the resource. The value should always be `agent_rule`.
+enum:
+  - agent_rule
+example: agent_rule
+type: string
+x-enum-varnames:
+  - AGENT_RULE

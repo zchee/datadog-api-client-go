@@ -1,0 +1,9 @@
+description: >-
+  Request body for changing the related incidents of a given security monitoring
+  signal.
+properties:
+  data:
+    $ref: ./SecurityMonitoringSignalIncidentsUpdateData.yaml
+required:
+  - data
+type: object

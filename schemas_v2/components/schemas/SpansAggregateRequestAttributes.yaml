@@ -1,0 +1,17 @@
+description: The object containing all the query parameters.
+properties:
+  compute:
+    description: The list of metrics or timeseries to compute for the retrieved buckets.
+    items:
+      $ref: ./SpansCompute.yaml
+    type: array
+  filter:
+    $ref: ./SpansQueryFilter.yaml
+  group_by:
+    description: The rules for the group by.
+    items:
+      $ref: ./SpansGroupBy.yaml
+    type: array
+  options:
+    $ref: ./SpansQueryOptions.yaml
+type: object

@@ -1,0 +1,6 @@
+description: Incident description.
+enum:
+  - incident
+type: string
+x-enum-varnames:
+  - INCIDENT

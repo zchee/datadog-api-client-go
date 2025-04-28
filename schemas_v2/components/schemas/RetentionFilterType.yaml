@@ -1,0 +1,10 @@
+default: spans-sampling-processor
+description: >-
+  The type of retention filter. The value should always be
+  spans-sampling-processor.
+enum:
+  - spans-sampling-processor
+example: spans-sampling-processor
+type: string
+x-enum-varnames:
+  - SPANS_SAMPLING_PROCESSOR

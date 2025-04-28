@@ -1,0 +1,7 @@
+description: >-
+  Gathers relationship objects for the schedule creation request, including the
+  teams to associate.
+properties:
+  teams:
+    $ref: ./ScheduleCreateRequestDataRelationshipsTeams.yaml
+type: object

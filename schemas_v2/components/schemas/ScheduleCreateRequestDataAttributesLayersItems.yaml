@@ -1,0 +1,43 @@
+description: >-
+  Describes a schedule layer, including rotation intervals, members,
+  restrictions, and timeline settings.
+properties:
+  effective_date:
+    description: The date/time when this layer becomes active (in ISO 8601).
+    example: '2025-01-01T00:00:00Z'
+    format: date-time
+    type: string
+  end_date:
+    description: The date/time after which this layer no longer applies (in ISO 8601).
+    format: date-time
+    type: string
+  interval:
+    $ref: ./ScheduleCreateRequestDataAttributesLayersItemsInterval.yaml
+  members:
+    description: A list of members who participate in this layer's rotation.
+    items:
+      $ref: ./ScheduleCreateRequestDataAttributesLayersItemsMembersItems.yaml
+    type: array
+  name:
+    description: The name of this layer.
+    example: Primary On-Call Layer
+    type: string
+  restrictions:
+    description: >-
+      Zero or more time-based restrictions (for example, only weekdays, during
+      business hours).
+    items:
+      $ref: ./ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems.yaml
+    type: array
+  rotation_start:
+    description: The date/time when the rotation for this layer starts (in ISO 8601).
+    example: '2025-01-01T00:00:00Z'
+    format: date-time
+    type: string
+required:
+  - name
+  - interval
+  - rotation_start
+  - effective_date
+  - members
+type: object

@@ -1,0 +1,7 @@
+description: Additional information for creating a workflow instance.
+properties:
+  payload:
+    additionalProperties: {}
+    description: The input parameters to the workflow.
+    type: object
+type: object

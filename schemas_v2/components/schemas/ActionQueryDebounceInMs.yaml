@@ -1,0 +1,13 @@
+description: >-
+  The minimum time in milliseconds that must pass before the query can be
+  triggered again. This is useful for preventing accidental double-clicks from
+  triggering the query multiple times.
+oneOf:
+  - example: 310.5
+    format: double
+    type: number
+  - description: >-
+      If this is a string, it must be a valid JavaScript expression that
+      evaluates to a number.
+    example: ${1000}
+    type: string

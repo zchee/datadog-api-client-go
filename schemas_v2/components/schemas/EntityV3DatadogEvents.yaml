@@ -1,0 +1,5 @@
+additionalProperties: false
+description: Events associations.
+items:
+  $ref: ./EntityV3DatadogEventItem.yaml
+type: array

@@ -1,0 +1,4 @@
+description: The value to use for spans that don't have the facet used to group by.
+oneOf:
+  - $ref: ./SpansGroupByMissingString.yaml
+  - $ref: ./SpansGroupByMissingNumber.yaml

@@ -1,0 +1,8 @@
+default: archive_order
+description: Type of the archive order definition.
+enum:
+  - archive_order
+example: archive_order
+type: string
+x-enum-varnames:
+  - ARCHIVE_ORDER

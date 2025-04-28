@@ -1,0 +1,7 @@
+description: Request containing the desired email domain allowlist configuration.
+properties:
+  data:
+    $ref: ./DomainAllowlist.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,7 @@
+description: The incident user defined fields type.
+enum:
+  - user_defined_field
+example: user_defined_field
+type: string
+x-enum-varnames:
+  - USER_DEFINED_FIELD

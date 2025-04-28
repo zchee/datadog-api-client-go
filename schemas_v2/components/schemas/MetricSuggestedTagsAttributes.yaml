@@ -1,0 +1,16 @@
+description: >-
+  Object containing the definition of a metric's actively queried tags and
+  aggregations.
+properties:
+  active_aggregations:
+    $ref: ./MetricSuggestedAggregations.yaml
+  active_tags:
+    description: List of tag keys that have been actively queried.
+    example:
+      - app
+      - datacenter
+    items:
+      description: Actively queried tag keys.
+      type: string
+    type: array
+type: object

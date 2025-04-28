@@ -1,0 +1,7 @@
+description: Resource's type.
+enum:
+  - service
+example: service
+type: string
+x-enum-varnames:
+  - SERVICE

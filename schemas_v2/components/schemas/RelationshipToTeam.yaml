@@ -1,0 +1,5 @@
+description: Relationship to team.
+properties:
+  data:
+    $ref: ./RelationshipToTeamData.yaml
+type: object

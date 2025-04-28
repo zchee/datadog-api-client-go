@@ -1,0 +1,8 @@
+default: log
+description: Type of the event.
+enum:
+  - log
+example: log
+type: string
+x-enum-varnames:
+  - LOG

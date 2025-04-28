@@ -1,0 +1,32 @@
+description: The JSON:API attributes of the asset.
+properties:
+  arch:
+    description: Asset architecture.
+    example: arm64
+    type: string
+  environments:
+    description: List of environments where the asset is deployed.
+    example:
+      - staging
+    items:
+      example: staging
+      type: string
+    type: array
+  name:
+    description: Asset name.
+    example: github.com/DataDog/datadog-agent.git
+    type: string
+  operating_system:
+    $ref: ./AssetOperatingSystem.yaml
+  risks:
+    $ref: ./AssetRisks.yaml
+  type:
+    $ref: ./AssetType.yaml
+  version:
+    $ref: ./AssetVersion.yaml
+required:
+  - name
+  - type
+  - risks
+  - environments
+type: object

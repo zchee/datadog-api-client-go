@@ -1,0 +1,17 @@
+description: Attributes of a user invitation.
+properties:
+  created_at:
+    description: Creation time of the user invitation.
+    format: date-time
+    type: string
+  expires_at:
+    description: Time of invitation expiration.
+    format: date-time
+    type: string
+  invite_type:
+    description: Type of invitation.
+    type: string
+  uuid:
+    description: UUID of the user invitation.
+    type: string
+type: object

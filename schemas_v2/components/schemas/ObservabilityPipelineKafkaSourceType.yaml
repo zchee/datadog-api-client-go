@@ -1,0 +1,8 @@
+default: kafka
+description: The source type. The value should always be `kafka`.
+enum:
+  - kafka
+example: kafka
+type: string
+x-enum-varnames:
+  - KAFKA

@@ -1,0 +1,43 @@
+description: Incident integration metadata's attributes for a create request.
+properties:
+  created:
+    description: Timestamp when the incident todo was created.
+    format: date-time
+    readOnly: true
+    type: string
+  incident_id:
+    description: UUID of the incident this integration metadata is connected to.
+    example: 00000000-aaaa-0000-0000-000000000000
+    type: string
+  integration_type:
+    description: >-
+      A number indicating the type of integration this metadata is for. 1
+      indicates Slack;
+
+      8 indicates Jira.
+    example: 1
+    format: int32
+    maximum: 9
+    type: integer
+  metadata:
+    $ref: ./IncidentIntegrationMetadataMetadata.yaml
+  modified:
+    description: Timestamp when the incident todo was last modified.
+    format: date-time
+    readOnly: true
+    type: string
+  status:
+    description: >-
+      A number indicating the status of this integration metadata. 0 indicates
+      unknown;
+
+      1 indicates pending; 2 indicates complete; 3 indicates manually created;
+
+      4 indicates manually updated; 5 indicates failed.
+    format: int32
+    maximum: 5
+    type: integer
+required:
+  - integration_type
+  - metadata
+type: object

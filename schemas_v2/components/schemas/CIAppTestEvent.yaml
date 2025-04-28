@@ -1,0 +1,11 @@
+description: Object description of test event after being processed and stored by Datadog.
+properties:
+  attributes:
+    $ref: ./CIAppEventAttributes.yaml
+  id:
+    description: Unique ID of the event.
+    example: AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA
+    type: string
+  type:
+    $ref: ./CIAppTestEventTypeName.yaml
+type: object

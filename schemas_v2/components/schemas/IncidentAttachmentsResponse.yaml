@@ -1,0 +1,28 @@
+description: The response object containing an incident's attachments.
+properties:
+  data:
+    description: An array of incident attachments.
+    example:
+      - attributes:
+          attachment:
+            documentUrl: ''
+            title: Postmortem IR-123
+          attachment_type: postmortem
+        id: 00000000-abcd-0002-0000-000000000000
+        relationships:
+          last_modified_by_user:
+            data:
+              id: 00000000-0000-0000-cccc-000000000000
+              type: users
+        type: incident_attachments
+    items:
+      $ref: ./IncidentAttachmentData.yaml
+    type: array
+  included:
+    description: Included related resources that the user requested.
+    items:
+      $ref: ./IncidentAttachmentsResponseIncludedItem.yaml
+    type: array
+required:
+  - data
+type: object

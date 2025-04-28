@@ -1,0 +1,9 @@
+description: ServiceNow ticket attached to case
+nullable: true
+properties:
+  result:
+    $ref: ./ServiceNowTicketResult.yaml
+  status:
+    $ref: ./Case3rdPartyTicketStatus.yaml
+readOnly: true
+type: object

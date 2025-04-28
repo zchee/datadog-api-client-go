@@ -1,0 +1,7 @@
+description: Request for creating an AuthN Mapping.
+properties:
+  data:
+    $ref: ./AuthNMappingCreateData.yaml
+required:
+  - data
+type: object

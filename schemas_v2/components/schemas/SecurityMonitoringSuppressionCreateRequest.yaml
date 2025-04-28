@@ -1,0 +1,9 @@
+description: >-
+  Request object that includes the suppression rule that you would like to
+  create.
+properties:
+  data:
+    $ref: ./SecurityMonitoringSuppressionCreateData.yaml
+required:
+  - data
+type: object

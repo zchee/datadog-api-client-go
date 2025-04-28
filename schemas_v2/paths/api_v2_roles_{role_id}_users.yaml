@@ -1,0 +1,158 @@
+delete:
+  description: Removes a user from a role.
+  operationId: RemoveUserFromRole
+  parameters:
+    - $ref: ../components/parameters/RoleID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RelationshipToUser.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UsersResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - user_access_manage
+  summary: Remove a user from a role
+  tags:
+    - Roles
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - user_access_manage
+get:
+  description: Gets all users of a role.
+  operationId: ListRoleUsers
+  parameters:
+    - $ref: ../components/parameters/RoleID.yaml
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageNumber.yaml
+    - description: >-
+        User attribute to order results by. Sort order is **ascending** by
+        default.
+
+        Sort order is **descending** if the field is prefixed by a negative
+        sign,
+
+        for example `sort=-name`. Options: `name`, `email`, `status`.
+      in: query
+      name: sort
+      required: false
+      schema:
+        default: name
+        type: string
+    - description: Filter all users by the given string. Defaults to no filtering.
+      in: query
+      name: filter
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UsersResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - user_access_read
+  summary: Get all users of a role
+  tags:
+    - Roles
+post:
+  description: Adds a user to a role.
+  operationId: AddUserToRole
+  parameters:
+    - $ref: ../components/parameters/RoleID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RelationshipToUser.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UsersResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - user_access_manage
+  summary: Add a user to a role
+  tags:
+    - Roles
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - user_access_manage

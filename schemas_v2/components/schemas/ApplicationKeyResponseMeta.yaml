@@ -1,0 +1,9 @@
+description: Additional information related to the application key response.
+properties:
+  max_allowed_per_user:
+    description: Max allowed number of application keys per user.
+    format: int64
+    type: integer
+  page:
+    $ref: ./ApplicationKeyResponseMetaPage.yaml
+type: object

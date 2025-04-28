@@ -1,0 +1,34 @@
+description: The interface attributes
+properties:
+  alias:
+    description: The interface alias
+    example: interface_0
+    type: string
+  description:
+    description: The interface description
+    example: a network interface
+    type: string
+  index:
+    description: The interface index
+    example: 0
+    format: int64
+    type: integer
+  ip_addresses:
+    description: The interface IP addresses
+    example:
+      - 1.1.1.1
+      - 1.1.1.2
+    items:
+      type: string
+    type: array
+  mac_address:
+    description: The interface MAC address
+    example: '00:00:00:00:00:00'
+    type: string
+  name:
+    description: The interface name
+    example: if0
+    type: string
+  status:
+    $ref: ./InterfaceAttributesStatus.yaml
+type: object

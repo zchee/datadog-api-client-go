@@ -1,0 +1,9 @@
+description: The data object containing the app definition.
+properties:
+  attributes:
+    $ref: ./CreateAppRequestDataAttributes.yaml
+  type:
+    $ref: ./AppDefinitionType.yaml
+required:
+  - type
+type: object

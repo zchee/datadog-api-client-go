@@ -1,0 +1,12 @@
+description: >-
+  Data of the notification rule create request: the rule type, and the rule
+  attributes. All fields are required.
+properties:
+  attributes:
+    $ref: ./CreateNotificationRuleParametersDataAttributes.yaml
+  type:
+    $ref: ./NotificationRulesType.yaml
+required:
+  - attributes
+  - type
+type: object

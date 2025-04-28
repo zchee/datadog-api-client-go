@@ -1,0 +1,10 @@
+description: Relationship to incident user defined fields.
+properties:
+  data:
+    description: An array of user defined fields.
+    items:
+      $ref: ./RelationshipToIncidentUserDefinedFieldData.yaml
+    type: array
+required:
+  - data
+type: object

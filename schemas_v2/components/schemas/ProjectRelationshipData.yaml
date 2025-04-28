@@ -1,0 +1,12 @@
+description: Relationship to project object
+properties:
+  id:
+    description: A unique identifier that represents the project
+    example: e555e290-ed65-49bd-ae18-8acbfcf18db7
+    type: string
+  type:
+    $ref: ./ProjectResourceType.yaml
+required:
+  - id
+  - type
+type: object

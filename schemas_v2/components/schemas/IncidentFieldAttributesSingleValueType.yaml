@@ -1,0 +1,10 @@
+default: dropdown
+description: Type of the single value field definitions.
+enum:
+  - dropdown
+  - textbox
+example: dropdown
+type: string
+x-enum-varnames:
+  - DROPDOWN
+  - TEXTBOX

@@ -1,0 +1,2 @@
+description: If set to true, creates an additional bucket labeled "$facet_total"
+type: boolean

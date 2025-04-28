@@ -1,0 +1,4 @@
+description: AWS Regions to collect data from. Defaults to `include_all`.
+oneOf:
+  - $ref: ./AWSRegionsIncludeAll.yaml
+  - $ref: ./AWSRegionsIncludeOnly.yaml

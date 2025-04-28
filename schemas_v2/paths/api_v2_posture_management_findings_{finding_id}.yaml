@@ -1,0 +1,47 @@
+get:
+  description: Returns a single finding with message and resource configuration.
+  operationId: GetFinding
+  parameters:
+    - description: The ID of the finding.
+      in: path
+      name: finding_id
+      required: true
+      schema:
+        type: string
+    - description: Return the finding for a given snapshot of time (Unix ms).
+      example: 1678721573794
+      in: query
+      name: snapshot_timestamp
+      required: false
+      schema:
+        format: int64
+        minimum: 1
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetFindingResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/FindingsBadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/FindingsForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/FindingsNotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/FindingsTooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_findings_read
+  summary: Get a finding
+  tags:
+    - Security Monitoring
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

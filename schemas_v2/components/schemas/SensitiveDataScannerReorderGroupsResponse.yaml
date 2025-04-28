@@ -1,0 +1,5 @@
+description: Group reorder response.
+properties:
+  meta:
+    $ref: ./SensitiveDataScannerMeta.yaml
+type: object

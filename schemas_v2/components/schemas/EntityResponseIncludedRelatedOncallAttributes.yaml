@@ -1,0 +1,8 @@
+description: Included related oncall attributes.
+properties:
+  escalations:
+    $ref: ./EntityResponseIncludedRelatedOncallEscalations.yaml
+  provider:
+    description: Oncall provider.
+    type: string
+type: object

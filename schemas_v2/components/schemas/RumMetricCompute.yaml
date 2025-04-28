@@ -1,0 +1,15 @@
+description: The compute rule to compute the rum-based metric.
+properties:
+  aggregation_type:
+    $ref: ./RumMetricComputeAggregationType.yaml
+  include_percentiles:
+    $ref: ./RumMetricComputeIncludePercentiles.yaml
+  path:
+    description: |-
+      The path to the value the rum-based metric will aggregate on.
+      Only present when `aggregation_type` is `distribution`.
+    example: '@duration'
+    type: string
+required:
+  - aggregation_type
+type: object

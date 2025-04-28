@@ -1,0 +1,11 @@
+description: Response object which includes a single powerpack configuration.
+properties:
+  data:
+    $ref: ./PowerpackData.yaml
+  included:
+    description: Array of objects related to the users.
+    items:
+      $ref: ./User.yaml
+    type: array
+readOnly: true
+type: object

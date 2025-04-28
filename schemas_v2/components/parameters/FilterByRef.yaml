@@ -1,0 +1,7 @@
+description: Filter entities by reference
+explode: true
+in: query
+name: filter[ref]
+required: false
+schema:
+  type: string

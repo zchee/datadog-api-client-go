@@ -1,0 +1,130 @@
+get:
+  description: |-
+    Get the list of all users in the organization. This list includes
+    all users even if they are deactivated or unverified.
+  operationId: ListUsers
+  parameters:
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageNumber.yaml
+    - description: >-
+        User attribute to order results by. Sort order is ascending by default.
+
+        Sort order is descending if the field
+
+        is prefixed by a negative sign, for example `sort=-name`. Options:
+        `name`,
+
+        `modified_at`, `user_count`.
+      in: query
+      name: sort
+      required: false
+      schema:
+        default: name
+        example: name
+        type: string
+    - description: 'Direction of sort. Options: `asc`, `desc`.'
+      in: query
+      name: sort_dir
+      required: false
+      schema:
+        $ref: ../components/schemas/QuerySortOrder.yaml
+    - description: Filter all users by the given string. Defaults to no filtering.
+      in: query
+      name: filter
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Filter on status attribute.
+
+        Comma separated list, with possible values `Active`, `Pending`, and
+        `Disabled`.
+
+        Defaults to no filtering.
+      in: query
+      name: filter[status]
+      required: false
+      schema:
+        example: Active
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UsersResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - user_access_read
+  summary: List all users
+  tags:
+    - Users
+  x-codegen-request-body-name: body
+  x-pagination:
+    limitParam: page[size]
+    pageParam: page[number]
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - user_access_read
+post:
+  description: Create a user for your organization.
+  operationId: CreateUser
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/UserCreateRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Authentication error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - user_access_invite
+  summary: Create a user
+  tags:
+    - Users
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - user_access_invite

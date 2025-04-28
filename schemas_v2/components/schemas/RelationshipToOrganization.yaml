@@ -1,0 +1,7 @@
+description: Relationship to an organization.
+properties:
+  data:
+    $ref: ./RelationshipToOrganizationData.yaml
+required:
+  - data
+type: object

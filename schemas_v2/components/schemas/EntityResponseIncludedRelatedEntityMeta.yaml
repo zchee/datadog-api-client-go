@@ -1,0 +1,17 @@
+description: Included related entity meta.
+properties:
+  createdAt:
+    description: Entity creation time.
+    format: date-time
+    type: string
+  defined_by:
+    description: Entity relation defined by.
+    type: string
+  modifiedAt:
+    description: Entity modification time.
+    format: date-time
+    type: string
+  source:
+    description: Entity relation source.
+    type: string
+type: object

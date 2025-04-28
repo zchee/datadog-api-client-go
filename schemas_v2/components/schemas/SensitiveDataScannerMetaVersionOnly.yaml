@@ -1,0 +1,9 @@
+description: Meta payload containing information about the API.
+properties:
+  version:
+    description: Version of the API (optional).
+    example: 0
+    format: int64
+    minimum: 0
+    type: integer
+type: object

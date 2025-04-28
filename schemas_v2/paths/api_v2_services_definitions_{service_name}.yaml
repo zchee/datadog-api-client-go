@@ -1,0 +1,63 @@
+delete:
+  description: Delete a single service definition in the Datadog Service Catalog.
+  operationId: DeleteServiceDefinition
+  parameters:
+    - $ref: ../components/parameters/ServiceName.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_write
+  summary: Delete a single service definition
+  tags:
+    - Service Definition
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_service_catalog_write
+get:
+  description: Get a single service definition from the Datadog Service Catalog.
+  operationId: GetServiceDefinition
+  parameters:
+    - $ref: ../components/parameters/ServiceName.yaml
+    - $ref: ../components/parameters/SchemaVersion.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ServiceDefinitionGetResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_read
+  summary: Get a single service definition
+  tags:
+    - Service Definition
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_service_catalog_read

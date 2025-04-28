@@ -1,0 +1,10 @@
+description: Update group request.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerGroupUpdate.yaml
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+required:
+  - data
+  - meta
+type: object

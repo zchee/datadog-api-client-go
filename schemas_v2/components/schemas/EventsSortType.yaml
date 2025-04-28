@@ -1,0 +1,8 @@
+description: The type of sort to use on the calculated value.
+enum:
+  - alphabetical
+  - measure
+type: string
+x-enum-varnames:
+  - ALPHABETICAL
+  - MEASURE

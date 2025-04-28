@@ -1,0 +1,11 @@
+description: Contact information about the service.
+properties:
+  email:
+    description: Service owner’s email.
+    example: contact@datadoghq.com
+    type: string
+  slack:
+    description: Service owner’s Slack channel.
+    example: https://yourcompany.slack.com/archives/channel123
+    type: string
+type: object

@@ -1,0 +1,10 @@
+description: Policy and policy type for a monitor configuration policy.
+properties:
+  policy:
+    $ref: ./MonitorConfigPolicyPolicy.yaml
+  policy_type:
+    $ref: ./MonitorConfigPolicyType.yaml
+required:
+  - policy_type
+  - policy
+type: object

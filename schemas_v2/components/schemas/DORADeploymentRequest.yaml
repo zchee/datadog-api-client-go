@@ -1,0 +1,7 @@
+description: Request to create a DORA deployment event.
+properties:
+  data:
+    $ref: ./DORADeploymentRequestData.yaml
+required:
+  - data
+type: object

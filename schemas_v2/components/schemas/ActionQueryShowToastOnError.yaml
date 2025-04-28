@@ -1,0 +1,8 @@
+description: Whether to display a toast to the user when the query returns an error.
+oneOf:
+  - type: boolean
+  - description: >-
+      If this is a string, it must be a valid JavaScript expression that
+      evaluates to a boolean.
+    example: ${true}
+    type: string

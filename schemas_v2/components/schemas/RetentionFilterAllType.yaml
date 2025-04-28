@@ -1,0 +1,12 @@
+default: spans-sampling-processor
+description: The type of retention filter.
+enum:
+  - spans-sampling-processor
+  - spans-errors-sampling-processor
+  - spans-appsec-sampling-processor
+example: spans-sampling-processor
+type: string
+x-enum-varnames:
+  - SPANS_SAMPLING_PROCESSOR
+  - SPANS_ERRORS_SAMPLING_PROCESSOR
+  - SPANS_APPSEC_SAMPLING_PROCESSOR

@@ -1,0 +1,7 @@
+description: Project UUID
+example: e555e290-ed65-49bd-ae18-8acbfcf18db7
+in: path
+name: project_id
+required: true
+schema:
+  type: string

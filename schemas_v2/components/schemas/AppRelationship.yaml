@@ -1,0 +1,10 @@
+description: The app's publication relationship and custom connections.
+properties:
+  connections:
+    description: Array of custom connections used by the app.
+    items:
+      $ref: ./CustomConnection.yaml
+    type: array
+  deployment:
+    $ref: ./DeploymentRelationship.yaml
+type: object

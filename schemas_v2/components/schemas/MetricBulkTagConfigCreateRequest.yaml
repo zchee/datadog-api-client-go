@@ -1,0 +1,7 @@
+description: Wrapper object for a single bulk tag configuration request.
+properties:
+  data:
+    $ref: ./MetricBulkTagConfigCreate.yaml
+required:
+  - data
+type: object

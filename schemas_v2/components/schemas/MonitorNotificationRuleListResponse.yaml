@@ -1,0 +1,13 @@
+description: Response for retrieving all monitor notification rules.
+properties:
+  data:
+    description: A list of monitor notification rules.
+    items:
+      $ref: ./MonitorNotificationRuleData.yaml
+    type: array
+  included:
+    description: Array of objects related to the monitor notification rules.
+    items:
+      $ref: ./MonitorNotificationRuleResponseIncludedItem.yaml
+    type: array
+type: object

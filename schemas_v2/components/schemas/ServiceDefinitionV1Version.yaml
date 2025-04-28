@@ -1,0 +1,8 @@
+default: v1
+description: Schema version being used.
+enum:
+  - v1
+example: v1
+type: string
+x-enum-varnames:
+  - V1

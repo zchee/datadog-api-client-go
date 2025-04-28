@@ -1,0 +1,14 @@
+description: Represents a static key-value pair used in various processors.
+properties:
+  name:
+    description: The field name.
+    example: field_name
+    type: string
+  value:
+    description: The field value.
+    example: field_value
+    type: string
+required:
+  - name
+  - value
+type: object

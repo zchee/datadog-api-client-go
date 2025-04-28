@@ -1,0 +1,5 @@
+description: Relationship to role.
+properties:
+  data:
+    $ref: ./RelationshipToRoleData.yaml
+type: object

@@ -1,0 +1,10 @@
+description: Schema for an App-based trigger.
+properties:
+  appTrigger:
+    description: Trigger a workflow from an App.
+    type: object
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - appTrigger
+type: object

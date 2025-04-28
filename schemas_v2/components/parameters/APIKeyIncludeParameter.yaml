@@ -1,0 +1,9 @@
+description: >-
+  Comma separated list of resource paths for related resources to include in the
+  response. Supported resource paths are `created_by` and `modified_by`.
+in: query
+name: include
+required: false
+schema:
+  example: created_by,modified_by
+  type: string

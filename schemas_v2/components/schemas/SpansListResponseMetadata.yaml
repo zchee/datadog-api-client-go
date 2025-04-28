@@ -1,0 +1,25 @@
+description: The metadata associated with a request.
+properties:
+  elapsed:
+    description: The time elapsed in milliseconds.
+    example: 132
+    format: int64
+    type: integer
+  page:
+    $ref: ./SpansResponseMetadataPage.yaml
+  request_id:
+    description: The identifier of the request.
+    example: MWlFUjVaWGZTTTZPYzM0VXp1OXU2d3xLSVpEMjZKQ0VKUTI0dEYtM3RSOFVR
+    type: string
+  status:
+    $ref: ./SpansAggregateResponseStatus.yaml
+  warnings:
+    description: >-
+      A list of warnings (non fatal errors) encountered, partial results might
+      be returned if
+
+      warnings are present in the response.
+    items:
+      $ref: ./SpansWarning.yaml
+    type: array
+type: object

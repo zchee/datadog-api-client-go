@@ -1,0 +1,15 @@
+description: AWS Namespaces response data.
+properties:
+  attributes:
+    $ref: ./AWSNamespacesResponseAttributes.yaml
+  id:
+    default: namespaces
+    description: The `AWSNamespacesResponseData` `id`.
+    example: namespaces
+    type: string
+  type:
+    $ref: ./AWSNamespacesResponseDataType.yaml
+required:
+  - id
+  - type
+type: object

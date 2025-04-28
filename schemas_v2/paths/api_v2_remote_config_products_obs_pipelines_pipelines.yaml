@@ -1,0 +1,40 @@
+post:
+  description: Create a new pipeline.
+  operationId: CreatePipeline
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ObservabilityPipelineCreateRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ObservabilityPipeline.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '409':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Conflict
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a new pipeline
+  tags:
+    - Observability Pipelines
+  x-unstable: '**Note**: This endpoint is in Preview.'

@@ -1,0 +1,10 @@
+description: Group reorder request.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerReorderConfig.yaml
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+required:
+  - data
+  - meta
+type: object

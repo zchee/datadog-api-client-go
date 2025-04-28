@@ -1,0 +1,3 @@
+description: An object related to a monitor notification rule.
+oneOf:
+  - $ref: ./User.yaml

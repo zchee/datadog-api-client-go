@@ -1,0 +1,16 @@
+description: Service owner's Slack channel.
+properties:
+  contact:
+    description: Slack Channel.
+    example: https://yourcompany.slack.com/archives/channel123
+    type: string
+  name:
+    description: Contact Slack.
+    example: Team Slack
+    type: string
+  type:
+    $ref: ./ServiceDefinitionV2Dot1SlackType.yaml
+required:
+  - type
+  - contact
+type: object

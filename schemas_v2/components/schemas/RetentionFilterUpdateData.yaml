@@ -1,0 +1,15 @@
+description: The body of the retention filter to be updated.
+properties:
+  attributes:
+    $ref: ./RetentionFilterUpdateAttributes.yaml
+  id:
+    description: The ID of the retention filter.
+    example: retention-filter-id
+    type: string
+  type:
+    $ref: ./ApmRetentionFilterType.yaml
+required:
+  - id
+  - attributes
+  - type
+type: object

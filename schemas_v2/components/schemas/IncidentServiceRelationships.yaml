@@ -1,0 +1,8 @@
+description: The incident service's relationships.
+properties:
+  created_by:
+    $ref: ./RelationshipToUser.yaml
+  last_modified_by:
+    $ref: ./RelationshipToUser.yaml
+readOnly: true
+type: object

@@ -1,0 +1,50 @@
+get:
+  description: Get the list of devices.
+  operationId: ListDevices
+  parameters:
+    - description: The page number to fetch.
+      example: 0
+      in: query
+      name: page[number]
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: The number of devices to return per page.
+      example: 10
+      in: query
+      name: page[size]
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: The field to sort the devices by.
+      example: status
+      in: query
+      name: sort
+      required: false
+      schema:
+        type: string
+    - description: Filter devices by tag.
+      example: status:ok
+      in: query
+      name: filter[tag]
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListDevicesResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the list of devices
+  tags:
+    - Network Device Monitoring

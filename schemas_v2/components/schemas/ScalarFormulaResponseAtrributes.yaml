@@ -1,0 +1,11 @@
+description: The object describing a scalar response.
+properties:
+  columns:
+    description: >-
+      List of response columns, each corresponding to an individual formula or
+      query in the request and with values in parallel arrays matching the
+      series list.
+    items:
+      $ref: ./ScalarColumn.yaml
+    type: array
+type: object

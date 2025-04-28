@@ -1,0 +1,9 @@
+description: Specifies which types of attachments are included in the response.
+explode: false
+in: query
+name: filter[attachment_type]
+required: false
+schema:
+  items:
+    $ref: ../schemas/IncidentAttachmentAttachmentType.yaml
+  type: array

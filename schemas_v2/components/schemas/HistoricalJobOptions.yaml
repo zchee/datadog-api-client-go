@@ -1,0 +1,17 @@
+description: Job options.
+properties:
+  detectionMethod:
+    $ref: ./SecurityMonitoringRuleDetectionMethod.yaml
+  evaluationWindow:
+    $ref: ./SecurityMonitoringRuleEvaluationWindow.yaml
+  impossibleTravelOptions:
+    $ref: ./SecurityMonitoringRuleImpossibleTravelOptions.yaml
+  keepAlive:
+    $ref: ./SecurityMonitoringRuleKeepAlive.yaml
+  maxSignalDuration:
+    $ref: ./SecurityMonitoringRuleMaxSignalDuration.yaml
+  newValueOptions:
+    $ref: ./SecurityMonitoringRuleNewValueOptions.yaml
+  thirdPartyRuleOptions:
+    $ref: ./SecurityMonitoringRuleThirdPartyOptions.yaml
+type: object

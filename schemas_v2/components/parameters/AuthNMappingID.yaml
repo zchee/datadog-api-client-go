@@ -1,0 +1,6 @@
+description: The UUID of the AuthN Mapping.
+in: path
+name: authn_mapping_id
+required: true
+schema:
+  type: string

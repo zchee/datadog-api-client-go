@@ -1,0 +1,15 @@
+description: Attributes related to the dashboard, including title, popularity, and url.
+properties:
+  popularity:
+    description: Value from 0 to 5 that ranks popularity of the dashboard.
+    format: double
+    maximum: 5
+    minimum: 0
+    type: number
+  title:
+    description: Title of the asset.
+    type: string
+  url:
+    description: URL path of the asset.
+    type: string
+type: object

@@ -1,0 +1,7 @@
+description: >-
+  Trigger a workflow from a Case. For automatic triggering a handle must be
+  configured and the workflow must be published.
+properties:
+  rateLimit:
+    $ref: ./TriggerRateLimit.yaml
+type: object

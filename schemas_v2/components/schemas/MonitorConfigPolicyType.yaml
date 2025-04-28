@@ -1,0 +1,8 @@
+default: tag
+description: The monitor configuration policy type.
+enum:
+  - tag
+example: tag
+type: string
+x-enum-varnames:
+  - TAG

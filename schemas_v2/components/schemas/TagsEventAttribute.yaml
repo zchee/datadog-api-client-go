@@ -1,0 +1,7 @@
+description: Array of tags associated with your event.
+example:
+  - team:A
+items:
+  description: Tag associated with your event.
+  type: string
+type: array

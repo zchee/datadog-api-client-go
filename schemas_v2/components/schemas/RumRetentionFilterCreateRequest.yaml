@@ -1,0 +1,7 @@
+description: The RUM retention filter body to create.
+properties:
+  data:
+    $ref: ./RumRetentionFilterCreateData.yaml
+required:
+  - data
+type: object

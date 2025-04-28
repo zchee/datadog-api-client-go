@@ -1,0 +1,5 @@
+description: Security Signal response data object.
+properties:
+  data:
+    $ref: ./SecurityMonitoringSignal.yaml
+type: object

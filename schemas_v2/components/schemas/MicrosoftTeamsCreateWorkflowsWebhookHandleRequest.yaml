@@ -1,0 +1,7 @@
+description: Create Workflows webhook handle request.
+properties:
+  data:
+    $ref: ./MicrosoftTeamsWorkflowsWebhookHandleRequestData.yaml
+required:
+  - data
+type: object

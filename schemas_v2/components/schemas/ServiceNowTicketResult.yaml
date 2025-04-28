@@ -1,0 +1,6 @@
+description: ServiceNow ticket information
+properties:
+  sys_target_link:
+    description: Link to the Incident created on ServiceNow
+    type: string
+type: object

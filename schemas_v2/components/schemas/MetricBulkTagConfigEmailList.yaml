@@ -1,0 +1,8 @@
+description: A list of account emails to notify when the configuration is applied.
+example:
+  - sue@example.com
+  - bob@example.com
+items:
+  description: An email address.
+  type: string
+type: array

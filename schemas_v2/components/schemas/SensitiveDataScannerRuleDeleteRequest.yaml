@@ -1,0 +1,7 @@
+description: Delete rule request.
+properties:
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+required:
+  - meta
+type: object

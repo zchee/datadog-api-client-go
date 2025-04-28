@@ -1,0 +1,10 @@
+description: The priority of the event's monitor. For example, `normal` or `low`.
+enum:
+  - normal
+  - low
+example: normal
+nullable: true
+type: string
+x-enum-varnames:
+  - NORMAL
+  - LOW

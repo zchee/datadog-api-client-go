@@ -1,0 +1,39 @@
+post:
+  description: |-
+    Query timeseries data across various data sources and
+    process the data by applying formulas and functions.
+  operationId: QueryTimeseriesData
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/TimeseriesFormulaQueryRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TimeseriesFormulaQueryResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - timeseries_query
+  summary: Query timeseries data across multiple products
+  tags:
+    - Metrics
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - timeseries_query

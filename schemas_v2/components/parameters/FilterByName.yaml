@@ -1,0 +1,7 @@
+description: Filter entities by name.
+explode: true
+in: query
+name: filter[name]
+required: false
+schema:
+  type: string

@@ -1,0 +1,8 @@
+default: restriction_policy
+description: Restriction policy type.
+enum:
+  - restriction_policy
+example: restriction_policy
+type: string
+x-enum-varnames:
+  - RESTRICTION_POLICY

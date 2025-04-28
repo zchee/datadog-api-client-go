@@ -1,0 +1,15 @@
+description: Object to update a downtime.
+properties:
+  attributes:
+    $ref: ./DowntimeUpdateRequestAttributes.yaml
+  id:
+    description: ID of this downtime.
+    example: 00000000-0000-1234-0000-000000000000
+    type: string
+  type:
+    $ref: ./DowntimeResourceType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

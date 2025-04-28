@@ -1,0 +1,7 @@
+description: On-demand concurrency cap attributes.
+properties:
+  on_demand_concurrency_cap:
+    description: Value of the on-demand concurrency cap.
+    format: double
+    type: number
+type: object

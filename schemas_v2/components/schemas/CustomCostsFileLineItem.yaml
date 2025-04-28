@@ -1,0 +1,34 @@
+description: Line item details from a Custom Costs file.
+properties:
+  BilledCost:
+    description: Total cost in the cost file.
+    example: 100.5
+    format: double
+    type: number
+  BillingCurrency:
+    description: Currency used in the Custom Costs file.
+    example: USD
+    type: string
+  ChargeDescription:
+    description: Description for the line item cost.
+    example: Monthly usage charge for my service
+    type: string
+  ChargePeriodEnd:
+    description: End date of the usage charge.
+    example: '2023-02-28'
+    pattern: ^\d{4}-\d{2}-\d{2}$
+    type: string
+  ChargePeriodStart:
+    description: Start date of the usage charge.
+    example: '2023-02-01'
+    pattern: ^\d{4}-\d{2}-\d{2}$
+    type: string
+  ProviderName:
+    description: Name of the provider for the line item.
+    type: string
+  Tags:
+    additionalProperties:
+      type: string
+    description: Additional tags for the line item.
+    type: object
+type: object

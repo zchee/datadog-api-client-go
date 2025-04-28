@@ -1,0 +1,9 @@
+description: >-
+  The span-based metric filter. Spans matching this filter will be aggregated in
+  this metric.
+properties:
+  query:
+    description: The search query - following the span search syntax.
+    example: '@http.status_code:200 service:my-service'
+    type: string
+type: object

@@ -1,0 +1,11 @@
+additionalProperties: false
+description: Performance stats association.
+properties:
+  tags:
+    description: >-
+      A list of APM entity tags that associates the APM Stats data with the
+      entity.
+    items:
+      type: string
+    type: array
+type: object

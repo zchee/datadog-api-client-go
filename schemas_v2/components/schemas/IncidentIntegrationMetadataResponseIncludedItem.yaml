@@ -1,0 +1,5 @@
+description: >-
+  An object related to an incident integration metadata that is included in the
+  response.
+oneOf:
+  - $ref: ./User.yaml

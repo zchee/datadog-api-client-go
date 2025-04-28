@@ -1,0 +1,5 @@
+description: Body of the notification rule patch request.
+properties:
+  data:
+    $ref: ./PatchNotificationRuleParametersData.yaml
+type: object

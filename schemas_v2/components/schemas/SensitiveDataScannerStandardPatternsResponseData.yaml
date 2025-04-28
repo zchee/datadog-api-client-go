@@ -1,0 +1,5 @@
+description: List Standard patterns response data.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerStandardPatternsResponse.yaml
+type: object

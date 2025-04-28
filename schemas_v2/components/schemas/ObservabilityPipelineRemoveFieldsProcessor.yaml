@@ -1,0 +1,38 @@
+description: The `remove_fields` processor deletes specified fields from logs.
+properties:
+  fields:
+    description: A list of field names to be removed from each log event.
+    example:
+      - field1
+      - field2
+    items:
+      type: string
+    type: array
+  id:
+    description: >-
+      The unique identifier for this component. Used to reference this component
+      in other parts of the pipeline (e.g., as input to downstream components).
+    example: remove-fields-processor
+    type: string
+  include:
+    description: >-
+      A Datadog search query used to determine which logs this processor
+      targets.
+    example: service:my-service
+    type: string
+  inputs:
+    description: The `PipelineRemoveFieldsProcessor` `inputs`.
+    example:
+      - datadog-agent-source
+    items:
+      type: string
+    type: array
+  type:
+    $ref: ./ObservabilityPipelineRemoveFieldsProcessorType.yaml
+required:
+  - id
+  - type
+  - include
+  - fields
+  - inputs
+type: object

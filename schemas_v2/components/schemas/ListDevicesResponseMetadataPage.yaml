@@ -1,0 +1,8 @@
+description: Pagination object.
+properties:
+  total_filtered_count:
+    description: Total count of devices matched by the filter.
+    example: 1
+    format: int64
+    type: integer
+type: object

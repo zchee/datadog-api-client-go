@@ -1,0 +1,14 @@
+description: AWS Authentication config to integrate your account using an IAM role.
+properties:
+  external_id:
+    description: AWS IAM External ID for associated role.
+    type: string
+  role_name:
+    description: AWS IAM Role name.
+    example: DatadogIntegrationRole
+    maxLength: 576
+    minLength: 1
+    type: string
+required:
+  - role_name
+type: object

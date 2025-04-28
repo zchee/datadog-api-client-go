@@ -1,0 +1,10 @@
+description: Response containing information about multiple roles.
+properties:
+  data:
+    description: Array of returned roles.
+    items:
+      $ref: ./Role.yaml
+    type: array
+  meta:
+    $ref: ./ResponseMetaAttributes.yaml
+type: object

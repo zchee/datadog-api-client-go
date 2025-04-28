@@ -1,0 +1,5 @@
+description: Request for converting historical job results to signals.
+properties:
+  data:
+    $ref: ./ConvertJobResultsToSignalsData.yaml
+type: object

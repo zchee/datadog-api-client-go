@@ -1,0 +1,4 @@
+description: An object related to a downtime.
+oneOf:
+  - $ref: ./User.yaml
+  - $ref: ./DowntimeMonitorIncludedItem.yaml

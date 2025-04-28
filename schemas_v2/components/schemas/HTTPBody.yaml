@@ -1,0 +1,11 @@
+description: The definition of `HTTPBody` object.
+properties:
+  content:
+    description: Serialized body content
+    example: '{"some-json": "with-value"}'
+    type: string
+  content_type:
+    description: Content type of the body
+    example: application/json
+    type: string
+type: object

@@ -1,0 +1,7 @@
+description: The UUID of the task.
+example: 6d09294c-9ad9-42fd-a759-a0c1599b4828
+in: path
+name: task_id
+required: true
+schema:
+  type: string

@@ -1,0 +1,11 @@
+description: Incident integration metadata for the Microsoft Teams integration.
+properties:
+  teams:
+    description: Array of Microsoft Teams in this integration metadata.
+    example: []
+    items:
+      $ref: ./MSTeamsIntegrationMetadataTeamsItem.yaml
+    type: array
+required:
+  - teams
+type: object

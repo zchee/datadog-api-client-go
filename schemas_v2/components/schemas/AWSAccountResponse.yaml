@@ -1,0 +1,7 @@
+description: AWS Account response body.
+properties:
+  data:
+    $ref: ./AWSAccountResponseData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,13 @@
+description: Description of signals.
+properties:
+  notifications:
+    description: Notification targets for each rule case.
+    items:
+      description: Notification.
+      type: string
+    type: array
+  status:
+    $ref: ./SecurityMonitoringRuleSeverity.yaml
+required:
+  - status
+type: object

@@ -1,0 +1,36 @@
+description: The update request for an incident's attachments.
+properties:
+  data:
+    description: >-
+      An array of incident attachments. An attachment object without an "id" key
+      indicates that you want to
+
+      create that attachment. An attachment object without an "attributes" key
+      indicates that you want to
+
+      delete that attachment. An attachment object with both the "id" key and a
+      populated "attributes" object
+
+      indicates that you want to update that attachment.
+    example:
+      - attributes:
+          attachment:
+            documentUrl: https://app.datadoghq.com/notebook/123
+            title: Postmortem IR-123
+          attachment_type: postmortem
+        id: 00000000-abcd-0002-0000-000000000000
+        type: incident_attachments
+      - attributes:
+          attachment:
+            documentUrl: https://www.example.com/webstore-failure-runbook
+            title: Runbook for webstore service failures
+          attachment_type: link
+        type: incident_attachments
+      - id: 00000000-abcd-0003-0000-000000000000
+        type: incident_attachments
+    items:
+      $ref: ./IncidentAttachmentUpdateData.yaml
+    type: array
+required:
+  - data
+type: object

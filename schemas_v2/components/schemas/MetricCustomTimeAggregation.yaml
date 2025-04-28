@@ -1,0 +1,15 @@
+description: A time aggregation for use in query.
+enum:
+  - avg
+  - count
+  - max
+  - min
+  - sum
+example: sum
+type: string
+x-enum-varnames:
+  - AVG
+  - COUNT
+  - MAX
+  - MIN
+  - SUM

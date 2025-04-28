@@ -1,0 +1,14 @@
+description: >-
+  Response object with all spans matching the request and pagination
+  information.
+properties:
+  data:
+    description: Array of spans matching the request.
+    items:
+      $ref: ./Span.yaml
+    type: array
+  links:
+    $ref: ./SpansListResponseLinks.yaml
+  meta:
+    $ref: ./SpansListResponseMetadata.yaml
+type: object

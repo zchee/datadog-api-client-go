@@ -1,0 +1,5 @@
+description: Response for `CreateOpenAPI` operation.
+properties:
+  data:
+    $ref: ./CreateOpenAPIResponseData.yaml
+type: object

@@ -1,0 +1,7 @@
+description: Delete group request.
+properties:
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+required:
+  - meta
+type: object

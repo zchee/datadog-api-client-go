@@ -1,0 +1,10 @@
+description: API error response.
+properties:
+  errors:
+    description: A list of errors.
+    items:
+      $ref: ./JSONAPIErrorItem.yaml
+    type: array
+required:
+  - errors
+type: object

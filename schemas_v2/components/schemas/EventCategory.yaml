@@ -1,0 +1,10 @@
+description: >-
+  Event category to identify the type of event. Only the value `change` is
+  supported. Support for other categories are coming. please reach out to
+  datadog support if you're interested.
+enum:
+  - change
+example: change
+type: string
+x-enum-varnames:
+  - CHANGE

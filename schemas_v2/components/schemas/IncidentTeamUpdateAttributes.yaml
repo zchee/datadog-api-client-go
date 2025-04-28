@@ -1,0 +1,9 @@
+description: The incident team's attributes for an update request.
+properties:
+  name:
+    description: Name of the incident team.
+    example: team name
+    type: string
+required:
+  - name
+type: object

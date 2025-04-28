@@ -1,0 +1,10 @@
+description: The new security filter properties.
+properties:
+  attributes:
+    $ref: ./SecurityFilterUpdateAttributes.yaml
+  type:
+    $ref: ./SecurityFilterType.yaml
+required:
+  - type
+  - attributes
+type: object

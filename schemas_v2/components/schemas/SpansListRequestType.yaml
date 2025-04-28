@@ -1,0 +1,8 @@
+default: search_request
+description: The type of resource. The value should always be search_request.
+enum:
+  - search_request
+example: search_request
+type: string
+x-enum-varnames:
+  - SEARCH_REQUEST

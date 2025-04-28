@@ -1,0 +1,7 @@
+description: The definition of Entity V3 API Kind object.
+enum:
+  - api
+example: api
+type: string
+x-enum-varnames:
+  - API

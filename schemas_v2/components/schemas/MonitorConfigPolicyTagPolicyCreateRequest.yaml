@@ -1,0 +1,25 @@
+description: Tag attributes of a monitor configuration policy.
+properties:
+  tag_key:
+    description: The key of the tag.
+    example: datacenter
+    maxLength: 255
+    type: string
+  tag_key_required:
+    description: If a tag key is required for monitor creation.
+    example: true
+    type: boolean
+  valid_tag_values:
+    description: Valid values for the tag.
+    example:
+      - prod
+      - staging
+    items:
+      maxLength: 255
+      type: string
+    type: array
+required:
+  - tag_key
+  - tag_key_required
+  - valid_tag_values
+type: object

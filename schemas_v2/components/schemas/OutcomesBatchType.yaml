@@ -1,0 +1,8 @@
+default: batched-outcome
+description: The JSON:API type for scorecard outcomes.
+enum:
+  - batched-outcome
+example: batched-outcome
+type: string
+x-enum-varnames:
+  - BATCHED_OUTCOME

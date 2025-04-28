@@ -1,0 +1,6 @@
+description: Response object which includes a single metric's volume.
+properties:
+  data:
+    $ref: ./MetricVolumes.yaml
+readOnly: true
+type: object

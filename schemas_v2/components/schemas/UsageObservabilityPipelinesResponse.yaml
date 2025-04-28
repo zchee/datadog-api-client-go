@@ -1,0 +1,8 @@
+description: Observability Pipelines usage response.
+properties:
+  data:
+    description: Response containing Observability Pipelines usage.
+    items:
+      $ref: ./UsageDataObject.yaml
+    type: array
+type: object

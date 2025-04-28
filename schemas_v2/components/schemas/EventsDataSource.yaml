@@ -1,0 +1,10 @@
+default: logs
+description: A data source that is powered by the Events Platform.
+enum:
+  - logs
+  - rum
+example: logs
+type: string
+x-enum-varnames:
+  - LOGS
+  - RUM

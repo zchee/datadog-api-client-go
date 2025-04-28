@@ -1,0 +1,13 @@
+description: Object containing the definition of a metric's ingested and indexed volume.
+properties:
+  indexed_volume:
+    description: Indexed volume for the given metric.
+    example: 10
+    format: int64
+    type: integer
+  ingested_volume:
+    description: Ingested volume for the given metric.
+    example: 20
+    format: int64
+    type: integer
+type: object

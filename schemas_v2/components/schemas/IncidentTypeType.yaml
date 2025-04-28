@@ -1,0 +1,8 @@
+default: incident_types
+description: Incident type resource type.
+enum:
+  - incident_types
+example: incident_types
+type: string
+x-enum-varnames:
+  - INCIDENT_TYPES

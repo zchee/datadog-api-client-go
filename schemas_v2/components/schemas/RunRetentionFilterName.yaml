@@ -1,0 +1,3 @@
+description: The name of a RUM retention filter.
+example: Retention filter for session
+type: string

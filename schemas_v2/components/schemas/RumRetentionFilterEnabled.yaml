@@ -1,0 +1,3 @@
+description: Whether the retention filter is enabled.
+example: true
+type: boolean

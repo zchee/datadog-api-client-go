@@ -1,0 +1,11 @@
+description: Details of a rule.
+properties:
+  name:
+    description: Name of the rule.
+    example: Team Defined
+    type: string
+  scorecard_name:
+    description: The scorecard name to which this rule must belong.
+    example: Observability Best Practices
+    type: string
+type: object

@@ -1,0 +1,7 @@
+description: Request for creating a downtime.
+properties:
+  data:
+    $ref: ./DowntimeCreateRequestData.yaml
+required:
+  - data
+type: object

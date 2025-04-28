@@ -1,0 +1,5 @@
+additionalProperties: false
+description: The API definition.
+oneOf:
+  - $ref: ./EntityV3APISpecInterfaceFileRef.yaml
+  - $ref: ./EntityV3APISpecInterfaceDefinition.yaml

@@ -1,0 +1,3 @@
+description: PagerDuty service URL for the service.
+example: https://my-org.pagerduty.com/service-directory/PMyService
+type: string

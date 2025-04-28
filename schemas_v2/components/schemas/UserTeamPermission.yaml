@@ -1,0 +1,14 @@
+description: A user's permissions for a given team
+properties:
+  attributes:
+    $ref: ./UserTeamPermissionAttributes.yaml
+  id:
+    description: The user team permission's identifier
+    example: UserTeamPermissions-aeadc05e-98a8-11ec-ac2c-da7ad0900001-416595
+    type: string
+  type:
+    $ref: ./UserTeamPermissionType.yaml
+required:
+  - id
+  - type
+type: object

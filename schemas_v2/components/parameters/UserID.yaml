@@ -1,0 +1,7 @@
+description: The ID of the user.
+in: path
+name: user_id
+required: true
+schema:
+  example: 00000000-0000-9999-0000-000000000000
+  type: string

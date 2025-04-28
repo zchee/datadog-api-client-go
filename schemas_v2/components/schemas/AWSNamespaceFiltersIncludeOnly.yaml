@@ -1,0 +1,13 @@
+description: Include only these namespaces.
+properties:
+  include_only:
+    description: Include only these namespaces.
+    example:
+      - AWS/EC2
+    items:
+      example: AWS/EC2
+      type: string
+    type: array
+required:
+  - include_only
+type: object

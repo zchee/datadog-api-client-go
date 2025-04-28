@@ -1,0 +1,16 @@
+description: A sort rule
+example:
+  aggregation: count
+  order: asc
+properties:
+  aggregation:
+    $ref: ./LogsAggregationFunction.yaml
+  metric:
+    description: The metric to sort by (only used for `type=measure`)
+    example: '@duration'
+    type: string
+  order:
+    $ref: ./LogsSortOrder.yaml
+  type:
+    $ref: ./LogsAggregateSortType.yaml
+type: object

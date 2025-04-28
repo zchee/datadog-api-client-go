@@ -1,0 +1,17 @@
+description: The incident service's attributes from a response.
+properties:
+  created:
+    description: Timestamp of when the incident service was created.
+    format: date-time
+    readOnly: true
+    type: string
+  modified:
+    description: Timestamp of when the incident service was modified.
+    format: date-time
+    readOnly: true
+    type: string
+  name:
+    description: Name of the incident service.
+    example: service name
+    type: string
+type: object

@@ -1,0 +1,15 @@
+description: Response with incidents and facets.
+properties:
+  data:
+    $ref: ./IncidentSearchResponseData.yaml
+  included:
+    description: Included related resources that the user requested.
+    items:
+      $ref: ./IncidentResponseIncludedItem.yaml
+    readOnly: true
+    type: array
+  meta:
+    $ref: ./IncidentSearchResponseMeta.yaml
+required:
+  - data
+type: object

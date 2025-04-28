@@ -1,0 +1,10 @@
+description: Data for the clone role request.
+properties:
+  attributes:
+    $ref: ./RoleCloneAttributes.yaml
+  type:
+    $ref: ./RolesType.yaml
+required:
+  - type
+  - attributes
+type: object

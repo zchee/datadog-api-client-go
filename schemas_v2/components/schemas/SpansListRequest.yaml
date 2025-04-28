@@ -1,0 +1,5 @@
+description: The request for a spans list.
+properties:
+  data:
+    $ref: ./SpansListRequestData.yaml
+type: object

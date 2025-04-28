@@ -1,0 +1,11 @@
+description: Team.
+properties:
+  attributes:
+    $ref: ./AuthNMappingTeamAttributes.yaml
+  id:
+    description: The ID of the Team.
+    example: f9bb8444-af7f-11ec-ac2c-da7ad0900001
+    type: string
+  type:
+    $ref: ./TeamType.yaml
+type: object

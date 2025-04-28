@@ -1,0 +1,46 @@
+post:
+  description: >-
+    Returns security signals that match a search query.
+
+    Both this endpoint and the GET endpoint can be used interchangeably for
+    listing
+
+    security signals.
+  operationId: SearchSecurityMonitoringSignals
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SecurityMonitoringSignalListRequest.yaml
+    required: false
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringSignalsListResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_signals_read
+  summary: Get a list of security signals
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-pagination:
+    cursorParam: body.page.cursor
+    cursorPath: meta.page.after
+    limitParam: body.page.limit
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_signals_read

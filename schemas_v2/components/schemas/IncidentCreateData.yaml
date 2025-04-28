@@ -1,0 +1,12 @@
+description: Incident data for a create request.
+properties:
+  attributes:
+    $ref: ./IncidentCreateAttributes.yaml
+  relationships:
+    $ref: ./IncidentCreateRelationships.yaml
+  type:
+    $ref: ./IncidentType.yaml
+required:
+  - type
+  - attributes
+type: object

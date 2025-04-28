@@ -1,0 +1,8 @@
+default: monitor-notification-rule
+description: Monitor notification rule resource type.
+enum:
+  - monitor-notification-rule
+example: monitor-notification-rule
+type: string
+x-enum-varnames:
+  - MONITOR_NOTIFICATION_RULE

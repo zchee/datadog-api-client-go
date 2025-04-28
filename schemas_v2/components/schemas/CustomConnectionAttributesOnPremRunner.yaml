@@ -1,0 +1,11 @@
+description: >-
+  Information about the Private Action Runner used by the custom connection, if
+  the custom connection is associated with a Private Action Runner.
+properties:
+  id:
+    description: The Private Action Runner ID.
+    type: string
+  url:
+    description: The URL of the Private Action Runner.
+    type: string
+type: object

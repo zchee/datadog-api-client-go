@@ -1,0 +1,91 @@
+delete:
+  description: >-
+    Delete a Workflows webhook handle from the Datadog Microsoft Teams
+    integration.
+  operationId: DeleteWorkflowsWebhookHandle
+  parameters:
+    - $ref: >-
+        ../components/parameters/MicrosoftTeamsWorkflowsWebhookHandleIDPathParameter.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '412':
+      $ref: ../components/responses/PreconditionFailedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete Workflows webhook handle
+  tags:
+    - Microsoft Teams Integration
+get:
+  description: >-
+    Get the name of a Workflows webhook handle from the Datadog Microsoft Teams
+    integration.
+  operationId: GetWorkflowsWebhookHandle
+  parameters:
+    - $ref: >-
+        ../components/parameters/MicrosoftTeamsWorkflowsWebhookHandleIDPathParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/MicrosoftTeamsWorkflowsWebhookHandleResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '412':
+      $ref: ../components/responses/PreconditionFailedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get Workflows webhook handle information
+  tags:
+    - Microsoft Teams Integration
+patch:
+  description: >-
+    Update a Workflows webhook handle from the Datadog Microsoft Teams
+    integration.
+  operationId: UpdateWorkflowsWebhookHandle
+  parameters:
+    - $ref: >-
+        ../components/parameters/MicrosoftTeamsWorkflowsWebhookHandleIDPathParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest.yaml
+    description: Workflows Webhook handle payload.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/MicrosoftTeamsWorkflowsWebhookHandleResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '412':
+      $ref: ../components/responses/PreconditionFailedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update Workflows webhook handle
+  tags:
+    - Microsoft Teams Integration
+  x-codegen-request-body-name: body

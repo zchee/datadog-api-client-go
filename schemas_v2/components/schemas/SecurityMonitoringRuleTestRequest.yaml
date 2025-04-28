@@ -1,0 +1,12 @@
+description: >-
+  Test the rule queries of a rule (rule property is ignored when applied to an
+  existing rule)
+properties:
+  rule:
+    $ref: ./SecurityMonitoringRuleTestPayload.yaml
+  ruleQueryPayloads:
+    description: Data payloads used to test rules query with the expected result.
+    items:
+      $ref: ./SecurityMonitoringRuleQueryPayload.yaml
+    type: array
+type: object

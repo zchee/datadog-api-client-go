@@ -1,0 +1,7 @@
+description: The expected response schema when getting a finding.
+properties:
+  data:
+    $ref: ./DetailedFinding.yaml
+required:
+  - data
+type: object

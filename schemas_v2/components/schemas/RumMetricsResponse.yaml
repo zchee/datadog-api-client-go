@@ -1,0 +1,8 @@
+description: All the available rum-based metric objects.
+properties:
+  data:
+    description: A list of rum-based metric objects.
+    items:
+      $ref: ./RumMetricResponseData.yaml
+    type: array
+type: object

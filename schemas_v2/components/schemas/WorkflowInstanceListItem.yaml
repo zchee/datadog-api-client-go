@@ -1,0 +1,7 @@
+additionalProperties: {}
+description: An item in the workflow instances list.
+properties:
+  id:
+    description: The ID of the workflow instance
+    type: string
+type: object

@@ -1,0 +1,42 @@
+description: The definition of `WorkflowDataAttributes` object.
+properties:
+  createdAt:
+    description: When the workflow was created.
+    format: date-time
+    readOnly: true
+    type: string
+  description:
+    description: Description of the workflow.
+    type: string
+  name:
+    description: Name of the workflow.
+    example: ''
+    type: string
+  published:
+    description: >-
+      Set the workflow to published or unpublished. Workflows in an unpublished
+      state will only be executable via manual runs. Automatic triggers such as
+      Schedule will not execute the workflow until it is published.
+    type: boolean
+  spec:
+    $ref: ./Spec.yaml
+  tags:
+    description: Tags of the workflow.
+    items:
+      type: string
+    type: array
+  updatedAt:
+    description: When the workflow was last updated.
+    format: date-time
+    readOnly: true
+    type: string
+  webhookSecret:
+    description: >-
+      If a Webhook trigger is defined on this workflow, a webhookSecret is
+      required and should be provided here.
+    type: string
+    writeOnly: true
+required:
+  - name
+  - spec
+type: object

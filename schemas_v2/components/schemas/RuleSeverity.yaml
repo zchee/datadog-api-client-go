@@ -1,0 +1,17 @@
+description: Severity of a security rule.
+enum:
+  - critical
+  - high
+  - medium
+  - low
+  - unknown
+  - info
+example: critical
+type: string
+x-enum-varnames:
+  - CRITICAL
+  - HIGH
+  - MEDIUM
+  - LOW
+  - UNKNOWN
+  - INFO

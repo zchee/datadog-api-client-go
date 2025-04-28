@@ -1,0 +1,8 @@
+description: Whether to prompt the user to confirm this query before it runs.
+oneOf:
+  - type: boolean
+  - description: >-
+      If this is a string, it must be a valid JavaScript expression that
+      evaluates to a boolean.
+    example: ${true}
+    type: string

@@ -1,0 +1,8 @@
+default: sensitive_data_scanner_standard_pattern
+description: Sensitive Data Scanner standard pattern type.
+enum:
+  - sensitive_data_scanner_standard_pattern
+example: sensitive_data_scanner_standard_pattern
+type: string
+x-enum-varnames:
+  - SENSITIVE_DATA_SCANNER_STANDARD_PATTERN

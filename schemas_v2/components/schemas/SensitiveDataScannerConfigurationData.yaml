@@ -1,0 +1,5 @@
+description: A Sensitive Data Scanner configuration data.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerConfiguration.yaml
+type: object

@@ -1,0 +1,11 @@
+description: The S3 encryption settings.
+properties:
+  key:
+    description: An Amazon Resource Name (ARN) used to identify an AWS KMS key.
+    example: arn:aws:kms:us-east-1:012345678901:key/DatadogIntegrationRoleKms
+    type: string
+  type:
+    $ref: ./LogsArchiveEncryptionS3Type.yaml
+required:
+  - type
+type: object

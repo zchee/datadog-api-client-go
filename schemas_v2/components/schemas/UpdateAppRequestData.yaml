@@ -1,0 +1,16 @@
+description: >-
+  The data object containing the new app definition. Any fields not included in
+  the request remain unchanged.
+properties:
+  attributes:
+    $ref: ./UpdateAppRequestDataAttributes.yaml
+  id:
+    description: The ID of the app to update. The app ID must match the ID in the URL path.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+  type:
+    $ref: ./AppDefinitionType.yaml
+required:
+  - type
+type: object

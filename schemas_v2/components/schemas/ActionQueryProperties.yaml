@@ -1,0 +1,27 @@
+description: The properties of the action query.
+properties:
+  condition:
+    $ref: ./ActionQueryCondition.yaml
+  debounceInMs:
+    $ref: ./ActionQueryDebounceInMs.yaml
+  mockedOutputs:
+    $ref: ./ActionQueryMockedOutputs.yaml
+  onlyTriggerManually:
+    $ref: ./ActionQueryOnlyTriggerManually.yaml
+  outputs:
+    description: >-
+      The post-query transformation function, which is a JavaScript function
+      that changes the query's `.outputs` property after the query's execution.
+    example: ${((outputs) => {return outputs.body.data})(self.rawOutputs)}
+    type: string
+  pollingIntervalInMs:
+    $ref: ./ActionQueryPollingIntervalInMs.yaml
+  requiresConfirmation:
+    $ref: ./ActionQueryRequiresConfirmation.yaml
+  showToastOnError:
+    $ref: ./ActionQueryShowToastOnError.yaml
+  spec:
+    $ref: ./ActionQuerySpec.yaml
+required:
+  - spec
+type: object

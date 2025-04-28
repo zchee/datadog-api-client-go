@@ -1,0 +1,21 @@
+description: The field and direction to sort apps by
+enum:
+  - name
+  - created_at
+  - updated_at
+  - user_name
+  - '-name'
+  - '-created_at'
+  - '-updated_at'
+  - '-user_name'
+example: '-created_at'
+type: string
+x-enum-varnames:
+  - NAME
+  - CREATED_AT
+  - UPDATED_AT
+  - USER_NAME
+  - NAME_DESC
+  - CREATED_AT_DESC
+  - UPDATED_AT_DESC
+  - USER_NAME_DESC

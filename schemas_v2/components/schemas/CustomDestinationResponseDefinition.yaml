@@ -1,0 +1,12 @@
+description: The definition of a custom destination.
+properties:
+  attributes:
+    $ref: ./CustomDestinationResponseAttributes.yaml
+  id:
+    description: The custom destination ID.
+    example: be5d7a69-d0c8-4d4d-8ee8-bba292d98139
+    readOnly: true
+    type: string
+  type:
+    $ref: ./CustomDestinationType.yaml
+type: object

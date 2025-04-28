@@ -1,0 +1,4 @@
+description: AWS Metrics namespace filters. Defaults to `exclude_only`.
+oneOf:
+  - $ref: ./AWSNamespaceFiltersExcludeOnly.yaml
+  - $ref: ./AWSNamespaceFiltersIncludeOnly.yaml

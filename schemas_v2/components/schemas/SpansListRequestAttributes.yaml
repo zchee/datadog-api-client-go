@@ -1,0 +1,11 @@
+description: The object containing all the query parameters.
+properties:
+  filter:
+    $ref: ./SpansQueryFilter.yaml
+  options:
+    $ref: ./SpansQueryOptions.yaml
+  page:
+    $ref: ./SpansListRequestPage.yaml
+  sort:
+    $ref: ./SpansSort.yaml
+type: object

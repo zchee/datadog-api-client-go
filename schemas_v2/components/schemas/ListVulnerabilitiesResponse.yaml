@@ -1,0 +1,14 @@
+description: The expected response schema when listing vulnerabilities.
+properties:
+  data:
+    description: List of vulnerabilities.
+    items:
+      $ref: ./Vulnerability.yaml
+    type: array
+  links:
+    $ref: ./Links.yaml
+  meta:
+    $ref: ./Metadata.yaml
+required:
+  - data
+type: object

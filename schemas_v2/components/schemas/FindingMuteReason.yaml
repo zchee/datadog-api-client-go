@@ -1,0 +1,19 @@
+description: The reason why this finding is muted or unmuted.
+enum:
+  - PENDING_FIX
+  - FALSE_POSITIVE
+  - ACCEPTED_RISK
+  - NO_PENDING_FIX
+  - HUMAN_ERROR
+  - NO_LONGER_ACCEPTED_RISK
+  - OTHER
+example: ACCEPTED_RISK
+type: string
+x-enum-varnames:
+  - PENDING_FIX
+  - FALSE_POSITIVE
+  - ACCEPTED_RISK
+  - NO_PENDING_FIX
+  - HUMAN_ERROR
+  - NO_LONGER_ACCEPTED_RISK
+  - OTHER

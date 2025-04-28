@@ -1,0 +1,5 @@
+description: A timeseries array.
+items:
+  $ref: ./RUMAggregateBucketValueTimeseriesPoint.yaml
+type: array
+x-generate-alias-as-model: true

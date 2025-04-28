@@ -1,0 +1,9 @@
+description: Attributes describing the new assignee of a security signal.
+properties:
+  assignee:
+    $ref: ./SecurityMonitoringTriageUser.yaml
+  version:
+    $ref: ./SecurityMonitoringSignalVersion.yaml
+required:
+  - assignee
+type: object

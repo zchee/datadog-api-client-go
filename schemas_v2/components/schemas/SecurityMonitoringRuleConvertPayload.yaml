@@ -1,0 +1,4 @@
+description: Convert a rule from JSON to Terraform.
+oneOf:
+  - $ref: ./SecurityMonitoringStandardRulePayload.yaml
+  - $ref: ./SecurityMonitoringSignalRulePayload.yaml

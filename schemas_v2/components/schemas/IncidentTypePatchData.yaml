@@ -1,0 +1,15 @@
+description: Incident type data for a patch request.
+properties:
+  attributes:
+    $ref: ./IncidentTypeUpdateAttributes.yaml
+  id:
+    description: The incident type's ID.
+    example: 00000000-0000-0000-0000-000000000000
+    type: string
+  type:
+    $ref: ./IncidentTypeType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

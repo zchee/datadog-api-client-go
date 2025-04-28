@@ -1,0 +1,7 @@
+description: Incident returned by the search.
+properties:
+  data:
+    $ref: ./IncidentResponseData.yaml
+required:
+  - data
+type: object

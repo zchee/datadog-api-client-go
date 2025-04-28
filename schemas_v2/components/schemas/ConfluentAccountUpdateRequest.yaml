@@ -1,0 +1,7 @@
+description: The JSON:API request for updating a Confluent account.
+properties:
+  data:
+    $ref: ./ConfluentAccountUpdateRequestData.yaml
+required:
+  - data
+type: object

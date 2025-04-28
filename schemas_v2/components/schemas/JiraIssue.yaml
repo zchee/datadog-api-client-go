@@ -1,0 +1,9 @@
+description: Jira issue attached to case
+nullable: true
+properties:
+  result:
+    $ref: ./JiraIssueResult.yaml
+  status:
+    $ref: ./Case3rdPartyTicketStatus.yaml
+readOnly: true
+type: object

@@ -1,0 +1,9 @@
+description: The definition of `RetryStrategy` object.
+properties:
+  kind:
+    $ref: ./RetryStrategyKind.yaml
+  linear:
+    $ref: ./RetryStrategyLinear.yaml
+required:
+  - kind
+type: object

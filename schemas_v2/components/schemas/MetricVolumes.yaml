@@ -1,0 +1,4 @@
+description: Possible response objects for a metric's volume.
+oneOf:
+  - $ref: ./MetricDistinctVolume.yaml
+  - $ref: ./MetricIngestedIndexedVolume.yaml

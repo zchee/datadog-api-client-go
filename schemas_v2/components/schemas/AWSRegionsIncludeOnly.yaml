@@ -1,0 +1,13 @@
+description: Include only these regions.
+properties:
+  include_only:
+    description: Include only these regions.
+    example:
+      - us-east-1
+    items:
+      example: us-east-1
+      type: string
+    type: array
+required:
+  - include_only
+type: object

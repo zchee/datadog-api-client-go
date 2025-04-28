@@ -1,0 +1,12 @@
+description: The definition of an archive.
+properties:
+  attributes:
+    $ref: ./LogsArchiveCreateRequestAttributes.yaml
+  type:
+    default: archives
+    description: The type of the resource. The value should always be archives.
+    example: archives
+    type: string
+required:
+  - type
+type: object

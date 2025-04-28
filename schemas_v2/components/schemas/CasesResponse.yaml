@@ -1,0 +1,10 @@
+description: Response with cases
+properties:
+  data:
+    description: Cases response data
+    items:
+      $ref: ./Case.yaml
+    type: array
+  meta:
+    $ref: ./CasesResponseMeta.yaml
+type: object

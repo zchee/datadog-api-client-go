@@ -1,0 +1,34 @@
+description: >-
+  A time window is specified to match when at least one of the cases matches
+  true. This is a sliding window
+
+  and evaluates in real time. For third party detection method, this field is
+  not used.
+enum:
+  - 0
+  - 60
+  - 300
+  - 600
+  - 900
+  - 1800
+  - 3600
+  - 7200
+  - 10800
+  - 21600
+  - 43200
+  - 86400
+format: int32
+type: integer
+x-enum-varnames:
+  - ZERO_MINUTES
+  - ONE_MINUTE
+  - FIVE_MINUTES
+  - TEN_MINUTES
+  - FIFTEEN_MINUTES
+  - THIRTY_MINUTES
+  - ONE_HOUR
+  - TWO_HOURS
+  - THREE_HOURS
+  - SIX_HOURS
+  - TWELVE_HOURS
+  - ONE_DAY

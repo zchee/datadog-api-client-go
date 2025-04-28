@@ -1,0 +1,7 @@
+description: The response from the create data deletion request endpoint.
+properties:
+  data:
+    $ref: ./DataDeletionResponseItem.yaml
+  meta:
+    $ref: ./DataDeletionResponseMeta.yaml
+type: object

@@ -1,0 +1,13 @@
+additionalProperties: false
+description: Attributes of the monitor notification rule.
+properties:
+  filter:
+    $ref: ./MonitorNotificationRuleFilter.yaml
+  name:
+    $ref: ./MonitorNotificationRuleName.yaml
+  recipients:
+    $ref: ./MonitorNotificationRuleRecipients.yaml
+required:
+  - name
+  - recipients
+type: object

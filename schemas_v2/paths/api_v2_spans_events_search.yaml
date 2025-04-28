@@ -1,0 +1,45 @@
+post:
+  description: |-
+    List endpoint returns spans that match a span search query.
+    [Results are paginated][1].
+
+    Use this endpoint to build complex spans filtering and search.
+    This endpoint is rate limited to `300` requests per hour.
+
+    [1]: /logs/guide/collect-multiple-logs-with-pagination?tab=v2api
+  operationId: ListSpans
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SpansListRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SpansListResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/SpansBadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/SpansForbiddenResponse.yaml
+    '422':
+      $ref: ../components/responses/SpansUnprocessableEntityResponse.yaml
+    '429':
+      $ref: ../components/responses/SpansTooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_read
+  summary: Search spans
+  tags:
+    - Spans
+  x-codegen-request-body-name: body
+  x-pagination:
+    cursorParam: body.data.attributes.page.cursor
+    cursorPath: meta.page.after
+    limitParam: body.data.attributes.page.limit
+    resultsPath: data

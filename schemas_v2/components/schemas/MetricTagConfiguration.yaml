@@ -1,0 +1,22 @@
+description: Object for a single metric tag configuration.
+example:
+  attributes:
+    aggregations:
+      - space: avg
+        time: avg
+    created_at: '2020-03-25T09:48:37.463835Z'
+    metric_type: gauge
+    modified_at: '2020-04-25T09:48:37.463835Z'
+    tags:
+      - app
+      - datacenter
+  id: http.request.latency
+  type: manage_tags
+properties:
+  attributes:
+    $ref: ./MetricTagConfigurationAttributes.yaml
+  id:
+    $ref: ./MetricName.yaml
+  type:
+    $ref: ./MetricTagConfigurationType.yaml
+type: object

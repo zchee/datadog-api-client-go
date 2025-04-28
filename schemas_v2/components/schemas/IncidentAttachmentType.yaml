@@ -1,0 +1,8 @@
+default: incident_attachments
+description: The incident attachment resource type.
+enum:
+  - incident_attachments
+example: incident_attachments
+type: string
+x-enum-varnames:
+  - INCIDENT_ATTACHMENTS

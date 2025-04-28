@@ -1,0 +1,9 @@
+description: Attributes required to create a new role by cloning an existing one.
+properties:
+  name:
+    description: Name of the new role that is cloned.
+    example: cloned-role
+    type: string
+required:
+  - name
+type: object

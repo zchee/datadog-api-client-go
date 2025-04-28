@@ -1,0 +1,7 @@
+description: Request object containing the fields to update on the suppression rule.
+properties:
+  data:
+    $ref: ./SecurityMonitoringSuppressionUpdateData.yaml
+required:
+  - data
+type: object

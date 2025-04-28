@@ -1,0 +1,11 @@
+description: Data related to the creation of a role.
+properties:
+  attributes:
+    $ref: ./RoleCreateAttributes.yaml
+  relationships:
+    $ref: ./RoleRelationships.yaml
+  type:
+    $ref: ./RolesType.yaml
+required:
+  - attributes
+type: object

@@ -1,0 +1,8 @@
+description: The sort parameters when querying events.
+enum:
+  - timestamp
+  - '-timestamp'
+type: string
+x-enum-varnames:
+  - TIMESTAMP_ASCENDING
+  - TIMESTAMP_DESCENDING

@@ -1,0 +1,12 @@
+description: Data related to the update of a rule.
+properties:
+  attributes:
+    $ref: ./SensitiveDataScannerRuleAttributes.yaml
+  id:
+    description: ID of the rule.
+    type: string
+  relationships:
+    $ref: ./SensitiveDataScannerRuleRelationships.yaml
+  type:
+    $ref: ./SensitiveDataScannerRuleType.yaml
+type: object

@@ -1,0 +1,29 @@
+description: The SBOM component type
+enum:
+  - application
+  - container
+  - data
+  - device
+  - device-driver
+  - file
+  - firmware
+  - framework
+  - library
+  - machine-learning-model
+  - operating-system
+  - platform
+example: application
+type: string
+x-enum-varnames:
+  - APPLICATION
+  - CONTAINER
+  - DATA
+  - DEVICE
+  - DEVICE_DRIVER
+  - FILE
+  - FIRMWARE
+  - FRAMEWORK
+  - LIBRARY
+  - MACHINE_LEARNING_MODEL
+  - OPERATING_SYSTEM
+  - PLATFORM

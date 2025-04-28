@@ -1,0 +1,15 @@
+description: The instructions for what to compute for this query.
+properties:
+  aggregation:
+    $ref: ./EventsAggregation.yaml
+  interval:
+    description: Interval for compute in milliseconds.
+    example: 60000
+    format: int64
+    type: integer
+  metric:
+    description: The "measure" attribute on which to perform the computation.
+    type: string
+required:
+  - aggregation
+type: object

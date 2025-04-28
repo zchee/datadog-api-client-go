@@ -1,0 +1,8 @@
+default: ip_allowlist_entry
+description: IP allowlist Entry type.
+enum:
+  - ip_allowlist_entry
+example: ip_allowlist_entry
+type: string
+x-enum-varnames:
+  - IP_ALLOWLIST_ENTRY

@@ -1,0 +1,8 @@
+default: basic
+description: Type of the basic access authentication.
+enum:
+  - basic
+example: basic
+type: string
+x-enum-varnames:
+  - BASIC

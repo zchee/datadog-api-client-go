@@ -1,0 +1,4 @@
+description: AWS X-Ray services to collect traces from. Defaults to `include_only`.
+oneOf:
+  - $ref: ./XRayServicesIncludeAll.yaml
+  - $ref: ./XRayServicesIncludeOnly.yaml

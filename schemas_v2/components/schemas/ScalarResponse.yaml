@@ -1,0 +1,7 @@
+description: A message containing the response to a scalar query.
+properties:
+  attributes:
+    $ref: ./ScalarFormulaResponseAtrributes.yaml
+  type:
+    $ref: ./ScalarFormulaResponseType.yaml
+type: object

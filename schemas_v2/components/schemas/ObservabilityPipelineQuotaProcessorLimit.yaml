@@ -1,0 +1,15 @@
+description: >-
+  The maximum amount of data or number of events allowed before the quota is
+  enforced. Can be specified in bytes or events.
+properties:
+  enforce:
+    $ref: ./ObservabilityPipelineQuotaProcessorLimitEnforceType.yaml
+  limit:
+    description: The limit for quota enforcement.
+    example: 1000
+    format: int64
+    type: integer
+required:
+  - enforce
+  - limit
+type: object

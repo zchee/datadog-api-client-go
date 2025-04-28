@@ -1,0 +1,16 @@
+description: A field with potentially multiple values selected.
+properties:
+  type:
+    $ref: ./IncidentFieldAttributesValueType.yaml
+  value:
+    description: The multiple values selected for this field.
+    example:
+      - '1.0'
+      - '1.1'
+    items:
+      description: A value which has been selected for the parent field.
+      example: '1.1'
+      type: string
+    nullable: true
+    type: array
+type: object

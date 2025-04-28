@@ -1,0 +1,12 @@
+description: A notebook object with title.
+properties:
+  attributes:
+    $ref: ./MetricAssetAttributes.yaml
+  id:
+    $ref: ./MetricNotebookID.yaml
+  type:
+    $ref: ./MetricNotebookType.yaml
+required:
+  - id
+  - type
+type: object

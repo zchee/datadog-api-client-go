@@ -1,0 +1,7 @@
+description: >-
+  Collects the key relationship fields for a team reference, specifically
+  on-call users.
+properties:
+  oncall_users:
+    $ref: ./TeamReferenceRelationshipsOncallUsers.yaml
+type: object

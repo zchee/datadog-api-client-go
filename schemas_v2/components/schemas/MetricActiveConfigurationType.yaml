@@ -1,0 +1,8 @@
+default: actively_queried_configurations
+description: The metric actively queried configuration resource type.
+enum:
+  - actively_queried_configurations
+example: actively_queried_configurations
+type: string
+x-enum-varnames:
+  - ACTIVELY_QUERIED_CONFIGURATIONS

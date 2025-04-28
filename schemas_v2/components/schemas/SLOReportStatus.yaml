@@ -1,0 +1,13 @@
+description: The status of the SLO report job.
+enum:
+  - in_progress
+  - completed
+  - completed_with_errors
+  - failed
+example: completed
+type: string
+x-enum-varnames:
+  - IN_PROGRESS
+  - COMPLETED
+  - COMPLETED_WITH_ERRORS
+  - FAILED

@@ -1,0 +1,5 @@
+description: The retention filters definition.
+properties:
+  data:
+    $ref: ./RetentionFilter.yaml
+type: object

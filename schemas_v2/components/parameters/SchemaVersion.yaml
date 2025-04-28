@@ -1,0 +1,6 @@
+description: The schema version desired in the response.
+in: query
+name: schema_version
+required: false
+schema:
+  $ref: ../schemas/ServiceDefinitionSchemaVersions.yaml

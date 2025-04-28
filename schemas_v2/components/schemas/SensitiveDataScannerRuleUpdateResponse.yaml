@@ -1,0 +1,5 @@
+description: Update rule response.
+properties:
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+type: object

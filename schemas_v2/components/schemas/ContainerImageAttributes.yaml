@@ -1,0 +1,91 @@
+description: Attributes for a Container Image.
+properties:
+  container_count:
+    description: Number of containers running the image.
+    format: int64
+    type: integer
+  image_flavors:
+    description: |-
+      List of platform-specific images associated with the image record.
+      The list contains more than 1 entry for multi-architecture images.
+    items:
+      $ref: ./ContainerImageFlavor.yaml
+    type: array
+  image_tags:
+    description: List of image tags associated with the Container Image.
+    items:
+      description: An image tag associated with the Container Image.
+      type: string
+    type: array
+  images_built_at:
+    description: |-
+      List of build times associated with the Container Image.
+      The list contains more than 1 entry for multi-architecture images.
+    items:
+      description: Time the platform-specific Container Image was built.
+      type: string
+    type: array
+  name:
+    description: Name of the Container Image.
+    type: string
+  os_architectures:
+    description: List of Operating System architectures supported by the Container Image.
+    items:
+      description: Operating System architecture supported by the Container Image.
+      example: amd64
+      type: string
+    type: array
+  os_names:
+    description: List of Operating System names supported by the Container Image.
+    items:
+      description: Operating System supported by the Container Image.
+      example: linux
+      type: string
+    type: array
+  os_versions:
+    description: List of Operating System versions supported by the Container Image.
+    items:
+      description: Operating System version supported by the Container Image.
+      type: string
+    type: array
+  published_at:
+    description: Time the image was pushed to the container registry.
+    type: string
+  registry:
+    description: Registry the Container Image was pushed to.
+    type: string
+  repo_digest:
+    description: Digest of the compressed image manifest.
+    type: string
+  repository:
+    description: Repository where the Container Image is stored in.
+    type: string
+  short_image:
+    description: Short version of the Container Image name.
+    type: string
+  sizes:
+    description: >-
+      List of size for each platform-specific image associated with the image
+      record.
+
+      The list contains more than 1 entry for multi-architecture images.
+    items:
+      description: Size of the platform-specific Container Image.
+      format: int64
+      type: integer
+    type: array
+  sources:
+    description: List of sources where the Container Image was collected from.
+    items:
+      description: Source where the Container Image was collected from.
+      type: string
+    type: array
+  tags:
+    description: List of tags associated with the Container Image.
+    items:
+      description: A tag associated with the Container Image.
+      type: string
+    type: array
+  vulnerability_count:
+    $ref: ./ContainerImageVulnerabilities.yaml
+type: object

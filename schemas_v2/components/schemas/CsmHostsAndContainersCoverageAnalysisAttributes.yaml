@@ -1,0 +1,16 @@
+description: CSM Hosts and Containers Coverage Analysis attributes.
+properties:
+  cspm_coverage:
+    $ref: ./CsmCoverageAnalysis.yaml
+  cws_coverage:
+    $ref: ./CsmCoverageAnalysis.yaml
+  org_id:
+    description: The ID of your organization.
+    example: 123456
+    format: int64
+    type: integer
+  total_coverage:
+    $ref: ./CsmCoverageAnalysis.yaml
+  vm_coverage:
+    $ref: ./CsmCoverageAnalysis.yaml
+type: object

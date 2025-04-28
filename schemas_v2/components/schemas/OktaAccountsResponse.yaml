@@ -1,0 +1,8 @@
+description: The expected response schema when getting Okta accounts.
+properties:
+  data:
+    description: List of Okta accounts.
+    items:
+      $ref: ./OktaAccountResponseData.yaml
+    type: array
+type: object

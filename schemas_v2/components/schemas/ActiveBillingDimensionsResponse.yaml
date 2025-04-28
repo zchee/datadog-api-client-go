@@ -1,0 +1,5 @@
+description: Active billing dimensions response.
+properties:
+  data:
+    $ref: ./ActiveBillingDimensionsBody.yaml
+type: object

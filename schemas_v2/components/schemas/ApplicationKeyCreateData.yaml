@@ -1,0 +1,10 @@
+description: Object used to create an application key.
+properties:
+  attributes:
+    $ref: ./ApplicationKeyCreateAttributes.yaml
+  type:
+    $ref: ./ApplicationKeysType.yaml
+required:
+  - attributes
+  - type
+type: object

@@ -1,0 +1,15 @@
+description: Incident Team data for an update request.
+properties:
+  attributes:
+    $ref: ./IncidentTeamUpdateAttributes.yaml
+  id:
+    description: The incident team's ID.
+    example: 00000000-7ea3-0000-0001-000000000000
+    type: string
+  relationships:
+    $ref: ./IncidentTeamRelationships.yaml
+  type:
+    $ref: ./IncidentTeamType.yaml
+required:
+  - type
+type: object

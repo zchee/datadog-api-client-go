@@ -1,0 +1,32 @@
+description: The attributes portion of the SLO report request.
+properties:
+  from_ts:
+    description: The `from` timestamp for the report in epoch seconds.
+    example: 1690901870
+    format: int64
+    type: integer
+  interval:
+    $ref: ./SLOReportInterval.yaml
+  query:
+    description: >-
+      The query string used to filter SLO results. Some examples of queries
+      include `service:<service-name>` and `slo-name`.
+    example: slo_type:metric
+    type: string
+  timezone:
+    description: >-
+      The timezone used to determine the start and end of each interval. For
+      example, weekly intervals start at 12am on Sunday in the specified
+      timezone.
+    example: America/New_York
+    type: string
+  to_ts:
+    description: The `to` timestamp for the report in epoch seconds.
+    example: 1706803070
+    format: int64
+    type: integer
+required:
+  - query
+  - from_ts
+  - to_ts
+type: object

@@ -1,0 +1,7 @@
+description: Scorecard rules response.
+properties:
+  data:
+    $ref: ./ListRulesResponseData.yaml
+  links:
+    $ref: ./ListRulesResponseLinks.yaml
+type: object

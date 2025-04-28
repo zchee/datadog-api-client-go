@@ -1,0 +1,43 @@
+description: Team update attributes
+properties:
+  avatar:
+    description: >-
+      Unicode representation of the avatar for the team, limited to a single
+      grapheme
+    example: 🥑
+    nullable: true
+    type: string
+  banner:
+    description: Banner selection for the team
+    format: int64
+    nullable: true
+    type: integer
+  description:
+    description: Free-form markdown description/content for the team's homepage
+    type: string
+  handle:
+    description: The team's identifier
+    example: example-team
+    maxLength: 195
+    type: string
+  hidden_modules:
+    description: Collection of hidden modules for the team
+    items:
+      description: String identifier of the module
+      type: string
+    type: array
+  name:
+    description: The name of the team
+    example: Example Team
+    maxLength: 200
+    type: string
+  visible_modules:
+    description: Collection of visible modules for the team
+    items:
+      description: String identifier of the module
+      type: string
+    type: array
+required:
+  - handle
+  - name
+type: object

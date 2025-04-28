@@ -1,0 +1,32 @@
+post:
+  description: >-
+    The API endpoint to aggregate events into buckets and compute metrics and
+    timeseries.
+  operationId: AggregateLogs
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/LogsAggregateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LogsAggregateResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Aggregate events
+  tags:
+    - Logs
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_read_data

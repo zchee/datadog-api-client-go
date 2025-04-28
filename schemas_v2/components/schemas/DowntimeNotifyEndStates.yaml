@@ -1,0 +1,9 @@
+description: >-
+  States that will trigger a monitor notification when the `notify_end_types`
+  action occurs.
+example:
+  - alert
+  - warn
+items:
+  $ref: ./DowntimeNotifyEndStateTypes.yaml
+type: array

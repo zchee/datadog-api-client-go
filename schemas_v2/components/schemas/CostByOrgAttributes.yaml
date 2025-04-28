@@ -1,0 +1,31 @@
+description: Cost attributes data.
+properties:
+  account_name:
+    description: The account name.
+    type: string
+  account_public_id:
+    description: The account public ID.
+    type: string
+  charges:
+    description: List of charges data reported for the requested month.
+    items:
+      $ref: ./ChargebackBreakdown.yaml
+    type: array
+  date:
+    description: The month requested.
+    format: date-time
+    type: string
+  org_name:
+    description: The organization name.
+    type: string
+  public_id:
+    description: The organization public ID.
+    type: string
+  region:
+    description: The region of the Datadog instance that the organization belongs to.
+    type: string
+  total_cost:
+    description: The total cost of products for the month.
+    format: double
+    type: number
+type: object

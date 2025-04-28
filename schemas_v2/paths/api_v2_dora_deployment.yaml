@@ -1,0 +1,49 @@
+post:
+  description: |-
+    Use this API endpoint to provide data about deployments for DORA metrics.
+
+    This is necessary for:
+    - Deployment Frequency
+    - Change Lead Time
+    - Change Failure Rate
+  operationId: CreateDORADeployment
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/DORADeploymentRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DORADeploymentResponse.yaml
+      description: OK
+    '202':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DORADeploymentResponse.yaml
+      description: OK - but delayed due to incident
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+  summary: Send a deployment event for DORA Metrics
+  tags:
+    - DORA Metrics
+  x-codegen-request-body-name: body
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

@@ -1,0 +1,8 @@
+description: A processor for the pipeline.
+oneOf:
+  - $ref: ./ObservabilityPipelineFilterProcessor.yaml
+  - $ref: ./ObservabilityPipelineParseJSONProcessor.yaml
+  - $ref: ./ObservabilityPipelineQuotaProcessor.yaml
+  - $ref: ./ObservabilityPipelineAddFieldsProcessor.yaml
+  - $ref: ./ObservabilityPipelineRemoveFieldsProcessor.yaml
+  - $ref: ./ObservabilityPipelineRenameFieldsProcessor.yaml

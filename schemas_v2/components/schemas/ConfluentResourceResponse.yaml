@@ -1,0 +1,5 @@
+description: Response schema when interacting with a Confluent resource.
+properties:
+  data:
+    $ref: ./ConfluentResourceResponseData.yaml
+type: object

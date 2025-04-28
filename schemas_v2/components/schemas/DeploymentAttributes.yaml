@@ -1,0 +1,10 @@
+description: The attributes object containing the version ID of the published app.
+properties:
+  app_version_id:
+    description: >-
+      The version ID of the app that was published. For an unpublished app, this
+      is always the nil UUID (`00000000-0000-0000-0000-000000000000`).
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+type: object

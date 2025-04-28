@@ -1,0 +1,5 @@
+description: Relationships of the configuration.
+properties:
+  groups:
+    $ref: ./SensitiveDataScannerGroupList.yaml
+type: object

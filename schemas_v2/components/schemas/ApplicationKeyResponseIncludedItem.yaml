@@ -1,0 +1,5 @@
+description: An object related to an application key.
+oneOf:
+  - $ref: ./User.yaml
+  - $ref: ./Role.yaml
+  - $ref: ./LeakedKey.yaml

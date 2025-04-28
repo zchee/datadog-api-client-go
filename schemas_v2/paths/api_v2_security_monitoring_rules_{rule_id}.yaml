@@ -1,0 +1,105 @@
+delete:
+  description: Delete an existing rule. Default rules cannot be deleted.
+  operationId: DeleteSecurityMonitoringRule
+  parameters:
+    - $ref: ../components/parameters/SecurityMonitoringRuleID.yaml
+  responses:
+    '204':
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_rules_write
+  summary: Delete an existing rule
+  tags:
+    - Security Monitoring
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_rules_write
+get:
+  description: Get a rule's details.
+  operationId: GetSecurityMonitoringRule
+  parameters:
+    - $ref: ../components/parameters/SecurityMonitoringRuleID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringRuleResponse.yaml
+      description: OK
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_rules_read
+  summary: Get a rule's details
+  tags:
+    - Security Monitoring
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_rules_read
+put:
+  description: >-
+    Update an existing rule. When updating `cases`, `queries` or `options`, the
+    whole field
+
+    must be included. For example, when modifying a query all queries must be
+    included.
+
+    Default rules can only be updated to be enabled, to change notifications, or
+    to update
+
+    the tags (default tags cannot be removed).
+  operationId: UpdateSecurityMonitoringRule
+  parameters:
+    - $ref: ../components/parameters/SecurityMonitoringRuleID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SecurityMonitoringRuleUpdatePayload.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringRuleResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_rules_write
+  summary: Update an existing rule
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_rules_write

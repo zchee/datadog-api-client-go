@@ -1,0 +1,7 @@
+description: Request for editing a downtime.
+properties:
+  data:
+    $ref: ./DowntimeUpdateRequestData.yaml
+required:
+  - data
+type: object

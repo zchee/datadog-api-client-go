@@ -1,0 +1,10 @@
+description: An Org Config write operation.
+properties:
+  attributes:
+    $ref: ./OrgConfigWriteAttributes.yaml
+  type:
+    $ref: ./OrgConfigType.yaml
+required:
+  - type
+  - attributes
+type: object

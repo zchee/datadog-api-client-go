@@ -1,0 +1,33 @@
+description: >-
+  A signal will “close” regardless of the query being matched once the time
+  exceeds the maximum duration.
+
+  This time is calculated from the first seen timestamp.
+enum:
+  - 0
+  - 60
+  - 300
+  - 600
+  - 900
+  - 1800
+  - 3600
+  - 7200
+  - 10800
+  - 21600
+  - 43200
+  - 86400
+format: int32
+type: integer
+x-enum-varnames:
+  - ZERO_MINUTES
+  - ONE_MINUTE
+  - FIVE_MINUTES
+  - TEN_MINUTES
+  - FIFTEEN_MINUTES
+  - THIRTY_MINUTES
+  - ONE_HOUR
+  - TWO_HOURS
+  - THREE_HOURS
+  - SIX_HOURS
+  - TWELVE_HOURS
+  - ONE_DAY

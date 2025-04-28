@@ -1,0 +1,7 @@
+description: The ID of an AWS account.
+example: '123456789012'
+in: path
+name: account_id
+required: true
+schema:
+  type: string

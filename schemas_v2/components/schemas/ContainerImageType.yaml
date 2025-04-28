@@ -1,0 +1,8 @@
+default: container_image
+description: Type of Container Image.
+enum:
+  - container_image
+example: container_image
+type: string
+x-enum-varnames:
+  - CONTAINER_IMAGE

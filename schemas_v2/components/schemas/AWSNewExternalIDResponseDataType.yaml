@@ -1,0 +1,8 @@
+default: external_id
+description: The `AWSNewExternalIDResponseData` `type`.
+enum:
+  - external_id
+example: external_id
+type: string
+x-enum-varnames:
+  - EXTERNAL_ID

@@ -1,0 +1,8 @@
+description: A message containing one or more responses to scalar queries.
+properties:
+  data:
+    $ref: ./ScalarResponse.yaml
+  errors:
+    description: An error generated when processing a request.
+    type: string
+type: object

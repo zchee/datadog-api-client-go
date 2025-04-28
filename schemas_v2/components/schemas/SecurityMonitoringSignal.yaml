@@ -1,0 +1,11 @@
+description: Object description of a security signal.
+properties:
+  attributes:
+    $ref: ./SecurityMonitoringSignalAttributes.yaml
+  id:
+    description: The unique ID of the security signal.
+    example: AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA
+    type: string
+  type:
+    $ref: ./SecurityMonitoringSignalType.yaml
+type: object

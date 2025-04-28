@@ -1,0 +1,5 @@
+description: The rum-based metric object.
+properties:
+  data:
+    $ref: ./RumMetricResponseData.yaml
+type: object

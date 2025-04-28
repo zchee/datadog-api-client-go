@@ -1,0 +1,14 @@
+description: >-
+  Represents a user target for an escalation policy step, including the user's
+  ID and resource type.
+properties:
+  id:
+    description: Specifies the unique identifier of the user resource.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+  type:
+    $ref: ./UserTargetType.yaml
+required:
+  - type
+  - id
+type: object

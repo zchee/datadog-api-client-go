@@ -1,0 +1,23 @@
+description: >-
+  Selectors are used to filter security issues for which notifications should be
+  generated.
+
+  Users can specify rule severities, rule types, a query to filter security
+  issues on tags and attributes, and the trigger source.
+
+  Only the trigger_source field is required.
+properties:
+  query:
+    $ref: ./NotificationRuleQuery.yaml
+  rule_types:
+    $ref: ./RuleTypes.yaml
+  severities:
+    description: The security rules severities to consider.
+    items:
+      $ref: ./RuleSeverity.yaml
+    type: array
+  trigger_source:
+    $ref: ./TriggerSource.yaml
+required:
+  - trigger_source
+type: object

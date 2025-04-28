@@ -1,0 +1,8 @@
+default: user_invitations
+description: User invitations type.
+enum:
+  - user_invitations
+example: user_invitations
+type: string
+x-enum-varnames:
+  - USER_INVITATIONS

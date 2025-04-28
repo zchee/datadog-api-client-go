@@ -1,0 +1,5 @@
+description: Optional parameters for bulk deleting metric tag configurations.
+properties:
+  emails:
+    $ref: ./MetricBulkTagConfigEmailList.yaml
+type: object

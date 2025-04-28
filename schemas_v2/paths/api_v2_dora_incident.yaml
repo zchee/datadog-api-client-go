@@ -1,0 +1,48 @@
+post:
+  description: |-
+    Use this API endpoint to provide data about incidents for DORA metrics.
+
+    This is necessary for:
+    - Change Failure Rate
+    - Time to Restore
+  operationId: CreateDORAIncident
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/DORAIncidentRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DORAIncidentResponse.yaml
+      description: OK
+    '202':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DORAIncidentResponse.yaml
+      description: OK - but delayed due to incident
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+  summary: Send an incident event for DORA Metrics
+  tags:
+    - DORA Metrics
+  x-codegen-request-body-name: body
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

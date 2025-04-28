@@ -1,0 +1,11 @@
+description: Relationship to users.
+properties:
+  data:
+    description: Relationships to user objects.
+    example: []
+    items:
+      $ref: ./RelationshipToUserData.yaml
+    type: array
+required:
+  - data
+type: object

@@ -1,0 +1,5 @@
+description: Houses relationships for the schedule update, typically referencing teams.
+properties:
+  teams:
+    $ref: ./ScheduleUpdateRequestDataRelationshipsTeams.yaml
+type: object

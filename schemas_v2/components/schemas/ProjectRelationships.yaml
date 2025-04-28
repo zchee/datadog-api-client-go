@@ -1,0 +1,7 @@
+description: Project relationships
+properties:
+  member_team:
+    $ref: ./RelationshipToTeamLinks.yaml
+  member_user:
+    $ref: ./UsersRelationship.yaml
+type: object

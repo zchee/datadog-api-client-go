@@ -1,0 +1,74 @@
+delete:
+  description: Delete a specific Cloud Security Management Threats Agent rule.
+  operationId: DeleteCSMThreatsAgentRule
+  parameters:
+    - $ref: ../components/parameters/CloudWorkloadSecurityAgentRuleID.yaml
+  responses:
+    '204':
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a CSM Threats Agent rule
+  tags:
+    - CSM Threats
+get:
+  description: Get the details of a specific Cloud Security Management Threats Agent rule.
+  operationId: GetCSMThreatsAgentRule
+  parameters:
+    - $ref: ../components/parameters/CloudWorkloadSecurityAgentRuleID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CloudWorkloadSecurityAgentRuleResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a CSM Threats Agent rule
+  tags:
+    - CSM Threats
+patch:
+  description: |-
+    Update a specific Cloud Security Management Threats Agent rule.
+    Returns the Agent rule object when the request is successful.
+  operationId: UpdateCSMThreatsAgentRule
+  parameters:
+    - $ref: ../components/parameters/CloudWorkloadSecurityAgentRuleID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/CloudWorkloadSecurityAgentRuleUpdateRequest.yaml
+    description: New definition of the Agent rule.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CloudWorkloadSecurityAgentRuleResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a CSM Threats Agent rule
+  tags:
+    - CSM Threats
+  x-codegen-request-body-name: body

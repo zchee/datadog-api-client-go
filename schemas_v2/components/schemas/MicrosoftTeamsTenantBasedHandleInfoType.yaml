@@ -1,0 +1,8 @@
+default: ms-teams-tenant-based-handle-info
+description: Tenant-based handle resource type.
+enum:
+  - ms-teams-tenant-based-handle-info
+example: ms-teams-tenant-based-handle-info
+type: string
+x-enum-varnames:
+  - MS_TEAMS_TENANT_BASED_HANDLE_INFO

@@ -1,0 +1,8 @@
+description: The Markdown timeline cell contents.
+properties:
+  content:
+    description: The Markdown content of the cell.
+    example: An example timeline cell message.
+    nullable: false
+    type: string
+type: object

@@ -1,0 +1,5 @@
+description: The expected response schema when getting a Confluent account.
+properties:
+  data:
+    $ref: ./ConfluentAccountResponseData.yaml
+type: object

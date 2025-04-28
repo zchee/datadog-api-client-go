@@ -1,0 +1,12 @@
+description: >-
+  Defines a single escalation target within a step for an escalation policy
+  update request. Contains `id` and `type`.
+properties:
+  id:
+    description: Specifies the unique identifier for this target.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+  type:
+    $ref: >-
+      ./EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItemsType.yaml
+type: object

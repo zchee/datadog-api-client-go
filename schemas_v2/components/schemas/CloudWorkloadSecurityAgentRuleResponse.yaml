@@ -1,0 +1,5 @@
+description: Response object that includes an Agent rule.
+properties:
+  data:
+    $ref: ./CloudWorkloadSecurityAgentRuleData.yaml
+type: object

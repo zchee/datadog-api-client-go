@@ -1,0 +1,9 @@
+description: The payload accepted for intake.
+properties:
+  errors:
+    description: A list of errors.
+    items:
+      description: An empty error list.
+      type: string
+    type: array
+type: object

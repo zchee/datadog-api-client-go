@@ -1,0 +1,10 @@
+description: Included incident.
+properties:
+  attributes:
+    $ref: ./EntityResponseIncludedRelatedIncidentAttributes.yaml
+  id:
+    description: Incident ID.
+    type: string
+  type:
+    $ref: ./EntityResponseIncludedIncidentType.yaml
+type: object

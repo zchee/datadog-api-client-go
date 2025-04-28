@@ -1,0 +1,33 @@
+description: Static library vulnerability location.
+properties:
+  column_end:
+    description: Location column end.
+    example: 140
+    format: int64
+    type: integer
+  column_start:
+    description: Location column start.
+    example: 5
+    format: int64
+    type: integer
+  file_name:
+    description: Location file name.
+    example: src/go.mod
+    type: string
+  line_end:
+    description: Location line end.
+    example: 10
+    format: int64
+    type: integer
+  line_start:
+    description: Location line start.
+    example: 1
+    format: int64
+    type: integer
+required:
+  - file_name
+  - line_start
+  - line_end
+  - column_start
+  - column_end
+type: object

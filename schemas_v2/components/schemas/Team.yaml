@@ -1,0 +1,17 @@
+description: A team
+properties:
+  attributes:
+    $ref: ./TeamAttributes.yaml
+  id:
+    description: The team's identifier
+    example: aeadc05e-98a8-11ec-ac2c-da7ad0900001
+    type: string
+  relationships:
+    $ref: ./TeamRelationships.yaml
+  type:
+    $ref: ./TeamType.yaml
+required:
+  - attributes
+  - id
+  - type
+type: object

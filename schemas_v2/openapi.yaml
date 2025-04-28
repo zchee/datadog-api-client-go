@@ -1,0 +1,1381 @@
+components:
+  securitySchemes:
+    AuthZ:
+      description: This API uses OAuth 2 with the implicit grant flow.
+      flows:
+        authorizationCode:
+          authorizationUrl: /oauth2/v1/authorize
+          scopes:
+            apm_api_catalog_read: View API catalog and API definitions.
+            apm_api_catalog_write: Add, modify, and delete API catalog definitions.
+            apm_read: Read and query APM and Trace Analytics.
+            apm_service_catalog_read: View service catalog and service definitions.
+            apm_service_catalog_write: >-
+              Add, modify, and delete service catalog definitions when those
+              definitions are maintained by Datadog.
+            appsec_vm_read: >-
+              View infrastructure, application code, and library
+              vulnerabilities. This does not restrict API or inventory SQL
+              access to the vulnerability data source.
+            cases_read: View Cases.
+            cases_write: Create and update cases.
+            ci_visibility_pipelines_write: Create CI Visibility pipeline spans using the API.
+            ci_visibility_read: View CI Visibility.
+            cloud_cost_management_read: >-
+              View Cloud Cost pages. This does not restrict access to the cloud
+              cost data source in dashboards and notebooks.
+            cloud_cost_management_write: Configure cloud cost accounts and global customizations.
+            code_analysis_read: View Code Analysis.
+            continuous_profiler_pgo_read: >-
+              Read and query Continuous Profiler data for Profile-Guided
+              Optimization (PGO).
+            create_webhooks: Create webhooks integrations.
+            dashboards_embed_share: >-
+              Create, modify, and delete shared dashboards with share type
+              'embed'.
+            dashboards_invite_share: >-
+              Create, modify, and delete shared dashboards with share type
+              'invite'.
+            dashboards_public_share: >-
+              Generate public and authenticated links to share dashboards or
+              embeddable graphs externally.
+            dashboards_read: View dashboards.
+            dashboards_write: Create and change dashboards.
+            data_scanner_read: View Data Scanner configurations.
+            data_scanner_write: Edit Data Scanner configurations.
+            embeddable_graphs_share: Generate public links to share embeddable graphs externally.
+            events_read: Read Events data.
+            hosts_read: List hosts and their attributes.
+            incident_notification_settings_write: Configure Incidents Notification settings.
+            incident_read: View incidents in Datadog.
+            incident_settings_write: Configure Incident Settings.
+            incident_write: Create, view, and manage incidents in Datadog.
+            metrics_read: View custom metrics.
+            monitor_config_policy_write: Edit and delete monitor configuration.
+            monitors_downtime: >-
+              Set downtimes to suppress alerts from any monitor in an
+              organization. Mute and unmute monitors. The ability to write
+              monitors is not required to set downtimes.
+            monitors_read: View monitors.
+            monitors_write: Edit and delete individual monitors.
+            org_management: >-
+              Edit org configurations, including authentication and certain
+              security preferences such as configuring SAML, renaming an org,
+              configuring allowed login methods, creating child orgs,
+              subscribing & unsubscribing from apps in the marketplace, and
+              enabling & disabling Remote Configuration for the entire
+              organization.
+            security_comments_read: Read comments of vulnerabilities.
+            security_monitoring_filters_read: Read Security Filters.
+            security_monitoring_filters_write: Create, edit, and delete Security Filters.
+            security_monitoring_findings_read: >-
+              View a list of findings that include both misconfigurations and
+              identity risks.
+            security_monitoring_notification_profiles_read: View Rule Security Notification rules.
+            security_monitoring_notification_profiles_write: Create, edit, and delete Security Notification rules.
+            security_monitoring_rules_read: Read Detection Rules.
+            security_monitoring_rules_write: Create and edit Detection Rules.
+            security_monitoring_signals_read: View Security Signals.
+            security_monitoring_suppressions_read: Read Rule Suppressions.
+            security_monitoring_suppressions_write: Write Rule Suppressions.
+            security_pipelines_read: View Security Pipelines.
+            security_pipelines_write: Create, edit, and delete CSM Security Pipelines.
+            slos_corrections: >-
+              Apply, edit, and delete SLO status corrections. A user with this
+              permission can make status corrections, even if they do not have
+              permission to edit those SLOs.
+            slos_read: View SLOs and status corrections.
+            slos_write: Create, edit, and delete SLOs.
+            synthetics_global_variable_read: View, search, and use Synthetics global variables.
+            synthetics_global_variable_write: Create, edit, and delete global variables for Synthetics.
+            synthetics_private_location_read: View, search, and use Synthetics private locations.
+            synthetics_private_location_write: >-
+              Create and delete private locations in addition to having access
+              to the associated installation guidelines.
+            synthetics_read: List and view configured Synthetic tests and test results.
+            synthetics_write: Create, edit, and delete Synthetic tests.
+            teams_manage: >-
+              Manage Teams. Create, delete, rename, and edit metadata of all
+              Teams. To control Team membership across all Teams, use the User
+              Access Manage permission.
+            teams_read: >-
+              Read Teams data. A User with this permission can view Team names,
+              metadata, and which Users are on each Team.
+            test_optimization_read: View Test Optimization.
+            timeseries_query: Query Timeseries data.
+            usage_read: View your organization's usage and usage attribution.
+            user_access_invite: Invite other users to your organization.
+            user_access_manage: >-
+              Disable users, manage user roles, manage SAML-to-role mappings,
+              and configure logs restriction queries.
+            user_access_read: View users and their roles and settings.
+            workflows_read: View workflows.
+            workflows_run: Run workflows.
+            workflows_write: Create, edit, and delete workflows.
+          tokenUrl: /oauth2/v1/token
+      type: oauth2
+    apiKeyAuth:
+      description: Your Datadog API Key.
+      in: header
+      name: DD-API-KEY
+      type: apiKey
+      x-env-name: DD_API_KEY
+    appKeyAuth:
+      description: Your Datadog APP Key.
+      in: header
+      name: DD-APPLICATION-KEY
+      type: apiKey
+      x-env-name: DD_APP_KEY
+    bearerAuth:
+      scheme: bearer
+      type: http
+      x-env-name: DD_BEARER_TOKEN
+info:
+  contact:
+    email: support@datadoghq.com
+    name: Datadog Support
+    url: https://www.datadoghq.com/support/
+  description: Collection of all Datadog Public endpoints.
+  title: Datadog API V2 Collection
+  version: '1.0'
+openapi: 3.0.0
+paths:
+  /api/v2/actions/connections:
+    $ref: paths/api_v2_actions_connections.yaml
+  /api/v2/actions/connections/{connection_id}:
+    $ref: paths/api_v2_actions_connections_{connection_id}.yaml
+  /api/v2/agentless_scanning/accounts/aws:
+    $ref: paths/api_v2_agentless_scanning_accounts_aws.yaml
+  /api/v2/agentless_scanning/accounts/aws/{account_id}:
+    $ref: paths/api_v2_agentless_scanning_accounts_aws_{account_id}.yaml
+  /api/v2/agentless_scanning/ondemand/aws:
+    $ref: paths/api_v2_agentless_scanning_ondemand_aws.yaml
+  /api/v2/agentless_scanning/ondemand/aws/{task_id}:
+    $ref: paths/api_v2_agentless_scanning_ondemand_aws_{task_id}.yaml
+  /api/v2/api_keys:
+    $ref: paths/api_v2_api_keys.yaml
+  /api/v2/api_keys/{api_key_id}:
+    $ref: paths/api_v2_api_keys_{api_key_id}.yaml
+  /api/v2/apicatalog/api:
+    $ref: paths/api_v2_apicatalog_api.yaml
+  /api/v2/apicatalog/api/{id}:
+    $ref: paths/api_v2_apicatalog_api_{id}.yaml
+  /api/v2/apicatalog/api/{id}/openapi:
+    $ref: paths/api_v2_apicatalog_api_{id}_openapi.yaml
+  /api/v2/apicatalog/openapi:
+    $ref: paths/api_v2_apicatalog_openapi.yaml
+  /api/v2/apm/config/metrics:
+    $ref: paths/api_v2_apm_config_metrics.yaml
+  /api/v2/apm/config/metrics/{metric_id}:
+    $ref: paths/api_v2_apm_config_metrics_{metric_id}.yaml
+  /api/v2/apm/config/retention-filters:
+    $ref: paths/api_v2_apm_config_retention-filters.yaml
+  /api/v2/apm/config/retention-filters-execution-order:
+    $ref: paths/api_v2_apm_config_retention-filters-execution-order.yaml
+  /api/v2/apm/config/retention-filters/{filter_id}:
+    $ref: paths/api_v2_apm_config_retention-filters_{filter_id}.yaml
+  /api/v2/app-builder/apps:
+    $ref: paths/api_v2_app-builder_apps.yaml
+  /api/v2/app-builder/apps/{app_id}:
+    $ref: paths/api_v2_app-builder_apps_{app_id}.yaml
+  /api/v2/app-builder/apps/{app_id}/deployment:
+    $ref: paths/api_v2_app-builder_apps_{app_id}_deployment.yaml
+  /api/v2/application_keys:
+    $ref: paths/api_v2_application_keys.yaml
+  /api/v2/application_keys/{app_key_id}:
+    $ref: paths/api_v2_application_keys_{app_key_id}.yaml
+  /api/v2/audit/events:
+    $ref: paths/api_v2_audit_events.yaml
+  /api/v2/audit/events/search:
+    $ref: paths/api_v2_audit_events_search.yaml
+  /api/v2/authn_mappings:
+    $ref: paths/api_v2_authn_mappings.yaml
+  /api/v2/authn_mappings/{authn_mapping_id}:
+    $ref: paths/api_v2_authn_mappings_{authn_mapping_id}.yaml
+  /api/v2/cases:
+    $ref: paths/api_v2_cases.yaml
+  /api/v2/cases/projects:
+    $ref: paths/api_v2_cases_projects.yaml
+  /api/v2/cases/projects/{project_id}:
+    $ref: paths/api_v2_cases_projects_{project_id}.yaml
+  /api/v2/cases/{case_id}:
+    $ref: paths/api_v2_cases_{case_id}.yaml
+  /api/v2/cases/{case_id}/archive:
+    $ref: paths/api_v2_cases_{case_id}_archive.yaml
+  /api/v2/cases/{case_id}/assign:
+    $ref: paths/api_v2_cases_{case_id}_assign.yaml
+  /api/v2/cases/{case_id}/priority:
+    $ref: paths/api_v2_cases_{case_id}_priority.yaml
+  /api/v2/cases/{case_id}/status:
+    $ref: paths/api_v2_cases_{case_id}_status.yaml
+  /api/v2/cases/{case_id}/unarchive:
+    $ref: paths/api_v2_cases_{case_id}_unarchive.yaml
+  /api/v2/cases/{case_id}/unassign:
+    $ref: paths/api_v2_cases_{case_id}_unassign.yaml
+  /api/v2/catalog/entity:
+    $ref: paths/api_v2_catalog_entity.yaml
+  /api/v2/catalog/entity/{entity_id}:
+    $ref: paths/api_v2_catalog_entity_{entity_id}.yaml
+  /api/v2/ci/pipeline:
+    $ref: paths/api_v2_ci_pipeline.yaml
+  /api/v2/ci/pipelines/analytics/aggregate:
+    $ref: paths/api_v2_ci_pipelines_analytics_aggregate.yaml
+  /api/v2/ci/pipelines/events:
+    $ref: paths/api_v2_ci_pipelines_events.yaml
+  /api/v2/ci/pipelines/events/search:
+    $ref: paths/api_v2_ci_pipelines_events_search.yaml
+  /api/v2/ci/tests/analytics/aggregate:
+    $ref: paths/api_v2_ci_tests_analytics_aggregate.yaml
+  /api/v2/ci/tests/events:
+    $ref: paths/api_v2_ci_tests_events.yaml
+  /api/v2/ci/tests/events/search:
+    $ref: paths/api_v2_ci_tests_events_search.yaml
+  /api/v2/container_images:
+    $ref: paths/api_v2_container_images.yaml
+  /api/v2/containers:
+    $ref: paths/api_v2_containers.yaml
+  /api/v2/cost/aws_cur_config:
+    $ref: paths/api_v2_cost_aws_cur_config.yaml
+  /api/v2/cost/aws_cur_config/{cloud_account_id}:
+    $ref: paths/api_v2_cost_aws_cur_config_{cloud_account_id}.yaml
+  /api/v2/cost/azure_uc_config:
+    $ref: paths/api_v2_cost_azure_uc_config.yaml
+  /api/v2/cost/azure_uc_config/{cloud_account_id}:
+    $ref: paths/api_v2_cost_azure_uc_config_{cloud_account_id}.yaml
+  /api/v2/cost/custom_costs:
+    $ref: paths/api_v2_cost_custom_costs.yaml
+  /api/v2/cost/custom_costs/{file_id}:
+    $ref: paths/api_v2_cost_custom_costs_{file_id}.yaml
+  /api/v2/cost_by_tag/active_billing_dimensions:
+    $ref: paths/api_v2_cost_by_tag_active_billing_dimensions.yaml
+  /api/v2/cost_by_tag/monthly_cost_attribution:
+    $ref: paths/api_v2_cost_by_tag_monthly_cost_attribution.yaml
+  /api/v2/csm/onboarding/agents:
+    $ref: paths/api_v2_csm_onboarding_agents.yaml
+  /api/v2/csm/onboarding/coverage_analysis/cloud_accounts:
+    $ref: paths/api_v2_csm_onboarding_coverage_analysis_cloud_accounts.yaml
+  /api/v2/csm/onboarding/coverage_analysis/hosts_and_containers:
+    $ref: paths/api_v2_csm_onboarding_coverage_analysis_hosts_and_containers.yaml
+  /api/v2/csm/onboarding/coverage_analysis/serverless:
+    $ref: paths/api_v2_csm_onboarding_coverage_analysis_serverless.yaml
+  /api/v2/csm/onboarding/serverless/agents:
+    $ref: paths/api_v2_csm_onboarding_serverless_agents.yaml
+  /api/v2/current_user/application_keys:
+    $ref: paths/api_v2_current_user_application_keys.yaml
+  /api/v2/current_user/application_keys/{app_key_id}:
+    $ref: paths/api_v2_current_user_application_keys_{app_key_id}.yaml
+  /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards:
+    $ref: paths/api_v2_dashboard_lists_manual_{dashboard_list_id}_dashboards.yaml
+  /api/v2/deletion/data/{product}:
+    $ref: paths/api_v2_deletion_data_{product}.yaml
+  /api/v2/deletion/requests:
+    $ref: paths/api_v2_deletion_requests.yaml
+  /api/v2/deletion/requests/{id}/cancel:
+    $ref: paths/api_v2_deletion_requests_{id}_cancel.yaml
+  /api/v2/domain_allowlist:
+    $ref: paths/api_v2_domain_allowlist.yaml
+  /api/v2/dora/deployment:
+    $ref: paths/api_v2_dora_deployment.yaml
+  /api/v2/dora/incident:
+    $ref: paths/api_v2_dora_incident.yaml
+  /api/v2/downtime:
+    $ref: paths/api_v2_downtime.yaml
+  /api/v2/downtime/{downtime_id}:
+    $ref: paths/api_v2_downtime_{downtime_id}.yaml
+  /api/v2/events:
+    $ref: paths/api_v2_events.yaml
+  /api/v2/events/search:
+    $ref: paths/api_v2_events_search.yaml
+  /api/v2/incidents:
+    $ref: paths/api_v2_incidents.yaml
+  /api/v2/incidents/config/types:
+    $ref: paths/api_v2_incidents_config_types.yaml
+  /api/v2/incidents/config/types/{incident_type_id}:
+    $ref: paths/api_v2_incidents_config_types_{incident_type_id}.yaml
+  /api/v2/incidents/search:
+    $ref: paths/api_v2_incidents_search.yaml
+  /api/v2/incidents/{incident_id}:
+    $ref: paths/api_v2_incidents_{incident_id}.yaml
+  /api/v2/incidents/{incident_id}/attachments:
+    $ref: paths/api_v2_incidents_{incident_id}_attachments.yaml
+  /api/v2/incidents/{incident_id}/relationships/integrations:
+    $ref: paths/api_v2_incidents_{incident_id}_relationships_integrations.yaml
+  /api/v2/incidents/{incident_id}/relationships/integrations/{integration_metadata_id}:
+    $ref: >-
+      paths/api_v2_incidents_{incident_id}_relationships_integrations_{integration_metadata_id}.yaml
+  /api/v2/incidents/{incident_id}/relationships/todos:
+    $ref: paths/api_v2_incidents_{incident_id}_relationships_todos.yaml
+  /api/v2/incidents/{incident_id}/relationships/todos/{todo_id}:
+    $ref: paths/api_v2_incidents_{incident_id}_relationships_todos_{todo_id}.yaml
+  /api/v2/integration/aws/accounts:
+    $ref: paths/api_v2_integration_aws_accounts.yaml
+  /api/v2/integration/aws/accounts/{aws_account_config_id}:
+    $ref: paths/api_v2_integration_aws_accounts_{aws_account_config_id}.yaml
+  /api/v2/integration/aws/available_namespaces:
+    $ref: paths/api_v2_integration_aws_available_namespaces.yaml
+  /api/v2/integration/aws/generate_new_external_id:
+    $ref: paths/api_v2_integration_aws_generate_new_external_id.yaml
+  /api/v2/integration/aws/logs/services:
+    $ref: paths/api_v2_integration_aws_logs_services.yaml
+  /api/v2/integration/gcp/accounts:
+    $ref: paths/api_v2_integration_gcp_accounts.yaml
+  /api/v2/integration/gcp/accounts/{account_id}:
+    $ref: paths/api_v2_integration_gcp_accounts_{account_id}.yaml
+  /api/v2/integration/gcp/sts_delegate:
+    $ref: paths/api_v2_integration_gcp_sts_delegate.yaml
+  /api/v2/integration/ms-teams/configuration/channel/{tenant_name}/{team_name}/{channel_name}:
+    $ref: >-
+      paths/api_v2_integration_ms-teams_configuration_channel_{tenant_name}_{team_name}_{channel_name}.yaml
+  /api/v2/integration/ms-teams/configuration/tenant-based-handles:
+    $ref: paths/api_v2_integration_ms-teams_configuration_tenant-based-handles.yaml
+  /api/v2/integration/ms-teams/configuration/tenant-based-handles/{handle_id}:
+    $ref: >-
+      paths/api_v2_integration_ms-teams_configuration_tenant-based-handles_{handle_id}.yaml
+  /api/v2/integration/ms-teams/configuration/workflows-webhook-handles:
+    $ref: >-
+      paths/api_v2_integration_ms-teams_configuration_workflows-webhook-handles.yaml
+  /api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}:
+    $ref: >-
+      paths/api_v2_integration_ms-teams_configuration_workflows-webhook-handles_{handle_id}.yaml
+  /api/v2/integration/opsgenie/services:
+    $ref: paths/api_v2_integration_opsgenie_services.yaml
+  /api/v2/integration/opsgenie/services/{integration_service_id}:
+    $ref: paths/api_v2_integration_opsgenie_services_{integration_service_id}.yaml
+  /api/v2/integrations/cloudflare/accounts:
+    $ref: paths/api_v2_integrations_cloudflare_accounts.yaml
+  /api/v2/integrations/cloudflare/accounts/{account_id}:
+    $ref: paths/api_v2_integrations_cloudflare_accounts_{account_id}.yaml
+  /api/v2/integrations/confluent-cloud/accounts:
+    $ref: paths/api_v2_integrations_confluent-cloud_accounts.yaml
+  /api/v2/integrations/confluent-cloud/accounts/{account_id}:
+    $ref: paths/api_v2_integrations_confluent-cloud_accounts_{account_id}.yaml
+  /api/v2/integrations/confluent-cloud/accounts/{account_id}/resources:
+    $ref: >-
+      paths/api_v2_integrations_confluent-cloud_accounts_{account_id}_resources.yaml
+  /api/v2/integrations/confluent-cloud/accounts/{account_id}/resources/{resource_id}:
+    $ref: >-
+      paths/api_v2_integrations_confluent-cloud_accounts_{account_id}_resources_{resource_id}.yaml
+  /api/v2/integrations/fastly/accounts:
+    $ref: paths/api_v2_integrations_fastly_accounts.yaml
+  /api/v2/integrations/fastly/accounts/{account_id}:
+    $ref: paths/api_v2_integrations_fastly_accounts_{account_id}.yaml
+  /api/v2/integrations/fastly/accounts/{account_id}/services:
+    $ref: paths/api_v2_integrations_fastly_accounts_{account_id}_services.yaml
+  /api/v2/integrations/fastly/accounts/{account_id}/services/{service_id}:
+    $ref: >-
+      paths/api_v2_integrations_fastly_accounts_{account_id}_services_{service_id}.yaml
+  /api/v2/integrations/okta/accounts:
+    $ref: paths/api_v2_integrations_okta_accounts.yaml
+  /api/v2/integrations/okta/accounts/{account_id}:
+    $ref: paths/api_v2_integrations_okta_accounts_{account_id}.yaml
+  /api/v2/ip_allowlist:
+    $ref: paths/api_v2_ip_allowlist.yaml
+  /api/v2/logs:
+    $ref: paths/api_v2_logs.yaml
+  /api/v2/logs/analytics/aggregate:
+    $ref: paths/api_v2_logs_analytics_aggregate.yaml
+  /api/v2/logs/config/archive-order:
+    $ref: paths/api_v2_logs_config_archive-order.yaml
+  /api/v2/logs/config/archives:
+    $ref: paths/api_v2_logs_config_archives.yaml
+  /api/v2/logs/config/archives/{archive_id}:
+    $ref: paths/api_v2_logs_config_archives_{archive_id}.yaml
+  /api/v2/logs/config/archives/{archive_id}/readers:
+    $ref: paths/api_v2_logs_config_archives_{archive_id}_readers.yaml
+  /api/v2/logs/config/custom-destinations:
+    $ref: paths/api_v2_logs_config_custom-destinations.yaml
+  /api/v2/logs/config/custom-destinations/{custom_destination_id}:
+    $ref: paths/api_v2_logs_config_custom-destinations_{custom_destination_id}.yaml
+  /api/v2/logs/config/metrics:
+    $ref: paths/api_v2_logs_config_metrics.yaml
+  /api/v2/logs/config/metrics/{metric_id}:
+    $ref: paths/api_v2_logs_config_metrics_{metric_id}.yaml
+  /api/v2/logs/events:
+    $ref: paths/api_v2_logs_events.yaml
+  /api/v2/logs/events/search:
+    $ref: paths/api_v2_logs_events_search.yaml
+  /api/v2/metrics:
+    $ref: paths/api_v2_metrics.yaml
+  /api/v2/metrics/config/bulk-tags:
+    $ref: paths/api_v2_metrics_config_bulk-tags.yaml
+  /api/v2/metrics/{metric_name}/active-configurations:
+    $ref: paths/api_v2_metrics_{metric_name}_active-configurations.yaml
+  /api/v2/metrics/{metric_name}/all-tags:
+    $ref: paths/api_v2_metrics_{metric_name}_all-tags.yaml
+  /api/v2/metrics/{metric_name}/assets:
+    $ref: paths/api_v2_metrics_{metric_name}_assets.yaml
+  /api/v2/metrics/{metric_name}/estimate:
+    $ref: paths/api_v2_metrics_{metric_name}_estimate.yaml
+  /api/v2/metrics/{metric_name}/tags:
+    $ref: paths/api_v2_metrics_{metric_name}_tags.yaml
+  /api/v2/metrics/{metric_name}/volumes:
+    $ref: paths/api_v2_metrics_{metric_name}_volumes.yaml
+  /api/v2/monitor/notification_rule:
+    $ref: paths/api_v2_monitor_notification_rule.yaml
+  /api/v2/monitor/notification_rule/{rule_id}:
+    $ref: paths/api_v2_monitor_notification_rule_{rule_id}.yaml
+  /api/v2/monitor/policy:
+    $ref: paths/api_v2_monitor_policy.yaml
+  /api/v2/monitor/policy/{policy_id}:
+    $ref: paths/api_v2_monitor_policy_{policy_id}.yaml
+  /api/v2/monitor/{monitor_id}/downtime_matches:
+    $ref: paths/api_v2_monitor_{monitor_id}_downtime_matches.yaml
+  /api/v2/ndm/devices:
+    $ref: paths/api_v2_ndm_devices.yaml
+  /api/v2/ndm/devices/{device_id}:
+    $ref: paths/api_v2_ndm_devices_{device_id}.yaml
+  /api/v2/ndm/interfaces:
+    $ref: paths/api_v2_ndm_interfaces.yaml
+  /api/v2/ndm/tags/devices/{device_id}:
+    $ref: paths/api_v2_ndm_tags_devices_{device_id}.yaml
+  /api/v2/network/connections/aggregate:
+    $ref: paths/api_v2_network_connections_aggregate.yaml
+  /api/v2/on-call/escalation-policies:
+    $ref: paths/api_v2_on-call_escalation-policies.yaml
+  /api/v2/on-call/escalation-policies/{policy_id}:
+    $ref: paths/api_v2_on-call_escalation-policies_{policy_id}.yaml
+  /api/v2/on-call/schedules:
+    $ref: paths/api_v2_on-call_schedules.yaml
+  /api/v2/on-call/schedules/{schedule_id}:
+    $ref: paths/api_v2_on-call_schedules_{schedule_id}.yaml
+  /api/v2/org_configs:
+    $ref: paths/api_v2_org_configs.yaml
+  /api/v2/org_configs/{org_config_name}:
+    $ref: paths/api_v2_org_configs_{org_config_name}.yaml
+  /api/v2/permissions:
+    $ref: paths/api_v2_permissions.yaml
+  /api/v2/posture_management/findings:
+    $ref: paths/api_v2_posture_management_findings.yaml
+  /api/v2/posture_management/findings/{finding_id}:
+    $ref: paths/api_v2_posture_management_findings_{finding_id}.yaml
+  /api/v2/powerpacks:
+    $ref: paths/api_v2_powerpacks.yaml
+  /api/v2/powerpacks/{powerpack_id}:
+    $ref: paths/api_v2_powerpacks_{powerpack_id}.yaml
+  /api/v2/processes:
+    $ref: paths/api_v2_processes.yaml
+  /api/v2/query/scalar:
+    $ref: paths/api_v2_query_scalar.yaml
+  /api/v2/query/timeseries:
+    $ref: paths/api_v2_query_timeseries.yaml
+  /api/v2/remote_config/products/asm/waf/custom_rules:
+    $ref: paths/api_v2_remote_config_products_asm_waf_custom_rules.yaml
+  /api/v2/remote_config/products/asm/waf/custom_rules/{custom_rule_id}:
+    $ref: >-
+      paths/api_v2_remote_config_products_asm_waf_custom_rules_{custom_rule_id}.yaml
+  /api/v2/remote_config/products/asm/waf/exclusion_filters:
+    $ref: paths/api_v2_remote_config_products_asm_waf_exclusion_filters.yaml
+  /api/v2/remote_config/products/asm/waf/exclusion_filters/{exclusion_filter_id}:
+    $ref: >-
+      paths/api_v2_remote_config_products_asm_waf_exclusion_filters_{exclusion_filter_id}.yaml
+  /api/v2/remote_config/products/cws/agent_rules:
+    $ref: paths/api_v2_remote_config_products_cws_agent_rules.yaml
+  /api/v2/remote_config/products/cws/agent_rules/{agent_rule_id}:
+    $ref: paths/api_v2_remote_config_products_cws_agent_rules_{agent_rule_id}.yaml
+  /api/v2/remote_config/products/cws/policy/download:
+    $ref: paths/api_v2_remote_config_products_cws_policy_download.yaml
+  /api/v2/remote_config/products/obs_pipelines/pipelines:
+    $ref: paths/api_v2_remote_config_products_obs_pipelines_pipelines.yaml
+  /api/v2/remote_config/products/obs_pipelines/pipelines/{pipeline_id}:
+    $ref: >-
+      paths/api_v2_remote_config_products_obs_pipelines_pipelines_{pipeline_id}.yaml
+  /api/v2/restriction_policy/{resource_id}:
+    $ref: paths/api_v2_restriction_policy_{resource_id}.yaml
+  /api/v2/roles:
+    $ref: paths/api_v2_roles.yaml
+  /api/v2/roles/{role_id}:
+    $ref: paths/api_v2_roles_{role_id}.yaml
+  /api/v2/roles/{role_id}/clone:
+    $ref: paths/api_v2_roles_{role_id}_clone.yaml
+  /api/v2/roles/{role_id}/permissions:
+    $ref: paths/api_v2_roles_{role_id}_permissions.yaml
+  /api/v2/roles/{role_id}/users:
+    $ref: paths/api_v2_roles_{role_id}_users.yaml
+  /api/v2/rum/analytics/aggregate:
+    $ref: paths/api_v2_rum_analytics_aggregate.yaml
+  /api/v2/rum/applications:
+    $ref: paths/api_v2_rum_applications.yaml
+  /api/v2/rum/applications/{app_id}/relationships/retention_filters:
+    $ref: >-
+      paths/api_v2_rum_applications_{app_id}_relationships_retention_filters.yaml
+  /api/v2/rum/applications/{app_id}/retention_filters:
+    $ref: paths/api_v2_rum_applications_{app_id}_retention_filters.yaml
+  /api/v2/rum/applications/{app_id}/retention_filters/{rf_id}:
+    $ref: paths/api_v2_rum_applications_{app_id}_retention_filters_{rf_id}.yaml
+  /api/v2/rum/applications/{id}:
+    $ref: paths/api_v2_rum_applications_{id}.yaml
+  /api/v2/rum/config/metrics:
+    $ref: paths/api_v2_rum_config_metrics.yaml
+  /api/v2/rum/config/metrics/{metric_id}:
+    $ref: paths/api_v2_rum_config_metrics_{metric_id}.yaml
+  /api/v2/rum/events:
+    $ref: paths/api_v2_rum_events.yaml
+  /api/v2/rum/events/search:
+    $ref: paths/api_v2_rum_events_search.yaml
+  /api/v2/saml_configurations/idp_metadata:
+    $ref: paths/api_v2_saml_configurations_idp_metadata.yaml
+  /api/v2/scorecard/outcomes:
+    $ref: paths/api_v2_scorecard_outcomes.yaml
+  /api/v2/scorecard/outcomes/batch:
+    $ref: paths/api_v2_scorecard_outcomes_batch.yaml
+  /api/v2/scorecard/rules:
+    $ref: paths/api_v2_scorecard_rules.yaml
+  /api/v2/scorecard/rules/{rule_id}:
+    $ref: paths/api_v2_scorecard_rules_{rule_id}.yaml
+  /api/v2/security/assets:
+    $ref: paths/api_v2_security_assets.yaml
+  /api/v2/security/cloud_workload/policy/download:
+    $ref: paths/api_v2_security_cloud_workload_policy_download.yaml
+  /api/v2/security/sboms/{asset_type}:
+    $ref: paths/api_v2_security_sboms_{asset_type}.yaml
+  /api/v2/security/signals/notification_rules:
+    $ref: paths/api_v2_security_signals_notification_rules.yaml
+  /api/v2/security/signals/notification_rules/{id}:
+    $ref: paths/api_v2_security_signals_notification_rules_{id}.yaml
+  /api/v2/security/vulnerabilities:
+    $ref: paths/api_v2_security_vulnerabilities.yaml
+  /api/v2/security/vulnerabilities/notification_rules:
+    $ref: paths/api_v2_security_vulnerabilities_notification_rules.yaml
+  /api/v2/security/vulnerabilities/notification_rules/{id}:
+    $ref: paths/api_v2_security_vulnerabilities_notification_rules_{id}.yaml
+  /api/v2/security_monitoring/cloud_workload_security/agent_rules:
+    $ref: paths/api_v2_security_monitoring_cloud_workload_security_agent_rules.yaml
+  /api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}:
+    $ref: >-
+      paths/api_v2_security_monitoring_cloud_workload_security_agent_rules_{agent_rule_id}.yaml
+  /api/v2/security_monitoring/configuration/security_filters:
+    $ref: paths/api_v2_security_monitoring_configuration_security_filters.yaml
+  /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}:
+    $ref: >-
+      paths/api_v2_security_monitoring_configuration_security_filters_{security_filter_id}.yaml
+  /api/v2/security_monitoring/configuration/suppressions:
+    $ref: paths/api_v2_security_monitoring_configuration_suppressions.yaml
+  /api/v2/security_monitoring/configuration/suppressions/{suppression_id}:
+    $ref: >-
+      paths/api_v2_security_monitoring_configuration_suppressions_{suppression_id}.yaml
+  /api/v2/security_monitoring/rules:
+    $ref: paths/api_v2_security_monitoring_rules.yaml
+  /api/v2/security_monitoring/rules/convert:
+    $ref: paths/api_v2_security_monitoring_rules_convert.yaml
+  /api/v2/security_monitoring/rules/test:
+    $ref: paths/api_v2_security_monitoring_rules_test.yaml
+  /api/v2/security_monitoring/rules/validation:
+    $ref: paths/api_v2_security_monitoring_rules_validation.yaml
+  /api/v2/security_monitoring/rules/{rule_id}:
+    $ref: paths/api_v2_security_monitoring_rules_{rule_id}.yaml
+  /api/v2/security_monitoring/rules/{rule_id}/convert:
+    $ref: paths/api_v2_security_monitoring_rules_{rule_id}_convert.yaml
+  /api/v2/security_monitoring/rules/{rule_id}/test:
+    $ref: paths/api_v2_security_monitoring_rules_{rule_id}_test.yaml
+  /api/v2/security_monitoring/rules/{rule_id}/version_history:
+    $ref: paths/api_v2_security_monitoring_rules_{rule_id}_version_history.yaml
+  /api/v2/security_monitoring/signals:
+    $ref: paths/api_v2_security_monitoring_signals.yaml
+  /api/v2/security_monitoring/signals/search:
+    $ref: paths/api_v2_security_monitoring_signals_search.yaml
+  /api/v2/security_monitoring/signals/{signal_id}:
+    $ref: paths/api_v2_security_monitoring_signals_{signal_id}.yaml
+  /api/v2/security_monitoring/signals/{signal_id}/assignee:
+    $ref: paths/api_v2_security_monitoring_signals_{signal_id}_assignee.yaml
+  /api/v2/security_monitoring/signals/{signal_id}/incidents:
+    $ref: paths/api_v2_security_monitoring_signals_{signal_id}_incidents.yaml
+  /api/v2/security_monitoring/signals/{signal_id}/state:
+    $ref: paths/api_v2_security_monitoring_signals_{signal_id}_state.yaml
+  /api/v2/sensitive-data-scanner/config:
+    $ref: paths/api_v2_sensitive-data-scanner_config.yaml
+  /api/v2/sensitive-data-scanner/config/groups:
+    $ref: paths/api_v2_sensitive-data-scanner_config_groups.yaml
+  /api/v2/sensitive-data-scanner/config/groups/{group_id}:
+    $ref: paths/api_v2_sensitive-data-scanner_config_groups_{group_id}.yaml
+  /api/v2/sensitive-data-scanner/config/rules:
+    $ref: paths/api_v2_sensitive-data-scanner_config_rules.yaml
+  /api/v2/sensitive-data-scanner/config/rules/{rule_id}:
+    $ref: paths/api_v2_sensitive-data-scanner_config_rules_{rule_id}.yaml
+  /api/v2/sensitive-data-scanner/config/standard-patterns:
+    $ref: paths/api_v2_sensitive-data-scanner_config_standard-patterns.yaml
+  /api/v2/series:
+    $ref: paths/api_v2_series.yaml
+  /api/v2/service_accounts:
+    $ref: paths/api_v2_service_accounts.yaml
+  /api/v2/service_accounts/{service_account_id}/application_keys:
+    $ref: paths/api_v2_service_accounts_{service_account_id}_application_keys.yaml
+  /api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}:
+    $ref: >-
+      paths/api_v2_service_accounts_{service_account_id}_application_keys_{app_key_id}.yaml
+  /api/v2/services:
+    $ref: paths/api_v2_services.yaml
+  /api/v2/services/definitions:
+    $ref: paths/api_v2_services_definitions.yaml
+  /api/v2/services/definitions/{service_name}:
+    $ref: paths/api_v2_services_definitions_{service_name}.yaml
+  /api/v2/services/{service_id}:
+    $ref: paths/api_v2_services_{service_id}.yaml
+  /api/v2/siem-historical-detections/jobs:
+    $ref: paths/api_v2_siem-historical-detections_jobs.yaml
+  /api/v2/siem-historical-detections/jobs/signal_convert:
+    $ref: paths/api_v2_siem-historical-detections_jobs_signal_convert.yaml
+  /api/v2/siem-historical-detections/jobs/{job_id}:
+    $ref: paths/api_v2_siem-historical-detections_jobs_{job_id}.yaml
+  /api/v2/siem-historical-detections/jobs/{job_id}/cancel:
+    $ref: paths/api_v2_siem-historical-detections_jobs_{job_id}_cancel.yaml
+  /api/v2/slo/report:
+    $ref: paths/api_v2_slo_report.yaml
+  /api/v2/slo/report/{report_id}/download:
+    $ref: paths/api_v2_slo_report_{report_id}_download.yaml
+  /api/v2/slo/report/{report_id}/status:
+    $ref: paths/api_v2_slo_report_{report_id}_status.yaml
+  /api/v2/spans/analytics/aggregate:
+    $ref: paths/api_v2_spans_analytics_aggregate.yaml
+  /api/v2/spans/events:
+    $ref: paths/api_v2_spans_events.yaml
+  /api/v2/spans/events/search:
+    $ref: paths/api_v2_spans_events_search.yaml
+  /api/v2/synthetics/settings/on_demand_concurrency_cap:
+    $ref: paths/api_v2_synthetics_settings_on_demand_concurrency_cap.yaml
+  /api/v2/team:
+    $ref: paths/api_v2_team.yaml
+  /api/v2/team/{team_id}:
+    $ref: paths/api_v2_team_{team_id}.yaml
+  /api/v2/team/{team_id}/links:
+    $ref: paths/api_v2_team_{team_id}_links.yaml
+  /api/v2/team/{team_id}/links/{link_id}:
+    $ref: paths/api_v2_team_{team_id}_links_{link_id}.yaml
+  /api/v2/team/{team_id}/memberships:
+    $ref: paths/api_v2_team_{team_id}_memberships.yaml
+  /api/v2/team/{team_id}/memberships/{user_id}:
+    $ref: paths/api_v2_team_{team_id}_memberships_{user_id}.yaml
+  /api/v2/team/{team_id}/permission-settings:
+    $ref: paths/api_v2_team_{team_id}_permission-settings.yaml
+  /api/v2/team/{team_id}/permission-settings/{action}:
+    $ref: paths/api_v2_team_{team_id}_permission-settings_{action}.yaml
+  /api/v2/teams:
+    $ref: paths/api_v2_teams.yaml
+  /api/v2/teams/{team_id}:
+    $ref: paths/api_v2_teams_{team_id}.yaml
+  /api/v2/usage/application_security:
+    $ref: paths/api_v2_usage_application_security.yaml
+  /api/v2/usage/billing_dimension_mapping:
+    $ref: paths/api_v2_usage_billing_dimension_mapping.yaml
+  /api/v2/usage/cost_by_org:
+    $ref: paths/api_v2_usage_cost_by_org.yaml
+  /api/v2/usage/estimated_cost:
+    $ref: paths/api_v2_usage_estimated_cost.yaml
+  /api/v2/usage/historical_cost:
+    $ref: paths/api_v2_usage_historical_cost.yaml
+  /api/v2/usage/hourly_usage:
+    $ref: paths/api_v2_usage_hourly_usage.yaml
+  /api/v2/usage/lambda_traced_invocations:
+    $ref: paths/api_v2_usage_lambda_traced_invocations.yaml
+  /api/v2/usage/observability_pipelines:
+    $ref: paths/api_v2_usage_observability_pipelines.yaml
+  /api/v2/usage/projected_cost:
+    $ref: paths/api_v2_usage_projected_cost.yaml
+  /api/v2/user_invitations:
+    $ref: paths/api_v2_user_invitations.yaml
+  /api/v2/user_invitations/{user_invitation_uuid}:
+    $ref: paths/api_v2_user_invitations_{user_invitation_uuid}.yaml
+  /api/v2/users:
+    $ref: paths/api_v2_users.yaml
+  /api/v2/users/{user_id}:
+    $ref: paths/api_v2_users_{user_id}.yaml
+  /api/v2/users/{user_id}/orgs:
+    $ref: paths/api_v2_users_{user_id}_orgs.yaml
+  /api/v2/users/{user_id}/permissions:
+    $ref: paths/api_v2_users_{user_id}_permissions.yaml
+  /api/v2/users/{user_uuid}/memberships:
+    $ref: paths/api_v2_users_{user_uuid}_memberships.yaml
+  /api/v2/workflows:
+    $ref: paths/api_v2_workflows.yaml
+  /api/v2/workflows/{workflow_id}:
+    $ref: paths/api_v2_workflows_{workflow_id}.yaml
+  /api/v2/workflows/{workflow_id}/instances:
+    $ref: paths/api_v2_workflows_{workflow_id}_instances.yaml
+  /api/v2/workflows/{workflow_id}/instances/{instance_id}:
+    $ref: paths/api_v2_workflows_{workflow_id}_instances_{instance_id}.yaml
+  /api/v2/workflows/{workflow_id}/instances/{instance_id}/cancel:
+    $ref: paths/api_v2_workflows_{workflow_id}_instances_{instance_id}_cancel.yaml
+security:
+  - apiKeyAuth: []
+    appKeyAuth: []
+servers:
+  - url: https://{subdomain}.{site}
+    variables:
+      site:
+        default: datadoghq.com
+        description: The regional site for Datadog customers.
+        enum:
+          - datadoghq.com
+          - us3.datadoghq.com
+          - us5.datadoghq.com
+          - ap1.datadoghq.com
+          - datadoghq.eu
+          - ddog-gov.com
+      subdomain:
+        default: api
+        description: The subdomain where the API is deployed.
+  - url: '{protocol}://{name}'
+    variables:
+      name:
+        default: api.datadoghq.com
+        description: Full site DNS name.
+      protocol:
+        default: https
+        description: The protocol for accessing the API.
+  - url: https://{subdomain}.{site}
+    variables:
+      site:
+        default: datadoghq.com
+        description: Any Datadog deployment.
+      subdomain:
+        default: api
+        description: The subdomain where the API is deployed.
+tags:
+  - name: API Management
+    description: Configure your API endpoints through the Datadog API.
+  - name: APM Retention Filters
+    description: >-
+      Manage configuration of [APM retention
+      filters](https://app.datadoghq.com/apm/traces/retention-filters) for your
+      organization. You need an API and application key with Admin rights to
+      interact with this endpoint. See [retention
+      filters](https://docs.datadoghq.com/tracing/trace_pipeline/trace_retention/#retention-filters)
+      on the Trace Retention page for more information.
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/tracing/trace_pipeline/trace_retention/
+  - name: AWS Integration
+    description: >-
+      Configure your Datadog-AWS integration directly through the Datadog API.
+
+      For more information, see the [AWS integration
+      page](https://docs.datadoghq.com/integrations/amazon_web_services).
+  - name: AWS Logs Integration
+    description: >-
+      Configure your Datadog-AWS-Logs integration directly through Datadog API.
+
+      For more information, see the [AWS integration
+      page](https://docs.datadoghq.com/integrations/amazon_web_services/#log-collection).
+    externalDocs:
+      url: >-
+        https://docs.datadoghq.com/integrations/amazon_web_services/#log-collection
+  - name: Action Connection
+    description: >-
+      Action connections extend your installed integrations and allow you to
+      take action in your third-party systems
+
+      (e.g. AWS, GitLab, and Statuspage) with Datadog’s Workflow Automation and
+      App Builder products.
+
+
+      Datadog’s Integrations automatically provide authentication for Slack,
+      Microsoft Teams, PagerDuty, Opsgenie,
+
+      JIRA, GitHub, and Statuspage. You do not need additional connections in
+      order to access these tools within
+
+      Workflow Automation and App Builder.
+
+
+      We offer granular access control for editing and resolving connections.
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/service_management/workflows/connections/
+  - name: Agentless Scanning
+    description: >-
+      Datadog Agentless Scanning provides visibility into risks and
+      vulnerabilities
+
+      within your hosts, running containers, and serverless functions—all
+      without
+
+      requiring teams to install Agents on every host or where Agents cannot be
+      installed.
+
+      Agentless offers also Sensitive Data Scanning capabilities on your
+      storage.
+
+      Go to https://www.datadoghq.com/blog/agentless-scanning/ to learn more.
+  - name: App Builder
+    description: >-
+      Datadog App Builder provides a low-code solution to rapidly develop and
+      integrate secure, customized applications into your monitoring stack that
+      are built to accelerate remediation at scale. These API endpoints allow
+      you to create, read, update, delete, and publish apps.
+  - name: Application Security
+    description: >-
+      [Datadog Application
+      Security](https://docs.datadoghq.com/security/application_security/)
+      provides protection against
+
+      application-level attacks that aim to exploit code-level vulnerabilities,
+
+      such as Server-Side-Request-Forgery (SSRF), SQL injection, Log4Shell, and
+
+      Reflected Cross-Site-Scripting (XSS). You can monitor and protect apps
+
+      hosted directly on a server, Docker, Kubernetes, Amazon ECS, and (for
+
+      supported languages) AWS Fargate.
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/security/application_security/
+  - name: Audit
+    description: Search your Audit Logs events over HTTP.
+  - name: AuthN Mappings
+    description: >-
+      [The AuthN Mappings
+      API](https://docs.datadoghq.com/account_management/authn_mapping/?tab=example)
+
+      is used to automatically map groups of users to roles in Datadog using
+      attributes
+
+      sent from Identity Providers. Use these endpoints to manage your AuthN
+      Mappings.
+  - name: CI Visibility Pipelines
+    description: >-
+      Search or aggregate your CI Visibility pipeline events and send them to
+      your Datadog site over HTTP. See the [CI Pipeline Visibility in Datadog
+      page](https://docs.datadoghq.com/continuous_integration/pipelines/) for
+      more information.
+  - name: CI Visibility Tests
+    description: >-
+      Search or aggregate your CI Visibility test events over HTTP. See the
+      [Test Visibility in Datadog page](https://docs.datadoghq.com/tests/) for
+      more information.
+  - name: CSM Agents
+    description: >-
+      Datadog Cloud Security Management (CSM) delivers real-time threat
+      detection
+
+      and continuous configuration audits across your entire cloud
+      infrastructure,
+
+      all in a unified view for seamless collaboration and faster remediation.
+
+      Go to https://docs.datadoghq.com/security/cloud_security_management to
+      learn more
+  - name: CSM Coverage Analysis
+    description: >-
+      Datadog Cloud Security Management (CSM) delivers real-time threat
+      detection
+
+      and continuous configuration audits across your entire cloud
+      infrastructure,
+
+      all in a unified view for seamless collaboration and faster remediation.
+
+      Go to https://docs.datadoghq.com/security/cloud_security_management to
+      learn more.
+  - name: CSM Threats
+    description: >-
+      Cloud Security Management Threats (CSM Threats) monitors file, network,
+      and process activity across your environment to detect real-time threats
+      to your infrastructure. See [Cloud Security Management
+      Threats](https://docs.datadoghq.com/security/threats/) for more
+      information on setting up CSM Threats.
+  - name: Case Management
+    description: >-
+      View and manage cases and projects within Case Management. See the [Case
+      Management
+      page](https://docs.datadoghq.com/service_management/case_management/) for
+      more information.
+  - name: Cloud Cost Management
+    description: >-
+      The Cloud Cost Management API allows you to set up, edit, and delete Cloud
+      Cost Management accounts for AWS and Azure. You can query your cost data
+      by using the [Metrics
+      endpoint](https://docs.datadoghq.com/api/latest/metrics/#query-timeseries-data-across-multiple-products)
+      and the `cloud_cost` data source. For more information, see the [Cloud
+      Cost Management
+      documentation](https://docs.datadoghq.com/cloud_cost_management/).
+  - name: Cloud Network Monitoring
+    description: >-
+      The Cloud Network Monitoring API allows you to fetch aggregated
+      connections and their attributes. See the [Cloud Network Monitoring
+      page](https://docs.datadoghq.com/network_monitoring/cloud_network_monitoring/)
+      for more information.
+  - name: Cloudflare Integration
+    description: >-
+      Manage your Datadog Cloudflare integration directly through the Datadog
+      API. See the [Cloudflare integration
+      page](https://docs.datadoghq.com/integrations/cloudflare/) for more
+      information.
+  - name: Confluent Cloud
+    description: >-
+      Manage your Datadog Confluent Cloud integration accounts and account
+      resources directly through the Datadog API. See the [Confluent Cloud
+      page](https://docs.datadoghq.com/integrations/confluent_cloud/) for more
+      information.
+  - name: Container Images
+    description: >-
+      The Container Images API allows you to query Container Image data for your
+      organization. See the [Container Images View
+      page](https://docs.datadoghq.com/infrastructure/containers/container_images/)
+      for more information.
+  - name: Containers
+    description: >-
+      The Containers API allows you to query container data for your
+      organization. See the [Container Monitoring
+      page](https://docs.datadoghq.com/containers/) for more information.
+  - name: DORA Metrics
+    description: >-
+      Send events for DORA Metrics to measure and improve software delivery. See
+      the [DORA Metrics page](https://docs.datadoghq.com/dora_metrics/) for more
+      information.
+  - name: Dashboard Lists
+    description: |-
+      Interact with your dashboard lists through the API to
+      organize, find, and share all of your dashboards with your team and
+      organization.
+  - name: Data Deletion
+    description: >-
+      The Data Deletion API allows the user to target and delete data from the
+      allowed products. It's currently enabled for Logs and RUM and depends on
+      `logs_delete_data` and `rum_delete_data` permissions respectively.
+  - name: Domain Allowlist
+    description: >-
+      Configure your Datadog Email Domain Allowlist directly through the Datadog
+      API.
+
+      The Email Domain Allowlist controls the domains that certain datadog
+      emails can be sent to.
+
+      For more information, see the [Domain Allowlist docs
+      page](https://docs.datadoghq.com/account_management/org_settings/domain_allowlist)
+  - name: Downtimes
+    description: >-
+      **Note**: Downtime V2 is currently in private beta. To request access,
+      contact [Datadog support](https://docs.datadoghq.com/help/).
+
+
+      [Downtiming](https://docs.datadoghq.com/monitors/notify/downtimes) gives
+
+      you greater control over monitor notifications by allowing you to globally
+      exclude
+
+      scopes from alerting. Downtime settings, which can be scheduled with start
+      and
+
+      end times, prevent all alerting related to specified Datadog tags.
+  - name: Events
+    description: >-
+      The Event Management API allows you to programmatically post events to the
+      Events Explorer and fetch events from the Events Explorer. See the [Event
+      Management page](https://docs.datadoghq.com/service_management/events/)
+      for more information.
+
+
+      **Update to Datadog monitor events `aggregation_key` starting March 1,
+      2025:** The Datadog monitor events `aggregation_key` is unique to each
+      Monitor ID. Starting March 1st, this key will also include Monitor Group,
+      making it unique per *Monitor ID and Monitor Group*. If you're using
+      monitor events `aggregation_key` in dashboard queries or the Event API,
+      you must migrate to use `@monitor.id`. Reach out to
+      [support](https://www.datadoghq.com/support/) if you have any question.
+  - name: Fastly Integration
+    description: >-
+      Manage your Datadog Fastly integration accounts and services directly
+      through the Datadog API. See the [Fastly integration
+      page](https://docs.datadoghq.com/integrations/fastly/) for more
+      information.
+  - name: GCP Integration
+    description: >-
+      Configure your Datadog-Google Cloud Platform (GCP) integration directly
+
+      through the Datadog API. Read more about the [Datadog-Google Cloud
+      Platform
+      integration](https://docs.datadoghq.com/integrations/google_cloud_platform).
+    externalDocs:
+      url: https://docs.datadoghq.com/integrations/google_cloud_platform
+  - name: IP Allowlist
+    description: >-
+      The IP allowlist API is used to manage the IP addresses that
+
+      can access the Datadog API and web UI. It does not block
+
+      access to intake APIs or public dashboards.
+
+
+      This is an enterprise-only feature. Request access by
+
+      contacting Datadog support, or see the [IP Allowlist
+      page](https://docs.datadoghq.com/account_management/org_settings/ip_allowlist/)
+      for more information.
+  - name: Incident Services
+    description: >-
+      Create, update, delete, and retrieve services which can be associated with
+      incidents. See the [Incident Management
+      page](https://docs.datadoghq.com/service_management/incident_management/)
+      for more information.
+  - name: Incident Teams
+    description: >-
+      The Incident Teams endpoints are deprecated. See the [Teams API
+      endpoints](https://docs.datadoghq.com/api/latest/teams/) to create,
+      update, delete, and retrieve teams which can be associated with incidents.
+  - name: Incidents
+    description: >-
+      Manage incident response, as well as associated attachments, metadata, and
+      todos. See the [Incident Management
+      page](https://docs.datadoghq.com/service_management/incident_management/)
+      for more information.
+  - name: Key Management
+    description: >-
+      Manage your Datadog API and application keys. You need an API key and
+
+      an application key for a user with the required permissions to interact
+
+      with these endpoints. The full list of API and application keys can be
+
+      seen on your [Datadog API
+      page](https://app.datadoghq.com/account/settings#api).
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/account_management/api-app-keys/
+  - name: Logs
+    description: >-
+      Search your logs and send them to your Datadog platform over HTTP. See the
+      [Log Management page](https://docs.datadoghq.com/logs/) for more
+      information.
+  - name: Logs Archives
+    description: |-
+      Archives forward all the logs ingested to a cloud storage system.
+
+      See the [Archives Page](https://app.datadoghq.com/logs/pipelines/archives)
+      for a list of the archives currently configured in Datadog.
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/logs/archives/
+  - name: Logs Custom Destinations
+    description: >-
+      Custom Destinations forward all the logs ingested to an external
+      destination.
+
+
+      **Note**: Log forwarding is not available for the Government (US1-FED)
+      site. Contact your account representative for more information.
+
+
+      See the [Custom Destinations
+      Page](https://app.datadoghq.com/logs/pipelines/log-forwarding/custom-destinations)
+
+      for a list of the custom destinations currently configured in web UI.
+    externalDocs:
+      description: Find out more at
+      url: >-
+        https://docs.datadoghq.com/logs/log_configuration/forwarding_custom_destinations/
+  - name: Logs Metrics
+    description: >-
+      Manage configuration of [log-based
+      metrics](https://app.datadoghq.com/logs/pipelines/generate-metrics) for
+      your organization.
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/logs/logs_to_metrics/
+  - name: Metrics
+    description: >-
+      The metrics endpoint allows you to:
+
+
+      - Post metrics data so it can be graphed on Datadog’s dashboards
+
+      - Query metrics from any time period (timeseries and scalar)
+
+      - Modify tag configurations for metrics
+
+      - View tags and volumes for metrics
+
+
+      **Note**: A graph can only contain a set number of points
+
+      and as the timeframe over which a metric is viewed increases,
+
+      aggregation between points occurs to stay below that set number.
+
+
+      The Post, Patch, and Delete `manage_tags` API methods can only be
+      performed by
+
+      a user who has the `Manage Tags for Metrics` permission.
+
+
+      See the [Metrics page](https://docs.datadoghq.com/metrics/) for more
+      information.
+  - name: Microsoft Teams Integration
+    description: >-
+      Configure your [Datadog Microsoft Teams
+      integration](https://docs.datadoghq.com/integrations/microsoft_teams/)
+
+      directly through the Datadog API. Note: These endpoints do not support
+      legacy connector handles.
+    externalDocs:
+      description: >-
+        For more information about the Datadog Microsoft Teams integration, see
+        the integration page.
+      url: https://docs.datadoghq.com/integrations/microsoft_teams/
+  - name: Monitors
+    description: >-
+      [Monitors](https://docs.datadoghq.com/monitors) allow you to watch a
+      metric or check that you care about and
+
+      notifies your team when a defined threshold has exceeded.
+
+
+      For more information, see [Creating
+      Monitors](https://docs.datadoghq.com/monitors/create/types/) and
+
+      [Tag Policies](https://docs.datadoghq.com/monitors/settings/).
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/monitors/create/types/
+  - name: Network Device Monitoring
+    description: >-
+      The Network Device Monitoring API allows you to fetch devices and
+      interfaces and their attributes. See the [Network Device Monitoring
+      page](https://docs.datadoghq.com/network_monitoring/) for more
+      information.
+  - name: Observability Pipelines
+    description: >-
+      Observability Pipelines allows you to collect and process logs within your
+      own infrastructure, and then route them to downstream integrations.
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/observability_pipelines/
+  - name: Okta Integration
+    description: >-
+      Configure your [Datadog Okta
+      integration](https://docs.datadoghq.com/integrations/okta/) directly
+      through the Datadog API.
+  - name: On-Call
+    description: >-
+      Configure your [Datadog
+      On-Call](https://docs.datadoghq.com/service_management/on-call/)
+
+      directly through the Datadog API.
+    externalDocs:
+      url: https://docs.datadoghq.com/service_management/on-call/
+  - name: Opsgenie Integration
+    description: >-
+      Configure your [Datadog Opsgenie
+      integration](https://docs.datadoghq.com/integrations/opsgenie/)
+
+      directly through the Datadog API.
+    externalDocs:
+      url: https://docs.datadoghq.com/api/latest/opsgenie-integration
+  - name: Organizations
+    description: >-
+      Create, edit, and manage your organizations. Read more about [multi-org
+      accounts](https://docs.datadoghq.com/account_management/multi_organization).
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/account_management/multi_organization
+  - name: Powerpack
+    description: >-
+      The Powerpack endpoints allow you to:
+
+
+      - Get a Powerpack
+
+      - Create a Powerpack
+
+      - Delete a Powerpack
+
+      - Get a list of all Powerpacks
+
+
+      The Patch and Delete API methods can only be performed on a Powerpack by
+
+      a user who has the powerpack create permission for that specific
+      Powerpack.
+
+
+      Read [Scale Graphing Expertise with
+      Powerpacks](https://docs.datadoghq.com/dashboards/guide/powerpacks-best-practices/)
+      for more information.
+  - name: Processes
+    description: >-
+      The processes API allows you to query processes data for your
+      organization. See the [Live Processes
+      page](https://docs.datadoghq.com/infrastructure/process/) for more
+      information.
+  - name: RUM
+    description: >-
+      Manage your Real User Monitoring (RUM) applications, and search or
+      aggregate your RUM events over HTTP. See the [RUM & Session Replay
+      page](https://docs.datadoghq.com/real_user_monitoring/) for more
+      information
+  - name: Restriction Policies
+    description: >-
+      A restriction policy defines the access control rules for a resource,
+      mapping a set of relations
+
+      (such as editor and viewer) to a set of allowed principals (such as roles,
+      teams, or users).
+
+      The restriction policy determines who is authorized to perform what
+      actions on the resource.
+  - name: Roles
+    description: >-
+      The Roles API is used to create and manage Datadog roles, what
+
+      [global permissions](https://docs.datadoghq.com/account_management/rbac/)
+
+      they grant, and which users belong to them.
+
+
+      Permissions related to specific account assets can be granted to roles
+
+      in the Datadog application without using this API. For example, granting
+
+      read access on a specific log index to a role can be done in Datadog from
+      the
+
+      [Pipelines page](https://app.datadoghq.com/logs/pipelines).
+  - name: Rum Metrics
+    description: >-
+      Manage configuration of [rum-based
+      metrics](https://app.datadoghq.com/rum/generate-metrics) for your
+      organization.
+    externalDocs:
+      description: Find out more at
+      url: >-
+        https://docs.datadoghq.com/real_user_monitoring/platform/generate_metrics/
+  - name: Rum Retention Filters
+    description: >-
+      Manage retention filters through [Manage
+      Applications](https://app.datadoghq.com/rum/list) of RUM for your
+      organization.
+  - name: Security Monitoring
+    description: >-
+      Create and manage your security rules, signals, filters, and more. See the
+      [Datadog Security page](https://docs.datadoghq.com/security/) for more
+      information.
+  - name: Sensitive Data Scanner
+    description: >-
+      Create, update, delete, and retrieve sensitive data scanner groups and
+      rules. See the [Sensitive Data Scanner
+      page](https://docs.datadoghq.com/sensitive_data_scanner/) for more
+      information.
+  - name: Service Accounts
+    description: >-
+      Create, edit, and disable service accounts. See the [Service Accounts
+      page](https://docs.datadoghq.com/account_management/org_settings/service_accounts/)
+      for more information.
+  - name: Service Definition
+    description: >-
+      API to create, update, retrieve and delete service definitions.
+
+      Note: Service Catalog [v3.0
+      schema](https://docs.datadoghq.com/service_catalog/service_definitions/v3-0/)
+      has new API endpoints documented under [Software
+      Catalog](https://docs.datadoghq.com/api/latest/software-catalog/). Use the
+      following Service Definition endpoints for v2.2 and earlier.
+    externalDocs:
+      url: https://docs.datadoghq.com/tracing/service_catalog/
+  - name: Service Level Objectives
+    description: >-
+      [Service Level
+      Objectives](https://docs.datadoghq.com/monitors/service_level_objectives/#configuration)
+
+      (SLOs) are a key part of the site reliability engineering toolkit.
+
+      SLOs provide a framework for defining clear targets around application
+      performance,
+
+      which ultimately help teams provide a consistent customer experience,
+
+      balance feature development with platform stability,
+
+      and improve communication with internal and external users.
+  - name: Service Scorecards
+    description: >-
+      API to create and update scorecard rules and outcomes. See [Service
+      Scorecards](https://docs.datadoghq.com/service_catalog/scorecards) for
+      more information.
+
+
+      This feature is currently in BETA. If you have any feedback, contact
+      [Datadog support](https://docs.datadoghq.com/help/).
+  - name: Software Catalog
+    description: API to create, update, retrieve, and delete Software Catalog entities.
+    externalDocs:
+      url: >-
+        https://docs.datadoghq.com/service_catalog/service_definitions#metadata-schema-v30-beta
+  - name: Spans
+    description: Search and aggregate your spans from your Datadog platform over HTTP.
+  - name: Spans Metrics
+    description: >-
+      Manage configuration of [span-based
+      metrics](https://app.datadoghq.com/apm/traces/generate-metrics) for your
+      organization. See [Generate Metrics from
+      Spans](https://docs.datadoghq.com/tracing/trace_pipeline/generate_metrics/)
+      for more information.
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/tracing/metrics/metrics_namespace/
+  - name: Synthetics
+    description: >-
+      Datadog Synthetics uses simulated user requests and browser rendering to
+      help you ensure uptime,
+
+      identify regional issues, and track your application performance. Datadog
+      Synthetics tests come in
+
+      two different flavors, [API
+      tests](https://docs.datadoghq.com/synthetics/api_tests/)
+
+      and [browser tests](https://docs.datadoghq.com/synthetics/browser_tests).
+      You can use Datadog’s API to
+
+      manage both test types programmatically.
+
+
+      For more information about Synthetics, see the [Synthetics
+      overview](https://docs.datadoghq.com/synthetics/).
+  - name: Teams
+    description: >-
+      View and manage teams within Datadog. See the [Teams
+      page](https://docs.datadoghq.com/account_management/teams/) for more
+      information.
+  - name: Usage Metering
+    description: >-
+      The usage metering API allows you to get hourly, daily, and
+
+      monthly usage across multiple facets of Datadog.
+
+      This API is available to all Pro and Enterprise customers.
+
+
+      **Note**: Usage data is delayed by up to 72 hours from when it was
+      incurred.
+
+      It is retained for 15 months.
+
+
+      You can retrieve up to 24 hours of hourly usage data for multiple
+      organizations,
+
+      and up to two months of hourly usage data for a single organization in one
+      request.
+
+      Learn more on the [usage details
+      documentation](https://docs.datadoghq.com/account_management/billing/usage_details/).
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/account_management/billing/usage_details/
+  - name: Users
+    description: Create, edit, and disable users.
+    externalDocs:
+      url: https://docs.datadoghq.com/account_management/users
+  - name: Workflow Automation
+    description: >-
+      Datadog Workflow Automation allows you to automate your end-to-end
+      processes by connecting Datadog with the rest of your tech stack. Build
+      workflows to auto-remediate your alerts, streamline your incident and
+      security processes, and reduce manual toil. Workflow Automation supports
+      over 1,000+ OOTB actions, including AWS, JIRA, ServiceNow, GitHub, and
+      OpenAI. Learn more in our Workflow Automation docs
+      [here](https://docs.datadoghq.com/service_management/workflows/).
+    externalDocs:
+      description: Find out more at
+      url: https://docs.datadoghq.com/service_management/workflows/
+x-group-parameters: true

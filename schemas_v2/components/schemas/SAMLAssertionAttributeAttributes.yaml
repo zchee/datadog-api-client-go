@@ -1,0 +1,15 @@
+description: Key/Value pair of attributes used in SAML assertion attributes.
+properties:
+  attribute_key:
+    description: >-
+      Key portion of a key/value pair of the attribute sent from the Identity
+      Provider.
+    example: member-of
+    type: string
+  attribute_value:
+    description: >-
+      Value portion of a key/value pair of the attribute sent from the Identity
+      Provider.
+    example: Development
+    type: string
+type: object

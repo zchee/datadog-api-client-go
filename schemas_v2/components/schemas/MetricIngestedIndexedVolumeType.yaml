@@ -1,0 +1,8 @@
+default: metric_volumes
+description: The metric ingested and indexed volume type.
+enum:
+  - metric_volumes
+example: metric_volumes
+type: string
+x-enum-varnames:
+  - METRIC_VOLUMES

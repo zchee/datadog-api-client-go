@@ -1,0 +1,37 @@
+post:
+  description: Update case priority
+  operationId: UpdatePriority
+  parameters:
+    - $ref: ../components/parameters/CaseIDPathParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CaseUpdatePriorityRequest.yaml
+    description: Case priority update payload
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CaseResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - cases_write
+  summary: Update case priority
+  tags:
+    - Case Management

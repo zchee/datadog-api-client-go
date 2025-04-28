@@ -1,0 +1,10 @@
+description: Process summary object.
+properties:
+  attributes:
+    $ref: ./ProcessSummaryAttributes.yaml
+  id:
+    description: Process ID.
+    type: string
+  type:
+    $ref: ./ProcessSummaryType.yaml
+type: object

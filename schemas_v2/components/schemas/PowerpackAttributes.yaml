@@ -1,0 +1,34 @@
+description: Powerpack attribute object.
+properties:
+  description:
+    description: Description of this powerpack.
+    example: Powerpack for ABC
+    type: string
+  group_widget:
+    $ref: ./PowerpackGroupWidget.yaml
+  name:
+    description: Name of the powerpack.
+    example: Sample Powerpack
+    type: string
+  tags:
+    description: List of tags to identify this powerpack.
+    example:
+      - tag:foo1
+    items:
+      maxLength: 80
+      type: string
+    maxItems: 8
+    type: array
+  template_variables:
+    description: List of template variables for this powerpack.
+    example:
+      - defaults:
+          - '*'
+        name: test
+    items:
+      $ref: ./PowerpackTemplateVariable.yaml
+    type: array
+required:
+  - group_widget
+  - name
+type: object

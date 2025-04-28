@@ -1,0 +1,20 @@
+description: Mapping of billing dimensions to endpoint keys.
+properties:
+  endpoints:
+    description: >-
+      List of supported endpoints with their keys mapped to the
+      billing_dimension.
+    items:
+      $ref: ./BillingDimensionsMappingBodyItemAttributesEndpointsItems.yaml
+    type: array
+  in_app_label:
+    description: Label used for the billing dimension in the Plan & Usage charts.
+    example: APM Hosts
+    type: string
+  timestamp:
+    description: >-
+      Month in ISO-8601 format, UTC, and precise to the second:
+      `[YYYY-MM-DDThh:mm:ss]`.
+    format: date-time
+    type: string
+type: object

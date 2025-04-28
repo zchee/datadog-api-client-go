@@ -1,0 +1,5 @@
+description: Team update relationships
+properties:
+  team_links:
+    $ref: ./RelationshipToTeamLinks.yaml
+type: object

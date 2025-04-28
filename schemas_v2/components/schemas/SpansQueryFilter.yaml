@@ -1,0 +1,22 @@
+description: The search and filter query settings.
+properties:
+  from:
+    default: now-15m
+    description: >-
+      The minimum time for the requested spans, supports date-time ISO8601, date
+      math, and regular timestamps (milliseconds).
+    example: now-15m
+    type: string
+  query:
+    default: '*'
+    description: The search query - following the span search syntax.
+    example: service:web* AND @http.status_code:[200 TO 299]
+    type: string
+  to:
+    default: now
+    description: >-
+      The maximum time for the requested spans, supports date-time ISO8601, date
+      math, and regular timestamps (milliseconds).
+    example: now
+    type: string
+type: object

@@ -1,0 +1,5 @@
+description: Relationships formed with the team on creation
+properties:
+  users:
+    $ref: ./RelationshipToUsers.yaml
+type: object

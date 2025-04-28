@@ -1,0 +1,6 @@
+description: Specify which field to sort
+in: query
+name: sort[field]
+required: false
+schema:
+  $ref: ../schemas/CaseSortableField.yaml

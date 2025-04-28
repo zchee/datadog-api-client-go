@@ -1,0 +1,18 @@
+description: Advisory.
+properties:
+  base_severity:
+    description: Advisory base severity.
+    example: Critical
+    type: string
+  id:
+    description: Advisory id.
+    example: GHSA-4wrc-f8pq-fpqp
+    type: string
+  severity:
+    description: Advisory Datadog severity.
+    example: Medium
+    type: string
+required:
+  - id
+  - base_severity
+type: object

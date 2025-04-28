@@ -1,0 +1,8 @@
+description: Chargeback Summary response.
+properties:
+  data:
+    description: Response containing Chargeback Summary.
+    items:
+      $ref: ./CostByOrg.yaml
+    type: array
+type: object

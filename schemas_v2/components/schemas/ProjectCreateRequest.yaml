@@ -1,0 +1,7 @@
+description: Project create request
+properties:
+  data:
+    $ref: ./ProjectCreate.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,7 @@
+description: Specifies the order of returned incidents.
+explode: false
+in: query
+name: sort
+required: false
+schema:
+  $ref: ../schemas/IncidentSearchSortOrder.yaml

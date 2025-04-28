@@ -1,0 +1,7 @@
+description: A response with a single Org Config.
+properties:
+  data:
+    $ref: ./OrgConfigRead.yaml
+required:
+  - data
+type: object

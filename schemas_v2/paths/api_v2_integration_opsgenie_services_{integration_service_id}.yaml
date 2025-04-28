@@ -1,0 +1,89 @@
+delete:
+  description: Delete a single service object in the Datadog Opsgenie integration.
+  operationId: DeleteOpsgenieService
+  parameters:
+    - $ref: ../components/parameters/OpsgenieServiceIDPathParameter.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a single service object
+  tags:
+    - Opsgenie Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations
+get:
+  description: Get a single service from the Datadog Opsgenie integration.
+  operationId: GetOpsgenieService
+  parameters:
+    - $ref: ../components/parameters/OpsgenieServiceIDPathParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OpsgenieServiceResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a single service object
+  tags:
+    - Opsgenie Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+patch:
+  description: Update a single service object in the Datadog Opsgenie integration.
+  operationId: UpdateOpsgenieService
+  parameters:
+    - $ref: ../components/parameters/OpsgenieServiceIDPathParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/OpsgenieServiceUpdateRequest.yaml
+    description: Opsgenie service payload.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OpsgenieServiceResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a single service object
+  tags:
+    - Opsgenie Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

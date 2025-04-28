@@ -1,0 +1,45 @@
+description: The attributes associated with the archive.
+properties:
+  destination:
+    $ref: ./LogsArchiveDestination.yaml
+  include_tags:
+    default: false
+    description: >-
+      To store the tags in the archive, set the value "true".
+
+      If it is set to "false", the tags will be deleted when the logs are sent
+      to the archive.
+    example: false
+    type: boolean
+  name:
+    description: The archive name.
+    example: Nginx Archive
+    type: string
+  query:
+    description: >-
+      The archive query/filter. Logs matching this query are included in the
+      archive.
+    example: source:nginx
+    type: string
+  rehydration_max_scan_size_in_gb:
+    description: Maximum scan size for rehydration from this archive.
+    example: 100
+    format: int64
+    nullable: true
+    type: integer
+  rehydration_tags:
+    description: An array of tags to add to rehydrated logs from an archive.
+    example:
+      - team:intake
+      - team:app
+    items:
+      description: A given tag in the `<KEY>:<VALUE>` format.
+      type: string
+    type: array
+  state:
+    $ref: ./LogsArchiveState.yaml
+required:
+  - name
+  - query
+  - destination
+type: object

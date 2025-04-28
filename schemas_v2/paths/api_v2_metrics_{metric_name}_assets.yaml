@@ -1,0 +1,45 @@
+get:
+  description: >-
+    Returns dashboards, monitors, notebooks, and SLOs that a metric is stored
+    in, if any.  Updated every 24 hours.
+  operationId: ListMetricAssets
+  parameters:
+    - $ref: ../components/parameters/MetricName.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MetricAssetsResponse.yaml
+      description: Success
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Too Many Requests
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Related Assets to a Metric
+  tags:
+    - Metrics

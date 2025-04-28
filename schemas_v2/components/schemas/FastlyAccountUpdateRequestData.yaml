@@ -1,0 +1,7 @@
+description: Data object for updating a Fastly account.
+properties:
+  attributes:
+    $ref: ./FastlyAccountUpdateRequestAttributes.yaml
+  type:
+    $ref: ./FastlyAccountType.yaml
+type: object

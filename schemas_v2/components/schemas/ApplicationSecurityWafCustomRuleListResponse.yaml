@@ -1,0 +1,8 @@
+description: Response object that includes a list of WAF custom rules.
+properties:
+  data:
+    description: The WAF custom rule data.
+    items:
+      $ref: ./ApplicationSecurityWafCustomRuleData.yaml
+    type: array
+type: object

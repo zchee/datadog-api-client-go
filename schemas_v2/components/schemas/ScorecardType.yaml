@@ -1,0 +1,8 @@
+default: scorecard
+description: The JSON:API type for scorecard.
+enum:
+  - scorecard
+example: scorecard
+type: string
+x-enum-varnames:
+  - SCORECARD

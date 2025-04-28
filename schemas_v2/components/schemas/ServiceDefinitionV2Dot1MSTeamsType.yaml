@@ -1,0 +1,7 @@
+description: Contact type.
+enum:
+  - microsoft-teams
+example: microsoft-teams
+type: string
+x-enum-varnames:
+  - MICROSOFT_TEAMS

@@ -1,0 +1,14 @@
+description: The version of the app that was published.
+properties:
+  attributes:
+    $ref: ./DeploymentAttributes.yaml
+  id:
+    description: The deployment ID.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+  meta:
+    $ref: ./DeploymentMetadata.yaml
+  type:
+    $ref: ./AppDeploymentType.yaml
+type: object

@@ -1,0 +1,9 @@
+description: >-
+  Identifies the user participating in this layer as a single object with an
+  `id`.
+properties:
+  id:
+    description: The user's ID.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+type: object

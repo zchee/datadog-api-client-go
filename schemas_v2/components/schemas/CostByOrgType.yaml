@@ -1,0 +1,8 @@
+default: cost_by_org
+description: Type of cost data.
+enum:
+  - cost_by_org
+example: cost_by_org
+type: string
+x-enum-varnames:
+  - COST_BY_ORG

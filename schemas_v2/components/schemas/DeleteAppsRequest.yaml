@@ -1,0 +1,16 @@
+description: A request object for deleting multiple apps by ID.
+example:
+  data:
+    - id: aea2ed17-b45f-40d0-ba59-c86b7972c901
+      type: appDefinitions
+    - id: f69bb8be-6168-4fe7-a30d-370256b6504a
+      type: appDefinitions
+    - id: ab1ed73e-13ad-4426-b0df-a0ff8876a088
+      type: appDefinitions
+properties:
+  data:
+    description: An array of objects containing the IDs of the apps to delete.
+    items:
+      $ref: ./DeleteAppsRequestDataItems.yaml
+    type: array
+type: object

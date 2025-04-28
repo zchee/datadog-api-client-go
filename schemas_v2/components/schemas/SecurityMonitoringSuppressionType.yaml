@@ -1,0 +1,8 @@
+default: suppressions
+description: The type of the resource. The value should always be `suppressions`.
+enum:
+  - suppressions
+example: suppressions
+type: string
+x-enum-varnames:
+  - SUPPRESSIONS

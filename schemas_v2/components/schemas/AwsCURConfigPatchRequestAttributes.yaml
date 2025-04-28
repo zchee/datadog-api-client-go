@@ -1,0 +1,9 @@
+description: Attributes for AWS CUR config Patch Request.
+properties:
+  account_filters:
+    $ref: ./AccountFilteringConfig.yaml
+  is_enabled:
+    description: Whether or not the Cloud Cost Management account is enabled.
+    example: true
+    type: boolean
+type: object

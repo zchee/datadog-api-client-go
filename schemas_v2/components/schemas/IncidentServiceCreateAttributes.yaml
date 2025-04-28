@@ -1,0 +1,9 @@
+description: The incident service's attributes for a create request.
+properties:
+  name:
+    description: Name of the incident service.
+    example: an example service name
+    type: string
+required:
+  - name
+type: object

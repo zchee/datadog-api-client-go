@@ -1,0 +1,17 @@
+additionalProperties: false
+description: The definition of Entity V3 System Spec object.
+properties:
+  components:
+    description: A list of components belongs to the system.
+    items:
+      type: string
+    type: array
+  lifecycle:
+    description: The lifecycle state of the component.
+    minLength: 1
+    type: string
+  tier:
+    description: An entity reference to the owner of the component.
+    minLength: 1
+    type: string
+type: object

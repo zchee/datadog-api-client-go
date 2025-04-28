@@ -1,0 +1,8 @@
+default: audit
+description: Type of the event.
+enum:
+  - audit
+example: audit
+type: string
+x-enum-varnames:
+  - Audit

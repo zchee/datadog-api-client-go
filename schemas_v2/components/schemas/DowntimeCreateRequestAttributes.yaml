@@ -1,0 +1,22 @@
+description: Downtime details.
+properties:
+  display_timezone:
+    $ref: ./DowntimeDisplayTimezone.yaml
+  message:
+    $ref: ./DowntimeMessage.yaml
+  monitor_identifier:
+    $ref: ./DowntimeMonitorIdentifier.yaml
+  mute_first_recovery_notification:
+    $ref: ./DowntimeMuteFirstRecoveryNotification.yaml
+  notify_end_states:
+    $ref: ./DowntimeNotifyEndStates.yaml
+  notify_end_types:
+    $ref: ./DowntimeNotifyEndTypes.yaml
+  schedule:
+    $ref: ./DowntimeScheduleCreateRequest.yaml
+  scope:
+    $ref: ./DowntimeScope.yaml
+required:
+  - scope
+  - monitor_identifier
+type: object

@@ -1,0 +1,21 @@
+description: The object description of an event response attribute.
+properties:
+  attributes:
+    $ref: ./EventAttributes.yaml
+  message:
+    description: The message of the event.
+    type: string
+  tags:
+    description: An array of tags associated with the event.
+    example:
+      - team:A
+    items:
+      description: The tag associated with the event.
+      type: string
+    type: array
+  timestamp:
+    description: The timestamp of the event.
+    example: '2019-01-02T09:42:36.320Z'
+    format: date-time
+    type: string
+type: object

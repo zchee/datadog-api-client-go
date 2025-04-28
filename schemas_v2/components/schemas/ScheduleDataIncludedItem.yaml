@@ -1,0 +1,6 @@
+description: Any additional resources related to this schedule, such as teams and layers.
+oneOf:
+  - $ref: ./TeamReference.yaml
+  - $ref: ./Layer.yaml
+  - $ref: ./ScheduleMember.yaml
+  - $ref: ./ScheduleUser.yaml

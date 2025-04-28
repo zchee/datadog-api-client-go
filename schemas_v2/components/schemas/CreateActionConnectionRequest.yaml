@@ -1,0 +1,7 @@
+description: Request used to create an action connection.
+properties:
+  data:
+    $ref: ./ActionConnectionData.yaml
+required:
+  - data
+type: object

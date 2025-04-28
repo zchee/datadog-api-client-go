@@ -1,0 +1,11 @@
+description: Options on new value detection method.
+properties:
+  forgetAfter:
+    $ref: ./SecurityMonitoringRuleNewValueOptionsForgetAfter.yaml
+  learningDuration:
+    $ref: ./SecurityMonitoringRuleNewValueOptionsLearningDuration.yaml
+  learningMethod:
+    $ref: ./SecurityMonitoringRuleNewValueOptionsLearningMethod.yaml
+  learningThreshold:
+    $ref: ./SecurityMonitoringRuleNewValueOptionsLearningThreshold.yaml
+type: object

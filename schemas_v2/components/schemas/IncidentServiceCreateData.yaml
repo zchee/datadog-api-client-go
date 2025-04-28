@@ -1,0 +1,11 @@
+description: Incident Service payload for create requests.
+properties:
+  attributes:
+    $ref: ./IncidentServiceCreateAttributes.yaml
+  relationships:
+    $ref: ./IncidentServiceRelationships.yaml
+  type:
+    $ref: ./IncidentServiceType.yaml
+required:
+  - type
+type: object

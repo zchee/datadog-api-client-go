@@ -1,0 +1,8 @@
+default: members
+description: Members resource type.
+enum:
+  - members
+example: members
+type: string
+x-enum-varnames:
+  - MEMBERS

@@ -1,0 +1,5 @@
+description: The monitor identified by the downtime.
+properties:
+  data:
+    $ref: ./DowntimeRelationshipsMonitorData.yaml
+type: object

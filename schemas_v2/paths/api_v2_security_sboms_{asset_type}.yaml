@@ -1,0 +1,70 @@
+get:
+  description: |
+    Get a single SBOM related to an asset by its type and name.
+  operationId: GetSBOM
+  parameters:
+    - description: The type of the asset for the SBOM request.
+      example: Repository
+      in: path
+      name: asset_type
+      required: true
+      schema:
+        $ref: ../components/schemas/AssetType.yaml
+    - description: The name of the asset for the SBOM request.
+      example: github.com/datadog/datadog-agent
+      in: query
+      name: filter[asset_name]
+      required: true
+      schema:
+        type: string
+    - description: >-
+        The container image `repo_digest` for the SBOM request. When the
+        requested asset type is 'Image', this filter is mandatory.
+      example: sha256:0ae7da091191787229d321e3638e39c319a97d6e20f927d465b519d699215bf7
+      in: query
+      name: filter[repo_digest]
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetSBOMResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: >-
+        Bad request: The server cannot process the request due to invalid syntax
+        in the request.
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: 'Forbidden: Access denied'
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: 'Not found: asset not found'
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - appsec_vm_read
+  summary: Get SBOM
+  tags:
+    - Security Monitoring
+  x-unstable: >-
+    **Note**: This endpoint is a private preview.
+
+    If you are interested in accessing this API, [fill out this
+    form](https://forms.gle/kMYC1sDr6WDUBDsx9).

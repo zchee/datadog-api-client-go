@@ -1,0 +1,12 @@
+description: Used to handle errors in an action.
+properties:
+  fallbackStepName:
+    description: The `ErrorHandler` `fallbackStepName`.
+    example: ''
+    type: string
+  retryStrategy:
+    $ref: ./RetryStrategy.yaml
+required:
+  - retryStrategy
+  - fallbackStepName
+type: object

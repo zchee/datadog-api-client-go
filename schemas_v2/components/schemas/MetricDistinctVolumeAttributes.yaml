@@ -1,0 +1,8 @@
+description: Object containing the definition of a metric's distinct volume.
+properties:
+  distinct_volume:
+    description: Distinct volume for the given metric.
+    example: 10
+    format: int64
+    type: integer
+type: object

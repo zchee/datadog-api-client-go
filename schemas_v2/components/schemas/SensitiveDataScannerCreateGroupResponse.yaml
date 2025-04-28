@@ -1,0 +1,7 @@
+description: Create group response.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerGroupResponse.yaml
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+type: object

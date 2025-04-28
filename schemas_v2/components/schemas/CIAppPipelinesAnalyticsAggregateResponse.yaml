@@ -1,0 +1,9 @@
+description: The response object for the pipeline events aggregate API endpoint.
+properties:
+  data:
+    $ref: ./CIAppPipelinesAggregationBucketsResponse.yaml
+  links:
+    $ref: ./CIAppResponseLinks.yaml
+  meta:
+    $ref: ./CIAppResponseMetadata.yaml
+type: object

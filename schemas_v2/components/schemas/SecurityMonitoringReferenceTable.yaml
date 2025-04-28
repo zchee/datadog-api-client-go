@@ -1,0 +1,18 @@
+description: Reference tables used in the queries.
+properties:
+  checkPresence:
+    description: Whether to include or exclude the matched values.
+    type: boolean
+  columnName:
+    description: The name of the column in the reference table.
+    type: string
+  logFieldPath:
+    description: The field in the log to match against the reference table.
+    type: string
+  ruleQueryName:
+    description: The name of the query to apply the reference table to.
+    type: string
+  tableName:
+    description: The name of the reference table.
+    type: string
+type: object

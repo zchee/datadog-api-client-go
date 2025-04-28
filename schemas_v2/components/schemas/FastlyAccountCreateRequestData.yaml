@@ -1,0 +1,10 @@
+description: Data object for creating a Fastly account.
+properties:
+  attributes:
+    $ref: ./FastlyAccountCreateRequestAttributes.yaml
+  type:
+    $ref: ./FastlyAccountType.yaml
+required:
+  - attributes
+  - type
+type: object

@@ -1,0 +1,3 @@
+description: The ID of the suppression rule.
+example: 3dd-0uc-h1s
+type: string

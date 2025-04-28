@@ -1,0 +1,24 @@
+description: Extra information about the exclusion filter.
+properties:
+  added_at:
+    description: The creation date of the exclusion filter.
+    format: date-time
+    type: string
+  added_by:
+    description: The handle of the user who created the exclusion filter.
+    type: string
+  added_by_name:
+    description: The name of the user who created the exclusion filter.
+    type: string
+  modified_at:
+    description: The last modification date of the exclusion filter.
+    format: date-time
+    type: string
+  modified_by:
+    description: The handle of the user who last modified the exclusion filter.
+    type: string
+  modified_by_name:
+    description: The name of the user who last modified the exclusion filter.
+    type: string
+readOnly: true
+type: object

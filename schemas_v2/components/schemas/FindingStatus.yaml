@@ -1,0 +1,15 @@
+description: The status of the finding.
+enum:
+  - critical
+  - high
+  - medium
+  - low
+  - info
+example: critical
+type: string
+x-enum-varnames:
+  - CRITICAL
+  - HIGH
+  - MEDIUM
+  - LOW
+  - INFO

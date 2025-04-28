@@ -1,0 +1,17 @@
+description: >-
+  Represents the primary data object for a schedule, linking attributes and
+  relationships.
+properties:
+  attributes:
+    $ref: ./ScheduleDataAttributes.yaml
+  id:
+    description: The schedule's unique identifier.
+    example: 3653d3c6-0c75-11ea-ad28-fb5701eabc7d
+    type: string
+  relationships:
+    $ref: ./ScheduleDataRelationships.yaml
+  type:
+    $ref: ./ScheduleDataType.yaml
+required:
+  - type
+type: object

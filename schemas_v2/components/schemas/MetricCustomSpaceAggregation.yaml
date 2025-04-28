@@ -1,0 +1,13 @@
+description: A space aggregation for use in query.
+enum:
+  - avg
+  - max
+  - min
+  - sum
+example: sum
+type: string
+x-enum-varnames:
+  - AVG
+  - MAX
+  - MIN
+  - SUM

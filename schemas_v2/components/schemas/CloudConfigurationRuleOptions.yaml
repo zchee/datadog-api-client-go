@@ -1,0 +1,7 @@
+description: Options on cloud configuration rules.
+properties:
+  complianceRuleOptions:
+    $ref: ./CloudConfigurationComplianceRuleOptions.yaml
+required:
+  - complianceRuleOptions
+type: object

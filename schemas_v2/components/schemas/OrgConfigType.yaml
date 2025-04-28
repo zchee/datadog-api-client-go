@@ -1,0 +1,7 @@
+description: Data type of an Org Config.
+enum:
+  - org_configs
+example: org_configs
+type: string
+x-enum-varnames:
+  - ORG_CONFIGS

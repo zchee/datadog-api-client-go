@@ -1,0 +1,8 @@
+default: confluent-cloud-accounts
+description: The JSON:API type for this API. Should always be `confluent-cloud-accounts`.
+enum:
+  - confluent-cloud-accounts
+example: confluent-cloud-accounts
+type: string
+x-enum-varnames:
+  - CONFLUENT_CLOUD_ACCOUNTS

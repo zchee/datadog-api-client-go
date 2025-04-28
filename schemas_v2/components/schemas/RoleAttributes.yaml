@@ -1,0 +1,23 @@
+description: Attributes of the role.
+properties:
+  created_at:
+    description: Creation time of the role.
+    format: date-time
+    readOnly: true
+    type: string
+  modified_at:
+    description: Time of last role modification.
+    format: date-time
+    readOnly: true
+    type: string
+  name:
+    description: >-
+      The name of the role. The name is neither unique nor a stable identifier
+      of the role.
+    type: string
+  user_count:
+    description: Number of users with that role.
+    format: int64
+    readOnly: true
+    type: integer
+type: object

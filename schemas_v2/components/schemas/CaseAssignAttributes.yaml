@@ -1,0 +1,9 @@
+description: Case assign attributes
+properties:
+  assignee_id:
+    description: Assignee's UUID
+    example: f98a5a5b-e0ff-45d4-b2f5-afe6e74de504
+    type: string
+required:
+  - assignee_id
+type: object

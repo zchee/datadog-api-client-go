@@ -1,0 +1,19 @@
+description: >-
+  The object sent with the request to retrieve aggregation buckets of pipeline
+  events from your organization.
+properties:
+  compute:
+    description: The list of metrics or timeseries to compute for the retrieved buckets.
+    items:
+      $ref: ./CIAppCompute.yaml
+    type: array
+  filter:
+    $ref: ./CIAppPipelinesQueryFilter.yaml
+  group_by:
+    description: The rules for the group-by.
+    items:
+      $ref: ./CIAppPipelinesGroupBy.yaml
+    type: array
+  options:
+    $ref: ./CIAppQueryOptions.yaml
+type: object

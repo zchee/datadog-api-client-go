@@ -1,0 +1,7 @@
+description: Relationship between team membership and team
+properties:
+  data:
+    $ref: ./RelationshipToUserTeamTeamData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,31 @@
+description: Response with a list of tenant-based handles.
+properties:
+  data:
+    description: An array of tenant-based handles.
+    example:
+      - attributes:
+          channelId: 19:b41k24b14bn1nwffkernfkwrnfneubgkr@thread.tacv2
+          channelName: General
+          name: general-handle
+          teamId: 00000000-0000-0000-0000-000000000000
+          teamName: Example Team
+          tenantId: 00000000-0000-0000-0000-000000000001
+          tenantName: Company, Inc.
+        id: 596da4af-0563-4097-90ff-07230c3f9db3
+        type: ms-teams-tenant-based-handle-info
+      - attributes:
+          channelId: 19:b41k24b14bn1nwffkernfkwrnfneubgk1@thread.tacv2
+          channelName: General2
+          name: general-handle-2
+          teamId: 00000000-0000-0000-0000-000000000002
+          teamName: Example Team 2
+          tenantId: 00000000-0000-0000-0000-000000000003
+          tenantName: Company, Inc.
+        id: 596da4af-0563-4097-90ff-07230c3f9db4
+        type: ms-teams-tenant-based-handle-info
+    items:
+      $ref: ./MicrosoftTeamsTenantBasedHandleInfoResponseData.yaml
+    type: array
+required:
+  - data
+type: object

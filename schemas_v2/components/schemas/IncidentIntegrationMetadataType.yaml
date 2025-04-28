@@ -1,0 +1,8 @@
+default: incident_integrations
+description: Integration metadata resource type.
+enum:
+  - incident_integrations
+example: incident_integrations
+type: string
+x-enum-varnames:
+  - INCIDENT_INTEGRATIONS

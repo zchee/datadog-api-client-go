@@ -1,0 +1,23 @@
+description: Contains information of the host running the pipeline, stage, job, or step.
+nullable: true
+properties:
+  hostname:
+    description: FQDN of the host.
+    example: www.example.com
+    type: string
+  labels:
+    description: A list of labels used to select or identify the node.
+    example:
+      - ubuntu-18.04
+      - n2.large
+    items:
+      type: string
+    type: array
+  name:
+    description: Name for the host.
+    type: string
+  workspace:
+    description: The path where the code is checked out.
+    example: /home/workspace/code/my-repo
+    type: string
+type: object

@@ -1,0 +1,7 @@
+description: The definition of `HTTPIntegrationType` object.
+enum:
+  - HTTP
+example: HTTP
+type: string
+x-enum-varnames:
+  - HTTP

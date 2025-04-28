@@ -1,0 +1,12 @@
+description: Data related to the creation of a group.
+properties:
+  attributes:
+    $ref: ./SensitiveDataScannerGroupAttributes.yaml
+  relationships:
+    $ref: ./SensitiveDataScannerGroupRelationships.yaml
+  type:
+    $ref: ./SensitiveDataScannerGroupType.yaml
+required:
+  - type
+  - attributes
+type: object

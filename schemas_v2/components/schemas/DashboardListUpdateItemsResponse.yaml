@@ -1,0 +1,8 @@
+description: Response containing a list of updated dashboards.
+properties:
+  dashboards:
+    description: List of dashboards in the dashboard list.
+    items:
+      $ref: ./DashboardListItemResponse.yaml
+    type: array
+type: object

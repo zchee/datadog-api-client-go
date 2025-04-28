@@ -1,0 +1,50 @@
+get:
+  description: >-
+    View indexed tag key-value pairs for a given metric name over the previous
+    hour.
+  operationId: ListTagsByMetricName
+  parameters:
+    - $ref: ../components/parameters/MetricName.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MetricAllTagsResponse.yaml
+      description: Success
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Too Many Requests
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - metrics_read
+  summary: List tags by metric name
+  tags:
+    - Metrics
+  x-permission:
+    operator: OR
+    permissions:
+      - metrics_read

@@ -1,0 +1,7 @@
+description: Request object that includes the custom rule to create.
+properties:
+  data:
+    $ref: ./ApplicationSecurityWafCustomRuleCreateData.yaml
+required:
+  - data
+type: object

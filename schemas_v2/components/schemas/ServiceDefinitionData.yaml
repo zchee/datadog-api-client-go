@@ -1,0 +1,11 @@
+description: Service definition data.
+properties:
+  attributes:
+    $ref: ./ServiceDefinitionDataAttributes.yaml
+  id:
+    description: Service definition id.
+    type: string
+  type:
+    description: Service definition type.
+    type: string
+type: object

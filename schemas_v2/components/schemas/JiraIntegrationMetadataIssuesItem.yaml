@@ -1,0 +1,26 @@
+description: Item in the Jira integration metadata issue array.
+properties:
+  account:
+    description: URL of issue's Jira account.
+    example: https://example.atlassian.net
+    type: string
+  issue_key:
+    description: Jira issue's issue key.
+    example: PROJ-123
+    type: string
+  issuetype_id:
+    description: Jira issue's issue type.
+    example: '1000'
+    type: string
+  project_key:
+    description: Jira issue's project keys.
+    example: PROJ
+    type: string
+  redirect_url:
+    description: URL redirecting to the Jira issue.
+    example: https://example.atlassian.net/browse/PROJ-123
+    type: string
+required:
+  - project_key
+  - account
+type: object

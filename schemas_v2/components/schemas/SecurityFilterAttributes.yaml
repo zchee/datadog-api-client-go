@@ -1,0 +1,34 @@
+description: The object describing a security filter.
+properties:
+  exclusion_filters:
+    description: The list of exclusion filters applied in this security filter.
+    items:
+      $ref: ./SecurityFilterExclusionFilterResponse.yaml
+    type: array
+  filtered_data_type:
+    $ref: ./SecurityFilterFilteredDataType.yaml
+  is_builtin:
+    description: Whether the security filter is the built-in filter.
+    example: false
+    type: boolean
+  is_enabled:
+    description: Whether the security filter is enabled.
+    example: false
+    type: boolean
+  name:
+    description: The security filter name.
+    example: Custom security filter
+    type: string
+  query:
+    description: >-
+      The security filter query. Logs accepted by this query will be accepted by
+      this filter.
+    example: service:api
+    type: string
+  version:
+    description: The version of the security filter.
+    example: 1
+    format: int32
+    maximum: 2147483647
+    type: integer
+type: object

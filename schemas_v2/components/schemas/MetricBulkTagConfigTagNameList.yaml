@@ -1,0 +1,11 @@
+description: A list of tag names to apply to the configuration.
+example:
+  - host
+  - pod_name
+  - is_shadow
+items:
+  description: A metric tag name.
+  maxLength: 200
+  pattern: ^[A-Za-z][A-Za-z0-9\.\-\_:\/]*$
+  type: string
+type: array

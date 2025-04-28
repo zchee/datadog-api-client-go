@@ -1,0 +1,23 @@
+description: Response with a list of Opsgenie services.
+properties:
+  data:
+    description: An array of Opsgenie services.
+    example:
+      - attributes:
+          custom_url: null
+          name: fake-opsgenie-service-name
+          region: us
+        id: 596da4af-0563-4097-90ff-07230c3f9db3
+        type: opsgenie-service
+      - attributes:
+          custom_url: null
+          name: fake-opsgenie-service-name-2
+          region: eu
+        id: 0d2937f1-b561-44fa-914a-99910f848014
+        type: opsgenie-service
+    items:
+      $ref: ./OpsgenieServiceResponseData.yaml
+    type: array
+required:
+  - data
+type: object

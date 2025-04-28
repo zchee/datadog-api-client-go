@@ -1,0 +1,7 @@
+description: Create request with an incident team payload.
+properties:
+  data:
+    $ref: ./IncidentTeamCreateData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,8 @@
+default: permissions
+description: Permissions resource type.
+enum:
+  - permissions
+example: permissions
+type: string
+x-enum-varnames:
+  - PERMISSIONS

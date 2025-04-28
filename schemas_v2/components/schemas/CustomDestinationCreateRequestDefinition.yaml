@@ -1,0 +1,10 @@
+description: The definition of a custom destination.
+properties:
+  attributes:
+    $ref: ./CustomDestinationCreateRequestAttributes.yaml
+  type:
+    $ref: ./CustomDestinationType.yaml
+required:
+  - type
+  - attributes
+type: object

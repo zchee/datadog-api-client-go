@@ -1,0 +1,7 @@
+description: Update a role.
+properties:
+  data:
+    $ref: ./RoleUpdateData.yaml
+required:
+  - data
+type: object

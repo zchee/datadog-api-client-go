@@ -1,0 +1,7 @@
+description: Details of the CI pipeline event.
+example: Details TBD
+oneOf:
+  - $ref: ./CIAppPipelineEventPipeline.yaml
+  - $ref: ./CIAppPipelineEventStage.yaml
+  - $ref: ./CIAppPipelineEventJob.yaml
+  - $ref: ./CIAppPipelineEventStep.yaml

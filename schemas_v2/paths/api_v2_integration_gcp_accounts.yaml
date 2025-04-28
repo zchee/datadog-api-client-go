@@ -1,0 +1,59 @@
+get:
+  description: >-
+    List all GCP STS-enabled service accounts configured in your Datadog
+    account.
+  operationId: ListGCPSTSAccounts
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GCPSTSServiceAccountsResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List all GCP STS-enabled service accounts
+  tags:
+    - GCP Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - gcp_configuration_read
+post:
+  description: Create a new entry within Datadog for your STS enabled service account.
+  operationId: CreateGCPSTSAccount
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/GCPSTSServiceAccountCreateRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GCPSTSServiceAccountResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a new entry for your service account
+  tags:
+    - GCP Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - gcp_configurations_manage

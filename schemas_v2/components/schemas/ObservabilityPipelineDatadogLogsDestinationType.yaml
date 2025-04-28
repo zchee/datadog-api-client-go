@@ -1,0 +1,8 @@
+default: datadog_logs
+description: The destination type. The value should always be `datadog_logs`.
+enum:
+  - datadog_logs
+example: datadog_logs
+type: string
+x-enum-varnames:
+  - DATADOG_LOGS

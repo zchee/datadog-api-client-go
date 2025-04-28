@@ -1,0 +1,8 @@
+default: team_memberships
+description: Team membership type
+enum:
+  - team_memberships
+example: team_memberships
+type: string
+x-enum-varnames:
+  - TEAM_MEMBERSHIPS

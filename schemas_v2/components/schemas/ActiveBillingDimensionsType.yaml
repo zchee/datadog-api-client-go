@@ -1,0 +1,7 @@
+default: billing_dimensions
+description: Type of active billing dimensions data.
+enum:
+  - billing_dimensions
+type: string
+x-enum-varnames:
+  - BILLING_DIMENSIONS

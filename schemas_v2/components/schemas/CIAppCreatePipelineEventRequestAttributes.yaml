@@ -1,0 +1,16 @@
+description: Attributes of the pipeline event to create.
+properties:
+  env:
+    description: The Datadog environment.
+    type: string
+  provider_name:
+    description: The name of the CI provider. By default, this is "custom".
+    type: string
+  resource:
+    $ref: ./CIAppCreatePipelineEventRequestAttributesResource.yaml
+  service:
+    description: If the CI provider is SaaS, use this to differentiate between instances.
+    type: string
+required:
+  - resource
+type: object

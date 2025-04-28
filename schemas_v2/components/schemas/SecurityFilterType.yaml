@@ -1,0 +1,8 @@
+default: security_filters
+description: The type of the resource. The value should always be `security_filters`.
+enum:
+  - security_filters
+example: security_filters
+type: string
+x-enum-varnames:
+  - SECURITY_FILTERS

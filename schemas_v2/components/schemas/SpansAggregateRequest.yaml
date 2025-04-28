@@ -1,0 +1,7 @@
+description: >-
+  The object sent with the request to retrieve a list of aggregated spans from
+  your organization.
+properties:
+  data:
+    $ref: ./SpansAggregateData.yaml
+type: object

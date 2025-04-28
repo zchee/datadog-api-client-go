@@ -1,0 +1,14 @@
+description: >-
+  Response object with all test events matching the request and pagination
+  information.
+properties:
+  data:
+    description: Array of events matching the request.
+    items:
+      $ref: ./CIAppTestEvent.yaml
+    type: array
+  links:
+    $ref: ./CIAppResponseLinks.yaml
+  meta:
+    $ref: ./CIAppResponseMetadataWithPagination.yaml
+type: object

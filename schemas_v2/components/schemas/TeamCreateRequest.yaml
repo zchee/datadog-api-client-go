@@ -1,0 +1,7 @@
+description: Request to create a team
+properties:
+  data:
+    $ref: ./TeamCreate.yaml
+required:
+  - data
+type: object

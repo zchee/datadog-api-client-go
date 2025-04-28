@@ -1,0 +1,13 @@
+default: logs
+description: Datadog product onto which Sensitive Data Scanner can be activated.
+enum:
+  - logs
+  - rum
+  - events
+  - apm
+type: string
+x-enum-varnames:
+  - LOGS
+  - RUM
+  - EVENTS
+  - APM

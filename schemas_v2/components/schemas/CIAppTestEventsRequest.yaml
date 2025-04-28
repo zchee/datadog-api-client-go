@@ -1,0 +1,11 @@
+description: The request for a tests search.
+properties:
+  filter:
+    $ref: ./CIAppTestsQueryFilter.yaml
+  options:
+    $ref: ./CIAppQueryOptions.yaml
+  page:
+    $ref: ./CIAppQueryPageOptions.yaml
+  sort:
+    $ref: ./CIAppSort.yaml
+type: object

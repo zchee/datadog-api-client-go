@@ -1,0 +1,11 @@
+description: A single exclusion filter.
+properties:
+  name:
+    description: The exclusion filter name.
+    example: Exclude staging
+    type: string
+  query:
+    description: The exclusion filter query.
+    example: source:staging
+    type: string
+type: object

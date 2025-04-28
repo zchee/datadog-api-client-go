@@ -1,0 +1,7 @@
+additionalProperties: false
+description: The definition of `EntityV3APISpecInterfaceDefinition` object.
+properties:
+  definition:
+    description: The API definition.
+    type: object
+type: object

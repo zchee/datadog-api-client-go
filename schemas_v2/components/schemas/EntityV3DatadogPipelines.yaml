@@ -1,0 +1,9 @@
+additionalProperties: false
+description: CI Pipelines association.
+properties:
+  fingerprints:
+    description: A list of CI Fingerprints that associate CI Pipelines with the entity.
+    items:
+      type: string
+    type: array
+type: object

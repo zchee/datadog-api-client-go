@@ -1,0 +1,5 @@
+description: The response object after an app is successfully deleted.
+properties:
+  data:
+    $ref: ./DeleteAppResponseData.yaml
+type: object

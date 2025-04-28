@@ -1,0 +1,19 @@
+description: Response with a list of Workflows webhook handles.
+properties:
+  data:
+    description: An array of Workflows webhook handles.
+    example:
+      - attributes:
+          name: general-handle
+        id: 596da4af-0563-4097-90ff-07230c3f9db3
+        type: workflows-webhook-handle
+      - attributes:
+          name: general-handle-2
+        id: 596da4af-0563-4097-90ff-07230c3f9db4
+        type: workflows-webhook-handle
+    items:
+      $ref: ./MicrosoftTeamsWorkflowsWebhookHandleResponseData.yaml
+    type: array
+required:
+  - data
+type: object

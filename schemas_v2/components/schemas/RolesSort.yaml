@@ -1,0 +1,17 @@
+default: name
+description: Sorting options for roles.
+enum:
+  - name
+  - '-name'
+  - modified_at
+  - '-modified_at'
+  - user_count
+  - '-user_count'
+type: string
+x-enum-varnames:
+  - NAME_ASCENDING
+  - NAME_DESCENDING
+  - MODIFIED_AT_ASCENDING
+  - MODIFIED_AT_DESCENDING
+  - USER_COUNT_ASCENDING
+  - USER_COUNT_DESCENDING

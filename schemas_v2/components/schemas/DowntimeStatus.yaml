@@ -1,0 +1,13 @@
+description: The current status of the downtime.
+enum:
+  - active
+  - canceled
+  - ended
+  - scheduled
+example: active
+type: string
+x-enum-varnames:
+  - ACTIVE
+  - CANCELED
+  - ENDED
+  - SCHEDULED

@@ -1,0 +1,20 @@
+description: The definition of `InputSchemaParameters` object.
+properties:
+  defaultValue:
+    description: The `InputSchemaParameters` `defaultValue`.
+  description:
+    description: The `InputSchemaParameters` `description`.
+    type: string
+  label:
+    description: The `InputSchemaParameters` `label`.
+    type: string
+  name:
+    description: The `InputSchemaParameters` `name`.
+    example: ''
+    type: string
+  type:
+    $ref: ./InputSchemaParametersType.yaml
+required:
+  - name
+  - type
+type: object

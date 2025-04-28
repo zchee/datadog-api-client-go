@@ -1,0 +1,10 @@
+default: distribution
+description: The metric's type category.
+enum:
+  - non_distribution
+  - distribution
+example: distribution
+type: string
+x-enum-varnames:
+  - NON_DISTRIBUTION
+  - DISTRIBUTION

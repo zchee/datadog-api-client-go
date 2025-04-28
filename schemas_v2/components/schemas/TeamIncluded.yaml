@@ -1,0 +1,5 @@
+description: Included resources related to the team
+oneOf:
+  - $ref: ./User.yaml
+  - $ref: ./TeamLink.yaml
+  - $ref: ./UserTeamPermission.yaml

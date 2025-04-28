@@ -1,0 +1,7 @@
+description: AWS Logs Services response body
+properties:
+  data:
+    $ref: ./AWSLogsServicesResponseData.yaml
+required:
+  - data
+type: object

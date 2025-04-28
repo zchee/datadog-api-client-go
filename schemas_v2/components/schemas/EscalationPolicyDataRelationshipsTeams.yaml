@@ -1,0 +1,12 @@
+description: >-
+  Defines the relationship to a collection of teams within an escalation policy.
+  Contains an array of team data references.
+properties:
+  data:
+    description: >-
+      An array of references to the teams associated with this escalation
+      policy.
+    items:
+      $ref: ./EscalationPolicyDataRelationshipsTeamsDataItems.yaml
+    type: array
+type: object

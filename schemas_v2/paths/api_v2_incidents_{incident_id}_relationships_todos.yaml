@@ -1,0 +1,86 @@
+get:
+  description: Get all todos for an incident.
+  operationId: ListIncidentTodos
+  parameters:
+    - $ref: ../components/parameters/IncidentIDPathParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentTodoListResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_read
+  summary: Get a list of an incident's todos
+  tags:
+    - Incidents
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_read
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).
+post:
+  description: Create an incident todo.
+  operationId: CreateIncidentTodo
+  parameters:
+    - $ref: ../components/parameters/IncidentIDPathParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/IncidentTodoCreateRequest.yaml
+    description: Incident todo payload.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentTodoResponse.yaml
+      description: CREATED
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_write
+  summary: Create an incident todo
+  tags:
+    - Incidents
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_write
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

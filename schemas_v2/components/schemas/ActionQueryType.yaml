@@ -1,0 +1,8 @@
+default: action
+description: The action query type.
+enum:
+  - action
+example: action
+type: string
+x-enum-varnames:
+  - ACTION

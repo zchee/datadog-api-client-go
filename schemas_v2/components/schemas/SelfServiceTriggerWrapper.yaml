@@ -1,0 +1,10 @@
+description: Schema for a Self Service-based trigger.
+properties:
+  selfServiceTrigger:
+    description: Trigger a workflow from Self Service.
+    type: object
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - selfServiceTrigger
+type: object

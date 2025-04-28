@@ -1,0 +1,75 @@
+delete:
+  description: Delete a specific rum-based metric from your organization.
+  operationId: DeleteRumMetric
+  parameters:
+    - $ref: ../components/parameters/RumMetricIDParameter.yaml
+  responses:
+    '204':
+      description: No Content
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a rum-based metric
+  tags:
+    - Rum Metrics
+get:
+  description: Get a specific rum-based metric from your organization.
+  operationId: GetRumMetric
+  parameters:
+    - $ref: ../components/parameters/RumMetricIDParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RumMetricResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a rum-based metric
+  tags:
+    - Rum Metrics
+patch:
+  description: >-
+    Update a specific rum-based metric from your organization.
+
+    Returns the rum-based metric object from the request body when the request
+    is successful.
+  operationId: UpdateRumMetric
+  parameters:
+    - $ref: ../components/parameters/RumMetricIDParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RumMetricUpdateRequest.yaml
+    description: New definition of the rum-based metric.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RumMetricResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a rum-based metric
+  tags:
+    - Rum Metrics
+  x-codegen-request-body-name: body

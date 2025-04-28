@@ -1,0 +1,14 @@
+description: The postmortem attachment.
+properties:
+  documentUrl:
+    description: The URL of this notebook attachment.
+    example: https://app.datadoghq.com/notebook/123
+    type: string
+  title:
+    description: The title of this postmortem attachment.
+    example: Postmortem IR-123
+    type: string
+required:
+  - documentUrl
+  - title
+type: object

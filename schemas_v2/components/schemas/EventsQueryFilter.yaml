@@ -1,0 +1,22 @@
+description: The search and filter query settings.
+properties:
+  from:
+    default: now-15m
+    description: >-
+      The minimum time for the requested events. Supports date math and regular
+      timestamps in milliseconds.
+    example: now-15m
+    type: string
+  query:
+    default: '*'
+    description: The search query following the event search syntax.
+    example: service:web* AND @http.status_code:[200 TO 299]
+    type: string
+  to:
+    default: now
+    description: >-
+      The maximum time for the requested events. Supports date math and regular
+      timestamps in milliseconds.
+    example: now
+    type: string
+type: object

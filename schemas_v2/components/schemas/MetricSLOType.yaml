@@ -1,0 +1,7 @@
+description: SLO resource type.
+enum:
+  - slos
+example: slos
+type: string
+x-enum-varnames:
+  - SLOS

@@ -1,0 +1,8 @@
+description: Lambda Traced Invocations usage response.
+properties:
+  data:
+    description: Response containing Lambda Traced Invocations usage.
+    items:
+      $ref: ./UsageDataObject.yaml
+    type: array
+type: object

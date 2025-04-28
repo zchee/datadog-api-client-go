@@ -1,0 +1,25 @@
+description: >-
+  A data transformer, which is custom JavaScript code that executes and
+  transforms data when its inputs change.
+properties:
+  id:
+    description: The ID of the data transformer.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+  name:
+    description: >-
+      A unique identifier for this data transformer. This name is also used to
+      access the transformer's result throughout the app.
+    example: combineTwoOrders
+    type: string
+  properties:
+    $ref: ./DataTransformProperties.yaml
+  type:
+    $ref: ./DataTransformType.yaml
+required:
+  - id
+  - name
+  - type
+  - properties
+type: object

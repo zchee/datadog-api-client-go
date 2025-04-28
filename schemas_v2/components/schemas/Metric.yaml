@@ -1,0 +1,10 @@
+description: Object for a single metric tag configuration.
+example:
+  id: metric.foo.bar
+  type: metrics
+properties:
+  id:
+    $ref: ./MetricName.yaml
+  type:
+    $ref: ./MetricType.yaml
+type: object

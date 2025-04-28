@@ -1,0 +1,7 @@
+description: Contact type.
+enum:
+  - slack
+example: slack
+type: string
+x-enum-varnames:
+  - SLACK

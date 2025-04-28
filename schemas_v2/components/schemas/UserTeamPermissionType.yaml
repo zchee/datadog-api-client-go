@@ -1,0 +1,8 @@
+default: user_team_permissions
+description: User team permission type
+enum:
+  - user_team_permissions
+example: user_team_permissions
+type: string
+x-enum-varnames:
+  - USER_TEAM_PERMISSIONS

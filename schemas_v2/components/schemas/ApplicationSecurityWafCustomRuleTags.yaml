@@ -1,0 +1,21 @@
+additionalProperties:
+  type: string
+description: >-
+  Tags associated with the WAF Custom Rule. The concatenation of category and
+  type will form the security
+
+  activity field associated with the traces.
+maxProperties: 32
+properties:
+  category:
+    $ref: ./ApplicationSecurityWafCustomRuleTagsCategory.yaml
+  type:
+    description: >-
+      The type of the WAF rule, associated with the category will form the
+      security activity.
+    example: users.login.success
+    type: string
+required:
+  - category
+  - type
+type: object

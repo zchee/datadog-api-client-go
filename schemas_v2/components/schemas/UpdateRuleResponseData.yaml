@@ -1,0 +1,11 @@
+description: The data for a rule update response.
+properties:
+  attributes:
+    $ref: ./RuleAttributes.yaml
+  id:
+    $ref: ./RuleId.yaml
+  relationships:
+    $ref: ./RelationshipToRule.yaml
+  type:
+    $ref: ./RuleType.yaml
+type: object

@@ -1,0 +1,10 @@
+description: Relationship between a team and a team link
+properties:
+  data:
+    description: Related team links
+    items:
+      $ref: ./RelationshipToTeamLinkData.yaml
+    type: array
+  links:
+    $ref: ./TeamRelationshipsLinks.yaml
+type: object

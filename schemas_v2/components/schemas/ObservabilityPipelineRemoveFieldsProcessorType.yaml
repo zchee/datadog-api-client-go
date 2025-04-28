@@ -1,0 +1,8 @@
+default: remove_fields
+description: The processor type. The value should always be `remove_fields`.
+enum:
+  - remove_fields
+example: remove_fields
+type: string
+x-enum-varnames:
+  - REMOVE_FIELDS

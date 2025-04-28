@@ -1,0 +1,17 @@
+description: Timeline cell data for Markdown timeline cells for a create request.
+properties:
+  cell_type:
+    $ref: ./IncidentTimelineCellMarkdownContentType.yaml
+  content:
+    $ref: ./IncidentTimelineCellMarkdownCreateAttributesContent.yaml
+  important:
+    default: false
+    description: >-
+      A flag indicating whether the timeline cell is important and should be
+      highlighted.
+    example: false
+    type: boolean
+required:
+  - content
+  - cell_type
+type: object

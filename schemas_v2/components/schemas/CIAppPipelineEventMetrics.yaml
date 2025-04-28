@@ -1,0 +1,11 @@
+description: >-
+  A list of user-defined metrics. The metrics must follow the `key:value`
+  pattern and the value must be numeric.
+example:
+  - bundle_size:370
+  - build_time:50021
+items:
+  description: Metrics in the form of `key:value`. The value needs to be numeric.
+  type: string
+nullable: true
+type: array

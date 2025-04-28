@@ -1,0 +1,18 @@
+description: The definition of an archive.
+properties:
+  attributes:
+    $ref: ./LogsArchiveAttributes.yaml
+  id:
+    description: The archive ID.
+    example: a2zcMylnM4OCHpYusxIi3g
+    readOnly: true
+    type: string
+  type:
+    default: archives
+    description: The type of the resource. The value should always be archives.
+    example: archives
+    readOnly: true
+    type: string
+required:
+  - type
+type: object

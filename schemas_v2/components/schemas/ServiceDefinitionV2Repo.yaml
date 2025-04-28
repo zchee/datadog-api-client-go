@@ -1,0 +1,18 @@
+description: Service code repositories.
+properties:
+  name:
+    description: Repository name.
+    example: Source Code
+    type: string
+  provider:
+    description: Repository provider.
+    example: GitHub
+    type: string
+  url:
+    description: Repository URL.
+    example: https://github.com/DataDog/schema
+    type: string
+required:
+  - name
+  - url
+type: object

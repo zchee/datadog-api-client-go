@@ -1,0 +1,10 @@
+description: Response with a list of incident types.
+properties:
+  data:
+    description: An array of incident type objects.
+    items:
+      $ref: ./IncidentTypeObject.yaml
+    type: array
+required:
+  - data
+type: object

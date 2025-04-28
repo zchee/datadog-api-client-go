@@ -1,0 +1,36 @@
+description: Incident todo's attributes.
+properties:
+  assignees:
+    $ref: ./IncidentTodoAssigneeArray.yaml
+  completed:
+    description: Timestamp when the todo was completed.
+    example: '2023-03-06T22:00:00.000000+00:00'
+    nullable: true
+    type: string
+  content:
+    description: The follow-up task's content.
+    example: Restore lost data.
+    type: string
+  created:
+    description: Timestamp when the incident todo was created.
+    format: date-time
+    readOnly: true
+    type: string
+  due_date:
+    description: Timestamp when the todo should be completed by.
+    example: '2023-07-10T05:00:00.000000+00:00'
+    nullable: true
+    type: string
+  incident_id:
+    description: UUID of the incident this todo is connected to.
+    example: 00000000-aaaa-0000-0000-000000000000
+    type: string
+  modified:
+    description: Timestamp when the incident todo was last modified.
+    format: date-time
+    readOnly: true
+    type: string
+required:
+  - content
+  - assignees
+type: object

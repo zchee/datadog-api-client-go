@@ -1,0 +1,7 @@
+description: Include relationship data.
+explode: true
+in: query
+name: include
+required: false
+schema:
+  $ref: ../schemas/IncludeType.yaml

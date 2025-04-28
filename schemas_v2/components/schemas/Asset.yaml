@@ -1,0 +1,15 @@
+description: A single vulnerable asset
+properties:
+  attributes:
+    $ref: ./AssetAttributes.yaml
+  id:
+    description: The unique ID for this asset.
+    example: Repository|github.com/DataDog/datadog-agent.git
+    type: string
+  type:
+    $ref: ./AssetEntityType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

@@ -1,0 +1,7 @@
+description: Filter entities by relation type.
+explode: true
+in: query
+name: filter[relation][type]
+required: false
+schema:
+  $ref: ../schemas/RelationType.yaml

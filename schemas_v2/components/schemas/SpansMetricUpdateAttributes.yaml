@@ -1,0 +1,12 @@
+description: The span-based metric properties that will be updated.
+properties:
+  compute:
+    $ref: ./SpansMetricUpdateCompute.yaml
+  filter:
+    $ref: ./SpansMetricFilter.yaml
+  group_by:
+    description: The rules for the group by.
+    items:
+      $ref: ./SpansMetricGroupBy.yaml
+    type: array
+type: object

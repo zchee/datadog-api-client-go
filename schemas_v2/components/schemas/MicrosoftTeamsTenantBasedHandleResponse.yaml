@@ -1,0 +1,7 @@
+description: Response of a tenant-based handle.
+properties:
+  data:
+    $ref: ./MicrosoftTeamsTenantBasedHandleResponseData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,17 @@
+description: The incident severity.
+enum:
+  - UNKNOWN
+  - SEV-1
+  - SEV-2
+  - SEV-3
+  - SEV-4
+  - SEV-5
+example: UNKNOWN
+type: string
+x-enum-varnames:
+  - UNKNOWN
+  - SEV_1
+  - SEV_2
+  - SEV_3
+  - SEV_4
+  - SEV_5

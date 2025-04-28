@@ -1,0 +1,8 @@
+description: Response with projects
+properties:
+  data:
+    description: Projects response data
+    items:
+      $ref: ./Project.yaml
+    type: array
+type: object

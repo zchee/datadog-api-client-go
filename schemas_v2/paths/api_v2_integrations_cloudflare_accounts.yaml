@@ -1,0 +1,57 @@
+get:
+  description: List Cloudflare accounts.
+  operationId: ListCloudflareAccounts
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CloudflareAccountsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List Cloudflare accounts
+  tags:
+    - Cloudflare Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+post:
+  description: Create a Cloudflare account.
+  operationId: CreateCloudflareAccount
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CloudflareAccountCreateRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CloudflareAccountResponse.yaml
+      description: CREATED
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Add Cloudflare account
+  tags:
+    - Cloudflare Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

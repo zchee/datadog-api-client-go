@@ -1,0 +1,8 @@
+default: aws_cur_config_patch_request
+description: Type of AWS CUR config Patch Request.
+enum:
+  - aws_cur_config_patch_request
+example: aws_cur_config_patch_request
+type: string
+x-enum-varnames:
+  - AWS_CUR_CONFIG_PATCH_REQUEST

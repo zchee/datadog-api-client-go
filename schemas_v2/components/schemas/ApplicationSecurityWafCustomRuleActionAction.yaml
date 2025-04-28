@@ -1,0 +1,10 @@
+default: block_request
+description: Override the default action to take when the WAF custom rule would block.
+enum:
+  - redirect_request
+  - block_request
+example: block_request
+type: string
+x-enum-varnames:
+  - REDIRECT_REQUEST
+  - BLOCK_REQUEST

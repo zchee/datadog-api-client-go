@@ -1,0 +1,8 @@
+default: datadog_agent
+description: The source type. The value should always be `datadog_agent`.
+enum:
+  - datadog_agent
+example: datadog_agent
+type: string
+x-enum-varnames:
+  - DATADOG_AGENT

@@ -1,0 +1,10 @@
+description: One condition of the WAF Custom Rule.
+properties:
+  operator:
+    $ref: ./ApplicationSecurityWafCustomRuleConditionOperator.yaml
+  parameters:
+    $ref: ./ApplicationSecurityWafCustomRuleConditionParameters.yaml
+required:
+  - operator
+  - parameters
+type: object

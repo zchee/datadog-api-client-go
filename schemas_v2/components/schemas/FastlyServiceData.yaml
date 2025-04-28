@@ -1,0 +1,14 @@
+description: Data object for Fastly service requests.
+properties:
+  attributes:
+    $ref: ./FastlyServiceAttributes.yaml
+  id:
+    description: The ID of the Fastly service.
+    example: abc123
+    type: string
+  type:
+    $ref: ./FastlyServiceType.yaml
+required:
+  - id
+  - type
+type: object

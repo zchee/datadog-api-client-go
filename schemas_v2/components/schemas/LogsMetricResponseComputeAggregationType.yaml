@@ -1,0 +1,9 @@
+description: The type of aggregation to use.
+enum:
+  - count
+  - distribution
+example: distribution
+type: string
+x-enum-varnames:
+  - COUNT
+  - DISTRIBUTION

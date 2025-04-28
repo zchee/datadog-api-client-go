@@ -1,0 +1,11 @@
+description: Case status
+enum:
+  - OPEN
+  - IN_PROGRESS
+  - CLOSED
+example: OPEN
+type: string
+x-enum-varnames:
+  - OPEN
+  - IN_PROGRESS
+  - CLOSED

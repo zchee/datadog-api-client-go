@@ -1,0 +1,17 @@
+description: Code vulnerability location.
+properties:
+  file_path:
+    description: Vulnerability location file path.
+    example: src/Class.java:100
+    type: string
+  location:
+    description: Vulnerability extracted location.
+    example: com.example.Class:100
+    type: string
+  method:
+    description: Vulnerability location method.
+    example: FooBar
+    type: string
+required:
+  - location
+type: object

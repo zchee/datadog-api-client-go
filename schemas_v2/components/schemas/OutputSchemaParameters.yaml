@@ -1,0 +1,22 @@
+description: The definition of `OutputSchemaParameters` object.
+properties:
+  defaultValue:
+    description: The `OutputSchemaParameters` `defaultValue`.
+  description:
+    description: The `OutputSchemaParameters` `description`.
+    type: string
+  label:
+    description: The `OutputSchemaParameters` `label`.
+    type: string
+  name:
+    description: The `OutputSchemaParameters` `name`.
+    example: ''
+    type: string
+  type:
+    $ref: ./OutputSchemaParametersType.yaml
+  value:
+    description: The `OutputSchemaParameters` `value`.
+required:
+  - name
+  - type
+type: object

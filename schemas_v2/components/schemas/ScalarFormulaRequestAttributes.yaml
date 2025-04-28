@@ -1,0 +1,24 @@
+description: The object describing a scalar formula request.
+properties:
+  formulas:
+    description: List of formulas to be calculated and returned as responses.
+    items:
+      $ref: ./QueryFormula.yaml
+    type: array
+  from:
+    description: Start date (inclusive) of the query in milliseconds since the Unix epoch.
+    example: 1568899800000
+    format: int64
+    type: integer
+  queries:
+    $ref: ./ScalarFormulaRequestQueries.yaml
+  to:
+    description: End date (exclusive) of the query in milliseconds since the Unix epoch.
+    example: 1568923200000
+    format: int64
+    type: integer
+required:
+  - to
+  - from
+  - queries
+type: object

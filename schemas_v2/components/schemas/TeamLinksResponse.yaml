@@ -1,0 +1,8 @@
+description: Team links response
+properties:
+  data:
+    description: Team links response data
+    items:
+      $ref: ./TeamLink.yaml
+    type: array
+type: object

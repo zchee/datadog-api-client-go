@@ -1,0 +1,10 @@
+description: Data object for creating a Cloudflare account.
+properties:
+  attributes:
+    $ref: ./CloudflareAccountCreateRequestAttributes.yaml
+  type:
+    $ref: ./CloudflareAccountType.yaml
+required:
+  - attributes
+  - type
+type: object

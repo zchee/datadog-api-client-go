@@ -1,0 +1,7 @@
+description: Data of the pipeline event to create.
+properties:
+  attributes:
+    $ref: ./CIAppCreatePipelineEventRequestAttributes.yaml
+  type:
+    $ref: ./CIAppCreatePipelineEventRequestDataType.yaml
+type: object

@@ -1,0 +1,12 @@
+description: Partial Datadog API key.
+properties:
+  attributes:
+    $ref: ./PartialAPIKeyAttributes.yaml
+  id:
+    description: ID of the API key.
+    type: string
+  relationships:
+    $ref: ./APIKeyRelationships.yaml
+  type:
+    $ref: ./APIKeysType.yaml
+type: object

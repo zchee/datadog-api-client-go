@@ -1,0 +1,13 @@
+description: The definition of `UrlParam` object.
+properties:
+  name:
+    $ref: ./TokenName.yaml
+    example: MyUrlParameter
+  value:
+    description: The `UrlParam` `value`.
+    example: Some Url Parameter value
+    type: string
+required:
+  - name
+  - value
+type: object

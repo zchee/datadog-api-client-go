@@ -1,0 +1,17 @@
+description: Service's external links.
+properties:
+  name:
+    description: Link name.
+    example: Runbook
+    type: string
+  type:
+    $ref: ./ServiceDefinitionV1ResourceType.yaml
+  url:
+    description: Link URL.
+    example: https://my-runbook
+    type: string
+required:
+  - name
+  - type
+  - url
+type: object

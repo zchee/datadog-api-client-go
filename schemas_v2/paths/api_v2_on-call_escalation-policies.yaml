@@ -1,0 +1,39 @@
+post:
+  description: Create a new on-call escalation policy
+  operationId: CreateOnCallEscalationPolicy
+  parameters:
+    - description: >-
+        Comma-separated list of included relationships to be returned. Allowed
+        values: `teams`, `steps`, `steps.targets`.
+      in: query
+      name: include
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/EscalationPolicyCreateRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EscalationPolicy.yaml
+      description: Created
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Create on-call escalation policy
+  tags:
+    - On-Call

@@ -1,0 +1,6 @@
+description: Related entity.
+enum:
+  - relatedEntity
+type: string
+x-enum-varnames:
+  - RELATED_ENTITY

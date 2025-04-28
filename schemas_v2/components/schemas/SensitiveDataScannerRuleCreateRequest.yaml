@@ -1,0 +1,10 @@
+description: Create rule request.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerRuleCreate.yaml
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+required:
+  - data
+  - meta
+type: object

@@ -1,0 +1,7 @@
+description: Request body for changing the assignee of a given security monitoring signal.
+properties:
+  data:
+    $ref: ./SecurityMonitoringSignalAssigneeUpdateData.yaml
+required:
+  - data
+type: object

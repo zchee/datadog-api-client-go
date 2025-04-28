@@ -1,0 +1,7 @@
+description: The definition of Entity V3 System Kind object.
+enum:
+  - system
+example: system
+type: string
+x-enum-varnames:
+  - SYSTEM

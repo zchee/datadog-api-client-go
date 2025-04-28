@@ -1,0 +1,7 @@
+description: Create rule response.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerRuleResponse.yaml
+  meta:
+    $ref: ./SensitiveDataScannerMetaVersionOnly.yaml
+type: object

@@ -1,0 +1,15 @@
+description: Object containing the definition of a metric estimate attribute.
+properties:
+  estimate_type:
+    $ref: ./MetricEstimateType.yaml
+  estimated_at:
+    description: Timestamp when the cardinality estimate was requested.
+    example: '2022-04-27T09:48:37.463835Z'
+    format: date-time
+    type: string
+  estimated_output_series:
+    description: Estimated cardinality of the metric based on the queried configuration.
+    example: 50
+    format: int64
+    type: integer
+type: object

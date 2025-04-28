@@ -1,0 +1,157 @@
+get:
+  description: >-
+    Returns all metrics that can be configured in the Metrics Summary page or
+    with Metrics without Limits™ (matching additional filters if specified).
+
+    Optionally, paginate by using the `page[cursor]` and/or `page[size]` query
+    parameters.
+
+    To fetch the first page, pass in a query parameter with either a valid
+    `page[size]` or an empty cursor like `page[cursor]=`. To fetch the next
+    page, pass in the `next_cursor` value from the response as the new
+    `page[cursor]` value.
+
+    Once the `meta.pagination.next_cursor` value is null, all pages have been
+    retrieved.
+  operationId: ListTagConfigurations
+  parameters:
+    - description: Filter custom metrics that have configured tags.
+      example: true
+      in: query
+      name: filter[configured]
+      required: false
+      schema:
+        type: boolean
+    - description: Filter tag configurations by configured tags.
+      example: app
+      in: query
+      name: filter[tags_configured]
+      required: false
+      schema:
+        description: Tag keys to filter by.
+        type: string
+    - description: Filter metrics by metric type.
+      in: query
+      name: filter[metric_type]
+      required: false
+      schema:
+        $ref: ../components/schemas/MetricTagConfigurationMetricTypeCategory.yaml
+    - description: |-
+        Filter distributions with additional percentile
+        aggregations enabled or disabled.
+      example: true
+      in: query
+      name: filter[include_percentiles]
+      required: false
+      schema:
+        type: boolean
+    - description: >-
+        (Preview) Filter custom metrics that have or have not been queried in
+        the specified window[seconds].
+
+        If no window is provided or the window is less than 2 hours, a default
+        of 2 hours will be applied.
+      example: true
+      in: query
+      name: filter[queried]
+      required: false
+      schema:
+        type: boolean
+    - description: >-
+        Filter metrics that have been submitted with the given tags. Supports
+        boolean and wildcard expressions.
+
+        Can only be combined with the filter[queried] filter.
+      example: env IN (staging,test) AND service:web
+      in: query
+      name: filter[tags]
+      required: false
+      schema:
+        type: string
+    - description: >-
+        (Preview) Filter metrics that are used in dashboards, monitors,
+        notebooks, SLOs.
+      example: true
+      in: query
+      name: filter[related_assets]
+      required: false
+      schema:
+        type: boolean
+    - description: >-
+        The number of seconds of look back (from now) to apply to a filter[tag]
+        or filter[queried] query.
+
+        Default value is 3600 (1 hour), maximum value is 2,592,000 (30 days).
+      example: 3600
+      in: query
+      name: window[seconds]
+      required: false
+      schema:
+        format: int64
+        type: integer
+    - description: Maximum number of results returned.
+      in: query
+      name: page[size]
+      required: false
+      schema:
+        default: 10000
+        format: int32
+        maximum: 10000
+        minimum: 1
+        type: integer
+    - description: >-
+        String to query the next page of results.
+
+        This key is provided with each valid response from the API in
+        `meta.pagination.next_cursor`.
+
+        Once the `meta.pagination.next_cursor` key is null, all pages have been
+        retrieved.
+      in: query
+      name: page[cursor]
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/MetricsAndMetricTagConfigurationsResponse.yaml
+      description: Success
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Too Many Requests
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - metrics_read
+  summary: Get a list of metrics
+  tags:
+    - Metrics
+  x-pagination:
+    cursorParam: page[cursor]
+    cursorPath: meta.pagination.next_cursor
+    limitParam: page[size]
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - metrics_read

@@ -1,0 +1,14 @@
+description: >-
+  A list of recipients to notify. Uses the same format as the monitor `message`
+  field. Must not start with an '@'.
+example:
+  - slack-test-channel
+  - jira-test
+items:
+  description: individual recipient.
+  maxLength: 255
+  type: string
+maxItems: 20
+minItems: 1
+type: array
+uniqueItems: true

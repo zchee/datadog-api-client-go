@@ -1,0 +1,7 @@
+description: All relationships associated with downtime.
+properties:
+  created_by:
+    $ref: ./DowntimeRelationshipsCreatedBy.yaml
+  monitor:
+    $ref: ./DowntimeRelationshipsMonitor.yaml
+type: object

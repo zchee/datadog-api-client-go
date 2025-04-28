@@ -1,0 +1,14 @@
+description: Attributes for Azure config pair.
+properties:
+  configs:
+    description: An Azure config.
+    items:
+      $ref: ./AzureUCConfig.yaml
+    type: array
+  id:
+    description: The ID of the Azure config pair.
+    format: int64
+    type: integer
+required:
+  - configs
+type: object

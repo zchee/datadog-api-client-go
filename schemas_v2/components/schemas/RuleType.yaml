@@ -1,0 +1,8 @@
+default: rule
+description: The JSON:API type for scorecard rules.
+enum:
+  - rule
+example: rule
+type: string
+x-enum-varnames:
+  - RULE

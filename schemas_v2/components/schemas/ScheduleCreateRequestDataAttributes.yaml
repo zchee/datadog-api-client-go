@@ -1,0 +1,29 @@
+description: >-
+  Describes the main attributes for creating a new schedule, including name,
+  layers, time zone, and tags.
+properties:
+  layers:
+    description: >-
+      The layers of on-call coverage that define rotation intervals and
+      restrictions.
+    items:
+      $ref: ./ScheduleCreateRequestDataAttributesLayersItems.yaml
+    type: array
+  name:
+    description: A human-readable name for the new schedule.
+    example: Team A On-Call
+    type: string
+  tags:
+    description: A list of tags for categorizing or filtering the schedule.
+    items:
+      type: string
+    type: array
+  time_zone:
+    description: The time zone in which the schedule is defined.
+    example: America/New_York
+    type: string
+required:
+  - name
+  - time_zone
+  - layers
+type: object

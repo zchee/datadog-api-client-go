@@ -1,0 +1,34 @@
+description: Teams response metadata.
+properties:
+  first_offset:
+    description: The first offset.
+    format: int64
+    type: integer
+  last_offset:
+    description: The last offset.
+    format: int64
+    type: integer
+  limit:
+    description: Pagination limit.
+    format: int64
+    type: integer
+  next_offset:
+    description: The next offset.
+    format: int64
+    type: integer
+  offset:
+    description: The offset.
+    format: int64
+    type: integer
+  prev_offset:
+    description: The previous offset.
+    format: int64
+    type: integer
+  total:
+    description: Total results.
+    format: int64
+    type: integer
+  type:
+    description: Offset type.
+    type: string
+type: object

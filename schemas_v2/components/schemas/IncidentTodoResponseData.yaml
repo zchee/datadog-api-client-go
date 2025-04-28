@@ -1,0 +1,16 @@
+description: Incident todo response data.
+properties:
+  attributes:
+    $ref: ./IncidentTodoAttributes.yaml
+  id:
+    description: The incident todo's ID.
+    example: 00000000-0000-0000-1234-000000000000
+    type: string
+  relationships:
+    $ref: ./IncidentTodoRelationships.yaml
+  type:
+    $ref: ./IncidentTodoType.yaml
+required:
+  - id
+  - type
+type: object

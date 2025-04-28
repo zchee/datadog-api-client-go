@@ -1,0 +1,60 @@
+description: >-
+  Represents a complete escalation policy response, including policy data and
+  optionally included related resources.
+example:
+  data:
+    attributes:
+      description: Escalation Policy 1 description
+      name: Escalation Policy 1
+      resolve_page_on_policy_end: true
+      retries: 2
+    id: 00000000-aba1-0000-0000-000000000000
+    relationships:
+      steps:
+        data:
+          - id: 00000000-aba1-0000-0000-000000000000
+            type: steps
+      teams:
+        data:
+          - id: 00000000-da3a-0000-0000-000000000000
+            type: teams
+    type: policies
+  included:
+    - attributes:
+        avatar: ''
+        description: Team 1 description
+        handle: team1
+        name: Team 1
+      id: 00000000-da3a-0000-0000-000000000000
+      type: teams
+    - attributes:
+        assignment: default
+        escalate_after_seconds: 3600
+      id: 00000000-aba1-0000-0000-000000000000
+      relationships:
+        targets:
+          data:
+            - id: 00000000-aba1-0000-0000-000000000000
+              type: users
+            - id: 00000000-aba2-0000-0000-000000000000
+              type: schedules
+            - id: 00000000-aba3-0000-0000-000000000000
+              type: teams
+      type: steps
+    - id: 00000000-aba1-0000-0000-000000000000
+      type: users
+    - id: 00000000-aba2-0000-0000-000000000000
+      type: schedules
+    - id: 00000000-aba3-0000-0000-000000000000
+      type: teams
+properties:
+  data:
+    $ref: ./EscalationPolicyData.yaml
+  included:
+    description: >-
+      Provides any included related resources, such as steps or targets,
+      returned with the policy.
+    items:
+      $ref: ./EscalationPolicyIncluded.yaml
+    type: array
+type: object

@@ -1,0 +1,10 @@
+default: metrics
+description: A data source that is powered by the Metrics platform.
+enum:
+  - metrics
+  - cloud_cost
+example: metrics
+type: string
+x-enum-varnames:
+  - METRICS
+  - CLOUD_COST

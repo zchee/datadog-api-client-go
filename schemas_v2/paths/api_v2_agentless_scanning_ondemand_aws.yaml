@@ -1,0 +1,54 @@
+get:
+  description: Fetches the most recent 1000 AWS on demand tasks.
+  operationId: ListAwsOnDemandTasks
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AwsOnDemandListResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get AWS On Demand tasks
+  tags:
+    - Agentless Scanning
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_findings_read
+post:
+  description: >-
+    Trigger the scan of an AWS resource with a high priority. Agentless scanning
+    must be activated for the AWS account containing the resource to scan.
+  operationId: CreateAwsOnDemandTask
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AwsOnDemandCreateRequest.yaml
+    description: The definition of the on demand task.
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AwsOnDemandResponse.yaml
+      description: AWS on demand task created successfully.
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Post an AWS on demand task
+  tags:
+    - Agentless Scanning
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_findings_write

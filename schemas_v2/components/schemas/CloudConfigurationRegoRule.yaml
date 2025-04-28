@@ -1,0 +1,45 @@
+description: Rule details.
+properties:
+  policy:
+    description: >-
+      The policy written in `rego`, see:
+      https://www.openpolicyagent.org/docs/latest/policy-language/
+    example: |
+      package datadog
+
+      import data.datadog.output as dd_output
+      import future.keywords.contains
+      import future.keywords.if
+      import future.keywords.in
+
+      eval(resource) = "skip" if {
+        # Logic that evaluates to true if the resource should be skipped
+        true
+      } else = "pass" {
+        # Logic that evaluates to true if the resource is compliant
+        true
+      } else = "fail" {
+        # Logic that evaluates to true if the resource is not compliant
+        true
+      }
+
+      # This part remains unchanged for all rules
+      results contains result if {
+        some resource in input.resources[input.main_resource_type]
+        result := dd_output.format(resource, eval(resource))
+      }
+    type: string
+  resourceTypes:
+    description: >-
+      List of resource types that will be evaluated upon. Must have at least one
+      element.
+    example:
+      - gcp_iam_service_account
+      - gcp_iam_policy
+    items:
+      type: string
+    type: array
+required:
+  - policy
+  - resourceTypes
+type: object

@@ -1,0 +1,10 @@
+description: Data related to the reordering of scanning groups.
+properties:
+  id:
+    description: ID of the configuration.
+    type: string
+  relationships:
+    $ref: ./SensitiveDataScannerConfigurationRelationships.yaml
+  type:
+    $ref: ./SensitiveDataScannerConfigurationType.yaml
+type: object

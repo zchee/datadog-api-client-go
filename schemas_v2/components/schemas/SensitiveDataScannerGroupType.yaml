@@ -1,0 +1,8 @@
+default: sensitive_data_scanner_group
+description: Sensitive Data Scanner group type.
+enum:
+  - sensitive_data_scanner_group
+example: sensitive_data_scanner_group
+type: string
+x-enum-varnames:
+  - SENSITIVE_DATA_SCANNER_GROUP

@@ -1,0 +1,12 @@
+description: Relationship to user object.
+properties:
+  id:
+    description: A unique identifier that represents the user.
+    example: 00000000-0000-0000-0000-000000000000
+    type: string
+  type:
+    $ref: ./UserResourceType.yaml
+required:
+  - id
+  - type
+type: object

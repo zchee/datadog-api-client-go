@@ -1,0 +1,4 @@
+description: List of rule outcomes.
+items:
+  $ref: ./OutcomesResponseDataItem.yaml
+type: array

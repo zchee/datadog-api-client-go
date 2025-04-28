@@ -1,0 +1,10 @@
+description: AWS Account Create Request data.
+properties:
+  attributes:
+    $ref: ./AWSAccountCreateRequestAttributes.yaml
+  type:
+    $ref: ./AWSAccountType.yaml
+required:
+  - attributes
+  - type
+type: object

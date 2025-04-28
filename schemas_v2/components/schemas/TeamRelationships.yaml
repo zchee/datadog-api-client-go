@@ -1,0 +1,7 @@
+description: Resources related to a team
+properties:
+  team_links:
+    $ref: ./RelationshipToTeamLinks.yaml
+  user_team_permissions:
+    $ref: ./RelationshipToUserTeamPermission.yaml
+type: object

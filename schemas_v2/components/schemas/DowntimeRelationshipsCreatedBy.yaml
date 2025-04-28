@@ -1,0 +1,5 @@
+description: The user who created the downtime.
+properties:
+  data:
+    $ref: ./DowntimeRelationshipsCreatedByData.yaml
+type: object

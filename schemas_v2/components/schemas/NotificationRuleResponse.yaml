@@ -1,0 +1,5 @@
+description: Response object which includes a notification rule.
+properties:
+  data:
+    $ref: ./NotificationRule.yaml
+type: object

@@ -1,0 +1,57 @@
+get:
+  description: >-
+    Get the list of all CSM Serverless Agents running on your hosts and
+    containers.
+  operationId: ListAllCSMServerlessAgents
+  parameters:
+    - description: The page index for pagination (zero-based).
+      in: query
+      name: page
+      required: false
+      schema:
+        example: 2
+        format: int32
+        maximum: 1000000
+        minimum: 0
+        type: integer
+    - description: The number of items to include in a single page.
+      in: query
+      name: size
+      required: false
+      schema:
+        example: 12
+        format: int32
+        maximum: 100
+        minimum: 0
+        type: integer
+    - description: >-
+        A search query string to filter results (for example,
+        `hostname:COMP-T2H4J27423`).
+      in: query
+      name: query
+      required: false
+      schema:
+        example: hostname:COMP-T2H4J27423
+        type: string
+    - description: >-
+        The sort direction for results. Use `asc` for ascending or `desc` for
+        descending.
+      in: query
+      name: order_direction
+      required: false
+      schema:
+        $ref: ../components/schemas/OrderDirection.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CsmAgentsResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all CSM Serverless Agents
+  tags:
+    - CSM Agents

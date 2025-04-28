@@ -1,0 +1,9 @@
+default: UTC
+description: >-
+  The timezone in which to display the downtime's start and end times in Datadog
+  applications. This is not used
+
+  as an offset for scheduling.
+example: America/New_York
+nullable: true
+type: string

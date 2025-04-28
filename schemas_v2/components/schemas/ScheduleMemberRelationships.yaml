@@ -1,0 +1,7 @@
+description: >-
+  Defines relationships for a schedule member, primarily referencing a single
+  user.
+properties:
+  user:
+    $ref: ./ScheduleMemberRelationshipsUser.yaml
+type: object

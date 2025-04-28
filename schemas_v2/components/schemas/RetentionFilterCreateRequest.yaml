@@ -1,0 +1,7 @@
+description: The body of the retention filter to be created.
+properties:
+  data:
+    $ref: ./RetentionFilterCreateData.yaml
+required:
+  - data
+type: object

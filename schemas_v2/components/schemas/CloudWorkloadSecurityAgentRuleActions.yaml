@@ -1,0 +1,5 @@
+description: The array of actions the rule can perform if triggered.
+items:
+  $ref: ./CloudWorkloadSecurityAgentRuleAction.yaml
+nullable: true
+type: array

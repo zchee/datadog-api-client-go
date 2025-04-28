@@ -1,0 +1,8 @@
+default: rum_application
+description: RUM application response type.
+enum:
+  - rum_application
+example: rum_application
+type: string
+x-enum-varnames:
+  - RUM_APPLICATION

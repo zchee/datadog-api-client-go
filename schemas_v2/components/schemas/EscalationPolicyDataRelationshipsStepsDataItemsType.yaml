@@ -1,0 +1,8 @@
+default: steps
+description: Indicates that the resource is of type `steps`.
+enum:
+  - steps
+example: steps
+type: string
+x-enum-varnames:
+  - STEPS

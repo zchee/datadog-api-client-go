@@ -1,0 +1,14 @@
+description: Include only these services. Defaults to `[]`.
+nullable: true
+properties:
+  include_only:
+    description: Include only these services.
+    example:
+      - AWS/AppSync
+    items:
+      example: AWS/AppSync
+      type: string
+    type: array
+required:
+  - include_only
+type: object

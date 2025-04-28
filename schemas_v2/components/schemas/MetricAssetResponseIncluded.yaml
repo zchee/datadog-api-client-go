@@ -1,0 +1,6 @@
+description: List of included assets with full set of attributes.
+oneOf:
+  - $ref: ./MetricDashboardAsset.yaml
+  - $ref: ./MetricMonitorAsset.yaml
+  - $ref: ./MetricNotebookAsset.yaml
+  - $ref: ./MetricSLOAsset.yaml

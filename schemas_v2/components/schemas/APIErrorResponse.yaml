@@ -1,0 +1,14 @@
+description: API error response.
+properties:
+  errors:
+    description: A list of errors.
+    example:
+      - Bad Request
+    items:
+      description: A list of items.
+      example: Bad Request
+      type: string
+    type: array
+required:
+  - errors
+type: object

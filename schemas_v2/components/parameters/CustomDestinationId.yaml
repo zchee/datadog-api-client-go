@@ -1,0 +1,6 @@
+description: The ID of the custom destination.
+in: path
+name: custom_destination_id
+required: true
+schema:
+  type: string

@@ -1,0 +1,4 @@
+description: The definition of `ActionConnectionIntegrationUpdate` object.
+oneOf:
+  - $ref: ./AWSIntegrationUpdate.yaml
+  - $ref: ./HTTPIntegrationUpdate.yaml

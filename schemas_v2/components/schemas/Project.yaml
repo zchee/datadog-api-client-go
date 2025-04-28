@@ -1,0 +1,17 @@
+description: A Project
+properties:
+  attributes:
+    $ref: ./ProjectAttributes.yaml
+  id:
+    description: The Project's identifier
+    example: aeadc05e-98a8-11ec-ac2c-da7ad0900001
+    type: string
+  relationships:
+    $ref: ./ProjectRelationships.yaml
+  type:
+    $ref: ./ProjectResourceType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

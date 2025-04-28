@@ -1,0 +1,24 @@
+description: A column containing the tag keys and values in a group.
+properties:
+  name:
+    description: The name of the tag key or group.
+    example: env
+    type: string
+  type:
+    $ref: ./ScalarColumnTypeGroup.yaml
+  values:
+    description: >-
+      The array of tag values for each group found for the results of the
+      formulas or queries.
+    example:
+      - - production
+      - - staging
+    items:
+      description: An individual tag value for a given group column.
+      items:
+        description: One tag value within a values array.
+        example: production
+        type: string
+      type: array
+    type: array
+type: object

@@ -1,0 +1,5 @@
+description: Created rule in response.
+properties:
+  data:
+    $ref: ./CreateRuleResponseData.yaml
+type: object

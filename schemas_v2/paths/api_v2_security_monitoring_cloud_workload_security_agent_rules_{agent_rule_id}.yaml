@@ -1,0 +1,86 @@
+delete:
+  description: Delete a specific Agent rule.
+  operationId: DeleteCloudWorkloadSecurityAgentRule
+  parameters:
+    - $ref: ../components/parameters/CloudWorkloadSecurityAgentRuleID.yaml
+  responses:
+    '204':
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a Cloud Workload Security Agent rule
+  tags:
+    - CSM Threats
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_cws_agent_rules_write
+get:
+  description: Get the details of a specific Agent rule.
+  operationId: GetCloudWorkloadSecurityAgentRule
+  parameters:
+    - $ref: ../components/parameters/CloudWorkloadSecurityAgentRuleID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CloudWorkloadSecurityAgentRuleResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a Cloud Workload Security Agent rule
+  tags:
+    - CSM Threats
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_cws_agent_rules_read
+patch:
+  description: |-
+    Update a specific Agent rule.
+    Returns the Agent rule object when the request is successful.
+  operationId: UpdateCloudWorkloadSecurityAgentRule
+  parameters:
+    - $ref: ../components/parameters/CloudWorkloadSecurityAgentRuleID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/CloudWorkloadSecurityAgentRuleUpdateRequest.yaml
+    description: New definition of the Agent rule.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CloudWorkloadSecurityAgentRuleResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a Cloud Workload Security Agent rule
+  tags:
+    - CSM Threats
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_cws_agent_rules_write

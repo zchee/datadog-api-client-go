@@ -1,0 +1,14 @@
+description: The link attachment.
+properties:
+  documentUrl:
+    description: The URL of this link attachment.
+    example: https://www.example.com/webstore-failure-runbook
+    type: string
+  title:
+    description: The title of this link attachment.
+    example: Runbook for webstore service failures
+    type: string
+required:
+  - documentUrl
+  - title
+type: object

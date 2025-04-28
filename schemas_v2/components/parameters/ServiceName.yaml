@@ -1,0 +1,7 @@
+description: The name of the service.
+in: path
+name: service_name
+required: true
+schema:
+  example: my-service
+  type: string

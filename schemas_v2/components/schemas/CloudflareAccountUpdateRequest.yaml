@@ -1,0 +1,7 @@
+description: Payload schema when updating a Cloudflare account.
+properties:
+  data:
+    $ref: ./CloudflareAccountUpdateRequestData.yaml
+required:
+  - data
+type: object

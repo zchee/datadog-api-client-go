@@ -1,0 +1,8 @@
+description: Projected Cost response.
+properties:
+  data:
+    description: Response containing Projected Cost.
+    items:
+      $ref: ./ProjectedCost.yaml
+    type: array
+type: object

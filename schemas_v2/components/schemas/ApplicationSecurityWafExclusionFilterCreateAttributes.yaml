@@ -1,0 +1,47 @@
+description: Attributes for creating a WAF exclusion filter.
+properties:
+  description:
+    description: A description for the exclusion filter.
+    example: Exclude false positives on a path
+    type: string
+  enabled:
+    description: Indicates whether the exclusion filter is enabled.
+    example: true
+    type: boolean
+  ip_list:
+    description: >-
+      The client IP addresses matched by the exclusion filter (CIDR notation is
+      supported).
+    items:
+      example: 198.51.100.72
+      type: string
+    type: array
+  on_match:
+    $ref: ./ApplicationSecurityWafExclusionFilterOnMatch.yaml
+  parameters:
+    description: >-
+      A list of parameters matched by the exclusion filter in the HTTP query
+      string and HTTP request body. Nested parameters can be matched by joining
+      fields with a dot character.
+    items:
+      example: list.search.query
+      type: string
+    type: array
+  path_glob:
+    description: The HTTP path glob expression matched by the exclusion filter.
+    example: /accounts/*
+    type: string
+  rules_target:
+    description: The WAF rules targeted by the exclusion filter.
+    items:
+      $ref: ./ApplicationSecurityWafExclusionFilterRulesTarget.yaml
+    type: array
+  scope:
+    description: The services where the exclusion filter is deployed.
+    items:
+      $ref: ./ApplicationSecurityWafExclusionFilterScope.yaml
+    type: array
+required:
+  - description
+  - enabled
+type: object

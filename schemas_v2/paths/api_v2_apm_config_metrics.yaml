@@ -1,0 +1,58 @@
+get:
+  description: Get the list of configured span-based metrics with their definitions.
+  operationId: ListSpansMetrics
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SpansMetricsResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all span-based metrics
+  tags:
+    - Spans Metrics
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_read
+post:
+  description: >-
+    Create a metric based on your ingested spans in your organization.
+
+    Returns the span-based metric object from the request body when the request
+    is successful.
+  operationId: CreateSpansMetric
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SpansMetricCreateRequest.yaml
+    description: The definition of the new span-based metric.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SpansMetricResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a span-based metric
+  tags:
+    - Spans Metrics
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_generate_metrics

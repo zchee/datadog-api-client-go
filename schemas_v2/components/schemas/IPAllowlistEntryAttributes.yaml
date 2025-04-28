@@ -1,0 +1,19 @@
+description: Attributes of the IP allowlist entry.
+properties:
+  cidr_block:
+    description: The CIDR block describing the IP range of the entry.
+    type: string
+  created_at:
+    description: Creation time of the entry.
+    format: date-time
+    readOnly: true
+    type: string
+  modified_at:
+    description: Time of last entry modification.
+    format: date-time
+    readOnly: true
+    type: string
+  note:
+    description: A note describing the IP allowlist entry.
+    type: string
+type: object

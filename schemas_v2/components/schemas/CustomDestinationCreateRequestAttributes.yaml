@@ -1,0 +1,54 @@
+description: The attributes associated with the custom destination.
+properties:
+  enabled:
+    default: true
+    description: Whether logs matching this custom destination should be forwarded or not.
+    example: true
+    type: boolean
+  forward_tags:
+    default: true
+    description: Whether tags from the forwarded logs should be forwarded or not.
+    example: true
+    type: boolean
+  forward_tags_restriction_list:
+    default: []
+    description: >-
+      List of [keys of
+      tags](https://docs.datadoghq.com/getting_started/tagging/#define-tags) to
+      be filtered.
+
+
+      An empty list represents no restriction is in place and either all or no
+      tags will be
+
+      forwarded depending on `forward_tags_restriction_list_type` parameter.
+    example:
+      - datacenter
+      - host
+    items:
+      description: >-
+        The [key part of a
+        tag](https://docs.datadoghq.com/getting_started/tagging/#define-tags).
+      type: string
+    maxItems: 10
+    minItems: 0
+    type: array
+  forward_tags_restriction_list_type:
+    $ref: ./CustomDestinationAttributeTagsRestrictionListType.yaml
+  forwarder_destination:
+    $ref: ./CustomDestinationForwardDestination.yaml
+  name:
+    description: The custom destination name.
+    example: Nginx logs
+    type: string
+  query:
+    default: ''
+    description: >-
+      The custom destination query and filter. Logs matching this query are
+      forwarded to the destination.
+    example: source:nginx
+    type: string
+required:
+  - name
+  - forwarder_destination
+type: object

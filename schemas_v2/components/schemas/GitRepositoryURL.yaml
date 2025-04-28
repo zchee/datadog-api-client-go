@@ -1,0 +1,3 @@
+description: Git Repository URL
+example: https://github.com/organization/example-repository
+type: string

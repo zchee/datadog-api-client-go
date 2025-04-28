@@ -1,0 +1,8 @@
+description: Request containing the list of dashboards to update to.
+properties:
+  dashboards:
+    description: List of dashboards to update the dashboard list to.
+    items:
+      $ref: ./DashboardListItemRequest.yaml
+    type: array
+type: object

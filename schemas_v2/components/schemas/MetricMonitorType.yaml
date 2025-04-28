@@ -1,0 +1,7 @@
+description: Monitor resource type.
+enum:
+  - monitors
+example: monitors
+type: string
+x-enum-varnames:
+  - MONITORS

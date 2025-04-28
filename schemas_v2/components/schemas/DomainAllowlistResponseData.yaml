@@ -1,0 +1,13 @@
+description: The email domain allowlist response for an org.
+properties:
+  attributes:
+    $ref: ./DomainAllowlistResponseDataAttributes.yaml
+  id:
+    description: The unique identifier of the org.
+    nullable: true
+    type: string
+  type:
+    $ref: ./DomainAllowlistType.yaml
+required:
+  - type
+type: object

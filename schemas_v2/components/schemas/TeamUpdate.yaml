@@ -1,0 +1,12 @@
+description: Team update request
+properties:
+  attributes:
+    $ref: ./TeamUpdateAttributes.yaml
+  relationships:
+    $ref: ./TeamUpdateRelationships.yaml
+  type:
+    $ref: ./TeamType.yaml
+required:
+  - attributes
+  - type
+type: object

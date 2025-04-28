@@ -1,0 +1,7 @@
+description: Team permission setting update request
+properties:
+  data:
+    $ref: ./TeamPermissionSettingUpdate.yaml
+required:
+  - data
+type: object

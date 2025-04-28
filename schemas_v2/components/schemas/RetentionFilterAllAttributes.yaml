@@ -1,0 +1,53 @@
+description: The attributes of the retention filter.
+properties:
+  created_at:
+    description: The creation timestamp of the retention filter.
+    format: int64
+    type: integer
+  created_by:
+    description: The creator of the retention filter.
+    type: string
+  editable:
+    description: Shows whether the filter can be edited.
+    example: true
+    type: boolean
+  enabled:
+    description: The status of the retention filter (Enabled/Disabled).
+    example: true
+    type: boolean
+  execution_order:
+    description: The execution order of the retention filter.
+    format: int64
+    type: integer
+  filter:
+    $ref: ./SpansFilter.yaml
+  filter_type:
+    $ref: ./RetentionFilterAllType.yaml
+  modified_at:
+    description: The modification timestamp of the retention filter.
+    format: int64
+    type: integer
+  modified_by:
+    description: The modifier of the retention filter.
+    type: string
+  name:
+    description: The name of the retention filter.
+    example: my retention filter
+    type: string
+  rate:
+    description: |-
+      Sample rate to apply to spans going through this retention filter.
+      A value of 1.0 keeps all spans matching the query.
+    example: 1
+    format: double
+    type: number
+  trace_rate:
+    description: >-
+      Sample rate to apply to traces containing spans going through this
+      retention filter.
+
+      A value of 1.0 keeps all traces with spans matching the query.
+    example: 1
+    format: double
+    type: number
+type: object

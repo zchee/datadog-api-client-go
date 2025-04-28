@@ -1,0 +1,10 @@
+description: An ordered list of retention filters.
+properties:
+  data:
+    description: A list of retention filters objects.
+    items:
+      $ref: ./RetentionFilterAll.yaml
+    type: array
+required:
+  - data
+type: object

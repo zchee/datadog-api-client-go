@@ -1,0 +1,7 @@
+description: The relationships the incident will have with other resources once created.
+properties:
+  commander_user:
+    $ref: ./NullableRelationshipToUser.yaml
+required:
+  - commander_user
+type: object

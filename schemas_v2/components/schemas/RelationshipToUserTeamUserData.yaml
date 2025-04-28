@@ -1,0 +1,12 @@
+description: A user's relationship with a team
+properties:
+  id:
+    description: The ID of the user associated with the team
+    example: b8626d7e-cedd-11eb-abf5-da7ad0900001
+    type: string
+  type:
+    $ref: ./UserTeamUserType.yaml
+required:
+  - id
+  - type
+type: object

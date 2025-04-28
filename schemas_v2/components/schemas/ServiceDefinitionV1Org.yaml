@@ -1,0 +1,11 @@
+description: Org related information about the service.
+properties:
+  application:
+    description: App feature this service supports.
+    example: E-Commerce
+    type: string
+  team:
+    description: Team that owns the service.
+    example: my-team
+    type: string
+type: object

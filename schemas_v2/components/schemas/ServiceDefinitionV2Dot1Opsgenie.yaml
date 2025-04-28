@@ -1,0 +1,11 @@
+description: Opsgenie integration for the service.
+properties:
+  region:
+    $ref: ./ServiceDefinitionV2Dot1OpsgenieRegion.yaml
+  service-url:
+    description: Opsgenie service url.
+    example: https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000
+    type: string
+required:
+  - service-url
+type: object

@@ -1,0 +1,8 @@
+default: azure
+description: Type of the Azure archive destination.
+enum:
+  - azure
+example: azure
+type: string
+x-enum-varnames:
+  - AZURE

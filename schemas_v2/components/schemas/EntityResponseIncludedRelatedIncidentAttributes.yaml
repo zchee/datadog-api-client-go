@@ -1,0 +1,19 @@
+description: Incident attributes.
+properties:
+  createdAt:
+    description: Incident creation time.
+    format: date-time
+    type: string
+  htmlURL:
+    description: Incident URL.
+    type: string
+  provider:
+    description: Incident provider.
+    type: string
+  status:
+    description: Incident status.
+    type: string
+  title:
+    description: Incident title.
+    type: string
+type: object

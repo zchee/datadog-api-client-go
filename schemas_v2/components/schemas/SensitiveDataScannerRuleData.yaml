@@ -1,0 +1,8 @@
+description: Rules included in the group.
+properties:
+  data:
+    description: Rules included in the group. The order is important.
+    items:
+      $ref: ./SensitiveDataScannerRule.yaml
+    type: array
+type: object

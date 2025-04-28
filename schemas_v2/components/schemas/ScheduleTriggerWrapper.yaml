@@ -1,0 +1,9 @@
+description: Schema for a Schedule-based trigger.
+properties:
+  scheduleTrigger:
+    $ref: ./ScheduleTrigger.yaml
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - scheduleTrigger
+type: object

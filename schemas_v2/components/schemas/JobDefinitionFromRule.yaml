@@ -1,0 +1,40 @@
+description: Definition of a historical job based on a security monitoring rule.
+properties:
+  caseIndex:
+    description: Index of the rule case applied by the job.
+    example: 0
+    format: int32
+    maximum: 9
+    type: integer
+  from:
+    description: Starting time of data analyzed by the job.
+    example: 1729843470000
+    format: int64
+    type: integer
+  id:
+    description: ID of the detection rule used to create the job.
+    example: abc-def-ghi
+    type: string
+  index:
+    description: Index used to load the data.
+    example: cloud_siem
+    type: string
+  notifications:
+    description: Notifications sent when the job is completed.
+    example:
+      - '@sns-cloudtrail-results'
+    items:
+      type: string
+    type: array
+  to:
+    description: Ending time of data analyzed by the job.
+    example: 1729847070000
+    format: int64
+    type: integer
+required:
+  - id
+  - from
+  - to
+  - index
+  - caseIndex
+type: object

@@ -1,0 +1,9 @@
+description: Upsert entity response.
+properties:
+  data:
+    $ref: ./EntityResponseData.yaml
+  included:
+    $ref: ./UpsertCatalogEntityResponseIncluded.yaml
+  meta:
+    $ref: ./EntityResponseMeta.yaml
+type: object

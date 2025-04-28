@@ -1,0 +1,6 @@
+description: The ID of the incident service.
+in: path
+name: service_id
+required: true
+schema:
+  type: string

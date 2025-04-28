@@ -1,0 +1,14 @@
+description: Properties of a grid component.
+properties:
+  backgroundColor:
+    default: default
+    description: The background color of the grid.
+    type: string
+  children:
+    description: The child components of the grid.
+    items:
+      $ref: ./Component.yaml
+    type: array
+  isVisible:
+    $ref: ./ComponentGridPropertiesIsVisible.yaml
+type: object

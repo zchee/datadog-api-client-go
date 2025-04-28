@@ -1,0 +1,20 @@
+description: Contains the pipeline’s ID, type, and configuration attributes.
+properties:
+  attributes:
+    $ref: ./ObservabilityPipelineDataAttributes.yaml
+  id:
+    description: Unique identifier for the pipeline.
+    example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+    type: string
+  type:
+    default: pipelines
+    description: >-
+      The resource type identifier. For pipeline resources, this should always
+      be set to `pipelines`.
+    example: pipelines
+    type: string
+required:
+  - id
+  - type
+  - attributes
+type: object

@@ -1,0 +1,25 @@
+description: Service's external links.
+properties:
+  name:
+    description: Link name.
+    example: Runbook
+    type: string
+  provider:
+    description: Link provider.
+    example: Github
+    type: string
+  type:
+    description: >-
+      Link type. Datadog recognizes the following types: `runbook`, `doc`,
+      `repo`, `dashboard`, and `other`.
+    example: runbook
+    type: string
+  url:
+    description: Link URL.
+    example: https://my-runbook
+    type: string
+required:
+  - name
+  - type
+  - url
+type: object

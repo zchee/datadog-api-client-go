@@ -1,0 +1,9 @@
+description: Object for a single metric's ingested and indexed volume.
+properties:
+  attributes:
+    $ref: ./MetricIngestedIndexedVolumeAttributes.yaml
+  id:
+    $ref: ./MetricName.yaml
+  type:
+    $ref: ./MetricIngestedIndexedVolumeType.yaml
+type: object

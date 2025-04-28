@@ -1,0 +1,8 @@
+default: downtime_match
+description: Monitor Downtime Match resource type.
+enum:
+  - downtime_match
+example: downtime_match
+type: string
+x-enum-varnames:
+  - DOWNTIME_MATCH

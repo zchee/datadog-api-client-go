@@ -1,0 +1,8 @@
+description: Response containing a list of deleted dashboards.
+properties:
+  deleted_dashboards_from_list:
+    description: List of dashboards deleted from the dashboard list.
+    items:
+      $ref: ./DashboardListItemResponse.yaml
+    type: array
+type: object

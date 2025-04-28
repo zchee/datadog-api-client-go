@@ -1,0 +1,13 @@
+description: Response object that includes metrics and metric tag configurations.
+properties:
+  data:
+    description: Array of metrics and metric tag configurations.
+    items:
+      $ref: ./MetricsAndMetricTagConfigurations.yaml
+    type: array
+  links:
+    $ref: ./MetricsListResponseLinks.yaml
+  meta:
+    $ref: ./MetricPaginationMeta.yaml
+readOnly: true
+type: object

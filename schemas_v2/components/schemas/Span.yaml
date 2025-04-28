@@ -1,0 +1,11 @@
+description: Object description of a spans after being processed and stored by Datadog.
+properties:
+  attributes:
+    $ref: ./SpansAttributes.yaml
+  id:
+    description: Unique ID of the Span.
+    example: AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA
+    type: string
+  type:
+    $ref: ./SpansType.yaml
+type: object

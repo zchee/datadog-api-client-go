@@ -1,0 +1,6 @@
+description: The unique identifier of the role.
+in: path
+name: role_id
+required: true
+schema:
+  type: string

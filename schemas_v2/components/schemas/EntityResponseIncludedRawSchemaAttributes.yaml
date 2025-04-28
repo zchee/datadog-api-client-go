@@ -1,0 +1,6 @@
+description: Included raw schema attributes.
+properties:
+  rawSchema:
+    description: Schema from user input in base64 encoding.
+    type: string
+type: object

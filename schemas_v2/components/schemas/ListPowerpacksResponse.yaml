@@ -1,0 +1,17 @@
+description: Response object which includes all powerpack configurations.
+properties:
+  data:
+    description: List of powerpack definitions.
+    items:
+      $ref: ./PowerpackData.yaml
+    type: array
+  included:
+    description: Array of objects related to the users.
+    items:
+      $ref: ./User.yaml
+    type: array
+  links:
+    $ref: ./PowerpackResponseLinks.yaml
+  meta:
+    $ref: ./PowerpacksResponseMeta.yaml
+type: object

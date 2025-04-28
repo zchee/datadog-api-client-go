@@ -1,0 +1,7 @@
+description: The JSON:API data.
+properties:
+  attributes:
+    $ref: ./DORAIncidentRequestAttributes.yaml
+required:
+  - attributes
+type: object

@@ -1,0 +1,5 @@
+description: Team permission setting update attributes
+properties:
+  value:
+    $ref: ./TeamPermissionSettingValue.yaml
+type: object

@@ -1,0 +1,7 @@
+description: Payload schema when adding a Fastly account.
+properties:
+  data:
+    $ref: ./FastlyAccountCreateRequestData.yaml
+required:
+  - data
+type: object

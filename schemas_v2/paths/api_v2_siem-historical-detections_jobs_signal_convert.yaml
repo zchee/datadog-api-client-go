@@ -1,0 +1,33 @@
+post:
+  description: Convert a job result to a signal.
+  operationId: ConvertJobResultToSignal
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ConvertJobResultsToSignalsRequest.yaml
+    required: true
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Convert a job result to a signal
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_signals_write
+  x-unstable: |-
+    **Note**: This endpoint is in beta and may be subject to changes.
+    Please check the documentation regularly for updates.

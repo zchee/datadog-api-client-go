@@ -1,0 +1,22 @@
+description: The Splunk HTTP Event Collector (HEC) destination.
+properties:
+  access_token:
+    description: >-
+      Access token of the Splunk HTTP Event Collector. This field is not
+      returned by the API.
+    example: splunk_access_token
+    type: string
+    writeOnly: true
+  endpoint:
+    description: |-
+      The destination for which logs will be forwarded to.
+      Must have HTTPS scheme and forwarding back to Datadog is not allowed.
+    example: https://example.com
+    type: string
+  type:
+    $ref: ./CustomDestinationForwardDestinationSplunkType.yaml
+required:
+  - type
+  - endpoint
+  - access_token
+type: object

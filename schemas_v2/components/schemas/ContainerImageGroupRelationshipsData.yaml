@@ -1,0 +1,5 @@
+description: Links data.
+items:
+  description: A link data.
+  type: string
+type: array

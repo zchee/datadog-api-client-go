@@ -1,0 +1,91 @@
+get:
+  description: Get all links for a given team.
+  operationId: GetTeamLinks
+  parameters:
+    - description: None
+      in: path
+      name: team_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TeamLinksResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - teams_read
+  summary: Get links for a team
+  tags:
+    - Teams
+  x-permission:
+    operator: OR
+    permissions:
+      - teams_read
+post:
+  description: Add a new link to a team.
+  operationId: CreateTeamLink
+  parameters:
+    - description: None
+      in: path
+      name: team_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/TeamLinkCreateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TeamLinkResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - teams_read
+  summary: Create a team link
+  tags:
+    - Teams
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - teams_read

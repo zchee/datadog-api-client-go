@@ -1,0 +1,15 @@
+description: >-
+  Object representing the entity which made the change. Optional field but if
+  provided should include `type` and `name`.
+properties:
+  name:
+    description: Author's name. Limited to 128 characters.
+    example: datadog@datadog.com
+    maxLength: 128
+    type: string
+  type:
+    $ref: ./ChangeEventCustomAttributesAuthorType.yaml
+required:
+  - name
+  - type
+type: object

@@ -1,0 +1,4 @@
+description: List of rule outcomes which were affected during the bulk operation.
+items:
+  $ref: ./OutcomesResponseDataItem.yaml
+type: array

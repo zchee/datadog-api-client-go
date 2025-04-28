@@ -1,0 +1,5 @@
+description: >-
+  Version of the updated signal. If server side version is higher, update will
+  be rejected.
+format: int64
+type: integer

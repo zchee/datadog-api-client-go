@@ -1,0 +1,5 @@
+description: Response object for an Okta account.
+properties:
+  data:
+    $ref: ./OktaAccount.yaml
+type: object

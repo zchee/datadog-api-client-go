@@ -1,0 +1,4 @@
+description: List of entity data.
+items:
+  $ref: ./EntityData.yaml
+type: array

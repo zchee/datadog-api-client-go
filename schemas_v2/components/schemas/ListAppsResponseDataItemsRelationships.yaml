@@ -1,0 +1,5 @@
+description: The app's publication information.
+properties:
+  deployment:
+    $ref: ./DeploymentRelationship.yaml
+type: object

@@ -1,0 +1,9 @@
+default: total
+description: The type of compute
+enum:
+  - timeseries
+  - total
+type: string
+x-enum-varnames:
+  - TIMESERIES
+  - TOTAL

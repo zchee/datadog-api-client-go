@@ -1,0 +1,5 @@
+description: The definition of `StepDisplay` object.
+properties:
+  bounds:
+    $ref: ./StepDisplayBounds.yaml
+type: object

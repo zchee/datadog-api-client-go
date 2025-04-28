@@ -1,0 +1,20 @@
+description: Teams response links.
+properties:
+  first:
+    description: First link.
+    type: string
+  last:
+    description: Last link.
+    nullable: true
+    type: string
+  next:
+    description: Next link.
+    type: string
+  prev:
+    description: Previous link.
+    nullable: true
+    type: string
+  self:
+    description: Current link.
+    type: string
+type: object

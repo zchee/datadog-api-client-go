@@ -1,0 +1,5 @@
+description: Billing dimensions mapping response.
+properties:
+  data:
+    $ref: ./BillingDimensionsMappingBody.yaml
+type: object

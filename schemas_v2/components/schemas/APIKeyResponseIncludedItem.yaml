@@ -1,0 +1,4 @@
+description: An object related to an API key.
+oneOf:
+  - $ref: ./User.yaml
+  - $ref: ./LeakedKey.yaml

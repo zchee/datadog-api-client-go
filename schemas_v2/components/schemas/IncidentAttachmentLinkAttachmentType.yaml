@@ -1,0 +1,8 @@
+default: link
+description: The type of link attachment attributes.
+enum:
+  - link
+example: link
+type: string
+x-enum-varnames:
+  - LINK

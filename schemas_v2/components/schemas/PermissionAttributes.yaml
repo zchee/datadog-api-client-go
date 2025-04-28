@@ -1,0 +1,25 @@
+description: Attributes of a permission.
+properties:
+  created:
+    description: Creation time of the permission.
+    format: date-time
+    type: string
+  description:
+    description: Description of the permission.
+    type: string
+  display_name:
+    description: Displayed name for the permission.
+    type: string
+  display_type:
+    description: Display type.
+    type: string
+  group_name:
+    description: Name of the permission group.
+    type: string
+  name:
+    description: Name of the permission.
+    type: string
+  restricted:
+    description: Whether or not the permission is restricted.
+    type: boolean
+type: object

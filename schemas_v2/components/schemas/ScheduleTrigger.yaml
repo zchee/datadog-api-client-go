@@ -1,0 +1,9 @@
+description: Trigger a workflow from a Schedule. The workflow must be published.
+properties:
+  rruleExpression:
+    description: Recurrence rule expression for scheduling.
+    example: ''
+    type: string
+required:
+  - rruleExpression
+type: object

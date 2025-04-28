@@ -1,0 +1,7 @@
+description: Case's UUID or key
+example: f98a5a5b-e0ff-45d4-b2f5-afe6e74de504
+in: path
+name: case_id
+required: true
+schema:
+  type: string

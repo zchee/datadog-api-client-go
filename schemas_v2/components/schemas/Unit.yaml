@@ -1,0 +1,27 @@
+description: Object containing the metric unit family, scale factor, name, and short name.
+nullable: true
+properties:
+  family:
+    description: >-
+      Unit family, allows for conversion between units of the same family, for
+      scaling.
+    example: time
+    type: string
+  name:
+    description: Unit name
+    example: minute
+    type: string
+  plural:
+    description: Plural form of the unit name.
+    example: minutes
+    type: string
+  scale_factor:
+    description: Factor for scaling between units of the same family.
+    example: 60
+    format: double
+    type: number
+  short_name:
+    description: Abbreviation of the unit.
+    example: min
+    type: string
+type: object

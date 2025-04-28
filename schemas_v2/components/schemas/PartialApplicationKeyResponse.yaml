@@ -1,0 +1,10 @@
+description: Response for retrieving a partial application key.
+properties:
+  data:
+    $ref: ./PartialApplicationKey.yaml
+  included:
+    description: Array of objects related to the application key.
+    items:
+      $ref: ./ApplicationKeyResponseIncludedItem.yaml
+    type: array
+type: object

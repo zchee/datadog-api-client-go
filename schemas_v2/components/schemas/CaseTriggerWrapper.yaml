@@ -1,0 +1,9 @@
+description: Schema for a Case-based trigger.
+properties:
+  caseTrigger:
+    $ref: ./CaseTrigger.yaml
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - caseTrigger
+type: object

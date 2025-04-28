@@ -1,0 +1,26 @@
+additionalProperties: false
+description: Schema for datastore entities.
+properties:
+  apiVersion:
+    $ref: ./EntityV3APIVersion.yaml
+  datadog:
+    $ref: ./EntityV3DatastoreDatadog.yaml
+  extensions:
+    additionalProperties: {}
+    description: >-
+      Custom extensions. This is the free-formed field to send client side
+      metadata. No Datadog features are affected by this field.
+    type: object
+  integrations:
+    $ref: ./EntityV3Integrations.yaml
+  kind:
+    $ref: ./EntityV3DatastoreKind.yaml
+  metadata:
+    $ref: ./EntityV3Metadata.yaml
+  spec:
+    $ref: ./EntityV3DatastoreSpec.yaml
+required:
+  - apiVersion
+  - kind
+  - metadata
+type: object

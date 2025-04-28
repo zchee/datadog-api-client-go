@@ -1,0 +1,11 @@
+description: Response after receiving a DORA incident event.
+properties:
+  id:
+    description: The ID of the received DORA incident event.
+    example: 4242fcdd31586083
+    type: string
+  type:
+    $ref: ./DORAIncidentType.yaml
+required:
+  - id
+type: object

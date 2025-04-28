@@ -1,0 +1,25 @@
+description: The triggering action for the event.
+enum:
+  - pageChange
+  - tableRowClick
+  - _tableRowButtonClick
+  - change
+  - submit
+  - click
+  - toggleOpen
+  - close
+  - open
+  - executionFinished
+example: click
+type: string
+x-enum-varnames:
+  - PAGECHANGE
+  - TABLEROWCLICK
+  - TABLEROWBUTTONCLICK
+  - CHANGE
+  - SUBMIT
+  - CLICK
+  - TOGGLEOPEN
+  - CLOSE
+  - OPEN
+  - EXECUTIONFINISHED

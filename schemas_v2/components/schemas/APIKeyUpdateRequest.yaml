@@ -1,0 +1,7 @@
+description: Request used to update an API key.
+properties:
+  data:
+    $ref: ./APIKeyUpdateData.yaml
+required:
+  - data
+type: object

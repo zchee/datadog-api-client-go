@@ -1,0 +1,6 @@
+description: Filter API keys by remote config read enabled status.
+in: query
+name: filter[remote_config_read_enabled]
+required: false
+schema:
+  type: boolean

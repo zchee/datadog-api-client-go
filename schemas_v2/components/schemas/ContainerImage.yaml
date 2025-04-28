@@ -1,0 +1,10 @@
+description: Container Image object.
+properties:
+  attributes:
+    $ref: ./ContainerImageAttributes.yaml
+  id:
+    description: Container Image ID.
+    type: string
+  type:
+    $ref: ./ContainerImageType.yaml
+type: object

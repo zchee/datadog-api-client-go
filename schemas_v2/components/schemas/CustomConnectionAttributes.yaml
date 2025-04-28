@@ -1,0 +1,8 @@
+description: The custom connection attributes.
+properties:
+  name:
+    description: The name of the custom connection.
+    type: string
+  onPremRunner:
+    $ref: ./CustomConnectionAttributesOnPremRunner.yaml
+type: object

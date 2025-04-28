@@ -1,0 +1,9 @@
+description: Rule relationship data.
+properties:
+  id:
+    description: The unique ID for a scorecard.
+    example: q8MQxk8TCqrHnWkp
+    type: string
+  type:
+    $ref: ./ScorecardType.yaml
+type: object

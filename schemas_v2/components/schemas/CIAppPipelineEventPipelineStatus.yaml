@@ -1,0 +1,15 @@
+description: The final status of the pipeline.
+enum:
+  - success
+  - error
+  - canceled
+  - skipped
+  - blocked
+example: success
+type: string
+x-enum-varnames:
+  - SUCCESS
+  - ERROR
+  - CANCELED
+  - SKIPPED
+  - BLOCKED

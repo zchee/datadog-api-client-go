@@ -1,0 +1,17 @@
+description: Team permission setting attributes
+properties:
+  action:
+    $ref: ./TeamPermissionSettingSerializerAction.yaml
+  editable:
+    description: Whether or not the permission setting is editable by the current user
+    readOnly: true
+    type: boolean
+  options:
+    $ref: ./TeamPermissionSettingValues.yaml
+  title:
+    description: The team permission name
+    readOnly: true
+    type: string
+  value:
+    $ref: ./TeamPermissionSettingValue.yaml
+type: object

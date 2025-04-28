@@ -1,0 +1,12 @@
+description: The definition of `Parameter` object.
+properties:
+  name:
+    description: The `Parameter` `name`.
+    example: ''
+    type: string
+  value:
+    description: The `Parameter` `value`.
+required:
+  - name
+  - value
+type: object

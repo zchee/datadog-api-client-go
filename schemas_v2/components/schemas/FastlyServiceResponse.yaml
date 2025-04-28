@@ -1,0 +1,5 @@
+description: The expected response schema when getting a Fastly service.
+properties:
+  data:
+    $ref: ./FastlyServiceData.yaml
+type: object

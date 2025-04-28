@@ -1,0 +1,5 @@
+description: CSM Hosts and Containers Coverage Analysis response.
+properties:
+  data:
+    $ref: ./CsmHostsAndContainersCoverageAnalysisData.yaml
+type: object

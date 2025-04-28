@@ -1,0 +1,13 @@
+description: Data related to the creation of a rule.
+properties:
+  attributes:
+    $ref: ./SensitiveDataScannerRuleAttributes.yaml
+  relationships:
+    $ref: ./SensitiveDataScannerRuleRelationships.yaml
+  type:
+    $ref: ./SensitiveDataScannerRuleType.yaml
+required:
+  - type
+  - attributes
+  - relationships
+type: object

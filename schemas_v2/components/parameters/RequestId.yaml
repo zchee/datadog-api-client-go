@@ -1,0 +1,6 @@
+description: ID of the deletion request.
+in: path
+name: id
+required: true
+schema:
+  type: string

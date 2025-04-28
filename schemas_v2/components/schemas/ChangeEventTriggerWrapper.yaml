@@ -1,0 +1,10 @@
+description: Schema for a Change Event-based trigger.
+properties:
+  changeEventTrigger:
+    description: Trigger a workflow from a Change Event.
+    type: object
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - changeEventTrigger
+type: object

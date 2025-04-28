@@ -1,0 +1,11 @@
+description: >-
+  Defines attributes for an escalation policy step, such as assignment strategy
+  and escalation timeout.
+properties:
+  assignment:
+    $ref: ./EscalationPolicyStepAttributesAssignment.yaml
+  escalate_after_seconds:
+    description: Specifies how many seconds to wait before escalating to the next step.
+    format: int64
+    type: integer
+type: object

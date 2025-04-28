@@ -1,0 +1,17 @@
+description: >-
+  Defines how frequently the rotation repeats, using days and/or seconds (up to
+  certain limits).
+properties:
+  days:
+    description: The number of full days in each rotation period.
+    example: 1
+    format: int32
+    maximum: 400
+    type: integer
+  seconds:
+    description: Extra seconds that may be added to extend the rotation beyond whole days.
+    example: 300
+    format: int64
+    maximum: 2592000
+    type: integer
+type: object

@@ -1,0 +1,5 @@
+description: >-
+  The length of the downtime. Must begin with an integer and end with one of
+  'm', 'h', d', or 'w'.
+example: 123d
+type: string

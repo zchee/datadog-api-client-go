@@ -1,0 +1,13 @@
+description: A single incident attachment.
+properties:
+  attributes:
+    $ref: ./IncidentAttachmentUpdateAttributes.yaml
+  id:
+    description: A unique identifier that represents the incident attachment.
+    example: 00000000-abcd-0001-0000-000000000000
+    type: string
+  type:
+    $ref: ./IncidentAttachmentType.yaml
+required:
+  - type
+type: object

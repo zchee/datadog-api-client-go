@@ -1,0 +1,10 @@
+description: >-
+  Holds an array of references to the members of a Layer, each containing member
+  IDs.
+properties:
+  data:
+    description: The list of members who belong to this layer.
+    items:
+      $ref: ./LayerRelationshipsMembersDataItems.yaml
+    type: array
+type: object

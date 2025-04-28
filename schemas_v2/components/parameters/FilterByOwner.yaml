@@ -1,0 +1,7 @@
+description: Filter entities by owner.
+explode: true
+in: query
+name: filter[owner]
+required: false
+schema:
+  type: string

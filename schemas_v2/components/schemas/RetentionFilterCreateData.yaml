@@ -1,0 +1,10 @@
+description: The body of the retention filter to be created.
+properties:
+  attributes:
+    $ref: ./RetentionFilterCreateAttributes.yaml
+  type:
+    $ref: ./ApmRetentionFilterType.yaml
+required:
+  - attributes
+  - type
+type: object

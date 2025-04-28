@@ -1,0 +1,7 @@
+description: Relationship between a user team permission and a team
+properties:
+  data:
+    $ref: ./RelationshipToUserTeamPermissionData.yaml
+  links:
+    $ref: ./TeamRelationshipsLinks.yaml
+type: object

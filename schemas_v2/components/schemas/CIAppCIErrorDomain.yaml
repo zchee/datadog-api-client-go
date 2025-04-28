@@ -1,0 +1,12 @@
+description: >-
+  Error category used to differentiate between issues related to the developer
+  or provider environments.
+enum:
+  - provider
+  - user
+  - unknown
+type: string
+x-enum-varnames:
+  - PROVIDER
+  - USER
+  - UNKNOWN

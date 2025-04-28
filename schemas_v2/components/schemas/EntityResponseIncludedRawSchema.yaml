@@ -1,0 +1,10 @@
+description: Included raw schema.
+properties:
+  attributes:
+    $ref: ./EntityResponseIncludedRawSchemaAttributes.yaml
+  id:
+    description: Raw schema ID.
+    type: string
+  type:
+    $ref: ./EntityResponseIncludedRawSchemaType.yaml
+type: object

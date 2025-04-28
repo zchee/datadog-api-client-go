@@ -1,0 +1,7 @@
+description: Data for running a historical job request.
+properties:
+  attributes:
+    $ref: ./RunHistoricalJobRequestAttributes.yaml
+  type:
+    $ref: ./RunHistoricalJobRequestDataType.yaml
+type: object

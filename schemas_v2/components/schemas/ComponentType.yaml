@@ -1,0 +1,45 @@
+description: The UI component type.
+enum:
+  - table
+  - textInput
+  - textArea
+  - button
+  - text
+  - select
+  - modal
+  - schemaForm
+  - checkbox
+  - tabs
+  - vegaChart
+  - radioButtons
+  - numberInput
+  - fileInput
+  - jsonInput
+  - gridCell
+  - dateRangePicker
+  - search
+  - container
+  - calloutValue
+example: text
+type: string
+x-enum-varnames:
+  - TABLE
+  - TEXTINPUT
+  - TEXTAREA
+  - BUTTON
+  - TEXT
+  - SELECT
+  - MODAL
+  - SCHEMAFORM
+  - CHECKBOX
+  - TABS
+  - VEGACHART
+  - RADIOBUTTONS
+  - NUMBERINPUT
+  - FILEINPUT
+  - JSONINPUT
+  - GRIDCELL
+  - DATERANGEPICKER
+  - SEARCH
+  - CONTAINER
+  - CALLOUTVALUE

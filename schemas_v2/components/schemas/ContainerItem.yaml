@@ -1,0 +1,4 @@
+description: Possible Container models.
+oneOf:
+  - $ref: ./Container.yaml
+  - $ref: ./ContainerGroup.yaml

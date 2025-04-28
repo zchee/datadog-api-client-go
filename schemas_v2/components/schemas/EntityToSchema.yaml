@@ -1,0 +1,5 @@
+description: Entity to detail schema relationship.
+properties:
+  data:
+    $ref: ./RelationshipItem.yaml
+type: object

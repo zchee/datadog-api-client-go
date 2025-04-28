@@ -1,0 +1,9 @@
+description: Schema for an API-based trigger.
+properties:
+  apiTrigger:
+    $ref: ./APITrigger.yaml
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - apiTrigger
+type: object

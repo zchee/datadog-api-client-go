@@ -1,0 +1,47 @@
+delete:
+  deprecated: true
+  description: Delete a specific API by ID.
+  operationId: DeleteOpenAPI
+  parameters:
+    - description: ID of the API to delete
+      in: path
+      name: id
+      required: true
+      schema:
+        $ref: ../components/schemas/ApiID.yaml
+  responses:
+    '204':
+      description: API deleted successfully
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: API not found error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_api_catalog_write
+  summary: Delete an API
+  tags:
+    - API Management
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_api_catalog_write
+  x-unstable: '**Note**: This endpoint is deprecated.'

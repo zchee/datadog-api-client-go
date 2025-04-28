@@ -1,0 +1,10 @@
+description: Historical job response data.
+properties:
+  attributes:
+    $ref: ./HistoricalJobResponseAttributes.yaml
+  id:
+    description: ID of the job.
+    type: string
+  type:
+    $ref: ./HistoricalJobDataType.yaml
+type: object

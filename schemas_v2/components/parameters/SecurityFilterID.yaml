@@ -1,0 +1,6 @@
+description: The ID of the security filter.
+in: path
+name: security_filter_id
+required: true
+schema:
+  type: string

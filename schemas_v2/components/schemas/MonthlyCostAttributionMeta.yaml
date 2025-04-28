@@ -1,0 +1,7 @@
+description: The object containing document metadata.
+properties:
+  aggregates:
+    $ref: ./CostAttributionAggregates.yaml
+  pagination:
+    $ref: ./MonthlyCostAttributionPagination.yaml
+type: object

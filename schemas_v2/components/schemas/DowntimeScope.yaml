@@ -1,0 +1,5 @@
+description: >-
+  The scope to which the downtime applies. Must follow the [common search
+  syntax](https://docs.datadoghq.com/logs/explorer/search_syntax/).
+example: env:(staging OR prod) AND datacenter:us-east-1
+type: string

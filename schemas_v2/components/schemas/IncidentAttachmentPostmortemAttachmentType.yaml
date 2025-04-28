@@ -1,0 +1,8 @@
+default: postmortem
+description: The type of postmortem attachment attributes.
+enum:
+  - postmortem
+example: postmortem
+type: string
+x-enum-varnames:
+  - POSTMORTEM

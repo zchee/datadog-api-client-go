@@ -1,0 +1,7 @@
+description: Object representing an event creation request.
+properties:
+  attributes:
+    $ref: ./EventPayload.yaml
+  type:
+    $ref: ./EventCreateRequestType.yaml
+type: object

@@ -1,0 +1,5 @@
+description: Resources related to the application key.
+properties:
+  owned_by:
+    $ref: ./RelationshipToUser.yaml
+type: object

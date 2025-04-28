@@ -1,0 +1,4 @@
+description: The definition of the action query.
+oneOf:
+  - type: string
+  - $ref: ./ActionQuerySpecObject.yaml

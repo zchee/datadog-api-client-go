@@ -1,0 +1,6 @@
+description: Schema type.
+enum:
+  - schema
+type: string
+x-enum-varnames:
+  - SCHEMA

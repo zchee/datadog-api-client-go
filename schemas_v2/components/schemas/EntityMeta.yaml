@@ -1,0 +1,15 @@
+description: Entity metadata.
+properties:
+  createdAt:
+    description: The creation time.
+    type: string
+  ingestionSource:
+    description: The ingestion source.
+    type: string
+  modifiedAt:
+    description: The modification time.
+    type: string
+  origin:
+    description: The origin.
+    type: string
+type: object

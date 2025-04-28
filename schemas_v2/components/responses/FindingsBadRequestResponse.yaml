@@ -1,0 +1,7 @@
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/JSONAPIErrorResponse.yaml
+description: >-
+  Bad Request: The server cannot process the request due to invalid syntax in
+  the request.

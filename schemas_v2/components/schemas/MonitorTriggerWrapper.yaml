@@ -1,0 +1,9 @@
+description: Schema for a Monitor-based trigger.
+properties:
+  monitorTrigger:
+    $ref: ./MonitorTrigger.yaml
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - monitorTrigger
+type: object

@@ -1,0 +1,8 @@
+default: outcome
+description: The JSON:API type for an outcome.
+enum:
+  - outcome
+example: outcome
+type: string
+x-enum-varnames:
+  - OUTCOME

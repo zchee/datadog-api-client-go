@@ -1,0 +1,8 @@
+description: An individual scalar query to one of the basic Datadog data sources.
+example:
+  aggregator: avg
+  data_source: metrics
+  query: avg:system.cpu.user{*} by {env}
+oneOf:
+  - $ref: ./MetricsScalarQuery.yaml
+  - $ref: ./EventsScalarQuery.yaml

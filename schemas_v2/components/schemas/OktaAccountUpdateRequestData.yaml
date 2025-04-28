@@ -1,0 +1,7 @@
+description: Data object for updating an Okta account.
+properties:
+  attributes:
+    $ref: ./OktaAccountUpdateRequestAttributes.yaml
+  type:
+    $ref: ./OktaAccountType.yaml
+type: object

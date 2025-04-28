@@ -1,0 +1,7 @@
+description: The definition of `ApplicationSecurityWafCustomRuleAction` object.
+properties:
+  action:
+    $ref: ./ApplicationSecurityWafCustomRuleActionAction.yaml
+  parameters:
+    $ref: ./ApplicationSecurityWafCustomRuleActionParameters.yaml
+type: object

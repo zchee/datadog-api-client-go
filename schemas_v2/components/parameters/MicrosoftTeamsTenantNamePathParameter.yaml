@@ -1,0 +1,6 @@
+description: Your tenant name.
+in: path
+name: tenant_name
+required: true
+schema:
+  type: string

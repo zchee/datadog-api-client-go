@@ -1,0 +1,7 @@
+description: Relationship of AuthN Mapping to a Team.
+properties:
+  team:
+    $ref: ./RelationshipToTeam.yaml
+required:
+  - team
+type: object

@@ -1,0 +1,10 @@
+description: Relationship to impacts.
+properties:
+  data:
+    description: An array of incident impacts.
+    items:
+      $ref: ./RelationshipToIncidentImpactData.yaml
+    type: array
+required:
+  - data
+type: object

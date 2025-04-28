@@ -1,0 +1,9 @@
+description: Schema for a GitHub webhook-based trigger.
+properties:
+  githubWebhookTrigger:
+    $ref: ./GithubWebhookTrigger.yaml
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - githubWebhookTrigger
+type: object

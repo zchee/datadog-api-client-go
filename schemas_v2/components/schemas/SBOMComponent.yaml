@@ -1,0 +1,32 @@
+description: Software or hardware component.
+properties:
+  bom-ref:
+    description: >-
+      An optional identifier that can be used to reference the component
+      elsewhere in the BOM.
+    example: pkg:golang/google.golang.org/grpc@1.68.1
+    type: string
+  name:
+    description: >-
+      The name of the component. This will often be a shortened, single name of
+      the component.
+    example: google.golang.org/grpc
+    type: string
+  purl:
+    description: >-
+      Specifies the package-url (purl). The purl, if specified, MUST be valid
+      and conform to the
+      [specification](https://github.com/package-url/purl-spec).
+    example: pkg:golang/google.golang.org/grpc@1.68.1
+    type: string
+  type:
+    $ref: ./SBOMComponentType.yaml
+  version:
+    description: The component version.
+    example: 1.68.1
+    type: string
+required:
+  - type
+  - name
+  - version
+type: object

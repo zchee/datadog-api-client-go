@@ -1,0 +1,5 @@
+description: CSM Cloud Accounts Coverage Analysis response.
+properties:
+  data:
+    $ref: ./CsmCloudAccountsCoverageAnalysisData.yaml
+type: object

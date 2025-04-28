@@ -1,0 +1,5 @@
+description: The SLO report response.
+properties:
+  data:
+    $ref: ./SLOReportPostResponseData.yaml
+type: object

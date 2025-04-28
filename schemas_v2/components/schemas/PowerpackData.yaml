@@ -1,0 +1,14 @@
+description: Powerpack data object.
+properties:
+  attributes:
+    $ref: ./PowerpackAttributes.yaml
+  id:
+    description: ID of the powerpack.
+    type: string
+  relationships:
+    $ref: ./PowerpackRelationships.yaml
+  type:
+    description: Type of widget, must be powerpack.
+    example: powerpack
+    type: string
+type: object

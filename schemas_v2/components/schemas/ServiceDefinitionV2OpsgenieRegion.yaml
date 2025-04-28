@@ -1,0 +1,9 @@
+description: Opsgenie instance region.
+enum:
+  - US
+  - EU
+example: US
+type: string
+x-enum-varnames:
+  - US
+  - EU

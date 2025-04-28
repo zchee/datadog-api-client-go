@@ -1,0 +1,9 @@
+description: >-
+  Request object that includes the security filter that you would like to
+  create.
+properties:
+  data:
+    $ref: ./SecurityFilterCreateData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,7 @@
+description: Response after receiving a DORA deployment event.
+properties:
+  data:
+    $ref: ./DORADeploymentResponseData.yaml
+required:
+  - data
+type: object

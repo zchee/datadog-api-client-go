@@ -1,0 +1,7 @@
+description: A search query that filters teams by name.
+in: query
+name: filter
+required: false
+schema:
+  example: ExampleTeamName
+  type: string

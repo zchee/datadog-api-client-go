@@ -1,0 +1,13 @@
+description: >-
+  Object description of a pipeline event after being processed and stored by
+  Datadog.
+properties:
+  attributes:
+    $ref: ./CIAppPipelineEventAttributes.yaml
+  id:
+    description: Unique ID of the event.
+    example: AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA
+    type: string
+  type:
+    $ref: ./CIAppPipelineEventTypeName.yaml
+type: object

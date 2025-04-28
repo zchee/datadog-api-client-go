@@ -1,0 +1,8 @@
+default: azure_uc_config_patch_request
+description: Type of Azure config Patch Request.
+enum:
+  - azure_uc_config_patch_request
+example: azure_uc_config_patch_request
+type: string
+x-enum-varnames:
+  - AZURE_UC_CONFIG_PATCH_REQUEST

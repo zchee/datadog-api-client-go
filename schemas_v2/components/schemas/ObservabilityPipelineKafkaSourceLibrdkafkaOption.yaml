@@ -1,0 +1,17 @@
+description: >-
+  Represents a key-value pair used to configure low-level `librdkafka` client
+  options for Kafka sources, such as timeouts, buffer sizes, and security
+  settings.
+properties:
+  name:
+    description: The name of the `librdkafka` configuration option to set.
+    example: fetch.message.max.bytes
+    type: string
+  value:
+    description: The value assigned to the specified `librdkafka` configuration option.
+    example: '1048576'
+    type: string
+required:
+  - name
+  - value
+type: object

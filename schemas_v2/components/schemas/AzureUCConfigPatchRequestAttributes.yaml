@@ -1,0 +1,9 @@
+description: Attributes for Azure config Patch Request.
+properties:
+  is_enabled:
+    description: Whether or not the Cloud Cost Management account is enabled.
+    example: true
+    type: boolean
+required:
+  - is_enabled
+type: object

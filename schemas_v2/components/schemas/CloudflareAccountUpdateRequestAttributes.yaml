@@ -1,0 +1,38 @@
+description: Attributes object for updating a Cloudflare account.
+properties:
+  api_key:
+    description: The API key of the Cloudflare account.
+    example: a94a8fe5ccb19ba61c4c0873d391e987982fbbd3
+    type: string
+  email:
+    description: >-
+      The email associated with the Cloudflare account. If an API key is
+      provided (and not a token), this field is also required.
+    example: test-email@example.com
+    type: string
+  name:
+    description: The name of the Cloudflare account.
+    type: string
+  resources:
+    description: >-
+      An allowlist of resources to restrict pulling metrics for including
+      `'web', 'dns', 'lb' (load balancer), 'worker'`.
+    example:
+      - web
+      - dns
+      - lb
+      - worker
+    items:
+      type: string
+    type: array
+  zones:
+    description: An allowlist of zones to restrict pulling metrics for.
+    example:
+      - zone_id_1
+      - zone_id_2
+    items:
+      type: string
+    type: array
+required:
+  - api_key
+type: object

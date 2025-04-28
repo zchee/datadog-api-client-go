@@ -1,0 +1,3 @@
+description: AWS Account ID.
+example: '123456789012'
+type: string

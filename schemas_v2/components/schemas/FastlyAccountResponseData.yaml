@@ -1,0 +1,15 @@
+description: Data object of a Fastly account.
+properties:
+  attributes:
+    $ref: ./FastlyAccounResponseAttributes.yaml
+  id:
+    description: The ID of the Fastly account, a hash of the account name.
+    example: abc123
+    type: string
+  type:
+    $ref: ./FastlyAccountType.yaml
+required:
+  - attributes
+  - id
+  - type
+type: object

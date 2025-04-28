@@ -1,0 +1,10 @@
+description: Azure config Patch data.
+properties:
+  attributes:
+    $ref: ./AzureUCConfigPatchRequestAttributes.yaml
+  type:
+    $ref: ./AzureUCConfigPatchRequestType.yaml
+required:
+  - attributes
+  - type
+type: object

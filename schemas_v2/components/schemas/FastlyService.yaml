@@ -1,0 +1,17 @@
+description: The schema representation of a Fastly service.
+properties:
+  id:
+    description: The ID of the Fastly service
+    example: 6abc7de6893AbcDe9fghIj
+    type: string
+  tags:
+    description: A list of tags for the Fastly service.
+    example:
+      - myTag
+      - myTag2:myValue
+    items:
+      type: string
+    type: array
+required:
+  - id
+type: object

@@ -1,0 +1,75 @@
+description: Update an existing rule.
+properties:
+  cases:
+    description: Cases for generating signals.
+    items:
+      $ref: ./SecurityMonitoringRuleCase.yaml
+    type: array
+  complianceSignalOptions:
+    $ref: ./CloudConfigurationRuleComplianceSignalOptions.yaml
+  filters:
+    description: >-
+      Additional queries to filter matched events before they are processed.
+      This field is deprecated for log detection, signal correlation, and
+      workload security rules.
+    items:
+      $ref: ./SecurityMonitoringFilter.yaml
+    type: array
+  groupSignalsBy:
+    description: >-
+      Additional grouping to perform on top of the existing groups in the query
+      section. Must be a subset of the existing groups.
+    example:
+      - service
+    items:
+      description: Field to group by.
+      type: string
+    type: array
+  hasExtendedTitle:
+    description: >-
+      Whether the notifications include the triggering group-by values in their
+      title.
+    example: true
+    type: boolean
+  isEnabled:
+    description: Whether the rule is enabled.
+    type: boolean
+  message:
+    description: Message for generated signals.
+    type: string
+  name:
+    description: Name of the rule.
+    type: string
+  options:
+    $ref: ./SecurityMonitoringRuleOptions.yaml
+  queries:
+    description: Queries for selecting logs which are part of the rule.
+    items:
+      $ref: ./SecurityMonitoringRuleQuery.yaml
+    type: array
+  referenceTables:
+    description: Reference tables for the rule.
+    items:
+      $ref: ./SecurityMonitoringReferenceTable.yaml
+    type: array
+  tags:
+    description: Tags for generated signals.
+    items:
+      description: Tag.
+      type: string
+    type: array
+  thirdPartyCases:
+    description: >-
+      Cases for generating signals from third-party rules. Only available for
+      third-party rules.
+    example: []
+    items:
+      $ref: ./SecurityMonitoringThirdPartyRuleCase.yaml
+    type: array
+  version:
+    description: The version of the rule being updated.
+    example: 1
+    format: int32
+    maximum: 2147483647
+    type: integer
+type: object

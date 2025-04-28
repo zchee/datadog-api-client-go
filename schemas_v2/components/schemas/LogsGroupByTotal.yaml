@@ -1,0 +1,6 @@
+default: false
+description: A resulting object to put the given computes in over all the matching records.
+oneOf:
+  - $ref: ./LogsGroupByTotalBoolean.yaml
+  - $ref: ./LogsGroupByTotalString.yaml
+  - $ref: ./LogsGroupByTotalNumber.yaml

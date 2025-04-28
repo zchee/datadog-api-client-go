@@ -1,0 +1,7 @@
+description: Relationships of a scanning rule.
+properties:
+  group:
+    $ref: ./SensitiveDataScannerGroupData.yaml
+  standard_pattern:
+    $ref: ./SensitiveDataScannerStandardPatternData.yaml
+type: object

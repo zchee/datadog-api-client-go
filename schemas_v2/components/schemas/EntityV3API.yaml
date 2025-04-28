@@ -1,0 +1,26 @@
+additionalProperties: false
+description: Schema for API entities.
+properties:
+  apiVersion:
+    $ref: ./EntityV3APIVersion.yaml
+  datadog:
+    $ref: ./EntityV3APIDatadog.yaml
+  extensions:
+    additionalProperties: {}
+    description: >-
+      Custom extensions. This is the free-formed field to send client-side
+      metadata. No Datadog features are affected by this field.
+    type: object
+  integrations:
+    $ref: ./EntityV3Integrations.yaml
+  kind:
+    $ref: ./EntityV3APIKind.yaml
+  metadata:
+    $ref: ./EntityV3Metadata.yaml
+  spec:
+    $ref: ./EntityV3APISpec.yaml
+required:
+  - apiVersion
+  - kind
+  - metadata
+type: object

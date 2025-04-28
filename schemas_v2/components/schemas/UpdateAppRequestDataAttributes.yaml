@@ -1,0 +1,43 @@
+description: >-
+  App definition attributes to be updated, such as name, description, and
+  components.
+properties:
+  components:
+    description: >-
+      The new UI components that make up the app. If this field is set, all
+      existing components are replaced with the new components under this field.
+    items:
+      $ref: ./ComponentGrid.yaml
+    type: array
+  description:
+    description: The new human-readable description for the app.
+    type: string
+  name:
+    description: The new name of the app.
+    type: string
+  queries:
+    description: >-
+      The new array of queries, such as external actions and state variables,
+      that the app uses. If this field is set, all existing queries are replaced
+      with the new queries under this field.
+    items:
+      $ref: ./Query.yaml
+    type: array
+  rootInstanceName:
+    description: >-
+      The new name of the root component of the app. This must be a `grid`
+      component that contains all other components.
+    type: string
+  tags:
+    description: >-
+      The new list of tags for the app, which can be used to filter apps. If
+      this field is set, any existing tags not included in the request are
+      removed.
+    example:
+      - service:webshop-backend
+      - team:webshop
+    items:
+      description: An individual tag for the app.
+      type: string
+    type: array
+type: object

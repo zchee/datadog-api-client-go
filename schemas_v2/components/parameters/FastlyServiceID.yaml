@@ -1,0 +1,6 @@
+description: Fastly Service ID.
+in: path
+name: service_id
+required: true
+schema:
+  type: string

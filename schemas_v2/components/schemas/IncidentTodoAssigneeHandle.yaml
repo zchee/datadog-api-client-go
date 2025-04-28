@@ -1,0 +1,3 @@
+description: Assignee's @-handle.
+example: '@test.user@test.com'
+type: string

@@ -1,0 +1,10 @@
+description: Response for `ListAPIs`.
+properties:
+  data:
+    description: List of API items.
+    items:
+      $ref: ./ListAPIsResponseData.yaml
+    type: array
+  meta:
+    $ref: ./ListAPIsResponseMeta.yaml
+type: object

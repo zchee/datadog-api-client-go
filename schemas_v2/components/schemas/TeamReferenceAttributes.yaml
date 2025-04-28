@@ -1,0 +1,17 @@
+description: >-
+  Encapsulates the basic attributes of a Team reference, such as name, handle,
+  and an optional avatar or description.
+properties:
+  avatar:
+    description: URL or reference for the team's avatar (if available).
+    type: string
+  description:
+    description: A short text describing the team.
+    type: string
+  handle:
+    description: A unique handle/slug for the team.
+    type: string
+  name:
+    description: The full, human-readable name of the team.
+    type: string
+type: object

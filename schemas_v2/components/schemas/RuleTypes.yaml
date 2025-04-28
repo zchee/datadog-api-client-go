@@ -1,0 +1,7 @@
+description: Security rule types used as filters in security rules.
+example:
+  - misconfiguration
+  - attack_path
+items:
+  $ref: ./RuleTypesItems.yaml
+type: array

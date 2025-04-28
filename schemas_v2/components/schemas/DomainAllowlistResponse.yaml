@@ -1,0 +1,5 @@
+description: Response containing information about the email domain allowlist.
+properties:
+  data:
+    $ref: ./DomainAllowlistResponseData.yaml
+type: object

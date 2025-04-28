@@ -1,0 +1,36 @@
+description: Details of a rule.
+properties:
+  category:
+    deprecated: true
+    description: The scorecard name to which this rule must belong.
+    type: string
+  created_at:
+    description: Creation time of the rule outcome.
+    format: date-time
+    type: string
+  custom:
+    description: Defines if the rule is a custom rule.
+    type: boolean
+  description:
+    description: Explanation of the rule.
+    type: string
+  enabled:
+    description: If enabled, the rule is calculated as part of the score.
+    example: true
+    type: boolean
+  modified_at:
+    description: Time of the last rule outcome modification.
+    format: date-time
+    type: string
+  name:
+    description: Name of the rule.
+    example: Team Defined
+    type: string
+  owner:
+    description: Owner of the rule.
+    type: string
+  scorecard_name:
+    description: The scorecard name to which this rule must belong.
+    example: Deployments automated via Deployment Trains
+    type: string
+type: object

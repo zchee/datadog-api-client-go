@@ -1,0 +1,12 @@
+description: The definition of Entity V3 Metadata Additional Owners Items object.
+properties:
+  name:
+    description: Team name.
+    example: ''
+    type: string
+  type:
+    description: Team type.
+    type: string
+required:
+  - name
+type: object

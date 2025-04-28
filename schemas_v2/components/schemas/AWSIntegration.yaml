@@ -1,0 +1,10 @@
+description: The definition of `AWSIntegration` object.
+properties:
+  credentials:
+    $ref: ./AWSCredentials.yaml
+  type:
+    $ref: ./AWSIntegrationType.yaml
+required:
+  - type
+  - credentials
+type: object

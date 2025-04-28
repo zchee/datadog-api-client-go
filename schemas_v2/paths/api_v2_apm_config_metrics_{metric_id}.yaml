@@ -1,0 +1,85 @@
+delete:
+  description: Delete a specific span-based metric from your organization.
+  operationId: DeleteSpansMetric
+  parameters:
+    - $ref: ../components/parameters/SpansMetricIDParameter.yaml
+  responses:
+    '204':
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a span-based metric
+  tags:
+    - Spans Metrics
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_generate_metrics
+get:
+  description: Get a specific span-based metric from your organization.
+  operationId: GetSpansMetric
+  parameters:
+    - $ref: ../components/parameters/SpansMetricIDParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SpansMetricResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a span-based metric
+  tags:
+    - Spans Metrics
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_read
+patch:
+  description: >-
+    Update a specific span-based metric from your organization.
+
+    Returns the span-based metric object from the request body when the request
+    is successful.
+  operationId: UpdateSpansMetric
+  parameters:
+    - $ref: ../components/parameters/SpansMetricIDParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SpansMetricUpdateRequest.yaml
+    description: New definition of the span-based metric.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SpansMetricResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a span-based metric
+  tags:
+    - Spans Metrics
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_generate_metrics

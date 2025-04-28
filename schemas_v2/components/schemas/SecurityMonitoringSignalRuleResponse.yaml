@@ -1,0 +1,74 @@
+description: Rule.
+properties:
+  cases:
+    description: Cases for generating signals.
+    items:
+      $ref: ./SecurityMonitoringRuleCase.yaml
+    type: array
+  createdAt:
+    description: When the rule was created, timestamp in milliseconds.
+    format: int64
+    type: integer
+  creationAuthorId:
+    description: User ID of the user who created the rule.
+    format: int64
+    type: integer
+  deprecationDate:
+    description: When the rule will be deprecated, timestamp in milliseconds.
+    format: int64
+    type: integer
+  filters:
+    description: >-
+      Additional queries to filter matched events before they are processed.
+      This field is deprecated for log detection, signal correlation, and
+      workload security rules.
+    items:
+      $ref: ./SecurityMonitoringFilter.yaml
+    type: array
+  hasExtendedTitle:
+    description: >-
+      Whether the notifications include the triggering group-by values in their
+      title.
+    type: boolean
+  id:
+    description: The ID of the rule.
+    type: string
+  isDefault:
+    description: Whether the rule is included by default.
+    type: boolean
+  isDeleted:
+    description: Whether the rule has been deleted.
+    type: boolean
+  isEnabled:
+    description: Whether the rule is enabled.
+    type: boolean
+  message:
+    description: Message for generated signals.
+    type: string
+  name:
+    description: The name of the rule.
+    type: string
+  options:
+    $ref: ./SecurityMonitoringRuleOptions.yaml
+  queries:
+    description: Queries for selecting logs which are part of the rule.
+    items:
+      $ref: ./SecurityMonitoringSignalRuleResponseQuery.yaml
+    type: array
+  tags:
+    description: Tags for generated signals.
+    items:
+      description: Tag.
+      type: string
+    type: array
+  type:
+    $ref: ./SecurityMonitoringSignalRuleType.yaml
+  updateAuthorId:
+    description: User ID of the user who updated the rule.
+    format: int64
+    type: integer
+  version:
+    description: The version of the rule.
+    format: int64
+    type: integer
+type: object

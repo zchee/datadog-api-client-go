@@ -1,0 +1,5 @@
+description: The definition of `WorkflowUserRelationship` object.
+properties:
+  data:
+    $ref: ./WorkflowUserRelationshipData.yaml
+type: object

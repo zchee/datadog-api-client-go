@@ -1,0 +1,3 @@
+description: The timeline cell's attributes for a create request.
+oneOf:
+  - $ref: ./IncidentTimelineCellMarkdownCreateAttributes.yaml

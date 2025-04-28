@@ -1,0 +1,8 @@
+default: parse_json
+description: The processor type. The value should always be `parse_json`.
+enum:
+  - parse_json
+example: parse_json
+type: string
+x-enum-varnames:
+  - PARSE_JSON

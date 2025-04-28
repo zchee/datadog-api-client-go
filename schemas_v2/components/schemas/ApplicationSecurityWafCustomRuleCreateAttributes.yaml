@@ -1,0 +1,43 @@
+description: Create a new WAF custom rule.
+properties:
+  action:
+    $ref: ./ApplicationSecurityWafCustomRuleAction.yaml
+  blocking:
+    description: Indicates whether the WAF custom rule will block the request.
+    example: false
+    type: boolean
+  conditions:
+    description: >-
+      Conditions for which the WAF Custom Rule will triggers, all conditions
+      needs to match in order for the WAF
+
+      rule to trigger
+    items:
+      $ref: ./ApplicationSecurityWafCustomRuleCondition.yaml
+    type: array
+  enabled:
+    description: Indicates whether the WAF custom rule is enabled.
+    example: false
+    type: boolean
+  name:
+    description: The Name of the WAF custom rule.
+    example: Block request from a bad useragent
+    type: string
+  path_glob:
+    description: The path glob for the WAF custom rule.
+    example: /api/search/*
+    type: string
+  scope:
+    description: The scope of the WAF custom rule.
+    items:
+      $ref: ./ApplicationSecurityWafCustomRuleScope.yaml
+    type: array
+  tags:
+    $ref: ./ApplicationSecurityWafCustomRuleTags.yaml
+required:
+  - enabled
+  - blocking
+  - name
+  - tags
+  - conditions
+type: object

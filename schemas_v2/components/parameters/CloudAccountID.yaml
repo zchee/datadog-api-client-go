@@ -1,0 +1,6 @@
+description: Cloud Account id.
+in: path
+name: cloud_account_id
+required: true
+schema:
+  type: string

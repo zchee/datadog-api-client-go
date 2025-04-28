@@ -1,0 +1,12 @@
+description: Usage timeseries data.
+properties:
+  timestamp:
+    description: Datetime in ISO-8601 format, UTC. The hour for the usage.
+    format: date-time
+    type: string
+  value:
+    description: Contains the number measured for the given usage_type during the hour.
+    format: int64
+    nullable: true
+    type: integer
+type: object

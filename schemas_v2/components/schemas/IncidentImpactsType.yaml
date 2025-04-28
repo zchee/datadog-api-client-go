@@ -1,0 +1,7 @@
+description: The incident impacts type.
+enum:
+  - incident_impacts
+example: incident_impacts
+type: string
+x-enum-varnames:
+  - INCIDENT_IMPACTS

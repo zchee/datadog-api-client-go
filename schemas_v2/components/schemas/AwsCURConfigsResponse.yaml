@@ -1,0 +1,8 @@
+description: List of AWS CUR configs.
+properties:
+  data:
+    description: An AWS CUR config.
+    items:
+      $ref: ./AwsCURConfig.yaml
+    type: array
+type: object

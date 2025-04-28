@@ -1,0 +1,17 @@
+description: Case creation attributes
+properties:
+  description:
+    description: Description
+    type: string
+  priority:
+    $ref: ./CasePriority.yaml
+  title:
+    description: Title
+    example: Security breach investigation
+    type: string
+  type:
+    $ref: ./CaseType.yaml
+required:
+  - title
+  - type
+type: object

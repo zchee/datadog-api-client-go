@@ -1,0 +1,55 @@
+delete:
+  description: Delete an STS enabled GCP account from within Datadog.
+  operationId: DeleteGCPSTSAccount
+  parameters:
+    - $ref: ../components/parameters/GCPSTSServiceAccountID.yaml
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete an STS enabled GCP Account
+  tags:
+    - GCP Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - gcp_configurations_manage
+patch:
+  description: Update an STS enabled service account.
+  operationId: UpdateGCPSTSAccount
+  parameters:
+    - $ref: ../components/parameters/GCPSTSServiceAccountID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/GCPSTSServiceAccountUpdateRequest.yaml
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GCPSTSServiceAccountResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update STS Service Account
+  tags:
+    - GCP Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - gcp_configuration_edit

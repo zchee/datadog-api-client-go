@@ -1,0 +1,8 @@
+default: ms-teams-channel-info
+description: Channel info resource type.
+enum:
+  - ms-teams-channel-info
+example: ms-teams-channel-info
+type: string
+x-enum-varnames:
+  - MS_TEAMS_CHANNEL_INFO

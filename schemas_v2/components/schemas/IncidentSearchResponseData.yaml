@@ -1,0 +1,7 @@
+description: Data returned by an incident search.
+properties:
+  attributes:
+    $ref: ./IncidentSearchResponseAttributes.yaml
+  type:
+    $ref: ./IncidentSearchResultsType.yaml
+type: object

@@ -1,0 +1,14 @@
+description: >-
+  Represents a user object in the context of a schedule, including their `id`,
+  type, and basic attributes.
+properties:
+  attributes:
+    $ref: ./ScheduleUserAttributes.yaml
+  id:
+    description: The unique user identifier.
+    type: string
+  type:
+    $ref: ./ScheduleUserType.yaml
+required:
+  - type
+type: object

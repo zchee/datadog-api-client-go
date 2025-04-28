@@ -1,0 +1,23 @@
+description: CSM Coverage Analysis.
+properties:
+  configured_resources_count:
+    description: The number of fully configured resources.
+    example: 8
+    format: int64
+    type: integer
+  coverage:
+    description: The coverage percentage.
+    example: 0.8
+    format: double
+    type: number
+  partially_configured_resources_count:
+    description: The number of partially configured resources.
+    example: 0
+    format: int64
+    type: integer
+  total_resources_count:
+    description: The total number of resources.
+    example: 10
+    format: int64
+    type: integer
+type: object

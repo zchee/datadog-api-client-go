@@ -1,0 +1,12 @@
+description: Specifies the order of the returned teams
+enum:
+  - name
+  - '-name'
+  - user_count
+  - '-user_count'
+type: string
+x-enum-varnames:
+  - NAME
+  - _NAME
+  - USER_COUNT
+  - _USER_COUNT

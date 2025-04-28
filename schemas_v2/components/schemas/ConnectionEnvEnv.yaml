@@ -1,0 +1,7 @@
+description: The definition of `ConnectionEnvEnv` object.
+enum:
+  - default
+example: default
+type: string
+x-enum-varnames:
+  - DEFAULT

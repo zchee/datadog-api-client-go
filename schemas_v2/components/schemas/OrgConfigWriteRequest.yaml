@@ -1,0 +1,7 @@
+description: A request to update an Org Config.
+properties:
+  data:
+    $ref: ./OrgConfigWrite.yaml
+required:
+  - data
+type: object

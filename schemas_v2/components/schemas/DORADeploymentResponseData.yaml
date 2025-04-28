@@ -1,0 +1,11 @@
+description: The JSON:API data.
+properties:
+  id:
+    description: The ID of the received DORA deployment event.
+    example: 4242fcdd31586083
+    type: string
+  type:
+    $ref: ./DORADeploymentType.yaml
+required:
+  - id
+type: object

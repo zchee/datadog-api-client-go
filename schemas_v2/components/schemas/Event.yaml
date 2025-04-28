@@ -1,0 +1,19 @@
+description: The metadata associated with a request.
+properties:
+  id:
+    description: Event ID.
+    example: '6509751066204996294'
+    type: string
+  name:
+    description: The event name.
+    type: string
+  source_id:
+    description: Event source ID.
+    example: 36
+    format: int64
+    type: integer
+  type:
+    description: Event type.
+    example: error_tracking_alert
+    type: string
+type: object

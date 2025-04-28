@@ -1,0 +1,8 @@
+default: distinct_metric_volumes
+description: The metric distinct volume type.
+enum:
+  - distinct_metric_volumes
+example: distinct_metric_volumes
+type: string
+x-enum-varnames:
+  - DISTINCT_METRIC_VOLUMES

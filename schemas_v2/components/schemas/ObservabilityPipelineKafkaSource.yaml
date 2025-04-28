@@ -1,0 +1,41 @@
+description: The `kafka` source ingests data from Apache Kafka topics.
+properties:
+  group_id:
+    description: Consumer group ID used by the Kafka client.
+    example: consumer-group-0
+    type: string
+  id:
+    description: >-
+      The unique identifier for this component. Used to reference this component
+      in other parts of the pipeline (e.g., as input to downstream components).
+    example: kafka-source
+    type: string
+  librdkafka_options:
+    description: >-
+      Optional list of advanced Kafka client configuration options, defined as
+      key-value pairs.
+    items:
+      $ref: ./ObservabilityPipelineKafkaSourceLibrdkafkaOption.yaml
+    type: array
+  sasl:
+    $ref: ./ObservabilityPipelineKafkaSourceSasl.yaml
+  tls:
+    $ref: ./ObservabilityPipelineTls.yaml
+  topics:
+    description: >-
+      A list of Kafka topic names to subscribe to. The source ingests messages
+      from each topic specified.
+    example:
+      - topic1
+      - topic2
+    items:
+      type: string
+    type: array
+  type:
+    $ref: ./ObservabilityPipelineKafkaSourceType.yaml
+required:
+  - id
+  - type
+  - group_id
+  - topics
+type: object

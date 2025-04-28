@@ -1,0 +1,8 @@
+description: Response object that includes a list of AWS on demand tasks.
+properties:
+  data:
+    description: A list of on demand tasks.
+    items:
+      $ref: ./AwsOnDemandData.yaml
+    type: array
+type: object

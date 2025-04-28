@@ -1,0 +1,11 @@
+description: Attributes object for Fastly service requests.
+properties:
+  tags:
+    description: A list of tags for the Fastly service.
+    example:
+      - myTag
+      - myTag2:myValue
+    items:
+      type: string
+    type: array
+type: object

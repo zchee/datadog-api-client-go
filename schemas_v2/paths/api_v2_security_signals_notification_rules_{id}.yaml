@@ -1,0 +1,116 @@
+delete:
+  description: Delete a notification rule for security signals.
+  operationId: DeleteSignalNotificationRule
+  parameters:
+    - description: ID of the notification rule.
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Rule successfully deleted.
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_notification_profiles_write
+  summary: Delete a signal-based notification rule
+  tags:
+    - Security Monitoring
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_notification_profiles_write
+get:
+  description: Get the details of a notification rule for security signals.
+  operationId: GetSignalNotificationRule
+  parameters:
+    - description: ID of the notification rule.
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/NotificationRuleResponse.yaml
+      description: Notification rule details.
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_notification_profiles_read
+  summary: Get details of a signal-based notification rule
+  tags:
+    - Security Monitoring
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_notification_profiles_read
+patch:
+  description: >-
+    Partially update the notification rule. All fields are optional; if a field
+    is not provided, it is not updated.
+  operationId: PatchSignalNotificationRule
+  parameters:
+    - description: ID of the notification rule.
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/PatchNotificationRuleParameters.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/NotificationRuleResponse.yaml
+      description: Notification rule successfully patched.
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '422':
+      $ref: ../components/responses/UnprocessableEntityResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_notification_profiles_write
+  summary: Patch a signal-based notification rule
+  tags:
+    - Security Monitoring
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_notification_profiles_write

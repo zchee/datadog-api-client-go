@@ -1,0 +1,9 @@
+description: Array of incidents that are associated with this signal.
+example:
+  - 2066
+items:
+  description: Public ID attribute of the incident that is associated with the signal.
+  example: 2066
+  format: int64
+  type: integer
+type: array

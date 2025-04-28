@@ -1,0 +1,5 @@
+description: A custom destination's location to forward logs.
+oneOf:
+  - $ref: ./CustomDestinationResponseForwardDestinationHttp.yaml
+  - $ref: ./CustomDestinationResponseForwardDestinationSplunk.yaml
+  - $ref: ./CustomDestinationResponseForwardDestinationElasticsearch.yaml

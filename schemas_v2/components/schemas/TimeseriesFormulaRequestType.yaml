@@ -1,0 +1,8 @@
+default: timeseries_request
+description: The type of the resource. The value should always be timeseries_request.
+enum:
+  - timeseries_request
+example: timeseries_request
+type: string
+x-enum-varnames:
+  - TIMESERIES_REQUEST

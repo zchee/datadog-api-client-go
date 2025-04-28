@@ -1,0 +1,12 @@
+description: A dashboard object with title and popularity.
+properties:
+  attributes:
+    $ref: ./MetricDashboardAttributes.yaml
+  id:
+    $ref: ./MetricDashboardID.yaml
+  type:
+    $ref: ./MetricDashboardType.yaml
+required:
+  - id
+  - type
+type: object

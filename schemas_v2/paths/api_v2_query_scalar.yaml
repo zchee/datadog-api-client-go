@@ -1,0 +1,40 @@
+post:
+  description: |-
+    Query scalar values (as seen on Query Value, Table, and Toplist widgets).
+    Multiple data sources are supported with the ability to
+    process the data using formulas and functions.
+  operationId: QueryScalarData
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ScalarFormulaQueryRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ScalarFormulaQueryResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - timeseries_query
+  summary: Query scalar data across multiple products
+  tags:
+    - Metrics
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - timeseries_query

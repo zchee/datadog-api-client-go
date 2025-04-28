@@ -1,0 +1,31 @@
+description: >-
+  Defines the attributes for creating an escalation policy, including its
+  description, name, resolution behavior, retries, and steps.
+properties:
+  description:
+    description: Provides a detailed text description of the new escalation policy.
+    type: string
+  name:
+    description: Specifies the name for the new escalation policy.
+    example: On-call Escalation Policy
+    type: string
+  resolve_page_on_policy_end:
+    description: Indicates whether the page is automatically resolved when the policy ends.
+    type: boolean
+  retries:
+    description: >-
+      Specifies how many times the escalation sequence is retried if there is no
+      response.
+    format: int64
+    type: integer
+  steps:
+    description: >-
+      A list of escalation steps, each defining assignment, escalation timeout,
+      and targets for the new policy.
+    items:
+      $ref: ./EscalationPolicyCreateRequestDataAttributesStepsItems.yaml
+    type: array
+required:
+  - name
+  - steps
+type: object

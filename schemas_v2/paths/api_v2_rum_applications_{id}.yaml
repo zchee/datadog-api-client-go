@@ -1,0 +1,95 @@
+delete:
+  description: Delete an existing RUM application in your organization.
+  operationId: DeleteRUMApplication
+  parameters:
+    - description: RUM application ID.
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: No Content
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a RUM application
+  tags:
+    - RUM
+  x-permission:
+    operator: OR
+    permissions:
+      - rum_apps_write
+get:
+  description: Get the RUM application with given ID in your organization.
+  operationId: GetRUMApplication
+  parameters:
+    - description: RUM application ID.
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RUMApplicationResponse.yaml
+      description: OK
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a RUM application
+  tags:
+    - RUM
+  x-permission:
+    operator: OR
+    permissions:
+      - rum_apps_read
+patch:
+  description: Update the RUM application with given ID in your organization.
+  operationId: UpdateRUMApplication
+  parameters:
+    - description: RUM application ID.
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RUMApplicationUpdateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RUMApplicationResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Unprocessable Entity.
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a RUM application
+  tags:
+    - RUM
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - rum_apps_write

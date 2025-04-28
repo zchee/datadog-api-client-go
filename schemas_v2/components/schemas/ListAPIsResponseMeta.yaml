@@ -1,0 +1,5 @@
+description: Metadata for `ListAPIsResponse`.
+properties:
+  pagination:
+    $ref: ./ListAPIsResponseMetaPagination.yaml
+type: object

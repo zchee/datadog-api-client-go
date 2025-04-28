@@ -1,0 +1,22 @@
+description: The S3 archive destination.
+properties:
+  bucket:
+    description: The bucket where the archive will be stored.
+    example: bucket-name
+    type: string
+  encryption:
+    $ref: ./LogsArchiveEncryptionS3.yaml
+  integration:
+    $ref: ./LogsArchiveIntegrationS3.yaml
+  path:
+    description: The archive path.
+    type: string
+  storage_class:
+    $ref: ./LogsArchiveStorageClassS3Type.yaml
+  type:
+    $ref: ./LogsArchiveDestinationS3Type.yaml
+required:
+  - bucket
+  - integration
+  - type
+type: object

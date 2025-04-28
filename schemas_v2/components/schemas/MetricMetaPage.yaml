@@ -1,0 +1,19 @@
+description: Paging attributes. Only present if pagination query parameters were provided.
+properties:
+  cursor:
+    description: The cursor used to get the current results, if any.
+    nullable: true
+    type: string
+  limit:
+    description: Number of results returned
+    format: int32
+    maximum: 20000
+    minimum: 0
+    type: integer
+  next_cursor:
+    description: The cursor used to get the next results, if any.
+    nullable: true
+    type: string
+  type:
+    $ref: ./MetricMetaPageType.yaml
+type: object

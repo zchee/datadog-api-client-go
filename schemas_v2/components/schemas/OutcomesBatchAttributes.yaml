@@ -1,0 +1,8 @@
+description: The JSON:API attributes for a batched set of scorecard outcomes.
+properties:
+  results:
+    description: Set of scorecard outcomes to update.
+    items:
+      $ref: ./OutcomesBatchRequestItem.yaml
+    type: array
+type: object

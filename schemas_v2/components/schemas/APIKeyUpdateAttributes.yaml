@@ -1,0 +1,15 @@
+description: Attributes used to update an API Key.
+properties:
+  category:
+    description: The APIKeyUpdateAttributes category.
+    type: string
+  name:
+    description: Name of the API key.
+    example: API Key for submitting metrics
+    type: string
+  remote_config_read_enabled:
+    description: The APIKeyUpdateAttributes remote_config_read_enabled.
+    type: boolean
+required:
+  - name
+type: object

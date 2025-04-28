@@ -1,0 +1,17 @@
+default: name
+description: Sorting options
+enum:
+  - created_at
+  - '-created_at'
+  - last4
+  - '-last4'
+  - name
+  - '-name'
+type: string
+x-enum-varnames:
+  - CREATED_AT_ASCENDING
+  - CREATED_AT_DESCENDING
+  - LAST4_ASCENDING
+  - LAST4_DESCENDING
+  - NAME_ASCENDING
+  - NAME_DESCENDING

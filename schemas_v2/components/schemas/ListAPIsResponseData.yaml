@@ -1,0 +1,7 @@
+description: Data envelope for `ListAPIsResponse`.
+properties:
+  attributes:
+    $ref: ./ListAPIsResponseDataAttributes.yaml
+  id:
+    $ref: ./ApiID.yaml
+type: object

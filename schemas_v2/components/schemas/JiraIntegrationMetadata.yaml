@@ -1,0 +1,11 @@
+description: Incident integration metadata for the Jira integration.
+properties:
+  issues:
+    description: Array of Jira issues in this integration metadata.
+    example: []
+    items:
+      $ref: ./JiraIntegrationMetadataIssuesItem.yaml
+    type: array
+required:
+  - issues
+type: object

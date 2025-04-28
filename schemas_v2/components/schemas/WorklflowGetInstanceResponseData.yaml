@@ -1,0 +1,6 @@
+additionalProperties: {}
+description: The data of the instance response.
+properties:
+  attributes:
+    $ref: ./WorklflowGetInstanceResponseDataAttributes.yaml
+type: object

@@ -1,0 +1,12 @@
+description: Data of the IP allowlist entry object.
+properties:
+  attributes:
+    $ref: ./IPAllowlistEntryAttributes.yaml
+  id:
+    description: The unique identifier of the IP allowlist entry.
+    type: string
+  type:
+    $ref: ./IPAllowlistEntryType.yaml
+required:
+  - type
+type: object

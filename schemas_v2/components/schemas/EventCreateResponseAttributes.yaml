@@ -1,0 +1,5 @@
+description: JSON object containing all events attributes and their associated values.
+properties:
+  attributes:
+    $ref: ./EventCreateResponseAttributesAttributes.yaml
+type: object

@@ -1,0 +1,88 @@
+get:
+  description: |-
+    List endpoint returns spans that match a span search query.
+    [Results are paginated][1].
+
+    Use this endpoint to see your latest spans.
+    This endpoint is rate limited to `300` requests per hour.
+
+    [1]: /logs/guide/collect-multiple-logs-with-pagination?tab=v2api
+  operationId: ListSpansGet
+  parameters:
+    - description: Search query following spans syntax.
+      example: '@datacenter:us @role:db'
+      in: query
+      name: filter[query]
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Minimum timestamp for requested spans. Supports date-time ISO8601, date
+        math, and regular timestamps (milliseconds).
+      example: '2023-01-02T09:42:36.320Z'
+      in: query
+      name: filter[from]
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Maximum timestamp for requested spans. Supports date-time ISO8601, date
+        math, and regular timestamps (milliseconds).
+      example: '2023-01-03T09:42:36.320Z'
+      in: query
+      name: filter[to]
+      required: false
+      schema:
+        type: string
+    - description: Order of spans in results.
+      in: query
+      name: sort
+      required: false
+      schema:
+        $ref: ../components/schemas/SpansSort.yaml
+    - description: List following results with a cursor provided in the previous query.
+      example: >-
+        eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==
+      in: query
+      name: page[cursor]
+      required: false
+      schema:
+        type: string
+    - description: Maximum number of spans in the response.
+      example: 25
+      in: query
+      name: page[limit]
+      required: false
+      schema:
+        default: 10
+        format: int32
+        maximum: 1000
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SpansListResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/SpansBadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/SpansForbiddenResponse.yaml
+    '422':
+      $ref: ../components/responses/SpansUnprocessableEntityResponse.yaml
+    '429':
+      $ref: ../components/responses/SpansTooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_read
+  summary: Get a list of spans
+  tags:
+    - Spans
+  x-pagination:
+    cursorParam: page[cursor]
+    cursorPath: meta.page.after
+    limitParam: page[limit]
+    resultsPath: data

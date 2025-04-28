@@ -1,0 +1,4 @@
+description: Create a new rule.
+oneOf:
+  - $ref: ./SecurityMonitoringStandardRuleResponse.yaml
+  - $ref: ./SecurityMonitoringSignalRuleResponse.yaml

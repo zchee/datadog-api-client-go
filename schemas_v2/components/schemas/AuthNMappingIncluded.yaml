@@ -1,0 +1,5 @@
+description: Included data in the AuthN Mapping response.
+oneOf:
+  - $ref: ./SAMLAssertionAttribute.yaml
+  - $ref: ./Role.yaml
+  - $ref: ./AuthNMappingTeam.yaml

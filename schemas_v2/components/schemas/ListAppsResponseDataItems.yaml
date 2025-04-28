@@ -1,0 +1,22 @@
+description: >-
+  An app definition object. This contains only basic information about the app
+  such as ID, name, and tags.
+properties:
+  attributes:
+    $ref: ./ListAppsResponseDataItemsAttributes.yaml
+  id:
+    description: The ID of the app.
+    example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+    format: uuid
+    type: string
+  meta:
+    $ref: ./AppMeta.yaml
+  relationships:
+    $ref: ./ListAppsResponseDataItemsRelationships.yaml
+  type:
+    $ref: ./AppDefinitionType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

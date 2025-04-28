@@ -1,0 +1,86 @@
+delete:
+  description: Delete a specific suppression rule.
+  operationId: DeleteSecurityMonitoringSuppression
+  parameters:
+    - $ref: ../components/parameters/SecurityMonitoringSuppressionID.yaml
+  responses:
+    '204':
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_suppressions_write
+  summary: Delete a suppression rule
+  tags:
+    - Security Monitoring
+get:
+  description: Get the details of a specific suppression rule.
+  operationId: GetSecurityMonitoringSuppression
+  parameters:
+    - $ref: ../components/parameters/SecurityMonitoringSuppressionID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringSuppressionResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_suppressions_read
+  summary: Get a suppression rule
+  tags:
+    - Security Monitoring
+patch:
+  description: Update a specific suppression rule.
+  operationId: UpdateSecurityMonitoringSuppression
+  parameters:
+    - $ref: ../components/parameters/SecurityMonitoringSuppressionID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ../components/schemas/SecurityMonitoringSuppressionUpdateRequest.yaml
+    description: New definition of the suppression rule. Supports partial updates.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SecurityMonitoringSuppressionResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_suppressions_write
+  summary: Update a suppression rule
+  tags:
+    - Security Monitoring

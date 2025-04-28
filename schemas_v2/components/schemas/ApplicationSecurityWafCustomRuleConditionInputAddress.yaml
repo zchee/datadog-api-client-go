@@ -1,0 +1,47 @@
+description: Input from the request on which the condition should apply.
+enum:
+  - server.db.statement
+  - server.io.fs.file
+  - server.io.net.url
+  - server.sys.shell.cmd
+  - server.request.method
+  - server.request.uri.raw
+  - server.request.path_params
+  - server.request.query
+  - server.request.headers.no_cookies
+  - server.request.cookies
+  - server.request.trailers
+  - server.request.body
+  - server.response.status
+  - server.response.headers.no_cookies
+  - server.response.trailers
+  - grpc.server.request.metadata
+  - grpc.server.request.message
+  - grpc.server.method
+  - graphql.server.all_resolvers
+  - usr.id
+  - http.client_ip
+example: server.db.statement
+type: string
+x-enum-varnames:
+  - SERVER_DB_STATEMENT
+  - SERVER_IO_FS_FILE
+  - SERVER_IO_NET_URL
+  - SERVER_SYS_SHELL_CMD
+  - SERVER_REQUEST_METHOD
+  - SERVER_REQUEST_URI_RAW
+  - SERVER_REQUEST_PATH_PARAMS
+  - SERVER_REQUEST_QUERY
+  - SERVER_REQUEST_HEADERS_NO_COOKIES
+  - SERVER_REQUEST_COOKIES
+  - SERVER_REQUEST_TRAILERS
+  - SERVER_REQUEST_BODY
+  - SERVER_RESPONSE_STATUS
+  - SERVER_RESPONSE_HEADERS_NO_COOKIES
+  - SERVER_RESPONSE_TRAILERS
+  - GRPC_SERVER_REQUEST_METADATA
+  - GRPC_SERVER_REQUEST_MESSAGE
+  - GRPC_SERVER_METHOD
+  - GRAPHQL_SERVER_ALL_RESOLVERS
+  - USR_ID
+  - HTTP_CLIENT_IP

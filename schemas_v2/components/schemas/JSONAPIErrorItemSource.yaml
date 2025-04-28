@@ -1,0 +1,17 @@
+description: References to the source of the error.
+properties:
+  header:
+    description: >-
+      A string indicating the name of a single request header which caused the
+      error.
+    example: Authorization
+    type: string
+  parameter:
+    description: A string indicating which URI query parameter caused the error.
+    example: limit
+    type: string
+  pointer:
+    description: A JSON pointer to the value in the request document that caused the error.
+    example: /data/attributes/title
+    type: string
+type: object

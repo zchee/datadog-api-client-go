@@ -1,0 +1,8 @@
+description: List of groups, ordered.
+properties:
+  data:
+    description: List of groups. The order is important.
+    items:
+      $ref: ./SensitiveDataScannerGroupItem.yaml
+    type: array
+type: object

@@ -1,0 +1,21 @@
+description: Pagination links. Only present if pagination query parameters were provided.
+properties:
+  first:
+    description: Link to the first page.
+    type: string
+  last:
+    description: Link to the last page.
+    nullable: true
+    type: string
+  next:
+    description: Link to the next page.
+    nullable: true
+    type: string
+  prev:
+    description: Link to previous page.
+    nullable: true
+    type: string
+  self:
+    description: Link to current page.
+    type: string
+type: object

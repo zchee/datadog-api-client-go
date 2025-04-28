@@ -1,0 +1,31 @@
+description: Meta response containing information about the API.
+properties:
+  count_limit:
+    description: Maximum number of scanning rules allowed for the org.
+    format: int64
+    type: integer
+  group_count_limit:
+    description: Maximum number of scanning groups allowed for the org.
+    format: int64
+    type: integer
+  has_highlight_enabled:
+    default: true
+    deprecated: true
+    description: >-
+      (Deprecated) Whether or not scanned events are highlighted in Logs or RUM
+      for the org.
+    type: boolean
+  has_multi_pass_enabled:
+    deprecated: true
+    description: (Deprecated) Whether or not scanned events have multi-pass enabled.
+    type: boolean
+  is_pci_compliant:
+    description: Whether or not the org is compliant to the payment card industry standard.
+    type: boolean
+  version:
+    description: Version of the API.
+    example: 0
+    format: int64
+    minimum: 0
+    type: integer
+type: object

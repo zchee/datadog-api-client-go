@@ -1,0 +1,7 @@
+description: The filtered data type.
+enum:
+  - logs
+example: logs
+type: string
+x-enum-varnames:
+  - LOGS

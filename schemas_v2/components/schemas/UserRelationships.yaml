@@ -1,0 +1,5 @@
+description: Relationships of the user object.
+properties:
+  roles:
+    $ref: ./RelationshipToRoles.yaml
+type: object

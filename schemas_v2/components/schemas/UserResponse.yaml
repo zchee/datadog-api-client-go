@@ -1,0 +1,10 @@
+description: Response containing information about a single user.
+properties:
+  data:
+    $ref: ./User.yaml
+  included:
+    description: Array of objects related to the user.
+    items:
+      $ref: ./UserResponseIncludedItem.yaml
+    type: array
+type: object

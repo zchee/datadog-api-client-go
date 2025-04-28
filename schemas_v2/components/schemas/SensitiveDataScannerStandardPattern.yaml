@@ -1,0 +1,8 @@
+description: Data containing the standard pattern id.
+properties:
+  id:
+    description: ID of the standard pattern.
+    type: string
+  type:
+    $ref: ./SensitiveDataScannerStandardPatternType.yaml
+type: object

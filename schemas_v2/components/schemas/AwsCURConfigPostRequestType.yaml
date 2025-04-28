@@ -1,0 +1,8 @@
+default: aws_cur_config_post_request
+description: Type of AWS CUR config Post Request.
+enum:
+  - aws_cur_config_post_request
+example: aws_cur_config_post_request
+type: string
+x-enum-varnames:
+  - AWS_CUR_CONFIG_POST_REQUEST

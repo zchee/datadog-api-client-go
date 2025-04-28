@@ -1,0 +1,13 @@
+description: The definition of LeakedKeyAttributes object.
+properties:
+  date:
+    description: The LeakedKeyAttributes date.
+    example: '2017-07-21T17:32:28Z'
+    format: date-time
+    type: string
+  leak_source:
+    description: The LeakedKeyAttributes leak_source.
+    type: string
+required:
+  - date
+type: object

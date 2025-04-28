@@ -1,0 +1,10 @@
+description: Data related to the connection update.
+properties:
+  attributes:
+    $ref: ./ActionConnectionAttributesUpdate.yaml
+  type:
+    $ref: ./ActionConnectionDataType.yaml
+required:
+  - type
+  - attributes
+type: object

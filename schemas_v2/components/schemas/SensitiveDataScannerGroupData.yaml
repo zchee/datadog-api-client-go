@@ -1,0 +1,5 @@
+description: A scanning group data.
+properties:
+  data:
+    $ref: ./SensitiveDataScannerGroup.yaml
+type: object

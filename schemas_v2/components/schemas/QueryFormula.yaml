@@ -1,0 +1,11 @@
+description: A formula for calculation based on one or more queries.
+properties:
+  formula:
+    description: Formula string, referencing one or more queries with their name property.
+    example: a+b
+    type: string
+  limit:
+    $ref: ./FormulaLimit.yaml
+required:
+  - formula
+type: object

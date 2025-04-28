@@ -1,0 +1,7 @@
+description: Incident type response data.
+properties:
+  data:
+    $ref: ./IncidentTypeObject.yaml
+required:
+  - data
+type: object

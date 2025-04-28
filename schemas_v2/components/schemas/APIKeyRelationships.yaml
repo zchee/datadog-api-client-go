@@ -1,0 +1,7 @@
+description: Resources related to the API key.
+properties:
+  created_by:
+    $ref: ./RelationshipToUser.yaml
+  modified_by:
+    $ref: ./NullableRelationshipToUser.yaml
+type: object

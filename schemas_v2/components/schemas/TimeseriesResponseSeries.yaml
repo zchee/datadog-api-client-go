@@ -1,0 +1,28 @@
+description: ''
+properties:
+  group_tags:
+    $ref: ./GroupTags.yaml
+  query_index:
+    description: >-
+      The index of the query in the "formulas" array (or "queries" array if no
+      "formulas" was specified).
+    example: 0
+    format: int32
+    maximum: 2147483647
+    type: integer
+  unit:
+    description: >-
+      Detailed information about the unit.
+
+      The first element describes the "primary unit" (for example, `bytes` in
+      `bytes per second`).
+
+      The second element describes the "per unit" (for example, `second` in
+      `bytes per second`).
+
+      If the second element is not present, the API returns null.
+    items:
+      $ref: ./Unit.yaml
+    nullable: true
+    type: array
+type: object

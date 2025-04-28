@@ -1,0 +1,13 @@
+description: A dashboard within a list.
+properties:
+  id:
+    description: ID of the dashboard.
+    example: q5j-nti-fv6
+    readOnly: true
+    type: string
+  type:
+    $ref: ./DashboardType.yaml
+required:
+  - type
+  - id
+type: object

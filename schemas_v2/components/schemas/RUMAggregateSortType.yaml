@@ -1,0 +1,9 @@
+default: alphabetical
+description: The type of sorting algorithm.
+enum:
+  - alphabetical
+  - measure
+type: string
+x-enum-varnames:
+  - ALPHABETICAL
+  - MEASURE

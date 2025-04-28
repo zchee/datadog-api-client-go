@@ -1,0 +1,9 @@
+description: Include all regions. Defaults to `true`.
+properties:
+  include_all:
+    description: Include all regions.
+    example: true
+    type: boolean
+required:
+  - include_all
+type: object

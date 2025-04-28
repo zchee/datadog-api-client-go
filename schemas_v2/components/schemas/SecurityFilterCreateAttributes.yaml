@@ -1,0 +1,31 @@
+description: Object containing the attributes of the security filter to be created.
+properties:
+  exclusion_filters:
+    description: Exclusion filters to exclude some logs from the security filter.
+    example:
+      - name: Exclude staging
+        query: source:staging
+    items:
+      $ref: ./SecurityFilterExclusionFilter.yaml
+    type: array
+  filtered_data_type:
+    $ref: ./SecurityFilterFilteredDataType.yaml
+  is_enabled:
+    description: Whether the security filter is enabled.
+    example: true
+    type: boolean
+  name:
+    description: The name of the security filter.
+    example: Custom security filter
+    type: string
+  query:
+    description: The query of the security filter.
+    example: service:api
+    type: string
+required:
+  - name
+  - query
+  - exclusion_filters
+  - filtered_data_type
+  - is_enabled
+type: object

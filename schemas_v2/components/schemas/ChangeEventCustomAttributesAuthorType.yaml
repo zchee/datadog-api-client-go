@@ -1,0 +1,9 @@
+description: Author's type.
+enum:
+  - user
+  - system
+example: user
+type: string
+x-enum-varnames:
+  - USER
+  - SYSTEM

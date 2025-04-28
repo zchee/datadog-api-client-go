@@ -1,0 +1,12 @@
+description: Team create
+properties:
+  attributes:
+    $ref: ./TeamCreateAttributes.yaml
+  relationships:
+    $ref: ./TeamCreateRelationships.yaml
+  type:
+    $ref: ./TeamType.yaml
+required:
+  - attributes
+  - type
+type: object

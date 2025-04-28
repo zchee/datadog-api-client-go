@@ -1,0 +1,8 @@
+default: namespaces
+description: The `AWSNamespacesResponseData` `type`.
+enum:
+  - namespaces
+example: namespaces
+type: string
+x-enum-varnames:
+  - NAMESPACES

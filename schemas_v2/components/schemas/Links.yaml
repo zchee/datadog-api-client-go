@@ -1,0 +1,32 @@
+description: The JSON:API links related to pagination.
+properties:
+  first:
+    description: First page link.
+    example: >-
+      https://api.datadoghq.com/api/v2/security/vulnerabilities?page%5Bnumber%5D=1&page%5Btoken%5D=b82cef018aab81ed1d4bb4xb35xxfc065da7efa685fbcecdbd338f3015e3afabbbfa3a911b4984_721ee28a-zecb-4e45-9960-c42065b574f4
+    type: string
+  last:
+    description: Last page link.
+    example: >-
+      https://api.datadoghq.com/api/v2/security/vulnerabilities?page%5Bnumber%5D=15&page%5Btoken%5D=b82cef018aab81ed1d4bb4xb35xxfc065da7efa685fbcecdbd338f3015e3afabbbfa3a911b4984_721ee28a-zecb-4e45-9960-c42065b574f4
+    type: string
+  next:
+    description: Next page link.
+    example: >-
+      https://api.datadoghq.com/api/v2/security/vulnerabilities?page%5Bnumber%5D=16&page%5Btoken%5D=b82cef018aab81ed1d4bb4xb35xxfc065da7efa685fbcecdbd338f3015e3afabbbfa3a911b4984_721ee28a-zecb-4e45-9960-c42065b574f4
+    type: string
+  previous:
+    description: Previous page link.
+    example: >-
+      https://api.datadoghq.com/api/v2/security/vulnerabilities?page%5Bnumber%5D=14&page%5Btoken%5D=b82cef018aab81ed1d4bb4xb35xxfc065da7efa685fbcecdbd338f3015e3afabbbfa3a911b4984_721ee28a-zecb-4e45-9960-c42065b574f4
+    type: string
+  self:
+    description: Request link.
+    example: >-
+      https://api.datadoghq.com/api/v2/security/vulnerabilities?filter%5Btool%5D=Infra
+    type: string
+required:
+  - self
+  - first
+  - last
+type: object

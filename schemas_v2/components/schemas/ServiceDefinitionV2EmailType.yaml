@@ -1,0 +1,7 @@
+description: Contact type.
+enum:
+  - email
+example: email
+type: string
+x-enum-varnames:
+  - EMAIL

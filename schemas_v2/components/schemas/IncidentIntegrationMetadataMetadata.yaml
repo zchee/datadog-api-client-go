@@ -1,0 +1,5 @@
+description: Incident integration metadata's metadata attribute.
+oneOf:
+  - $ref: ./SlackIntegrationMetadata.yaml
+  - $ref: ./JiraIntegrationMetadata.yaml
+  - $ref: ./MSTeamsIntegrationMetadata.yaml

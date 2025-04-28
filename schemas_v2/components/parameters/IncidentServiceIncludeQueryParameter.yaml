@@ -1,0 +1,6 @@
+description: Specifies which types of related objects should be included in the response.
+in: query
+name: include
+required: false
+schema:
+  $ref: ../schemas/IncidentRelatedObject.yaml

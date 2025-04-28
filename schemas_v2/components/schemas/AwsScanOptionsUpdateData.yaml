@@ -1,0 +1,13 @@
+description: Object for the scan options of a single AWS account.
+properties:
+  attributes:
+    $ref: ./AwsScanOptionsUpdateAttributes.yaml
+  id:
+    $ref: ./AwsAccountId.yaml
+  type:
+    $ref: ./AwsScanOptionsType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

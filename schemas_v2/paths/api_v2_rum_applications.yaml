@@ -1,0 +1,49 @@
+get:
+  description: List all the RUM applications in your organization.
+  operationId: GetRUMApplications
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RUMApplicationsResponse.yaml
+      description: OK
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: List all the RUM applications
+  tags:
+    - RUM
+  x-permission:
+    operator: OR
+    permissions:
+      - rum_apps_read
+post:
+  description: Create a new RUM application in your organization.
+  operationId: CreateRUMApplication
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RUMApplicationCreateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RUMApplicationResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a new RUM application
+  tags:
+    - RUM
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - rum_apps_write

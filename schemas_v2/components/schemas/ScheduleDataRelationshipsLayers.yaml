@@ -1,0 +1,8 @@
+description: Associates layers with this schedule in a data structure.
+properties:
+  data:
+    description: An array of layer references for this schedule.
+    items:
+      $ref: ./ScheduleDataRelationshipsLayersDataItems.yaml
+    type: array
+type: object

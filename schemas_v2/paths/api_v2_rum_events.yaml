@@ -1,0 +1,89 @@
+get:
+  description: >-
+    List endpoint returns events that match a RUM search query.
+
+    [Results are paginated][1].
+
+
+    Use this endpoint to see your latest RUM events.
+
+
+    [1]:
+    https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination
+  operationId: ListRUMEvents
+  parameters:
+    - description: Search query following RUM syntax.
+      example: '@type:session @application_id:xxxx'
+      in: query
+      name: filter[query]
+      required: false
+      schema:
+        type: string
+    - description: Minimum timestamp for requested events.
+      example: '2019-01-02T09:42:36.320Z'
+      in: query
+      name: filter[from]
+      required: false
+      schema:
+        format: date-time
+        type: string
+    - description: Maximum timestamp for requested events.
+      example: '2019-01-03T09:42:36.320Z'
+      in: query
+      name: filter[to]
+      required: false
+      schema:
+        format: date-time
+        type: string
+    - description: Order of events in results.
+      in: query
+      name: sort
+      required: false
+      schema:
+        $ref: ../components/schemas/RUMSort.yaml
+    - description: List following results with a cursor provided in the previous query.
+      example: >-
+        eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==
+      in: query
+      name: page[cursor]
+      required: false
+      schema:
+        type: string
+    - description: Maximum number of events in the response.
+      example: 25
+      in: query
+      name: page[limit]
+      required: false
+      schema:
+        default: 10
+        format: int32
+        maximum: 1000
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RUMEventsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Get a list of RUM events
+  tags:
+    - RUM
+  x-pagination:
+    cursorParam: page[cursor]
+    cursorPath: meta.page.after
+    limitParam: page[limit]
+    resultsPath: data
+  x-permission:
+    operator: OPEN
+    permissions: []

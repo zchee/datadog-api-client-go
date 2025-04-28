@@ -1,0 +1,14 @@
+description: >-
+  Object representing a uniquely identified resource. Only the resource type
+  `service` is supported.
+properties:
+  name:
+    description: Resource's name.
+    example: payments_api
+    type: string
+  type:
+    $ref: ./ChangeEventCustomAttributesImpactedResourcesItemsType.yaml
+required:
+  - type
+  - name
+type: object

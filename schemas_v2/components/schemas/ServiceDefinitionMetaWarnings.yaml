@@ -1,0 +1,12 @@
+description: Schema validation warnings.
+properties:
+  instance-location:
+    description: The warning instance location.
+    type: string
+  keyword-location:
+    description: The warning keyword location.
+    type: string
+  message:
+    description: The warning message.
+    type: string
+type: object

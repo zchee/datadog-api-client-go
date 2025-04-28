@@ -1,0 +1,3 @@
+description: A single number value.
+format: double
+type: number

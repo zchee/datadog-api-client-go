@@ -1,0 +1,8 @@
+default: datadog_agent
+description: The type of the resource. The value should always be `datadog_agent`.
+enum:
+  - datadog_agent
+example: datadog_agent
+type: string
+x-enum-varnames:
+  - DATADOG_AGENT

@@ -1,0 +1,8 @@
+default: dora_incident
+description: JSON:API type for DORA incident events.
+enum:
+  - dora_incident
+example: dora_incident
+type: string
+x-enum-varnames:
+  - DORA_INCIDENT

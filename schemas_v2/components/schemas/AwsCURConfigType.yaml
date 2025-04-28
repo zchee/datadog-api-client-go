@@ -1,0 +1,8 @@
+default: aws_cur_config
+description: Type of AWS CUR config.
+enum:
+  - aws_cur_config
+example: aws_cur_config
+type: string
+x-enum-varnames:
+  - AWS_CUR_CONFIG

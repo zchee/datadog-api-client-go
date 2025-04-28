@@ -1,0 +1,9 @@
+description: Attributes describing the new list of related signals for a security signal.
+properties:
+  incident_ids:
+    $ref: ./SecurityMonitoringSignalIncidentIds.yaml
+  version:
+    $ref: ./SecurityMonitoringSignalVersion.yaml
+required:
+  - incident_ids
+type: object

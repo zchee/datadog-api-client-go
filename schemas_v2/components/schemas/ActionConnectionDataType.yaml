@@ -1,0 +1,7 @@
+description: The definition of `ActionConnectionDataType` object.
+enum:
+  - action_connection
+example: action_connection
+type: string
+x-enum-varnames:
+  - ACTION_CONNECTION

@@ -1,0 +1,26 @@
+description: Options on third party detection method.
+properties:
+  defaultNotifications:
+    description: >-
+      Notification targets for the logs that do not correspond to any of the
+      cases.
+    items:
+      description: Notification.
+      type: string
+    type: array
+  defaultStatus:
+    $ref: ./SecurityMonitoringRuleSeverity.yaml
+  rootQueries:
+    description: >-
+      Queries to be combined with third party case queries. Each of them can
+      have different group by fields, to aggregate differently based on the type
+      of alert.
+    items:
+      $ref: ./SecurityMonitoringThirdPartyRootQuery.yaml
+    type: array
+  signalTitleTemplate:
+    description: >-
+      A template for the signal title; if omitted, the title is generated based
+      on the case name.
+    type: string
+type: object

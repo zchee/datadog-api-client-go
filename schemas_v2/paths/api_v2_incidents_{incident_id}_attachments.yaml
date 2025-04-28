@@ -1,0 +1,81 @@
+get:
+  description: Get all attachments for a given incident.
+  operationId: ListIncidentAttachments
+  parameters:
+    - $ref: ../components/parameters/IncidentIDPathParameter.yaml
+    - $ref: ../components/parameters/IncidentAttachmentIncludeQueryParameter.yaml
+    - $ref: ../components/parameters/IncidentAttachmentFilterQueryParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentAttachmentsResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a list of attachments
+  tags:
+    - Incidents
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_read
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).
+patch:
+  description: >-
+    The bulk update endpoint for creating, updating, and deleting attachments
+    for a given incident.
+  operationId: UpdateIncidentAttachments
+  parameters:
+    - $ref: ../components/parameters/IncidentIDPathParameter.yaml
+    - $ref: ../components/parameters/IncidentAttachmentIncludeQueryParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/IncidentAttachmentUpdateRequest.yaml
+    description: Incident Attachment Payload.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentAttachmentUpdateResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create, update, and delete incident attachments
+  tags:
+    - Incidents
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_write
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

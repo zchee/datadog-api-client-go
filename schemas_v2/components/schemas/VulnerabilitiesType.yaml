@@ -1,0 +1,7 @@
+description: The JSON:API type.
+enum:
+  - vulnerabilities
+example: vulnerabilities
+type: string
+x-enum-varnames:
+  - VULNERABILITIES

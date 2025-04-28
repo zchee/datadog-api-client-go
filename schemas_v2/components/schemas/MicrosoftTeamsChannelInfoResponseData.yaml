@@ -1,0 +1,13 @@
+description: Channel data from a response.
+properties:
+  attributes:
+    $ref: ./MicrosoftTeamsChannelInfoResponseAttributes.yaml
+  id:
+    description: The ID of the channel.
+    example: 19:b41k24b14bn1nwffkernfkwrnfneubgkr@thread.tacv2
+    maxLength: 255
+    minLength: 1
+    type: string
+  type:
+    $ref: ./MicrosoftTeamsChannelInfoType.yaml
+type: object

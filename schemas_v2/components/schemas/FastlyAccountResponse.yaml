@@ -1,0 +1,5 @@
+description: The expected response schema when getting a Fastly account.
+properties:
+  data:
+    $ref: ./FastlyAccountResponseData.yaml
+type: object

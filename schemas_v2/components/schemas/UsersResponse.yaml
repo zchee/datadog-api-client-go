@@ -1,0 +1,16 @@
+description: Response containing information about multiple users.
+properties:
+  data:
+    description: Array of returned users.
+    items:
+      $ref: ./User.yaml
+    type: array
+  included:
+    description: Array of objects related to the users.
+    items:
+      $ref: ./UserResponseIncludedItem.yaml
+    type: array
+  meta:
+    $ref: ./ResponseMetaAttributes.yaml
+readOnly: true
+type: object

@@ -1,0 +1,9 @@
+description: >-
+  Tags to apply to all hosts and metrics reporting for this account. Defaults to
+  `[]`.
+items:
+  description: Tag in the form `key:value`.
+  example: env:prod
+  type: string
+nullable: true
+type: array

@@ -1,0 +1,35 @@
+description: The metadata of the data deletion response.
+properties:
+  count_product:
+    additionalProperties:
+      format: int64
+      type: integer
+    description: The total deletion requests created by product.
+    example:
+      logs: 8
+      rum: 7
+    type: object
+  count_status:
+    additionalProperties:
+      format: int64
+      type: integer
+    description: The total deletion requests created by status.
+    example:
+      completed: 10
+      pending: 5
+    type: object
+  next_page:
+    description: >-
+      The next page when searching deletion requests created in the current
+      organization.
+    example: cGFnZTI=
+    type: string
+  product:
+    description: The product of the deletion request.
+    example: logs
+    type: string
+  request_status:
+    description: The status of the executed request.
+    example: canceled
+    type: string
+type: object

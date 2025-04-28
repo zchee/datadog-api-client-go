@@ -1,0 +1,17 @@
+description: >-
+  Attributes of the notification rule patch request. It is required to update
+  the version of the rule when patching it.
+properties:
+  enabled:
+    $ref: ./Enabled.yaml
+  name:
+    $ref: ./RuleName.yaml
+  selectors:
+    $ref: ./Selectors.yaml
+  targets:
+    $ref: ./Targets.yaml
+  time_aggregation:
+    $ref: ./TimeAggregation.yaml
+  version:
+    $ref: ./Version.yaml
+type: object

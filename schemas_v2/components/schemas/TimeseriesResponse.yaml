@@ -1,0 +1,7 @@
+description: A message containing the response to a timeseries query.
+properties:
+  attributes:
+    $ref: ./TimeseriesResponseAttributes.yaml
+  type:
+    $ref: ./TimeseriesFormulaResponseType.yaml
+type: object

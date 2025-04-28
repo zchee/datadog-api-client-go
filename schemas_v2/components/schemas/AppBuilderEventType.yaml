@@ -1,0 +1,21 @@
+description: The response to the event.
+enum:
+  - custom
+  - setComponentState
+  - triggerQuery
+  - openModal
+  - closeModal
+  - openUrl
+  - downloadFile
+  - setStateVariableValue
+example: triggerQuery
+type: string
+x-enum-varnames:
+  - CUSTOM
+  - SETCOMPONENTSTATE
+  - TRIGGERQUERY
+  - OPENMODAL
+  - CLOSEMODAL
+  - OPENURL
+  - DOWNLOADFILE
+  - SETSTATEVARIABLEVALUE

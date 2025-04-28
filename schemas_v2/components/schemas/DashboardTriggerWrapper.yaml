@@ -1,0 +1,10 @@
+description: Schema for a Dashboard-based trigger.
+properties:
+  dashboardTrigger:
+    description: Trigger a workflow from a Dashboard.
+    type: object
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - dashboardTrigger
+type: object

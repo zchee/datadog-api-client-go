@@ -1,0 +1,8 @@
+description: Denotes whether mapping keys were available for this endpoint.
+enum:
+  - OK
+  - NOT_FOUND
+type: string
+x-enum-varnames:
+  - OK
+  - NOT_FOUND

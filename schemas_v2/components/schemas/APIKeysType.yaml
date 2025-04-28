@@ -1,0 +1,8 @@
+default: api_keys
+description: API Keys resource type.
+enum:
+  - api_keys
+example: api_keys
+type: string
+x-enum-varnames:
+  - API_KEYS

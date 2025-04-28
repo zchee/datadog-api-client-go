@@ -1,0 +1,15 @@
+description: JSON:API request for updating a Confluent resource.
+properties:
+  attributes:
+    $ref: ./ConfluentResourceRequestAttributes.yaml
+  id:
+    description: The ID associated with a Confluent resource.
+    example: resource-id-123
+    type: string
+  type:
+    $ref: ./ConfluentResourceType.yaml
+required:
+  - attributes
+  - type
+  - id
+type: object

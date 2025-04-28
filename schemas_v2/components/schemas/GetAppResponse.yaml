@@ -1,0 +1,14 @@
+description: The full app definition response object.
+properties:
+  data:
+    $ref: ./GetAppResponseData.yaml
+  included:
+    description: Data on the version of the app that was published.
+    items:
+      $ref: ./Deployment.yaml
+    type: array
+  meta:
+    $ref: ./AppMeta.yaml
+  relationship:
+    $ref: ./AppRelationship.yaml
+type: object

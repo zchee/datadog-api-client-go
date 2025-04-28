@@ -1,0 +1,93 @@
+delete:
+  description: Delete an AWS Account Integration Config by config ID.
+  operationId: DeleteAWSAccount
+  parameters:
+    - $ref: ../components/parameters/AWSAccountConfigIDPathParameter.yaml
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete an AWS integration
+  tags:
+    - AWS Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configurations_manage
+  x-unstable: |-
+    **Note: This endpoint is in Preview. If you have any feedback,
+    contact [Datadog support](https://docs.datadoghq.com/help/).**
+get:
+  description: Get an AWS Account Integration Config by config ID.
+  operationId: GetAWSAccount
+  parameters:
+    - $ref: ../components/parameters/AWSAccountConfigIDPathParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AWSAccountResponse.yaml
+      description: AWS Account object
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get an AWS integration by config ID
+  tags:
+    - AWS Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_read
+  x-unstable: |-
+    **Note: This endpoint is in Preview. If you have any feedback,
+    contact [Datadog support](https://docs.datadoghq.com/help/).**
+patch:
+  description: Update an AWS Account Integration Config by config ID.
+  operationId: UpdateAWSAccount
+  parameters:
+    - $ref: ../components/parameters/AWSAccountConfigIDPathParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AWSAccountUpdateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AWSAccountResponse.yaml
+      description: AWS Account object
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update an AWS integration
+  tags:
+    - AWS Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_edit
+  x-unstable: |-
+    **Note: This endpoint is in Preview. If you have any feedback,
+    contact [Datadog support](https://docs.datadoghq.com/help/).**

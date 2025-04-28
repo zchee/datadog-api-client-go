@@ -1,0 +1,46 @@
+delete:
+  description: Delete Agentless scan options for an AWS account.
+  operationId: DeleteAwsScanOptions
+  parameters:
+    - $ref: ../components/parameters/AwsAccountId.yaml
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete AWS Scan Options
+  tags:
+    - Agentless Scanning
+patch:
+  description: Update the Agentless scan options for an activated account.
+  operationId: UpdateAwsScanOptions
+  parameters:
+    - $ref: ../components/parameters/AwsAccountId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AwsScanOptionsUpdateRequest.yaml
+    description: New definition of the scan options.
+    required: true
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Patch AWS Scan Options
+  tags:
+    - Agentless Scanning
+  x-codegen-request-body-name: body

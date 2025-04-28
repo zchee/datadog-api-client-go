@@ -1,0 +1,7 @@
+description: Team membership request
+properties:
+  data:
+    $ref: ./UserTeamCreate.yaml
+required:
+  - data
+type: object

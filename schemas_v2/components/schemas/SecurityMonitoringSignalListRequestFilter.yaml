@@ -1,0 +1,17 @@
+description: Search filters for listing security signals.
+properties:
+  from:
+    description: The minimum timestamp for requested security signals.
+    example: '2019-01-02T09:42:36.320Z'
+    format: date-time
+    type: string
+  query:
+    description: Search query for listing security signals.
+    example: security:attack status:high
+    type: string
+  to:
+    description: The maximum timestamp for requested security signals.
+    example: '2019-01-03T09:42:36.320Z'
+    format: date-time
+    type: string
+type: object

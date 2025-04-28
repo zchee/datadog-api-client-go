@@ -1,0 +1,12 @@
+description: A downtime match.
+properties:
+  attributes:
+    $ref: ./MonitorDowntimeMatchResponseAttributes.yaml
+  id:
+    description: The downtime ID.
+    example: 00000000-0000-1234-0000-000000000000
+    nullable: true
+    type: string
+  type:
+    $ref: ./MonitorDowntimeMatchResourceType.yaml
+type: object

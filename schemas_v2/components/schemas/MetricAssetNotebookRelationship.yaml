@@ -1,0 +1,7 @@
+description: An object of type `notebook` that can be referenced in the `included` data.
+properties:
+  id:
+    $ref: ./MetricNotebookID.yaml
+  type:
+    $ref: ./MetricNotebookType.yaml
+type: object

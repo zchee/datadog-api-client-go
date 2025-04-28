@@ -1,0 +1,47 @@
+get:
+  description: >-
+    View distinct metrics volumes for the given metric name.
+
+
+    Custom metrics generated in-app from other products will return `null` for
+    ingested volumes.
+  operationId: ListVolumesByMetricName
+  parameters:
+    - $ref: ../components/parameters/MetricName.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MetricVolumesResponse.yaml
+      description: Success
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Too Many Requests
+  summary: List distinct metric volumes by metric name
+  tags:
+    - Metrics
+  x-permission:
+    operator: OPEN
+    permissions: []

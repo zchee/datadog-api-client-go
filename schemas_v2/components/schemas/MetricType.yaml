@@ -1,0 +1,8 @@
+default: metrics
+description: The metric resource type.
+enum:
+  - metrics
+example: metrics
+type: string
+x-enum-varnames:
+  - METRICS

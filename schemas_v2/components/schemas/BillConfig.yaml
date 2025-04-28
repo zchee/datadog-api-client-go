@@ -1,0 +1,24 @@
+description: Bill config.
+properties:
+  export_name:
+    description: The name of the configured Azure Export.
+    example: dd-actual-export
+    type: string
+  export_path:
+    description: The path where the Azure Export is saved.
+    example: dd-export-path
+    type: string
+  storage_account:
+    description: The name of the storage account where the Azure Export is saved.
+    example: dd-storage-account
+    type: string
+  storage_container:
+    description: The name of the storage container where the Azure Export is saved.
+    example: dd-storage-container
+    type: string
+required:
+  - export_name
+  - export_path
+  - storage_account
+  - storage_container
+type: object

@@ -1,0 +1,9 @@
+additionalProperties:
+  type: string
+description: >-
+  A map of key-value parameters or environment variables that were defined for
+  the pipeline.
+example:
+  LOG_LEVEL: debug
+nullable: true
+type: object

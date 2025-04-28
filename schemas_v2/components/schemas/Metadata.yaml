@@ -1,0 +1,22 @@
+description: The metadata related to this request.
+properties:
+  count:
+    description: Number of entities included in the response.
+    example: 150
+    format: int64
+    type: integer
+  token:
+    description: The token that identifies the request.
+    example: >-
+      b82cef018aab81ed1d4bb4xb35xxfc065da7efa685fbcecdbd338f3015e3afabbbfa3a911b4984_721ee28a-zecb-4e45-9960-c42065b574f4
+    type: string
+  total:
+    description: Total number of entities across all pages.
+    example: 152431
+    format: int64
+    type: integer
+required:
+  - count
+  - total
+  - token
+type: object

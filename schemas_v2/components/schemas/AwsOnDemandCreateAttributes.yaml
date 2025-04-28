@@ -1,0 +1,11 @@
+description: Attributes for the AWS on demand task.
+properties:
+  arn:
+    description: >-
+      The arn of the resource to scan. Agentless supports the scan of EC2
+      instances, lambda functions, AMI, ECR, RDS and S3 buckets.
+    example: arn:aws:ec2:us-east-1:727000456123:instance/i-0eabb50529b67a1ba
+    type: string
+required:
+  - arn
+type: object

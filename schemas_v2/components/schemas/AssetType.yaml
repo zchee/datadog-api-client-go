@@ -1,0 +1,15 @@
+description: The asset type
+enum:
+  - Repository
+  - Service
+  - Host
+  - HostImage
+  - Image
+example: Repository
+type: string
+x-enum-varnames:
+  - REPOSITORY
+  - SERVICE
+  - HOST
+  - HOSTIMAGE
+  - IMAGE

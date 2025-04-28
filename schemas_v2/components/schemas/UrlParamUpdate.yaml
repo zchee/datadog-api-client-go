@@ -1,0 +1,15 @@
+description: The definition of `UrlParamUpdate` object.
+properties:
+  deleted:
+    description: Should the header be deleted.
+    type: boolean
+  name:
+    $ref: ./TokenName.yaml
+    example: MyUrlParameter
+  value:
+    description: The `UrlParamUpdate` `value`.
+    example: Some Url Parameter value
+    type: string
+required:
+  - name
+type: object

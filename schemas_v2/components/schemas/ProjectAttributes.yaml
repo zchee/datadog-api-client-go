@@ -1,0 +1,10 @@
+description: Project attributes
+properties:
+  key:
+    description: The project's key
+    example: CASEM
+    type: string
+  name:
+    description: Project's name
+    type: string
+type: object

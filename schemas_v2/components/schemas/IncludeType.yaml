@@ -1,0 +1,14 @@
+description: Supported include types.
+enum:
+  - schema
+  - raw_schema
+  - oncall
+  - incident
+  - relation
+type: string
+x-enum-varnames:
+  - SCHEMA
+  - RAW_SCHEMA
+  - ONCALL
+  - INCIDENT
+  - RELATION

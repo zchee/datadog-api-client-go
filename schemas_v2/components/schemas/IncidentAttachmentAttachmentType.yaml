@@ -1,0 +1,9 @@
+description: The type of the incident attachment attributes.
+enum:
+  - link
+  - postmortem
+example: link
+type: string
+x-enum-varnames:
+  - LINK
+  - POSTMORTEM

@@ -1,0 +1,12 @@
+description: Facet data numeric attributes of an incident.
+properties:
+  aggregates:
+    $ref: ./IncidentSearchResponseNumericFacetDataAggregates.yaml
+  name:
+    description: Name of the incident property field.
+    example: time_to_repair
+    type: string
+required:
+  - name
+  - aggregates
+type: object

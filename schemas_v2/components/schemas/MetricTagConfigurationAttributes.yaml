@@ -1,0 +1,44 @@
+description: Object containing the definition of a metric tag configuration attributes.
+properties:
+  aggregations:
+    $ref: ./MetricCustomAggregations.yaml
+  created_at:
+    description: Timestamp when the tag configuration was created.
+    example: '2020-03-25T09:48:37.463835Z'
+    format: date-time
+    type: string
+  exclude_tags_mode:
+    description: >-
+      When set to true, the configuration will exclude the configured tags and
+      include any other submitted tags.
+
+      When set to false, the configuration will include the configured tags and
+      exclude any other submitted tags.
+
+      Defaults to false. Requires `tags` property.
+    type: boolean
+  include_percentiles:
+    description: >-
+      Toggle to include or exclude percentile aggregations for distribution
+      metrics.
+
+      Only present when the `metric_type` is `distribution`.
+    example: true
+    type: boolean
+  metric_type:
+    $ref: ./MetricTagConfigurationMetricTypes.yaml
+  modified_at:
+    description: Timestamp when the tag configuration was last modified.
+    example: '2020-03-25T09:48:37.463835Z'
+    format: date-time
+    type: string
+  tags:
+    description: List of tag keys on which to group.
+    example:
+      - app
+      - datacenter
+    items:
+      description: Tag keys to group by.
+      type: string
+    type: array
+type: object

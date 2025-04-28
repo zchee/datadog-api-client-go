@@ -1,0 +1,3 @@
+description: ID of retention filter in UUID.
+example: 051601eb-54a0-abc0-03f9-cc02efa18892
+type: string

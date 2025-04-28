@@ -1,0 +1,13 @@
+description: >-
+  The category of the WAF Rule, can be either `business_logic`, `attack_attempt`
+  or `security_response`.
+enum:
+  - attack_attempt
+  - business_logic
+  - security_response
+example: business_logic
+type: string
+x-enum-varnames:
+  - ATTACK_ATTEMPT
+  - BUSINESS_LOGIC
+  - SECURITY_RESPONSE

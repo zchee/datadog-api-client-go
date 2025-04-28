@@ -1,0 +1,14 @@
+description: |-
+  Holds the relationship data linking this schedule to a particular team,
+  identified by `id` and `type`.
+properties:
+  id:
+    description: A unique identifier for the team.
+    example: ''
+    type: string
+  type:
+    $ref: ./ScheduleCreateRequestDataRelationshipsTeamsDataItemsType.yaml
+required:
+  - type
+  - id
+type: object

@@ -1,0 +1,4 @@
+description: Array of rule details.
+items:
+  $ref: ./OutcomesResponseIncludedItem.yaml
+type: array

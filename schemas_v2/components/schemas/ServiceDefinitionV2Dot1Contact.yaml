@@ -1,0 +1,5 @@
+description: Service owner's contacts information.
+oneOf:
+  - $ref: ./ServiceDefinitionV2Dot1Email.yaml
+  - $ref: ./ServiceDefinitionV2Dot1Slack.yaml
+  - $ref: ./ServiceDefinitionV2Dot1MSTeams.yaml

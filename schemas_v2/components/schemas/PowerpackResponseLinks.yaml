@@ -1,0 +1,23 @@
+description: Links attributes.
+properties:
+  first:
+    description: Link to last page.
+    type: string
+  last:
+    description: Link to first page.
+    example: https://app.datadoghq.com/api/v2/powerpacks?page[offset]=0&page[limit]=25
+    nullable: true
+    type: string
+  next:
+    description: Link for the next set of results.
+    example: https://app.datadoghq.com/api/v2/powerpacks?page[offset]=25&page[limit]=25
+    type: string
+  prev:
+    description: Link for the previous set of results.
+    nullable: true
+    type: string
+  self:
+    description: Link to current page.
+    example: https://app.datadoghq.com/api/v2/powerpacks
+    type: string
+type: object

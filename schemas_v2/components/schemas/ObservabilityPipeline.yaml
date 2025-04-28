@@ -1,0 +1,7 @@
+description: Top-level schema representing a pipeline.
+properties:
+  data:
+    $ref: ./ObservabilityPipelineData.yaml
+required:
+  - data
+type: object

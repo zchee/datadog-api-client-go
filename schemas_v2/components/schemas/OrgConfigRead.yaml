@@ -1,0 +1,15 @@
+description: A single Org Config.
+properties:
+  attributes:
+    $ref: ./OrgConfigReadAttributes.yaml
+  id:
+    description: A unique identifier for an Org Config.
+    example: abcd1234
+    type: string
+  type:
+    $ref: ./OrgConfigType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

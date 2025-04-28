@@ -1,0 +1,13 @@
+description: AWS Logs Services response body
+properties:
+  logs_services:
+    description: List of AWS services that can send logs to Datadog
+    example:
+      - s3
+    items:
+      example: s3
+      type: string
+    type: array
+required:
+  - logs_services
+type: object

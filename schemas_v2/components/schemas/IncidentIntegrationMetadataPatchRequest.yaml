@@ -1,0 +1,7 @@
+description: Patch request for an incident integration metadata.
+properties:
+  data:
+    $ref: ./IncidentIntegrationMetadataPatchData.yaml
+required:
+  - data
+type: object

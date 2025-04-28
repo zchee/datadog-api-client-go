@@ -1,0 +1,5 @@
+description: Relationships of the role object returned by the API.
+properties:
+  permissions:
+    $ref: ./RelationshipToPermissions.yaml
+type: object

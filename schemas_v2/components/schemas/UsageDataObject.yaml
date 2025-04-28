@@ -1,0 +1,10 @@
+description: Usage data.
+properties:
+  attributes:
+    $ref: ./UsageAttributesObject.yaml
+  id:
+    description: Unique ID of the response.
+    type: string
+  type:
+    $ref: ./UsageTimeSeriesType.yaml
+type: object

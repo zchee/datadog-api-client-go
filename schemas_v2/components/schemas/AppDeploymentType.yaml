@@ -1,0 +1,8 @@
+default: deployment
+description: The deployment type.
+enum:
+  - deployment
+example: deployment
+type: string
+x-enum-varnames:
+  - DEPLOYMENT

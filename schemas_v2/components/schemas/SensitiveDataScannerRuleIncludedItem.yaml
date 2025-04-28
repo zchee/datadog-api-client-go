@@ -1,0 +1,12 @@
+description: A Scanning Rule included item.
+properties:
+  attributes:
+    $ref: ./SensitiveDataScannerRuleAttributes.yaml
+  id:
+    description: ID of the rule.
+    type: string
+  relationships:
+    $ref: ./SensitiveDataScannerRuleRelationships.yaml
+  type:
+    $ref: ./SensitiveDataScannerRuleType.yaml
+type: object

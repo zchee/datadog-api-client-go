@@ -1,0 +1,10 @@
+description: >-
+  A object containing the list of monitors that can be referenced in the
+  `included` data.
+properties:
+  data:
+    description: A list of monitors that can be referenced in the `included` data.
+    items:
+      $ref: ./MetricAssetMonitorRelationship.yaml
+    type: array
+type: object

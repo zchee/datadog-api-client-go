@@ -1,0 +1,94 @@
+delete:
+  description: >-
+    Delete a specific retention filter from your organization.
+
+
+    Default filters with types spans-errors-sampling-processor and
+    spans-appsec-sampling-processor cannot be deleted.
+  operationId: DeleteApmRetentionFilter
+  parameters:
+    - $ref: ../components/parameters/RetentionFilterIdParam.yaml
+  responses:
+    '200':
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a retention filter
+  tags:
+    - APM Retention Filters
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_retention_filter_write
+      - apm_pipelines_write
+get:
+  description: Get an APM retention filter.
+  operationId: GetApmRetentionFilter
+  parameters:
+    - $ref: ../components/parameters/RetentionFilterIdParam.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RetentionFilterResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a given APM retention filter
+  tags:
+    - APM Retention Filters
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_retention_filter_read
+      - apm_pipelines_read
+put:
+  description: >-
+    Update a retention filter from your organization.
+
+
+    Default filters (filters with types spans-errors-sampling-processor and
+    spans-appsec-sampling-processor) cannot be renamed or removed.
+  operationId: UpdateApmRetentionFilter
+  parameters:
+    - $ref: ../components/parameters/RetentionFilterIdParam.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RetentionFilterUpdateRequest.yaml
+    description: The updated definition of the retention filter.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RetentionFilterResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a retention filter
+  tags:
+    - APM Retention Filters
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_retention_filter_write
+      - apm_pipelines_write

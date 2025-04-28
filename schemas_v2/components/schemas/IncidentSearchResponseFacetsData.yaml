@@ -1,0 +1,58 @@
+description: Facet data for incidents returned by a search query.
+properties:
+  commander:
+    description: Facet data for incident commander users.
+    items:
+      $ref: ./IncidentSearchResponseUserFacetData.yaml
+    type: array
+  created_by:
+    description: Facet data for incident creator users.
+    items:
+      $ref: ./IncidentSearchResponseUserFacetData.yaml
+    type: array
+  fields:
+    description: Facet data for incident property fields.
+    items:
+      $ref: ./IncidentSearchResponsePropertyFieldFacetData.yaml
+    type: array
+  impact:
+    description: Facet data for incident impact attributes.
+    items:
+      $ref: ./IncidentSearchResponseFieldFacetData.yaml
+    type: array
+  last_modified_by:
+    description: Facet data for incident last modified by users.
+    items:
+      $ref: ./IncidentSearchResponseUserFacetData.yaml
+    type: array
+  postmortem:
+    description: Facet data for incident postmortem existence.
+    items:
+      $ref: ./IncidentSearchResponseFieldFacetData.yaml
+    type: array
+  responder:
+    description: Facet data for incident responder users.
+    items:
+      $ref: ./IncidentSearchResponseUserFacetData.yaml
+    type: array
+  severity:
+    description: Facet data for incident severity attributes.
+    items:
+      $ref: ./IncidentSearchResponseFieldFacetData.yaml
+    type: array
+  state:
+    description: Facet data for incident state attributes.
+    items:
+      $ref: ./IncidentSearchResponseFieldFacetData.yaml
+    type: array
+  time_to_repair:
+    description: Facet data for incident time to repair metrics.
+    items:
+      $ref: ./IncidentSearchResponseNumericFacetData.yaml
+    type: array
+  time_to_resolve:
+    description: Facet data for incident time to resolve metrics.
+    items:
+      $ref: ./IncidentSearchResponseNumericFacetData.yaml
+    type: array
+type: object

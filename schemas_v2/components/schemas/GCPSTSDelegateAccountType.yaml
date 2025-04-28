@@ -1,0 +1,8 @@
+default: gcp_sts_delegate
+description: The type of account.
+enum:
+  - gcp_sts_delegate
+example: gcp_sts_delegate
+type: string
+x-enum-varnames:
+  - GCP_STS_DELEGATE

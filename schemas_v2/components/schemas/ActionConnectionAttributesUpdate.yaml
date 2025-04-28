@@ -1,0 +1,9 @@
+description: The definition of `ActionConnectionAttributesUpdate` object.
+properties:
+  integration:
+    $ref: ./ActionConnectionIntegrationUpdate.yaml
+  name:
+    description: Name of the connection
+    example: My AWS Connection
+    type: string
+type: object

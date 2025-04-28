@@ -1,0 +1,19 @@
+description: >-
+  Contains all data needed to update an existing schedule, including its
+  attributes (such as name, layers, or tags) and any relationships to teams.
+properties:
+  attributes:
+    $ref: ./ScheduleUpdateRequestDataAttributes.yaml
+  id:
+    description: The ID of the schedule to be updated.
+    example: 3653d3c6-0c75-11ea-ad28-fb5701eabc7d
+    type: string
+  relationships:
+    $ref: ./ScheduleUpdateRequestDataRelationships.yaml
+  type:
+    $ref: ./ScheduleUpdateRequestDataType.yaml
+required:
+  - type
+  - id
+  - attributes
+type: object

@@ -1,0 +1,35 @@
+patch:
+  description: Cancel a historical job.
+  operationId: CancelHistoricalJob
+  parameters:
+    - $ref: ../components/parameters/HistoricalJobID.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/ConcurrentModificationResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - security_monitoring_rules_write
+  summary: Cancel a historical job
+  tags:
+    - Security Monitoring
+  x-permission:
+    operator: OR
+    permissions:
+      - security_monitoring_rules_write
+  x-unstable: |-
+    **Note**: This endpoint is in beta and may be subject to changes.
+    Please check the documentation regularly for updates.

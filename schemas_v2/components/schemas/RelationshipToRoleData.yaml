@@ -1,0 +1,9 @@
+description: Relationship to role object.
+properties:
+  id:
+    description: The unique identifier of the role.
+    example: 3653d3c6-0c75-11ea-ad28-fb5701eabc7d
+    type: string
+  type:
+    $ref: ./RolesType.yaml
+type: object

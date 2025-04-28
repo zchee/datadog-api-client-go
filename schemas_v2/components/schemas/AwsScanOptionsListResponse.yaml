@@ -1,0 +1,8 @@
+description: Response object that includes a list of AWS scan options.
+properties:
+  data:
+    description: A list of AWS scan options.
+    items:
+      $ref: ./AwsScanOptionsData.yaml
+    type: array
+type: object

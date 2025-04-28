@@ -1,0 +1,19 @@
+description: Container Image breakdown by supported platform.
+properties:
+  built_at:
+    description: Time the platform-specific Container Image was built.
+    type: string
+  os_architecture:
+    description: Operating System architecture supported by the Container Image.
+    type: string
+  os_name:
+    description: Operating System name supported by the Container Image.
+    type: string
+  os_version:
+    description: Operating System version supported by the Container Image.
+    type: string
+  size:
+    description: Size of the platform-specific Container Image.
+    format: int64
+    type: integer
+type: object

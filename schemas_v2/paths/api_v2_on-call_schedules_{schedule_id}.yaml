@@ -1,0 +1,117 @@
+delete:
+  description: Delete an on-call schedule
+  operationId: DeleteOnCallSchedule
+  parameters:
+    - description: The ID of the schedule
+      in: path
+      name: schedule_id
+      required: true
+      schema:
+        example: 3653d3c6-0c75-11ea-ad28-fb5701eabc7d
+        type: string
+  responses:
+    '204':
+      description: No Content
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Delete on-call schedule
+  tags:
+    - On-Call
+get:
+  description: Get an on-call schedule
+  operationId: GetOnCallSchedule
+  parameters:
+    - description: >-
+        Comma-separated list of included relationships to be returned. Allowed
+        values: `teams`, `layers`, `layers.members`, `layers.members.user`.
+      in: query
+      name: include
+      schema:
+        type: string
+    - description: The ID of the schedule
+      in: path
+      name: schedule_id
+      required: true
+      schema:
+        example: 3653d3c6-0c75-11ea-ad28-fb5701eabc7d
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Schedule.yaml
+      description: OK
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Get on-call schedule
+  tags:
+    - On-Call
+put:
+  description: Update a new on-call schedule
+  operationId: UpdateOnCallSchedule
+  parameters:
+    - description: >-
+        Comma-separated list of included relationships to be returned. Allowed
+        values: `teams`, `layers`, `layers.members`, `layers.members.user`.
+      in: query
+      name: include
+      schema:
+        type: string
+    - description: The ID of the schedule
+      in: path
+      name: schedule_id
+      required: true
+      schema:
+        example: 3653d3c6-0c75-11ea-ad28-fb5701eabc7d
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ScheduleUpdateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Schedule.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ: []
+  summary: Update on-call schedule
+  tags:
+    - On-Call

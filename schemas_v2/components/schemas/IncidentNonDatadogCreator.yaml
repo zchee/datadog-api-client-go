@@ -1,0 +1,10 @@
+description: Incident's non Datadog creator.
+nullable: true
+properties:
+  image_48_px:
+    description: Non Datadog creator `48px` image.
+    type: string
+  name:
+    description: Non Datadog creator name.
+    type: string
+type: object

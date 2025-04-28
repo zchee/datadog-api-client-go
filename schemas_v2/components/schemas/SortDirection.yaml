@@ -1,0 +1,9 @@
+default: desc
+description: The direction to sort by.
+enum:
+  - desc
+  - asc
+type: string
+x-enum-varnames:
+  - DESC
+  - ASC

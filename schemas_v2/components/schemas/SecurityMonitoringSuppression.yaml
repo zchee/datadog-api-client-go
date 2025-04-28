@@ -1,0 +1,9 @@
+description: The suppression rule's properties.
+properties:
+  attributes:
+    $ref: ./SecurityMonitoringSuppressionAttributes.yaml
+  id:
+    $ref: ./SecurityMonitoringSuppressionID.yaml
+  type:
+    $ref: ./SecurityMonitoringSuppressionType.yaml
+type: object

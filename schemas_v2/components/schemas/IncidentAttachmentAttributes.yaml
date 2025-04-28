@@ -1,0 +1,4 @@
+description: The attributes object for an attachment.
+oneOf:
+  - $ref: ./IncidentAttachmentPostmortemAttributes.yaml
+  - $ref: ./IncidentAttachmentLinkAttributes.yaml

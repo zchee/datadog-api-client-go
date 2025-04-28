@@ -1,0 +1,11 @@
+description: The definition of ListTagsResponseDataAttributes object.
+properties:
+  tags:
+    description: The list of tags
+    example:
+      - tag:test
+      - tag:testbis
+    items:
+      type: string
+    type: array
+type: object

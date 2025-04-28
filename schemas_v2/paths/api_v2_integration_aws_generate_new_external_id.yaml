@@ -1,0 +1,24 @@
+post:
+  description: Generate a new external ID for AWS role-based authentication.
+  operationId: CreateNewAWSExternalID
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AWSNewExternalIDResponse.yaml
+      description: AWS External ID object
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Generate a new external ID
+  tags:
+    - AWS Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - aws_configuration_edit
+  x-unstable: |-
+    **Note: This endpoint is in Preview. If you have any feedback,
+    contact [Datadog support](https://docs.datadoghq.com/help/).**

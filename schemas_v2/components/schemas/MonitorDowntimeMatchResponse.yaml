@@ -1,0 +1,10 @@
+description: Response for retrieving all downtime matches for a monitor.
+properties:
+  data:
+    description: An array of downtime matches.
+    items:
+      $ref: ./MonitorDowntimeMatchResponseData.yaml
+    type: array
+  meta:
+    $ref: ./DowntimeMeta.yaml
+type: object

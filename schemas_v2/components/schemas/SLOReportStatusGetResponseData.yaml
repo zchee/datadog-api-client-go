@@ -1,0 +1,13 @@
+description: The data portion of the SLO report status response.
+properties:
+  attributes:
+    $ref: ./SLOReportStatusGetResponseAttributes.yaml
+  id:
+    description: The ID of the report job.
+    example: dc8d92aa-e0af-11ee-af21-1feeaccaa3a3
+    type: string
+  type:
+    description: The type of ID.
+    example: report_id
+    type: string
+type: object

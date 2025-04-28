@@ -1,0 +1,7 @@
+description: The user's role within the team
+enum:
+  - admin
+nullable: true
+type: string
+x-enum-varnames:
+  - ADMIN

@@ -1,0 +1,8 @@
+default: event
+description: Type of the event.
+enum:
+  - event
+example: event
+type: string
+x-enum-varnames:
+  - EVENT

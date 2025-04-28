@@ -1,0 +1,9 @@
+description: The evaluation of the finding.
+enum:
+  - pass
+  - fail
+example: pass
+type: string
+x-enum-varnames:
+  - PASS
+  - FAIL

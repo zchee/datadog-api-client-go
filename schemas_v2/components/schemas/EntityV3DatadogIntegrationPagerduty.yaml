@@ -1,0 +1,11 @@
+additionalProperties: false
+description: A PagerDuty integration schema.
+properties:
+  serviceURL:
+    description: The service URL for the PagerDuty integration.
+    example: https://www.pagerduty.com/service-directory/Pshopping-cart
+    minLength: 1
+    type: string
+required:
+  - serviceURL
+type: object

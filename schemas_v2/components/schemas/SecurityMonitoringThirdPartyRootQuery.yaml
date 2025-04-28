@@ -1,0 +1,13 @@
+description: A query to be combined with the third party case query.
+properties:
+  groupByFields:
+    description: Fields to group by.
+    items:
+      description: Field.
+      type: string
+    type: array
+  query:
+    description: Query to run on logs.
+    example: source:cloudtrail
+    type: string
+type: object

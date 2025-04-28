@@ -1,0 +1,22 @@
+description: Anonymous assignee entity.
+properties:
+  icon:
+    description: URL for assignee's icon.
+    example: https://a.slack-edge.com/80588/img/slackbot_48.png
+    type: string
+  id:
+    description: Anonymous assignee's ID.
+    example: USLACKBOT
+    type: string
+  name:
+    description: Assignee's name.
+    example: Slackbot
+    type: string
+  source:
+    $ref: ./IncidentTodoAnonymousAssigneeSource.yaml
+required:
+  - id
+  - icon
+  - name
+  - source
+type: object

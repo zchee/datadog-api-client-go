@@ -1,0 +1,4 @@
+description: AWS Authentication config.
+oneOf:
+  - $ref: ./AWSAuthConfigKeys.yaml
+  - $ref: ./AWSAuthConfigRole.yaml

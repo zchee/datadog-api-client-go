@@ -1,0 +1,7 @@
+description: Request object that includes the Custom Rule to update.
+properties:
+  data:
+    $ref: ./ApplicationSecurityWafCustomRuleUpdateData.yaml
+required:
+  - data
+type: object

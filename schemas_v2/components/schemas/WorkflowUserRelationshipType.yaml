@@ -1,0 +1,7 @@
+description: The definition of `WorkflowUserRelationshipType` object.
+enum:
+  - users
+example: users
+type: string
+x-enum-varnames:
+  - USERS

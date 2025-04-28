@@ -1,0 +1,65 @@
+get:
+  description: Returns the IP allowlist and its enabled or disabled state.
+  operationId: GetIPAllowlist
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IPAllowlistResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - org_management
+  summary: Get IP Allowlist
+  tags:
+    - IP Allowlist
+  x-permission:
+    operator: OR
+    permissions:
+      - org_management
+patch:
+  description: Edit the entries in the IP allowlist, and enable or disable it.
+  operationId: UpdateIPAllowlist
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/IPAllowlistUpdateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IPAllowlistResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - org_management
+  summary: Update IP Allowlist
+  tags:
+    - IP Allowlist
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - org_management

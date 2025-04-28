@@ -1,0 +1,15 @@
+description: Confluent Cloud resource data.
+properties:
+  attributes:
+    $ref: ./ConfluentResourceResponseAttributes.yaml
+  id:
+    description: The ID associated with the Confluent resource.
+    example: resource_id_abc123
+    type: string
+  type:
+    $ref: ./ConfluentResourceType.yaml
+required:
+  - attributes
+  - type
+  - id
+type: object

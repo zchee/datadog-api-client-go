@@ -1,0 +1,90 @@
+delete:
+  description: Delete a specific custom destination in your organization.
+  operationId: DeleteLogsCustomDestination
+  parameters:
+    - $ref: ../components/parameters/CustomDestinationId.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete a custom destination
+  tags:
+    - Logs Custom Destinations
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_write_forwarding_rules
+get:
+  description: Get a specific custom destination in your organization.
+  operationId: GetLogsCustomDestination
+  parameters:
+    - $ref: ../components/parameters/CustomDestinationId.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CustomDestinationResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get a custom destination
+  tags:
+    - Logs Custom Destinations
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_read_data
+      - logs_read_config
+patch:
+  description: >-
+    Update the given fields of a specific custom destination in your
+    organization.
+  operationId: UpdateLogsCustomDestination
+  parameters:
+    - $ref: ../components/parameters/CustomDestinationId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CustomDestinationUpdateRequest.yaml
+    description: New definition of the custom destination's fields.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CustomDestinationResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update a custom destination
+  tags:
+    - Logs Custom Destinations
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - logs_write_forwarding_rules

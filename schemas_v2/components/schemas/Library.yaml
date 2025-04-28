@@ -1,0 +1,13 @@
+description: Vulnerability library.
+properties:
+  name:
+    description: Vulnerability library name.
+    example: linux-aws-5.15
+    type: string
+  version:
+    description: Vulnerability library version.
+    example: 5.15.0
+    type: string
+required:
+  - name
+type: object

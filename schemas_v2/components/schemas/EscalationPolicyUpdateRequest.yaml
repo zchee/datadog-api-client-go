@@ -1,0 +1,32 @@
+description: >-
+  Represents a request to update an existing escalation policy, including the
+  updated policy data.
+example:
+  data:
+    attributes:
+      description: Escalation Policy 1 description
+      name: Escalation Policy 1
+      resolve_page_on_policy_end: false
+      retries: 2
+      steps:
+        - assignment: default
+          escalate_after_seconds: 3600
+          id: 00000000-aba1-0000-0000-000000000000
+          targets:
+            - id: 00000000-aba1-0000-0000-000000000000
+              type: users
+            - id: 00000000-aba2-0000-0000-000000000000
+              type: schedules
+    id: a3000000-0000-0000-0000-000000000000
+    relationships:
+      teams:
+        data:
+          - id: 00000000-da3a-0000-0000-000000000000
+            type: teams
+    type: policies
+properties:
+  data:
+    $ref: ./EscalationPolicyUpdateRequestData.yaml
+required:
+  - data
+type: object

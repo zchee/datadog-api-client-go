@@ -1,0 +1,84 @@
+delete:
+  description: Delete a Fastly account.
+  operationId: DeleteFastlyAccount
+  parameters:
+    - $ref: ../components/parameters/FastlyAccountID.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Delete Fastly account
+  tags:
+    - Fastly Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations
+get:
+  description: Get a Fastly account.
+  operationId: GetFastlyAccount
+  parameters:
+    - $ref: ../components/parameters/FastlyAccountID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FastlyAccountResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get Fastly account
+  tags:
+    - Fastly Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+patch:
+  description: Update a Fastly account.
+  operationId: UpdateFastlyAccount
+  parameters:
+    - $ref: ../components/parameters/FastlyAccountID.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/FastlyAccountUpdateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FastlyAccountResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Update Fastly account
+  tags:
+    - Fastly Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

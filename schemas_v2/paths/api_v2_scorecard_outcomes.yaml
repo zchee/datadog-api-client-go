@@ -1,0 +1,92 @@
+get:
+  description: Fetches all rule outcomes.
+  operationId: ListScorecardOutcomes
+  parameters:
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageOffset.yaml
+    - description: Include related rule details in the response.
+      in: query
+      name: include
+      required: false
+      schema:
+        example: rule
+        type: string
+    - description: Return only specified values in the outcome attributes.
+      in: query
+      name: fields[outcome]
+      required: false
+      schema:
+        example: state, service_name
+        type: string
+    - description: Return only specified values in the included rule details.
+      in: query
+      name: fields[rule]
+      required: false
+      schema:
+        example: name
+        type: string
+    - description: Filter the outcomes on a specific service name.
+      in: query
+      name: filter[outcome][service_name]
+      required: false
+      schema:
+        example: web-store
+        type: string
+    - description: Filter the outcomes by a specific state.
+      in: query
+      name: filter[outcome][state]
+      required: false
+      schema:
+        example: fail
+        type: string
+    - description: Filter outcomes on whether a rule is enabled/disabled.
+      in: query
+      name: filter[rule][enabled]
+      required: false
+      schema:
+        example: true
+        type: boolean
+    - description: Filter outcomes based on rule ID.
+      in: query
+      name: filter[rule][id]
+      required: false
+      schema:
+        example: f4485c79-0762-449c-96cf-c31e54a659f6
+        type: string
+    - description: Filter outcomes based on rule name.
+      in: query
+      name: filter[rule][name]
+      required: false
+      schema:
+        example: SLOs Defined
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OutcomesResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_read
+  summary: List all rule outcomes
+  tags:
+    - Service Scorecards
+  x-pagination:
+    limitParam: page[size]
+    pageOffsetParam: page[offset]
+    resultsPath: data
+  x-unstable: >-
+    **Note**: This endpoint is in public beta.
+
+    If you have any feedback, contact [Datadog
+    support](https://docs.datadoghq.com/help/).

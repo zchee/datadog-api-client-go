@@ -1,0 +1,10 @@
+description: >-
+  Defines which users are on-call within a team, stored as an array of
+  references.
+properties:
+  data:
+    description: The list of user references who are on-call for this team.
+    items:
+      $ref: ./TeamReferenceRelationshipsOncallUsersDataItems.yaml
+    type: array
+type: object

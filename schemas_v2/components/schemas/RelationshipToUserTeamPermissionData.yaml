@@ -1,0 +1,12 @@
+description: Related user team permission data
+properties:
+  id:
+    description: The ID of the user team permission
+    example: UserTeamPermissions-aeadc05e-98a8-11ec-ac2c-da7ad0900001-416595
+    type: string
+  type:
+    $ref: ./UserTeamPermissionType.yaml
+required:
+  - id
+  - type
+type: object

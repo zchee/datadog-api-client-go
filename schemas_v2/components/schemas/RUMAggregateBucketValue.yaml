@@ -1,0 +1,5 @@
+description: A bucket value, can be either a timeseries or a single value.
+oneOf:
+  - $ref: ./RUMAggregateBucketValueSingleString.yaml
+  - $ref: ./RUMAggregateBucketValueSingleNumber.yaml
+  - $ref: ./RUMAggregateBucketValueTimeseries.yaml

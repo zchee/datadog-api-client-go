@@ -1,0 +1,4 @@
+additionalProperties:
+  description: Basic access authentication.
+description: Basic access authentication.
+type: object

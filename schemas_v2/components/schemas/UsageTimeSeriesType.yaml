@@ -1,0 +1,8 @@
+default: usage_timeseries
+description: Type of usage data.
+enum:
+  - usage_timeseries
+example: usage_timeseries
+type: string
+x-enum-varnames:
+  - USAGE_TIMESERIES

@@ -1,0 +1,17 @@
+description: A list of connections or connection groups used in the workflow.
+properties:
+  connectionGroups:
+    description: The `ConnectionEnv` `connectionGroups`.
+    items:
+      $ref: ./ConnectionGroup.yaml
+    type: array
+  connections:
+    description: The `ConnectionEnv` `connections`.
+    items:
+      $ref: ./Connection.yaml
+    type: array
+  env:
+    $ref: ./ConnectionEnvEnv.yaml
+required:
+  - env
+type: object

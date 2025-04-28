@@ -1,0 +1,22 @@
+description: A group by rule.
+properties:
+  facet:
+    description: The name of the facet to use (required).
+    example: host
+    type: string
+  histogram:
+    $ref: ./SpansGroupByHistogram.yaml
+  limit:
+    default: 10
+    description: The maximum buckets to return for this group by.
+    format: int64
+    type: integer
+  missing:
+    $ref: ./SpansGroupByMissing.yaml
+  sort:
+    $ref: ./SpansAggregateSort.yaml
+  total:
+    $ref: ./SpansGroupByTotal.yaml
+required:
+  - facet
+type: object

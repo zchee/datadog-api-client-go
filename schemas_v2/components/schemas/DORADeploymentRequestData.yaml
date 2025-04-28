@@ -1,0 +1,7 @@
+description: The JSON:API data.
+properties:
+  attributes:
+    $ref: ./DORADeploymentRequestAttributes.yaml
+required:
+  - attributes
+type: object

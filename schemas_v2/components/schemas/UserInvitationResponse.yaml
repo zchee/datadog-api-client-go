@@ -1,0 +1,5 @@
+description: User invitation as returned by the API.
+properties:
+  data:
+    $ref: ./UserInvitationResponseData.yaml
+type: object

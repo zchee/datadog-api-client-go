@@ -1,0 +1,28 @@
+description: Tenant-based handle attributes.
+properties:
+  channel_id:
+    description: Channel id.
+    example: fake-channel-id
+    maxLength: 255
+    type: string
+  name:
+    description: Tenant-based handle name.
+    example: fake-handle-name
+    maxLength: 255
+    type: string
+  team_id:
+    description: Team id.
+    example: 00000000-0000-0000-0000-000000000000
+    maxLength: 255
+    type: string
+  tenant_id:
+    description: Tenant id.
+    example: 00000000-0000-0000-0000-000000000001
+    maxLength: 255
+    type: string
+required:
+  - name
+  - channel_id
+  - team_id
+  - tenant_id
+type: object

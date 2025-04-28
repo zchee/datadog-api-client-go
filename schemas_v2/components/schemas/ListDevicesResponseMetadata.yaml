@@ -1,0 +1,5 @@
+description: Object describing meta attributes of response.
+properties:
+  page:
+    $ref: ./ListDevicesResponseMetadataPage.yaml
+type: object

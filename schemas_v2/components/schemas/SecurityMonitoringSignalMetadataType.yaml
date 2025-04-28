@@ -1,0 +1,8 @@
+default: signal_metadata
+description: The type of event.
+enum:
+  - signal_metadata
+example: signal_metadata
+type: string
+x-enum-varnames:
+  - SIGNAL_METADATA

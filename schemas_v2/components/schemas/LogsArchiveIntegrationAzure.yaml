@@ -1,0 +1,14 @@
+description: The Azure archive's integration destination.
+properties:
+  client_id:
+    description: A client ID.
+    example: aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa
+    type: string
+  tenant_id:
+    description: A tenant ID.
+    example: aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa
+    type: string
+required:
+  - tenant_id
+  - client_id
+type: object

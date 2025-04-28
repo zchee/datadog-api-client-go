@@ -1,0 +1,116 @@
+get:
+  deprecated: true
+  description: >-
+    Retrieve information about a specific API in
+    [OpenAPI](https://spec.openapis.org/oas/latest.html) format file.
+  operationId: GetOpenAPI
+  parameters:
+    - description: ID of the API to retrieve
+      in: path
+      name: id
+      required: true
+      schema:
+        $ref: ../components/schemas/ApiID.yaml
+  responses:
+    '200':
+      content:
+        multipart/form-data:
+          schema:
+            format: binary
+            type: string
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: API not found error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_api_catalog_read
+  summary: Get an API
+  tags:
+    - API Management
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_api_catalog_read
+  x-unstable: '**Note**: This endpoint is deprecated.'
+put:
+  deprecated: true
+  description: >
+    Update information about a specific API. The given content will replace all
+    API content of the given ID.
+
+    The ID is returned by the create API, or can be found in the URL in the API
+    catalog UI.
+  operationId: UpdateOpenAPI
+  parameters:
+    - description: ID of the API to modify
+      in: path
+      name: id
+      required: true
+      schema:
+        $ref: ../components/schemas/ApiID.yaml
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          $ref: ../components/schemas/OpenAPIFile.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UpdateOpenAPIResponse.yaml
+      description: API updated successfully
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: API not found error
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_api_catalog_write
+  summary: Update an API
+  tags:
+    - API Management
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_api_catalog_write
+  x-unstable: '**Note**: This endpoint is deprecated.'

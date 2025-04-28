@@ -1,0 +1,14 @@
+description: |-
+  The status of a request to bulk configure metric tags.
+  It contains the fields from the original request for reference.
+properties:
+  attributes:
+    $ref: ./MetricBulkTagConfigStatusAttributes.yaml
+  id:
+    $ref: ./MetricBulkTagConfigNamePrefix.yaml
+  type:
+    $ref: ./MetricBulkConfigureTagsType.yaml
+required:
+  - id
+  - type
+type: object

@@ -1,0 +1,8 @@
+description: >-
+  Whether to run this query. If specified, the query will only run if this
+  condition evaluates to `true` in JavaScript and all other conditions are also
+  met.
+oneOf:
+  - type: boolean
+  - example: ${true}
+    type: string

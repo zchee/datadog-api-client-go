@@ -1,0 +1,7 @@
+description: AWS Account Create Request body.
+properties:
+  data:
+    $ref: ./AWSAccountCreateRequestData.yaml
+required:
+  - data
+type: object

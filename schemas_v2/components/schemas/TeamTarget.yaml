@@ -1,0 +1,14 @@
+description: >-
+  Represents a team target for an escalation policy step, including the team's
+  ID and resource type.
+properties:
+  id:
+    description: Specifies the unique identifier of the team resource.
+    example: 00000000-aba1-0000-0000-000000000000
+    type: string
+  type:
+    $ref: ./TeamTargetType.yaml
+required:
+  - type
+  - id
+type: object

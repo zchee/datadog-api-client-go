@@ -1,0 +1,7 @@
+description: Data for the request to update a scorecard rule.
+properties:
+  attributes:
+    $ref: ./RuleAttributes.yaml
+  type:
+    $ref: ./RuleType.yaml
+type: object

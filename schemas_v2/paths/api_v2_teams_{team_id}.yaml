@@ -1,0 +1,126 @@
+delete:
+  deprecated: true
+  description: Deletes an existing incident team.
+  operationId: DeleteIncidentTeam
+  parameters:
+    - $ref: ../components/parameters/IncidentTeamIDPathParameter.yaml
+  responses:
+    '204':
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_settings_write
+  summary: Delete an existing incident team
+  tags:
+    - Incident Teams
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_settings_write
+  x-unstable: >-
+    **Note**: This endpoint is deprecated. See the [Teams API
+    endpoints](https://docs.datadoghq.com/api/latest/teams/).
+get:
+  deprecated: true
+  description: >-
+    Get details of an incident team. If the `include[users]` query parameter is
+    provided,
+
+    the included attribute will contain the users related to these incident
+    teams.
+  operationId: GetIncidentTeam
+  parameters:
+    - $ref: ../components/parameters/IncidentTeamIDPathParameter.yaml
+    - $ref: ../components/parameters/IncidentTeamIncludeQueryParameter.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentTeamResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_read
+  summary: Get details of an incident team
+  tags:
+    - Incident Teams
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_read
+  x-unstable: >-
+    **Note**: This endpoint is deprecated. See the [Teams API
+    endpoints](https://docs.datadoghq.com/api/latest/teams/).
+patch:
+  deprecated: true
+  description: >-
+    Updates an existing incident team. Only provide the attributes which should
+    be updated as this request is a partial update.
+  operationId: UpdateIncidentTeam
+  parameters:
+    - $ref: ../components/parameters/IncidentTeamIDPathParameter.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/IncidentTeamUpdateRequest.yaml
+    description: Incident Team Payload.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IncidentTeamResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '401':
+      $ref: ../components/responses/UnauthorizedResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      $ref: ../components/responses/NotFoundResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - incident_settings_write
+  summary: Update an existing incident team
+  tags:
+    - Incident Teams
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - incident_settings_write
+  x-unstable: >-
+    **Note**: This endpoint is deprecated. See the [Teams API
+    endpoints](https://docs.datadoghq.com/api/latest/teams/).

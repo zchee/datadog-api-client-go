@@ -1,0 +1,25 @@
+description: Item in the Microsoft Teams integration metadata teams array.
+properties:
+  ms_channel_id:
+    description: Microsoft Teams channel ID.
+    example: 19:abc00abcdef00a0abcdef0abcdef0a@thread.tacv2
+    type: string
+  ms_channel_name:
+    description: Microsoft Teams channel name.
+    example: incident-0001-example
+    type: string
+  ms_tenant_id:
+    description: Microsoft Teams tenant ID.
+    example: 00000000-abcd-0005-0000-000000000000
+    type: string
+  redirect_url:
+    description: URL redirecting to the Microsoft Teams channel.
+    example: >-
+      https://teams.microsoft.com/l/channel/19%3Aabc00abcdef00a0abcdef0abcdef0a%40thread.tacv2/conversations?groupId=12345678-abcd-dcba-abcd-1234567890ab&tenantId=00000000-abcd-0005-0000-000000000000
+    type: string
+required:
+  - ms_tenant_id
+  - ms_channel_id
+  - ms_channel_name
+  - redirect_url
+type: object

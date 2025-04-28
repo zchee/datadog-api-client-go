@@ -1,0 +1,6 @@
+description: File ID.
+in: path
+name: file_id
+required: true
+schema:
+  type: string

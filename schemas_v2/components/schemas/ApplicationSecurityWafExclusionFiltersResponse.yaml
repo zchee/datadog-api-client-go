@@ -1,0 +1,8 @@
+description: Response object for multiple WAF exclusion filters.
+properties:
+  data:
+    description: A list of WAF exclusion filters.
+    items:
+      $ref: ./ApplicationSecurityWafExclusionFilterResource.yaml
+    type: array
+type: object

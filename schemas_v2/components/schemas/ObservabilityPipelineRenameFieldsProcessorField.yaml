@@ -1,0 +1,21 @@
+description: Defines how to rename a field in log events.
+properties:
+  destination:
+    description: The field name to assign the renamed value to.
+    example: destination_field
+    type: string
+  preserve_source:
+    description: >-
+      Indicates whether the original field, that is received from the source,
+      should be kept (`true`) or removed (`false`) after renaming.
+    example: false
+    type: boolean
+  source:
+    description: The original field name in the log event that should be renamed.
+    example: source_field
+    type: string
+required:
+  - source
+  - destination
+  - preserve_source
+type: object

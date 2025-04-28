@@ -1,0 +1,44 @@
+description: Attributes of user object returned by the API.
+properties:
+  created_at:
+    description: Creation time of the user.
+    format: date-time
+    type: string
+  disabled:
+    description: Whether the user is disabled.
+    type: boolean
+  email:
+    description: Email of the user.
+    type: string
+  handle:
+    description: Handle of the user.
+    type: string
+  icon:
+    description: URL of the user's icon.
+    type: string
+  mfa_enabled:
+    description: If user has MFA enabled.
+    readOnly: true
+    type: boolean
+  modified_at:
+    description: Time that the user was last modified.
+    format: date-time
+    type: string
+  name:
+    description: Name of the user.
+    nullable: true
+    type: string
+  service_account:
+    description: Whether the user is a service account.
+    type: boolean
+  status:
+    description: Status of the user.
+    type: string
+  title:
+    description: Title of the user.
+    nullable: true
+    type: string
+  verified:
+    description: Whether the user is verified.
+    type: boolean
+type: object

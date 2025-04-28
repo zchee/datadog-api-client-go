@@ -1,0 +1,5 @@
+description: The expected response schema when getting a Cloudflare account.
+properties:
+  data:
+    $ref: ./CloudflareAccountResponseData.yaml
+type: object

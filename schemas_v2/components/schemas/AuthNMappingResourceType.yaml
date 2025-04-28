@@ -1,0 +1,8 @@
+description: The type of resource being mapped to.
+enum:
+  - role
+  - team
+type: string
+x-enum-varnames:
+  - ROLE
+  - TEAM

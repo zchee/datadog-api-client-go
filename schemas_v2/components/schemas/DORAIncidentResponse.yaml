@@ -1,0 +1,7 @@
+description: Response after receiving a DORA incident event.
+properties:
+  data:
+    $ref: ./DORAIncidentResponseData.yaml
+required:
+  - data
+type: object

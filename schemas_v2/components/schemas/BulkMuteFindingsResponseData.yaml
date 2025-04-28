@@ -1,0 +1,9 @@
+description: Data object containing the ID of the request that was updated.
+properties:
+  id:
+    description: UUID used to identify the request
+    example: 93bfeb70-af47-424d-908a-948d3f08e37f
+    type: string
+  type:
+    $ref: ./FindingType.yaml
+type: object

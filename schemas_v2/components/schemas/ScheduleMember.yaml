@@ -1,0 +1,12 @@
+description: Represents a single member entry in a schedule, referencing a specific user.
+properties:
+  id:
+    description: The unique identifier for this schedule member.
+    type: string
+  relationships:
+    $ref: ./ScheduleMemberRelationships.yaml
+  type:
+    $ref: ./ScheduleMemberType.yaml
+required:
+  - type
+type: object

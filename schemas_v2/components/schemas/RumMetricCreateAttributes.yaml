@@ -1,0 +1,19 @@
+description: The object describing the Datadog rum-based metric to create.
+properties:
+  compute:
+    $ref: ./RumMetricCompute.yaml
+  event_type:
+    $ref: ./RumMetricEventType.yaml
+  filter:
+    $ref: ./RumMetricFilter.yaml
+  group_by:
+    description: The rules for the group by.
+    items:
+      $ref: ./RumMetricGroupBy.yaml
+    type: array
+  uniqueness:
+    $ref: ./RumMetricUniqueness.yaml
+required:
+  - event_type
+  - compute
+type: object

@@ -1,0 +1,12 @@
+description: Object for a single Agent rule.
+properties:
+  attributes:
+    $ref: ./CloudWorkloadSecurityAgentRuleUpdateAttributes.yaml
+  id:
+    $ref: ./CloudWorkloadSecurityAgentRuleID.yaml
+  type:
+    $ref: ./CloudWorkloadSecurityAgentRuleType.yaml
+required:
+  - attributes
+  - type
+type: object

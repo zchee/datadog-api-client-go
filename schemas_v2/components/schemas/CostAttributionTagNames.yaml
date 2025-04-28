@@ -1,0 +1,29 @@
+additionalProperties:
+  description: >-
+    A list of values that are associated with each tag key.
+
+    - An empty list means the resource use wasn't tagged with the respective
+    tag.
+
+    - Multiple values means the respective tag was applied multiple times on the
+    resource.
+
+    - An `<empty>` value means the resource was tagged with the respective tag
+    but did not have a value.
+  items:
+    description: A given tag in a list.
+    example: datadog-integrations-lab
+    type: string
+  type: array
+description: >-
+  Tag keys and values.
+
+  A `null` value here means that the requested tag breakdown cannot be applied
+  because it does not match the [tags
+
+  configured for usage
+  attribution](https://docs.datadoghq.com/account_management/billing/usage_attribution/#getting-started).
+
+  In this scenario the API returns the total cost, not broken down by tags.
+nullable: true
+type: object

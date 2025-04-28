@@ -1,0 +1,8 @@
+description: Your delegate account attributes.
+properties:
+  delegate_account_email:
+    description: Your organization's Datadog principal email address.
+    example: >-
+      ddgci-1a19n28hb1a812221893@datadog-gci-sts-us5-prod.iam.gserviceaccount.com
+    type: string
+type: object

@@ -1,0 +1,14 @@
+description: The definition of `OutboundEdge` object.
+properties:
+  branchName:
+    description: The `OutboundEdge` `branchName`.
+    example: ''
+    type: string
+  nextStepName:
+    description: The `OutboundEdge` `nextStepName`.
+    example: ''
+    type: string
+required:
+  - nextStepName
+  - branchName
+type: object

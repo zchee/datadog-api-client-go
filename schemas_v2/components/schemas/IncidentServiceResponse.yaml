@@ -1,0 +1,13 @@
+description: Response with an incident service payload.
+properties:
+  data:
+    $ref: ./IncidentServiceResponseData.yaml
+  included:
+    description: Included objects from relationships.
+    items:
+      $ref: ./IncidentServiceIncludedItems.yaml
+    readOnly: true
+    type: array
+required:
+  - data
+type: object

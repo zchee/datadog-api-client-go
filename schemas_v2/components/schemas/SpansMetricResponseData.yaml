@@ -1,0 +1,9 @@
+description: The span-based metric properties.
+properties:
+  attributes:
+    $ref: ./SpansMetricResponseAttributes.yaml
+  id:
+    $ref: ./SpansMetricID.yaml
+  type:
+    $ref: ./SpansMetricType.yaml
+type: object

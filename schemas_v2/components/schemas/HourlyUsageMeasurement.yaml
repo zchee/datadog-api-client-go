@@ -1,0 +1,11 @@
+description: Usage amount for a given usage type.
+properties:
+  usage_type:
+    description: Type of usage.
+    type: string
+  value:
+    description: Contains the number measured for the given usage_type during the hour.
+    format: int64
+    nullable: true
+    type: integer
+type: object

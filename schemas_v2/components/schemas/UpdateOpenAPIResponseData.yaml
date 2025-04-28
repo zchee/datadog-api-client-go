@@ -1,0 +1,7 @@
+description: Data envelope for `UpdateOpenAPIResponse`.
+properties:
+  attributes:
+    $ref: ./UpdateOpenAPIResponseAttributes.yaml
+  id:
+    $ref: ./ApiID.yaml
+type: object

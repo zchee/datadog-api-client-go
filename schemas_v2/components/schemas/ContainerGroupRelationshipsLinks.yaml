@@ -1,0 +1,6 @@
+description: Links attributes.
+properties:
+  related:
+    description: Link to related containers.
+    type: string
+type: object

@@ -1,0 +1,9 @@
+additionalProperties: {}
+description: Data about the created workflow instance.
+properties:
+  id:
+    description: >-
+      The ID of the workflow execution. It can be used to fetch the execution
+      status.
+    type: string
+type: object

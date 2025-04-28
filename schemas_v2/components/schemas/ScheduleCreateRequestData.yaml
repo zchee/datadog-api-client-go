@@ -1,0 +1,14 @@
+description: >-
+  The core data wrapper for creating a schedule, encompassing attributes,
+  relationships, and the resource type.
+properties:
+  attributes:
+    $ref: ./ScheduleCreateRequestDataAttributes.yaml
+  relationships:
+    $ref: ./ScheduleCreateRequestDataRelationships.yaml
+  type:
+    $ref: ./ScheduleCreateRequestDataType.yaml
+required:
+  - type
+  - attributes
+type: object

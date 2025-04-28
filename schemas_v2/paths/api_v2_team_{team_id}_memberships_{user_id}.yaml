@@ -1,0 +1,93 @@
+delete:
+  description: Remove a user from a team.
+  operationId: DeleteTeamMembership
+  parameters:
+    - description: None
+      in: path
+      name: team_id
+      required: true
+      schema:
+        type: string
+    - description: None
+      in: path
+      name: user_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: No Content
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - teams_read
+  summary: Remove a user from a team
+  tags:
+    - Teams
+  x-permission:
+    operator: OR
+    permissions:
+      - teams_read
+patch:
+  description: Update a user's membership attributes on a team.
+  operationId: UpdateTeamMembership
+  parameters:
+    - description: None
+      in: path
+      name: team_id
+      required: true
+      schema:
+        type: string
+    - description: None
+      in: path
+      name: user_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/UserTeamUpdateRequest.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserTeamResponse.yaml
+      description: Represents a user's association to a team
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: API error response.
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - teams_read
+  summary: Update a user's membership attributes on a team
+  tags:
+    - Teams
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - teams_read

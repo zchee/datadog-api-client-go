@@ -1,0 +1,18 @@
+default: logs
+description: Source of events, either logs or audit trail.
+enum:
+  - logs
+  - audit
+  - app_sec_spans
+  - spans
+  - security_runtime
+  - network
+example: logs
+type: string
+x-enum-varnames:
+  - LOGS
+  - AUDIT
+  - APP_SEC_SPANS
+  - SPANS
+  - SECURITY_RUNTIME
+  - NETWORK

@@ -1,0 +1,12 @@
+description: Get device response data.
+properties:
+  attributes:
+    $ref: ./GetDeviceAttributes.yaml
+  id:
+    description: The device ID
+    example: example:1.2.3.4
+    type: string
+  type:
+    description: The type of the resource. The value should always be device.
+    type: string
+type: object

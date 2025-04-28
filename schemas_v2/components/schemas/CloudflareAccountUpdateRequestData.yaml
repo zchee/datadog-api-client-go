@@ -1,0 +1,7 @@
+description: Data object for updating a Cloudflare account.
+properties:
+  attributes:
+    $ref: ./CloudflareAccountUpdateRequestAttributes.yaml
+  type:
+    $ref: ./CloudflareAccountType.yaml
+type: object

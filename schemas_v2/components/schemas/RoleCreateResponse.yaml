@@ -1,0 +1,5 @@
+description: Response containing information about a created role.
+properties:
+  data:
+    $ref: ./RoleCreateResponseData.yaml
+type: object

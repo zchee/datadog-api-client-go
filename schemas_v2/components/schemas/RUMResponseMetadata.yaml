@@ -1,0 +1,25 @@
+description: The metadata associated with a request.
+properties:
+  elapsed:
+    description: The time elapsed in milliseconds.
+    example: 132
+    format: int64
+    type: integer
+  page:
+    $ref: ./RUMResponsePage.yaml
+  request_id:
+    description: The identifier of the request.
+    example: MWlFUjVaWGZTTTZPYzM0VXp1OXU2d3xLSVpEMjZKQ0VKUTI0dEYtM3RSOFVR
+    type: string
+  status:
+    $ref: ./RUMResponseStatus.yaml
+  warnings:
+    description: >-
+      A list of warnings (non-fatal errors) encountered. Partial results may
+      return if
+
+      warnings are present in the response.
+    items:
+      $ref: ./RUMWarning.yaml
+    type: array
+type: object

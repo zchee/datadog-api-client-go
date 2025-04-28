@@ -1,0 +1,8 @@
+description: The ways searched incidents can be sorted.
+enum:
+  - created
+  - '-created'
+type: string
+x-enum-varnames:
+  - CREATED_ASCENDING
+  - CREATED_DESCENDING

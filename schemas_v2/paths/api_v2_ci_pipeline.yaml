@@ -1,0 +1,78 @@
+post:
+  description: >-
+    Send your pipeline event to your Datadog platform over HTTP. For details
+    about how pipeline executions are modeled and what execution types we
+    support, see [Pipeline Data Model And Execution
+    Types](https://docs.datadoghq.com/continuous_integration/guides/pipeline_data_model/).
+
+
+    Pipeline events can be submitted with a timestamp that is up to 18 hours in
+    the past.
+  operationId: CreateCIAppPipelineEvent
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CIAppCreatePipelineEventRequest.yaml
+    required: true
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            type: object
+      description: Request accepted for processing
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPCIAppErrors.yaml
+      description: Bad Request
+    '401':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPCIAppErrors.yaml
+      description: Unauthorized
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPCIAppErrors.yaml
+      description: Forbidden
+    '408':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPCIAppErrors.yaml
+      description: Request Timeout
+    '413':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPCIAppErrors.yaml
+      description: Payload Too Large
+    '429':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPCIAppErrors.yaml
+      description: Too Many Requests
+    '500':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPCIAppErrors.yaml
+      description: Internal Server Error
+    '503':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPCIAppErrors.yaml
+      description: Service Unavailable
+  security:
+    - apiKeyAuth: []
+  summary: Send pipeline event
+  tags:
+    - CI Visibility Pipelines
+  x-codegen-request-body-name: body

@@ -1,0 +1,6 @@
+description: Type of payload.
+enum:
+  - historicalDetectionsJobResultSignalConversion
+type: string
+x-enum-varnames:
+  - HISTORICALDETECTIONSJOBRESULTSIGNALCONVERSION

@@ -1,0 +1,7 @@
+description: Relationship to project
+properties:
+  data:
+    $ref: ./ProjectRelationshipData.yaml
+required:
+  - data
+type: object

@@ -1,0 +1,11 @@
+description: Object description of a log after being processed and stored by Datadog.
+properties:
+  attributes:
+    $ref: ./LogAttributes.yaml
+  id:
+    description: Unique ID of the Log.
+    example: AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA
+    type: string
+  type:
+    $ref: ./LogType.yaml
+type: object

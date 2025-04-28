@@ -1,0 +1,21 @@
+get:
+  description: |-
+    Get the CSM Coverage Analysis of your Cloud Accounts.
+    This is calculated based on the number of your Cloud Accounts that are
+    scanned for security issues.
+  operationId: GetCSMCloudAccountsCoverageAnalysis
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/CsmCloudAccountsCoverageAnalysisResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get the CSM Cloud Accounts Coverage Analysis
+  tags:
+    - CSM Coverage Analysis

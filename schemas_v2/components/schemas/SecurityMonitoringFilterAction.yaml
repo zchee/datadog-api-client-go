@@ -1,0 +1,8 @@
+description: The type of filtering action.
+enum:
+  - require
+  - suppress
+type: string
+x-enum-varnames:
+  - REQUIRE
+  - SUPPRESS

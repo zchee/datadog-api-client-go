@@ -1,0 +1,7 @@
+description: Notebook resource type.
+enum:
+  - notebooks
+example: notebooks
+type: string
+x-enum-varnames:
+  - NOTEBOOKS

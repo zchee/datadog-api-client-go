@@ -1,0 +1,52 @@
+delete:
+  description: Delete the specified Custom Costs file.
+  operationId: DeleteCustomCostsFile
+  parameters:
+    - $ref: ../components/parameters/FileID.yaml
+  responses:
+    '204':
+      description: No Content
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - cloud_cost_management_write
+  summary: Delete Custom Costs file
+  tags:
+    - Cloud Cost Management
+get:
+  description: Fetch the specified Custom Costs file.
+  operationId: GetCustomCostsFile
+  parameters:
+    - $ref: ../components/parameters/FileID.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CustomCostsFileGetResponse.yaml
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - cloud_cost_management_read
+  summary: Get Custom Costs file
+  tags:
+    - Cloud Cost Management

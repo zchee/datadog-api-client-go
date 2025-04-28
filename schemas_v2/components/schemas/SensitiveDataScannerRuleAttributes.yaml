@@ -1,0 +1,50 @@
+description: Attributes of the Sensitive Data Scanner rule.
+properties:
+  description:
+    description: Description of the rule.
+    type: string
+  excluded_namespaces:
+    description: >-
+      Attributes excluded from the scan. If namespaces is provided, it has to be
+      a sub-path of the namespaces array.
+    example:
+      - admin.name
+    items:
+      type: string
+    type: array
+  included_keyword_configuration:
+    $ref: ./SensitiveDataScannerIncludedKeywordConfiguration.yaml
+  is_enabled:
+    description: Whether or not the rule is enabled.
+    type: boolean
+  name:
+    description: Name of the rule.
+    type: string
+  namespaces:
+    description: >-
+      Attributes included in the scan. If namespaces is empty or missing, all
+      attributes except excluded_namespaces are scanned.
+
+      If both are missing the whole event is scanned.
+    example:
+      - admin
+    items:
+      type: string
+    type: array
+  pattern:
+    description: Not included if there is a relationship to a standard pattern.
+    type: string
+  priority:
+    description: Integer from 1 (high) to 5 (low) indicating rule issue severity.
+    format: int64
+    maximum: 5
+    minimum: 1
+    type: integer
+  tags:
+    description: List of tags.
+    items:
+      type: string
+    type: array
+  text_replacement:
+    $ref: ./SensitiveDataScannerTextReplacement.yaml
+type: object

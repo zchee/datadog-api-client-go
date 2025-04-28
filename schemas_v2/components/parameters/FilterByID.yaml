@@ -1,0 +1,7 @@
+description: Filter entities by UUID.
+explode: true
+in: query
+name: filter[id]
+required: false
+schema:
+  type: string

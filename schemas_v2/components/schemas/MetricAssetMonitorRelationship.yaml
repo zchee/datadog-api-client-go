@@ -1,0 +1,7 @@
+description: An object of type `monitor` that can be referenced in the `included` data.
+properties:
+  id:
+    $ref: ./MetricMonitorID.yaml
+  type:
+    $ref: ./MetricMonitorType.yaml
+type: object

@@ -1,0 +1,5 @@
+description: Entity to incidents relationship.
+properties:
+  data:
+    $ref: ./RelationshipArray.yaml
+type: object

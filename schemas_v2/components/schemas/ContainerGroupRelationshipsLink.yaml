@@ -1,0 +1,7 @@
+description: Relationships to Containers inside a Container Group.
+properties:
+  data:
+    $ref: ./ContainerGroupRelationshipsData.yaml
+  links:
+    $ref: ./ContainerGroupRelationshipsLinks.yaml
+type: object

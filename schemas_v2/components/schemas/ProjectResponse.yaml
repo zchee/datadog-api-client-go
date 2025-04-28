@@ -1,0 +1,5 @@
+description: Project response
+properties:
+  data:
+    $ref: ./Project.yaml
+type: object

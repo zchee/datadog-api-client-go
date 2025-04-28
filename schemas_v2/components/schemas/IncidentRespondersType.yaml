@@ -1,0 +1,7 @@
+description: The incident responders type.
+enum:
+  - incident_responders
+example: incident_responders
+type: string
+x-enum-varnames:
+  - INCIDENT_RESPONDERS

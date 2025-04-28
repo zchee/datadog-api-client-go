@@ -1,0 +1,13 @@
+description: Vulnerability EPSS severity.
+properties:
+  score:
+    description: Vulnerability EPSS severity score.
+    example: 0.2
+    format: double
+    type: number
+  severity:
+    $ref: ./VulnerabilitySeverity.yaml
+required:
+  - score
+  - severity
+type: object

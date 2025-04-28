@@ -1,0 +1,39 @@
+description: >-
+  Represents a request to create a new escalation policy, including the policy
+  data.
+example:
+  data:
+    attributes:
+      description: Escalation Policy 1 description
+      name: Escalation Policy 1
+      resolve_page_on_policy_end: true
+      retries: 2
+      steps:
+        - assignment: default
+          escalate_after_seconds: 3600
+          targets:
+            - id: 00000000-aba1-0000-0000-000000000000
+              type: users
+            - id: 00000000-aba2-0000-0000-000000000000
+              type: schedules
+            - id: 00000000-aba3-0000-0000-000000000000
+              type: teams
+        - assignment: round-robin
+          escalate_after_seconds: 3600
+          targets:
+            - id: 00000000-aba1-0000-0000-000000000000
+              type: users
+            - id: 00000000-abb1-0000-0000-000000000000
+              type: users
+    relationships:
+      teams:
+        data:
+          - id: 00000000-da3a-0000-0000-000000000000
+            type: teams
+    type: policies
+properties:
+  data:
+    $ref: ./EscalationPolicyCreateRequestData.yaml
+required:
+  - data
+type: object

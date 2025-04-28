@@ -1,0 +1,7 @@
+description: Response for Get Custom Costs files.
+properties:
+  data:
+    $ref: ./CustomCostsFileMetadataWithContentHighLevel.yaml
+  meta:
+    $ref: ./CustomCostGetResponseMeta.yaml
+type: object

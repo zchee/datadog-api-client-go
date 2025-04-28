@@ -1,0 +1,7 @@
+description: Third party integrations that Datadog supports.
+properties:
+  opsgenie:
+    $ref: ./ServiceDefinitionV2Opsgenie.yaml
+  pagerduty:
+    $ref: ./ServiceDefinitionV2Pagerduty.yaml
+type: object

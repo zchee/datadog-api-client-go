@@ -1,0 +1,53 @@
+description: The incident's attributes for an update request.
+properties:
+  customer_impact_end:
+    description: Timestamp when customers were no longer impacted by the incident.
+    format: date-time
+    nullable: true
+    type: string
+  customer_impact_scope:
+    description: A summary of the impact customers experienced during the incident.
+    example: Example customer impact scope
+    type: string
+  customer_impact_start:
+    description: Timestamp when customers began being impacted by the incident.
+    format: date-time
+    nullable: true
+    type: string
+  customer_impacted:
+    description: A flag indicating whether the incident caused customer impact.
+    example: false
+    type: boolean
+  detected:
+    description: Timestamp when the incident was detected.
+    format: date-time
+    nullable: true
+    type: string
+  fields:
+    additionalProperties:
+      $ref: ./IncidentFieldAttributes.yaml
+    description: >-
+      A condensed view of the user-defined fields for which to update
+      selections.
+    example:
+      severity:
+        type: dropdown
+        value: SEV-5
+    type: object
+  notification_handles:
+    description: Notification handles that will be notified of the incident during update.
+    example:
+      - display_name: Jane Doe
+        handle: '@user@email.com'
+      - display_name: Slack Channel
+        handle: '@slack-channel'
+      - display_name: Incident Workflow
+        handle: '@workflow-from-incident'
+    items:
+      $ref: ./IncidentNotificationHandle.yaml
+    type: array
+  title:
+    description: The title of the incident, which summarizes what happened.
+    example: A test incident title
+    type: string
+type: object

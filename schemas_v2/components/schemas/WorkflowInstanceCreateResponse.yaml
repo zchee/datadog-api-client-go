@@ -1,0 +1,6 @@
+additionalProperties: {}
+description: Response returned upon successful workflow instance creation.
+properties:
+  data:
+    $ref: ./WorkflowInstanceCreateResponseData.yaml
+type: object

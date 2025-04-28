@@ -1,0 +1,7 @@
+additionalProperties: {}
+description: The attributes of the instance response data.
+properties:
+  id:
+    description: The id of the instance.
+    type: string
+type: object

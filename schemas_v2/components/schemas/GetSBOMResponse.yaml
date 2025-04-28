@@ -1,0 +1,7 @@
+description: The expected response schema when getting an SBOM.
+properties:
+  data:
+    $ref: ./SBOM.yaml
+required:
+  - data
+type: object

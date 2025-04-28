@@ -1,0 +1,8 @@
+default: rum_application_create
+description: RUM application creation type.
+enum:
+  - rum_application_create
+example: rum_application_create
+type: string
+x-enum-varnames:
+  - RUM_APPLICATION_CREATE

@@ -1,0 +1,8 @@
+default: workflows-webhook-handle
+description: Specifies the Workflows webhook handle resource type.
+enum:
+  - workflows-webhook-handle
+example: workflows-webhook-handle
+type: string
+x-enum-varnames:
+  - WORKFLOWS_WEBHOOK_HANDLE

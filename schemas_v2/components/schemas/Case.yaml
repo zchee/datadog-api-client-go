@@ -1,0 +1,17 @@
+description: A case
+properties:
+  attributes:
+    $ref: ./CaseAttributes.yaml
+  id:
+    description: Case's identifier
+    example: aeadc05e-98a8-11ec-ac2c-da7ad0900001
+    type: string
+  relationships:
+    $ref: ./CaseRelationships.yaml
+  type:
+    $ref: ./CaseResourceType.yaml
+required:
+  - id
+  - type
+  - attributes
+type: object

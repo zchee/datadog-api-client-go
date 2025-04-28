@@ -1,0 +1,6 @@
+description: Confluent Account Resource ID.
+in: path
+name: resource_id
+required: true
+schema:
+  type: string

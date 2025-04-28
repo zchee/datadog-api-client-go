@@ -1,0 +1,11 @@
+description: The state of the rule evaluation.
+enum:
+  - pass
+  - fail
+  - skip
+example: pass
+type: string
+x-enum-varnames:
+  - PASS
+  - FAIL
+  - SKIP

@@ -1,0 +1,8 @@
+default: stateVariable
+description: The state variable type.
+enum:
+  - stateVariable
+example: stateVariable
+type: string
+x-enum-varnames:
+  - STATEVARIABLE

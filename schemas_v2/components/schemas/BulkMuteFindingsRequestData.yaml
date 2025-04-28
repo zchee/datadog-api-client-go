@@ -1,0 +1,18 @@
+description: Data object containing the new bulk mute properties of the finding.
+properties:
+  attributes:
+    $ref: ./BulkMuteFindingsRequestAttributes.yaml
+  id:
+    description: UUID to identify the request
+    example: dbe5f567-192b-4404-b908-29b70e1c9f76
+    type: string
+  meta:
+    $ref: ./BulkMuteFindingsRequestMeta.yaml
+  type:
+    $ref: ./FindingType.yaml
+required:
+  - id
+  - type
+  - attributes
+  - meta
+type: object

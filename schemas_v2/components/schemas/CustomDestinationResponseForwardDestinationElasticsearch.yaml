@@ -1,0 +1,50 @@
+description: The Elasticsearch destination.
+properties:
+  auth:
+    $ref: ./CustomDestinationResponseElasticsearchDestinationAuth.yaml
+  endpoint:
+    description: |-
+      The destination for which logs will be forwarded to.
+      Must have HTTPS scheme and forwarding back to Datadog is not allowed.
+    example: https://example.com
+    type: string
+  index_name:
+    description: >-
+      Name of the Elasticsearch index (must follow [Elasticsearch's
+      criteria](https://www.elastic.co/guide/en/elasticsearch/reference/8.11/indices-create-index.html#indices-create-api-path-params)).
+    example: nginx-logs
+    type: string
+  index_rotation:
+    description: >-
+      Date pattern with US locale and UTC timezone to be appended to the index
+      name after adding `-`
+
+      (that is, `${index_name}-${indexPattern}`).
+
+      You can customize the index rotation naming pattern by choosing one of
+      these options:
+
+      - Hourly: `yyyy-MM-dd-HH` (as an example, it would render:
+      `2022-10-19-09`)
+
+      - Daily: `yyyy-MM-dd` (as an example, it would render: `2022-10-19`)
+
+      - Weekly: `yyyy-'W'ww` (as an example, it would render: `2022-W42`)
+
+      - Monthly: `yyyy-MM` (as an example, it would render: `2022-10`)
+
+
+      If this field is missing or is blank, it means that the index name will
+      always be the same
+
+      (that is, no rotation).
+    example: yyyy-MM-dd
+    type: string
+  type:
+    $ref: ./CustomDestinationResponseForwardDestinationElasticsearchType.yaml
+required:
+  - type
+  - endpoint
+  - auth
+  - index_name
+type: object

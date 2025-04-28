@@ -1,0 +1,5 @@
+description: Response metadata object.
+properties:
+  pagination:
+    $ref: ./ContainerMetaPage.yaml
+type: object

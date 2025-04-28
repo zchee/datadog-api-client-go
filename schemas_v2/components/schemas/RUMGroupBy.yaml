@@ -1,0 +1,22 @@
+description: A group-by rule.
+properties:
+  facet:
+    description: The name of the facet to use (required).
+    example: '@view.time_spent'
+    type: string
+  histogram:
+    $ref: ./RUMGroupByHistogram.yaml
+  limit:
+    default: 10
+    description: The maximum buckets to return for this group-by.
+    format: int64
+    type: integer
+  missing:
+    $ref: ./RUMGroupByMissing.yaml
+  sort:
+    $ref: ./RUMAggregateSort.yaml
+  total:
+    $ref: ./RUMGroupByTotal.yaml
+required:
+  - facet
+type: object

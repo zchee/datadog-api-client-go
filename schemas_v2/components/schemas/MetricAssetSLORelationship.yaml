@@ -1,0 +1,7 @@
+description: An object of type `slos` that can be referenced in the `included` data.
+properties:
+  id:
+    $ref: ./MetricSLOID.yaml
+  type:
+    $ref: ./MetricSLOType.yaml
+type: object

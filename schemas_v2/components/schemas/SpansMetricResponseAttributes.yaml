@@ -1,0 +1,12 @@
+description: The object describing a Datadog span-based metric.
+properties:
+  compute:
+    $ref: ./SpansMetricResponseCompute.yaml
+  filter:
+    $ref: ./SpansMetricResponseFilter.yaml
+  group_by:
+    description: The rules for the group by.
+    items:
+      $ref: ./SpansMetricResponseGroupBy.yaml
+    type: array
+type: object

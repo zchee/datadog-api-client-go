@@ -1,0 +1,8 @@
+default: custom_destination
+description: The type of the resource. The value should always be `custom_destination`.
+enum:
+  - custom_destination
+example: custom_destination
+type: string
+x-enum-varnames:
+  - CUSTOM_DESTINATION

@@ -1,0 +1,10 @@
+additionalProperties: false
+description: Datadog product integrations for the datastore entity.
+properties:
+  events:
+    $ref: ./EntityV3DatadogEvents.yaml
+  logs:
+    $ref: ./EntityV3DatadogLogs.yaml
+  performanceData:
+    $ref: ./EntityV3DatadogPerformance.yaml
+type: object

@@ -1,0 +1,15 @@
+description: Attributes of the created user.
+properties:
+  email:
+    description: The email of the user.
+    example: jane.doe@example.com
+    type: string
+  name:
+    description: The name of the user.
+    type: string
+  title:
+    description: The title of the user.
+    type: string
+required:
+  - email
+type: object

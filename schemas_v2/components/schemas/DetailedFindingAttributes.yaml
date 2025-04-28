@@ -1,0 +1,40 @@
+description: The JSON:API attributes of the detailed finding.
+properties:
+  evaluation:
+    $ref: ./FindingEvaluation.yaml
+  evaluation_changed_at:
+    $ref: ./FindingEvaluationChangedAt.yaml
+  message:
+    description: The remediation message for this finding.
+    example: >-
+      ## Remediation
+
+
+      ### From the console
+
+
+      1. Go to Storage Account
+
+      2. For each Storage Account, navigate to Data Protection
+
+      3. Select Set soft delete enabled and enter the number of days to retain
+      soft deleted data.
+    type: string
+  mute:
+    $ref: ./FindingMute.yaml
+  resource:
+    $ref: ./FindingResource.yaml
+  resource_configuration:
+    description: The resource configuration for this finding.
+    type: object
+  resource_discovery_date:
+    $ref: ./FindingResourceDiscoveryDate.yaml
+  resource_type:
+    $ref: ./FindingResourceType.yaml
+  rule:
+    $ref: ./FindingRule.yaml
+  status:
+    $ref: ./FindingStatus.yaml
+  tags:
+    $ref: ./FindingTags.yaml
+type: object

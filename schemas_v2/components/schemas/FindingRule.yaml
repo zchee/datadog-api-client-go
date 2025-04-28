@@ -1,0 +1,12 @@
+additionalProperties: false
+description: The rule that triggered this finding.
+properties:
+  id:
+    description: The ID of the rule that triggered this finding.
+    example: dv2-jzf-41i
+    type: string
+  name:
+    description: The name of the rule that triggered this finding.
+    example: Soft delete is enabled for Azure Storage
+    type: string
+type: object

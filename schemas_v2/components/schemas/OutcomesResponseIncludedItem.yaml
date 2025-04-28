@@ -1,0 +1,9 @@
+description: Attributes of the included rule.
+properties:
+  attributes:
+    $ref: ./OutcomesResponseIncludedRuleAttributes.yaml
+  id:
+    $ref: ./RuleId.yaml
+  type:
+    $ref: ./RuleType.yaml
+type: object

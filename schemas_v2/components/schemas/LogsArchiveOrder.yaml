@@ -1,0 +1,5 @@
+description: A ordered list of archive IDs.
+properties:
+  data:
+    $ref: ./LogsArchiveOrderDefinition.yaml
+type: object

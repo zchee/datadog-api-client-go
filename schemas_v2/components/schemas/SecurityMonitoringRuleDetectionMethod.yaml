@@ -1,0 +1,18 @@
+description: The detection method.
+enum:
+  - threshold
+  - new_value
+  - anomaly_detection
+  - impossible_travel
+  - hardcoded
+  - third_party
+  - anomaly_threshold
+type: string
+x-enum-varnames:
+  - THRESHOLD
+  - NEW_VALUE
+  - ANOMALY_DETECTION
+  - IMPOSSIBLE_TRAVEL
+  - HARDCODED
+  - THIRD_PARTY
+  - ANOMALY_THRESHOLD

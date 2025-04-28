@@ -1,0 +1,17 @@
+description: The definition of `RetryStrategyLinear` object.
+properties:
+  interval:
+    description: >-
+      The `RetryStrategyLinear` `interval`. The expected format is the number of
+      seconds ending with an s. For example, 1 day is 86400s
+    example: ''
+    type: string
+  maxRetries:
+    description: The `RetryStrategyLinear` `maxRetries`.
+    example: 0
+    format: double
+    type: number
+required:
+  - interval
+  - maxRetries
+type: object

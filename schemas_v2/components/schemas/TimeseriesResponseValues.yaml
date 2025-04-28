@@ -1,0 +1,10 @@
+description: Array of values for an individual formula or query.
+example:
+  - 1575317847
+  - 0.5
+items:
+  description: An individual value for a given time.
+  format: double
+  nullable: true
+  type: number
+type: array

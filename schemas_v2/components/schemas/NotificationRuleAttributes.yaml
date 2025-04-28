@@ -1,0 +1,33 @@
+description: Attributes of the notification rule.
+properties:
+  created_at:
+    $ref: ./Date.yaml
+  created_by:
+    $ref: ./RuleUser.yaml
+  enabled:
+    $ref: ./Enabled.yaml
+  modified_at:
+    $ref: ./Date.yaml
+  modified_by:
+    $ref: ./RuleUser.yaml
+  name:
+    $ref: ./RuleName.yaml
+  selectors:
+    $ref: ./Selectors.yaml
+  targets:
+    $ref: ./Targets.yaml
+  time_aggregation:
+    $ref: ./TimeAggregation.yaml
+  version:
+    $ref: ./Version.yaml
+required:
+  - created_at
+  - created_by
+  - enabled
+  - modified_at
+  - modified_by
+  - name
+  - selectors
+  - targets
+  - version
+type: object

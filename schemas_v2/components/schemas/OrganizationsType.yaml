@@ -1,0 +1,8 @@
+default: orgs
+description: Organizations resource type.
+enum:
+  - orgs
+example: orgs
+type: string
+x-enum-varnames:
+  - ORGS

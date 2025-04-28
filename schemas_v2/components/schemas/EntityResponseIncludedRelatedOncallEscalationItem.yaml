@@ -1,0 +1,13 @@
+description: Oncall escalation.
+properties:
+  email:
+    description: Oncall email.
+    type: string
+  escalationLevel:
+    description: Oncall level.
+    format: int64
+    type: integer
+  name:
+    description: Oncall name.
+    type: string
+type: object

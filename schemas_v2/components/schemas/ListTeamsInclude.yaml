@@ -1,0 +1,8 @@
+description: Included related resources optionally requested.
+enum:
+  - team_links
+  - user_team_permissions
+type: string
+x-enum-varnames:
+  - TEAM_LINKS
+  - USER_TEAM_PERMISSIONS

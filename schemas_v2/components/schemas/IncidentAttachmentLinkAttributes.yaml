@@ -1,0 +1,15 @@
+description: The attributes object for a link attachment.
+properties:
+  attachment:
+    $ref: ./IncidentAttachmentLinkAttributesAttachmentObject.yaml
+  attachment_type:
+    $ref: ./IncidentAttachmentLinkAttachmentType.yaml
+  modified:
+    description: Timestamp when the incident attachment link was last modified.
+    format: date-time
+    readOnly: true
+    type: string
+required:
+  - attachment_type
+  - attachment
+type: object

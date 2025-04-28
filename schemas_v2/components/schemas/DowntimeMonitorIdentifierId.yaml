@@ -1,0 +1,11 @@
+additionalProperties: {}
+description: Object of the monitor identifier.
+properties:
+  monitor_id:
+    description: ID of the monitor to prevent notifications.
+    example: 123
+    format: int64
+    type: integer
+required:
+  - monitor_id
+type: object

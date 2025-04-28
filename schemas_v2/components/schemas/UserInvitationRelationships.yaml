@@ -1,0 +1,7 @@
+description: Relationships data for user invitation.
+properties:
+  user:
+    $ref: ./RelationshipToUser.yaml
+required:
+  - user
+type: object

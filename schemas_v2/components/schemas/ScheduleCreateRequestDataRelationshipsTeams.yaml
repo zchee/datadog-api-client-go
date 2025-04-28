@@ -1,0 +1,8 @@
+description: Associates the new schedule with one or more teams.
+properties:
+  data:
+    description: An array of team references for this schedule.
+    items:
+      $ref: ./ScheduleCreateRequestDataRelationshipsTeamsDataItems.yaml
+    type: array
+type: object

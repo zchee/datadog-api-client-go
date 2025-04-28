@@ -1,0 +1,148 @@
+get:
+  description: Get hourly usage by product family.
+  operationId: GetHourlyUsage
+  parameters:
+    - description: >-
+        Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for
+        usage beginning at this hour.
+      in: query
+      name: filter[timestamp][start]
+      required: true
+      schema:
+        format: date-time
+        type: string
+    - description: >-
+        Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for
+        usage ending **before** this hour.
+      in: query
+      name: filter[timestamp][end]
+      required: false
+      schema:
+        format: date-time
+        type: string
+    - description: >-
+        Comma separated list of product families to retrieve. Available families
+        are `all`, `analyzed_logs`,
+
+        `application_security`, `audit_trail`, `serverless`, `ci_app`,
+        `cloud_cost_management`, `cloud_siem`,
+
+        `csm_container_enterprise`, `csm_host_enterprise`, `cspm`,
+        `custom_events`, `cws`, `dbm`, `error_tracking`,
+
+        `fargate`, `infra_hosts`, `incident_management`, `indexed_logs`,
+        `indexed_spans`, `ingested_spans`, `iot`,
+
+        `lambda_traced_invocations`, `logs`, `network_flows`, `network_hosts`,
+        `network_monitoring`, `observability_pipelines`,
+
+        `online_archive`, `profiling`, `rum`, `rum_browser_sessions`,
+        `rum_mobile_sessions`, `sds`, `snmp`, `software_delivery`,
+
+        `synthetics_api`, `synthetics_browser`, `synthetics_mobile`,
+        `synthetics_parallel_testing`, `timeseries`, `vuln_management`,
+
+        and `workflow_executions`.
+
+        The following product family has been **deprecated**: `audit_logs`.
+      in: query
+      name: filter[product_families]
+      required: true
+      schema:
+        type: string
+    - description: Include child org usage in the response. Defaults to false.
+      in: query
+      name: filter[include_descendants]
+      required: false
+      schema:
+        default: false
+        type: boolean
+    - description: >-
+        Boolean to specify whether to include accounts connected to the current
+        account as partner customers in the Datadog partner network program.
+        Defaults to false.
+      in: query
+      name: filter[include_connected_accounts]
+      required: false
+      schema:
+        default: false
+        type: boolean
+    - description: >-
+        Include breakdown of usage by subcategories where applicable (for
+        product family logs only). Defaults to false.
+      in: query
+      name: filter[include_breakdown]
+      required: false
+      schema:
+        default: false
+        type: boolean
+    - description: >-
+        Comma separated list of product family versions to use in the format
+        `product_family:version`. For example,
+
+        `infra_hosts:1.0.0`. If this parameter is not used, the API will use the
+        latest version of each requested
+
+        product family. Currently all families have one version `1.0.0`.
+      in: query
+      name: filter[versions]
+      required: false
+      schema:
+        type: string
+    - description: >-
+        Maximum number of results to return (between 1 and 500) - defaults to
+        500 if limit not specified.
+      in: query
+      name: page[limit]
+      required: false
+      schema:
+        default: 500
+        format: int32
+        maximum: 500
+        minimum: 1
+        type: integer
+    - description: >-
+        List following results with a next_record_id provided in the previous
+        query.
+      in: query
+      name: page[next_record_id]
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/HourlyUsageResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden - User is not authorized
+    '429':
+      content:
+        application/json;datetime-format=rfc3339:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Too many requests
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - usage_read
+  summary: Get hourly usage by product family
+  tags:
+    - Usage Metering
+  x-permission:
+    operator: OR
+    permissions:
+      - usage_read

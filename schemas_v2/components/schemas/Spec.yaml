@@ -1,0 +1,34 @@
+description: The spec defines what the workflow does.
+properties:
+  annotations:
+    description: >-
+      A list of annotations used in the workflow. These are like sticky notes
+      for your workflow!
+    items:
+      $ref: ./Annotation.yaml
+    type: array
+  connectionEnvs:
+    description: A list of connections or connection groups used in the workflow.
+    items:
+      $ref: ./ConnectionEnv.yaml
+    type: array
+  handle:
+    description: Unique identifier used to trigger workflows automatically in Datadog.
+    type: string
+  inputSchema:
+    $ref: ./InputSchema.yaml
+  outputSchema:
+    $ref: ./OutputSchema.yaml
+  steps:
+    description: A `Step` is a sub-component of a workflow. Each `Step` performs an action.
+    items:
+      $ref: ./Step.yaml
+    type: array
+  triggers:
+    description: >-
+      The list of triggers that activate this workflow. At least one trigger is
+      required, and each trigger type may appear at most once.
+    items:
+      $ref: ./Trigger.yaml
+    type: array
+type: object

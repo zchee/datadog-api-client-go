@@ -1,0 +1,13 @@
+description: Bucket values.
+properties:
+  by:
+    additionalProperties:
+      description: The values for each group-by.
+    description: The key-value pairs for each group-by.
+    example:
+      '@test.service': web-ui-tests
+      '@test.status': skip
+    type: object
+  computes:
+    $ref: ./CIAppComputes.yaml
+type: object

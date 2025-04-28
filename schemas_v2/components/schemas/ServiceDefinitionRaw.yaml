@@ -1,0 +1,6 @@
+description: Service Definition in raw JSON/YAML representation.
+example: |
+  ---
+  schema-version: v2
+  dd-service: my-service
+type: string

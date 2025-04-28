@@ -1,0 +1,24 @@
+default: avg
+description: The type of aggregation that can be performed on metrics-based queries.
+enum:
+  - avg
+  - min
+  - max
+  - sum
+  - last
+  - percentile
+  - mean
+  - l2norm
+  - area
+example: avg
+type: string
+x-enum-varnames:
+  - AVG
+  - MIN
+  - MAX
+  - SUM
+  - LAST
+  - PERCENTILE
+  - MEAN
+  - L2NORM
+  - AREA

@@ -1,0 +1,9 @@
+description: Schema for a Security-based trigger.
+properties:
+  securityTrigger:
+    $ref: ./SecurityTrigger.yaml
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - securityTrigger
+type: object

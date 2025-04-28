@@ -1,0 +1,10 @@
+description: Data for the user who created the monitor notification rule.
+nullable: true
+properties:
+  id:
+    description: User ID of the monitor notification rule creator.
+    example: 00000000-0000-1234-0000-000000000000
+    type: string
+  type:
+    $ref: ./UsersType.yaml
+type: object

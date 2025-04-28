@@ -1,0 +1,54 @@
+get:
+  description: Get a list of all services from the Datadog Opsgenie integration.
+  operationId: ListOpsgenieServices
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OpsgenieServicesResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Get all service objects
+  tags:
+    - Opsgenie Integration
+  x-permission:
+    operator: OR
+    permissions:
+      - integrations_read
+post:
+  description: Create a new service object in the Opsgenie integration.
+  operationId: CreateOpsgenieService
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/OpsgenieServiceCreateRequest.yaml
+    description: Opsgenie service payload
+    required: true
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OpsgenieServiceResponse.yaml
+      description: CREATED
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  summary: Create a new service object
+  tags:
+    - Opsgenie Integration
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - manage_integrations

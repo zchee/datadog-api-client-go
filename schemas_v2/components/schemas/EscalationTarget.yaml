@@ -1,0 +1,5 @@
+description: Represents an escalation target, which can be a team, user, or schedule.
+oneOf:
+  - $ref: ./TeamTarget.yaml
+  - $ref: ./UserTarget.yaml
+  - $ref: ./ScheduleTarget.yaml

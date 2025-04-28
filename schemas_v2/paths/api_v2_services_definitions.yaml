@@ -1,0 +1,72 @@
+get:
+  description: Get a list of all service definitions from the Datadog Service Catalog.
+  operationId: ListServiceDefinitions
+  parameters:
+    - $ref: ../components/parameters/PageSize.yaml
+    - $ref: ../components/parameters/PageNumber.yaml
+    - $ref: ../components/parameters/SchemaVersion.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ServiceDefinitionsListResponse.yaml
+      description: OK
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_read
+  summary: Get all service definitions
+  tags:
+    - Service Definition
+  x-pagination:
+    limitParam: page[size]
+    pageParam: page[number]
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_service_catalog_read
+post:
+  description: Create or update service definition in the Datadog Service Catalog.
+  operationId: CreateOrUpdateServiceDefinitions
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ServiceDefinitionsCreateRequest.yaml
+    description: Service Definition YAML/JSON.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ServiceDefinitionCreateResponse.yaml
+      description: CREATED
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/ForbiddenResponse.yaml
+    '409':
+      $ref: ../components/responses/ConflictResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - apm_service_catalog_write
+  summary: Create or update service definition
+  tags:
+    - Service Definition
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - apm_service_catalog_write

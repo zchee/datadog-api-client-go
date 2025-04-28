@@ -1,0 +1,19 @@
+description: >-
+  Specifies how the rotation repeats: number of days, plus optional seconds, up
+  to the given maximums.
+properties:
+  days:
+    description: How many days each rotation cycle should span.
+    example: 1
+    format: int32
+    maximum: 400
+    type: integer
+  seconds:
+    description: >-
+      Additional seconds to add to the rotation cycle (for example, partial
+      days).
+    example: 300
+    format: int64
+    maximum: 2592000
+    type: integer
+type: object

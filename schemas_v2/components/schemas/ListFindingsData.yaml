@@ -1,0 +1,4 @@
+description: Array of findings.
+items:
+  $ref: ./Finding.yaml
+type: array

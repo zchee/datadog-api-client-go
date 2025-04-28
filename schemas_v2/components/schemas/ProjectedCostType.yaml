@@ -1,0 +1,8 @@
+default: projected_cost
+description: Type of cost data.
+enum:
+  - projected_cost
+example: projected_cost
+type: string
+x-enum-varnames:
+  - PROJECt_COST

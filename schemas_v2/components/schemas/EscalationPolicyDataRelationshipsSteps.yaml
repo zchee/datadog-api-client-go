@@ -1,0 +1,10 @@
+description: >-
+  Defines the relationship to a collection of steps within an escalation policy.
+  Contains an array of step data references.
+properties:
+  data:
+    description: An array of references to the steps defined in this escalation policy.
+    items:
+      $ref: ./EscalationPolicyDataRelationshipsStepsDataItems.yaml
+    type: array
+type: object

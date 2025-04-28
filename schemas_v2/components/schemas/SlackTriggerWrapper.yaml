@@ -1,0 +1,10 @@
+description: Schema for a Slack-based trigger.
+properties:
+  slackTrigger:
+    description: Trigger a workflow from Slack. The workflow must be published.
+    type: object
+  startStepNames:
+    $ref: ./StartStepNames.yaml
+required:
+  - slackTrigger
+type: object

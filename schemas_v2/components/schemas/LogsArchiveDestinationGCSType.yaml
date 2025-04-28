@@ -1,0 +1,8 @@
+default: gcs
+description: Type of the GCS archive destination.
+enum:
+  - gcs
+example: gcs
+type: string
+x-enum-varnames:
+  - GCS

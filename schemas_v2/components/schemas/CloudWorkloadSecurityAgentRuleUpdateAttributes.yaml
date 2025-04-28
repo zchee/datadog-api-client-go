@@ -1,0 +1,15 @@
+description: Update an existing Cloud Workload Security Agent rule.
+properties:
+  description:
+    description: The description of the Agent rule.
+    example: My Agent rule
+    type: string
+  enabled:
+    description: Whether the Agent rule is enabled.
+    example: true
+    type: boolean
+  expression:
+    description: The SECL expression of the Agent rule.
+    example: exec.file.name == \"sh\"
+    type: string
+type: object

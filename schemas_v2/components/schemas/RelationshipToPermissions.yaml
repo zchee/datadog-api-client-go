@@ -1,0 +1,8 @@
+description: Relationship to multiple permissions objects.
+properties:
+  data:
+    description: Relationships to permission objects.
+    items:
+      $ref: ./RelationshipToPermissionData.yaml
+    type: array
+type: object

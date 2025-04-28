@@ -1,0 +1,7 @@
+description: Case create request
+properties:
+  data:
+    $ref: ./CaseCreate.yaml
+required:
+  - data
+type: object

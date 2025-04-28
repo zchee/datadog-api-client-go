@@ -1,0 +1,7 @@
+description: Request for creating a monitor notification rule.
+properties:
+  data:
+    $ref: ./MonitorNotificationRuleCreateRequestData.yaml
+required:
+  - data
+type: object

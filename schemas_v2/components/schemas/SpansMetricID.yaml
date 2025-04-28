@@ -1,0 +1,3 @@
+description: The name of the span-based metric.
+example: my.metric
+type: string

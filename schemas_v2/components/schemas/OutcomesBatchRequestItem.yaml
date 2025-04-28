@@ -1,0 +1,23 @@
+description: >-
+  Scorecard outcome for a specific rule, for a given service within a batched
+  update.
+properties:
+  remarks:
+    description: >-
+      Any remarks regarding the scorecard rule's evaluation, and supports HTML
+      hyperlinks.
+    example: 'See: <a href="https://app.datadoghq.com/services">Services</a>'
+    type: string
+  rule_id:
+    $ref: ./RuleId.yaml
+  service_name:
+    description: The unique name for a service in the catalog.
+    example: my-service
+    type: string
+  state:
+    $ref: ./State.yaml
+required:
+  - rule_id
+  - service_name
+  - state
+type: object

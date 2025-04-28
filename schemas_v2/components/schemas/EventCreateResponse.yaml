@@ -1,0 +1,9 @@
+description: Object containing an event response.
+properties:
+  attributes:
+    $ref: ./EventCreateResponseAttributes.yaml
+  type:
+    description: Event type
+    example: event
+    type: string
+type: object

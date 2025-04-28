@@ -1,0 +1,28 @@
+description: >-
+  Describes key properties of a Layer, including rotation details, name,
+  start/end times, and any restrictions.
+properties:
+  effective_date:
+    description: When the layer becomes active (ISO 8601).
+    format: date-time
+    type: string
+  end_date:
+    description: When the layer ceases to be active (ISO 8601).
+    format: date-time
+    type: string
+  interval:
+    $ref: ./LayerAttributesInterval.yaml
+  name:
+    description: The name of this layer.
+    example: Weekend Layer
+    type: string
+  restrictions:
+    description: An optional list of time restrictions for when this layer is in effect.
+    items:
+      $ref: ./LayerAttributesRestrictionsItems.yaml
+    type: array
+  rotation_start:
+    description: The date/time when the rotation starts (ISO 8601).
+    format: date-time
+    type: string
+type: object

@@ -1,0 +1,5 @@
+description: Specifies the SASL mechanism for authenticating with a Kafka cluster.
+properties:
+  mechanism:
+    $ref: ./ObservabilityPipelinePipelineKafkaSourceSaslMechanism.yaml
+type: object

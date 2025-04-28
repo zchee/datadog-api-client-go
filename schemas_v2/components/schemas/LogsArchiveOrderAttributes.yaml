@@ -1,0 +1,19 @@
+description: The attributes associated with the archive order.
+properties:
+  archive_ids:
+    description: >-
+      An ordered array of `<ARCHIVE_ID>` strings, the order of archive IDs in
+      the array
+
+      define the overall archives order for Datadog.
+    example:
+      - a2zcMylnM4OCHpYusxIi1g
+      - a2zcMylnM4OCHpYusxIi2g
+      - a2zcMylnM4OCHpYusxIi3g
+    items:
+      description: A given archive ID.
+      type: string
+    type: array
+required:
+  - archive_ids
+type: object

@@ -1,0 +1,4 @@
+description: List Standard patterns response.
+items:
+  $ref: ./SensitiveDataScannerStandardPatternsResponseItem.yaml
+type: array

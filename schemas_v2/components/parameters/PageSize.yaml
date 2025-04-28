@@ -1,0 +1,9 @@
+description: Size for a given page. The maximum allowed value is 100.
+in: query
+name: page[size]
+required: false
+schema:
+  default: 10
+  example: 10
+  format: int64
+  type: integer

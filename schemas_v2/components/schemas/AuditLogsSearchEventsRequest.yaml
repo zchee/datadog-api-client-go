@@ -1,0 +1,11 @@
+description: The request for a Audit Logs events list.
+properties:
+  filter:
+    $ref: ./AuditLogsQueryFilter.yaml
+  options:
+    $ref: ./AuditLogsQueryOptions.yaml
+  page:
+    $ref: ./AuditLogsQueryPageOptions.yaml
+  sort:
+    $ref: ./AuditLogsSort.yaml
+type: object

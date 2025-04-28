@@ -1,0 +1,21 @@
+description: >-
+  The object sent with the request to retrieve a list of logs from your
+  organization.
+properties:
+  compute:
+    description: The list of metrics or timeseries to compute for the retrieved buckets.
+    items:
+      $ref: ./LogsCompute.yaml
+    type: array
+  filter:
+    $ref: ./LogsQueryFilter.yaml
+  group_by:
+    description: The rules for the group by
+    items:
+      $ref: ./LogsGroupBy.yaml
+    type: array
+  options:
+    $ref: ./LogsQueryOptions.yaml
+  page:
+    $ref: ./LogsAggregateRequestPage.yaml
+type: object

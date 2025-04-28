@@ -1,0 +1,7 @@
+description: Links attributes.
+properties:
+  related:
+    description: Related link.
+    example: /api/v2/team/c75a4a8e-20c7-11ee-a3a5-da7ad0900002/links
+    type: string
+type: object

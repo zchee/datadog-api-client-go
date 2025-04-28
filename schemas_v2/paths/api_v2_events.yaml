@@ -1,0 +1,169 @@
+get:
+  description: >-
+    List endpoint returns events that match an events search query.
+
+    [Results are paginated similarly to
+    logs](https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination).
+
+
+    Use this endpoint to see your latest events.
+  operationId: ListEvents
+  parameters:
+    - description: Search query following events syntax.
+      in: query
+      name: filter[query]
+      required: false
+      schema:
+        type: string
+    - description: Minimum timestamp for requested events, in milliseconds.
+      in: query
+      name: filter[from]
+      required: false
+      schema:
+        type: string
+    - description: Maximum timestamp for requested events, in milliseconds.
+      in: query
+      name: filter[to]
+      required: false
+      schema:
+        type: string
+    - description: Order of events in results.
+      in: query
+      name: sort
+      required: false
+      schema:
+        $ref: ../components/schemas/EventsSort.yaml
+    - description: List following results with a cursor provided in the previous query.
+      example: >-
+        eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==
+      in: query
+      name: page[cursor]
+      required: false
+      schema:
+        type: string
+    - description: Maximum number of events in the response.
+      example: 25
+      in: query
+      name: page[limit]
+      required: false
+      schema:
+        default: 10
+        format: int32
+        maximum: 1000
+        type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EventsListResponse.yaml
+      description: OK
+    '400':
+      $ref: ../components/responses/BadRequestResponse.yaml
+    '403':
+      $ref: ../components/responses/NotAuthorizedResponse.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - events_read
+  summary: Get a list of events
+  tags:
+    - Events
+  x-pagination:
+    cursorParam: page[cursor]
+    cursorPath: meta.page.after
+    limitParam: page[limit]
+    resultsPath: data
+  x-permission:
+    operator: OR
+    permissions:
+      - events_read
+post:
+  description: >-
+    This endpoint allows you to post events.
+
+
+    ✅ **Only events with the `change` category** are in General Availability.
+    See [Change Tracking](https://docs.datadoghq.com/change_tracking) for more
+    details.
+
+
+    ❌ For use cases involving other event categories, please use the V1
+    endpoint.
+  operationId: CreateEvent
+  requestBody:
+    content:
+      application/json:
+        examples:
+          json-request-body:
+            value:
+              data:
+                attributes:
+                  attributes:
+                    author:
+                      name: datadog@datadog.com
+                      type: user
+                    change_metadata:
+                      dd:
+                        team: datadog_team
+                        user_email: datadog@datadog.com
+                        user_id: datadog_user_id
+                        user_name: datadog_username
+                      resource_link: datadog.com/feature/fallback_payments_test
+                    changed_resource:
+                      name: fallback_payments_test
+                      type: feature_flag
+                    impacted_resources:
+                      - name: payments_api
+                        type: service
+                    new_value:
+                      enabled: true
+                      percentage: 50%
+                      rule:
+                        datacenter: devcycle.us1.prod
+                    prev_value:
+                      enabled: true
+                      percentage: 10%
+                      rule:
+                        datacenter: devcycle.us1.prod
+                  category: change
+                  message: payment_processed feature flag has been enabled
+                  tags:
+                    - env:test
+                  title: payment_processed feature flag updated
+                type: event
+        schema:
+          $ref: ../components/schemas/EventCreateRequestPayload.yaml
+    description: Event request object
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EventCreateResponsePayload.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Bad request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JSONAPIErrorResponse.yaml
+      description: Forbidden
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+  summary: Post an event
+  tags:
+    - Events
+  x-codegen-request-body-name: body

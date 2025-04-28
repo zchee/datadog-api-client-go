@@ -1,0 +1,5 @@
+description: Powerpack relationship object.
+properties:
+  author:
+    $ref: ./RelationshipToUser.yaml
+type: object

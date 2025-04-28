@@ -1,0 +1,13 @@
+description: Bucket values.
+properties:
+  by:
+    additionalProperties:
+      description: The values for each group-by.
+    description: The key-value pairs for each group-by.
+    example:
+      '@ci.provider.name': gitlab
+      '@ci.status': success
+    type: object
+  computes:
+    $ref: ./CIAppComputes.yaml
+type: object

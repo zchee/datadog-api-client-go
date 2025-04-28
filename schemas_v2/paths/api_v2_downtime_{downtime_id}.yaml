@@ -1,0 +1,165 @@
+delete:
+  description: >-
+    Cancel a downtime.
+
+
+    **Note**: Downtimes canceled through the API are no longer active, but are
+    retained for approximately two days before being permanently removed. The
+    downtime may still appear in search results until it is permanently removed.
+  operationId: CancelDowntime
+  parameters:
+    - description: ID of the downtime to cancel.
+      in: path
+      name: downtime_id
+      required: true
+      schema:
+        example: 00000000-0000-1234-0000-000000000000
+        type: string
+  responses:
+    '204':
+      description: OK
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Downtime not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - monitors_downtime
+  summary: Cancel a downtime
+  tags:
+    - Downtimes
+  x-permission:
+    operator: OR
+    permissions:
+      - monitors_downtime
+get:
+  description: Get downtime detail by `downtime_id`.
+  operationId: GetDowntime
+  parameters:
+    - description: ID of the downtime to fetch.
+      in: path
+      name: downtime_id
+      required: true
+      schema:
+        example: 00000000-0000-1234-0000-000000000000
+        type: string
+    - description: >-
+        Comma-separated list of resource paths for related resources to include
+        in the response. Supported resource
+
+        paths are `created_by` and `monitor`.
+      in: query
+      name: include
+      required: false
+      schema:
+        example: created_by,monitor
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DowntimeResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Not Found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - monitors_downtime
+  summary: Get a downtime
+  tags:
+    - Downtimes
+  x-permission:
+    operator: OR
+    permissions:
+      - monitors_downtime
+patch:
+  description: Update a downtime by `downtime_id`.
+  operationId: UpdateDowntime
+  parameters:
+    - description: ID of the downtime to update.
+      in: path
+      name: downtime_id
+      required: true
+      schema:
+        example: 00e000000-0000-1234-0000-000000000000
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/DowntimeUpdateRequest.yaml
+    description: Update a downtime request body.
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DowntimeResponse.yaml
+      description: OK
+    '400':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Bad Request
+    '403':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Forbidden
+    '404':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/APIErrorResponse.yaml
+      description: Downtime not found
+    '429':
+      $ref: ../components/responses/TooManyRequestsResponse.yaml
+  security:
+    - apiKeyAuth: []
+      appKeyAuth: []
+    - AuthZ:
+        - monitors_downtime
+  summary: Update a downtime
+  tags:
+    - Downtimes
+  x-codegen-request-body-name: body
+  x-permission:
+    operator: OR
+    permissions:
+      - monitors_downtime

@@ -1,0 +1,7 @@
+description: Update the IP allowlist.
+properties:
+  data:
+    $ref: ./IPAllowlistData.yaml
+required:
+  - data
+type: object
