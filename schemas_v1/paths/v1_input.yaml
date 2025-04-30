@@ -38,14 +38,14 @@ post:
     - 413: Payload too large (batch is above 5MB uncompressed)
 
     - 5xx: Internal error, request should be retried after some time
-  operationId: SubmitLog
+  operationId: SubmitLog_v1
   parameters:
     - description: HTTP header used to compress the media-type.
       in: header
       name: Content-Encoding
       required: false
       schema:
-        $ref: ../components/schemas/ContentEncoding.yaml
+        $ref: ../components/schemas/ContentEncodingv1.yaml
     - description: >-
         Log tags can be passed as query parameters with `text/plain` content
         type.
@@ -66,7 +66,7 @@ post:
               - message: hello
               - message: world
         schema:
-          $ref: ../components/schemas/HTTPLog.yaml
+          $ref: ../components/schemas/HTTPLogv1.yaml
       application/json;simple:
         examples:
           simple-json-message:
@@ -80,7 +80,7 @@ post:
               hostname: fa1e1e739d95
               message: hello world
         schema:
-          $ref: ../components/schemas/HTTPLogItem.yaml
+          $ref: ../components/schemas/HTTPLogItemv1.yaml
       application/logplex-1:
         examples:
           multi-raw-message:
@@ -126,10 +126,10 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/HTTPLogError.yaml
+            $ref: ../components/schemas/HTTPLogErrorv1.yaml
       description: unexpected error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
   servers:
@@ -166,5 +166,5 @@ post:
           description: The subdomain where the API is deployed.
   summary: Send logs
   tags:
-    - Logs
+    - Logs v1
   x-codegen-request-body-name: body

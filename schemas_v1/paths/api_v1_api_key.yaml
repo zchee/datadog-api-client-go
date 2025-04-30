@@ -1,6 +1,6 @@
 get:
   description: Get all API keys available for your account.
-  operationId: ListAPIKeys
+  operationId: ListAPIKeys_v1
   responses:
     '200':
       content:
@@ -12,20 +12,20 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Get all API keys
   tags:
-    - Key Management
+    - Key Management v1
   x-permission:
     operator: OR
     permissions:
       - api_keys_read
 post:
   description: Creates an API key with a given name.
-  operationId: CreateAPIKey
+  operationId: CreateAPIKey_v1
   requestBody:
     content:
       application/json:
@@ -43,19 +43,19 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Create an API key
   tags:
-    - Key Management
+    - Key Management v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

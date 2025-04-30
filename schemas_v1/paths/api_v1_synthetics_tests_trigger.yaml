@@ -19,18 +19,18 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - synthetics_write
   summary: Trigger Synthetic tests
   tags:
-    - Synthetics
+    - Synthetics v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

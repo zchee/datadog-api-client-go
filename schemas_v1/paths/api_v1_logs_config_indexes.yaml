@@ -16,14 +16,14 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ: []
+    - Auth: []
   summary: Get all indexes
   tags:
     - Logs Indexes
@@ -60,10 +60,10 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Create an index
   tags:
     - Logs Indexes

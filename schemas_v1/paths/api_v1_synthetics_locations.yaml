@@ -11,15 +11,15 @@ get:
             $ref: ../components/schemas/SyntheticsLocations.yaml
       description: OK
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - synthetics_private_location_read
   summary: Get all locations (public and private)
   tags:
-    - Synthetics
+    - Synthetics v1
   x-permission:
     operator: OR
     permissions:

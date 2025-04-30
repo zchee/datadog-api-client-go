@@ -1,4 +1,4 @@
 description: Structured log message.
 items:
-  $ref: ./HTTPLogItem.yaml
+  $ref: ./HTTPLogItemv1.yaml
 type: array

@@ -28,14 +28,14 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - slos_read
   summary: Get all SLO corrections
   tags:
@@ -69,26 +69,26 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '404':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: SLO Not Found
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - slos_corrections
   summary: Create an SLO correction
   tags:

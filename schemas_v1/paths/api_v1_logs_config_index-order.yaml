@@ -14,10 +14,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Get indexes order
   tags:
     - Logs Indexes
@@ -56,10 +56,10 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Update indexes order
   tags:
     - Logs Indexes

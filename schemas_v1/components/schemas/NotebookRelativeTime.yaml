@@ -4,7 +4,7 @@ example:
 nullable: true
 properties:
   live_span:
-    $ref: ./WidgetLiveSpan.yaml
+    $ref: ./WidgetLiveSpanv1.yaml
 required:
   - live_span
 type: object

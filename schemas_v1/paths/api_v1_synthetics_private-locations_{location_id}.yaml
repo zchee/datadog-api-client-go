@@ -15,20 +15,20 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: |-
         - Private locations are not activated for the user
         - Private location does not exist
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - synthetics_private_location_write
   summary: Delete a private location
   tags:
-    - Synthetics
+    - Synthetics v1
   x-permission:
     operator: OR
     permissions:
@@ -54,20 +54,20 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: |-
         - Synthetic private locations are not activated for the user
         - Private location does not exist
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - synthetics_private_location_read
   summary: Get a private location
   tags:
-    - Synthetics
+    - Synthetics v1
   x-permission:
     operator: OR
     permissions:
@@ -100,20 +100,20 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: |-
         - Private locations are not activated for the user
         - Private location does not exist
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - synthetics_private_location_write
   summary: Edit a private location
   tags:
-    - Synthetics
+    - Synthetics v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

@@ -1,6 +1,6 @@
 get:
   description: List all users for your organization.
-  operationId: ListUsers
+  operationId: ListUsers_v1
   responses:
     '200':
       content:
@@ -12,18 +12,18 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - user_access_read
   summary: List all users
   tags:
-    - Users
+    - Users v1
   x-permission:
     operator: OR
     permissions:
@@ -34,12 +34,12 @@ post:
 
     **Note**: Users can only be created with the admin access role
     if application keys belong to administrators.
-  operationId: CreateUser
+  operationId: CreateUser_v1
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/User.yaml
+          $ref: ../components/schemas/Userv1.yaml
     description: User object that needs to be created.
     required: true
   responses:
@@ -47,31 +47,31 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/UserResponse.yaml
+            $ref: ../components/schemas/UserResponsev1.yaml
       description: User created
     '400':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication error
     '409':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Conflict
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Create a user
   tags:
-    - Users
+    - Users v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

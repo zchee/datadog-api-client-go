@@ -16,12 +16,12 @@ post:
     [1]: /logs/guide/collect-multiple-logs-with-pagination
 
     [2]: https://docs.datadoghq.com/logs/archives
-  operationId: ListLogs
+  operationId: ListLogs_v1
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/LogsListRequest.yaml
+          $ref: ../components/schemas/LogsListRequestv1.yaml
     description: Logs filter
     required: true
   responses:
@@ -29,7 +29,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/LogsListResponse.yaml
+            $ref: ../components/schemas/LogsListResponsev1.yaml
       description: OK
     '400':
       content:
@@ -41,13 +41,13 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Search logs
   tags:
-    - Logs
+    - Logs v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

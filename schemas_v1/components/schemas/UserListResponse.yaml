@@ -3,6 +3,6 @@ properties:
   users:
     description: Array of users.
     items:
-      $ref: ./User.yaml
+      $ref: ./Userv1.yaml
     type: array
 type: object

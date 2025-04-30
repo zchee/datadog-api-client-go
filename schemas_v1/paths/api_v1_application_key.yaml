@@ -1,6 +1,6 @@
 get:
   description: Get all application keys available for your Datadog account.
-  operationId: ListApplicationKeys
+  operationId: ListApplicationKeys_v1
   responses:
     '200':
       content:
@@ -12,13 +12,13 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Get all application keys
   tags:
-    - Key Management
+    - Key Management v1
   x-permission:
     operator: OR
     permissions:
@@ -26,7 +26,7 @@ get:
       - user_app_keys
 post:
   description: Create an application key with a given name.
-  operationId: CreateApplicationKey
+  operationId: CreateApplicationKey_v1
   requestBody:
     content:
       application/json:
@@ -38,31 +38,31 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/ApplicationKeyResponse.yaml
+            $ref: ../components/schemas/ApplicationKeyResponsev1.yaml
       description: OK
     '400':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '409':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Conflict
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Create an application key
   tags:
-    - Key Management
+    - Key Management v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

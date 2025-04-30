@@ -3,7 +3,7 @@ get:
     Get the list of current AWS services that Datadog offers automatic log
     collection. Use returned service IDs with the services parameter for the
     Enable an AWS service log collection API endpoint.
-  operationId: ListAWSLogsServices
+  operationId: ListAWSLogsServices_v1
   responses:
     '200':
       content:
@@ -30,13 +30,13 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication Error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Get list of AWS log ready services
   tags:
-    - AWS Logs Integration
+    - AWS Logs Integration v1
   x-permission:
     operator: OR
     permissions:
@@ -64,19 +64,19 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication Error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Enable an AWS Logs integration
   tags:
-    - AWS Logs Integration
+    - AWS Logs Integration v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

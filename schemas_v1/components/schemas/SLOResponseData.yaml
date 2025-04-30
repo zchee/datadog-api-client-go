@@ -27,7 +27,7 @@ properties:
     readOnly: true
     type: integer
   creator:
-    $ref: ./Creator.yaml
+    $ref: ./Creatorv1.yaml
   description:
     description: |-
       A user-defined description of the service level objective.

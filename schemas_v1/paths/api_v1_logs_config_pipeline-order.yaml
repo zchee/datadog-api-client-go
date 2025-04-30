@@ -14,10 +14,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Get pipeline order
   tags:
     - Logs Pipelines
@@ -63,7 +63,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '422':
       content:
@@ -72,7 +72,7 @@ put:
             $ref: ../components/schemas/LogsAPIErrorResponse.yaml
       description: Unprocessable Entity
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Update pipeline order
   tags:
     - Logs Pipelines

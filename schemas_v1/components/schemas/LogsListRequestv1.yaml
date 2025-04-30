@@ -21,7 +21,7 @@ properties:
     example: service:web* AND @http.status_code:[200 TO 299]
     type: string
   sort:
-    $ref: ./LogsSort.yaml
+    $ref: ./LogsSortv1.yaml
   startAt:
     description: >-
       Hash identifier of the first log to return in the list, available in a log

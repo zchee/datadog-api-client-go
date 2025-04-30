@@ -1,6 +1,6 @@
 components:
   securitySchemes:
-    AuthZ:
+    Auth:
       description: This API uses OAuth 2 with the implicit grant flow.
       flows:
         authorizationCode:
@@ -488,13 +488,13 @@ servers:
         default: api
         description: The subdomain where the API is deployed.
 tags:
-  - name: AWS Integration
+  - name: AWS Integration v1
     description: >-
       Configure your Datadog-AWS integration directly through the Datadog API.
 
       For more information, see the [AWS integration
       page](https://docs.datadoghq.com/integrations/amazon_web_services).
-  - name: AWS Logs Integration
+  - name: AWS Logs Integration v1
     description: >-
       Configure your Datadog-AWS-Logs integration directly through Datadog API.
 
@@ -537,7 +537,7 @@ tags:
       page](https://docs.datadoghq.com/integrations/azure).
     externalDocs:
       url: https://docs.datadoghq.com/integrations/azure
-  - name: Dashboard Lists
+  - name: Dashboard Lists v1
     description: |-
       Interact with your dashboard lists through the API to
       organize, find, and share all of your dashboards with your team and
@@ -548,7 +548,7 @@ tags:
       Manage all your dashboards, as well as access to your shared dashboards,
       through the API. See the [Dashboards
       page](https://docs.datadoghq.com/dashboards/) for more information.
-  - name: Downtimes
+  - name: Downtimes v1
     description: >-
       [Downtiming](https://docs.datadoghq.com/monitors/notify/downtimes) gives
 
@@ -563,7 +563,7 @@ tags:
 
       **Note:** `curl` commands require [url
       encoding](https://curl.se/docs/url-syntax.html).
-  - name: Events
+  - name: Events v1
     description: >-
       The Event Management API allows you to programmatically post events to the
       Events Explorer and fetch events from the Events Explorer. See the [Event
@@ -578,7 +578,7 @@ tags:
       monitor events `aggregation_key` in dashboard queries or the Event API,
       you must migrate to use `@monitor.id`. Reach out to
       [support](https://www.datadoghq.com/support/) if you have any question.
-  - name: GCP Integration
+  - name: GCP Integration v1
     description: >-
       Configure your Datadog-Google Cloud Platform (GCP) integration directly
 
@@ -594,7 +594,7 @@ tags:
       page](https://docs.datadoghq.com/infrastructure/) for more information.
   - name: IP Ranges
     description: Get a list of IP prefixes belonging to Datadog.
-  - name: Key Management
+  - name: Key Management v1
     description: >-
       Manage your Datadog API and application keys. You need an API key and
 
@@ -607,7 +607,7 @@ tags:
     externalDocs:
       description: Find out more at
       url: https://docs.datadoghq.com/account_management/api-app-keys/
-  - name: Logs
+  - name: Logs v1
     description: >-
       Search your logs and send them to your Datadog platform over HTTP. See the
       [Log Management page](https://docs.datadoghq.com/logs/) for more
@@ -655,7 +655,7 @@ tags:
     externalDocs:
       description: Find out more at
       url: https://docs.datadoghq.com/logs/log_configuration
-  - name: Metrics
+  - name: Metrics v1
     description: >-
       The metrics endpoint allows you to:
 
@@ -684,7 +684,7 @@ tags:
 
       See the [Metrics page](https://docs.datadoghq.com/metrics/) for more
       information.
-  - name: Monitors
+  - name: Monitors v1
     description: >-
       [Monitors](https://docs.datadoghq.com/monitors) allow you to watch a
       metric or check that you care about and
@@ -713,7 +713,7 @@ tags:
     externalDocs:
       description: For more information, see the Notebooks documentation.
       url: https://docs.datadoghq.com/notebooks/
-  - name: Organizations
+  - name: Organizations v1
     description: >-
       Create, edit, and manage your organizations. Read more about [multi-org
       accounts](https://docs.datadoghq.com/account_management/multi_organization).
@@ -728,7 +728,7 @@ tags:
       directly through the Datadog API.
     externalDocs:
       url: https://docs.datadoghq.com/integrations/pagerduty/
-  - name: Security Monitoring
+  - name: Security Monitoring v1
     description: >-
       Create and manage your security rules, signals, filters, and more. See the
       [Datadog Security page](https://docs.datadoghq.com/security/) for more
@@ -787,7 +787,7 @@ tags:
       not correspond to genuine issues. See [SLO status
       corrections](https://docs.datadoghq.com/service_management/service_level_objectives/#slo-status-corrections)
       for more information.
-  - name: Service Level Objectives
+  - name: Service Level Objectives v1
     description: >-
       [Service Level
       Objectives](https://docs.datadoghq.com/monitors/service_level_objectives/#configuration)
@@ -815,7 +815,7 @@ tags:
       url: https://docs.datadoghq.com/integrations/slack
   - name: Snapshots
     description: Take graph snapshots using the API.
-  - name: Synthetics
+  - name: Synthetics v1
     description: >-
       Datadog Synthetic Monitoring uses simulated user requests and browser
       rendering to help you ensure uptime,
@@ -857,7 +857,7 @@ tags:
 
       Read more about tags on [Getting Started with
       Tags](https://docs.datadoghq.com/getting_started/tagging/).
-  - name: Usage Metering
+  - name: Usage Metering v1
     description: >-
       The usage metering API allows you to get hourly, daily, and
 
@@ -883,7 +883,7 @@ tags:
     externalDocs:
       description: Find out more at
       url: https://docs.datadoghq.com/account_management/billing/usage_details/
-  - name: Users
+  - name: Users v1
     description: Create, edit, and disable users.
     externalDocs:
       url: https://docs.datadoghq.com/account_management/users

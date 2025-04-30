@@ -21,30 +21,30 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/EventResponse.yaml
+            $ref: ../components/schemas/EventResponsev1.yaml
       description: OK
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication Error
     '404':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Item Not Found
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - events_read
   summary: Get an event
   tags:
-    - Events
+    - Events v1
   x-permission:
     operator: OR
     permissions:

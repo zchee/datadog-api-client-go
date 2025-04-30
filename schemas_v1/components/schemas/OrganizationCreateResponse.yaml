@@ -5,7 +5,7 @@ properties:
   application_key:
     $ref: ./ApplicationKey.yaml
   org:
-    $ref: ./Organization.yaml
+    $ref: ./Organizationv1.yaml
   user:
-    $ref: ./User.yaml
+    $ref: ./Userv1.yaml
 type: object

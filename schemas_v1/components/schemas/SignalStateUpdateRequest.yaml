@@ -8,7 +8,7 @@ properties:
   state:
     $ref: ./SignalTriageState.yaml
   version:
-    $ref: ./Version.yaml
+    $ref: ./Versionv1.yaml
 required:
   - state
 type: object

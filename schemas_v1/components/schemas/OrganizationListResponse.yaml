@@ -3,6 +3,6 @@ properties:
   orgs:
     description: Array of organization objects.
     items:
-      $ref: ./Organization.yaml
+      $ref: ./Organizationv1.yaml
     type: array
 type: object

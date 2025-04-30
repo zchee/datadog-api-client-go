@@ -1,7 +1,7 @@
 description: Your Datadog Dashboards.
 properties:
   author:
-    $ref: ./Creator.yaml
+    $ref: ./Creatorv1.yaml
   created:
     description: Date of creation of the dashboard list.
     format: date-time

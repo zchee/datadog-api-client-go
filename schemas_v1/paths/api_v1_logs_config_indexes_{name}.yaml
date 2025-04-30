@@ -19,7 +19,7 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '404':
       content:
@@ -28,7 +28,7 @@ delete:
             $ref: ../components/schemas/LogsAPIErrorResponse.yaml
       description: Not Found
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Delete an index
   tags:
     - Logs Indexes
@@ -59,7 +59,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '404':
       content:
@@ -68,7 +68,7 @@ get:
             $ref: ../components/schemas/LogsAPIErrorResponse.yaml
       description: Not Found
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Get an index
   tags:
     - Logs Indexes
@@ -120,7 +120,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '429':
       content:

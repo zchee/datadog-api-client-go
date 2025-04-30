@@ -3,7 +3,7 @@ properties:
   events:
     description: An array of events.
     items:
-      $ref: ./Event.yaml
+      $ref: ./Eventv1.yaml
     type: array
   status:
     description: A status.

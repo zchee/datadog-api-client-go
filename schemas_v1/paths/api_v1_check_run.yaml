@@ -18,34 +18,34 @@ post:
       content:
         text/json:
           schema:
-            $ref: ../components/schemas/IntakePayloadAccepted.yaml
+            $ref: ../components/schemas/IntakePayloadAcceptedv1.yaml
       description: Payload accepted
     '400':
       content:
         text/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         text/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication Error
     '408':
       content:
         text/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Request timeout
     '413':
       content:
         text/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Payload too large
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
   summary: Submit a Service Check

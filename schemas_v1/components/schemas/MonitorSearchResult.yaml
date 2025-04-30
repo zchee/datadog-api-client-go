@@ -5,7 +5,7 @@ properties:
     readOnly: true
     type: string
   creator:
-    $ref: ./Creator.yaml
+    $ref: ./Creatorv1.yaml
   id:
     description: ID of the monitor.
     format: int64
@@ -81,5 +81,5 @@ properties:
     readOnly: true
     type: array
   type:
-    $ref: ./MonitorType.yaml
+    $ref: ./MonitorTypev1.yaml
 type: object

@@ -6,7 +6,7 @@ properties:
     readOnly: true
     type: string
   creator:
-    $ref: ./Creator.yaml
+    $ref: ./Creatorv1.yaml
   deleted:
     description: Whether or not the monitor is deleted. (Always `null`)
     format: date-time
@@ -70,5 +70,5 @@ properties:
       type: string
     type: array
   type:
-    $ref: ./MonitorType.yaml
+    $ref: ./MonitorTypev1.yaml
 type: object

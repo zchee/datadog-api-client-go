@@ -3,7 +3,7 @@ delete:
   description: >-
     Cancel a downtime. **Note:** This endpoint has been deprecated. Please use
     v2 endpoints.
-  operationId: CancelDowntime
+  operationId: CancelDowntime_v1
   parameters:
     - description: ID of the downtime to cancel.
       in: path
@@ -20,24 +20,24 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '404':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Downtime not found
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - monitors_downtime
   summary: Cancel a downtime
   tags:
-    - Downtimes
+    - Downtimes v1
   x-permission:
     operator: OR
     permissions:
@@ -47,7 +47,7 @@ get:
   description: >-
     Get downtime detail by `downtime_id`. **Note:** This endpoint has been
     deprecated. Please use v2 endpoints.
-  operationId: GetDowntime
+  operationId: GetDowntime_v1
   parameters:
     - description: ID of the downtime to fetch.
       in: path
@@ -68,24 +68,24 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '404':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Downtime not found
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - monitors_read
   summary: Get a downtime
   tags:
-    - Downtimes
+    - Downtimes v1
   x-permission:
     operator: OR
     permissions:
@@ -95,7 +95,7 @@ put:
   description: >-
     Update a single downtime by `downtime_id`. **Note:** This endpoint has been
     deprecated. Please use v2 endpoints.
-  operationId: UpdateDowntime
+  operationId: UpdateDowntime_v1
   parameters:
     - description: ID of the downtime to update.
       in: path
@@ -124,30 +124,30 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '404':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Downtime not found
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - monitors_downtime
   summary: Update a downtime
   tags:
-    - Downtimes
+    - Downtimes v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

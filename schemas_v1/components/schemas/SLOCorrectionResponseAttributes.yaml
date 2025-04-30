@@ -8,7 +8,7 @@ properties:
     nullable: true
     type: integer
   creator:
-    $ref: ./Creator.yaml
+    $ref: ./Creatorv1.yaml
   description:
     description: Description of the correction being made.
     type: string

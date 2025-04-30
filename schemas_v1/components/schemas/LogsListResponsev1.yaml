@@ -3,7 +3,7 @@ properties:
   logs:
     description: Array of logs matching the request and the `nextLogId` if sent.
     items:
-      $ref: ./Log.yaml
+      $ref: ./Logv1.yaml
     type: array
   nextLogId:
     description: |-

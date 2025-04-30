@@ -25,13 +25,13 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '409':
       content:
@@ -40,15 +40,15 @@ get:
             $ref: ../components/schemas/CheckCanDeleteMonitorResponse.yaml
       description: Deletion conflict error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - monitors_read
   summary: Check if a monitor can be deleted
   tags:
-    - Monitors
+    - Monitors v1
   x-permission:
     operator: OR
     permissions:

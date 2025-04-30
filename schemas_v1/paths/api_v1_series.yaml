@@ -24,14 +24,14 @@ post:
     API,
 
     compression is applied, which reduces the payload size.
-  operationId: SubmitMetrics
+  operationId: SubmitMetrics_v1
   parameters:
     - description: HTTP header used to compress the media-type.
       in: header
       name: Content-Encoding
       required: false
       schema:
-        $ref: ../components/schemas/MetricContentEncoding.yaml
+        $ref: ../components/schemas/MetricContentEncodingv1.yaml
   requestBody:
     content:
       text/json:
@@ -49,37 +49,37 @@ post:
       content:
         text/json:
           schema:
-            $ref: ../components/schemas/IntakePayloadAccepted.yaml
+            $ref: ../components/schemas/IntakePayloadAcceptedv1.yaml
       description: Payload accepted
     '400':
       content:
         text/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         text/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication error
     '408':
       content:
         text/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Request timeout
     '413':
       content:
         text/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Payload too large
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
   summary: Submit metrics
   tags:
-    - Metrics
+    - Metrics v1
   x-codegen-request-body-name: body

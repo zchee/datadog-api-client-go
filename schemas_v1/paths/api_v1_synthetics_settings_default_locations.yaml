@@ -9,10 +9,10 @@ get:
             $ref: ../components/schemas/SyntheticsDefaultLocations.yaml
       description: OK
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Get the default locations
   tags:
-    - Synthetics
+    - Synthetics v1
   x-permission:
     operator: OR
     permissions:

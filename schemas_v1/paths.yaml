@@ -6,10 +6,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/IPRanges'
+            $ref: ./components/schemas/IPRanges.yaml
       description: OK
     '429':
-      $ref: '#/components/responses/TooManyRequestsResponse'
+      $ref: ./components//responses/TooManyRequestsResponsev1.yaml
   security: []
   servers:
     - url: https://{subdomain}.{site}

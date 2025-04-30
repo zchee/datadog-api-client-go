@@ -3,7 +3,7 @@ get:
   description: >-
     Get all active v1 downtimes for the specified monitor. **Note:** This
     endpoint has been deprecated. Please use v2 endpoints.
-  operationId: ListMonitorDowntimes
+  operationId: ListMonitorDowntimes_v1
   parameters:
     - description: The id of the monitor
       in: path
@@ -25,24 +25,24 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '404':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Monitor Not Found error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - monitors_read
   summary: Get active downtimes for a monitor
   tags:
-    - Downtimes
+    - Downtimes v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

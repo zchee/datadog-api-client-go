@@ -9,7 +9,7 @@ properties:
     format: int64
     type: integer
   version:
-    $ref: ./Version.yaml
+    $ref: ./Versionv1.yaml
 required:
   - incident_id
 type: object

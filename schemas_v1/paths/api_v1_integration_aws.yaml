@@ -2,7 +2,7 @@ delete:
   description: >-
     Delete a Datadog-AWS integration matching the specified `account_id` and
     `role_name parameters`.
-  operationId: DeleteAWSAccount
+  operationId: DeleteAWSAccount_v1
   requestBody:
     content:
       application/json:
@@ -21,25 +21,25 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication Error
     '409':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Conflict Error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Delete an AWS integration
   tags:
-    - AWS Integration
+    - AWS Integration v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR
@@ -47,7 +47,7 @@ delete:
       - aws_configurations_manage
 get:
   description: List all Datadog-AWS integrations available in your Datadog organization.
-  operationId: ListAWSAccounts
+  operationId: ListAWSAccounts_v1
   parameters:
     - description: Only return AWS accounts that matches this `account_id`.
       in: query
@@ -78,19 +78,19 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication Error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: List all AWS integrations
   tags:
-    - AWS Integration
+    - AWS Integration v1
   x-permission:
     operator: OR
     permissions:
@@ -105,7 +105,7 @@ post:
     organization.
 
     A unique AWS Account ID for role based authentication.
-  operationId: CreateAWSAccount
+  operationId: CreateAWSAccount_v1
   requestBody:
     content:
       application/json:
@@ -124,25 +124,25 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication Error
     '409':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Conflict Error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Create an AWS integration
   tags:
-    - AWS Integration
+    - AWS Integration v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR
@@ -150,7 +150,7 @@ post:
       - aws_configurations_manage
 put:
   description: Update a Datadog-Amazon Web Services integration.
-  operationId: UpdateAWSAccount
+  operationId: UpdateAWSAccount_v1
   parameters:
     - description: Only return AWS accounts that matches this `account_id`.
       in: query
@@ -192,25 +192,25 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication Error
     '409':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Conflict Error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Update an AWS integration
   tags:
-    - AWS Integration
+    - AWS Integration v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

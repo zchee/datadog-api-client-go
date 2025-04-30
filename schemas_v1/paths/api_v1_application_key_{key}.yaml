@@ -1,6 +1,6 @@
 delete:
   description: Delete a given application key.
-  operationId: DeleteApplicationKey
+  operationId: DeleteApplicationKey_v1
   parameters:
     - description: The specific APP key you are working with.
       in: path
@@ -13,25 +13,25 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/ApplicationKeyResponse.yaml
+            $ref: ../components/schemas/ApplicationKeyResponsev1.yaml
       description: OK
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '404':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Not Found
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Delete an application key
   tags:
-    - Key Management
+    - Key Management v1
   x-permission:
     operator: OR
     permissions:
@@ -39,7 +39,7 @@ delete:
       - user_app_keys
 get:
   description: Get a given application key.
-  operationId: GetApplicationKey
+  operationId: GetApplicationKey_v1
   parameters:
     - description: The specific APP key you are working with.
       in: path
@@ -52,25 +52,25 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/ApplicationKeyResponse.yaml
+            $ref: ../components/schemas/ApplicationKeyResponsev1.yaml
       description: OK
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '404':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Not Found
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Get an application key
   tags:
-    - Key Management
+    - Key Management v1
   x-permission:
     operator: OR
     permissions:
@@ -78,7 +78,7 @@ get:
       - user_app_keys
 put:
   description: Edit an application key name.
-  operationId: UpdateApplicationKey
+  operationId: UpdateApplicationKey_v1
   parameters:
     - description: The specific APP key you are working with.
       in: path
@@ -97,37 +97,37 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/ApplicationKeyResponse.yaml
+            $ref: ../components/schemas/ApplicationKeyResponsev1.yaml
       description: OK
     '400':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden
     '404':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Not Found
     '409':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Conflict
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   summary: Edit an application key
   tags:
-    - Key Management
+    - Key Management v1
   x-codegen-request-body-name: body
   x-permission:
     operator: OR

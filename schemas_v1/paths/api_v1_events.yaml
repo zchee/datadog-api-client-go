@@ -19,7 +19,7 @@ get:
 
     paginate the results. You can also use the page parameter to specify which
     set of `1000` results to return.
-  operationId: ListEvents
+  operationId: ListEvents_v1
   parameters:
     - description: POSIX timestamp.
       in: query
@@ -40,7 +40,7 @@ get:
       name: priority
       required: false
       schema:
-        $ref: ../components/schemas/EventPriority.yaml
+        $ref: ../components/schemas/EventPriorityv1.yaml
     - description: A comma separated string of sources.
       in: query
       name: sources
@@ -106,24 +106,24 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '403':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Authentication Error
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
       appKeyAuth: []
-    - AuthZ:
+    - Auth:
         - events_read
   summary: Get a list of events
   tags:
-    - Events
+    - Events v1
   x-permission:
     operator: OR
     permissions:
@@ -132,12 +132,12 @@ post:
   description: |-
     This endpoint allows you to post events to the stream.
     Tag them, set priority and event aggregate them with other events.
-  operationId: CreateEvent
+  operationId: CreateEvent_v1
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/EventCreateRequest.yaml
+          $ref: ../components/schemas/EventCreateRequestv1.yaml
     description: Event request object
     required: true
   responses:
@@ -145,19 +145,19 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/EventCreateResponse.yaml
+            $ref: ../components/schemas/EventCreateResponsev1.yaml
       description: OK
     '400':
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Bad Request
     '429':
-      $ref: ../components/responses/TooManyRequestsResponse.yaml
+      $ref: ../components/responses/TooManyRequestsResponsev1.yaml
   security:
     - apiKeyAuth: []
   summary: Post an event
   tags:
-    - Events
+    - Events v1
   x-codegen-request-body-name: body

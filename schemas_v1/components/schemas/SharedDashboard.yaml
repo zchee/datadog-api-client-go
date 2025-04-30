@@ -12,7 +12,7 @@ properties:
     example: 123-abc-456
     type: string
   dashboard_type:
-    $ref: ./DashboardType.yaml
+    $ref: ./DashboardTypev1.yaml
   embeddable_domains:
     description: The `SharedDashboard` `embeddable_domains`.
     example:

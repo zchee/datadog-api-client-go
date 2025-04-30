@@ -27,23 +27,23 @@ get:
       content:
         application/json;datetime-format=rfc3339:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Forbidden - User is not authorized
     '404':
       content:
         application/json;datetime-format=rfc3339:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Not Found
     '429':
       content:
         application/json;datetime-format=rfc3339:
           schema:
-            $ref: ../components/schemas/APIErrorResponse.yaml
+            $ref: ../components/schemas/APIErrorResponsev1.yaml
       description: Too many requests
   summary: Get specified daily custom reports
   tags:
-    - Usage Metering
+    - Usage Metering v1
   x-permission:
     operator: OR
     permissions:

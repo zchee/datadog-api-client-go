@@ -3,7 +3,7 @@ properties:
   config:
     $ref: ./SyntheticsTestConfig.yaml
   creator:
-    $ref: ./Creator.yaml
+    $ref: ./Creatorv1.yaml
   locations:
     description: Array of locations used to run the test.
     example:
